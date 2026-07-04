@@ -32,8 +32,8 @@
     .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:22px}
     h1,h2,h3,p{margin:0}
     h1{font-size:clamp(48px,6.8vw,112px);letter-spacing:-.06em;line-height:.92;font-weight:720;max-width:1120px}
-    h2{font-size:clamp(34px,4.6vw,72px);letter-spacing:-.045em;line-height:1.02;font-weight:700;max-width:1080px}
-    h3{font-size:clamp(22px,2.45vw,36px);letter-spacing:-.03em;line-height:1.08;font-weight:670}
+    h2{font-size:52px;letter-spacing:-.035em;line-height:1.06;font-weight:680;max-width:1080px}
+    h3{font-size:24px;letter-spacing:-.02em;line-height:1.18;font-weight:660}
     .lead{font-size:clamp(20px,1.85vw,30px);letter-spacing:-.025em;color:var(--muted);max-width:900px;margin-top:28px;line-height:1.28}
     .body{font-size:20px;color:var(--muted);max-width:770px;line-height:1.55}
     .grid{display:grid;gap:22px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
@@ -46,15 +46,15 @@
     .hero:before{content:"";position:absolute;inset:auto -15% -38% 45%;height:80%;background:radial-gradient(circle,rgba(11,95,255,.16),transparent 67%);filter:blur(12px)}
     .nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:8px}.nav a{width:7px;height:7px;border-radius:50%;background:rgba(17,18,20,.22);display:block}.nav a:hover{background:var(--gold);transform:scale(1.35)}
     .page-no{position:absolute;right:42px;bottom:34px;color:rgba(17,18,20,.35);font-size:13px;font-weight:650;letter-spacing:.06em}.section-label{position:absolute;left:42px;bottom:34px;color:rgba(17,18,20,.35);font-size:13px;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
-    .quote{font-size:clamp(30px,4.2vw,64px);line-height:1.06;letter-spacing:-.045em;font-weight:680;max-width:1100px}.quote .thin{font-weight:460;color:var(--muted)}
+    .quote{font-size:clamp(28px,3.7vw,56px);line-height:1.08;letter-spacing:-.04em;font-weight:660;max-width:1100px}.quote .thin{font-weight:460;color:var(--muted)}
     .arrow{display:flex;align-items:center;gap:20px}.arrow:after{content:"";height:1px;flex:1;background:var(--line)}
     .matrix{position:relative;height:620px;background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,.18));border:1px solid var(--line);border-radius:34px;padding:32px;box-shadow:var(--shadow)}
     .axis-x,.axis-y{position:absolute;background:rgba(17,18,20,.18)}.axis-x{left:78px;right:54px;bottom:74px;height:1px}.axis-y{left:78px;top:54px;bottom:74px;width:1px}.axis-label{position:absolute;font-size:13px;color:var(--muted);font-weight:650}.x-left{left:74px;bottom:34px}.x-right{right:50px;bottom:34px}.y-top{left:28px;top:54px;writing-mode:vertical-rl;transform:rotate(180deg)}.y-bottom{left:28px;bottom:74px;writing-mode:vertical-rl;transform:rotate(180deg)}
     .dot{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:9px}.dot i{width:14px;height:14px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 8px rgba(17,18,20,.08)}.dot span{font-size:15px;font-weight:720;white-space:nowrap;background:rgba(255,255,255,.76);padding:4px 8px;border-radius:10px}.dot.biz i{background:var(--gold);box-shadow:0 0 0 10px rgba(11,95,255,.16)}.dot.biz span{font-size:17px;color:var(--gold)}
     .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}.timeline:before{content:"";position:absolute;left:0;right:0;top:29px;height:1px;background:var(--line)}.phase{position:relative;padding-top:72px}.phase:before{content:"";position:absolute;top:18px;left:4px;width:22px;height:22px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 12px rgba(11,95,255,.13)}
-    .workstream{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start;border-top:1px solid var(--line);padding:26px 0}.workstream .idx{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:760}.workstream h3{font-size:25px}.workstream p{margin-top:8px}
+    .workstream{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start;border-top:1px solid var(--line);padding:26px 0}.workstream .idx{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:760}.workstream h3{font-size:24px;line-height:1.2}.workstream p{margin-top:8px}
     .stack{display:flex;flex-direction:column;gap:16px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}.compare .card{min-height:260px}.label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:760;margin-bottom:20px}.statement{font-size:clamp(30px,3.7vw,56px);line-height:1.08;letter-spacing:-.045em;font-weight:720}
-    .device{background:#111214;border-radius:38px;padding:18px;box-shadow:0 34px 100px rgba(17,18,20,.25);transform:rotate(-1.5deg)}.screen{height:420px;background:linear-gradient(145deg,#eaf4ff,#f9fcff);border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.2)}.mapline{position:absolute;background:rgba(11,95,255,.34);height:8px;border-radius:999px;transform-origin:left}.pin{position:absolute;width:18px;height:18px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 10px rgba(11,95,255,.18)}.floating-panel{position:absolute;right:22px;top:22px;width:190px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:18px;padding:16px}.mockup-board{position:absolute;left:36px;bottom:32px;width:210px;height:116px;border-radius:14px;background:#17191d;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.14em}.source{font-size:12px;color:rgba(17,18,20,.42);margin-top:20px;line-height:1.45}.logo{letter-spacing:-.04em;font-size:26px;font-weight:800}.kpi{display:flex;gap:18px;align-items:flex-start}.kpi .num{font-size:42px;line-height:.95;font-weight:760;letter-spacing:-.04em;color:var(--gold);min-width:112px}.kpi-copy{display:flex;flex-direction:column;gap:18px}.kpi-title{font-size:32px;line-height:1.05;font-weight:760;letter-spacing:-.035em;color:#A8D8FF}.kpi-desc{font-size:18px;line-height:1.65;color:rgba(255,255,255,.72);max-width:92%}.dark-slide{background:#111214;color:#fff}.dark-slide .body,.dark-slide .lead,.dark-slide .muted{color:rgba(255,255,255,.66)}.dark-slide .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.13);box-shadow:none}.dark-slide .page-no,.dark-slide .section-label{color:rgba(255,255,255,.35)}
+    .device{background:#111214;border-radius:38px;padding:18px;box-shadow:0 34px 100px rgba(17,18,20,.25);transform:rotate(-1.5deg)}.screen{height:420px;background:linear-gradient(145deg,#eaf4ff,#f9fcff);border-radius:24px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.2)}.mapline{position:absolute;background:rgba(11,95,255,.34);height:8px;border-radius:999px;transform-origin:left}.pin{position:absolute;width:18px;height:18px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 10px rgba(11,95,255,.18)}.floating-panel{position:absolute;right:22px;top:22px;width:190px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:18px;padding:16px}.mockup-board{position:absolute;left:36px;bottom:32px;width:210px;height:116px;border-radius:14px;background:#17191d;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.14em}.source{font-size:12px;color:rgba(17,18,20,.42);margin-top:20px;line-height:1.45}.logo{letter-spacing:-.04em;font-size:26px;font-weight:800}.kpi{display:flex;gap:18px;align-items:flex-start}.kpi .num{font-size:42px;line-height:.95;font-weight:760;letter-spacing:-.04em;color:var(--gold);min-width:112px}.kpi-copy{display:flex;flex-direction:column;gap:18px}.kpi-title{font-size:28px;line-height:1.08;font-weight:720;letter-spacing:-.025em;color:#A8D8FF}.kpi-desc{font-size:18px;line-height:1.65;color:rgba(255,255,255,.72);max-width:92%}.dark-slide{background:#111214;color:#fff}.dark-slide .body,.dark-slide .lead,.dark-slide .muted{color:rgba(255,255,255,.66)}.dark-slide .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.13);box-shadow:none}.dark-slide .page-no,.dark-slide .section-label{color:rgba(255,255,255,.35)}
 
     .top-header{position:fixed;top:22px;left:50%;transform:translateX(-50%);width:min(1440px,calc(100% - 96px));height:72px;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border:1px solid rgba(255,255,255,.35);border-radius:24px;background:rgba(255,255,255,.56);box-shadow:0 18px 60px rgba(11,95,255,.10);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
     .top-logo{height:44px;width:auto;max-width:min(520px,58vw);display:block;object-fit:contain}
@@ -63,17 +63,73 @@
     @media(max-width:920px){.top-header{top:12px;width:calc(100% - 28px);height:58px;border-radius:18px;padding:8px 12px}.top-logo{height:32px;max-width:62vw}.top-meta{display:none}}
     @media(max-width:920px){.slide{padding:44px 22px}.split,.split.rev,.g2,.g3,.g4,.timeline,.compare{grid-template-columns:1fr}.nav{display:none}.matrix{height:520px}.page-no,.section-label{display:none}.workstream{grid-template-columns:1fr}.screen{height:330px}}
     @media print{.slide{min-height:1080px;page-break-after:always}.nav,.progress{display:none}body{background:white}.slide{border-bottom:none}}
-  </style>
+  
+    .audit-grid{display:grid;grid-template-columns:1.15fr repeat(5,1fr);gap:1px;background:rgba(17,18,20,.12);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-top:36px;box-shadow:var(--shadow)}
+    .audit-cell{background:rgba(255,255,255,.78);padding:18px 16px;min-height:92px;font-size:14px;line-height:1.45;color:var(--muted)}
+    .audit-cell.head{background:#111214;color:#fff;font-weight:760;letter-spacing:-.01em;font-size:15px}.audit-cell.rowhead{font-weight:760;color:var(--ink);background:#f6fbff}.audit-cell strong{color:var(--ink)}
+    .interpretation{margin-top:24px;padding:26px 30px;border-radius:26px;background:linear-gradient(135deg,rgba(11,95,255,.08),rgba(99,179,255,.12));border:1px solid rgba(11,95,255,.16)}
+    .flow-wrap{margin-top:34px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+    .flow-step{display:grid;grid-template-columns:96px 1fr 260px;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+    .flow-step .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:760}.flow-step h3{margin-bottom:8px}.flow-step .outcome{font-size:13px;line-height:1.5;color:var(--muted);background:rgba(255,255,255,.62);border:1px solid var(--line);border-radius:18px;padding:14px}
+    .quote-box{margin-top:34px;border-radius:30px;background:#111214;color:white;padding:34px 38px;font-size:34px;letter-spacing:-.035em;line-height:1.14;font-weight:660;box-shadow:0 28px 80px rgba(17,18,20,.18)}
+    .priority-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}.priority-card{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:0 16px 50px rgba(11,95,255,.06)}.priority-card h3{font-size:23px}.priority-card .why{margin-top:12px;font-size:14px;line-height:1.55;color:var(--muted)}.priority-card .target{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink);font-weight:620}.priority-card.major{grid-column:span 2;background:linear-gradient(135deg,#f7fbff,#eaf4ff);border-color:rgba(11,95,255,.20)}
+    .partnership-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.partnership-box{background:rgba(255,255,255,.82);border:1px solid rgba(11,95,255,.14);border-radius:18px;padding:16px}.partnership-box b{display:block;margin-bottom:8px;color:var(--blue)}
+
+    .a4-slide{background:linear-gradient(135deg,#f7fbff 0%,#eef6ff 100%);align-items:flex-start;padding-top:118px;padding-bottom:76px;overflow:visible;min-height:auto}
+    .a4-wrap{width:min(1320px,100%);margin:auto;position:relative;z-index:2}
+    .pdf-button{position:absolute;right:0;top:-58px;border:1px solid rgba(11,95,255,.22);background:linear-gradient(135deg,#0B5FFF,#63B3FF);color:#fff;border-radius:999px;padding:13px 18px;font-size:13px;font-weight:760;letter-spacing:.02em;box-shadow:0 18px 50px rgba(11,95,255,.22);cursor:pointer}.pdf-button:hover{transform:translateY(-1px);box-shadow:0 22px 60px rgba(11,95,255,.28)}
+    .a4-sheet{width:100%;min-height:720px;background:rgba(255,255,255,.97);border:1px solid rgba(11,95,255,.16);border-radius:24px;box-shadow:0 28px 90px rgba(11,95,255,.12);padding:28px 32px;display:grid;grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;gap:16px;overflow:visible}
+    .a4-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:14px;gap:24px}
+    .a4-title{font-size:30px;line-height:1.05;letter-spacing:-.035em;font-weight:720;color:var(--ink)}
+    .a4-sub{font-size:13px;color:var(--muted);line-height:1.45;margin-top:8px;max-width:780px}.a4-logo{height:38px;object-fit:contain;flex:none}
+    .summary-top{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch}
+    .summary-block{border:1px solid rgba(17,18,20,.10);border-radius:18px;background:rgba(247,251,255,.72);padding:15px;min-height:0}
+    .summary-block.blue{background:linear-gradient(135deg,#f4f9ff,#e7f2ff);border-color:rgba(11,95,255,.18)}
+    .summary-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:780;margin-bottom:10px}.summary-block h3{font-size:18px;line-height:1.16;margin-bottom:9px;color:var(--ink)}
+    .summary-block p,.summary-block li{font-size:12px;line-height:1.46;color:var(--muted)}.summary-block ul{padding-left:17px;margin:6px 0 0}.summary-block b{color:var(--ink)}
+    .summary-priorities{padding:16px}.priority-mini-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.priority-mini{border:1px solid rgba(17,18,20,.08);border-radius:12px;background:#fff;padding:10px;min-height:116px}.priority-mini b{display:block;font-size:12px;color:var(--ink);line-height:1.15;margin-bottom:6px}.priority-mini span{display:block;font-size:10.8px;color:var(--muted);line-height:1.35}.priority-mini em{font-style:normal;color:var(--gold);font-weight:780;font-size:10px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:5px}
+    .summary-roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.road-pill{background:#111214;color:#fff;border-radius:15px;padding:11px 13px}.road-pill b{display:block;color:#A8D8FF;font-size:13px;margin-bottom:6px}.road-pill span{font-size:11.3px;line-height:1.35;color:rgba(255,255,255,.72);display:block}
+    @media(max-width:920px){.a4-slide{padding-top:104px}.pdf-button{position:relative;top:auto;right:auto;margin:0 0 16px}.a4-sheet{grid-template-columns:1fr;padding:22px}.a4-head{display:block}.a4-logo{margin-top:14px}.summary-top,.summary-roadmap{grid-template-columns:1fr}.a4-title{font-size:28px}}
+    @media print{
+      @page{size:A4 landscape;margin:4mm}
+      html,body{width:289mm!important;height:202mm!important;background:#fff!important;overflow:hidden!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+      .top-header,.nav,.progress,.pdf-button,.a4-slide .section-label,.a4-slide .page-no{display:none!important}
+      .slide:not(.a4-slide){display:none!important}
+      .a4-slide{display:block!important;padding:0!important;margin:0!important;width:289mm!important;height:202mm!important;min-height:202mm!important;border:none!important;overflow:hidden!important;page-break-after:avoid!important;break-after:avoid!important;background:#fff!important}
+      .a4-wrap{width:289mm!important;height:202mm!important;margin:0!important;padding:0!important;overflow:hidden!important}
+      .a4-sheet{width:289mm!important;height:202mm!important;min-height:0!important;border:none!important;border-radius:0!important;box-shadow:none!important;aspect-ratio:auto!important;padding:6mm 8mm!important;gap:3mm!important;display:grid!important;grid-template-rows:auto auto 1fr auto!important;overflow:hidden!important;background:#fff!important}
+      .a4-head{padding-bottom:2.4mm!important;gap:4mm!important}
+      .a4-title{font-size:20pt!important;line-height:1.02!important;letter-spacing:-.02em!important}
+      .a4-sub{font-size:7.6pt!important;line-height:1.22!important;margin-top:1.2mm!important;max-width:175mm!important}
+      .a4-logo{height:22pt!important;max-width:75mm!important}
+      .summary-top{gap:2.4mm!important;grid-template-columns:1.04fr .96fr!important}
+      .summary-block{padding:2.2mm!important;border-radius:3mm!important;break-inside:avoid!important;page-break-inside:avoid!important;overflow:hidden!important}
+      .summary-block h3{font-size:10pt!important;line-height:1.08!important;margin-bottom:1.2mm!important}
+      .summary-block p,.summary-block li{font-size:6.4pt!important;line-height:1.18!important}
+      .summary-block ul{padding-left:3.2mm!important;margin:1mm 0 0!important}
+      .summary-label{font-size:5.8pt!important;line-height:1.05!important;margin-bottom:1.2mm!important;letter-spacing:.11em!important}
+      .summary-priorities{padding:2.4mm!important;overflow:hidden!important}
+      .priority-mini-grid{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:1.8mm!important;margin-top:1.6mm!important}
+      .priority-mini{padding:1.8mm!important;border-radius:2.6mm!important;min-height:31mm!important;break-inside:avoid!important;page-break-inside:avoid!important;overflow:hidden!important;background:#fff!important}
+      .priority-mini em{font-size:5.2pt!important;line-height:1!important;margin-bottom:.9mm!important;letter-spacing:.05em!important}
+      .priority-mini b{font-size:7pt!important;line-height:1.08!important;margin-bottom:1.1mm!important}
+      .priority-mini span{font-size:5.7pt!important;line-height:1.18!important}
+      .summary-roadmap{gap:2.2mm!important;grid-template-columns:repeat(4,1fr)!important}
+      .road-pill{padding:2mm 2.2mm!important;border-radius:3mm!important;break-inside:avoid!important;page-break-inside:avoid!important;min-height:16mm!important}
+      .road-pill b{font-size:7.2pt!important;line-height:1.05!important;margin-bottom:.9mm!important}
+      .road-pill span{font-size:5.9pt!important;line-height:1.18!important}
+    }
+
+    @media(max-width:920px){.audit-grid{grid-template-columns:1fr}.audit-cell{min-height:auto}.flow-step{grid-template-columns:1fr}.priority-wrap{grid-template-columns:1fr}.priority-card.major{grid-column:span 1}.partnership-grid{grid-template-columns:1fr}h2{font-size:clamp(32px,8vw,48px)}h3{font-size:22px}}
+</style>
 </head>
 <body>
 <header class="top-header">
-<img alt="Logo admeX và Bizman Group" class="top-logo" src="logo-admex-bizman.png" />
+<img alt="Logo admeX và Bizman Group" class="top-logo" src="logo-admex-bizman.png"/>
 <div class="top-meta">Đề xuất chiến lược thương hiệu · 2026</div>
 </header>
 <div class="progress" id="progress"></div>
-<nav class="nav">
-<a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a><a href="#s6"></a><a href="#s7"></a><a href="#s8"></a><a href="#s9"></a><a href="#s10"></a><a href="#s11"></a><a href="#s12"></a><a href="#s13"></a><a href="#s14"></a><a href="#s15"></a><a href="#s16"></a><a href="#s17"></a>
-</nav>
+<nav class="nav"><a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a><a href="#s6"></a><a href="#s7"></a><a href="#s8"></a><a href="#s9"></a><a href="#s10"></a><a href="#s11"></a><a href="#s12"></a><a href="#s13"></a><a href="#s14"></a><a href="#s15"></a><a href="#s16"></a><a href="#s17"></a><a href="#s18"></a></nav>
 <main class="deck">
 <section class="slide hero" id="s1">
 <div class="slide-inner">
@@ -117,42 +173,54 @@
 <div>
 <div class="eyebrow">Sự thật khách hàng</div>
 <h2>Từ mua truyền thông sang tạo tác động thị trường.</h2>
-<p class="lead">Khi TikThànhk, các nền tảng mạng xã hội và các nền tảng tìm kiếm tạo reach rẻ hơn, quảng cáo ngoài trời phải chứng minh vai trò khác: tín hiệu quy mô, niềm tin và vị thế thương hiệu ngoài đời thực.</p>
+<p class="lead">Khi TikTok, các nền tảng mạng xã hội và các nền tảng tìm kiếm tạo độ tiếp cận rẻ hơn, quảng cáo ngoài trời phải chứng minh vai trò khác: tín hiệu quy mô, niềm tin và vị thế thương hiệu ngoài đời thực.</p>
 </div>
 </div><div class="section-label">Sự thật khách hàng</div><div class="page-no">04</div>
 </section>
 <section class="slide" id="s5">
 <div class="slide-inner">
 <div class="eyebrow">Bức tranh cạnh tranh</div>
-<h2>Mỗi đối thủ đang sở hữu một lãnh địa. Khoảng trắng của Bizman nằm ở tầng cao hơn.</h2>
+<h2>Mỗi đối thủ đang sở hữu một lợi thế khác nhau. Bizman cần thắng bằng lợi thế thật của mình.</h2>
 <div class="grid g4" style="margin-top:42px">
-<div class="card"><h3>Goldsun</h3><p class="small"><b>Quy mô &amp; độ phủ.</b><br/>Quy mô hệ thống, độ phủ và hình ảnh tập đoàn quảng cáo ngoài trời lớn.</p></div>
-<div class="card"><h3>Chicilon</h3><p class="small"><b>Tần suất &amp; tiếp cận.</b><br/>Thang máy, lặp lại, bối cảnh tiêu dùng hằng ngày.</p></div>
-<div class="card"><h3>Vinama</h3><p class="small"><b>Công nghệ &amp; quảng cáo ngoài trời kỹ thuật số.</b><br/>Màn hình số, màn hình màn hình LED, truyền thông thông minh và cảm giác công nghệ.</p></div>
-<div class="card"><h3>Shojiki</h3><p class="small"><b>Hiện đại &amp; sáng tạo.</b><br/>Trẻ, linh hoạt, hình ảnh và mạng xã hội gần với thế hệ người làm marketing mới.</p></div>
+<div class="card"><h3>Goldsun</h3><p class="small"><b>Quy mô &amp; độ phủ.</b><br/>Hệ thống lớn, độ phủ rộng, hình ảnh tập đoàn truyền thông ngoài trời có sức nặng.</p></div>
+<div class="card"><h3>Chicilon</h3><p class="small"><b>Tần suất &amp; tiếp cận lặp lại.</b><br/>Thang máy, tòa nhà, bối cảnh tiêu dùng hằng ngày và tần suất tiếp xúc cao.</p></div>
+<div class="card"><h3>Vinama</h3><p class="small"><b>Công nghệ &amp; màn hình số.</b><br/>Tập trung vào quảng cáo ngoài trời kỹ thuật số (DOOH), màn hình LED và cảm giác đổi mới công nghệ.</p></div>
+<div class="card"><h3>Shojiki</h3><p class="small"><b>Trẻ &amp; sáng tạo.</b><br/>Hình ảnh hiện đại, linh hoạt, gần với thế hệ người làm marketing mới.</p></div>
 </div>
-<p class="source">Nguồn: website doanh nghiệp Goldsun; Chicilon/Kantar Media 2025; website công khai của đối thủ và các danh sách thị trường.</p>
-</div><div class="section-label">Kiểm toán cạnh tranh</div><div class="page-no">05</div>
+<p class="source">Nguồn tham chiếu: website công khai của các doanh nghiệp, nội dung truyền thông thương hiệu, danh mục dịch vụ và quan sát thị trường. Phần đánh giá là diễn giải chiến lược sơ bộ, cần tiếp tục kiểm chứng bằng dữ liệu bán hàng và phỏng vấn khách hàng.</p>
+</div><div class="section-label">Bức tranh cạnh tranh</div><div class="page-no">05</div>
+</section><section class="slide" id="s6">
+<div class="slide-inner">
+<div class="eyebrow">Nghiên cứu so sánh</div>
+<h2>Cơ sở chiến lược: Bizman không nên chạy đua công nghệ, mà cần sở hữu lãnh địa tác động truyền thông tại vị trí trọng điểm.</h2>
+<div class="audit-grid">
+<div class="audit-cell head">Tiêu chí</div><div class="audit-cell head">Bizman</div><div class="audit-cell head">Goldsun</div><div class="audit-cell head">Vinama</div><div class="audit-cell head">Shojiki</div><div class="audit-cell head">Chicilon</div>
+<div class="audit-cell rowhead">Lợi thế đang được nhận biết</div><div class="audit-cell"><strong>Vị trí trọng điểm cao cấp.</strong><br/>SkyLED, gateway, highway, các điểm chạm tạo cảm giác quy mô.</div><div class="audit-cell"><strong>Quy mô hệ thống.</strong><br/>Độ phủ và hình ảnh tập đoàn lớn.</div><div class="audit-cell"><strong>Màn hình số.</strong><br/>Cảm giác công nghệ và quảng cáo ngoài trời kỹ thuật số (DOOH).</div><div class="audit-cell"><strong>Sự trẻ trung.</strong><br/>Visual, social, cách kể chuyện mới.</div><div class="audit-cell"><strong>Tần suất.</strong><br/>Thang máy và tiếp xúc lặp lại.</div>
+<div class="audit-cell rowhead">Bizman khó thắng nếu đối đầu trực diện ở đâu?</div><div class="audit-cell">Không nên định vị là đơn vị công nghệ nhất hoặc có độ phủ lớn nhất.</div><div class="audit-cell">Goldsun có lợi thế về quy mô và độ phủ.</div><div class="audit-cell">Vinama có lợi thế về màn hình số và cảm giác công nghệ.</div><div class="audit-cell">Shojiki có lợi thế về hình ảnh trẻ và sáng tạo.</div><div class="audit-cell">Chicilon có lợi thế về tần suất trong tòa nhà.</div>
+<div class="audit-cell rowhead">Khoảng trống Bizman có thể sở hữu</div><div class="audit-cell"><strong>Tác động truyền thông tại vị trí trọng điểm (Premium Media Impact).</strong><br/>Không cần nhiều nhất, nhưng phải đáng giá và tạo ảnh hưởng nhất.</div><div class="audit-cell">Độ phủ rộng, nhưng chưa nhất thiết sở hữu câu chuyện tác động cao cấp.</div><div class="audit-cell">Công nghệ mạnh, nhưng dễ bị nhìn như cuộc đua màn hình.</div><div class="audit-cell">Trẻ và mới, nhưng cần thêm độ tin cậy và tài sản biểu tượng.</div><div class="audit-cell">Tần suất cao, nhưng bối cảnh thể hiện vị thế thương hiệu còn giới hạn.</div>
+</div>
+<div class="interpretation"><p class="body"><b>Diễn giải chiến lược:</b> Bizman không cần thắng bằng “hiện đại hơn” nếu điều đó đồng nghĩa với đầu tư công nghệ quy mô lớn. Bizman cần thắng bằng năng lực tạo tác động truyền thông (Media Impact) từ những vị trí trọng điểm cao cấp, nơi thương hiệu không chỉ xuất hiện mà còn được thị trường ghi nhận.</p></div>
+</div><div class="section-label">Nghiên cứu so sánh</div><div class="page-no">06</div>
 </section>
-<section class="slide" id="s6">
+<section class="slide" id="s7">
 <div class="slide-inner">
 <div class="eyebrow">Bản đồ định vị</div>
-<h2>Khoảng trắng chiến lược: một đối tác hiện đại, có tài sản thật, giúp thương hiệu tạo ảnh hưởng trên thị trường.</h2>
+<h2>Khoảng trắng chiến lược của Bizman nằm ở tác động truyền thông tại các vị trí trọng điểm.</h2>
 <div class="matrix" style="margin-top:38px">
 <div class="axis-x"></div><div class="axis-y"></div>
 <div class="axis-label x-left">Bán vị trí truyền thông</div><div class="axis-label x-right">Hoạch định tác động</div>
-<div class="axis-label y-top">Hiện đại / dẫn dắt bởi công nghệ</div><div class="axis-label y-bottom">Truyền thống</div>
-<div class="dot" style="left:50%;top:43%"><i></i><span>Goldsun</span></div>
-<div class="dot" style="left:62%;top:36%"><i></i><span>Chicilon</span></div>
-<div class="dot" style="left:67%;top:30%"><i></i><span>Vinama</span></div>
-<div class="dot" style="left:72%;top:26%"><i></i><span>Shojiki</span></div>
-<div class="dot" style="left:42%;top:56%"><i></i><span>Bizman hiện tại</span></div>
+<div class="axis-label y-top">Tác động truyền thông tại vị trí trọng điểm</div><div class="axis-label y-bottom">Độ phủ truyền thông</div>
+<div class="dot" style="left:48%;top:46%"><i></i><span>Goldsun</span></div>
+<div class="dot" style="left:52%;top:52%"><i></i><span>Chicilon</span></div>
+<div class="dot" style="left:62%;top:40%"><i></i><span>Vinama</span></div>
+<div class="dot" style="left:66%;top:38%"><i></i><span>Shojiki</span></div>
+<div class="dot" style="left:40%;top:36%"><i></i><span>Bizman hiện tại</span></div>
 <div class="dot biz" style="left:78%;top:20%"><i></i><span>Bizman 2030</span></div>
 </div>
-<p class="source">Lưu ý: Đây là bản đồ nhận thức theo lãnh địa thương hiệu và cách tiếp cận thị trường, không phải bảng xếp hạng quy mô hay sức mạnh hệ thống vị trí. Goldsun được đặt cao hơn để phản ánh quy mô, độ nổi và mức độ đầu tư thương hiệu hiện tại.</p>
-</div><div class="section-label">Khoảng trắng chiến lược</div><div class="page-no">06</div>
+<p class="source">Lưu ý: Bản đồ này đánh giá theo lãnh địa chiến lược, không phải bảng xếp hạng quy mô. Bizman hiện có tài sản tạo tác động tốt, nhưng cần chuyển từ bán vị trí sang hoạch định tác động để sở hữu rõ hơn lãnh địa “tác động truyền thông tại vị trí trọng điểm”.</p>
+</div><div class="section-label">Bản đồ định vị</div><div class="page-no">07</div>
 </section>
-<section class="slide dark-slide" id="s7">
+<section class="slide dark-slide" id="s8">
 <div class="slide-inner">
 <div class="eyebrow">Lựa chọn chiến lược</div>
 <p class="quote"><span class="thin">Bizman không tồn tại để giúp thương hiệu xuất hiện.</span><br/>Bizman tồn tại để giúp thương hiệu được công nhận.</p>
@@ -160,9 +228,9 @@
 <div class="card"><div class="label">Từ</div><h3>Chúng tôi bán quảng cáo ngoài trời.</h3></div>
 <div class="card"><div class="label">Thành</div><h3>Chúng tôi giúp thương hiệu tạo ảnh hưởng ở quy mô lớn thông qua hệ sinh thái tài sản truyền thông ngoài trời.</h3></div>
 </div>
-</div><div class="section-label">Lựa chọn chiến lược</div><div class="page-no">07</div>
+</div><div class="section-label">Lựa chọn chiến lược</div><div class="page-no">08</div>
 </section>
-<section class="slide" id="s8">
+<section class="slide" id="s9">
 <div class="slide-inner split">
 <div>
 <div class="eyebrow">Định vị tương lai</div>
@@ -175,9 +243,9 @@
 <div style="margin-top:24px"><span class="pill">Đáng tin cậy</span><span class="pill">Có tham vọng</span><span class="pill">Luôn đổi mới</span><span class="pill">Có sức ảnh hưởng</span></div>
 <p class="small" style="margin-top:24px">Trẻ hóa bằng tư duy, sản phẩm và ngôn ngữ tăng trưởng; không trẻ hóa hời hợt bằng thiết kế.</p>
 </div>
-</div><div class="section-label">Định vị</div><div class="page-no">08</div>
+</div><div class="section-label">Định vị</div><div class="page-no">09</div>
 </section>
-<section class="slide" id="s9">
+<section class="slide" id="s10">
 <div class="slide-inner">
 <div class="eyebrow">Nền tảng thương hiệu</div>
 <h2>Một hệ chiến lược đủ rộng cho hiện tại và 10 năm tới.</h2>
@@ -186,9 +254,9 @@
 <div class="card"><div class="label">Niềm tin</div><h3>Thương hiệu dẫn đầu không chỉ cần được nhìn thấy. Họ cần được công nhận.</h3></div>
 <div class="card"><div class="label">Tinh chất</div><h3>Được thị trường công nhận</h3><p class="small" style="margin-top:14px">Từ nhận biết sang công nhận. Từ độ hiện diện truyền thông sang sự ghi nhận của thị trường.</p></div>
 </div>
-</div><div class="section-label">Nền tảng thương hiệu</div><div class="page-no">09</div>
+</div><div class="section-label">Nền tảng thương hiệu</div><div class="page-no">10</div>
 </section>
-<section class="slide" id="s10">
+<section class="slide" id="s11">
 <div class="slide-inner">
 <div class="eyebrow">Mô hình chuyển đổi</div>
 <h2>Định vị mới chỉ có giá trị khi được chuyển thành cách vận hành mới.</h2>
@@ -198,30 +266,24 @@
 <div class="card"><div class="label">03</div><h3>Nhà cung cấp truyền thông</h3><p class="small">→ Đối tác kinh doanh</p></div>
 <div class="card"><div class="label">04</div><h3>Triển khai chiến dịch</h3><p class="small">→ Kiến tạo ảnh hưởng thị trường</p></div>
 </div>
-</div><div class="section-label">Chuyển đổi</div><div class="page-no">10</div>
-</section>
-<section class="slide" id="s11">
-<div class="slide-inner">
-<div class="eyebrow">Các luồng hành động chiến lược</div>
-<h2>Sáu luồng hành động để biến định vị thành năng lực thị trường.</h2>
-<div style="margin-top:30px">
-<div class="workstream"><div class="idx">LH 01</div><div><h3>Chiến lược thương hiệu &amp; xây dựng thương hiệu doanh nghiệp</h3><p class="small">Định vị, hệ thông điệp, nâng cấp nhận diện, trang web, hồ sơ doanh nghiệp và tài liệu giới thiệu doanh nghiệp.</p></div></div>
-<div class="workstream"><div class="idx">LH 02</div><div><h3>Khung tác động thị trường</h3><p class="small">Định nghĩa tác động thị trường, sự công nhận, tín hiệu dẫn đầu và vai trò của quảng cáo ngoài trời trong tăng trưởng thương hiệu.</p></div></div>
-<div class="workstream"><div class="idx">LH 03</div><div><h3>Tư tưởng dẫn dắt &amp; thương hiệu lãnh đạo</h3><p class="small">Đối thoại với lãnh đạo doanh nghiệp, truyền thông lãnh đạo, quan hệ báo chí, diễn thuyết và góc nhìn ngành.</p></div></div>
-</div>
-</div><div class="section-label">Luồng hành động</div><div class="page-no">11</div>
+</div><div class="section-label">Chuyển đổi</div><div class="page-no">11</div>
 </section>
 <section class="slide" id="s12">
 <div class="slide-inner">
 <div class="eyebrow">Các luồng hành động chiến lược</div>
-<h2>Không chỉ truyền thông mới. Cần một hệ bán hàng mới.</h2>
-<div style="margin-top:30px">
-<div class="workstream"><div class="idx">LH 04</div><div><h3>Tri thức tác động thị trường</h3><p class="small">Báo cáo tác động thị trường hằng năm, báo cáo xu hướng, góc nhìn ngành hàng và tài liệu phân tích chuyên sâu.</p></div></div>
-<div class="workstream"><div class="idx">LH 05</div><div><h3>Tài sản bán hàng số thông minh</h3><p class="small">Bản đồ vị trí số, mô phỏng góc nhìn thực tế, mô phỏng chiến dịch, trải nghiệm vị trí trực tuyến và công cụ ước tính tác động thị trường.</p></div></div>
-<div class="workstream"><div class="idx">LH 06</div><div><h3>Business Development Chuyển đổi</h3><p class="small">Chuyển câu chuyện bán hàng từ vị trí → giá → báo giá sang thách thức kinh doanh → tác động thị trường → tài sản truyền thông → kết quả.</p></div></div>
+<h2>Sáu luồng hành động cần được triển khai liền mạch để biến định vị thành năng lực thị trường.</h2>
+<div class="quote-box">Bizman không chỉ cần một hệ thống truyền thông mới. Bizman cần một hệ thống bán hàng, xây dựng thương hiệu và tạo tác động hoàn toàn mới.</div>
+<div class="flow-wrap">
+<div class="flow-step"><div class="num">LH 01</div><div><h3>Chiến lược thương hiệu và xây dựng thương hiệu doanh nghiệp</h3><p class="small">Chốt định vị, câu chuyện thương hiệu, hệ thông điệp, nhận diện, website, hồ sơ doanh nghiệp và tài liệu giới thiệu cho lãnh đạo khách hàng.</p></div><div class="outcome"><b>Mục tiêu:</b> Thị trường hiểu Bizman bằng vai trò mới, không chỉ bằng danh mục vị trí.</div></div>
+<div class="flow-step"><div class="num">LH 02</div><div><h3>Khung tác động truyền thông (Media Impact Framework)</h3><p class="small">Định nghĩa cách Bizman tạo tác động truyền thông, sự công nhận, tín hiệu dẫn đầu và vai trò của các vị trí trọng điểm trong tăng trưởng thương hiệu.</p></div><div class="outcome"><b>Mục tiêu:</b> Có “hệ tư duy” riêng để bán hàng và truyền thông nhất quán.</div></div>
+<div class="flow-step"><div class="num">LH 03</div><div><h3>Chuyển đổi bán hàng</h3><p class="small">Chuyển từ vị trí → giá → báo giá sang bài toán kinh doanh → tác động truyền thông → giải pháp → kết quả kỳ vọng.</p></div><div class="outcome"><b>Mục tiêu:</b> Đưa đội sales lên vai trò tư vấn, không chỉ gửi bảng giá.</div></div>
+<div class="flow-step"><div class="num">LH 04</div><div><h3>Tài sản bán hàng số thông minh (Smart Digital Sales Asset)</h3><p class="small">Bản đồ vị trí số, mô phỏng góc nhìn thực tế, mô phỏng chiến dịch, trải nghiệm vị trí trực tuyến và công cụ ước tính tác động.</p></div><div class="outcome"><b>Mục tiêu:</b> Giúp khách hàng nhìn thấy và ra quyết định nhanh hơn.</div></div>
+<div class="flow-step"><div class="num">LH 05</div><div><h3>Năng lực dẫn dắt tư duy (Thought Leadership)</h3><p class="small">Truyền thông lãnh đạo, quan hệ báo chí, báo cáo ngành, góc nhìn thị trường và các nội dung dành cho CEO, CMO, CGO.</p></div><div class="outcome"><b>Mục tiêu:</b> Biến Bizman thành tiếng nói đáng tin cậy về tác động truyền thông ngoài trời.</div></div>
+<div class="flow-step"><div class="num">LH 06</div><div><h3>Hệ sinh thái hợp tác đa điểm chạm</h3><p class="small">Kết nối tài sản ngoài trời của Bizman với năng lực số, dữ liệu, nội dung và nền tảng truyền thông của đối tác chiến lược.</p></div><div class="outcome"><b>Mục tiêu:</b> Mở rộng từ ngoài trời đơn kênh thành giải pháp tác động từ trực tuyến đến ngoài đời thực.</div></div>
 </div>
 </div><div class="section-label">Luồng hành động</div><div class="page-no">12</div>
 </section>
+
 <section class="slide" id="s13">
 <div class="slide-inner split">
 <div>
@@ -276,29 +338,99 @@
 </div><div class="section-label">Kết luận</div><div class="page-no">16</div>
 </section>
 <section class="slide" id="s17">
-<div class="slide-inner split">
-<div>
-<div class="eyebrow">Thảo luận chiến lược</div>
-<h2>Những quyết định cần thống nhất cùng admeX để biến định vị thành hành động.</h2>
-<p class="lead">Mục tiêu của buổi làm việc tiếp theo là xác định rõ tham vọng tăng trưởng, năng lực cần đầu tư và lộ trình triển khai để Đối tác tạo tác động thị trường trở thành một mô hình kinh doanh có thể vận hành.</p>
+<div class="slide-inner">
+<div class="eyebrow">Kế hoạch hành động chiến lược</div>
+<h2>Những ưu tiên chiến lược cần thống nhất để biến định vị mới thành hành động cụ thể.</h2>
+<p class="lead">Các hạng mục dưới đây được sắp xếp theo mức độ ưu tiên, từ nền tảng chiến lược đến năng lực vận hành và hợp tác tăng trưởng.</p>
+<div class="priority-wrap">
+<div class="priority-card"><div class="label">Ưu tiên 01</div><h3>Chốt định vị Bizman 2030</h3><p class="why"><b>Vì sao cần làm:</b> Nếu không thống nhất vai trò mới, website, sales deck, truyền thông và sản phẩm số sẽ đi theo nhiều hướng khác nhau.</p><p class="target"><b>Mục tiêu:</b> Chốt “Đối tác tạo tác động truyền thông” và lãnh địa “tác động truyền thông tại vị trí trọng điểm”.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 02</div><h3>Xác định thị trường tăng trưởng 5–10 năm</h3><p class="why"><b>Vì sao cần làm:</b> Bizman cần biết nên ưu tiên bất động sản, ô tô, tài chính, công nghệ, B2B hay FMCG ở từng giai đoạn.</p><p class="target"><b>Mục tiêu:</b> Xác định nhóm khách hàng trọng tâm, tỷ trọng doanh thu kỳ vọng và lộ trình mở rộng ngành hàng.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 03</div><h3>Rà soát và phân tầng hệ thống vị trí</h3><p class="why"><b>Vì sao cần làm:</b> Không phải vị trí nào cũng tạo tác động như nhau. Bizman cần phân tầng tài sản theo khả năng tạo uy tín, nhận biết và vị thế.</p><p class="target"><b>Mục tiêu:</b> Xây dựng nhóm vị trí trọng điểm cao cấp, nhóm độ phủ, nhóm gateway, highway, airport và landmark.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 04</div><h3>Xây dựng khung tác động truyền thông (Media Impact Framework)</h3><p class="why"><b>Vì sao cần làm:</b> Đây là nền để Bizman giải thích vì sao khách hàng nên đầu tư vào vị trí trọng điểm thay vì chỉ so sánh giá.</p><p class="target"><b>Mục tiêu:</b> Chuẩn hóa cách nói về tác động, công nhận, tín hiệu dẫn đầu và hiệu quả kỳ vọng.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 05</div><h3>Chuyển đổi chiến lược bán hàng</h3><p class="why"><b>Vì sao cần làm:</b> Đội sales không thể bán câu chuyện mới bằng cách gửi bảng vị trí và báo giá như cũ.</p><p class="target"><b>Mục tiêu:</b> Xây dựng kịch bản tư vấn, cấu trúc proposal, bộ câu hỏi khai thác nhu cầu và công cụ hỗ trợ bằng trí tuệ nhân tạo (AI).</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 06</div><h3>Phát triển tài sản bán hàng số thông minh (Smart Digital Sales Asset)</h3><p class="why"><b>Vì sao cần làm:</b> Khách hàng đang khó tìm vị trí, khó hình dung góc nhìn thực tế, khó mockup creative và khó so sánh phương án.</p><p class="target"><b>Mục tiêu:</b> Có bản đồ vị trí số, mô phỏng góc nhìn thực tế, mô phỏng chiến dịch và công cụ ước tính tác động.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 07</div><h3>Nâng cấp thương hiệu doanh nghiệp</h3><p class="why"><b>Vì sao cần làm:</b> Định vị mới cần được nhìn thấy qua website, profile, visual system và cách Bizman xuất hiện trước CEO/CMO.</p><p class="target"><b>Mục tiêu:</b> Tái cấu trúc website, hồ sơ doanh nghiệp, bài giới thiệu năng lực và câu chuyện thương hiệu.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 08</div><h3>Xây dựng năng lực dẫn dắt tư duy</h3><p class="why"><b>Vì sao cần làm:</b> Muốn bán ở tầng CEO, Bizman cần có tiếng nói về thị trường, thương hiệu và tác động truyền thông, không chỉ nói về inventory.</p><p class="target"><b>Mục tiêu:</b> Báo cáo thị trường, nội dung lãnh đạo, bài quan điểm, hội thảo nhỏ với CEO/CMO/CGO.</p></div>
+<div class="priority-card major"><div class="label">Ưu tiên 09 · Hợp tác chiến lược</div><h3>Ký kết ghi nhớ hợp tác giữa Bizman và VCCorp để thắng đa điểm chạm từ trực tuyến đến ngoài đời thực.</h3><p class="why"><b>Vì sao cần làm:</b> Bizman mạnh ở tài sản ngoài trời, VCCorp mạnh ở hệ sinh thái số, nội dung, dữ liệu và công nghệ. Khi kết hợp, hai bên có thể tạo giải pháp tác động truyền thông xuyên suốt hành trình khách hàng.</p><div class="partnership-grid"><div class="partnership-box"><b>Nội lực Bizman đảm nhận</b><p class="small">Vị trí trọng điểm cao cấp, SkyLED, gateway, highway, airport, landmark, vận hành ngoài trời và trải nghiệm hiện diện ngoài đời thực.</p></div><div class="partnership-box"><b>Nội lực VCCorp đảm nhận</b><p class="small">Hệ sinh thái báo chí và nội dung số, video, social, dữ liệu người dùng, công nghệ quảng cáo, trí tuệ nhân tạo (AI), martech và giải pháp tích hợp trực tuyến.</p></div></div><p class="target"><b>Mục tiêu:</b> Xây dựng gói giải pháp “tác động truyền thông đa điểm chạm”, nơi online tạo nhu cầu, offline khuếch đại niềm tin và dữ liệu giúp tối ưu hiệu quả.</p></div>
+<div class="priority-card"><div class="label">Ưu tiên 10</div><h3>Thống nhất lộ trình 90 ngày và 12 tháng</h3><p class="why"><b>Vì sao cần làm:</b> Chiến lược chỉ có giá trị khi chuyển thành việc cụ thể, người phụ trách cụ thể và mốc hoàn thành cụ thể.</p><p class="target"><b>Mục tiêu:</b> Chốt roadmap 90 ngày đầu, bản thử nghiệm tài sản bán hàng số, tài liệu thương hiệu và kế hoạch hợp tác.</p></div>
 </div>
-<div class="stack">
-<div class="card"><div class="label">01 · Tham vọng tăng trưởng</div><h3>Trong 5–10 năm tới, Bizman kỳ vọng tăng trưởng ở đâu?</h3><p class="small">Thị trường ưu tiên, nhóm khách hàng trọng tâm, tỷ trọng khách hàng mới, khả năng mở rộng sang hàng tiêu dùng nhanh, tài chính, công nghệ, ô tô, doanh nghiệp với doanh nghiệp, bất động sản và khách hàng quốc tế.</p></div>
-<div class="card"><div class="label">02 · Mở rộng hệ sinh thái vị trí</div><h3>Bizman muốn mở rộng hệ sinh thái vị trí truyền thông như thế nào?</h3><p class="small">Cao tốc, cửa ngõ, sân bay, màn hình màn hình LED biểu tượng, quảng cáo ngoài trời kỹ thuật số, truyền thông bán lẻ, truyền thông đô thị thông minh, tài sản theo vị trí và những dạng vị trí có thể tạo lợi thế trong 5–10 năm tới.</p></div>
-<div class="card"><div class="label">03 · Chuyển đổi bán hàng</div><h3>Đội ngũ bán hàng kỳ vọng điều gì về chiến lược bán hàng trong xu thế công nghệ tích hợp trí tuệ nhân tạo?</h3><p class="small">Nền tảng vị trí thông minh, đề xuất bán hàng có hỗ trợ trí tuệ nhân tạo, mô phỏng chiến dịch, công cụ ước tính tác động thị trường, tự động hóa bán hàng và cách chuyển từ bán vị trí sang tư vấn tác động.</p></div>
-<div class="card"><div class="label">04 · Tài sản bán hàng số</div><h3>Tài sản bán hàng số thông minh nên được thiết kế để giải quyết điểm nghẽn nào?</h3><p class="small">Khó tìm vị trí, khó hình dung góc nhìn thực tế, khó mô phỏng thiết kế, khó so sánh phương án và khó chứng minh tác động trước khi khách hàng ra quyết định.</p></div>
-<div class="card"><div class="label">05 · Ứng dụng định vị trong tổ chức</div><h3>Bizman cần điều kiện gì để định vị mới được dùng thật trong toàn tổ chức?</h3><p class="small">Chiến lược thương hiệu, khung thông điệp, tài liệu bán hàng, website, hồ sơ doanh nghiệp, tư tưởng dẫn dắt của lãnh đạo, báo cáo tác động thị trường, quy trình đề xuất và lộ trình triển khai 90 ngày đầu.</p></div>
-</div>
-</div><div class="section-label">Bước tiếp theo</div><div class="page-no">17</div>
+</div><div class="section-label">Kế hoạch hành động</div><div class="page-no">17</div>
 </section>
+
+<section class="slide a4-slide" id="s18">
+  <div class="a4-wrap">
+    <button class="pdf-button" type="button" onclick="downloadStrategyPdf()">Xuất PDF bảng tổng hợp</button>
+    <div class="a4-sheet" id="strategy-onepage">
+      <div class="a4-head">
+        <div>
+          <div class="summary-label">Tóm tắt điều hành</div>
+          <div class="a4-title">Bảng tổng hợp kế hoạch chiến lược Bizman</div>
+          <p class="a4-sub">Một trang tóm lược hướng chuyển đổi: từ công ty quảng cáo ngoài trời sang đối tác tạo tác động truyền thông tại các vị trí trọng điểm.</p>
+        </div>
+        <img class="a4-logo" src="logo-admex-bizman.png" alt="admeX và Bizman" />
+      </div>
+
+      <div class="summary-top">
+        <div class="summary-block blue">
+          <div class="summary-label">Định hướng chiến lược</div>
+          <h3>Bizman thắng bằng vị trí trọng điểm, không chạy đua công nghệ.</h3>
+          <p><b>Nhận thức hiện tại:</b> công ty quảng cáo ngoài trời.</p>
+          <p><b>Mục tiêu mới:</b> đối tác tạo tác động truyền thông (Media Impact Partner).</p>
+          <p><b>Lãnh địa sở hữu:</b> tác động truyền thông tại vị trí trọng điểm (Premium Media Impact).</p>
+          <ul>
+            <li>Màn hình LED biểu tượng, SkyLED, vị trí cao cấp.</li>
+            <li>Cửa ngõ, cao tốc/quốc lộ, sân bay, vị trí biểu tượng.</li>
+            <li>Giúp thương hiệu được nhìn thấy, được tin tưởng và được thị trường công nhận.</li>
+          </ul>
+        </div>
+        <div class="summary-block blue">
+          <div class="summary-label">Vai trò hai bên</div>
+          <h3>Hợp lực để tạo tác động đa điểm chạm.</h3>
+          <p><b>Bizman đảm nhận:</b> vị trí trọng điểm cao cấp, SkyLED, màn hình LED biểu tượng, cửa ngõ, cao tốc/quốc lộ, sân bay, vận hành ngoài trời và trải nghiệm hiện diện ngoài đời thực.</p>
+          <p style="margin-top:10px"><b>VCCorp đảm nhận:</b> hệ sinh thái báo chí và nội dung số, video, mạng xã hội, dữ liệu người dùng, công nghệ quảng cáo, trí tuệ nhân tạo (AI), công nghệ tiếp thị (martech) và giải pháp tích hợp trực tuyến.</p>
+          <p style="margin-top:10px"><b>Giá trị tạo ra:</b> trực tuyến tạo nhu cầu, ngoài trời khuếch đại niềm tin, dữ liệu giúp tối ưu hiệu quả.</p>
+        </div>
+      </div>
+
+      <div class="summary-block summary-priorities">
+        <div class="summary-label">10 ưu tiên hành động</div>
+        <div class="priority-mini-grid">
+          <div class="priority-mini"><em>01</em><b>Chốt định vị</b><span>Thống nhất vai trò “đối tác tạo tác động truyền thông” để toàn bộ website, hồ sơ năng lực, tài liệu bán hàng và truyền thông đi cùng một hướng.</span></div>
+          <div class="priority-mini"><em>02</em><b>Chọn thị trường tăng trưởng</b><span>Xác định ngành ưu tiên theo từng giai đoạn: bất động sản, ô tô, tài chính, công nghệ, B2B và FMCG.</span></div>
+          <div class="priority-mini"><em>03</em><b>Phân tầng vị trí</b><span>Tách rõ vị trí cao cấp, vị trí độ phủ, cửa ngõ, cao tốc, sân bay và vị trí biểu tượng để bán theo giá trị tác động.</span></div>
+          <div class="priority-mini"><em>04</em><b>Khung tác động truyền thông</b><span>Chuẩn hóa cách nói về tác động, công nhận, tín hiệu dẫn đầu để khách hàng không chỉ so sánh giá.</span></div>
+          <div class="priority-mini"><em>05</em><b>Chuyển đổi bán hàng</b><span>Xây dựng kịch bản tư vấn, cấu trúc đề xuất, công cụ hỗ trợ bằng trí tuệ nhân tạo (AI) và quy trình bán hàng mới.</span></div>
+          <div class="priority-mini"><em>06</em><b>Tài sản bán hàng số</b><span>Phát triển bản đồ số, góc nhìn thực tế, mô phỏng thiết kế và ước tính tác động trước khi khách hàng ra quyết định.</span></div>
+          <div class="priority-mini"><em>07</em><b>Nâng cấp thương hiệu</b><span>Làm mới website, hồ sơ năng lực, câu chuyện thương hiệu và hệ trình bày để định vị mới được nhìn thấy rõ.</span></div>
+          <div class="priority-mini"><em>08</em><b>Dẫn dắt tư duy</b><span>Xây dựng báo cáo, bài quan điểm, nội dung lãnh đạo và hội thảo chuyên đề để Bizman có tiếng nói thị trường.</span></div>
+          <div class="priority-mini"><em>09</em><b>Hợp tác Bizman × VCCorp</b><span>Bizman phụ trách tài sản ngoài trời; VCCorp phụ trách nội dung số, dữ liệu, công nghệ và trí tuệ nhân tạo (AI).</span></div>
+          <div class="priority-mini"><em>10</em><b>Lộ trình triển khai</b><span>Chuyển chiến lược thành việc cụ thể, người phụ trách cụ thể và mốc thời gian trong 90 ngày và 12 tháng đầu.</span></div>
+        </div>
+      </div>
+      <div class="summary-roadmap">
+        <div class="road-pill"><b>0–90 ngày</b><span>Chốt định vị, phân tầng vị trí, khung tác động truyền thông và kịch bản bán hàng mới.</span></div>
+        <div class="road-pill"><b>3–6 tháng</b><span>Nâng cấp website, hồ sơ năng lực, phiên bản thử nghiệm tài sản bán hàng số và tài liệu sales.</span></div>
+        <div class="road-pill"><b>6–12 tháng</b><span>Báo cáo tác động truyền thông, truyền thông lãnh đạo, đào tạo bán hàng và gói hợp tác Bizman × VCCorp.</span></div>
+        <div class="road-pill"><b>12–24 tháng</b><span>Mở rộng nền tảng số, diễn đàn ngành, sản phẩm đa điểm chạm và lộ trình tiếp cận FMCG.</span></div>
+      </div>
+    </div>
+  </div><div class="section-label">Tổng hợp A4</div><div class="page-no">18</div>
+</section>
+
 </main>
 <script>
   const progress = document.getElementById('progress');
   window.addEventListener('scroll', () => {
     const h = document.documentElement;
-    const p = h.scrollThànhp / (h.scrollHeight - h.clientHeight) * 100;
+    const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
     progress.style.width = p + '%';
   });
+
+  function downloadStrategyPdf(){
+    document.body.classList.add('print-a4-only');
+    setTimeout(() => window.print(), 250);
+    setTimeout(() => document.body.classList.remove('print-a4-only'), 1000);
+  }
 </script>
 </body>
 </html>
