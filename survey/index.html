@@ -5,706 +5,389 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#fff8ea" />
   <title>Khảo sát hành vi lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ</title>
-  <meta name="description" content="Khảo sát ngắn dành cho phụ huynh về hành vi và tiêu chí lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ." />
+  <meta name="description" content="Khảo sát dành cho phụ huynh về hành vi và tiêu chí lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ." />
   <style>
     :root{
-      --bg:#fff8ea;
-      --surface:#ffffff;
-      --surface-soft:#fff3d5;
-      --text:#2c211d;
-      --muted:#786862;
-      --red:#b8322a;
-      --red-dark:#8f251f;
-      --amber:#e9a622;
-      --amber-soft:#ffe9a9;
-      --line:#eadfce;
-      --danger:#b42318;
-      --shadow:0 24px 70px rgba(109,66,29,.12);
-      --radius:28px;
+      --bg:#fff8ea;--surface:#fff;--text:#2c211d;--muted:#786862;
+      --red:#b8322a;--red-dark:#8f251f;--amber:#e9a622;--line:#eadfce;
+      --danger:#b42318;--shadow:0 24px 70px rgba(109,66,29,.12);
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      min-height:100vh;
-      color:var(--text);
+      margin:0;min-height:100vh;color:var(--text);
       background:
-        radial-gradient(circle at 8% 0%, rgba(255,220,126,.55), transparent 34%),
-        radial-gradient(circle at 100% 100%, rgba(184,50,42,.08), transparent 28%),
+        radial-gradient(circle at 8% 0%,rgba(255,220,126,.55),transparent 34%),
+        radial-gradient(circle at 100% 100%,rgba(184,50,42,.08),transparent 28%),
         var(--bg);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans",sans-serif;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
     }
-
     button,input,textarea,select{font:inherit}
-
-    .page{
-      width:min(1180px,calc(100% - 32px));
-      margin:0 auto;
-      padding:32px 0 20px;
-    }
-
+    .page{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:32px 0 20px}
     .shell{
-      display:grid;
-      grid-template-columns:minmax(320px,.9fr) minmax(0,1.3fr);
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(255,255,255,.95);
-      border-radius:34px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
+      display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.3fr);
+      background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.95);
+      border-radius:34px;overflow:hidden;box-shadow:var(--shadow);
     }
-
     .intro{
-      position:relative;
-      overflow:hidden;
-      padding:48px 42px 38px;
-      min-height:760px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      position:relative;overflow:hidden;padding:48px 42px 38px;min-height:760px;
+      display:flex;flex-direction:column;justify-content:space-between;
       background:linear-gradient(155deg,#fff5d8 0%,#ffe49b 52%,#ffd36b 100%);
     }
-
-    .intro::before,.intro::after{
-      content:"";
-      position:absolute;
-      border-radius:999px;
-      pointer-events:none;
-    }
-    .intro::before{
-      width:270px;height:270px;
-      right:-110px;top:-90px;
-      background:rgba(184,50,42,.12);
-    }
-    .intro::after{
-      width:210px;height:210px;
-      left:-90px;bottom:-80px;
-      background:rgba(255,255,255,.28);
-    }
-
+    .intro::before,.intro::after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+    .intro::before{width:270px;height:270px;right:-110px;top:-90px;background:rgba(184,50,42,.12)}
+    .intro::after{width:210px;height:210px;left:-90px;bottom:-80px;background:rgba(255,255,255,.28)}
     .intro-content,.intro-bottom{position:relative;z-index:1}
-
-    .brandline{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:42px;
-    }
-
+    .brandline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:42px}
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      width:max-content;
-      padding:9px 13px;
-      border:1px solid rgba(143,37,31,.17);
-      border-radius:999px;
-      background:rgba(255,255,255,.48);
-      color:var(--red-dark);
-      font-size:12px;
-      font-weight:750;
-      letter-spacing:.04em;
-      text-transform:uppercase;
+      display:inline-flex;align-items:center;gap:8px;width:max-content;padding:9px 13px;
+      border:1px solid rgba(143,37,31,.17);border-radius:999px;background:rgba(255,255,255,.48);
+      color:var(--red-dark);font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;
     }
-
-    .organizer{
-      color:var(--red-dark);
-      font-size:12px;
-      font-weight:700;
-      text-align:right;
-    }
-
-    h1{
-      margin:0 0 20px;
-      max-width:520px;
-      color:#5d241f;
-      font-size:clamp(38px,4.5vw,58px);
-      line-height:1.03;
-      letter-spacing:-.045em;
-      font-weight:780;
-    }
-
-    .intro-copy{
-      margin:0;
-      max-width:500px;
-      color:#6d443b;
-      font-size:16px;
-      line-height:1.72;
-    }
-
-    .meta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:26px;
-    }
-
-    .meta-chip{
-      padding:9px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.54);
-      border:1px solid rgba(143,37,31,.11);
-      color:#6b342d;
-      font-size:13px;
-      font-weight:650;
-    }
-
-    .gift-card{
-      margin-top:28px;
-      padding:20px;
-      border-radius:22px;
-      background:rgba(255,255,255,.66);
-      border:1px solid rgba(143,37,31,.14);
-      box-shadow:0 10px 32px rgba(108,55,24,.08);
-    }
-
-    .gift-kicker{
-      margin-bottom:8px;
-      color:var(--red);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-
-    .gift-card strong{
-      display:block;
-      margin-bottom:8px;
-      color:#4f2520;
-      font-size:17px;
-      line-height:1.4;
-    }
-
-    .gift-card p{
-      margin:0;
-      color:#704c44;
-      font-size:13px;
-      line-height:1.62;
-    }
-
-    .intro-bottom{
-      margin-top:30px;
-      color:#6d443b;
-      font-size:12px;
-      line-height:1.6;
-    }
-
-    .form-wrap{
-      min-width:0;
-      padding:40px 44px 34px;
-      background:var(--surface);
-    }
-
-    .progress-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      margin-bottom:11px;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .progress{
-      height:8px;
-      margin-bottom:36px;
-      overflow:hidden;
-      border-radius:999px;
-      background:#f3ede5;
-    }
-
-    .progress-bar{
-      width:20%;height:100%;
-      border-radius:inherit;
-      background:linear-gradient(90deg,var(--amber),var(--red));
-      transition:width .3s ease;
-    }
-
-    .step{display:none;animation:fade .22s ease}
-    .step.active{display:block}
+    .organizer{color:var(--red-dark);font-size:12px;font-weight:700;text-align:right}
+    h1{margin:0 0 20px;max-width:520px;color:#5d241f;font-size:clamp(38px,4.5vw,58px);line-height:1.03;letter-spacing:-.045em;font-weight:780}
+    .intro-copy{margin:0;max-width:500px;color:#6d443b;font-size:16px;line-height:1.72}
+    .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .meta-chip{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.54);border:1px solid rgba(143,37,31,.11);color:#6b342d;font-size:13px;font-weight:650}
+    .gift-card{margin-top:28px;padding:20px;border-radius:22px;background:rgba(255,255,255,.66);border:1px solid rgba(143,37,31,.14);box-shadow:0 10px 32px rgba(108,55,24,.08)}
+    .gift-kicker{margin-bottom:8px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .gift-card strong{display:block;margin-bottom:8px;color:#4f2520;font-size:17px;line-height:1.4}
+    .gift-card p{margin:0;color:#704c44;font-size:13px;line-height:1.62}
+    .intro-bottom{margin-top:30px;color:#6d443b;font-size:12px;line-height:1.6}
+    .form-wrap{min-width:0;padding:40px 44px 34px;background:var(--surface)}
+    .progress-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:11px;color:var(--muted);font-size:13px}
+    .progress{height:8px;margin-bottom:36px;overflow:hidden;border-radius:999px;background:#f3ede5}
+    .progress-bar{width:11%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--amber),var(--red));transition:width .3s ease}
+    .step{display:none;animation:fade .22s ease}.step.active{display:block}
     @keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-
-    .question-number{
-      margin-bottom:10px;
-      color:var(--red);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-    }
-
-    .step h2{
-      margin:0 0 10px;
-      color:#31221e;
-      font-size:clamp(25px,3vw,32px);
-      line-height:1.22;
-      letter-spacing:-.03em;
-    }
-
-    .step-desc{
-      margin:0 0 28px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.65;
-    }
-
-    .field{margin-bottom:22px}
-    .field-label{
-      display:block;
-      margin-bottom:10px;
-      color:#46332e;
-      font-size:14px;
-      font-weight:750;
-    }
-
-    .options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .options.one{grid-template-columns:1fr}
-    .option{position:relative;min-width:0}
-    .option input{position:absolute;opacity:0;pointer-events:none}
-    .option label{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-height:68px;
-      padding:14px 15px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fff;
-      color:#4a3a35;
-      cursor:pointer;
-      font-size:14px;
-      line-height:1.4;
-      transition:.18s ease;
-    }
-    .option label::before{
-      content:"";
-      width:18px;height:18px;
-      flex:0 0 18px;
-      border:1.7px solid #cbbfb4;
-      border-radius:50%;
-      background:#fff;
-      box-shadow:inset 0 0 0 4px #fff;
-    }
+    .question-number{margin-bottom:10px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .step h2{margin:0 0 10px;color:#31221e;font-size:clamp(25px,3vw,32px);line-height:1.22;letter-spacing:-.03em}
+    .step-desc{margin:0 0 28px;color:var(--muted);font-size:15px;line-height:1.65}
+    .field{margin-bottom:22px}.field-label{display:block;margin-bottom:10px;color:#46332e;font-size:14px;font-weight:750}
+    .options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.options.one{grid-template-columns:1fr}
+    .option{position:relative;min-width:0}.option input{position:absolute;opacity:0;pointer-events:none}
+    .option label{display:flex;align-items:center;gap:12px;min-height:68px;padding:14px 15px;border:1px solid var(--line);border-radius:16px;background:#fff;color:#4a3a35;cursor:pointer;font-size:14px;line-height:1.4;transition:.18s ease}
+    .option label::before{content:"";width:18px;height:18px;flex:0 0 18px;border:1.7px solid #cbbfb4;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 4px #fff}
     .option.checkbox label::before{border-radius:5px}
     .option label:hover{border-color:#d4a65b;transform:translateY(-1px)}
-    .option input:checked + label{
-      border-color:rgba(184,50,42,.55);
-      background:#fff3e3;
-      color:var(--red-dark);
-      font-weight:700;
-      box-shadow:0 8px 22px rgba(184,50,42,.07);
-    }
-    .option input:checked + label::before{border-color:var(--red);background:var(--red)}
-
-    input[type="text"],input[type="tel"],input[type="email"],textarea{
-      width:100%;
-      padding:14px 15px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      outline:none;
-      background:#fff;
-      color:var(--text);
-      transition:border-color .18s,box-shadow .18s;
-    }
-    input:focus,textarea:focus{
-      border-color:rgba(184,50,42,.56);
-      box-shadow:0 0 0 4px rgba(184,50,42,.08);
-    }
-
+    .option input:checked+label{border-color:rgba(184,50,42,.55);background:#fff3e3;color:var(--red-dark);font-weight:700;box-shadow:0 8px 22px rgba(184,50,42,.07)}
+    .option input:checked+label::before{border-color:var(--red);background:var(--red)}
+    input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:14px;outline:none;background:#fff;color:var(--text)}
+    input:focus,textarea:focus{border-color:rgba(184,50,42,.56);box-shadow:0 0 0 4px rgba(184,50,42,.08)}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .hint{margin-top:8px;color:#8a7770;font-size:12px;line-height:1.5}
     .error{display:none;margin-top:9px;color:var(--danger);font-size:13px}
-
-    .legal-box{
-      margin-top:18px;
-      padding:16px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fffaf1;
-      color:#76635c;
-      font-size:12px;
-      line-height:1.65;
-    }
-
-    .actions{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:32px;
-      padding-top:22px;
-      border-top:1px solid var(--line);
-    }
-
-    button{
-      border:0;
-      border-radius:14px;
-      padding:13px 20px;
-      cursor:pointer;
-      font-weight:750;
-      transition:.18s ease;
-    }
-    button:hover{transform:translateY(-1px)}
-    button:disabled{opacity:.55;cursor:not-allowed;transform:none}
-    .btn-secondary{background:#f4eee6;color:#4b3a34}
-    .btn-primary{min-width:132px;margin-left:auto;background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(184,50,42,.2)}
-    .btn-primary:hover{background:var(--red-dark)}
-
-    .state{
-      display:none;
-      min-height:590px;
-      padding:78px 24px;
-      text-align:center;
-      place-items:center;
-    }
-    .state.show{display:grid}
-    .state-inner{max-width:500px}
-    .state-icon{
-      width:76px;height:76px;
-      margin:0 auto 22px;
-      display:grid;place-items:center;
-      border-radius:50%;
-      background:#fff0cd;
-      color:var(--red);
-      font-size:32px;
-      font-weight:900;
-    }
-    .state h2{margin:0 0 12px;font-size:30px;letter-spacing:-.03em}
-    .state p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
-
-    .footer{
-      display:flex;
-      justify-content:space-between;
-      gap:24px;
-      padding:18px 4px 0;
-      color:#7f706a;
-      font-size:12px;
-      line-height:1.6;
-    }
-    .footer a{color:var(--red-dark);text-decoration:none}
-
-    @media(max-width:920px){
-      .shell{grid-template-columns:1fr}
-      .intro{min-height:auto;padding:36px 30px 32px}
-      .brandline{margin-bottom:28px}
-      .form-wrap{padding:34px 30px}
-      .footer{flex-direction:column;gap:5px}
-    }
-
-    @media(max-width:620px){
-      .page{width:min(100% - 16px,1180px);padding:8px 0 16px}
-      .shell{border-radius:22px}
-      .intro,.form-wrap{padding:26px 19px}
-      .brandline{align-items:flex-start}
-      .organizer{max-width:130px}
-      h1{font-size:38px}
-      .options,.grid-2{grid-template-columns:1fr}
-      .option label{min-height:60px}
-      .actions{position:sticky;bottom:0;margin-left:-4px;margin-right:-4px;padding:16px 4px 4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px)}
-      .gift-card{padding:17px}
-    }
+    .matrix{overflow-x:auto;border:1px solid var(--line);border-radius:18px}
+    .matrix table{width:100%;border-collapse:collapse;min-width:640px;background:#fff}
+    .matrix th,.matrix td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:center;font-size:13px}
+    .matrix th:first-child,.matrix td:first-child{text-align:left;font-weight:700;color:#46332e;min-width:180px}
+    .matrix tr:last-child td{border-bottom:0}
+    .matrix input{width:18px;height:18px;accent-color:var(--red)}
+    .branch-note{padding:12px 14px;border-radius:14px;background:#fff8e7;color:#6d4e43;font-size:13px;line-height:1.55;margin-bottom:18px}
+    .legal-box{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fffaf1;color:#76635c;font-size:12px;line-height:1.65}
+    .actions{display:flex;justify-content:space-between;gap:12px;margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
+    button{border:0;border-radius:14px;padding:13px 20px;cursor:pointer;font-weight:750;transition:.18s ease}
+    button:hover{transform:translateY(-1px)}button:disabled{opacity:.55;cursor:not-allowed;transform:none}
+    .btn-secondary{background:#f4eee6;color:#4b3a34}.btn-primary{min-width:132px;margin-left:auto;background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(184,50,42,.2)}
+    .state{display:none;min-height:590px;padding:78px 24px;text-align:center;place-items:center}.state.show{display:grid}
+    .state-inner{max-width:500px}.state-icon{width:76px;height:76px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;background:#fff0cd;color:var(--red);font-size:32px;font-weight:900}
+    .state h2{margin:0 0 12px;font-size:30px;letter-spacing:-.03em}.state p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+    .footer{display:flex;justify-content:space-between;gap:24px;padding:18px 4px 0;color:#7f706a;font-size:12px;line-height:1.6}.footer a{color:var(--red-dark);text-decoration:none}
+    @media(max-width:920px){.shell{grid-template-columns:1fr}.intro{min-height:auto;padding:36px 30px 32px}.brandline{margin-bottom:28px}.form-wrap{padding:34px 30px}.footer{flex-direction:column;gap:5px}}
+    @media(max-width:620px){.page{width:min(100% - 16px,1180px);padding:8px 0 16px}.shell{border-radius:22px}.intro,.form-wrap{padding:26px 19px}.brandline{align-items:flex-start}.organizer{max-width:130px}h1{font-size:38px}.options,.grid-2{grid-template-columns:1fr}.option label{min-height:60px}.actions{position:sticky;bottom:0;margin-left:-4px;margin-right:-4px;padding:16px 4px 4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px)}.gift-card{padding:17px}.matrix{border:0;overflow:visible}.matrix table{min-width:0}.matrix thead{display:none}.matrix tr{display:block;margin-bottom:14px;padding:14px;border:1px solid var(--line);border-radius:16px}.matrix td{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;border:0;padding:8px 0}.matrix td:first-child{display:block;padding:0 0 10px;font-size:15px}.matrix td:not(:first-child)::before{content:attr(data-label);color:var(--muted)}}
   </style>
 </head>
 <body>
-  <main class="page">
-    <section class="shell">
-      <aside class="intro">
-        <div class="intro-content">
-          <div class="brandline">
-            <span class="eyebrow">Khảo sát người tiêu dùng</span>
-            <span class="organizer">admeX Creative Media Agency</span>
-          </div>
+<main class="page">
+<section class="shell">
+<aside class="intro">
+  <div class="intro-content">
+    <div class="brandline"><span class="eyebrow">Khảo sát người tiêu dùng</span><span class="organizer">admeX Creative Media Agency</span></div>
+    <h1>Hành vi lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ</h1>
+    <p class="intro-copy">Nghiên cứu nhằm tìm hiểu hành vi, điểm chạm và tiêu chí lựa chọn sản phẩm hỗ trợ giảm ho dành cho trẻ em tại Việt Nam.</p>
+    <div class="meta-row"><span class="meta-chip">Khoảng 3 phút</span><span class="meta-chip">09 câu hỏi</span><span class="meta-chip">Dành cho phụ huynh đã có con dưới 12 tuổi</span></div>
+    <div class="gift-card">
+      <div class="gift-kicker">Quà tặng dành cho người tham gia</div>
+      <strong>08 người hoàn thành khảo sát hợp lệ sớm nhất sẽ nhận 08 phần quà.</strong>
+      <p>Mỗi phần quà là Combo sản phẩm hỗ trợ giảm ho dành cho người lớn và trẻ em trên 3 tuổi, gồm dạng chai và dạng gói. Quà tặng sẽ được xác nhận và gửi qua email.</p>
+    </div>
+  </div>
+  <div class="intro-bottom">Thông tin thu thập chỉ phục vụ mục đích nghiên cứu thị trường và không thay thế tư vấn, chẩn đoán hoặc chỉ định của bác sĩ/dược sĩ.</div>
+</aside>
 
-          <h1>Hành vi lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ</h1>
-          <p class="intro-copy">Nghiên cứu nhằm tìm hiểu cách phụ huynh lựa chọn, cân nhắc và mua sản phẩm hỗ trợ giảm ho dành cho trẻ em tại Việt Nam.</p>
+<div class="form-wrap">
+<div id="formContent">
+  <div class="progress-head"><span id="stepLabel">Câu 1/9</span><span id="progressText">11%</span></div>
+  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 
-          <div class="meta-row">
-            <span class="meta-chip">Khoảng 2 phút</span>
-            <span class="meta-chip">Tối đa 5 câu hỏi</span>
-            <span class="meta-chip">Dành cho phụ huynh đã có con</span>
-          </div>
-
-          <div class="gift-card">
-            <div class="gift-kicker">Quà tặng dành cho người tham gia</div>
-            <strong>08 người hoàn thành khảo sát hợp lệ sớm nhất sẽ nhận 08 phần quà.</strong>
-            <p>Mỗi phần quà là Combo sản phẩm hỗ trợ giảm ho dành cho người lớn và trẻ em trên 3 tuổi, bao gồm dạng chai và dạng gói. Quà tặng sẽ được xác nhận và gửi qua email tới Anh/Chị hoàn thành khảo sát sớm nhất.</p>
-          </div>
-        </div>
-
-        <div class="intro-bottom">Thông tin thu thập chỉ phục vụ mục đích nghiên cứu thị trường và không thay thế tư vấn, chẩn đoán hoặc chỉ định của bác sĩ/dược sĩ.</div>
-      </aside>
-
-      <div class="form-wrap">
-        <div id="formContent">
-          <div class="progress-head">
-            <span id="stepLabel">Câu 1/5</span>
-            <span id="progressText">20%</span>
-          </div>
-          <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-
-          <form id="surveyForm" novalidate>
-            <section class="step active" data-step="1">
-              <div class="question-number">Câu hỏi sàng lọc</div>
-              <h2>Anh/Chị có phải là phụ huynh đã lập gia đình và đang có con không?</h2>
-              <p class="step-desc">Khảo sát này chỉ dành cho phụ huynh đã lập gia đình và đã có con.</p>
-              <div class="field">
-                <div class="options one">
-                  <div class="option"><input type="radio" name="caregiver_role" value="Phụ huynh đã lập gia đình và có con" id="eligibility_yes"><label for="eligibility_yes">Có, tôi thuộc nhóm đối tượng khảo sát</label></div>
-                  <div class="option"><input type="radio" name="caregiver_role" value="Không thuộc nhóm đối tượng khảo sát" id="eligibility_no"><label for="eligibility_no">Không</label></div>
-                </div>
-                <div class="error">Vui lòng chọn một phương án.</div>
-              </div>
-            </section>
-
-            <section class="step" data-step="2">
-              <div class="question-number">Câu hỏi 2</div>
-              <h2>Khi cần mua sản phẩm hỗ trợ giảm ho cho con, Anh/Chị thường ưu tiên mua ở đâu?</h2>
-              <p class="step-desc">Chọn một nơi Anh/Chị thường ưu tiên nhất.</p>
-              <div class="field">
-                <div class="options">
-                  <div class="option"><input type="radio" name="purchase_channel" value="Nhà thuốc" id="channel1"><label for="channel1">Nhà thuốc</label></div>
-                  <div class="option"><input type="radio" name="purchase_channel" value="Chuỗi cửa hàng Mẹ & Bé" id="channel2"><label for="channel2">Chuỗi cửa hàng Mẹ & Bé</label></div>
-                  <div class="option"><input type="radio" name="purchase_channel" value="Bệnh viện / Phòng khám" id="channel3"><label for="channel3">Bệnh viện / Phòng khám</label></div>
-                  <div class="option"><input type="radio" name="purchase_channel" value="Sàn thương mại điện tử" id="channel4"><label for="channel4">Sàn thương mại điện tử</label></div>
-                  <div class="option"><input type="radio" name="purchase_channel" value="Siêu thị" id="channel5"><label for="channel5">Siêu thị</label></div>
-                  <div class="option"><input type="radio" name="purchase_channel" value="Kênh khác" id="channel6"><label for="channel6">Kênh khác</label></div>
-                </div>
-                <div class="error">Vui lòng chọn một phương án.</div>
-              </div>
-            </section>
-
-            <section class="step" data-step="3">
-              <div class="question-number">Câu hỏi 3</div>
-              <h2>Những yếu tố nào ảnh hưởng nhiều nhất đến quyết định lựa chọn?</h2>
-              <p class="step-desc">Chọn tối đa 3 yếu tố quan trọng nhất.</p>
-              <div class="field">
-                <div class="options" id="criteriaOptions">
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Được bác sĩ khuyên dùng" id="criteria1"><label for="criteria1">Được bác sĩ khuyên dùng</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Được dược sĩ tư vấn" id="criteria2"><label for="criteria2">Được dược sĩ tư vấn</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Thành phần an toàn, rõ ràng" id="criteria3"><label for="criteria3">Thành phần an toàn, rõ ràng</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Hiệu quả được tin tưởng" id="criteria4"><label for="criteria4">Hiệu quả được tin tưởng</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Thương hiệu uy tín" id="criteria5"><label for="criteria5">Thương hiệu uy tín</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Giá phù hợp" id="criteria6"><label for="criteria6">Giá phù hợp</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Được người quen giới thiệu" id="criteria7"><label for="criteria7">Được người quen giới thiệu</label></div>
-                  <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Đánh giá tích cực trên Internet" id="criteria8"><label for="criteria8">Đánh giá tích cực trên Internet</label></div>
-                </div>
-                <div class="error">Vui lòng chọn từ 1 đến 3 yếu tố.</div>
-              </div>
-            </section>
-
-            <section class="step" data-step="4">
-              <div class="question-number">Câu hỏi 4</div>
-              <h2>Điều gì có thể khiến Anh/Chị cân nhắc thử một thương hiệu mới?</h2>
-              <p class="step-desc">Chọn một yếu tố có sức thuyết phục lớn nhất.</p>
-              <div class="field">
-                <div class="options">
-                  <div class="option"><input type="radio" name="first_action" value="Thành phần có nguồn gốc tự nhiên" id="trial1"><label for="trial1">Thành phần có nguồn gốc tự nhiên</label></div>
-                  <div class="option"><input type="radio" name="first_action" value="Sản xuất tại nhà máy đạt tiêu chuẩn cao" id="trial2"><label for="trial2">Sản xuất tại nhà máy đạt tiêu chuẩn cao</label></div>
-                  <div class="option"><input type="radio" name="first_action" value="Có dạng gói tiện sử dụng và mang theo" id="trial3"><label for="trial3">Có dạng gói tiện sử dụng và mang theo</label></div>
-                  <div class="option"><input type="radio" name="first_action" value="Được bác sĩ hoặc dược sĩ tư vấn" id="trial4"><label for="trial4">Được bác sĩ hoặc dược sĩ tư vấn</label></div>
-                  <div class="option"><input type="radio" name="first_action" value="Có ưu đãi hoặc sản phẩm dùng thử" id="trial5"><label for="trial5">Có ưu đãi hoặc sản phẩm dùng thử</label></div>
-                  <div class="option"><input type="radio" name="first_action" value="Thông tin thương hiệu đáng tin cậy" id="trial6"><label for="trial6">Thông tin thương hiệu đáng tin cậy</label></div>
-                </div>
-                <div class="error">Vui lòng chọn một phương án.</div>
-              </div>
-            </section>
-
-            <section class="step" data-step="5">
-              <div class="question-number">Câu hỏi 5</div>
-              <h2>Thông tin để xác nhận khảo sát và liên hệ nhận quà</h2>
-              <p class="step-desc">Email là thông tin bắt buộc để đơn vị tổ chức xác nhận với 08 người hoàn thành hợp lệ sớm nhất.</p>
-
-              <div class="field">
-                <label class="field-label" for="full_name">Họ và tên</label>
-                <input type="text" id="full_name" name="full_name" autocomplete="name" placeholder="Nhập họ và tên" />
-                <div class="error">Vui lòng nhập họ và tên.</div>
-              </div>
-
-              <div class="grid-2">
-                <div class="field">
-                  <label class="field-label" for="email">Email</label>
-                  <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="email@example.com" />
-                  <div class="error">Vui lòng nhập email hợp lệ.</div>
-                </div>
-                <div class="field">
-                  <label class="field-label" for="phone">Số điện thoại</label>
-                  <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xxxxxxxx" />
-                  <div class="error">Vui lòng nhập số điện thoại hợp lệ.</div>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="option checkbox">
-                  <input type="checkbox" id="consent" name="consent" value="Đồng ý" />
-                  <label for="consent">Tôi xác nhận thông tin cung cấp là chính xác và đồng ý để admeX Creative Media Agency sử dụng cho mục đích nghiên cứu thị trường, xác nhận kết quả khảo sát và liên hệ về quà tặng.</label>
-                </div>
-                <div class="error">Vui lòng xác nhận đồng ý trước khi gửi.</div>
-              </div>
-
-              <div class="legal-box">
-                Đơn vị tổ chức: <strong>admeX Creative Media Agency</strong>.<br>
-                Thông tin thu thập chỉ phục vụ mục đích nghiên cứu thị trường và không thay thế tư vấn, chẩn đoán hoặc chỉ định của bác sĩ/dược sĩ.<br>
-                Liên hệ: <strong>Nguyễn Hải Yến</strong> — nguyenhaiyen04@admicro.vn.
-              </div>
-            </section>
-
-            <div class="actions">
-              <button type="button" class="btn-secondary" id="prevBtn" style="visibility:hidden">Quay lại</button>
-              <button type="button" class="btn-primary" id="nextBtn">Tiếp tục</button>
-            </div>
-          </form>
-        </div>
-
-        <section class="state" id="successState">
-          <div class="state-inner">
-            <div class="state-icon">✓</div>
-            <h2>Cảm ơn Anh/Chị đã tham gia</h2>
-            <p>Phản hồi đã được ghi nhận. admeX Creative Media Agency sẽ liên hệ qua email với 08 người hoàn thành khảo sát hợp lệ sớm nhất để xác nhận quà tặng.</p>
-          </div>
-        </section>
-
-        <section class="state" id="ineligibleState">
-          <div class="state-inner">
-            <div class="state-icon">i</div>
-            <h2>Cảm ơn Anh/Chị đã quan tâm</h2>
-            <p>Khảo sát này chỉ dành cho phụ huynh đã lập gia đình và đã có con. Vì vậy, Anh/Chị chưa thuộc nhóm đối tượng phù hợp trong nghiên cứu lần này.</p>
-          </div>
-        </section>
-      </div>
+  <form id="surveyForm" novalidate>
+    <section class="step active">
+      <div class="question-number">Câu hỏi sàng lọc</div>
+      <h2>Anh/Chị có phải là phụ huynh đã lập gia đình và đang có ít nhất một con dưới 12 tuổi không?</h2>
+      <p class="step-desc">Khảo sát chỉ dành cho nhóm đối tượng này.</p>
+      <div class="field"><div class="options one">
+        <div class="option"><input type="radio" name="caregiver_role" value="Có" id="q1y"><label for="q1y">Có, tôi thuộc nhóm đối tượng khảo sát</label></div>
+        <div class="option"><input type="radio" name="caregiver_role" value="Không" id="q1n"><label for="q1n">Không</label></div>
+      </div><div class="error">Vui lòng chọn một phương án.</div></div>
     </section>
 
-    <footer class="footer">
-      <span>© 2026 admeX Creative Media Agency</span>
-      <span>Liên hệ: Nguyễn Hải Yến — <a href="mailto:nguyenhaiyen04@admicro.vn">nguyenhaiyen04@admicro.vn</a></span>
-    </footer>
-  </main>
+    <section class="step">
+      <div class="question-number">Câu hỏi 2</div>
+      <h2>Trong 6 tháng gần đây, con Anh/Chị có từng bị ho không?</h2>
+      <div class="field"><div class="options one">
+        <div class="option"><input type="radio" name="cough_recent" value="Có" id="q2y"><label for="q2y">Có</label></div>
+        <div class="option"><input type="radio" name="cough_recent" value="Không" id="q2n"><label for="q2n">Không</label></div>
+      </div><div class="error">Vui lòng chọn một phương án.</div></div>
+    </section>
 
-  <script>
-    // URL Web App Google Apps Script đang sử dụng để ghi response vào Google Sheets.
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZMga2RXvnIXQEipW6jf1xi_py1fTyiECtjlenHK2mkl7rrBAnlOfUU1KHYKmLfjj2/exec";
+    <section class="step">
+      <div class="question-number">Câu hỏi 3</div>
+      <h2>Trong 6 tháng gần đây, tần suất trẻ bị ho là bao nhiêu?</h2>
+      <p class="step-desc">Nếu trẻ không bị ho, chọn phương án tương ứng.</p>
+      <div class="field"><div class="options">
+        <div class="option"><input type="radio" name="cough_frequency" value="Không bị ho" id="q3a"><label for="q3a">Không bị ho</label></div>
+        <div class="option"><input type="radio" name="cough_frequency" value="1–2 lần" id="q3b"><label for="q3b">1–2 lần</label></div>
+        <div class="option"><input type="radio" name="cough_frequency" value="3–4 lần" id="q3c"><label for="q3c">3–4 lần</label></div>
+        <div class="option"><input type="radio" name="cough_frequency" value="Trên 4 lần" id="q3d"><label for="q3d">Trên 4 lần</label></div>
+        <div class="option"><input type="radio" name="cough_frequency" value="Không nhớ rõ" id="q3e"><label for="q3e">Không nhớ rõ</label></div>
+      </div><div class="error">Vui lòng chọn một phương án.</div></div>
+    </section>
 
-    const form = document.getElementById("surveyForm");
-    const steps = [...document.querySelectorAll(".step")];
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
-    const progressBar = document.getElementById("progressBar");
-    const progressText = document.getElementById("progressText");
-    const stepLabel = document.getElementById("stepLabel");
-    const formContent = document.getElementById("formContent");
-    const successState = document.getElementById("successState");
-    const ineligibleState = document.getElementById("ineligibleState");
-    let currentStep = 0;
+    <section class="step">
+      <div class="question-number">Câu hỏi 4</div>
+      <h2>Khi con bắt đầu có dấu hiệu ho, Anh/Chị thường làm gì đầu tiên?</h2>
+      <div class="field"><div class="options">
+        <div class="option"><input type="radio" name="first_action" value="Theo dõi thêm tại nhà" id="q4a"><label for="q4a">Theo dõi thêm tại nhà</label></div>
+        <div class="option"><input type="radio" name="first_action" value="Đưa trẻ đi khám" id="q4b"><label for="q4b">Đưa trẻ đi khám</label></div>
+        <div class="option"><input type="radio" name="first_action" value="Hỏi dược sĩ" id="q4c"><label for="q4c">Hỏi dược sĩ</label></div>
+        <div class="option"><input type="radio" name="first_action" value="Mua sản phẩm đã từng sử dụng" id="q4d"><label for="q4d">Mua sản phẩm đã từng sử dụng</label></div>
+        <div class="option"><input type="radio" name="first_action" value="Tìm kiếm thông tin trên Internet" id="q4e"><label for="q4e">Tìm kiếm thông tin trên Internet</label></div>
+        <div class="option"><input type="radio" name="first_action" value="Khác" id="q4f"><label for="q4f">Khác</label></div>
+      </div><div class="error">Vui lòng chọn một phương án.</div></div>
+    </section>
 
-    function updateUI(){
-      steps.forEach((step,index)=>step.classList.toggle("active",index===currentStep));
-      const percent=Math.round(((currentStep+1)/steps.length)*100);
-      progressBar.style.width=percent+"%";
-      progressText.textContent=percent+"%";
-      stepLabel.textContent=`Câu ${currentStep+1}/${steps.length}`;
-      prevBtn.style.visibility=currentStep===0?"hidden":"visible";
-      nextBtn.textContent=currentStep===steps.length-1?"Gửi khảo sát":"Tiếp tục";
-      window.scrollTo({top:0,behavior:"smooth"});
-    }
+    <section class="step">
+      <div class="question-number">Câu hỏi 5</div>
+      <h2>Theo Anh/Chị, mức độ phù hợp của các kênh dưới đây khi mua sản phẩm hỗ trợ giảm ho cho trẻ là như thế nào?</h2>
+      <p class="step-desc">Đánh giá từng kênh.</p>
+      <div class="field">
+        <div class="matrix">
+          <table>
+            <thead><tr><th>Kênh</th><th>Rất phù hợp</th><th>Phù hợp</th><th>Bình thường</th><th>Không phù hợp</th></tr></thead>
+            <tbody>
+              <tr><td>Nhà thuốc</td>
+                <td data-label="Rất phù hợp"><input type="radio" name="channel_pharmacy" value="Rất phù hợp"></td>
+                <td data-label="Phù hợp"><input type="radio" name="channel_pharmacy" value="Phù hợp"></td>
+                <td data-label="Bình thường"><input type="radio" name="channel_pharmacy" value="Bình thường"></td>
+                <td data-label="Không phù hợp"><input type="radio" name="channel_pharmacy" value="Không phù hợp"></td></tr>
+              <tr><td>Chuỗi Mẹ & Bé</td>
+                <td data-label="Rất phù hợp"><input type="radio" name="channel_motherbaby" value="Rất phù hợp"></td>
+                <td data-label="Phù hợp"><input type="radio" name="channel_motherbaby" value="Phù hợp"></td>
+                <td data-label="Bình thường"><input type="radio" name="channel_motherbaby" value="Bình thường"></td>
+                <td data-label="Không phù hợp"><input type="radio" name="channel_motherbaby" value="Không phù hợp"></td></tr>
+              <tr><td>Bệnh viện/Phòng khám</td>
+                <td data-label="Rất phù hợp"><input type="radio" name="channel_clinic" value="Rất phù hợp"></td>
+                <td data-label="Phù hợp"><input type="radio" name="channel_clinic" value="Phù hợp"></td>
+                <td data-label="Bình thường"><input type="radio" name="channel_clinic" value="Bình thường"></td>
+                <td data-label="Không phù hợp"><input type="radio" name="channel_clinic" value="Không phù hợp"></td></tr>
+              <tr><td>TMĐT</td>
+                <td data-label="Rất phù hợp"><input type="radio" name="channel_ecommerce" value="Rất phù hợp"></td>
+                <td data-label="Phù hợp"><input type="radio" name="channel_ecommerce" value="Phù hợp"></td>
+                <td data-label="Bình thường"><input type="radio" name="channel_ecommerce" value="Bình thường"></td>
+                <td data-label="Không phù hợp"><input type="radio" name="channel_ecommerce" value="Không phù hợp"></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="error">Vui lòng đánh giá đầy đủ cả 4 kênh.</div>
+      </div>
+      <input type="hidden" name="purchase_channel" id="purchase_channel">
+    </section>
 
-    function hideErrors(step){step.querySelectorAll(".error").forEach(el=>el.style.display="none")}
-    function showError(input){
-      const field=input.closest(".field");
-      const error=field?.querySelector(".error");
-      if(error) error.style.display="block";
-    }
+    <section class="step">
+      <div class="question-number">Câu hỏi 6</div>
+      <h2 id="q6Title">Điều gì khiến Anh/Chị đánh giá Chuỗi Mẹ & Bé như vậy?</h2>
+      <div class="branch-note" id="q6Note">Nội dung câu hỏi sẽ thay đổi theo đánh giá của Anh/Chị ở câu trước.</div>
+      <div class="field">
+        <div class="options" id="q6Positive">
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Tin tưởng đây là nơi chuyên về sản phẩm cho trẻ" id="q6p1"><label for="q6p1">Tin tưởng đây là nơi chuyên về sản phẩm cho trẻ</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Thuận tiện mua cùng các sản phẩm khác cho con" id="q6p2"><label for="q6p2">Thuận tiện mua cùng các sản phẩm khác cho con</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Có nhiều lựa chọn để so sánh" id="q6p3"><label for="q6p3">Có nhiều lựa chọn để so sánh</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Nhân viên tư vấn phù hợp" id="q6p4"><label for="q6p4">Nhân viên tư vấn phù hợp</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Có nhiều chương trình ưu đãi" id="q6p5"><label for="q6p5">Có nhiều chương trình ưu đãi</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_positive" value="Khác" id="q6p6"><label for="q6p6">Khác</label></div>
+        </div>
+        <div class="options" id="q6Negative" style="display:none">
+          <div class="option checkbox"><input type="checkbox" name="barrier_negative" value="Tôi ưu tiên nhà thuốc hơn" id="q6n1"><label for="q6n1">Tôi ưu tiên nhà thuốc hơn</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_negative" value="Muốn có bác sĩ hoặc dược sĩ tư vấn" id="q6n2"><label for="q6n2">Muốn có bác sĩ hoặc dược sĩ tư vấn</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_negative" value="Ít lựa chọn phù hợp" id="q6n3"><label for="q6n3">Ít lựa chọn phù hợp</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_negative" value="Chưa tin tưởng" id="q6n4"><label for="q6n4">Chưa tin tưởng</label></div>
+          <div class="option checkbox"><input type="checkbox" name="barrier_negative" value="Khác" id="q6n5"><label for="q6n5">Khác</label></div>
+        </div>
+        <div class="error">Vui lòng chọn ít nhất một lý do.</div>
+      </div>
+      <input type="hidden" name="barrier" id="barrier">
+    </section>
 
-    function validateCurrentStep(){
-      const step=steps[currentStep];
-      hideErrors(step);
-      let valid=true;
+    <section class="step">
+      <div class="question-number">Câu hỏi 7</div>
+      <h2>Những yếu tố nào ảnh hưởng nhiều nhất đến quyết định lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ?</h2>
+      <p class="step-desc">Chọn tối đa 3 yếu tố.</p>
+      <div class="field"><div class="options">
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Thành phần an toàn" id="q7a"><label for="q7a">Thành phần an toàn</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Hiệu quả" id="q7b"><label for="q7b">Hiệu quả</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Được bác sĩ/dược sĩ khuyên dùng" id="q7c"><label for="q7c">Được bác sĩ/dược sĩ khuyên dùng</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Thương hiệu uy tín" id="q7d"><label for="q7d">Thương hiệu uy tín</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Giá phù hợp" id="q7e"><label for="q7e">Giá phù hợp</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Xuất xứ rõ ràng" id="q7f"><label for="q7f">Xuất xứ rõ ràng</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Được người thân giới thiệu" id="q7g"><label for="q7g">Được người thân giới thiệu</label></div>
+        <div class="option checkbox"><input type="checkbox" name="purchase_criteria" value="Đánh giá tích cực trên Internet" id="q7h"><label for="q7h">Đánh giá tích cực trên Internet</label></div>
+      </div><div class="error">Vui lòng chọn từ 1 đến 3 yếu tố.</div></div>
+    </section>
 
-      if(currentStep===0){
-        const selected=step.querySelector('input[name="caregiver_role"]:checked');
-        if(!selected){showError(step.querySelector('input[name="caregiver_role"]'));valid=false}
-      }
+    <section class="step">
+      <div class="question-number">Câu hỏi 8</div>
+      <h2>Nếu có một thương hiệu mới đáp ứng đầy đủ các tiêu chí Anh/Chị vừa lựa chọn, Anh/Chị có sẵn sàng cân nhắc sử dụng không?</h2>
+      <div class="field"><div class="options one">
+        <div class="option"><input type="radio" name="product_format" value="Chắc chắn sẽ cân nhắc" id="q8a"><label for="q8a">Chắc chắn sẽ cân nhắc</label></div>
+        <div class="option"><input type="radio" name="product_format" value="Có thể cân nhắc" id="q8b"><label for="q8b">Có thể cân nhắc</label></div>
+        <div class="option"><input type="radio" name="product_format" value="Khó thay đổi thương hiệu đang dùng" id="q8c"><label for="q8c">Khó thay đổi thương hiệu đang dùng</label></div>
+        <div class="option"><input type="radio" name="product_format" value="Chỉ cân nhắc nếu được bác sĩ/dược sĩ tư vấn" id="q8d"><label for="q8d">Chỉ cân nhắc nếu được bác sĩ/dược sĩ tư vấn</label></div>
+        <div class="option"><input type="radio" name="product_format" value="Không có ý kiến" id="q8e"><label for="q8e">Không có ý kiến</label></div>
+      </div><div class="error">Vui lòng chọn một phương án.</div></div>
+    </section>
 
-      if(currentStep===1){
-        const selected=step.querySelector('input[name="purchase_channel"]:checked');
-        if(!selected){showError(step.querySelector('input[name="purchase_channel"]'));valid=false}
-      }
+    <section class="step">
+      <div class="question-number">Câu hỏi 9</div>
+      <h2>Thông tin xác nhận khảo sát và liên hệ nhận quà</h2>
+      <p class="step-desc">Email là thông tin bắt buộc để xác nhận với 08 người hoàn thành hợp lệ sớm nhất.</p>
+      <div class="field"><label class="field-label" for="full_name">Họ và tên</label><input type="text" id="full_name" name="full_name" autocomplete="name" placeholder="Nhập họ và tên"><div class="error">Vui lòng nhập họ và tên.</div></div>
+      <div class="grid-2">
+        <div class="field"><label class="field-label" for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="email@example.com"><div class="error">Vui lòng nhập email hợp lệ.</div></div>
+        <div class="field"><label class="field-label" for="phone">Số điện thoại</label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xxxxxxxx"><div class="error">Vui lòng nhập số điện thoại hợp lệ.</div></div>
+      </div>
+      <div class="field"><div class="option checkbox"><input type="checkbox" id="consent" name="consent" value="Đồng ý"><label for="consent">Tôi xác nhận thông tin cung cấp là chính xác và đồng ý để admeX Creative Media Agency sử dụng cho mục đích nghiên cứu thị trường, xác nhận kết quả khảo sát và liên hệ về quà tặng.</label></div><div class="error">Vui lòng xác nhận đồng ý trước khi gửi.</div></div>
+      <div class="legal-box">Đơn vị tổ chức: <strong>admeX Creative Media Agency</strong>.<br>Thông tin thu thập chỉ phục vụ mục đích nghiên cứu thị trường và không thay thế tư vấn, chẩn đoán hoặc chỉ định của bác sĩ/dược sĩ.<br>Liên hệ: <strong>Nguyễn Hải Yến</strong> — nguyenhaiyen04@admicro.vn.</div>
+    </section>
 
-      if(currentStep===2){
-        const checked=step.querySelectorAll('input[name="purchase_criteria"]:checked');
-        if(checked.length<1||checked.length>3){showError(step.querySelector('input[name="purchase_criteria"]'));valid=false}
-      }
+    <div class="actions"><button type="button" class="btn-secondary" id="prevBtn" style="visibility:hidden">Quay lại</button><button type="button" class="btn-primary" id="nextBtn">Tiếp tục</button></div>
+  </form>
+</div>
 
-      if(currentStep===3){
-        const selected=step.querySelector('input[name="first_action"]:checked');
-        if(!selected){showError(step.querySelector('input[name="first_action"]'));valid=false}
-      }
+<section class="state" id="successState"><div class="state-inner"><div class="state-icon">✓</div><h2>Cảm ơn Anh/Chị đã tham gia</h2><p>Phản hồi đã được ghi nhận. admeX Creative Media Agency sẽ liên hệ qua email với 08 người hoàn thành khảo sát hợp lệ sớm nhất để xác nhận quà tặng.</p></div></section>
+<section class="state" id="ineligibleState"><div class="state-inner"><div class="state-icon">i</div><h2>Cảm ơn Anh/Chị đã quan tâm</h2><p>Khảo sát này chỉ dành cho phụ huynh đã lập gia đình và đang có ít nhất một con dưới 12 tuổi.</p></div></section>
+</div>
+</section>
 
-      if(currentStep===4){
-        const fullName=document.getElementById("full_name");
-        const email=document.getElementById("email");
-        const phone=document.getElementById("phone");
-        const consent=document.getElementById("consent");
-        const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-        const phoneOk=/^[0-9+\s().-]{8,15}$/.test(phone.value.trim());
-        if(!fullName.value.trim()){showError(fullName);valid=false}
-        if(!emailOk){showError(email);valid=false}
-        if(!phoneOk){showError(phone);valid=false}
-        if(!consent.checked){showError(consent);valid=false}
-      }
-      return valid;
-    }
+<footer class="footer"><span>© 2026 admeX Creative Media Agency</span><span>Liên hệ: Nguyễn Hải Yến — <a href="mailto:nguyenhaiyen04@admicro.vn">nguyenhaiyen04@admicro.vn</a></span></footer>
+</main>
 
-    document.querySelectorAll('input[name="purchase_criteria"]').forEach(input=>{
-      input.addEventListener("change",()=>{
-        const checked=[...document.querySelectorAll('input[name="purchase_criteria"]:checked')];
-        if(checked.length>3){input.checked=false;alert("Anh/Chị có thể chọn tối đa 3 yếu tố.")}
-      });
-    });
+<script>
+const GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbzZMga2RXvnIXQEipW6jf1xi_py1fTyiECtjlenHK2mkl7rrBAnlOfUU1KHYKmLfjj2/exec";
+const form=document.getElementById("surveyForm");
+const steps=[...document.querySelectorAll(".step")];
+const nextBtn=document.getElementById("nextBtn"),prevBtn=document.getElementById("prevBtn");
+const progressBar=document.getElementById("progressBar"),progressText=document.getElementById("progressText"),stepLabel=document.getElementById("stepLabel");
+const formContent=document.getElementById("formContent"),successState=document.getElementById("successState"),ineligibleState=document.getElementById("ineligibleState");
+let currentStep=0;
 
-    function getFormData(){
-      const fd=new FormData(form);
-      const payload={submitted_at:new Date().toISOString(),page_url:window.location.href,user_agent:navigator.userAgent};
-      for(const [key,value] of fd.entries()) payload[key]=payload[key]?payload[key]+", "+value:value;
-      return payload;
-    }
+function updateUI(){
+  steps.forEach((s,i)=>s.classList.toggle("active",i===currentStep));
+  const p=Math.round(((currentStep+1)/steps.length)*100);
+  progressBar.style.width=p+"%";progressText.textContent=p+"%";stepLabel.textContent=`Câu ${currentStep+1}/${steps.length}`;
+  prevBtn.style.visibility=currentStep===0?"hidden":"visible";
+  nextBtn.textContent=currentStep===steps.length-1?"Gửi khảo sát":"Tiếp tục";
+  if(currentStep===5) updateQ6Branch();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function hideErrors(step){step.querySelectorAll(".error").forEach(e=>e.style.display="none")}
+function showError(input){const e=input?.closest(".field")?.querySelector(".error");if(e)e.style.display="block"}
 
-    async function submitSurvey(){
-      const payload=getFormData();
-      nextBtn.disabled=true;
-      nextBtn.textContent="Đang gửi...";
-      try{
-        await fetch(GOOGLE_SCRIPT_URL,{
-          method:"POST",
-          mode:"no-cors",
-          headers:{"Content-Type":"text/plain;charset=utf-8"},
-          body:JSON.stringify(payload)
-        });
-        formContent.style.display="none";
-        successState.classList.add("show");
-      }catch(error){
-        console.error(error);
-        alert("Không thể gửi khảo sát. Vui lòng kiểm tra kết nối và thử lại.");
-        nextBtn.disabled=false;
-        nextBtn.textContent="Gửi khảo sát";
-      }
-    }
+function updateQ6Branch(){
+  const rating=document.querySelector('input[name="channel_motherbaby"]:checked')?.value;
+  const positive=["Rất phù hợp","Phù hợp"].includes(rating);
+  document.getElementById("q6Positive").style.display=positive?"grid":"none";
+  document.getElementById("q6Negative").style.display=positive?"none":"grid";
+  document.getElementById("q6Title").textContent=positive
+    ?"Điều gì khiến Anh/Chị đánh giá Chuỗi Mẹ & Bé là phù hợp?"
+    :"Điều gì khiến Anh/Chị chưa ưu tiên mua sản phẩm hỗ trợ giảm ho tại Chuỗi Mẹ & Bé?";
+}
 
-    nextBtn.addEventListener("click",()=>{
-      if(!validateCurrentStep()) return;
-      if(currentStep===0){
-        const eligible=document.querySelector('input[name="caregiver_role"]:checked')?.value;
-        if(eligible==="Không thuộc nhóm đối tượng khảo sát"){
-          formContent.style.display="none";
-          ineligibleState.classList.add("show");
-          return;
-        }
-      }
-      if(currentStep<steps.length-1){currentStep++;updateUI()}else{submitSurvey()}
-    });
+function validateCurrentStep(){
+  const step=steps[currentStep];hideErrors(step);let valid=true;
+  const requireRadio=name=>{const x=step.querySelector(`input[name="${name}"]:checked`);if(!x){showError(step.querySelector(`input[name="${name}"]`));valid=false}};
+  if(currentStep===0)requireRadio("caregiver_role");
+  if(currentStep===1)requireRadio("cough_recent");
+  if(currentStep===2)requireRadio("cough_frequency");
+  if(currentStep===3)requireRadio("first_action");
+  if(currentStep===4){
+    ["channel_pharmacy","channel_motherbaby","channel_clinic","channel_ecommerce"].forEach(n=>{if(!step.querySelector(`input[name="${n}"]:checked`))valid=false});
+    if(!valid)showError(step.querySelector('input[name="channel_pharmacy"]'));
+  }
+  if(currentStep===5){
+    const positive=["Rất phù hợp","Phù hợp"].includes(document.querySelector('input[name="channel_motherbaby"]:checked')?.value);
+    const name=positive?"barrier_positive":"barrier_negative";
+    const checked=step.querySelectorAll(`input[name="${name}"]:checked`);
+    if(!checked.length){showError(step.querySelector(`input[name="${name}"]`));valid=false}
+  }
+  if(currentStep===6){
+    const checked=step.querySelectorAll('input[name="purchase_criteria"]:checked');
+    if(checked.length<1||checked.length>3){showError(step.querySelector('input[name="purchase_criteria"]'));valid=false}
+  }
+  if(currentStep===7)requireRadio("product_format");
+  if(currentStep===8){
+    const fullName=document.getElementById("full_name"),email=document.getElementById("email"),phone=document.getElementById("phone"),consent=document.getElementById("consent");
+    if(!fullName.value.trim()){showError(fullName);valid=false}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){showError(email);valid=false}
+    if(!/^[0-9+\s().-]{8,15}$/.test(phone.value.trim())){showError(phone);valid=false}
+    if(!consent.checked){showError(consent);valid=false}
+  }
+  return valid;
+}
 
-    prevBtn.addEventListener("click",()=>{if(currentStep>0){currentStep--;updateUI()}});
-    updateUI();
-  </script>
+document.querySelectorAll('input[name="purchase_criteria"]').forEach(i=>i.addEventListener("change",()=>{
+  const c=[...document.querySelectorAll('input[name="purchase_criteria"]:checked')];
+  if(c.length>3){i.checked=false;alert("Anh/Chị có thể chọn tối đa 3 yếu tố.")}
+}));
+
+function getFormData(){
+  const matrix={
+    "Nhà thuốc":document.querySelector('input[name="channel_pharmacy"]:checked')?.value||"",
+    "Chuỗi Mẹ & Bé":document.querySelector('input[name="channel_motherbaby"]:checked')?.value||"",
+    "Bệnh viện/Phòng khám":document.querySelector('input[name="channel_clinic"]:checked')?.value||"",
+    "TMĐT":document.querySelector('input[name="channel_ecommerce"]:checked')?.value||""
+  };
+  document.getElementById("purchase_channel").value=Object.entries(matrix).map(([k,v])=>`${k}: ${v}`).join(" | ");
+  const positive=["Rất phù hợp","Phù hợp"].includes(matrix["Chuỗi Mẹ & Bé"]);
+  const reasonName=positive?"barrier_positive":"barrier_negative";
+  document.getElementById("barrier").value=[...document.querySelectorAll(`input[name="${reasonName}"]:checked`)].map(x=>x.value).join(", ");
+  const fd=new FormData(form);
+  const payload={submitted_at:new Date().toISOString(),page_url:window.location.href,user_agent:navigator.userAgent};
+  for(const [k,v] of fd.entries()){
+    if(k==="barrier_positive"||k==="barrier_negative"||k.startsWith("channel_"))continue;
+    payload[k]=payload[k]?payload[k]+", "+v:v;
+  }
+  return payload;
+}
+
+async function submitSurvey(){
+  const payload=getFormData();nextBtn.disabled=true;nextBtn.textContent="Đang gửi...";
+  try{
+    await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+    formContent.style.display="none";successState.classList.add("show");
+  }catch(err){
+    console.error(err);alert("Không thể gửi khảo sát. Vui lòng kiểm tra kết nối và thử lại.");
+    nextBtn.disabled=false;nextBtn.textContent="Gửi khảo sát";
+  }
+}
+nextBtn.addEventListener("click",()=>{
+  if(!validateCurrentStep())return;
+  if(currentStep===0&&document.querySelector('input[name="caregiver_role"]:checked')?.value==="Không"){
+    formContent.style.display="none";ineligibleState.classList.add("show");return;
+  }
+  if(currentStep<steps.length-1){currentStep++;updateUI()}else submitSurvey();
+});
+prevBtn.addEventListener("click",()=>{if(currentStep>0){currentStep--;updateUI()}});
+updateUI();
+</script>
 </body>
 </html>
