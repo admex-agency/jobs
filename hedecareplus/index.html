@@ -1,1 +1,779 @@
 
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HedeCare+ | Báo cáo khảo sát & Định hướng chiến lược</title>
+<style>
+:root{
+  --ink:#25262b;
+  --muted:#70727a;
+  --cream:#fff8f2;
+  --paper:#fffdfb;
+  --line:#f1ded2;
+  --brand:#ff7a1a;
+  --brand-dark:#ee4d20;
+  --brand-deep:#263773;
+  --leaf:#ffb34d;
+  --mint:#fff1e6;
+  --warm:#fff6ee;
+  --gold:#f7a533;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#f7f3ef;line-height:1.5}
+.shell{max-width:1440px;margin:auto;background:var(--paper);box-shadow:0 22px 70px rgba(238,77,32,.08)}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:rgba(255,253,251,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand{font-weight:900;letter-spacing:-1px;font-size:22px;color:var(--brand-deep)}nav a{color:var(--ink);text-decoration:none;font-size:13px;margin-left:18px}
+section{padding:76px 6vw;border-bottom:1px solid var(--line)}.hero{min-height:84vh;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;
+background:
+radial-gradient(circle at 84% 17%,rgba(255,179,77,.48),transparent 27%),
+radial-gradient(circle at 92% 79%,rgba(238,77,32,.20),transparent 34%),
+linear-gradient(135deg,#fffdfb 0%,#fff5ec 54%,#ffe8d7 100%);
+color:var(--ink)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:var(--brand-dark)}.hero .eyebrow{color:var(--brand-dark)}.strategy .eyebrow{color:#b64027}
+h1{font-size:clamp(48px,7vw,94px);line-height:.95;letter-spacing:-.062em;margin:18px 0 24px}h2{font-size:min(52px,6vw);line-height:1.06;letter-spacing:-.042em;margin:10px 0 24px}h3{font-size:22px;letter-spacing:-.025em;margin-top:10px}
+.lead{font-size:20px;max-width:780px;color:#555861}.hero-card{border:1px solid #f3d5c3;background:rgba(255,255,255,.74);padding:30px;border-radius:24px}.hero-card b{font-size:72px;display:block;letter-spacing:-.06em;color:var(--brand-dark)}.hero-card span{color:var(--muted)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.kpi{padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--cream)}.kpi b{font-size:46px;letter-spacing:-.05em;display:block;color:var(--brand-dark)}.kpi span{color:var(--muted);font-size:14px}
+.note{border-left:4px solid var(--brand);padding:18px 22px;background:#fff0e5;border-radius:0 12px 12px 0}.warning{background:#fff4dd;border-color:var(--gold)}
+.bar-row{margin:18px 0}.bar-label{display:flex;justify-content:space-between;gap:18px;font-size:14px;margin-bottom:8px}.bar-label b{white-space:nowrap}.track{height:10px;background:#ebe8df;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--brand-deep),var(--brand),var(--brand-dark));border-radius:999px}
+.channel-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}.channel-row span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.donut{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--brand-dark) calc(var(--p)*1%),#f3e8e1 0);position:relative}.donut:after{content:"";position:absolute;inset:8px;background:var(--paper);border-radius:50%}.donut b{z-index:1;font-size:15px}
+.quote{font-size:clamp(28px,3.6vw,50px);line-height:1.1;letter-spacing:-.038em;max-width:1140px}.quote em{color:var(--brand-dark);font-style:normal}
+.card{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--paper)}.card .num{font-size:12px;color:var(--brand-dark);font-weight:900;letter-spacing:.12em}.card p{color:var(--muted)}
+.strategy{background:linear-gradient(145deg,#fff3d8 0%,#ffe2a9 55%,#ffd38b 100%);color:var(--ink)}.strategy .card{background:rgba(255,255,255,.70);border-color:#efd8bd}.strategy .card p{color:#5f5550}.strategy h3{color:#6b241e}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px}.step{padding:26px;border:1px solid var(--line);min-height:220px}.step:not(:last-child){border-right:0}.step b{font-size:34px;display:block;color:var(--brand-dark)}.step small{color:var(--muted)}
+.position-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.position-map{position:relative;min-height:520px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(to right,transparent 49.85%,#cfc8ba 50%,transparent 50.15%),linear-gradient(to bottom,transparent 49.85%,#cfc8ba 50%,transparent 50.15%),linear-gradient(135deg,#fffdfb,#fff2e8)}
+.axis-x,.axis-y{position:absolute;font-size:12px;font-weight:800;color:var(--muted)}.axis-x.left{bottom:12px;left:16px}.axis-x.right{bottom:12px;right:16px}.axis-y.top{top:14px;left:52%;transform:translateX(-50%)}.axis-y.bottom{bottom:14px;left:52%;transform:translateX(-50%)}.bubble{position:absolute;transform:translate(-50%,-50%);padding:12px 16px;border-radius:999px;background:white;border:1px solid var(--line);font-weight:800;box-shadow:0 8px 25px rgba(28,47,105,.10);white-space:nowrap}.bubble.hede{background:linear-gradient(135deg,var(--brand-deep),#334a96 58%,var(--brand-dark));color:white;border-color:var(--brand-deep);font-size:17px;padding:16px 21px}.bubble small{display:block;font-weight:500;font-size:10px;opacity:.72}
+.platform{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:stretch}.big-idea{background:linear-gradient(145deg,#7a2a22 0%,#a8422d 62%,#d6642d 122%);color:white;padding:42px;border-radius:24px;display:flex;flex-direction:column;justify-content:space-between}.big-idea strong{font-size:clamp(36px,4vw,62px);line-height:1;letter-spacing:-.05em}.big-idea p{color:#dce7d8}.action-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}.action{padding:22px;border:1px solid #ecd7c4;border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 8px 22px rgba(122,42,34,.05)}.action b{color:#9b3425}
+.timeline{overflow:auto;border:1px solid var(--line);border-radius:20px;background:white}table{border-collapse:collapse;width:100%;min-width:1180px}th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line)}thead th{padding:14px 8px;background:linear-gradient(90deg,#ff7a1a,#ee4d20);color:white;font-size:12px}thead th:first-child{text-align:left;padding-left:20px;min-width:310px}tbody th{text-align:left;padding:15px 18px;background:var(--cream);width:310px}tbody th b{display:block;font-size:14px}tbody th small{display:block;color:var(--muted);font-weight:400;margin-top:4px}tbody td{height:66px;min-width:68px;text-align:center;background:#fff}
+tbody td.on{background:#fff5ed}
+tbody td.on span{display:inline-block;width:32px;height:7px;border-radius:999px;background:#f39a45}
+tbody td.pulse{position:relative;background:#ffe1cf}
+tbody td.pulse span{display:inline-block;width:42px;height:13px;border-radius:999px;background:linear-gradient(90deg,#e93422,#ff6b24);box-shadow:0 4px 12px rgba(233,52,34,.24)}
+tbody td.pulse::after{content:"";position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%;background:#e93422}
+.principles{display:grid;grid-template-columns:1fr;gap:14px;max-width:1100px}.principle{display:grid;grid-template-columns:72px 280px 1fr;align-items:center;gap:22px;padding:22px 26px;border:1px solid var(--line);border-left:5px solid var(--brand-dark);border-top:1px solid var(--line);background:linear-gradient(180deg,#fffdfb 0%,#fff8f2 100%);border-radius:18px}.principle b{font-size:19px;color:#6b241e}.principle p{color:var(--muted);margin:0}
+
+footer{padding:44px 6vw;background:#24386d;color:#dfe6f6;font-size:13px}
+.footer-grid{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(0,1.45fr);gap:72px;max-width:1220px;margin:0 auto;align-items:start}
+.footer-brand b,.footer-sources b{color:white;font-size:15px}
+.footer-brand p{max-width:360px;color:#d8e0f2}
+.footer-brand span{display:block;margin-top:28px;color:#aebbd8}
+.footer-sources p{margin:7px 0;color:#d7dff0;line-height:1.55}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:28px}}
+
+@media(max-width:900px){.hero,.grid-4,.grid-3,.grid-2,.ladder,.position-wrap,.platform,.principles{grid-template-columns:1fr}.hero:not(.hero-kv){gap:34px;padding-top:90px}.step:not(:last-child){border-right:1px solid var(--line);border-bottom:0}nav .links{display:none}section{padding:56px 24px}.action-list{grid-template-columns:1fr}}
+@media print{nav{display:none}.shell{box-shadow:none}section{break-inside:avoid}body{background:white}}
+
+h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-radius:999px;background:linear-gradient(90deg,#ff9b2f,var(--brand-dark))}
+.hero h1::after{content:"";display:block;width:110px;height:5px;margin-top:22px;border-radius:999px;background:linear-gradient(90deg,#ffb34d,#ff7a1a,#ee4d20)}
+.card,.kpi,.note,.principle,.timeline,.position-map{box-shadow:0 10px 30px rgba(28,47,105,.035)}
+
+.action p{color:#5f5550;margin-bottom:0}
+
+.timeline-legend{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0 14px;color:var(--muted);font-size:13px}
+.timeline-legend span{display:flex;align-items:center;gap:8px}
+.timeline-legend i{width:22px;height:10px;border-radius:999px;display:inline-block;border:1px solid #e6d7cc}
+.timeline-legend i.active{background:#f39a45}
+.timeline-legend i.pulse{width:28px;height:13px;background:linear-gradient(90deg,#e93422,#ff6b24);border-color:#e93422;box-shadow:0 3px 9px rgba(233,52,34,.20)}
+.timeline-legend i.off{background:#fff}
+
+
+.principle::before{counter-increment:principle;content:"0" counter(principle);display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:#fff0df;color:#b64027;font-weight:900;font-size:18px}
+.principles{counter-reset:principle}
+@media(max-width:900px){.principle{grid-template-columns:1fr}.principle::before{margin-bottom:4px}}
+
+.hero.hero-kv{
+  position:relative;
+  display:block;
+  min-height:0;
+  padding:0;
+  overflow:hidden;
+  background:#fff7ef;
+  color:var(--ink);
+}
+.hero-kv-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#fff7ef;
+}
+
+.hero-kv-media img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+
+
+
+
+
+@media(max-width:900px){
+  .hero-kv-media{aspect-ratio:4/3}
+  .hero-kv-media img{object-position:center}
+  
+  
+  
+}
+
+
+.objective-stack{display:grid;gap:14px;max-width:1180px}
+.objective-item{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:24px;
+  align-items:start;
+  padding:26px 28px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(180deg,#fffdfb 0%,#fff7f0 100%);
+  box-shadow:0 10px 28px rgba(122,42,34,.04);
+}
+.objective-index{
+  display:grid;
+  place-items:center;
+  width:56px;
+  height:56px;
+  border-radius:18px;
+  background:#fff0df;
+  color:#b64027;
+  font-size:18px;
+  font-weight:900;
+}
+.objective-label{
+  display:inline-block;
+  margin-bottom:7px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--brand-dark);
+}
+.objective-item h3{margin:0 0 8px;font-size:24px}
+.objective-item p{margin:0;color:var(--muted)}
+.research-overview{background:linear-gradient(180deg,#fffaf6 0%,#fffdfb 100%)}
+.research-card{min-height:240px}
+.research-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  margin-top:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--line);
+}
+.research-strip>div{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:20px;
+  background:#fff;
+}
+.research-strip b{font-size:30px;color:var(--brand-dark);letter-spacing:-.04em}
+.research-strip span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){
+  .objective-item{grid-template-columns:1fr}
+  .research-strip{grid-template-columns:1fr 1fr}
+}
+
+
+.comms-framework{background:linear-gradient(180deg,#fffdfb 0%,#fff7f0 100%)}
+.comms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.comms-card{
+  position:relative;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 12px 32px rgba(122,42,34,.045);
+  overflow:hidden;
+}
+.comms-card::after{
+  content:"";
+  position:absolute;
+  right:-32px;
+  top:-32px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ffe1c7 0%,rgba(255,225,199,0) 70%);
+}
+.comms-no{font-size:12px;font-weight:900;color:#b64027;letter-spacing:.12em}
+.comms-tag{
+  display:inline-flex;
+  margin:14px 0 8px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#fff0df;
+  color:#9b3425;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+.comms-card h3{margin:5px 0 10px;font-size:25px}
+.comms-card p{color:var(--muted)}
+.comms-meta{margin-top:9px;padding-top:9px;border-top:1px solid #f2e5dc;font-size:13px;color:#655b57}
+
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+  .comms-grid,.message-grid,
+}
+
+
+.mockup-gallery{padding-top:20px}
+.mockup-gallery .lead{max-width:900px;color:var(--muted);margin-bottom:26px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.gallery-item{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.06);cursor:zoom-in;transition:.25s}
+.gallery-item:hover{transform:translateY(-4px)}
+.gallery-item img{display:block;width:100%;height:auto}
+.lightbox{position:fixed;inset:0;background:rgba(20,20,20,.88);display:none;align-items:center;justify-content:center;z-index:9999;padding:40px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:92vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+@media(max-width:900px){.gallery-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<nav><div class="brand">admeX × HedeCare+</div><div class="links"><a href="#ketqua">Kết quả</a><a href="#insight">Insight</a><a href="#dinhvi">Định vị</a><a href="#sangtao">Sáng tạo</a><a href="#timeline">Kế hoạch 12 tháng</a></div></nav>
+
+
+
+<section class="hero hero-kv">
+  <div class="hero-kv-media">
+    <img src="assets/embedded_01.png" alt="HedeCare+ — Chuẩn dược chăm ho. Gọn nỗi lo ho.">
+  </div>
+</section>
+
+
+
+
+<section id="brief-overview">
+  <div class="eyebrow">Overview Brief</div>
+  <h2>BCG Alliance cần xây dựng HedeCare+ từ một sản phẩm mới thành một thương hiệu đủ sức thâm nhập và tăng trưởng trên thị trường.</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="num">BỐI CẢNH DOANH NGHIỆP</div>
+      <h3>Thương hiệu mới, chưa có hạ tầng marketing hoàn chỉnh</h3>
+      <p>BCG Alliance hiện chưa có đội ngũ Marketing in-house và kỳ vọng admeX đóng vai trò đối tác tư vấn chiến lược, đồng thời phối hợp triển khai các hạng mục truyền thông, nội dung và media theo một Master Plan dài hạn.</p>
+    </div>
+
+    <div class="card">
+      <div class="num">BÀI TOÁN THỊ TRƯỜNG</div>
+      <h3>Không đi theo lối mòn cạnh tranh trực diện tại OTC</h3>
+      <p>Thị trường siro ho đã có nhiều thương hiệu mạnh, độ phủ sâu tại nhà thuốc và mức đầu tư trade marketing cao. BCG Alliance định hướng chọn chuỗi Mẹ & Bé làm điểm vào chiến lược, sau đó mới mở rộng sang OTC và thương mại điện tử khi mô hình đã được kiểm chứng.</p>
+    </div>
+
+    <div class="card">
+      <div class="num">LỢI THẾ SẢN PHẨM</div>
+      <h3>Chuẩn sản xuất dược kết hợp định dạng tiện dùng</h3>
+      <p>HedeCare+ được sản xuất trên dây chuyền WHO-GMP, có công thức từ lá thường xuân, mật ong, gừng, tràm và tần dày lá; đồng thời có cả dạng chai dùng tại nhà và dạng gói 5 ml phù hợp các tình huống di chuyển, đi học hoặc chăm trẻ bên ngoài gia đình.</p>
+    </div>
+
+    <div class="card">
+      <div class="num">YÊU CẦU CHIẾN LƯỢC</div>
+      <h3>Test – Đo lường – Scale</h3>
+      <p>Thay vì triển khai một chiến dịch lớn ngay từ đầu, kế hoạch cần bắt đầu bằng các tài sản tinh gọn, thử nghiệm tại điểm bán, đo phản ứng thị trường và chỉ mở rộng đầu tư khi thông điệp, kênh và mô hình bán hàng cho thấy tín hiệu tích cực.</p>
+    </div>
+  </div>
+</section>
+
+<section id="objectives" class="objectives-section">
+  <div class="eyebrow">Business, Marketing & Communication Objectives</div>
+  <h2>Ba lớp mục tiêu cần vận hành trong cùng một hệ thống tăng trưởng.</h2>
+
+  <div class="objective-stack">
+    <div class="objective-item">
+      <div class="objective-index">01</div>
+      <div>
+        <span class="objective-label">Business Objective</span>
+        <h3>Thâm nhập thị trường và tạo nền tảng tăng trưởng bán hàng trong 12 tháng đầu tiên.</h3>
+        <p>Tập trung xây độ phủ tại các chuỗi Mẹ & Bé ưu tiên, tạo sell-in, sell-out và tỷ lệ nhập lại đủ tốt; từ đó làm cơ sở mở rộng sang các địa bàn, kênh OTC và thương mại điện tử.</p>
+      </div>
+    </div>
+
+    <div class="objective-item">
+      <div class="objective-index">02</div>
+      <div>
+        <span class="objective-label">Marketing Objective</span>
+        <h3>Xây dựng nhận biết có căn cứ và thúc đẩy dùng thử tại đúng điểm bán.</h3>
+        <p>Giúp phụ huynh hiểu rõ lợi thế “chuẩn dược chăm ho”, đồng thời trang bị cho Sales và tư vấn viên hệ thống nội dung, công cụ và trải nghiệm đủ thuyết phục để chuyển nhận biết thành cân nhắc và mua hàng.</p>
+      </div>
+    </div>
+
+    <div class="objective-item">
+      <div class="objective-index">03</div>
+      <div>
+        <span class="objective-label">Communication Objective</span>
+        <h3>Định hình HedeCare+ như một lựa chọn chăm ho có chuẩn, tiện dùng và đáng tin cho trẻ.</h3>
+        <p>Truyền tải nhất quán Big Idea “HedeCare+ — Chuẩn dược chăm ho. Gọn nỗi lo ho.” trên nội dung thương hiệu, điểm bán, tư vấn chuyên môn và các tình huống chăm con thực tế.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research-overview" class="research-overview">
+  <div class="eyebrow">Consumer Research</div>
+  <h2>Khảo sát người tiêu dùng về hành vi lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ.</h2>
+
+  <div class="grid-2">
+    <div class="card research-card">
+      <div class="num">MỤC TIÊU NGHIÊN CỨU</div>
+      <h3>Thấu hiểu cách phụ huynh cân nhắc, lựa chọn và tìm kiếm sự bảo chứng.</h3>
+      <p>Khảo sát tập trung vào hành vi xử lý khi trẻ ho, tiêu chí lựa chọn sản phẩm, mức độ phù hợp của từng kênh mua, rào cản với chuỗi Mẹ & Bé và vai trò của bác sĩ, dược sĩ hoặc người tư vấn trong quyết định mua.</p>
+    </div>
+
+    <div class="card research-card">
+      <div class="num">PHƯƠNG PHÁP</div>
+      <h3>Khảo sát định lượng trực tuyến quy mô nhỏ.</h3>
+      <p>Thu thập 47 phản hồi hợp lệ trong tháng 07/2026, với cơ cấu địa lý gồm Hà Nội 57% và TP.HCM 43%. Bảng hỏi sử dụng câu hỏi lựa chọn đơn, lựa chọn nhiều và thang đánh giá mức độ phù hợp theo kênh.</p>
+    </div>
+
+    <div class="card research-card">
+      <div class="num">ĐỐI TƯỢNG</div>
+      <h3>Phụ huynh hoặc người chăm sóc trẻ dưới 12 tuổi.</h3>
+      <p>Mẫu tập trung vào nhóm có trải nghiệm thực tế với tình trạng trẻ ho và có khả năng tham gia quyết định lựa chọn sản phẩm hỗ trợ giảm ho cho trẻ.</p>
+    </div>
+
+    <div class="card research-card">
+      <div class="num">VAI TRÒ TRONG PLANNING</div>
+      <h3>Tạo dữ liệu đầu vào để định hình giả thuyết chiến lược.</h3>
+      <p>Kết quả được sử dụng để xác định tension, insight, ưu tiên thông điệp, vai trò kênh và thiết kế pilot giai đoạn đầu. Đây là lớp dữ liệu định hướng, tiếp tục được làm giàu qua Sales và phản hồi thực tế tại điểm bán.</p>
+    </div>
+  </div>
+
+  <div class="research-strip">
+    <div><b>47</b><span>phản hồi hợp lệ</span></div>
+    <div><b>57%</b><span>Hà Nội</span></div>
+    <div><b>43%</b><span>TP.HCM</span></div>
+    <div><b>07/2026</b><span>thời gian khảo sát</span></div>
+  </div>
+</section>
+
+<section>
+<div class="eyebrow">Tóm tắt điều hành</div><h2>Vấn đề trung tâm không phải người mua thiếu sản phẩm; họ thiếu một căn cứ đủ mạnh để thử thương hiệu mới.</h2>
+<div class="grid-4">
+<div class="kpi"><b>79%</b><span>ưu tiên khuyến nghị của bác sĩ/dược sĩ</span></div>
+<div class="kpi"><b>57%</b><span>xem thành phần an toàn là tiêu chí chính</span></div>
+<div class="kpi"><b>26%</b><span>chỉ cân nhắc khi có người chuyên môn tư vấn</span></div>
+<div class="kpi"><b>43%</b><span>vẫn ưu tiên nhà thuốc hơn chuỗi Mẹ & Bé</span></div>
+</div>
+<div class="note" style="margin-top:26px"><strong>Hàm ý chiến lược:</strong> Chuỗi Mẹ & Bé là lối vào phân phối khác biệt, nhưng chưa phải lối tắt đến niềm tin. HedeCare+ cần đưa “chuẩn dược” và “người tư vấn đáng tin” vào chính trải nghiệm mua tại chuỗi Mẹ & Bé.</div>
+</section>
+
+<section id="ketqua">
+<div class="eyebrow">01 · Hành vi chăm sóc</div><h2>Ho ở trẻ là tình huống lặp lại, nhưng hành vi mua mới thường đến sau quan sát, thăm khám hoặc kinh nghiệm đã có.</h2>
+<div class="grid-3">
+<div class="card"><div class="num">TRẢI NGHIỆM</div><h3>96% từng gặp tình trạng trẻ ho gần đây</h3><p>45/47 người trả lời xác nhận. Nhu cầu có thật và lặp lại, nhưng phần lớn đã có cách xử lý quen thuộc.</p></div>
+<div class="card"><div class="num">HÀNH ĐỘNG ĐẦU TIÊN</div><h3>43% theo dõi thêm tại nhà</h3><p>30% đưa trẻ đi khám; 21% mua lại sản phẩm từng dùng. Thương hiệu mới phải vượt qua quán tính hành vi trước khi tạo chuyển đổi.</p></div>
+<div class="card"><div class="num">TẦN SUẤT</div><h3>55% gặp tình huống ho từ 3 lần trở lên</h3><p>Dư địa mua lại đáng kể nếu HedeCare+ tạo được trải nghiệm dùng đầu tiên đủ tốt và có hướng dẫn rõ ràng.</p></div>
+</div>
+</section>
+
+<section>
+<div class="grid-2">
+<div><div class="eyebrow">02 · Tiêu chí lựa chọn</div><h2>Uy tín chuyên môn là “cửa kiểm định” trước hiệu quả, thương hiệu và giá.</h2>
+    <div class="bar-row">
+      <div class="bar-label"><span>Được bác sĩ/dược sĩ khuyên dùng</span><b>37/47 · 79%</b></div>
+      <div class="track"><div class="fill" style="width:78.7%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Thành phần an toàn</span><b>27/47 · 57%</b></div>
+      <div class="track"><div class="fill" style="width:57.4%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Hiệu quả</span><b>22/47 · 47%</b></div>
+      <div class="track"><div class="fill" style="width:46.8%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Thương hiệu uy tín</span><b>18/47 · 38%</b></div>
+      <div class="track"><div class="fill" style="width:38.3%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Xuất xứ rõ ràng</span><b>12/47 · 26%</b></div>
+      <div class="track"><div class="fill" style="width:25.5%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Giá phù hợp</span><b>4/47 · 9%</b></div>
+      <div class="track"><div class="fill" style="width:8.5%"></div></div>
+    </div></div>
+<div><div class="eyebrow">03 · Rào cản chuyển đổi</div><h2>Khoảng trống lớn nhất nằm ở sự bảo chứng ngay tại thời điểm cân nhắc.</h2>
+    <div class="bar-row">
+      <div class="bar-label"><span>Muốn có bác sĩ/dược sĩ tư vấn</span><b>23/47 · 49%</b></div>
+      <div class="track"><div class="fill" style="width:48.9%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Ưu tiên nhà thuốc hơn</span><b>20/47 · 43%</b></div>
+      <div class="track"><div class="fill" style="width:42.6%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Thuận tiện mua cùng sản phẩm cho con</span><b>10/47 · 21%</b></div>
+      <div class="track"><div class="fill" style="width:21.3%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Tin chuỗi Mẹ &amp; Bé chuyên sản phẩm trẻ em</span><b>9/47 · 19%</b></div>
+      <div class="track"><div class="fill" style="width:19.1%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Chưa tin tưởng</span><b>8/47 · 17%</b></div>
+      <div class="track"><div class="fill" style="width:17.0%"></div></div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label"><span>Ít lựa chọn phù hợp</span><b>7/47 · 15%</b></div>
+      <div class="track"><div class="fill" style="width:14.9%"></div></div>
+    </div></div>
+</div>
+</section>
+
+<section>
+<div class="eyebrow">04 · Vai trò của kênh</div><h2>Chuỗi Mẹ & Bé có lợi thế đúng đối tượng, nhưng cần được tăng cường bằng uy tín dược và năng lực tư vấn.</h2>
+<div class="grid-2">
+<div>
+    <div class="channel-row">
+      <div><strong>Bệnh viện / Phòng khám</strong><span>43/47 đánh giá “Phù hợp/Rất phù hợp”</span></div>
+      <div class="donut" style="--p:91.5"><b>91%</b></div>
+    </div>
+
+    <div class="channel-row">
+      <div><strong>Nhà thuốc</strong><span>41/47 đánh giá “Phù hợp/Rất phù hợp”</span></div>
+      <div class="donut" style="--p:87.2"><b>87%</b></div>
+    </div>
+
+    <div class="channel-row">
+      <div><strong>Chuỗi Mẹ &amp; Bé</strong><span>15/47 đánh giá “Phù hợp/Rất phù hợp”</span></div>
+      <div class="donut" style="--p:31.9"><b>32%</b></div>
+    </div>
+
+    <div class="channel-row">
+      <div><strong>Thương mại điện tử</strong><span>14/47 đánh giá “Phù hợp/Rất phù hợp”</span></div>
+      <div class="donut" style="--p:29.8"><b>30%</b></div>
+    </div></div>
+<div class="card">
+<h3>Diễn giải chiến lược từ dữ liệu kênh</h3>
+<p><strong>Bệnh viện/phòng khám và nhà thuốc</strong> đang sở hữu lợi thế về thẩm quyền chuyên môn.</p>
+<p><strong>Chuỗi Mẹ & Bé</strong> có lợi thế bối cảnh chăm con, khả năng mua kèm và độ thuận tiện, nhưng mới có 32% đánh giá phù hợp hoặc rất phù hợp.</p>
+<p><strong>Thương mại điện tử</strong> nên đóng vai trò mở rộng và tái mua sau khi thương hiệu đã tích lũy đủ bằng chứng, nội dung và đánh giá thực tế.</p>
+</div>
+</div>
+</section>
+
+<section id="insight" style="background:var(--warm)">
+<div class="eyebrow">Consumer Insight</div>
+<p class="quote">“Khi con ho, tôi không thiếu một loại siro để mua. Tôi cần một căn cứ đủ chắc chắn để đổi khỏi sản phẩm đã quen — và người giúp tôi vững tâm nhất vẫn là <em>người có chuyên môn</em>.”</p>
+</section>
+
+<section>
+<div class="eyebrow">Mâu thuẫn chiến lược</div><h2>Doanh nghiệp chọn chuỗi Mẹ & Bé để tránh cuộc chiến OTC; người mua vẫn dùng tiêu chuẩn niềm tin của ngành dược để ra quyết định.</h2>
+<div class="grid-2">
+<div class="card"><h3>Logic kinh doanh</h3><p>Kênh OTC chật chội, yêu cầu chiết khấu và trade marketing lớn. Chuỗi Mẹ & Bé tạo đường thâm nhập khác biệt, sát tệp phụ huynh và phù hợp mô hình thử nghiệm.</p></div>
+<div class="card"><h3>Logic người mua</h3><p>Siro ho cho trẻ vẫn là quyết định sức khỏe. Sự thuận tiện chỉ có giá trị sau khi sản phẩm vượt qua ba câu hỏi: có an toàn không, có đủ cơ sở không và ai đứng sau lời khuyên này.</p></div>
+</div>
+</section>
+
+<section id="dinhvi">
+<div class="eyebrow">Khoảng trống định vị</div><h2>“Chuẩn dược được gói lại cho nhịp chăm con hiện đại” là khoảng trống HedeCare+ có thể tạo khác biệt.</h2>
+<div class="position-wrap">
+<div class="position-map">
+<div class="axis-y top">Căn cứ dược phẩm rõ ràng</div><div class="axis-y bottom">Lợi ích thảo dược phổ thông</div>
+<div class="axis-x left">Dạng dùng truyền thống / tủ thuốc</div><div class="axis-x right">Tiện mang theo / nhịp chăm con</div>
+<div class="bubble" style="left:22%;top:66%">Bảo Thanh<small>Quen thuộc · truyền thống</small></div>
+<div class="bubble" style="left:44%;top:53%">Eugica<small>Thảo dược phổ biến</small></div>
+<div class="bubble" style="left:58%;top:27%">Prospan<small>Uy tín quốc tế · siro chai</small></div>
+<div class="bubble" style="left:76%;top:63%">Cozz<small>Tiện lợi · người lớn đô thị</small></div>
+<div class="bubble hede" style="left:84%;top:18%">HedeCare+<small>Chuẩn dược · dạng gói · kênh Mẹ & Bé</small></div>
+</div>
+<div>
+<div class="card"><div class="num">WHITESPACE</div><h3>Chuẩn dược trong một định dạng sinh ra cho nhịp chăm con</h3><p>Prospan mạnh ở uy tín siro quốc tế; Bảo Thanh và Eugica mạnh ở độ quen thuộc; Cozz khai thác sự hiện đại cho người lớn đô thị. HedeCare+ có thể sở hữu giao điểm còn bỏ trống: chất lượng sản xuất chuẩn dược được chuyển thành dạng gói 5 ml tiện mang theo, dễ dùng và phù hợp để thâm nhập tại chuỗi Mẹ & Bé.</p></div>
+<div class="note" style="margin-top:18px"><strong>Reason to Win:</strong> Đúng chiến trường — chuỗi Mẹ & Bé; đúng vũ khí — dạng gói 5 ml sản xuất trên dây chuyền WHO-GMP; đúng vai trò — trở thành lựa chọn chăm ho luôn sẵn bên mẹ khi trẻ cần.</div>
+</div>
+</div>
+</section>
+
+<section id="sangtao" class="strategy">
+<div class="eyebrow">Nền tảng chiến lược & sáng tạo</div><h2>Từ lợi thế dạng gói và chuẩn sản xuất đến một ý tưởng có thể hiện diện nhất quán trong túi mẹ, tại điểm bán và trong từng tình huống trẻ ho.</h2>
+<div class="platform">
+<div class="big-idea"><div><span class="eyebrow">BIG IDEA</span><strong>HedeCare+<br>Chuẩn dược chăm ho.<br>Gọn nỗi lo ho.</strong></div><p>Ý tưởng đặt “chuẩn dược” ở cấp độ thương hiệu để bao phủ cả dạng chai và dạng gói. Dạng chai đóng vai trò chăm ho thường xuyên tại nhà; dạng gói tạo lợi thế tiện mang theo, dễ sử dụng và phù hợp nhịp chăm con bên ngoài gia đình.</p></div>
+<div>
+<div class="card"><div class="num">CREATIVE PLATFORM</div><h3>Chuẩn dược chăm ho</h3><p>Nền tảng này giúp HedeCare+ kể một câu chuyện thống nhất cho cả hai định dạng: chai cho nhu cầu chăm ho thường xuyên tại nhà, gói cho các tình huống cần sự tiện lợi và chủ động. “Chuẩn dược” là nền tảng chung; “Gói chuẩn chăm ho” là nhánh triển khai riêng cho SKU dạng gói.</p></div>
+<div class="action-list" style="margin-top:15px">
+<div class="action"><b>Chuẩn trong sản phẩm</b><p>Giải mã WHO-GMP, lá thường xuân nhập khẩu, công thức phối hợp và tiêu chuẩn không cồn, không màu, không mùi tổng hợp.</p></div>
+<div class="action"><b>Chuẩn trong tư vấn</b><p>Chuẩn hóa nội dung cho dược sĩ, bác sĩ và tư vấn viên chuỗi Mẹ & Bé để giải thích sản phẩm nhất quán.</p></div>
+<div class="action"><b>Chuẩn theo tình huống</b><p>Gắn dạng gói với các ngữ cảnh cụ thể: đi học, giao mùa, ban đêm, du lịch và những lúc mẹ cần chuẩn bị nhanh.</p></div>
+<div class="action"><b>Chuẩn được kiểm chứng</b><p>Sampling có hướng dẫn, phản hồi phụ huynh, dữ liệu tại điểm bán và tỷ lệ mua lại để liên tục hoàn thiện cách bán.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="eyebrow">Kiến trúc thông điệp</div><h2>Thông điệp được xây theo logic “Chuẩn dược chăm ho”: Chuẩn sản xuất → Chuẩn công thức → Chuẩn sử dụng → Chuẩn đồng hành.</h2>
+<div class="ladder">
+<div class="step"><small>01 · SẢN XUẤT</small><b>Chuẩn dược</b><p>Dây chuyền WHO-GMP, nhà máy dược, hồ sơ pháp lý và nguồn nguyên liệu.</p></div>
+<div class="step"><small>02 · CÔNG THỨC</small><b>Chuẩn phối hợp</b><p>Lá thường xuân, mật ong, gừng, tràm và tần dày lá trong một công thức hỗ trợ đa triệu chứng.</p></div>
+<div class="step"><small>03 · SỬ DỤNG</small><b>Chuẩn tiện lợi</b><p>Dạng gói 5 ml tiện mang theo, hỗ trợ kiểm soát liều và phù hợp nhiều bối cảnh chăm con.</p></div>
+<div class="step"><small>04 · ĐỒNG HÀNH</small><b>Chuẩn tư vấn</b><p>Thông tin nhất quán từ nội dung thương hiệu đến tư vấn viên, dược sĩ và điểm bán.</p></div>
+</div>
+</section>
+
+<section>
+<div class="eyebrow">Nguyên tắc triển khai</div><h2>Không chia chiến lược thành các “quý làm việc nối tiếp”; các năng lực cốt lõi phải chạy song song và được tăng cường theo tín hiệu thị trường.</h2>
+<div class="principles">
+<div class="principle"><b>Thiết lập và kiểm chứng đồng thời</b><p>Vừa hoàn thiện nền tảng thương hiệu, vừa thử nghiệm thông điệp, tư vấn và điểm bán để tránh xây một hệ thống quá lớn trước khi có phản hồi thực.</p></div>
+<div class="principle"><b>Đầu tư theo ngưỡng tăng trưởng</b><p>Chỉ mở rộng địa bàn, media và kênh khi các chỉ số sell-in, sampling-to-purchase, phản hồi tư vấn và mua lại đạt ngưỡng thống nhất.</p></div>
+<div class="principle"><b>Sales là hạ tầng nghiên cứu</b><p>Mọi cuộc gặp nhà phân phối, chủ chuỗi, tư vấn viên và phụ huynh đều được chuẩn hóa thành dữ liệu để tối ưu sản phẩm, thông điệp và chính sách bán hàng.</p></div>
+</div>
+</section>
+
+
+<section id="timeline">
+<div class="eyebrow">Master Timeline · 09/2026–09/2027</div>
+<h2>Kế hoạch chạy theo hai lớp song song: xây nền tảng liên tục và tạo các đợt sóng theo vùng miền, mùa vụ.</h2>
+
+<div class="grid-3">
+  <div class="card"><div class="num">SÓNG 01 · 09–10/2026</div><h3>Miền Nam: giao mùa & mùa mưa</h3><p>Ưu tiên TP.HCM và tỉnh lân cận. Tập trung tình huống trẻ ho do thay đổi thời tiết, đi học lại, máy lạnh và sinh hoạt đô thị. Đây là đợt pilot để kiểm chứng thông điệp, POSM và khả năng tư vấn tại chuỗi Mẹ & Bé.</p></div>
+  <div class="card"><div class="num">SÓNG 02 · 11/2026–02/2027</div><h3>Miền Bắc: cao điểm lạnh</h3><p>Tăng trọng số Hà Nội và miền Bắc khi nhu cầu hô hấp thường tăng mạnh. Mở rộng điểm bán có chọn lọc, tăng nội dung chuyên môn, sampling và media theo địa bàn đã chứng minh khả năng chuyển đổi.</p></div>
+  <div class="card"><div class="num">SÓNG 03 · 03–04/2027</div><h3>Bắc nồm ẩm · Nam chuyển mùa</h3><p>Tái kích hoạt bằng ngữ cảnh vùng miền khác nhau nhưng dùng chung nền tảng “Gói chuẩn chăm ho”. Đây cũng là thời điểm tối ưu thông điệp trước giai đoạn mở rộng nửa cuối năm.</p></div>
+</div>
+
+<div class="note" style="margin:24px 0"><strong>Định hướng ngân sách:</strong> 6 tháng đầu vẫn ưu tiên cách làm tinh gọn. Ngân sách không dàn đều theo tháng mà được nâng theo từng đợt sóng, dựa trên sức cầu vùng miền, kết quả pilot, năng lực điểm bán và mức độ sẵn sàng của hệ thống Sales.</div>
+
+
+<div class="timeline-legend">
+  <span><i class="active"></i> Duy trì nền tảng ở cường độ cơ bản</span>
+  <span><i class="pulse"></i> Tăng cường nguồn lực, nội dung và media theo đợt sóng</span>
+  <span><i class="off"></i> Chưa ưu tiên ở giai đoạn này</span>
+</div>
+
+<div class="timeline">
+<table>
+<thead><tr><th>Hợp phần triển khai</th><th>09/26</th><th>10/26</th><th>11/26</th><th>12/26</th><th>01/27</th><th>02/27</th><th>03/27</th><th>04/27</th><th>05/27</th><th>06/27</th><th>07/27</th><th>08/27</th><th>09/27</th></tr></thead>
+<tbody><tr><th><b>Nền tảng thương hiệu & nội dung</b><small>Thông điệp, nội dung trụ cột, tối ưu theo dữ liệu</small></th><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td></tr><tr><th><b>Tài sản bán hàng tinh gọn</b><small>KV mô-đun, ảnh sản phẩm, sales kit, POSM</small></th><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td></tr><tr><th><b>Pilot chuỗi Mẹ & Bé</b><small>HCM trước, sau đó mở rộng miền Bắc có chọn lọc</small></th><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="on"><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td></tr><tr><th><b>Nội dung chuyên môn & tư vấn</b><small>Dược sĩ/bác sĩ, hướng dẫn dùng, giải mã sản phẩm</small></th><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="pulse"><span></span></td></tr><tr><th><b>Khảo sát thực địa qua Sales</b><small>Điểm bán, tư vấn viên, phụ huynh, phản hồi mua lại</small></th><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td></tr><tr><th><b>Media & KOC thử nghiệm</b><small>Warm-up thị trường, hỗ trợ Sales và tăng dần theo tín hiệu hiệu quả</small></th><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="pulse"><span></span></td></tr>
+<tr><th><b>Location Media hỗ trợ Sales</b><small>Digital Frame thang máy và DOOH/LED gần chuỗi Mẹ & Bé, bệnh viện, trường học</small></th>
+<td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td>
+<td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td></tr>
+
+<tr><th><b>Content Trust trên Trang tin, Báo chí</b><small>PR branded, nội dung sức khỏe – y tế – gia đình – Mẹ & Bé, contextual banner dẫn về website/landing page</small></th>
+<td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td>
+<td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td></tr>
+
+<tr><th><b>SEO & AI Overviews – Giai đoạn 1</b><small>Xây dựng và tối ưu nội dung website để tăng khả năng được AI Overviews/SGE trích dẫn</small></th>
+<td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td>
+<td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td></tr>
+
+<tr><th><b>Social Media Funnel</b><small>Broad Reach Facebook & TikTok, educate tệp Mom, gom tương tác vào Data Pool để hoạch định dài hạn</small></th>
+<td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td>
+<td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td></tr>
+
+<tr><th><b>GreenSM Sampling – Win Khoảnh khắc điểm đến</b><small>Sampling trên taxi GreenSM, tài xế mời dùng thử, QR để lại số điện thoại hoặc gửi ảnh sản phẩm vào Fanpage</small></th>
+<td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td>
+<td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td></tr>
+<tr><th><b>Mở OTC & TMĐT chọn lọc</b><small>Mở sau khi có thông điệp và điểm bán thắng</small></th><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class=""><span></span></td><td class="pulse"><span></span></td><td class="pulse"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="on"><span></span></td><td class="pulse"><span></span></td></tr></tbody>
+</table>
+</div>
+
+<div class="grid-2" style="margin-top:26px">
+<div class="card"><div class="num">09/2026–02/2027 · THÂM NHẬP THÔNG MINH</div><h3>Học nhanh bằng các tài sản vừa đủ</h3><p>01 hệ thống thông điệp; KV và POSM mô-đun; bộ ảnh sản phẩm; video ngắn từ motion/ảnh; landing page; nội dung chuyên môn; sales kit; sampling; dashboard phản hồi. Không ưu tiên iTVC hoặc sản xuất lớn khi chưa xác định rõ thông điệp thắng.</p></div>
+<div class="card"><div class="num">03/2027–09/2027 · MỞ RỘNG CÓ BẰNG CHỨNG</div><h3>Nhân rộng những gì đã được thị trường xác nhận</h3><p>Mở rộng chuỗi Mẹ & Bé, OTC và thương mại điện tử theo địa bàn. Tăng đầu tư media, KOC/KOL và tài sản sáng tạo khi đã có dữ liệu về nhóm khách hàng phản hồi tốt, điểm bán có chuyển đổi và bối cảnh mùa vụ có khả năng tạo tăng trưởng.</p></div>
+</div>
+
+<div class="card" style="margin-top:26px">
+<div class="num">SÓNG 04 · 09/2027</div>
+<h3>Chuẩn bị chu kỳ tăng tốc tiếp theo</h3>
+<p>Đánh giá toàn bộ 12 tháng triển khai, xác định vùng thắng, thông điệp thắng và mô hình phân phối hiệu quả để bước vào chu kỳ cao điểm Thu – Đông 2027 với quy mô lớn hơn.</p>
+</div>
+</section>
+
+<section id="comms-framework" class="comms-framework">
+  <div class="eyebrow">Communication Activation Framework</div>
+  <h2>Năm hướng truyền thông phối hợp để vừa hỗ trợ Sales ngắn hạn, vừa tích lũy tài sản niềm tin và dữ liệu dài hạn.</h2>
+
+  <div class="comms-grid">
+    <article class="comms-card">
+      <div class="comms-no">01</div>
+      <div class="comms-tag">LOCATION</div>
+      <h3>Đánh chiếm Location gần điểm bán</h3>
+      <p>Booking Digital Frame thang máy và DOOH/LED gần chuỗi Mẹ & Bé, bệnh viện, trường học hoặc các cụm dân cư có tỷ trọng gia đình trẻ cao. Vai trò chính là tạo nhận biết ngay trước hoặc trong hành trình mua, đồng thời hỗ trợ Sales tăng độ tin cậy khi chào hàng.</p>
+      <div class="comms-meta"><b>Thời gian:</b> 09–12/2026</div>
+      <div class="comms-meta"><b>Key asset:</b> KV tĩnh, motion graphic nhẹ, cut-down 6–10 giây.</div>
+    </article>
+
+    <article class="comms-card">
+      <div class="comms-no">02</div>
+      <div class="comms-tag">CONTENT TRUST</div>
+      <h3>Đánh chiếm niềm tin khi người dùng tìm hiểu sâu</h3>
+      <p>Triển khai PR branded, bài PR, tin tức sức khỏe, y tế, gia đình và Mẹ & Bé trên hệ thống Trang tin, Báo chí trực tuyến uy tín. Kết hợp banner theo từ khóa và ngữ cảnh liên quan để dẫn người đọc về website hoặc landing page sản phẩm.</p>
+      <div class="comms-meta"><b>Thời gian:</b> 09–12/2026, sau đó duy trì always-on.</div>
+      <div class="comms-meta"><b>Key asset:</b> Tuyến bài xây dựng niềm tin, contextual banner, landing page.</div>
+    </article>
+
+    <article class="comms-card">
+      <div class="comms-no">03</div>
+      <div class="comms-tag">SEO & AI OVERVIEWS</div>
+      <h3>Xây nền nội dung để thương hiệu xuất hiện trong hành vi tìm kiếm mới</h3>
+      <p>Thực hiện giai đoạn 1 của hệ thống nội dung website: cấu trúc chủ đề, bài viết giải đáp, schema, entity và tiêu chuẩn nguồn dẫn nhằm tăng khả năng được AI Overviews/SGE trích dẫn khi người dùng tìm kiếm thông tin liên quan đến ho ở trẻ và cách lựa chọn sản phẩm hỗ trợ.</p>
+      <div class="comms-meta"><b>Thời gian:</b> 09–12/2026, tiếp tục tối ưu dài hạn.</div>
+      <div class="comms-meta"><b>Key asset:</b> Website/landing page, cụm bài SEO, FAQ, nội dung chuyên môn.</div>
+    </article>
+
+    <article class="comms-card">
+      <div class="comms-no">04</div>
+      <div class="comms-tag">SOCIAL MEDIA FUNNEL</div>
+      <h3>Đánh chiếm nhận diện và gom Data Pool tệp Mom</h3>
+      <p>Triển khai Broad Reach trên Facebook và TikTok để tăng độ phủ, educate thị trường và gom nhóm người dùng đã xem video, click, bình luận hoặc tương tác vào một phễu dữ liệu. Data Pool này là cơ sở cho retargeting, lookalike và hoạch định chiến lược dài hạn.</p>
+      <div class="comms-meta"><b>Thời gian:</b> 09–12/2026, sau đó tối ưu theo chất lượng tệp.</div>
+      <div class="comms-meta"><b>Key asset:</b> KV, video stock có mẹ và bé, motion graphic, short-form video.</div>
+    </article>
+  
+    <article class="comms-card">
+      <div class="comms-no">05</div>
+      <div class="comms-tag">GREENSM SAMPLING</div>
+      <h3>Win Khoảnh khắc điểm đến</h3>
+      <p>Phát sampling trực tiếp trên các chuyến xe GreenSM để đưa sản phẩm đến đúng lúc khách hàng vừa hoàn tất một hành trình. Tài xế đóng vai trò cầu nối, mời khách trải nghiệm sản phẩm theo cách tự nhiên và đáng tin hơn quảng cáo thông thường.</p>
+      <div class="comms-meta"><b>Thời gian:</b> 09–12/2026</div>
+      <div class="comms-meta"><b>Hình thức:</b> Siro chai hoặc combo 10 gói nhỏ; QR chỉ thu số điện thoại, hoặc chụp sản phẩm gửi Inbox Fanpage HedeCare+.</div>
+      <div class="comms-meta"><b>Vai trò:</b> Trial, thu Data Pool và tạo nội dung UGC ban đầu.</div>
+    </article>
+
+  </div>
+</section>
+<section class="mockup-gallery">
+<div class="eyebrow">Visual Demo</div>
+<h2>Minh họa một số điểm chạm truyền thông ưu tiên trong giai đoạn thâm nhập thị trường.</h2>
+<p class="lead">Các mockup giúp hình dung cách HedeCare+ có thể xuất hiện tại thang máy, trên chuyến xe GreenSM và trong hành trình tìm hiểu thông tin sức khỏe trực tuyến.</p>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="assets/embedded_02.png" alt="Mockup 1"></div>
+<div class="gallery-item"><img src="assets/embedded_03.png" alt="Mockup 2"></div>
+
+<div class="gallery-item"><img src="assets/greensm_sampling_mockup.png" alt="Mockup GreenSM Sampling"></div>
+<div class="gallery-item"><img src="assets/content_trust_mockup.png" alt="Mockup Content Trust"></div>
+</div>
+</section>
+
+<div id="lightbox" class="lightbox" onclick="this.classList.remove('open')">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+document.querySelectorAll('.gallery-item img').forEach(img=>{
+ img.addEventListener('click',()=>{
+   document.getElementById('lightbox-img').src=img.src;
+   document.getElementById('lightbox').classList.add('open');
+ });
+});
+</script>
+
+
+
+
+<section>
+<div class="eyebrow">Khung đo lường</div><h2>Branding, phân phối và bán hàng được đo trong cùng một chuỗi nguyên nhân — kết quả.</h2>
+<div class="grid-4">
+<div class="kpi"><b>01</b><span>Niềm tin: mức độ hiểu thông điệp, liên tưởng “chuẩn dược”, ý định cân nhắc</span></div>
+<div class="kpi"><b>02</b><span>Phân phối: điểm bán active, tỷ lệ nhập lại, mức độ sẵn sàng tư vấn</span></div>
+<div class="kpi"><b>03</b><span>Chuyển đổi: sampling-to-purchase, tư vấn-to-purchase, chi phí theo điểm bán</span></div>
+<div class="kpi"><b>04</b><span>Duy trì: mua lại, đánh giá thực tế, phản hồi sản phẩm và CRM</span></div>
+</div>
+</section>
+
+
+<section id="next-step">
+<div class="eyebrow">Next Step</div>
+<h2>Các quyết định cần cùng khách hàng xác nhận trước khi chuyển sang giai đoạn triển khai.</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="num">01 · XÁC NHẬN NỀN TẢNG SẢN PHẨM</div>
+    <h3>Chốt các căn cứ có thể truyền thông</h3>
+    <p>BCG Alliance cung cấp và xác nhận đầy đủ hồ sơ pháp lý, giấy phép quảng cáo, tài liệu WHO-GMP, nguồn nguyên liệu, công thức và các tuyên bố sản phẩm được phép sử dụng. Đồng thời làm rõ vai trò của dạng chai và dạng gói trong chiến lược danh mục.</p>
+  </div>
+
+  <div class="card">
+    <div class="num">02 · XÁC NHẬN CHIẾN LƯỢC THÂM NHẬP</div>
+    <h3>Chốt thị trường, kênh và phạm vi pilot</h3>
+    <p>Thống nhất khu vực pilot từ 09/2026, danh sách chuỗi Mẹ & Bé ưu tiên, số lượng điểm bán thử nghiệm, cơ chế phối hợp với Sales và tiêu chí lựa chọn địa bàn mở rộng sang miền Bắc, OTC và thương mại điện tử.</p>
+  </div>
+
+  <div class="card">
+    <div class="num">03 · CHỐT BIG IDEA & MESSAGE FRAMEWORK</div>
+    <h3>Thống nhất một nền tảng có thể dùng dài hạn</h3>
+    <p>Xác nhận Big Idea “HedeCare+ — Chuẩn dược chăm ho. Gọn nỗi lo ho.”, vai trò của Creative Platform “Chuẩn dược chăm ho” và nhánh triển khai “Gói chuẩn chăm ho” cho SKU dạng gói. Sau đó mới phát triển KV, nội dung và POSM.</p>
+  </div>
+
+  <div class="card">
+    <div class="num">04 · THIẾT KẾ BỘ TÀI SẢN TINH GỌN</div>
+    <h3>Ưu tiên tài sản hỗ trợ bán hàng ngay</h3>
+    <p>Phát triển KV mô-đun, bộ ảnh sản phẩm, landing page, sales kit, POSM, nội dung giải mã sản phẩm, video ngắn từ motion/ảnh và bộ câu hỏi tư vấn. Chưa ưu tiên iTVC hoặc sản xuất lớn trong 6 tháng đầu.</p>
+  </div>
+
+  <div class="card">
+    <div class="num">05 · PILOT & ĐO LƯỜNG</div>
+    <h3>Thiết lập ngưỡng để quyết định scale</h3>
+    <p>Thống nhất KPI theo từng lớp: độ phủ điểm bán, mức độ sẵn sàng tư vấn, sampling-to-purchase, sell-in, sell-out, tỷ lệ nhập lại, phản hồi của phụ huynh và mức độ mua lại. Các ngưỡng này là cơ sở để tăng ngân sách và mở rộng kênh.</p>
+  </div>
+
+  <div class="card">
+    <div class="num">06 · NGHIÊN CỨU QUA SALES</div>
+    <h3>Biến hoạt động bán hàng thành hệ thống dữ liệu</h3>
+    <p>Chuẩn hóa biểu mẫu thu thập phản hồi từ chủ chuỗi, nhân viên tư vấn, phụ huynh và điểm bán. Dữ liệu được tổng hợp theo tuần/tháng để liên tục tối ưu thông điệp, chính sách bán hàng, nội dung và lựa chọn thị trường.</p>
+  </div>
+</div>
+
+<div class="note" style="margin-top:24px">
+  <strong>Đề xuất cho buổi làm việc tiếp theo:</strong> BCG Alliance và admeX cùng chốt 6 nhóm quyết định trên, xác định PIC, thời hạn phê duyệt và bộ tài liệu đầu vào để có thể hoàn thiện Master Plan 09/2026–09/2027 cùng bản ngân sách theo nguyên tắc “Test – Đo lường – Scale”.
+</div>
+</section>
+
+<section>
+<div class="eyebrow">Phạm vi nghiên cứu</div><h2>Mẫu hiện tại đủ để tạm thấu hiểu hành vi và định hướng planning giai đoạn đầu.</h2>
+<div class="grid-2">
+<div class="note"><strong>Cơ cấu địa lý:</strong> 57% người trả lời tại Hà Nội và 43% tại TP.HCM, tạo góc nhìn ban đầu cho hai thị trường trọng tâm Bắc – Nam.</div>
+<div class="note"><strong>Hướng nghiên cứu dài hạn:</strong> Cần xây dựng thêm một khảo sát liên tục thông qua lực lượng Sales, ghi nhận có cấu trúc từ chủ chuỗi, nhân viên tư vấn, điểm bán và người mua. Dữ liệu này sẽ giúp thương hiệu cập nhật insight, rào cản, phản hồi sản phẩm và cơ hội mở rộng theo từng khu vực.</div>
+</div>
+</section>
+
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <b>admeX Creative Media Agency</b>
+      <p>Báo cáo kết quả khảo sát và định hướng chiến lược ra mắt Siro HedeCare+.</p>
+      <span>© 2026 admeX Creative Media Agency. Bảo lưu mọi quyền.</span>
+    </div>
+    <div class="footer-sources">
+      <b>Nguồn dữ liệu nghiên cứu và phân tích</b>
+      <p>Khảo sát HedeCare+ SurveyResponse, 47 phản hồi, 07/2026.</p>
+      <p>Briefing Checklist, Debrief và Meeting Minutes giữa BCG Alliance và admeX, 07/2026.</p>
+      <p>Bộ Y tế Việt Nam: thông tin về bệnh hô hấp theo mùa lạnh và giao mùa.</p>
+      <p>WHO: thông tin về việc sử dụng y học cổ truyền và dược liệu tại các quốc gia đang phát triển.</p>
+      <p>Fitch Solutions: ước tính chi tiêu bình quân đầu người dành cho dược phẩm tại Việt Nam.</p>
+      <p>Euromonitor: xu hướng chất lượng không khí và tác động đến các vấn đề hô hấp tại Hà Nội, TP.HCM.</p>
+      <p>Dữ liệu tham chiếu ngành hàng dược phẩm trên hệ thống dữ liệu Trang tin, Báo chí trực tuyến tại Việt Nam.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+</body></html>
