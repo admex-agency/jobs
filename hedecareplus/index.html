@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="vi">
 <head>
@@ -243,11 +242,57 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 .lightbox img{max-width:92vw;max-height:92vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
 @media(max-width:900px){.gallery-grid{grid-template-columns:1fr}}
 
+
+.brand{display:flex;align-items:center}
+.brand img{display:block;width:250px;height:auto}
+.gallery-grid{align-items:start}
+.gallery-item{align-self:start;height:auto}
+.gallery-item img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:900px){.brand img{width:210px}}
+
+
+/* V17 refinements */
+.brand img{
+  display:block;
+  width:min(420px,34vw);
+  max-height:52px;
+  object-fit:contain;
+  object-position:left center;
+}
+.ladder .step b{
+  font-size:28px;
+  line-height:1.12;
+  letter-spacing:-.035em;
+}
+.ladder .step{
+  min-height:235px;
+}
+.gallery-grid{
+  align-items:stretch;
+}
+.gallery-item{
+  aspect-ratio:4/3;
+  height:auto;
+  min-height:0;
+  overflow:hidden;
+}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+@media(max-width:900px){
+  .brand img{width:250px;max-height:42px}
+  .ladder .step b{font-size:26px}
+  .gallery-item{aspect-ratio:4/3}
+}
+
 </style>
 </head>
 <body>
 <div class="shell">
-<nav><div class="brand">admeX × HedeCare+</div><div class="links"><a href="#ketqua">Kết quả</a><a href="#insight">Insight</a><a href="#dinhvi">Định vị</a><a href="#sangtao">Sáng tạo</a><a href="#timeline">Kế hoạch 12 tháng</a></div></nav>
+<nav><div class="brand"><img src="assets/admex_bcg_alliance_logo.png" alt="admeX x BCG Alliance"></div><div class="links"><a href="#ketqua">Kết quả</a><a href="#insight">Insight</a><a href="#dinhvi">Định vị</a><a href="#sangtao">Sáng tạo</a><a href="#timeline">Kế hoạch 12 tháng</a></div></nav>
 
 
 
@@ -482,14 +527,14 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 
 <section id="insight" style="background:var(--warm)">
 <div class="eyebrow">Consumer Insight</div>
-<p class="quote">“Khi con ho, tôi không thiếu một loại siro để mua. Tôi cần một căn cứ đủ chắc chắn để đổi khỏi sản phẩm đã quen — và người giúp tôi vững tâm nhất vẫn là <em>người có chuyên môn</em>.”</p>
+<p class="quote">“Khi con ho, tôi không thiếu một loại siro để mua. Tôi cần một căn cứ đủ chắc chắn để chuyển sang một sản phẩm mới — và người giúp tôi vững tâm nhất vẫn là <em>người có chuyên môn</em>.”</p>
 </section>
 
 <section>
 <div class="eyebrow">Mâu thuẫn chiến lược</div><h2>Doanh nghiệp chọn chuỗi Mẹ & Bé để tránh cuộc chiến OTC; người mua vẫn dùng tiêu chuẩn niềm tin của ngành dược để ra quyết định.</h2>
 <div class="grid-2">
-<div class="card"><h3>Logic kinh doanh</h3><p>Kênh OTC chật chội, yêu cầu chiết khấu và trade marketing lớn. Chuỗi Mẹ & Bé tạo đường thâm nhập khác biệt, sát tệp phụ huynh và phù hợp mô hình thử nghiệm.</p></div>
-<div class="card"><h3>Logic người mua</h3><p>Siro ho cho trẻ vẫn là quyết định sức khỏe. Sự thuận tiện chỉ có giá trị sau khi sản phẩm vượt qua ba câu hỏi: có an toàn không, có đủ cơ sở không và ai đứng sau lời khuyên này.</p></div>
+<div class="card"><h3>Góc nhìn kinh doanh</h3><p>Kênh OTC chật chội, yêu cầu chiết khấu và trade marketing lớn. Chuỗi Mẹ & Bé tạo đường thâm nhập khác biệt, sát tệp phụ huynh và phù hợp mô hình thử nghiệm.</p></div>
+<div class="card"><h3>Góc nhìn người mua</h3><p>Siro ho cho trẻ vẫn là quyết định sức khỏe. Sự thuận tiện chỉ có giá trị sau khi sản phẩm vượt qua ba câu hỏi: có an toàn không, có đủ cơ sở không và ai đứng sau lời khuyên này.</p></div>
 </div>
 </section>
 
@@ -507,7 +552,7 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 </div>
 <div>
 <div class="card"><div class="num">WHITESPACE</div><h3>Chuẩn dược trong một định dạng sinh ra cho nhịp chăm con</h3><p>Prospan mạnh ở uy tín siro quốc tế; Bảo Thanh và Eugica mạnh ở độ quen thuộc; Cozz khai thác sự hiện đại cho người lớn đô thị. HedeCare+ có thể sở hữu giao điểm còn bỏ trống: chất lượng sản xuất chuẩn dược được chuyển thành dạng gói 5 ml tiện mang theo, dễ dùng và phù hợp để thâm nhập tại chuỗi Mẹ & Bé.</p></div>
-<div class="note" style="margin-top:18px"><strong>Reason to Win:</strong> Đúng chiến trường — chuỗi Mẹ & Bé; đúng vũ khí — dạng gói 5 ml sản xuất trên dây chuyền WHO-GMP; đúng vai trò — trở thành lựa chọn chăm ho luôn sẵn bên mẹ khi trẻ cần.</div>
+<div class="note" style="margin-top:18px"><strong>Reason to Win:</strong> Đúng bối cảnh — chuỗi Mẹ & Bé; đúng nhu cầu — dạng chai và dạng gói 5 ml sản xuất trên dây chuyền WHO-GMP; đúng vai trò — trở thành lựa chọn chăm ho luôn sẵn bên mẹ khi trẻ cần.</div>
 </div>
 </div>
 </section>
@@ -532,7 +577,7 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 <div class="eyebrow">Kiến trúc thông điệp</div><h2>Thông điệp được xây theo logic “Chuẩn dược chăm ho”: Chuẩn sản xuất → Chuẩn công thức → Chuẩn sử dụng → Chuẩn đồng hành.</h2>
 <div class="ladder">
 <div class="step"><small>01 · SẢN XUẤT</small><b>Chuẩn dược</b><p>Dây chuyền WHO-GMP, nhà máy dược, hồ sơ pháp lý và nguồn nguyên liệu.</p></div>
-<div class="step"><small>02 · CÔNG THỨC</small><b>Chuẩn phối hợp</b><p>Lá thường xuân, mật ong, gừng, tràm và tần dày lá trong một công thức hỗ trợ đa triệu chứng.</p></div>
+<div class="step"><small>02 · CÔNG THỨC</small><b>Chuẩn công thức</b><p>Lá thường xuân, mật ong, gừng, tràm và tần dày lá trong một công thức hỗ trợ đa triệu chứng.</p></div>
 <div class="step"><small>03 · SỬ DỤNG</small><b>Chuẩn tiện lợi</b><p>Dạng gói 5 ml tiện mang theo, hỗ trợ kiểm soát liều và phù hợp nhiều bối cảnh chăm con.</p></div>
 <div class="step"><small>04 · ĐỒNG HÀNH</small><b>Chuẩn tư vấn</b><p>Thông tin nhất quán từ nội dung thương hiệu đến tư vấn viên, dược sĩ và điểm bán.</p></div>
 </div>
@@ -553,7 +598,7 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 <h2>Kế hoạch chạy theo hai lớp song song: xây nền tảng liên tục và tạo các đợt sóng theo vùng miền, mùa vụ.</h2>
 
 <div class="grid-3">
-  <div class="card"><div class="num">SÓNG 01 · 09–10/2026</div><h3>Miền Nam: giao mùa & mùa mưa</h3><p>Ưu tiên TP.HCM và tỉnh lân cận. Tập trung tình huống trẻ ho do thay đổi thời tiết, đi học lại, máy lạnh và sinh hoạt đô thị. Đây là đợt pilot để kiểm chứng thông điệp, POSM và khả năng tư vấn tại chuỗi Mẹ & Bé.</p></div>
+  <div class="card"><div class="num">SÓNG 01 · 09–10/2026</div><h3>Miền Nam: mùa mưa & giao mùa</h3><p>Ưu tiên TP.HCM và tỉnh lân cận. Tập trung tình huống trẻ ho do thay đổi thời tiết, đi học lại, máy lạnh và sinh hoạt đô thị. Đây là đợt pilot để kiểm chứng thông điệp, POSM và khả năng tư vấn tại chuỗi Mẹ & Bé.</p></div>
   <div class="card"><div class="num">SÓNG 02 · 11/2026–02/2027</div><h3>Miền Bắc: cao điểm lạnh</h3><p>Tăng trọng số Hà Nội và miền Bắc khi nhu cầu hô hấp thường tăng mạnh. Mở rộng điểm bán có chọn lọc, tăng nội dung chuyên môn, sampling và media theo địa bàn đã chứng minh khả năng chuyển đổi.</p></div>
   <div class="card"><div class="num">SÓNG 03 · 03–04/2027</div><h3>Bắc nồm ẩm · Nam chuyển mùa</h3><p>Tái kích hoạt bằng ngữ cảnh vùng miền khác nhau nhưng dùng chung nền tảng “Gói chuẩn chăm ho”. Đây cũng là thời điểm tối ưu thông điệp trước giai đoạn mở rộng nửa cuối năm.</p></div>
 </div>
@@ -595,7 +640,7 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
 </div>
 
 <div class="grid-2" style="margin-top:26px">
-<div class="card"><div class="num">09/2026–02/2027 · THÂM NHẬP THÔNG MINH</div><h3>Học nhanh bằng các tài sản vừa đủ</h3><p>01 hệ thống thông điệp; KV và POSM mô-đun; bộ ảnh sản phẩm; video ngắn từ motion/ảnh; landing page; nội dung chuyên môn; sales kit; sampling; dashboard phản hồi. Không ưu tiên iTVC hoặc sản xuất lớn khi chưa xác định rõ thông điệp thắng.</p></div>
+<div class="card"><div class="num">09/2026–02/2027 · THÂM NHẬP THÔNG MINH</div><h3>Định hình các key asset phù hợp theo giai đoạn</h3><p>01 hệ thống thông điệp; KV và POSM mô-đun; bộ ảnh sản phẩm; video ngắn từ motion/ảnh; landing page; nội dung chuyên môn; sales kit; sampling; dashboard phản hồi. Không ưu tiên iTVC hoặc sản xuất lớn khi chưa xác định rõ thông điệp thắng.</p></div>
 <div class="card"><div class="num">03/2027–09/2027 · MỞ RỘNG CÓ BẰNG CHỨNG</div><h3>Nhân rộng những gì đã được thị trường xác nhận</h3><p>Mở rộng chuỗi Mẹ & Bé, OTC và thương mại điện tử theo địa bàn. Tăng đầu tư media, KOC/KOL và tài sản sáng tạo khi đã có dữ liệu về nhóm khách hàng phản hồi tốt, điểm bán có chuyển đổi và bối cảnh mùa vụ có khả năng tạo tăng trưởng.</p></div>
 </div>
 
@@ -701,7 +746,7 @@ document.querySelectorAll('.gallery-item img').forEach(img=>{
 
 <section id="next-step">
 <div class="eyebrow">Next Step</div>
-<h2>Các quyết định cần cùng khách hàng xác nhận trước khi chuyển sang giai đoạn triển khai.</h2>
+<h2>Các quyết định cần thảo luận trước khi chuyển sang giai đoạn triển khai.</h2>
 
 <div class="grid-2">
   <div class="card">
