@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>HedeCare+ | Báo cáo khảo sát & Định hướng chiến lược</title>
 <style>
 :root{
@@ -286,6 +286,77 @@ h2::after{content:"";display:block;width:72px;height:4px;margin-top:18px;border-
   .brand img{width:250px;max-height:42px}
   .ladder .step b{font-size:26px}
   .gallery-item{aspect-ratio:4/3}
+}
+
+
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+  "Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+button,input,textarea,select{
+  font:inherit;
+}
+
+@media(max-width:900px){
+  nav{padding:12px 18px}
+  .shell{width:100%;max-width:none}
+  section{padding:48px 20px}
+  h1{font-size:42px;line-height:1}
+  h2{font-size:36px;line-height:1.08}
+  h3{font-size:21px}
+
+  .hero.hero-kv{
+    min-height:0;
+    padding:0;
+    background:#fff7ef;
+  }
+  .hero-kv-media{
+    width:100%;
+    aspect-ratio:auto;
+    overflow:visible;
+    background:#fff7ef;
+  }
+  .hero-kv-media img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center top;
+    display:block;
+  }
+
+  .comms-grid{
+    grid-template-columns:1fr !important;
+  }
+  .comms-card{
+    width:100%;
+    min-width:0;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+}
+
+.footer-sources p{
+  position:relative;
+  padding-left:16px;
+}
+.footer-sources p::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#ffb34d;
+  font-weight:900;
 }
 
 </style>
