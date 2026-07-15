@@ -1,1 +1,196 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#a40c15">
+<title>Nam Long – Giá Trị Thực | Inspire Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#a40c15;--red2:#c82934;--wine:#7e0710;--ink:#202124;--muted:#696a6d;--line:#eadfe1;--rose:#fff6f7;--rose2:#f9e9ec;--paper:#fff;--max:1240px;--radius:24px;--shadow:0 20px 55px rgba(120,18,28,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0%,#fff8f9 42%,#fff 100%);-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 40px),var(--max));margin:auto}.section{padding:104px 0}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:800}.section-head{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);gap:64px;align-items:center;margin-bottom:44px}.section-head>p{margin:0;max-width:620px;justify-self:end}.section-head .lead{margin:0}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(42px,6vw,78px);line-height:1.02;letter-spacing:-.055em;margin-bottom:20px}h2{font-size:clamp(32px,4.2vw,56px);line-height:1.06;letter-spacing:-.045em;margin-bottom:18px}h3{font-size:22px;line-height:1.3;letter-spacing:-.02em}p{font-size:16px;line-height:1.75;color:var(--muted)}.lead{font-size:clamp(19px,2vw,25px);line-height:1.55;color:#363638}.red{color:var(--red)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(164,12,21,.08)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{width:218px}.nav-links{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700}.nav-links a:hover{color:var(--red)}.nav-cta{border:1px solid var(--red);color:var(--red);padding:10px 15px;border-radius:99px}.menu-btn{display:none;border:0;background:none;width:42px}.menu-btn span{display:block;height:2px;background:#222;margin:5px}
+.hero{background:#f5f2f2}.hero img{width:100%;height:auto;max-height:none}.hero-mobile-note{display:none}
+.intro{background:radial-gradient(circle at 95% 10%,rgba(164,12,21,.08),transparent 30%),linear-gradient(135deg,#fff 0%,#fff6f7 100%)}.intro-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:74px;align-items:start}.quote-card{position:sticky;top:104px;overflow:hidden;border:1px solid rgba(164,12,21,.18);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}.quote-portrait{position:relative;aspect-ratio:16/10;overflow:hidden;background:#eef4f6}.quote-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 23%}.quote-body{padding:34px 36px 36px;background:linear-gradient(145deg,#fff 0%,#fff5f6 100%)}.quote-mark{font-size:56px;line-height:.7;color:rgba(164,12,21,.18);font-weight:800;margin-bottom:16px}.quote-card blockquote{margin:0 0 24px;font-size:30px;line-height:1.3;letter-spacing:-.035em;color:var(--red);font-weight:750}.quote-card small{display:block;font-size:13px;line-height:1.65;color:#68686b}.quote-card small strong{color:#262629}.intro-copy .lead{margin-bottom:26px}.proof-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.proof{padding:18px;border-radius:16px;background:#fff;border:1px solid var(--line)}.proof strong{display:block;color:var(--red);font-size:22px;margin-bottom:4px}.proof span{font-size:12px;color:#777}
+.internal{background:linear-gradient(180deg,#fff 0%,#fff3f5 100%)}.question-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.question{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 12px 35px rgba(97,24,31,.05)}.question .q{font-size:14px;color:var(--red);font-weight:800;margin-bottom:12px}.question h3{font-size:24px}.question p{margin-bottom:0}.question.wide{grid-column:1/-1;display:grid;grid-template-columns:.75fr 1.25fr;gap:42px;align-items:center;background:linear-gradient(135deg,#fff,#fff4f6)}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.value-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;min-height:330px}.value-no{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--red);margin-bottom:62px}.value-card h3{font-size:30px;color:var(--red)}
+.needs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.need{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:28px;border:1px solid var(--line);background:rgba(255,255,255,.9);border-radius:18px}.need b{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--rose2);color:var(--red)}.need h3{font-size:19px;margin-bottom:8px}.need p{font-size:15px;margin:0}
+.timeline-shell{overflow-x:auto;padding:12px 0 12px;scrollbar-width:thin}.campaign-timeline{min-width:1120px;border:1px solid #e4c9cd;border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}.months,.weeks{display:grid;grid-template-columns:repeat(10,1fr)}.month{background:var(--red);color:#fff;text-align:center;font-weight:800;font-size:13px;padding:9px;border-right:1px solid rgba(255,255,255,.25)}.month.jul{grid-column:span 3}.month.aug{grid-column:span 4}.month.sep{grid-column:span 3}.week{background:#cf0e18;color:#fff;text-align:center;padding:7px;font-size:12px;font-weight:700;border-right:1px solid rgba(255,255,255,.25)}.track{display:grid;grid-template-columns:135px repeat(10,1fr);min-height:42px;border-top:1px solid #eadde0;position:relative}.track-label{padding:12px 14px;font-size:12px;font-weight:700;background:#fff9fa;border-right:1px solid #eadde0;display:flex;align-items:center}.bar{margin:5px 3px;border-radius:8px;padding:7px 8px;font-size:11px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.2}.pink{background:#f3cfd4}.peach{background:#f7e4cf}.blue{background:#dbe8f5}.green{background:#bcdba7}.mint{background:#dcebd8}.lav{background:#e8d5e2}.sand{background:#f6e6d2}.slate{background:#dce5e7}.outline{background:#fff;border:1px solid #c98e95;color:var(--red)}.timeline-note{font-size:13px;color:#777;margin-top:14px}
+.ecosystem-section{background:linear-gradient(145deg,#fff 0%,#fff1f3 55%,#fae8eb 100%)}.ecosystem{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.eco-card{background:rgba(255,255,255,.84);border:1px solid rgba(164,12,21,.14);border-radius:22px;padding:31px;min-height:245px}.eco-kicker{font-size:12px;font-weight:800;color:var(--red);letter-spacing:.1em;margin-bottom:42px}.eco-card h3{font-size:25px}.eco-card p{font-size:15px}.eco-role{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:#777}.eco-role b{color:var(--red)}
+.cta-wrap{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#fff,#fff1f3);box-shadow:var(--shadow)}.cta-copy{padding:52px}.cta-copy p{max-width:650px}.cta-steps{padding:40px;background:rgba(255,255,255,.7);border-left:1px solid var(--line)}.step{display:grid;grid-template-columns:34px 1fr;gap:14px;margin-bottom:22px}.step b{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--red);color:#fff;font-size:13px}.step strong{display:block;margin-bottom:5px}.step span{font-size:14px;color:#777}.btn{display:inline-flex;margin-top:16px;min-height:48px;padding:0 20px;align-items:center;justify-content:center;border-radius:99px;background:var(--red);color:#fff;font-weight:800;font-size:14px;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(164,12,21,.2)}.frame-link{margin-top:26px;padding:20px;border:1px solid rgba(164,12,21,.2);border-radius:16px;background:#fff}.frame-link-label{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}.frame-link a{font-size:15px;font-weight:750;color:var(--red);word-break:break-all}.frame-link .btn{color:#fff;word-break:normal;min-width:190px}.guideline-copy{margin-bottom:32px;max-width:980px}.guideline-copy p{margin-bottom:16px}
+.keyword-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.keyword-group{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}.keyword-group h3{font-size:18px;color:var(--red)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:8px 11px;border-radius:99px;background:#fff6f7;border:1px solid #efd5d9;font-size:12px}
+.contact{background:linear-gradient(135deg,#fff,#fae9ec)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px}.contact-card p{font-size:14px;margin-bottom:8px}.contact-card strong{color:var(--red)}footer{padding:24px 0;background:#fff;border-top:1px solid var(--line);font-size:12px;color:#777}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.visible{opacity:1;transform:none}
+
+/* Private Inspire Hub sign-in */
+body.auth-locked{overflow:hidden}
+body.auth-locked>header,body.auth-locked>main,body.auth-locked>footer{visibility:hidden}
+.auth-gate{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:minmax(360px,42%) 1fr;background:#a40c15 url('assets/signin-background.png') center center/100% 100% no-repeat;opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
+.auth-gate.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+.auth-panel{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:48px;background:rgba(255,255,255,.97);box-shadow:30px 0 70px rgba(68,0,5,.12)}
+.auth-card{width:min(100%,470px)}
+.auth-brand{width:220px;margin-bottom:54px}
+.auth-kicker{font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.auth-card h1{font-size:clamp(38px,4vw,60px);line-height:1.02;margin-bottom:18px}
+.auth-card .auth-lead{font-size:18px;line-height:1.65;color:#555;margin-bottom:34px}
+.auth-form{display:grid;gap:14px}
+.auth-label{font-size:13px;font-weight:750;color:#303033}
+.auth-input-wrap{position:relative}
+.auth-input{width:100%;height:56px;border:1px solid #d9c9cc;border-radius:14px;padding:0 52px 0 18px;font:600 16px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#242426;background:#fff;outline:none;transition:.2s}
+.auth-input:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(164,12,21,.08)}
+.auth-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#777;font-size:12px;font-weight:700;cursor:pointer;padding:8px}
+.auth-submit{height:54px;border:0;border-radius:999px;background:var(--red);color:#fff;font:800 14px/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.02em;cursor:pointer;transition:.2s}
+.auth-submit:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(164,12,21,.22)}
+.auth-submit:disabled{opacity:.65;cursor:wait;transform:none}
+.auth-error{min-height:22px;margin:0;color:var(--red);font-size:13px;line-height:1.5;font-weight:650}
+.auth-note{margin:24px 0 0;font-size:12px;line-height:1.65;color:#858588}
+
+.auth-help{margin-top:8px;font-size:12px;line-height:1.6;color:#858588}
+.auth-help a{color:var(--red);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.auth-help a:hover{color:var(--wine)}
+.back-to-top{position:fixed;right:28px;bottom:28px;z-index:80;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;box-shadow:0 14px 32px rgba(164,12,21,.28);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .25s ease,visibility .25s ease,transform .25s ease,box-shadow .25s ease}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(164,12,21,.34)}
+.back-to-top:focus-visible{outline:3px solid rgba(164,12,21,.22);outline-offset:4px}
+.back-to-top svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:560px){.back-to-top{right:16px;bottom:16px;width:48px;height:48px}}
+
+.auth-visual{position:relative;min-width:0;background:transparent}
+.auth-visual:after{content:none}
+@media(max-width:900px){.auth-gate{grid-template-columns:1fr;background-color:#a40c15;background-image:url('assets/signin-background.png');background-position:center center;background-size:cover;background-repeat:no-repeat;overflow-y:auto}.auth-panel{margin:24px;align-self:center;padding:34px 26px;border-radius:24px;background:rgba(255,255,255,.96);box-shadow:0 24px 70px rgba(63,0,5,.25)}.auth-card{width:100%}.auth-brand{width:188px;margin-bottom:34px}.auth-card h1{font-size:40px}.auth-visual{display:none}}
+@media(max-width:520px){.auth-panel{margin:14px;padding:28px 20px}.auth-card h1{font-size:34px}.auth-card .auth-lead{font-size:16px;margin-bottom:26px}}
+@media(max-width:900px){.section{padding:76px 0}.section-head,.intro-grid,.contact-grid,.cta-wrap{grid-template-columns:1fr;gap:32px}.quote-card{position:relative;top:auto}.value-grid,.ecosystem,.question-grid,.keyword-groups{grid-template-columns:1fr}.question.wide{grid-column:auto;grid-template-columns:1fr}.needs{grid-template-columns:1fr}.proof-row{grid-template-columns:1fr}.cta-steps{border-left:0;border-top:1px solid var(--line)}.nav-links{position:fixed;right:-100%;top:76px;width:min(84vw,360px);height:calc(100vh - 76px);background:#fff;flex-direction:column;align-items:flex-start;padding:30px;box-shadow:-20px 20px 50px rgba(0,0,0,.12);transition:.3s}.nav-links.open{right:0}.menu-btn{display:block}.hero{padding:0}.hero img{width:100%;height:auto;object-fit:contain}.hero-mobile-note{display:block;text-align:center;padding:10px 14px;font-size:11px;color:#888;background:#fafafa}}
+@media(max-width:560px){.container{width:min(calc(100% - 28px),var(--max))}.nav{height:68px}.brand{width:176px}.nav-links{top:68px;height:calc(100vh - 68px)}h1{font-size:41px}.quote-card{padding:28px}.quote-card blockquote{font-size:24px}.need{grid-template-columns:1fr}.cta-copy,.cta-steps{padding:28px}.timeline-shell{margin-right:-14px}.hero img{min-height:0}}
+</style>
+</head>
+<body class="auth-locked">
+<div class="auth-gate" id="authGate" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <section class="auth-panel">
+    <div class="auth-card">
+      <img class="auth-brand" src="assets/logo-admex-namlong.png" alt="admeX và Nam Long">
+      <div class="auth-kicker">Tài liệu truyền thông nội bộ</div>
+      <h1 id="authTitle">Nam Long –<br><span class="red">Giá Trị Thực</span></h1>
+      <p class="auth-lead">Inspire Hub dành cho CBNV Nam Long và các đơn vị thành viên. Vui lòng nhập mật khẩu để tiếp tục.</p>
+      <form class="auth-form" id="authForm" novalidate>
+        <label class="auth-label" for="authPassword">Mật khẩu truy cập</label>
+        <div class="auth-input-wrap">
+          <input class="auth-input" id="authPassword" name="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required aria-describedby="authError">
+          <button class="auth-toggle" id="authToggle" type="button" aria-label="Hiện mật khẩu">Hiện</button>
+        </div>
+        <button class="auth-submit" id="authSubmit" type="submit">TRUY CẬP INSPIRE HUB</button>
+        <p class="auth-error" id="authError" role="alert" aria-live="polite"></p>
+      </form>
+      <p class="auth-note">Quyền truy cập được ghi nhớ trong phiên làm việc hiện tại. Khi đóng trình duyệt, hệ thống sẽ yêu cầu đăng nhập lại.</p>
+      <p class="auth-help">Quên mật khẩu? Liên hệ <a href="mailto:vy.lam@namlongvn.com">vy.lam@namlongvn.com</a></p>
+    </div>
+  </section>
+  <div class="auth-visual" aria-hidden="true"></div>
+</div>
+
+<header class="site-header"><div class="container nav"><a class="brand" href="#top"><img src="assets/logo-admex-namlong.png" alt="admeX và Nam Long"></a><nav class="nav-links" id="navLinks"><a href="#hieu-dung">Hiểu đúng</a><a href="#gia-tri">Giá Trị Thực</a><a href="#timeline">Timeline</a><a href="#hoat-dong">Hoạt động</a><a href="#dong-hanh">Đồng hành</a><a class="nav-cta" href="#lien-he">Liên hệ</a></nav><button class="menu-btn" id="menuBtn" aria-label="Mở menu"><span></span><span></span></button></div></header>
+<main id="top">
+<section class="hero" aria-label="Key Visual Nam Long Giá Trị Thực"><img src="assets/key-visual-phase-1.png" alt="Nam Long – Bất động sản Giá Trị Thực"><div class="hero-mobile-note">Key Visual chiến dịch · Vuốt xuống để khám phá</div></section>
+<section class="section intro" id="hieu-dung"><div class="container intro-grid"><aside class="quote-card reveal"><div class="quote-portrait"><img src="assets/nguyen-xuan-quang.png" alt="Ông Nguyễn Xuân Quang, Chủ tịch HĐQT Nam Long"></div><div class="quote-body"><div class="quote-mark">“</div><blockquote>Bán cái thị trường cần, thể hiện đúng giá trị thật và giữ đúng lời hứa.</blockquote><small><strong>Ông Nguyễn Xuân Quang</strong><br>Chủ tịch HĐQT Nam Long</small></div></aside><div class="intro-copy reveal"><div class="eyebrow">Nam Long Experience 2026 · Inspire Hub</div><h1>34 năm kiên định cùng <span class="red">“Giá Trị Thực”</span></h1><p class="lead">Vì Uy Tín &amp; Giá Trị Vượt Thời Gian.</p><p>Có những doanh nghiệp được biết đến bởi những dự án nổi bật. Có những doanh nghiệp được ghi nhớ bởi quy mô hay tốc độ phát triển. Nhưng cũng có những doanh nghiệp được lựa chọn suốt nhiều thập kỷ chỉ vì một điều rất giản dị: <strong>luôn giữ đúng lời hứa với khách hàng.</strong></p><p>Suốt 34 năm qua, Nam Long luôn tin rằng sứ mệnh của một doanh nghiệp bất động sản không chỉ là phát triển những công trình mới, mà là kiến tạo những giá trị mà xã hội thực sự cần. Bởi vậy, dù thị trường thay đổi qua nhiều chu kỳ, có một điều Nam Long chưa từng thay đổi: <strong>kiên định xây dựng uy tín bằng những giá trị thực.</strong></p><div class="proof-row"><div class="proof"><strong>34 năm</strong><span>Kiên định cùng Giá Trị Thực</span></div><div class="proof"><strong>31.000+</strong><span>Gia đình đã đồng hành</span></div><div class="proof"><strong>01 lời hứa</strong><span>Giữ đúng điều đã cam kết</span></div></div></div></div></section>
+<section class="section internal"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Nam Long – Giá Trị Thực là gì?</div><h2>Giá trị được định nghĩa bằng những nhu cầu chân thật nhất của <span class="red">“Người ở thật”.</span></h2></div><p class="lead">“Giá trị thực” không được định nghĩa bởi những lời hứa, mà bởi những nhu cầu chân thật của người ở thật.</p></div><div class="needs"><article class="need reveal"><b>01</b><div><h3>Vị trí thuận tiện</h3><p>Là sự tính toán kỹ lưỡng khi lựa chọn những vị trí dự án thuận tiện trải dọc các trục giao thông huyết mạch, để hành trình trở về nhà của mỗi cư dân luôn thảnh thơi, thuận tiện mỗi ngày.</p></div></article><article class="need reveal"><b>02</b><div><h3>Quy hoạch trọn vẹn</h3><p>Là tận tâm với những bản quy hoạch cùng đối tác quốc tế, mang thế giới tiện ích phong phú về trước ngưỡng cửa nhà, làm tròn đầy thêm những trải nghiệm sống.</p></div></article><article class="need reveal"><b>03</b><div><h3>Thiết kế thấu hiểu</h3><p>Là sự thấu hiểu phong cách sống, khi áp dụng những thiết kế thế giới ôm trọn lấy nếp nhà Việt Nam.</p></div></article><article class="need reveal"><b>04</b><div><h3>Di sản kế thừa</h3><p>Là kiến tạo những nơi chốn thực sự đáng sống và đáng giá để trở thành “di sản kế thừa” cho nhiều thế hệ.</p></div></article></div></div></section>
+<section class="section" id="gia-tri"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Ba trụ cột cốt lõi</div><h2>“Giá Trị Thực” được hiểu như thế nào?</h2></div><p class="lead">Ba trụ cột dưới đây là khung chung để mọi nội dung trong chiến dịch cùng nói một ngôn ngữ, nhưng vẫn đủ rộng để từng đơn vị phát triển câu chuyện riêng.</p></div><div class="value-grid"><article class="value-card reveal"><div class="value-no">01 · VALUE</div><h3>Giá thực</h3><p>Không phải mức giá thấp nhất, mà là giá trị xứng đáng nhất. Nam Long tối ưu vị trí, quy hoạch, thiết kế và cấu trúc sản phẩm để đáp ứng khả năng chi trả mà không đánh đổi chất lượng sống dài hạn.</p></article><article class="value-card reveal"><div class="value-no">02 · COMMUNITY</div><h3>Cộng đồng thực</h3><p>Một khu đô thị chỉ thật sự thành công khi cuộc sống đã hình thành. Những gia đình đang sinh sống, những tiện ích đang vận hành và nhịp sống hiện hữu là minh chứng thuyết phục nhất.</p></article><article class="value-card reveal"><div class="value-no">03 · PROMISE</div><h3>Cam kết thực</h3><p>Pháp lý, tiến độ, chất lượng bàn giao và sự đồng hành lâu dài của các đối tác là cách Nam Long biến lời hứa thành trải nghiệm có thể nhìn thấy và kiểm chứng.</p></article></div></div></section>
+<section class="section internal"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Bắt đầu từ người ở thật</div><h2>Mỗi quyết định đều trả lời một nhu cầu sống cụ thể.</h2></div><p>Giá trị thực không nằm ở những điều xa xôi, mà hiện diện trong hành trình trở về nhà, trong tiện ích mỗi ngày, trong cách một gia đình gắn kết và trong tài sản được trao truyền cho thế hệ sau.</p></div><div class="needs"><article class="need reveal"><b>01</b><div><h3>Vị trí thuận tiện</h3><p>Lựa chọn các dự án dọc trục giao thông huyết mạch để hành trình trở về nhà thuận tiện hơn.</p></div></article><article class="need reveal"><b>02</b><div><h3>Quy hoạch trọn vẹn</h3><p>Đưa trường học, công viên, thương mại, y tế và không gian xanh đến gần đời sống cư dân.</p></div></article><article class="need reveal"><b>03</b><div><h3>Thiết kế phù hợp</h3><p>Ứng dụng tư duy quốc tế nhưng thấu hiểu nếp sống và nhu cầu thực tế của gia đình Việt.</p></div></article><article class="need reveal"><b>04</b><div><h3>Di sản bền vững</h3><p>Kiến tạo nơi chốn đủ đáng sống, đáng giá và bền vững để trở thành tài sản kế thừa.</p></div></article></div></div></section>
+<section class="section" id="timeline"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Master timeline · Jul–Sep 2026</div><h2>Một nhịp triển khai thống nhất trên toàn hệ thống.</h2></div><p>Chiến dịch được triển khai xuyên suốt từ tháng 7 đến tháng 9/2026, kết nối đồng bộ các tài sản nội dung, kênh truyền thông và hoạt động nội bộ.</p></div><div class="timeline-shell reveal"><div class="campaign-timeline"><div class="months"><div class="month jul">JUL</div><div class="month aug">AUG</div><div class="month sep">SEP</div></div><div class="weeks"><div class="week">W3</div><div class="week">W4</div><div class="week">W5</div><div class="week">W1</div><div class="week">W2</div><div class="week">W3</div><div class="week">W4</div><div class="week">W1</div><div class="week">W2</div><div class="week">W3</div></div>
+<div class="track"><div class="track-label">Key Visual</div><div class="bar pink" style="grid-column:2/3">KV1 Air</div><div class="bar pink" style="grid-column:5/6">KV2 Air</div></div>
+<div class="track"><div class="track-label">Owned / DOOH</div><div class="bar pink" style="grid-column:2/4">KV1 Owned channel NLG</div><div class="bar outline" style="grid-column:4/5">KV1–DOOH</div><div class="bar pink" style="grid-column:5/11">KV2 · Owned channel NLG + 2 tuần DOOH</div></div>
+<div class="track"><div class="track-label">Contest</div><div class="bar peach" style="grid-column:5/8">Contest Air</div></div>
+<div class="track"><div class="track-label">Banner</div><div class="bar lav" style="grid-column:6/7">Banner 1</div><div class="bar lav" style="grid-column:10/11">Banner 2</div></div>
+<div class="track"><div class="track-label">PR / Media</div><div class="bar sand" style="grid-column:4/5">CafeBiz</div><div class="bar sand" style="grid-column:6/7">CafeF</div><div class="bar sand" style="grid-column:8/9">CafeBiz</div><div class="bar sand" style="grid-column:11/12">CafeF-E</div></div>
+<div class="track"><div class="track-label">Event</div><div class="bar pink" style="grid-column:8/9">KV Event Air</div></div>
+<div class="track"><div class="track-label">Video assets</div><div class="bar blue" style="grid-column:2/4">Hậu kỳ Manifesto Main Film</div><div class="bar blue" style="grid-column:5/6">MF Air</div><div class="bar blue" style="grid-column:2/4">Hậu kỳ Documentary</div><div class="bar blue" style="grid-column:6/7">DOC Air</div><div class="bar blue" style="grid-column:2/4">Hậu kỳ Testimonial</div><div class="bar blue" style="grid-column:6/7">TES Air</div></div>
+<div class="track"><div class="track-label">Paid Media</div><div class="bar green" style="grid-column:3/8">Facebook Ads</div><div class="bar mint" style="grid-column:9/12">Facebook Ads</div><div class="bar green" style="grid-column:5/7">YouTube Ads</div><div class="bar green" style="grid-column:6/8">TikTok Ads</div></div>
+<div class="track"><div class="track-label">Always-on</div><div class="bar peach" style="grid-column:2/12">Social Post · Giá Trị Thực · Main Film · Testimonial · Documentary · Event</div></div>
+<div class="track"><div class="track-label">Internal</div><div class="bar blue" style="grid-column:2/11">Truyền thông nội bộ</div></div>
+<div class="track"><div class="track-label">Reporting</div><div class="bar slate" style="grid-column:2/11">Báo cáo hàng tuần</div></div>
+</div></div><p class="timeline-note">Master Timeline chiến dịch Nam Long – Giá Trị Thực, giai đoạn tháng 7–9/2026.</p></div></section>
+<section class="section ecosystem-section" id="hoat-dong"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Hệ sinh thái tài sản truyền thông</div><h2>Mỗi tài sản làm rõ một lớp của “Giá Trị Thực”.</h2></div><p>Chiến dịch được thiết kế để bao phủ mọi điểm chạm, nhất quán từ thị giác đến cảm xúc.</p></div><div class="ecosystem"><article class="eco-card reveal"><div class="eco-kicker">01 · BRAND DECLARATION</div><h3>Manifesto iTVC</h3><p>Tuyên ngôn hình ảnh và câu chuyện, đúc kết hành trình kiến tạo “Giá Trị Thực” bằng ngôn ngữ của riêng Nam Long đầy cảm hứng.</p><div class="eco-role"><b>Vai trò:</b> Thiết lập cảm xúc và ngôn ngữ chung cho toàn chiến dịch.</div></article><article class="eco-card reveal"><div class="eco-kicker">02 · INSIDE EVIDENCE</div><h3>Documentary Video</h3><p>Thước phim tài liệu chân thực, giải mã bài toán về Giá Trị Thực của Nam Long từ Người Nam Long.</p><div class="eco-role"><b>Vai trò:</b> Chứng minh năng lực từ bên trong tổ chức.</div></article><article class="eco-card reveal"><div class="eco-kicker">03 · LIVED EXPERIENCE</div><h3>Testimonial Video</h3><p>Câu chuyện “Cộng đồng thực” qua lăng kính và trải nghiệm sống của chính những cư dân tại Waterpoint, Mizuki Park.</p><div class="eco-role"><b>Vai trò:</b> Biến định vị thương hiệu thành trải nghiệm đời sống.</div></article><article class="eco-card reveal"><div class="eco-kicker">04 · AMPLIFICATION</div><h3>KV & Tổ hợp truyền thông O2O</h3><p>Lan tỏa từ Online xuống Offline, đa nền tảng và hệ sinh thái của Nam Long; phủ sóng toàn diện qua tuyến bài PR chuyên sâu, Social &amp; Media, Contest “Sức Sống Nam Long” và hệ thống Digital-OOH.</p><div class="eco-role"><b>Vai trò:</b> Mở rộng độ phủ và tạo hiệu ứng cộng hưởng toàn hệ thống.</div></article></div></div></section>
+<section class="section" id="dong-hanh"><div class="container"><div class="cta-wrap reveal"><div class="cta-copy"><div class="eyebrow">Hoạt động cộng hưởng</div><h2>Đồng hành lan tỏa – Tự hào bảo chứng <span class="red">“Giá Trị Thực”</span> cùng Nam Long!</h2><p><strong>Thân gửi đại gia đình Nam Long,</strong></p><p>34 năm, hơn 30.000 tổ ấm được trao tay. Giá trị đó được kiến tạo từ tâm huyết và cam kết “giữ đúng lời hứa” của từng nhân sự tại Tập đoàn và các công ty thành viên.</p><p>Hôm nay, chiến dịch “Nam Long - Giá Trị Thực” chính thức khởi động. Corp Comms Team mời đại gia đình Nam Long cùng thay đổi Avatar Frame trên nền tảng mạng xã hội Facebook. Không chỉ là một khung hình, đây là cách chúng ta cùng nhau khẳng định niềm tự hào về những dự án sáng đèn, những cộng đồng văn minh mà chúng ta đã và đang xây dựng.</p><a class="btn" href="http://khunghinh.net/p/nlggiatrithuc" target="_blank" rel="noopener">Thay Avatar Frame Ngay!</a></div><div class="cta-steps"><div class="step"><b>1</b><div><strong>Truy cập link thay Frame</strong><span>Mở công cụ tạo khung hình chính thức của chiến dịch.</span></div></div><div class="step"><b>2</b><div><strong>Cập nhật ảnh đại diện mới</strong><span>Sử dụng ảnh đã tạo làm ảnh đại diện Facebook cá nhân.</span></div></div><div class="step"><b>3</b><div><strong>Kèm theo hashtag</strong><span>#NamLong · #GiaTriThuc</span></div></div><div class="frame-link"><div class="frame-link-label">Đường link chính thức</div><a href="http://khunghinh.net/p/nlggiatrithuc" target="_blank" rel="noopener">khunghinh.net/p/nlggiatrithuc</a><br><a class="btn" href="http://khunghinh.net/p/nlggiatrithuc" target="_blank" rel="noopener">Mở Link Thay Frame</a></div></div></div></div></section>
+<section class="section internal" id="quy-tac"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Bộ quy tắc truyền thông đồng bộ</div><h2>Hòa quyện tiếng nói dự án và vị thế tập đoàn.</h2></div><p>Từ 15/07/2026 đến 30/09/2026, mọi hoạt động truyền thông, quảng bá của các công ty thành viên và từng dự án cần chủ động lồng ghép tinh thần “Nam Long - Giá Trị Thực”.</p></div><div class="guideline-copy reveal"><p>Sự hòa quyện và nhất quán này không chỉ cộng hưởng sức mạnh cho thông điệp của tập đoàn, mà còn trực tiếp gia tăng giá trị định vị, củng cố niềm tin vững chắc cho chính các khu đô thị và dự án đang triển khai trên thị trường.</p><p>Để truyền tải đúng DNA của Tập đoàn nhưng vẫn giữ được không gian sáng tạo riêng cho từng dự án, các đơn vị cần khéo léo đan cài các Từ khóa chiến lược (Keywords) sau vào các tuyến nội dung (PR, Social, Sales Kit, Script tư vấn...)</p></div><div class="keyword-groups"><article class="keyword-group reveal"><h3>Tầm nhìn & niềm tin</h3><div class="chips"><span class="chip">Giá trị thực</span><span class="chip">Giữ đúng lời hứa</span><span class="chip">Cam kết thực</span><span class="chip">Sự gắn bó và tin tưởng</span><span class="chip">Minh bạch</span></div></article><article class="keyword-group reveal"><h3>Sản phẩm & chi phí</h3><div class="chips"><span class="chip">Nhu cầu thực</span><span class="chip">Giá thực</span><span class="chip">Affordable housing</span><span class="chip">Tối ưu quy hoạch & thiết kế</span></div></article><article class="keyword-group reveal"><h3>Triển khai & chất lượng</h3><div class="chips"><span class="chip">Những gì bạn thấy là những gì bạn nhận được</span><span class="chip">Đúng tiến độ</span><span class="chip">Cam kết pháp lý</span><span class="chip">Năng lực triển khai</span><span class="chip">Đối tác Nhật Bản</span></div></article><article class="keyword-group reveal"><h3>Không gian sống</h3><div class="chips"><span class="chip">Cộng đồng thực</span><span class="chip">Khu đô thị tích hợp</span><span class="chip">Sức sống đô thị</span><span class="chip">An cư dài hạn</span><span class="chip">Hệ thống tiện ích hiện hữu &amp; cần thiết</span></div></article></div></div></section>
+<section class="section contact" id="lien-he"><div class="container contact-grid"><div class="reveal"><div class="eyebrow">Thông tin liên hệ</div><h2>Cùng đưa “Giá Trị Thực” thành tiếng nói nhất quán của Nam Long.</h2><p>Mọi câu hỏi về nội dung, định hướng truyền thông và tài sản chiến dịch vui lòng liên hệ đầu mối Corp Comms.</p></div><div class="contact-card reveal"><h3>Lâm Nguyễn Thúy Vy</h3><p><strong>Expert, Corporate Communication</strong></p><p>M: 0907 26 02 96</p><hr style="border:0;border-top:1px solid #eee;margin:22px 0"><p><strong>NAM LONG INVESTMENT CORPORATION</strong></p><p>Capital Tower, 06 Nguyễn Khắc Viện, Phường Tân Phú, Quận 7, TP.HCM</p><p>T: (84-28) 54 16 17 18 · F: (84-28) 54 17 18 19</p><p>www.namlongvn.com</p></div></div></section>
+</main>
+<footer><div class="container footer-inner"><span>Nam Long – Bất động sản Giá Trị Thực.</span><span>Inspire Hub · Version 2.5</span></div></footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Quay về đầu trang" title="Quay về đầu trang">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6 15l6-6 6 6"></path>
+  </svg>
+</button>
+
+<script>
+(() => {
+  const SESSION_KEY='nlgInspireHubAccess';
+  const PASSWORD_HASH='dcac51d4081c2ab3ab505ed5d665a54d303d91a358159c13736b4f10e99ac321';
+  const gate=document.getElementById('authGate');
+  const form=document.getElementById('authForm');
+  const input=document.getElementById('authPassword');
+  const submit=document.getElementById('authSubmit');
+  const error=document.getElementById('authError');
+  const toggle=document.getElementById('authToggle');
+
+  const initPage=()=>{
+    const b=document.getElementById('menuBtn'),n=document.getElementById('navLinks');
+    if(b&&n){b.addEventListener('click',()=>n.classList.toggle('open'));n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')))}
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    const backToTop=document.getElementById('backToTop');
+    if(backToTop){
+      const syncBackToTop=()=>backToTop.classList.toggle('show',window.scrollY>500);
+      window.addEventListener('scroll',syncBackToTop,{passive:true});
+      syncBackToTop();
+      backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    }
+  };
+  const unlock=(animate=true)=>{
+    document.body.classList.remove('auth-locked');
+    if(animate){gate.classList.add('is-leaving');setTimeout(()=>gate.remove(),600)}else{gate.remove()}
+    initPage();
+  };
+  const sha256=async(value)=>{
+    const data=new TextEncoder().encode(value);
+    const hash=await crypto.subtle.digest('SHA-256',data);
+    return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  };
+
+  if(sessionStorage.getItem(SESSION_KEY)==='granted'){
+    unlock(false);
+    return;
+  }
+  requestAnimationFrame(()=>input.focus());
+  toggle.addEventListener('click',()=>{
+    const show=input.type==='password';
+    input.type=show?'text':'password';
+    toggle.textContent=show?'Ẩn':'Hiện';
+    toggle.setAttribute('aria-label',show?'Ẩn mật khẩu':'Hiện mật khẩu');
+    input.focus();
+  });
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    error.textContent='';
+    submit.disabled=true;
+    submit.textContent='ĐANG KIỂM TRA...';
+    try{
+      const entered=await sha256(input.value.trim());
+      if(entered===PASSWORD_HASH){
+        sessionStorage.setItem(SESSION_KEY,'granted');
+        unlock(true);
+      }else{
+        error.textContent='Mật khẩu chưa chính xác. Vui lòng kiểm tra và thử lại.';
+        input.select();
+      }
+    }catch(_){
+      error.textContent='Không thể xác thực trên trình duyệt này. Vui lòng thử lại.';
+    }finally{
+      submit.disabled=false;
+      submit.textContent='TRUY CẬP INSPIRE HUB';
+    }
+  });
+})();
+</script>
+</body></html>
