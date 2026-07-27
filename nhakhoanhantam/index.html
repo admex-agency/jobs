@@ -9,7 +9,7 @@
 :root{--navy:#073d63;--navy2:#0a527d;--blue:#1c78a7;--cyan:#72cbd9;--ink:#142834;--muted:#61737d;--line:#dce7ec;--paper:#f5f9fb;--white:#fff;--shadow:0 20px 54px rgba(5,38,61,.12);--max:1560px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans",sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eaf1f4;color:var(--ink);line-height:1.48}a{color:inherit}img{display:block;max-width:100%}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav-inner{height:66px;width:min(calc(100% - 36px),var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{height:42px;width:auto;max-width:220px}.nav-actions{display:flex;align-items:center;gap:14px}.nav-links{display:flex;gap:17px;font-size:12px;font-weight:750;color:#526b78}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--navy)}.pdf-download{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:850;white-space:nowrap;box-shadow:0 8px 20px rgba(7,61,99,.18)}.pdf-download:hover{background:var(--navy2)}
+.nav-inner{height:66px;width:min(calc(100% - 36px),var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{height:42px;width:auto;max-width:220px}.nav-actions{display:flex;align-items:center;gap:14px}.nav-links{display:flex;gap:17px;font-size:12px;font-weight:750;color:#526b78}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--navy)}.pdf-download{border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:850;white-space:nowrap;box-shadow:0 8px 20px rgba(7,61,99,.18)}.pdf-download:hover{background:var(--navy2)}
 .deck-slide{width:min(calc(100% - 28px),var(--max));margin:16px auto;background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;position:relative}.slide-inner{height:100%;padding:clamp(28px,3.1vw,54px);display:flex;flex-direction:column;justify-content:center}
 .hero{background:radial-gradient(circle at 78% 18%,rgba(114,203,217,.27),transparent 26%),linear-gradient(145deg,#fff,#f2f8fb)}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,4vw,70px);align-items:center}.hero-photo{margin:0;border-radius:26px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.hero-photo img{width:100%;height:clamp(390px,35vw,570px);object-fit:cover}.hero-photo:after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,rgba(5,38,61,.82))}.hero-photo figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:18px;color:#fff;font-size:13px;font-weight:750}
 .eyebrow,.kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:850;color:var(--blue);margin-bottom:13px}h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.04em}h1{font-size:clamp(38px,4.4vw,52px)}h2{font-size:clamp(30px,3.2vw,44px)}h3{font-size:clamp(19px,1.65vw,27px)}
@@ -48,6 +48,67 @@
 .budget-callout b{display:block;color:var(--navy);font-size:19px;margin-bottom:5px}
 @media(max-width:1100px){.budget-hero{grid-template-columns:1fr}.rate-table{min-width:860px}.table-scroll{overflow:auto}}
 @media(max-width:760px){.budget-callout{grid-template-columns:1fr}.budget-rule{grid-template-columns:40px 1fr}}
+
+
+
+/* V11: explicit contrast for light cards inside commercial panel */
+.budget-principles .budget-callout > div{
+  background:#f4f8fa;
+  color:var(--ink);
+}
+.budget-principles .budget-callout > div b{
+  color:var(--navy);
+}
+.budget-principles .budget-callout > div span{
+  color:#526874 !important;
+  opacity:1 !important;
+}
+
+/* V10 UI fixes */
+.dark .budget-callout > div,
+.dark .budget-rule,
+.dark .rate-table,
+.dark .kpi-box,
+.dark .mapping-items div{
+  color:var(--ink);
+}
+.dark .budget-callout > div span,
+.dark .budget-callout > div p,
+.dark .budget-rule p,
+.dark .rate-table td,
+.dark .rate-table .note-cell,
+.dark .kpi-box p,
+.dark .mapping-items div{
+  color:var(--muted);
+}
+.dark .budget-callout > div b,
+.dark .budget-rule h3,
+.dark .rate-table .price,
+.dark .kpi-box h3{
+  color:var(--navy);
+}
+.budget-callout > div{
+  min-height:142px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.budget-callout > div span{
+  display:block;
+  line-height:1.5;
+}
+.rate-table td,
+.rate-table th{
+  word-break:normal;
+  overflow-wrap:anywhere;
+}
+.summary-item,
+.card,
+.budget-rule,
+.kpi-box,
+.mapping-items div{
+  overflow:hidden;
+}
 
 @media print{
   @page{size:A4 landscape;margin:8mm}
@@ -109,14 +170,14 @@
 <body>
 <nav class="nav"><div class="nav-inner"><a class="brand" href="#top"><img src="logo-nhakhoanhantam.svg" alt="Nha khoa Nhân Tâm"></a><div class="nav-actions">
   <div class="nav-links"><a href="#overview">Overview</a><a href="#summary">Tóm tắt</a><a href="#architecture">Chiến lược</a><a href="#localation">WIN LOCALATION</a><a href="#content-first">CONTENT FIRST</a><a href="#operating">Vận hành</a><a href="#kpi">KPI</a><a href="#budget">Budget</a></div>
-  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf" download>Tải PDF</a>
+  <button class="pdf-download" type="button" onclick="window.print()">Tải PDF</button>
 </div></div></nav>
 
 <header class="deck-slide hero" id="top"><div class="slide-inner"><div class="hero-grid"><div><div class="eyebrow">Đề xuất định hướng chiến lược · 60 ngày</div><h1>Thiết lập một chuẩn niềm tin mới cho Implant ứng dụng công nghệ robot.</h1><p class="lead">Bác sĩ dẫn dắt chuyên môn. Robot nâng cao độ chính xác. Nội dung uy tín tạo niềm tin. Hệ thống truyền thông tiếp nhận nhu cầu ngay tại từng điểm chạm.</p><p class="thesis">Trọng tâm chiến lược: tạo Brand Impact tại các thị trường có khả năng chuyển đổi cao, dẫn dắt ngành bằng CONTENT FIRST và tối ưu hành trình đăng ký trải nghiệm sớm.</p><div class="btns"><a class="btn primary" href="#summary">Xem tóm tắt chiến lược</a><a class="btn" href="#localation">Xem chiến lược trọng tâm</a></div></div><figure class="hero-photo"><img src="hero-yakebot-demo.png" alt="Bác sĩ Nhân Tâm thao tác cùng Robot Implant"><figcaption>Bác sĩ dẫn dắt chuyên môn · Robot hỗ trợ nâng cao độ chính xác</figcaption></figure></div></div></header>
 
 <section class="deck-slide" id="overview"><div class="slide-inner reveal"><div class="kicker">01 · Overview Brief</div><div class="statement">YakeBot mở ra cơ hội giúp Nhân Tâm khẳng định vị thế tiên phong, nhưng <em>công nghệ chỉ tạo giá trị khi được chuyển hóa thành niềm tin và nhu cầu thực.</em></div><p class="intro">Chiến dịch cần giải quyết đồng thời ba bài toán: giải thích đúng vai trò của robot, xây dựng sự tin tưởng dựa trên chuyên môn bác sĩ và tạo một hệ thống tiếp nhận đăng ký trải nghiệm sớm trong 60 ngày.</p><div class="grid3"><div class="card soft"><div class="num">BÀI TOÁN 01</div><h3>Định vị công nghệ</h3><p>Robot là công cụ hỗ trợ bác sĩ nâng cao khả năng kiểm soát và độ chính xác, không thay thế quyết định chuyên môn.</p></div><div class="card soft"><div class="num">BÀI TOÁN 02</div><h3>Tạo niềm tin</h3><p>Uy tín hơn 30 năm, chuyên môn của đội ngũ bác sĩ và chứng thực từ nội dung báo chí là nền tảng bảo chứng.</p></div><div class="card soft"><div class="num">BÀI TOÁN 03</div><h3>Khai thác nhu cầu</h3><p>Mọi điểm chạm truyền thông cần được kết nối với Landing Page, CRM và cơ chế tiếp thị lại.</p></div></div></div></section>
 
-<section class="deck-slide dark" id="objective"><div class="slide-inner reveal"><div class="kicker">02 · Mục tiêu chiến dịch</div><h2>Một hệ mục tiêu gồm Brand Impact và Performance Engagement</h2><p class="intro">Tạo nhận diện rộng cho Robot Implant, củng cố vị thế tiên phong của Nha khoa Nhân Tâm và hướng tới 1.200 đăng ký trải nghiệm sớm từ các nhóm khách hàng có tiềm năng chuyển đổi cao.</p><div class="grid4"><div class="card"><div class="num">01</div><h3>Xây dựng vị thế</h3><p>Khẳng định Nhân Tâm là hệ thống nha khoa tư nhân tiên phong ứng dụng robot trong Implant.</p></div><div class="card"><div class="num">02</div><h3>Giảm rào cản</h3><p>Chuyển nhận thức từ “robot thay bác sĩ” sang “bác sĩ làm chủ công nghệ”.</p></div><div class="card"><div class="num">03</div><h3>Tạo nhu cầu</h3><p>Thúc đẩy tìm hiểu, truy cập Landing Page và đăng ký trải nghiệm sớm.</p></div><div class="card"><div class="num">04</div><h3>Tạo lực kéo địa phương</h3><p>Ưu tiên các thành phố lớn và địa phương có chi nhánh của Nha khoa Nhân Tâm.</p></div></div></div></section>
+<section class="deck-slide dark" id="objective"><div class="slide-inner reveal"><div class="kicker">02 · Mục tiêu chiến dịch</div><h2>Một hệ mục tiêu gồm Brand Impact và Performance Engagement</h2><p class="intro">Tạo nhận diện rộng cho Robot Implant, củng cố vị thế tiên phong của Nha khoa Nhân Tâm và hướng tới 12.000 đăng ký trải nghiệm sớm từ các nhóm khách hàng có tiềm năng chuyển đổi cao.</p><div class="grid4"><div class="card"><div class="num">01</div><h3>Xây dựng vị thế</h3><p>Khẳng định Nhân Tâm là hệ thống nha khoa tư nhân tiên phong ứng dụng robot trong Implant.</p></div><div class="card"><div class="num">02</div><h3>Giảm rào cản</h3><p>Chuyển nhận thức từ “robot thay bác sĩ” sang “bác sĩ làm chủ công nghệ”.</p></div><div class="card"><div class="num">03</div><h3>Tạo nhu cầu</h3><p>Thúc đẩy tìm hiểu, truy cập Landing Page và đăng ký trải nghiệm sớm.</p></div><div class="card"><div class="num">04</div><h3>Tạo lực kéo địa phương</h3><p>Ưu tiên các thành phố lớn và địa phương có chi nhánh của Nha khoa Nhân Tâm.</p></div></div></div></section>
 
 <section class="deck-slide" id="summary">
   <div class="slide-inner reveal">
@@ -254,10 +315,10 @@
       <div class="budget-principles">
         <div class="num" style="color:#9fe4ec">CƠ CHẾ THƯƠNG MẠI</div>
         <h3>Transparent Cost</h3>
-        <p>Đơn giá media, sản xuất, nội dung, CRM và đo lường được tách riêng. Các hạng mục Branding và Performance áp dụng chi phí quản lý và vận hành 20%.</p>
+        <p>Đơn giá media, sản xuất, nội dung, CRM và đo lường được tách riêng. Chi phí quản lý và vận hành 20% áp dụng cho các hạng mục Branding và Performance.</p>
         <div class="budget-callout">
-          <div><b>Branding</b><span>Đo lường bằng Reach, Impression, View và SOV.</span></div>
-          <div><b>Performance</b><span>Đo lường bằng đăng ký để lại thông tin và mức độ quan tâm trải nghiệm sớm.</span></div>
+          <div><b>Branding</b><span>Đo lường qua Reach, Impression, View và SOV.</span></div>
+          <div><b>Performance</b><span>Đo lường qua số đăng ký để lại thông tin và mức độ quan tâm trải nghiệm sớm.</span></div>
         </div>
       </div>
       <div class="budget-rules">
