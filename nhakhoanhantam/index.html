@@ -650,12 +650,153 @@
 @media(max-width:900px){.kv-approved-grid{grid-template-columns:1fr}}
 @media print{.kv-approved-grid{gap:4mm!important}.kv-approved-caption{padding:4mm!important}}
 
+
+/* Budget update - performance roadmap and charts */
+.budget-chart-layout{
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+  gap:20px;
+  align-items:stretch;
+}
+.budget-chart-copy{
+  padding:28px;
+  border-radius:24px;
+  background:linear-gradient(145deg,var(--navy),var(--navy2));
+  color:#fff;
+}
+.budget-chart-copy p{color:#d4e5ec}
+.budget-chart{
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff;
+}
+.chart-axis{
+  display:grid;
+  grid-template-columns:110px 1fr 100px;
+  gap:14px;
+  align-items:center;
+  margin-top:16px;
+}
+.chart-axis:first-child{margin-top:0}
+.chart-label small{
+  display:block;
+  font-size:10px;
+  color:var(--blue);
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.chart-label strong{
+  display:block;
+  font-size:15px;
+  margin-top:3px;
+}
+.chart-track{
+  height:42px;
+  border-radius:999px;
+  background:#edf4f7;
+  overflow:hidden;
+  position:relative;
+}
+.chart-bar{
+  height:100%;
+  min-width:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-right:12px;
+  color:#073d63;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.chart-value{
+  text-align:right;
+}
+.chart-value b{
+  display:block;
+  color:var(--navy);
+  font-size:17px;
+  line-height:1.05;
+}
+.chart-value span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px;
+}
+.chart-foot{
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.chart-foot div{
+  padding:14px;
+  border-radius:15px;
+  background:var(--paper);
+}
+.chart-foot b{
+  display:block;
+  color:var(--navy);
+  font-size:16px;
+}
+.chart-foot span{
+  font-size:11px;
+  color:var(--muted);
+}
+.budget-meta-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+.budget-meta{
+  padding:16px;
+  border-radius:17px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.budget-meta b{
+  display:block;
+  color:var(--navy);
+  font-size:17px;
+  margin-bottom:5px;
+}
+.budget-meta span{
+  font-size:11px;
+  color:var(--muted);
+}
+@media(max-width:1000px){
+  .budget-chart-layout{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .chart-axis{grid-template-columns:1fr}
+  .chart-value{text-align:left}
+  .chart-foot,.budget-meta-grid{grid-template-columns:1fr}
+}
+@media print{
+  .budget-chart-layout{grid-template-columns:72mm 1fr!important;gap:4mm!important}
+  .budget-chart-copy,.budget-chart{padding:5mm!important}
+  .chart-axis{grid-template-columns:28mm 1fr 27mm!important;gap:3mm!important;margin-top:3mm!important}
+  .chart-track{height:9mm!important}
+  .chart-foot{gap:3mm!important;margin-top:3mm!important;padding-top:3mm!important}
+  .chart-foot div{padding:3mm!important}
+  .budget-meta-grid{gap:3mm!important;margin-top:3mm!important}
+  .budget-meta{padding:3mm!important}
+}
+
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner"><a class="brand" href="#top"><img src="logo-nhakhoanhantam.png" alt="Nha khoa Nhân Tâm"></a><div class="nav-actions">
   <div class="nav-links"><a href="#overview">Overview</a><a href="#summary">Tóm tắt</a><a href="#architecture">Chiến lược</a><a href="#localation">WIN LOCALATION</a><a href="#content-first">CONTENT FIRST</a><a href="#campaign-message">Thông điệp & KV</a><a href="#case-study">Case Study</a><a href="#operating">Vận hành</a><a href="#kpi">KPI</a><a href="#budget">Budget</a></div>
-  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=12" download>Tải PDF</a>
+  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=13" download>Tải PDF</a>
 </div></div></nav>
 
 <header class="deck-slide hero" id="top"><div class="slide-inner"><div class="hero-grid"><div><div class="eyebrow">Đề xuất định hướng chiến lược · 60 ngày</div><h1>Thiết lập một chuẩn niềm tin mới cho Implant ứng dụng công nghệ robot.</h1><p class="lead">Bác sĩ dẫn dắt chuyên môn. Robot nâng cao độ chính xác. Nội dung uy tín tạo niềm tin. Hệ thống truyền thông tiếp nhận nhu cầu ngay tại từng điểm chạm.</p><p class="thesis">Trọng tâm chiến lược: tạo Brand Impact tại các thị trường có khả năng chuyển đổi cao, dẫn dắt ngành bằng CONTENT FIRST và tối ưu hành trình đăng ký trải nghiệm sớm.</p><div class="btns"><a class="btn primary" href="#summary">Xem tóm tắt chiến lược</a><a class="btn" href="#localation">Xem chiến lược trọng tâm</a></div></div><figure class="hero-photo"><img src="hero-yakebot-demo.png" alt="Bác sĩ Nhân Tâm thao tác cùng Robot Implant"><figcaption>Bác sĩ dẫn dắt chuyên môn · Robot hỗ trợ nâng cao độ chính xác</figcaption></figure></div></div></header>
@@ -1008,94 +1149,138 @@
 
 
 
+
 <section class="deck-slide" id="budget">
   <div class="slide-inner reveal">
     <div class="kicker">24 · Nguyên tắc ngân sách</div>
-    <h2>Transparent Cost và tách biệt ngân sách theo vai trò</h2>
-    <p class="intro">Ngân sách được xây dựng theo từng nhóm hạng mục, giúp Nhân Tâm theo dõi rõ đơn giá, phạm vi công việc và cơ sở nghiệm thu. Tổng ngân sách sẽ được xác lập từ sản lượng thực tế được phê duyệt.</p>
+    <h2>Transparent Cost và nghiệm thu theo tiến độ thực tế</h2>
+    <p class="intro">Ngân sách được tách theo Branding, Performance, Content Trust, Sản xuất, CRM, Báo cáo - đo lường và các chi phí khác. Mỗi nhóm có đơn giá, cơ sở nghiệm thu và điều kiện áp dụng riêng.</p>
     <div class="budget-hero">
       <div class="budget-principles">
         <div class="num" style="color:#9fe4ec">CƠ CHẾ THƯƠNG MẠI</div>
         <h3>Transparent Cost</h3>
-        <p>Đơn giá media, sản xuất, nội dung, CRM và đo lường được tách riêng. Chi phí quản lý và vận hành 20% áp dụng cho các hạng mục Branding và Performance.</p>
+        <p>Chi phí quản lý và vận hành 20% áp dụng trên ngân sách thực chạy của Branding và Performance, ngoại trừ gói Frame thang máy.</p>
         <div class="budget-callout">
-          <div><b>Branding</b><span>Đo lường qua Reach, Impression, View và SOV.</span></div>
-          <div><b>Performance</b><span>Đo lường qua số đăng ký để lại thông tin và mức độ quan tâm trải nghiệm sớm.</span></div>
+          <div><b>Branding</b><span>Nghiệm thu theo báo cáo nền tảng và tiến độ triển khai hàng tuần.</span></div>
+          <div><b>Performance</b><span>Nghiệm thu theo Qualified Lead được xác nhận và ghi nhận qua CRM.</span></div>
         </div>
       </div>
       <div class="budget-rules">
-        <div class="budget-rule"><strong>1</strong><div><h3>Đơn giá theo inventory</h3><p>Media được tính theo mô hình mua phù hợp với từng nền tảng: CPM, CPV, CPC, SOV hoặc gói hiển thị.</p></div></div>
-        <div class="budget-rule"><strong>2</strong><div><h3>Lead được xác định rõ</h3><p>Qualified Lead gồm đúng tên, số điện thoại và có nhu cầu đăng ký trải nghiệm sớm; cuộc gọi được ghi nhận thông qua CRM.</p></div></div>
-        <div class="budget-rule"><strong>3</strong><div><h3>Sản lượng quyết định tổng ngân sách</h3><p>Chi phí cuối cùng phụ thuộc số lượng nội dung, media inventory, phạm vi địa bàn và thời gian triển khai được duyệt.</p></div></div>
-        <div class="budget-rule"><strong>4</strong><div><h3>Nghiệm thu theo thực tế</h3><p>Đối soát theo báo cáo nền tảng, sản phẩm bàn giao, dữ liệu CRM và phạm vi công việc đã thống nhất.</p></div></div>
+        <div class="budget-rule"><strong>1</strong><div><h3>Media online theo thực chạy</h3><p>Ngoại trừ Frame thang máy, các hạng mục online được nghiệm thu theo tiến độ dự án, có kế hoạch hành động hàng tuần.</p></div></div>
+        <div class="budget-rule"><strong>2</strong><div><h3>Lead có tiêu chuẩn xác định</h3><p>Qualified Lead gồm đúng tên, số điện thoại và có nhu cầu đăng ký trải nghiệm sớm; cuộc gọi được ghi âm thông qua CRM.</p></div></div>
+        <div class="budget-rule"><strong>3</strong><div><h3>Hạng mục trọn gói nghiệm thu theo đầu ra</h3><p>Content Trust áp dụng trọn gói; sản xuất nghiệm thu khi thành phẩm hoàn thành; Social Listening nghiệm thu khi hoàn thành báo cáo.</p></div></div>
+        <div class="budget-rule"><strong>4</strong><div><h3>Chi phí khác có điều kiện rõ ràng</h3><p>Lập kế hoạch và sáng tạo tính một lần khi ký hợp đồng; phí công nghệ chỉ phát sinh khi triển khai Premium Banner Ads.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="deck-slide">
+  <div class="slide-inner reveal">
+    <div class="kicker">25 · Lộ trình Performance và quy mô ngân sách</div>
+    <h2>Kiểm chứng theo giai đoạn trước khi mở rộng đến 12.000 Qualified Lead</h2>
+    <p class="intro">Lộ trình được thiết kế để thử nghiệm, đánh giá chất lượng và tăng quy mô trên cơ sở dữ liệu thực tế. Chi phí minh họa dưới đây được tính theo đơn giá 500.000-700.000 đồng/Qualified Lead.</p>
+    <div class="budget-chart-layout">
+      <div class="budget-chart-copy">
+        <div class="num" style="color:#9fe4ec">MỤC TIÊU PERFORMANCE</div>
+        <h3>12.000 Qualified Lead trong 4,5-5 tháng</h3>
+        <p>Không cam kết toàn bộ sản lượng ngay từ đầu. Mỗi giai đoạn tạo dữ liệu đầu vào để đánh giá CPL, chất lượng lead, hiệu suất tư vấn và khả năng mở rộng.</p>
+        <div class="budget-meta-grid">
+          <div class="budget-meta"><b>500-700K</b><span>Đơn giá mỗi Qualified Lead</span></div>
+          <div class="budget-meta"><b>4,5-5 tháng</b><span>Thời gian kỳ vọng đạt mục tiêu</span></div>
+          <div class="budget-meta"><b>CRM ghi âm</b><span>Cơ sở đối soát chất lượng lead</span></div>
+        </div>
+      </div>
+      <div class="budget-chart" role="img" aria-label="Biểu đồ lộ trình Qualified Lead qua ba giai đoạn">
+        <div class="chart-axis">
+          <div class="chart-label"><small>Giai đoạn 1</small><strong>2 tuần thử nghiệm</strong></div>
+          <div class="chart-track"><div class="chart-bar" style="width:1.67%">200 QL</div></div>
+          <div class="chart-value"><b>100-140 triệu</b><span>Ngân sách lead tham chiếu</span></div>
+        </div>
+        <div class="chart-axis">
+          <div class="chart-label"><small>Giai đoạn 2</small><strong>Đánh giá 2 tháng</strong></div>
+          <div class="chart-track"><div class="chart-bar" style="width:41.67%">5.000 QL</div></div>
+          <div class="chart-value"><b>2,5-3,5 tỷ</b><span>Ngân sách lead tham chiếu</span></div>
+        </div>
+        <div class="chart-axis">
+          <div class="chart-label"><small>Giai đoạn 3</small><strong>Mở rộng theo dữ liệu</strong></div>
+          <div class="chart-track"><div class="chart-bar" style="width:100%">12.000 QL</div></div>
+          <div class="chart-value"><b>6,0-8,4 tỷ</b><span>Ngân sách lead tham chiếu</span></div>
+        </div>
+        <div class="chart-foot">
+          <div><b>Điểm kiểm soát</b><span>Đánh giá chất lượng lead và hiệu suất CRM sau từng giai đoạn.</span></div>
+          <div><b>Cơ sở mở rộng</b><span>Planning và cam kết được cập nhật trên history data thực tế.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px">Các mức ngân sách trên là phép tính minh họa từ đơn giá Qualified Lead, chưa bao gồm phí quản lý - vận hành 20%, VAT và các hạng mục Branding, Content Trust, sản xuất, CRM hoặc đo lường.</div>
+  </div>
+</section>
+
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">25 · Đơn giá Branding và Performance</div>
+    <div class="kicker">26 · Đơn giá Branding và Performance</div>
     <h2>Đơn giá tham chiếu theo từng Ads Inventory</h2>
-    <p class="intro">Các đơn giá dưới đây là cơ sở lập ngân sách. Tổng chi phí được tính theo sản lượng, thời gian và phạm vi triển khai thực tế.</p>
+    <p class="intro">Đơn giá được áp dụng theo hình thức mua của từng nền tảng. Tổng chi phí phụ thuộc sản lượng, thời gian, địa bàn và inventory thực tế được phê duyệt.</p>
     <div class="table-scroll">
       <table class="rate-table">
         <thead><tr><th>Nhóm</th><th>Kênh / Hạng mục</th><th>Hình thức mua</th><th>Đơn giá tham chiếu</th><th>Ghi chú</th></tr></thead>
         <tbody>
           <tr class="group"><td colspan="5">Branding</td></tr>
-          <tr><td>Branding</td><td>Facebook Ads</td><td>Reach (CPM)</td><td class="price">15.000-18.000đ</td><td class="note-cell">Tối ưu độ phủ theo nhóm đối tượng và địa bàn.</td></tr>
+          <tr><td>Branding</td><td>Facebook Ads</td><td>Reach (CPM)</td><td class="price">15.000-18.000đ</td><td class="note-cell">Tối ưu độ phủ theo nhóm đối tượng và khu vực.</td></tr>
           <tr><td>Branding</td><td>Facebook Ads</td><td>View 15s (CPV)</td><td class="price">80-105đ</td><td class="note-cell">Áp dụng cho nội dung video.</td></tr>
-          <tr><td>Branding</td><td>Facebook Ads</td><td>Click (CPC)</td><td class="price">2.200-2.800đ</td><td class="note-cell">Điều hướng về Landing Page hoặc nội dung campaign.</td></tr>
+          <tr><td>Branding</td><td>Facebook Ads</td><td>Click (CPC)</td><td class="price">2.200-2.800đ</td><td class="note-cell">Điều hướng về Landing Page hoặc nội dung chiến dịch.</td></tr>
           <tr><td>Branding</td><td>TikTok Ads</td><td>View</td><td class="price">30-50đ</td><td class="note-cell">Ưu tiên video tạo chú ý và Fake-DOOH.</td></tr>
           <tr><td>Branding</td><td>Google Ads</td><td>Google Display Adnetwork</td><td class="price">2.600-2.900đ</td><td class="note-cell">Phủ theo nhóm nội dung và tệp quan tâm.</td></tr>
           <tr><td>Branding</td><td>Premium Banner Ads</td><td>CPC</td><td class="price">7.000đ</td><td class="note-cell">SOV dự kiến từ 30% tùy inventory được lựa chọn.</td></tr>
-          <tr><td>Branding</td><td>Frame thang máy</td><td>Tần suất hiển thị</td><td class="price">850 triệu đồng</td><td class="note-cell">Gói ngân sách; phạm vi tòa nhà và thời gian sẽ được xác nhận.</td></tr>
+          <tr><td>Branding</td><td>Frame thang máy</td><td>Gói tần suất hiển thị</td><td class="price">900 triệu đồng</td><td class="note-cell">Ước tính 200 tòa nhà DF và 300 tòa nhà LCD tại TP.HCM; khoảng 320 lượt/ngày với DF và 72 lượt/ngày với LCD. Cập nhật khi có danh sách tòa nhà chi tiết.</td></tr>
           <tr class="group"><td colspan="5">Performance</td></tr>
-          <tr><td>Performance</td><td>Lead</td><td>Qualified Lead</td><td class="price">500.000-700.000đ/lead</td><td class="note-cell">Đúng tên, số điện thoại, có nhu cầu đăng ký trải nghiệm sớm; ghi âm cuộc gọi qua CRM; triển khai đa nền tảng.</td></tr>
+          <tr><td>Performance</td><td>Lead</td><td>Qualified Lead</td><td class="price">500.000-700.000đ/lead</td><td class="note-cell">Đúng tên, số điện thoại, có nhu cầu đăng ký trải nghiệm sớm; ghi âm cuộc gọi qua CRM.</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="note" style="margin-top:14px">Các mức giá media là đơn giá tham chiếu tại thời điểm lập proposal và có thể thay đổi theo inventory, mùa vụ, đối tượng, địa bàn, thời gian chạy và điều kiện của từng nền tảng.</div>
+    <div class="note" style="margin-top:14px">Transparent Cost: phí quản lý và vận hành 20% trên ngân sách thực chạy của Branding và Performance, ngoại trừ Frame thang máy.</div>
   </div>
 </section>
 
-
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">26 · Đơn giá Content Trust và sản xuất</div>
+    <div class="kicker">27 · Content Trust và sản xuất</div>
     <h2>Các hạng mục xây dựng niềm tin và tài sản truyền thông</h2>
     <div class="table-scroll" style="margin-top:18px">
       <table class="rate-table">
         <thead><tr><th>Nhóm</th><th>Hạng mục</th><th>Đơn vị</th><th>Đơn giá</th><th>Phạm vi / Ghi chú</th></tr></thead>
         <tbody>
           <tr class="group"><td colspan="5">Content Trust</td></tr>
-          <tr><td>Content Trust</td><td>Chuyên đề “Implant không đau”</td><td>Gói</td><td class="price">700 triệu đồng</td><td class="note-cell">Kênh sẽ được lựa chọn sau; giải pháp DrBlue - VCCorp.</td></tr>
+          <tr><td>Content Trust</td><td>Chuyên đề “Implant không đau”</td><td>Gói</td><td class="price">700 triệu đồng</td><td class="note-cell">Kênh sẽ được lựa chọn sau; giải pháp DrBlue - VCCorp; áp dụng triển khai trọn gói.</td></tr>
           <tr class="group"><td colspan="5">Sản xuất</td></tr>
           <tr><td>Sản xuất</td><td>Landing Page</td><td>Trang</td><td class="price">50 triệu đồng</td><td class="note-cell">Bao gồm hosting và vận hành; không bao gồm tên miền.</td></tr>
           <tr><td>Sản xuất</td><td>Social Content - Single Image Post</td><td>Bài</td><td class="price">1,8 triệu đồng</td><td class="note-cell">01 caption Việt - Anh và 01 hình.</td></tr>
           <tr><td>Sản xuất</td><td>Social Content - Multi Image Post</td><td>Bài</td><td class="price">3,2 triệu đồng</td><td class="note-cell">01 caption Việt - Anh và 4-10 hình.</td></tr>
-          <tr><td>Sản xuất</td><td>Social Content - Video Image Post</td><td>Bài</td><td class="price">4,8 triệu đồng</td><td class="note-cell">01 caption và 01 video; không bao gồm sản xuất mới, chỉ áp dụng hiệu ứng đơn giản.</td></tr>
-          <tr><td>Sản xuất</td><td>Fake-DOOH</td><td>Gói 03 video</td><td class="price">60 triệu đồng</td><td class="note-cell">03 video phục vụ TikTok và các điểm chạm phù hợp.</td></tr>
+          <tr><td>Sản xuất</td><td>Social Content - Video Image Post</td><td>Bài</td><td class="price">4,8 triệu đồng</td><td class="note-cell">01 caption Việt - Anh và 01 video; không bao gồm sản xuất mới, chỉ áp dụng hiệu ứng đơn giản.</td></tr>
+          <tr><td>Sản xuất</td><td>Fake-DOOH</td><td>Gói 03 video</td><td class="price">60 triệu đồng</td><td class="note-cell">03 video.</td></tr>
         </tbody>
       </table>
     </div>
+    <div class="note" style="margin-top:14px">Các hạng mục sản xuất được nghiệm thu sau khi thành phẩm đã hoàn thành.</div>
   </div>
 </section>
 
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">27 · Đơn giá CRM, đo lường và chi phí khác</div>
+    <div class="kicker">28 · CRM, báo cáo và chi phí khác</div>
     <h2>Các hạng mục nền tảng và vận hành hỗ trợ chiến dịch</h2>
     <div class="table-scroll" style="margin-top:18px">
       <table class="rate-table">
         <thead><tr><th>Nhóm</th><th>Hạng mục</th><th>Đơn vị</th><th>Đơn giá</th><th>Phạm vi / Ghi chú</th></tr></thead>
         <tbody>
-          <tr class="group"><td colspan="5">CRM và đo lường</td></tr>
+          <tr class="group"><td colspan="5">CRM</td></tr>
           <tr><td>CRM</td><td>Bizfly CRM</td><td>Gói</td><td class="price">80 triệu đồng</td><td class="note-cell">Không bao gồm đăng ký Tổng đài với Bộ Công An; không bao gồm cước phí hàng tháng với nhà mạng.</td></tr>
-          <tr><td>Đo lường</td><td>Social Listening</td><td>Gói</td><td class="price">100 triệu đồng</td><td class="note-cell">01 báo cáo trước chiến dịch và 01 báo cáo sau chiến dịch.</td></tr>
+          <tr class="group"><td colspan="5">Báo cáo và đo lường</td></tr>
+          <tr><td>Đo lường</td><td>Social Listening</td><td>Gói</td><td class="price">100 triệu đồng</td><td class="note-cell">01 báo cáo trước chiến dịch và 01 báo cáo sau chiến dịch; nghiệm thu khi hoàn thành báo cáo.</td></tr>
           <tr class="group"><td colspan="5">Chi phí khác</td></tr>
-          <tr><td>Chi phí khác</td><td>Lập kế hoạch và sáng tạo</td><td>Proposal</td><td class="price">80 triệu đồng</td><td class="note-cell">Chi phí xây dựng định hướng, hệ giải pháp và kế hoạch đề xuất.</td></tr>
-          <tr><td>Chi phí khác</td><td>Phí công nghệ</td><td>Từ khóa trên Adnetwork</td><td class="price">10% gói Premium Banner Ads</td><td class="note-cell">Áp dụng trên giá trị gói Premium Banner Ads được lựa chọn.</td></tr>
+          <tr><td>Chi phí khác</td><td>Lập kế hoạch và sáng tạo</td><td>Proposal</td><td class="price">80 triệu đồng</td><td class="note-cell">Tính một lần khi ký hợp đồng và bắt đầu chiến dịch.</td></tr>
+          <tr><td>Chi phí khác</td><td>Phí công nghệ</td><td>Từ khóa trên Adnetwork</td><td class="price">10% gói Premium Banner Ads</td><td class="note-cell">Chỉ được tính khi triển khai hạng mục Premium Banner Ads.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1103,7 +1288,7 @@
   </div>
 </section>
 
-<section class="deck-slide" id="next-step"><div class="slide-inner reveal"><div class="kicker">28 · Next Step</div><h2>Các nội dung cần thống nhất cho phiên bản kế hoạch tiếp theo</h2><p class="intro">Phiên bản tiếp theo sẽ hoàn thiện phạm vi triển khai, sản lượng, tổng ngân sách và KPI chi tiết sau khi các nền tảng chiến lược dưới đây được xác nhận.</p><div class="next-grid"><div class="card soft"><div class="num">01</div><h3>Chốt trọng tâm đối tượng</h3><p>Xác nhận phạm vi bán kính ưu tiên quanh từng chi nhánh tại TP.HCM và kế hoạch tạo lực kéo cho chi nhánh thứ 3 ra mắt vào tháng 10.</p></div><div class="card soft"><div class="num">02</div><h3>Chốt tuyến nội dung</h3><p>Thống nhất phạm vi chuyên đề “Implant không đau” và nguyên tắc truyền thông y khoa.</p></div><div class="card soft"><div class="num">03</div><h3>Chốt ưu đãi Landing Page</h3><p>Xác nhận voucher X%, điều kiện áp dụng và quy trình tiếp nhận đăng ký.</p></div><div class="card soft"><div class="num">04</div><h3>Hoàn thiện kế hoạch chi tiết</h3><p>Media plan, content plan, KPI, ngân sách và cơ chế phối hợp giữa các bên.</p></div></div></div></section>
+<section class="deck-slide" id="next-step"><div class="slide-inner reveal"><div class="kicker">29 · Next Step</div><h2>Các nội dung cần thống nhất cho phiên bản kế hoạch tiếp theo</h2><p class="intro">Phiên bản tiếp theo sẽ hoàn thiện phạm vi triển khai, sản lượng, tổng ngân sách và KPI chi tiết sau khi các nền tảng chiến lược dưới đây được xác nhận.</p><div class="next-grid"><div class="card soft"><div class="num">01</div><h3>Chốt trọng tâm đối tượng</h3><p>Xác nhận phạm vi bán kính ưu tiên quanh từng chi nhánh tại TP.HCM và kế hoạch tạo lực kéo cho chi nhánh thứ 3 ra mắt vào tháng 10.</p></div><div class="card soft"><div class="num">02</div><h3>Chốt tuyến nội dung</h3><p>Thống nhất phạm vi chuyên đề “Implant không đau” và nguyên tắc truyền thông y khoa.</p></div><div class="card soft"><div class="num">03</div><h3>Chốt ưu đãi Landing Page</h3><p>Xác nhận voucher X%, điều kiện áp dụng và quy trình tiếp nhận đăng ký.</p></div><div class="card soft"><div class="num">04</div><h3>Hoàn thiện kế hoạch chi tiết</h3><p>Media plan, content plan, KPI, ngân sách và cơ chế phối hợp giữa các bên.</p></div></div></div></section>
 
 
 <div class="lightbox" id="caseLightbox" aria-hidden="true">
