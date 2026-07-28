@@ -425,12 +425,237 @@
 }
 @media print{.lightbox{display:none!important}}
 
+
+/* Campaign message and key visual direction */
+.message-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
+}
+.message-option{
+  position:relative;
+  min-height:270px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(145deg,#fff,#f3f8fa);
+  overflow:hidden;
+}
+.message-option:after{
+  content:"";
+  position:absolute;
+  width:190px;height:190px;
+  right:-72px;bottom:-88px;
+  border-radius:50%;
+  background:rgba(114,203,217,.18);
+}
+.message-option.featured{
+  background:linear-gradient(145deg,var(--navy),var(--navy2));
+  color:#fff;
+  border-color:transparent;
+}
+.message-option.featured p{color:#d9e8ee}
+.option-label{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 11px;
+  border-radius:999px;
+  background:#e8f4f7;
+  color:var(--navy);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.message-option.featured .option-label{
+  background:rgba(255,255,255,.12);
+  color:#9fe4ec;
+}
+.campaign-line{
+  position:relative;
+  z-index:1;
+  font-size:clamp(26px,2.65vw,40px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  font-weight:880;
+  margin:0;
+}
+.campaign-line span{
+  display:block;
+  margin-top:12px;
+  font-size:.5em;
+  line-height:1.35;
+  letter-spacing:-.02em;
+  font-weight:700;
+}
+.kv-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:20px;
+  align-items:stretch;
+}
+.kv-visual{
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  min-height:420px;
+  background:linear-gradient(145deg,#eef7fa,#fff);
+  border:1px solid var(--line);
+}
+.kv-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.kv-visual:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 58%,rgba(5,38,61,.75));
+}
+.kv-visual-label{
+  position:absolute;
+  z-index:2;
+  left:22px;right:22px;bottom:18px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+}
+.kv-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.kv-info .card{
+  padding:20px;
+}
+.palette{
+  display:flex;
+  height:22px;
+  border-radius:999px;
+  overflow:hidden;
+  margin:14px 0 10px;
+  border:1px solid var(--line);
+}
+.palette-white{width:50%;background:#fff}
+.palette-blue{width:30%;background:#1c78a7}
+.palette-pink{width:20%;background:#ef8fbd}
+.palette-legend{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  font-size:11px;
+  color:var(--muted);
+}
+.kv-copy-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:18px;
+}
+.copy-stack{
+  display:grid;
+  gap:12px;
+}
+.copy-block{
+  padding:20px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.copy-block.action{
+  background:linear-gradient(145deg,#fff3f8,#fff);
+  border-color:#f1cadc;
+}
+.usp-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:12px;
+}
+.usp-pill{
+  padding:14px 10px;
+  border-radius:15px;
+  background:var(--paper);
+  text-align:center;
+  font-size:12px;
+  font-weight:850;
+  color:var(--navy);
+}
+.cta-preview{
+  height:100%;
+  border-radius:24px;
+  padding:28px;
+  background:linear-gradient(145deg,var(--navy),var(--navy2));
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.cta-preview p{color:#d4e5ec}
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 22px;
+  border-radius:999px;
+  background:#ef8fbd;
+  color:#173342;
+  font-weight:900;
+  text-decoration:none;
+  align-self:flex-start;
+}
+.legal-copy{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.18);
+  font-size:10px;
+  color:#bed3dc!important;
+}
+@media(max-width:1000px){
+  .message-options,.kv-layout,.kv-copy-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .kv-info,.usp-row{grid-template-columns:1fr}
+  .message-option{min-height:auto}
+}
+@media print{
+  .message-options{gap:4mm!important}
+  .message-option{min-height:0!important;padding:5mm!important}
+  .campaign-line{font-size:22pt!important}
+  .kv-layout{grid-template-columns:75mm 1fr!important;gap:4mm!important}
+  .kv-visual{min-height:0!important;height:125mm!important}
+  .kv-info{gap:3mm!important}
+  .kv-info .card{padding:4mm!important}
+  .kv-copy-grid{grid-template-columns:1.05fr .95fr!important;gap:4mm!important}
+  .copy-stack{gap:3mm!important}
+  .copy-block{padding:4mm!important}
+  .usp-row{gap:2mm!important}
+  .usp-pill{padding:3mm 2mm!important}
+  .cta-preview{padding:5mm!important}
+}
+
+
+/* Approved Key Visual options */
+.kv-approved-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.kv-approved-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 16px 40px rgba(5,38,61,.08)}
+.kv-approved-card figure{margin:0}
+.kv-approved-card img{width:100%;aspect-ratio:16/9;object-fit:cover;cursor:zoom-in;display:block}
+.kv-approved-caption{padding:18px 20px 20px}
+.kv-approved-caption .num{margin-bottom:8px}
+.kv-approved-caption p{margin:8px 0 0;color:var(--muted);font-size:13px}
+@media(max-width:900px){.kv-approved-grid{grid-template-columns:1fr}}
+@media print{.kv-approved-grid{gap:4mm!important}.kv-approved-caption{padding:4mm!important}}
+
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner"><a class="brand" href="#top"><img src="logo-nhakhoanhantam.png" alt="Nha khoa Nhân Tâm"></a><div class="nav-actions">
-  <div class="nav-links"><a href="#overview">Overview</a><a href="#summary">Tóm tắt</a><a href="#architecture">Chiến lược</a><a href="#localation">WIN LOCALATION</a><a href="#content-first">CONTENT FIRST</a><a href="#case-study">Case Study</a><a href="#operating">Vận hành</a><a href="#kpi">KPI</a><a href="#budget">Budget</a></div>
-  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=10" download>Tải PDF</a>
+  <div class="nav-links"><a href="#overview">Overview</a><a href="#summary">Tóm tắt</a><a href="#architecture">Chiến lược</a><a href="#localation">WIN LOCALATION</a><a href="#content-first">CONTENT FIRST</a><a href="#campaign-message">Thông điệp & KV</a><a href="#case-study">Case Study</a><a href="#operating">Vận hành</a><a href="#kpi">KPI</a><a href="#budget">Budget</a></div>
+  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=12" download>Tải PDF</a>
 </div></div></nav>
 
 <header class="deck-slide hero" id="top"><div class="slide-inner"><div class="hero-grid"><div><div class="eyebrow">Đề xuất định hướng chiến lược · 60 ngày</div><h1>Thiết lập một chuẩn niềm tin mới cho Implant ứng dụng công nghệ robot.</h1><p class="lead">Bác sĩ dẫn dắt chuyên môn. Robot nâng cao độ chính xác. Nội dung uy tín tạo niềm tin. Hệ thống truyền thông tiếp nhận nhu cầu ngay tại từng điểm chạm.</p><p class="thesis">Trọng tâm chiến lược: tạo Brand Impact tại các thị trường có khả năng chuyển đổi cao, dẫn dắt ngành bằng CONTENT FIRST và tối ưu hành trình đăng ký trải nghiệm sớm.</p><div class="btns"><a class="btn primary" href="#summary">Xem tóm tắt chiến lược</a><a class="btn" href="#localation">Xem chiến lược trọng tâm</a></div></div><figure class="hero-photo"><img src="hero-yakebot-demo.png" alt="Bác sĩ Nhân Tâm thao tác cùng Robot Implant"><figcaption>Bác sĩ dẫn dắt chuyên môn · Robot hỗ trợ nâng cao độ chính xác</figcaption></figure></div></div></header>
@@ -501,9 +726,143 @@
 <section class="deck-slide" id="content-first"><div class="slide-inner reveal"><div class="strategy-title"><div><div class="kicker">09 · Chiến lược trọng tâm 02</div><h2>CONTENT FIRST</h2></div><div class="strategy-code">TRUST<br>AT SCALE</div></div><p class="intro">CONTENT FIRST không bắt đầu từ nội dung Social hay seeding cộng đồng. Nền tảng phải là các tuyến nội dung báo chí có độ tin cậy, khả năng lan tỏa và sức ảnh hưởng phù hợp với nhóm khách hàng mục tiêu.</p><div class="content-flow"><div><div class="publisher-strip"><div class="publisher">Tuổi Trẻ</div><div class="publisher">Thanh Niên</div><div class="publisher">Kênh14</div><div class="publisher">Premium Publishers</div></div><div class="card soft" style="margin-top:16px"><div class="num">TUYẾN CHUYÊN ĐỀ ĐỀ XUẤT</div><h3>“Implant không đau”</h3><p>Hệ nội dung giải thích nỗi sợ, quy trình, vai trò bác sĩ, vai trò robot, tiêu chuẩn an toàn và trải nghiệm thực tế; từ đó tạo một lớp thông tin uy tín phủ rộng trên môi trường số.</p></div></div><div class="geo-box"><div class="num" style="color:#9fe4ec">GEO · GENERATIVE ENGINE OPTIMIZATION</div><h3>Tăng khả năng được tìm thấy và trích dẫn</h3><p>Hệ nội dung có cấu trúc, nhất quán và giàu thông tin giúp website và thương hiệu có cơ hội xuất hiện tốt hơn trong kết quả tìm kiếm và các nền tảng AI tạo sinh.</p><p>Nội dung báo chí đồng thời cộng hưởng với WIN LOCALATION, tăng độ tin cậy cho người dùng trước khi họ truy cập Landing Page hoặc để lại thông tin.</p></div></div></div></section>
 
 
+
+<section class="deck-slide" id="campaign-message">
+  <div class="slide-inner reveal">
+    <div class="kicker">10 · Thông điệp chiến dịch</div>
+    <h2>Hai hướng thông điệp cho chiến dịch Robot Implant</h2>
+    <p class="intro">Hai lựa chọn cùng đặt Nhân Tâm vào vai trò tiên phong, nhưng khác nhau về điểm khởi đầu: một hướng đi từ lợi ích người bệnh; một hướng đi từ vị thế thương hiệu.</p>
+    <div class="message-options">
+      <div class="message-option featured">
+        <div class="option-label">Option 01 · Lợi ích người bệnh</div>
+        <p class="campaign-line">Implant không đau
+          <span>với Robot cấy ghép Implant nha khoa tự động<br>tại Nha khoa Nhân Tâm</span>
+        </p>
+      </div>
+      <div class="message-option">
+        <div class="option-label">Option 02 · Vị thế tiên phong</div>
+        <p class="campaign-line">Nha khoa Nhân Tâm
+          <span>Tiên phong ứng dụng Robot công nghệ cao<br>vào cấy ghép Implant nha khoa tự động</span>
+        </p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px">Option 01 phù hợp với truyền thông hướng đến người bệnh và Performance. Option 02 phù hợp với Brand Impact, PR và các điểm chạm xây dựng vị thế tiên phong.</div>
+  </div>
+</section>
+
+<section class="deck-slide">
+  <div class="slide-inner reveal">
+    <div class="kicker">11 · Định hướng Key Visual chiến dịch</div>
+    <div class="kv-layout">
+      <figure class="kv-visual">
+        <img src="hero-yakebot-demo.png" alt="Đội ngũ bác sĩ Nhân Tâm và Robot YakeBot">
+        <figcaption class="kv-visual-label">Hình ảnh chủ đạo: Đội ngũ bác sĩ Nhân Tâm và Robot YakeBot</figcaption>
+      </figure>
+      <div>
+        <h2>Con người dẫn dắt công nghệ</h2>
+        <p class="intro">Key Visual cần đặt bác sĩ ở vị trí chủ thể chuyên môn, trong khi Robot YakeBot đóng vai trò công nghệ hỗ trợ nâng cao độ chính xác và trải nghiệm điều trị.</p>
+        <div class="kv-info">
+          <div class="card soft">
+            <div class="num">HÌNH ẢNH CHỦ ĐẠO</div>
+            <h3>Bác sĩ Nhân Tâm × Robot YakeBot</h3>
+            <p>Thể hiện sự phối hợp giữa chuyên môn lâm sàng và công nghệ cao, tránh tạo cảm giác robot thay thế bác sĩ.</p>
+          </div>
+          <div class="card soft">
+            <div class="num">TONE & MOOD</div>
+            <h3>Sạch · Công nghệ · Nhân văn</h3>
+            <div class="palette"><div class="palette-white"></div><div class="palette-blue"></div><div class="palette-pink"></div></div>
+            <div class="palette-legend"><span>Trắng 50%</span><span>Xanh 30%</span><span>Hồng 20%</span></div>
+          </div>
+          <div class="card">
+            <div class="num">TRẮNG · 50%</div>
+            <h3>Nền tảng y khoa</h3>
+            <p>Tạo cảm giác sạch sẽ, minh bạch và an tâm.</p>
+          </div>
+          <div class="card">
+            <div class="num">XANH + HỒNG · 50%</div>
+            <h3>Công nghệ và cảm xúc</h3>
+            <p>Xanh củng cố chuyên môn; hồng tạo điểm nhấn gần gũi, tích cực và dễ nhận diện.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deck-slide">
+  <div class="slide-inner reveal">
+    <div class="kicker">12 · Key Visual đề xuất</div>
+    <h2>Hai phương án thể hiện trực tiếp định hướng chiến dịch</h2>
+    <p class="intro">Cả hai phương án cùng sử dụng hình ảnh đội ngũ bác sĩ Nhân Tâm và Robot YakeBot, duy trì tỷ lệ màu Trắng 50% · Xanh 30% · Hồng 20%, đồng thời khác nhau về trục thông điệp chính.</p>
+    <div class="kv-approved-grid">
+      <article class="kv-approved-card">
+        <figure><img class="case-lightbox-image" data-gallery="kv-approved" src="kv-option-01.png" alt="Key Visual Option 01 - Implant không đau"></figure>
+        <div class="kv-approved-caption">
+          <div class="num">OPTION 01 · LỢI ÍCH NGƯỜI BỆNH</div>
+          <h3>Implant không đau</h3>
+          <p>Nhấn mạnh trực tiếp nỗi lo lớn nhất của khách hàng và kết nối ngay với Robot cấy ghép Implant nha khoa tự động tại Nhân Tâm.</p>
+        </div>
+      </article>
+      <article class="kv-approved-card">
+        <figure><img class="case-lightbox-image" data-gallery="kv-approved" src="kv-option-02.png" alt="Key Visual Option 02 - Nha khoa Nhân Tâm tiên phong ứng dụng Robot công nghệ cao"></figure>
+        <div class="kv-approved-caption">
+          <div class="num">OPTION 02 · VỊ THẾ TIÊN PHONG</div>
+          <h3>Nha khoa Nhân Tâm tiên phong ứng dụng Robot công nghệ cao</h3>
+          <p>Ưu tiên vai trò thương hiệu và làm nổi bật năng lực tiên phong trong cấy ghép Implant nha khoa tự động.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="deck-slide">
+  <div class="slide-inner reveal">
+    <div class="kicker">13 · Cấu trúc nội dung trên Key Visual</div>
+    <h2>Thông điệp rõ, lợi ích gọn, hành động nổi bật</h2>
+    <div class="kv-copy-grid" style="margin-top:20px">
+      <div class="copy-stack">
+        <div class="copy-block">
+          <div class="num">THÔNG ĐIỆP CHÍNH</div>
+          <h3>Option 01</h3>
+          <p><strong>Implant không đau</strong><br>với Robot cấy ghép Implant nha khoa tự động tại Nha khoa Nhân Tâm.</p>
+          <h3 style="margin-top:16px">Option 02</h3>
+          <p><strong>Nha khoa Nhân Tâm</strong><br>Tiên phong ứng dụng Robot công nghệ cao vào cấy ghép Implant nha khoa tự động.</p>
+        </div>
+        <div class="copy-block">
+          <div class="num">USPs</div>
+          <div class="usp-row">
+            <div class="usp-pill">Độ chính xác tuyệt đối</div>
+            <div class="usp-pill">An toàn tối đa</div>
+            <div class="usp-pill">Không đau</div>
+            <div class="usp-pill">Nhanh hồi phục</div>
+          </div>
+        </div>
+        <div class="copy-block action">
+          <div class="num">KEY ACTION</div>
+          <h3>Tặng 100% giá trị gói dịch vụ</h3>
+          <p>cho 100 khách hàng đăng ký đầu tiên và hợp lệ.</p>
+        </div>
+      </div>
+      <div class="cta-preview">
+        <div>
+          <div class="num" style="color:#9fe4ec">CALL TO ACTION</div>
+          <h2>Nhận tư vấn ngay!</h2>
+          <p>CTA cần nổi bật, có độ tương phản cao và được đặt gần thông tin ưu đãi để rút ngắn hành trình hành động.</p>
+          <a class="cta-button" href="#next-step">Nhận tư vấn ngay!</a>
+        </div>
+        <div>
+          <h3>Nha khoa Nhân Tâm ứng dụng công nghệ để phụng sự khách hàng tốt hơn.</h3>
+          <p class="legal-copy">* Áp dụng Điều kiện & Điều khoản cùng Chính sách Bảo mật, Chính sách Xử lý Dữ liệu cá nhân của Nha khoa Nhân Tâm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="deck-slide" id="case-study">
   <div class="slide-inner reveal">
-    <div class="kicker">10 · Case Study · Dr.Blue × VCCorp</div>
+    <div class="kicker">14 · Case Study · Dr.Blue × VCCorp</div>
     <div class="case-hero">
       <div class="case-panel">
         <div>
@@ -526,7 +885,7 @@
 
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">11 · Cách giải bài toán</div>
+    <div class="kicker">15 · Cách giải bài toán</div>
     <h2>Từ một tuyến nội dung thành hệ sinh thái Brand Trust</h2>
     <p class="intro">Case DND cho thấy hiệu quả không đến từ một bài PR đơn lẻ, mà từ việc tổ chức nội dung, media và điểm chạm thương hiệu thành một hệ thống nhất quán.</p>
     <div class="case-solution">
@@ -557,7 +916,7 @@
 
 <section class="deck-slide">
   <div class="slide-inner reveal">
-    <div class="kicker">12 · Kết quả và khả năng ứng dụng</div>
+    <div class="kicker">16 · Kết quả và khả năng ứng dụng</div>
     <div class="case-result">
       <div class="case-result-copy">
         <div class="num">KẾT QUẢ CASE DND</div>
@@ -583,12 +942,12 @@
   </div>
 </section>
 
-<section class="deck-slide compact"><div class="slide-inner reveal"><div class="kicker">13 · Mapping hoạt động truyền thông</div><h2>Một thông điệp, nhiều lực đẩy được tổ chức nhất quán</h2><p class="intro">Các hạng mục Nhân Tâm đang triển khai với truyền hình, báo chí và đối tác truyền thông tiếp tục được duy trì, đồng thời được mapping theo cùng một cấu trúc thông điệp và hành trình khách hàng.</p><div style="display:grid;gap:12px"><div class="mapping"><div class="mapping-label">Uy tín và bảo chứng</div><div class="mapping-items"><div>Truyền hình</div><div>Báo chí hiện hữu</div><div>TS.BS Võ Văn Nhân</div><div>Nội dung chuyên gia</div></div></div><div class="mapping"><div class="mapping-label">WIN LOCALATION</div><div class="mapping-items"><div>Thang máy</div><div>Fake-DOOH</div><div>Facebook / TikTok</div><div>Geo-targeted quanh chi nhánh</div></div></div><div class="mapping"><div class="mapping-label">CONTENT FIRST</div><div class="mapping-items"><div>Tuyến chuyên đề</div><div>Premium Adnetwork</div><div>Contextual Ads</div><div>GEO</div></div></div><div class="mapping"><div class="mapping-label">Chuyển đổi</div><div class="mapping-items"><div>Landing Page</div><div>Voucher X%</div><div>Retargeting</div><div>CRM</div></div></div></div></div></section>
+<section class="deck-slide compact"><div class="slide-inner reveal"><div class="kicker">17 · Mapping hoạt động truyền thông</div><h2>Một thông điệp, nhiều lực đẩy được tổ chức nhất quán</h2><p class="intro">Các hạng mục Nhân Tâm đang triển khai với truyền hình, báo chí và đối tác truyền thông tiếp tục được duy trì, đồng thời được mapping theo cùng một cấu trúc thông điệp và hành trình khách hàng.</p><div style="display:grid;gap:12px"><div class="mapping"><div class="mapping-label">Uy tín và bảo chứng</div><div class="mapping-items"><div>Truyền hình</div><div>Báo chí hiện hữu</div><div>TS.BS Võ Văn Nhân</div><div>Nội dung chuyên gia</div></div></div><div class="mapping"><div class="mapping-label">WIN LOCALATION</div><div class="mapping-items"><div>Thang máy</div><div>Fake-DOOH</div><div>Facebook / TikTok</div><div>Geo-targeted quanh chi nhánh</div></div></div><div class="mapping"><div class="mapping-label">CONTENT FIRST</div><div class="mapping-items"><div>Tuyến chuyên đề</div><div>Premium Adnetwork</div><div>Contextual Ads</div><div>GEO</div></div></div><div class="mapping"><div class="mapping-label">Chuyển đổi</div><div class="mapping-items"><div>Landing Page</div><div>Voucher X%</div><div>Retargeting</div><div>CRM</div></div></div></div></div></section>
 
-<section class="deck-slide" id="journey"><div class="slide-inner reveal"><div class="kicker">14 · Tối ưu hành trình khách hàng</div><h2>Từ tiếp xúc nội dung đến đăng ký trải nghiệm sớm</h2><p class="intro">Pixel, Cookie và dữ liệu tương tác được sử dụng để ghi nhận hành vi, xây tệp tiếp thị lại và duy trì sự hiện diện của thương hiệu trong suốt quá trình khách hàng tìm hiểu.</p><div class="journey"><div class="step"><small>01 · TIẾP XÚC</small><h3>Ads / Content</h3><p>Facebook, TikTok, thang máy, Fake-DOOH, báo chí và Adnetwork.</p></div><div class="step"><small>02 · TÌM HIỂU</small><h3>Landing Page</h3><p>Thông tin Robot, bác sĩ, quy trình, FAQ và quyền lợi đăng ký sớm.</p></div><div class="step"><small>03 · GHI NHẬN</small><h3>Pixel / Cookie</h3><p>Ghi nhận lượt truy cập, nội dung quan tâm và hành vi tương tác.</p></div><div class="step"><small>04 · TIẾP THỊ LẠI</small><h3>Retargeting</h3><p>Thông điệp được cá nhân hóa theo hành vi và mức độ quan tâm.</p></div><div class="step"><small>05 · ĐĂNG KÝ</small><h3>CRM</h3><p>Tiếp nhận thông tin, voucher X% và hỗ trợ tư vấn trải nghiệm sớm.</p></div></div><div class="note" style="margin-top:18px">Voucher X% là quyền lợi dành cho người truy cập Landing Page và hoàn tất đăng ký để lại thông tin. Mức ưu đãi và điều kiện áp dụng sẽ được Nhân Tâm xác nhận trước khi triển khai.</div></div></section>
+<section class="deck-slide" id="journey"><div class="slide-inner reveal"><div class="kicker">18 · Tối ưu hành trình khách hàng</div><h2>Từ tiếp xúc nội dung đến đăng ký trải nghiệm sớm</h2><p class="intro">Pixel, Cookie và dữ liệu tương tác được sử dụng để ghi nhận hành vi, xây tệp tiếp thị lại và duy trì sự hiện diện của thương hiệu trong suốt quá trình khách hàng tìm hiểu.</p><div class="journey"><div class="step"><small>01 · TIẾP XÚC</small><h3>Ads / Content</h3><p>Facebook, TikTok, thang máy, Fake-DOOH, báo chí và Adnetwork.</p></div><div class="step"><small>02 · TÌM HIỂU</small><h3>Landing Page</h3><p>Thông tin Robot, bác sĩ, quy trình, FAQ và quyền lợi đăng ký sớm.</p></div><div class="step"><small>03 · GHI NHẬN</small><h3>Pixel / Cookie</h3><p>Ghi nhận lượt truy cập, nội dung quan tâm và hành vi tương tác.</p></div><div class="step"><small>04 · TIẾP THỊ LẠI</small><h3>Retargeting</h3><p>Thông điệp được cá nhân hóa theo hành vi và mức độ quan tâm.</p></div><div class="step"><small>05 · ĐĂNG KÝ</small><h3>CRM</h3><p>Tiếp nhận thông tin, voucher X% và hỗ trợ tư vấn trải nghiệm sớm.</p></div></div><div class="note" style="margin-top:18px">Voucher X% là quyền lợi dành cho người truy cập Landing Page và hoàn tất đăng ký để lại thông tin. Mức ưu đãi và điều kiện áp dụng sẽ được Nhân Tâm xác nhận trước khi triển khai.</div></div></section>
 <section class="deck-slide" id="operating">
   <div class="slide-inner reveal">
-    <div class="kicker">15 · Hệ vận hành Brandformance</div>
+    <div class="kicker">19 · Hệ vận hành Brandformance</div>
     <h2>Năm năng lực cùng đóng góp vào một mục tiêu chung</h2>
     <p class="intro">Mô hình vận hành kết nối xây dựng uy tín, giáo dục thị trường, khai thác nhu cầu, chăm sóc đăng ký và tối ưu hiệu suất theo dữ liệu thực tế.</p>
     <div class="grid4">
@@ -606,7 +965,7 @@
 
 <section class="deck-slide compact" id="activation">
   <div class="slide-inner reveal">
-    <div class="kicker">16 · Kiến trúc triển khai 60 ngày</div>
+    <div class="kicker">20 · Kiến trúc triển khai 60 ngày</div>
     <h2>Hệ hoạt động tích hợp theo vai trò chiến lược</h2>
     <p class="intro">Bảng dưới giữ lại các hạng mục có giá trị từ phiên bản trước, đồng thời được mapping theo ba động lực chiến lược mới.</p>
     <div style="display:grid;gap:11px">
@@ -620,10 +979,10 @@
 </section>
 
 
-<section class="deck-slide dark" id="kpi"><div class="slide-inner reveal"><div class="kicker">17 · Nguyên tắc KPI</div><h2>Tách biệt Branding và Performance</h2><p class="intro">Hai nhóm KPI được thiết lập theo mục tiêu riêng, giúp minh bạch hiệu quả truyền thông và tránh đánh đồng độ phủ thương hiệu với kết quả đăng ký.</p><div class="kpi-split"><div class="kpi-box brand"><div class="num">BRANDING</div><h3>Brand Impact</h3><p>Tập trung đo lường khả năng tiếp cận, mức độ hiện diện và sức lan tỏa của chiến dịch.</p><div class="metrics"><div class="metric">Reach</div><div class="metric">Impression</div><div class="metric">View</div><div class="metric">SOV</div></div></div><div class="kpi-box performance"><div class="num">PERFORMANCE</div><h3>Performance Engagement</h3><p>Tập trung đo lường hành vi để lại thông tin và mức độ quan tâm đến đăng ký trải nghiệm sớm.</p><div class="metrics"><div class="metric">Landing Visit</div><div class="metric">Form Start</div><div class="metric">Lead</div><div class="metric">CPL</div></div></div></div></div></section>
+<section class="deck-slide dark" id="kpi"><div class="slide-inner reveal"><div class="kicker">21 · Nguyên tắc KPI</div><h2>Tách biệt Branding và Performance</h2><p class="intro">Hai nhóm KPI được thiết lập theo mục tiêu riêng, giúp minh bạch hiệu quả truyền thông và tránh đánh đồng độ phủ thương hiệu với kết quả đăng ký.</p><div class="kpi-split"><div class="kpi-box brand"><div class="num">BRANDING</div><h3>Brand Impact</h3><p>Tập trung đo lường khả năng tiếp cận, mức độ hiện diện và sức lan tỏa của chiến dịch.</p><div class="metrics"><div class="metric">Reach</div><div class="metric">Impression</div><div class="metric">View</div><div class="metric">SOV</div></div></div><div class="kpi-box performance"><div class="num">PERFORMANCE</div><h3>Performance Engagement</h3><p>Tập trung đo lường hành vi để lại thông tin và mức độ quan tâm đến đăng ký trải nghiệm sớm.</p><div class="metrics"><div class="metric">Landing Visit</div><div class="metric">Form Start</div><div class="metric">Lead</div><div class="metric">CPL</div></div></div></div></div></section>
 <section class="deck-slide" id="measurement">
   <div class="slide-inner reveal">
-    <div class="kicker">18 · Hệ chỉ số phục vụ tối ưu chiến dịch</div>
+    <div class="kicker">22 · Hệ chỉ số phục vụ tối ưu chiến dịch</div>
     <h2>Đo lường để nhận diện đúng tín hiệu và phân bổ nguồn lực hiệu quả hơn</h2>
     <div class="grid4" style="margin-top:24px">
       <div class="card soft"><div class="num">BRAND</div><h3>Mức độ hiện diện</h3><p>Reach, Impression, View và SOV phản ánh khả năng phủ rộng và sức lan tỏa.</p></div>
@@ -636,7 +995,7 @@
 
 <section class="deck-slide" id="collaboration">
   <div class="slide-inner reveal">
-    <div class="kicker">19 · Mô hình phối hợp</div>
+    <div class="kicker">23 · Mô hình phối hợp</div>
     <h2>Một chiến lược thống nhất, nhiều năng lực bổ trợ</h2>
     <p class="intro">Nhân Tâm tiếp tục phát huy các hoạt động đang có lợi thế. Bluemoon và admeX bổ sung năng lực chiến lược, nội dung, media, Martech và đo lường để tạo một hệ triển khai nhất quán.</p>
     <div class="grid3">
@@ -651,7 +1010,7 @@
 
 <section class="deck-slide" id="budget">
   <div class="slide-inner reveal">
-    <div class="kicker">20 · Nguyên tắc ngân sách</div>
+    <div class="kicker">24 · Nguyên tắc ngân sách</div>
     <h2>Transparent Cost và tách biệt ngân sách theo vai trò</h2>
     <p class="intro">Ngân sách được xây dựng theo từng nhóm hạng mục, giúp Nhân Tâm theo dõi rõ đơn giá, phạm vi công việc và cơ sở nghiệm thu. Tổng ngân sách sẽ được xác lập từ sản lượng thực tế được phê duyệt.</p>
     <div class="budget-hero">
@@ -676,7 +1035,7 @@
 
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">21 · Đơn giá Branding và Performance</div>
+    <div class="kicker">25 · Đơn giá Branding và Performance</div>
     <h2>Đơn giá tham chiếu theo từng Ads Inventory</h2>
     <p class="intro">Các đơn giá dưới đây là cơ sở lập ngân sách. Tổng chi phí được tính theo sản lượng, thời gian và phạm vi triển khai thực tế.</p>
     <div class="table-scroll">
@@ -703,7 +1062,7 @@
 
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">22 · Đơn giá Content Trust và sản xuất</div>
+    <div class="kicker">26 · Đơn giá Content Trust và sản xuất</div>
     <h2>Các hạng mục xây dựng niềm tin và tài sản truyền thông</h2>
     <div class="table-scroll" style="margin-top:18px">
       <table class="rate-table">
@@ -725,7 +1084,7 @@
 
 <section class="deck-slide compact">
   <div class="slide-inner reveal">
-    <div class="kicker">23 · Đơn giá CRM, đo lường và chi phí khác</div>
+    <div class="kicker">27 · Đơn giá CRM, đo lường và chi phí khác</div>
     <h2>Các hạng mục nền tảng và vận hành hỗ trợ chiến dịch</h2>
     <div class="table-scroll" style="margin-top:18px">
       <table class="rate-table">
@@ -744,7 +1103,7 @@
   </div>
 </section>
 
-<section class="deck-slide" id="next-step"><div class="slide-inner reveal"><div class="kicker">24 · Next Step</div><h2>Các nội dung cần thống nhất cho phiên bản kế hoạch tiếp theo</h2><p class="intro">Phiên bản tiếp theo sẽ hoàn thiện phạm vi triển khai, sản lượng, tổng ngân sách và KPI chi tiết sau khi các nền tảng chiến lược dưới đây được xác nhận.</p><div class="next-grid"><div class="card soft"><div class="num">01</div><h3>Chốt trọng tâm đối tượng</h3><p>Xác nhận phạm vi bán kính ưu tiên quanh từng chi nhánh tại TP.HCM và kế hoạch tạo lực kéo cho chi nhánh thứ 3 ra mắt vào tháng 10.</p></div><div class="card soft"><div class="num">02</div><h3>Chốt tuyến nội dung</h3><p>Thống nhất phạm vi chuyên đề “Implant không đau” và nguyên tắc truyền thông y khoa.</p></div><div class="card soft"><div class="num">03</div><h3>Chốt ưu đãi Landing Page</h3><p>Xác nhận voucher X%, điều kiện áp dụng và quy trình tiếp nhận đăng ký.</p></div><div class="card soft"><div class="num">04</div><h3>Hoàn thiện kế hoạch chi tiết</h3><p>Media plan, content plan, KPI, ngân sách và cơ chế phối hợp giữa các bên.</p></div></div></div></section>
+<section class="deck-slide" id="next-step"><div class="slide-inner reveal"><div class="kicker">28 · Next Step</div><h2>Các nội dung cần thống nhất cho phiên bản kế hoạch tiếp theo</h2><p class="intro">Phiên bản tiếp theo sẽ hoàn thiện phạm vi triển khai, sản lượng, tổng ngân sách và KPI chi tiết sau khi các nền tảng chiến lược dưới đây được xác nhận.</p><div class="next-grid"><div class="card soft"><div class="num">01</div><h3>Chốt trọng tâm đối tượng</h3><p>Xác nhận phạm vi bán kính ưu tiên quanh từng chi nhánh tại TP.HCM và kế hoạch tạo lực kéo cho chi nhánh thứ 3 ra mắt vào tháng 10.</p></div><div class="card soft"><div class="num">02</div><h3>Chốt tuyến nội dung</h3><p>Thống nhất phạm vi chuyên đề “Implant không đau” và nguyên tắc truyền thông y khoa.</p></div><div class="card soft"><div class="num">03</div><h3>Chốt ưu đãi Landing Page</h3><p>Xác nhận voucher X%, điều kiện áp dụng và quy trình tiếp nhận đăng ký.</p></div><div class="card soft"><div class="num">04</div><h3>Hoàn thiện kế hoạch chi tiết</h3><p>Media plan, content plan, KPI, ngân sách và cơ chế phối hợp giữa các bên.</p></div></div></div></section>
 
 
 <div class="lightbox" id="caseLightbox" aria-hidden="true">
@@ -762,7 +1121,7 @@
 
 <script>
 (() => {
-  const galleryImages = [...document.querySelectorAll('.case-lightbox-image[data-gallery="dnd-case"]')];
+  const galleryImages = [...document.querySelectorAll('.case-lightbox-image')];
   const lightbox = document.getElementById('caseLightbox');
   if (!galleryImages.length || !lightbox) return;
 
