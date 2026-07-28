@@ -791,12 +791,52 @@
   .budget-meta{padding:3mm!important}
 }
 
+
+/* Budget implementation notes */
+.budget-note-box{
+  margin-top:14px;
+  padding:15px 17px;
+  border:1px solid #d7e4e9;
+  border-left:4px solid var(--cyan);
+  border-radius:15px;
+  background:#f7fafb;
+  color:#4f6571;
+  font-size:12px;
+  line-height:1.5;
+}
+.budget-note-box strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--navy);
+  font-size:11px;
+  font-style:normal;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.budget-note-box em{display:block;font-style:italic}
+.budget-note-box em + em{margin-top:4px}
+.budget-note-box.warning{
+  background:#fff8ed;
+  border-color:#efd8b8;
+  border-left-color:#d49b46;
+  color:#6c4c25;
+}
+.budget-note-box.warning strong{color:#6c4c25}
+@media print{
+  .budget-note-box{
+    margin-top:3mm!important;
+    padding:3mm 3.5mm!important;
+    font-size:7.5pt!important;
+    line-height:1.35!important;
+  }
+}
+
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner"><a class="brand" href="#top"><img src="logo-nhakhoanhantam.png" alt="Nha khoa Nhân Tâm"></a><div class="nav-actions">
   <div class="nav-links"><a href="#overview">Overview</a><a href="#summary">Tóm tắt</a><a href="#architecture">Chiến lược</a><a href="#localation">WIN LOCALATION</a><a href="#content-first">CONTENT FIRST</a><a href="#campaign-message">Thông điệp & KV</a><a href="#case-study">Case Study</a><a href="#operating">Vận hành</a><a href="#kpi">KPI</a><a href="#budget">Budget</a></div>
-  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=13" download>Tải PDF</a>
+  <a class="pdf-download" href="NhanTam_YakeBot_Strategic_Direction_V9.pdf?v=14" download>Tải PDF</a>
 </div></div></nav>
 
 <header class="deck-slide hero" id="top"><div class="slide-inner"><div class="hero-grid"><div><div class="eyebrow">Đề xuất định hướng chiến lược · 60 ngày</div><h1>Thiết lập một chuẩn niềm tin mới cho Implant ứng dụng công nghệ robot.</h1><p class="lead">Bác sĩ dẫn dắt chuyên môn. Robot nâng cao độ chính xác. Nội dung uy tín tạo niềm tin. Hệ thống truyền thông tiếp nhận nhu cầu ngay tại từng điểm chạm.</p><p class="thesis">Trọng tâm chiến lược: tạo Brand Impact tại các thị trường có khả năng chuyển đổi cao, dẫn dắt ngành bằng CONTENT FIRST và tối ưu hành trình đăng ký trải nghiệm sớm.</p><div class="btns"><a class="btn primary" href="#summary">Xem tóm tắt chiến lược</a><a class="btn" href="#localation">Xem chiến lược trọng tâm</a></div></div><figure class="hero-photo"><img src="hero-yakebot-demo.png" alt="Bác sĩ Nhân Tâm thao tác cùng Robot Implant"><figcaption>Bác sĩ dẫn dắt chuyên môn · Robot hỗ trợ nâng cao độ chính xác</figcaption></figure></div></div></header>
@@ -1213,7 +1253,13 @@
         </div>
       </div>
     </div>
-    <div class="note" style="margin-top:14px">Các mức ngân sách trên là phép tính minh họa từ đơn giá Qualified Lead, chưa bao gồm phí quản lý - vận hành 20%, VAT và các hạng mục Branding, Content Trust, sản xuất, CRM hoặc đo lường.</div>
+    <div class="budget-note-box">
+  <strong>Lưu ý triển khai Performance</strong>
+  <em>Theo tiến độ nghiệm thu và kế hoạch hành động. Cuộc gọi được ghi âm thông qua CRM. Kỳ vọng đạt 12.000 Qualified Lead trong khoảng 4,5-5 tháng.</em>
+  <em>Giai đoạn 1: 2 tuần thử nghiệm, 200 Qualified Lead. Giai đoạn 2: đánh giá sau 2 tháng, mục tiêu 5.000 Qualified Lead. Giai đoạn 3: Planning và cam kết dựa trên history data.</em>
+  <em>Transparent Cost: 20% trên ngân sách thực chạy.</em>
+</div>
+<div class="note" style="margin-top:14px">Các mức ngân sách trên là phép tính minh họa từ đơn giá Qualified Lead, chưa bao gồm phí quản lý - vận hành 20%, VAT và các hạng mục Branding, Content Trust, sản xuất, CRM hoặc đo lường.</div>
   </div>
 </section>
 
@@ -1239,7 +1285,12 @@
         </tbody>
       </table>
     </div>
-    <div class="note" style="margin-top:14px">Transparent Cost: phí quản lý và vận hành 20% trên ngân sách thực chạy của Branding và Performance, ngoại trừ Frame thang máy.</div>
+    <div class="budget-note-box">
+  <strong>Lưu ý triển khai Branding</strong>
+  <em>Ngoại trừ Frame thang máy, các hạng mục còn lại được nghiệm thu theo tiến độ dự án và kế hoạch hành động hàng tuần.</em>
+  <em>Gói Frame thang máy đang ước tính hiển thị tại 200 tòa nhà DF và 300 tòa nhà LCD tại TP.HCM; tần suất khoảng 320 lượt/ngày với DF và 72 lượt/ngày với LCD.</em>
+  <em>Transparent Cost: 20% trên ngân sách thực chạy, ngoại trừ Frame thang máy.</em>
+</div>
   </div>
 </section>
 
@@ -1262,7 +1313,11 @@
         </tbody>
       </table>
     </div>
-    <div class="note" style="margin-top:14px">Các hạng mục sản xuất được nghiệm thu sau khi thành phẩm đã hoàn thành.</div>
+    <div class="budget-note-box">
+  <strong>Lưu ý Content Trust và Sản xuất</strong>
+  <em>Chuyên đề “Implant không đau” áp dụng triển khai trọn gói.</em>
+  <em>Các hạng mục sản xuất được nghiệm thu sau khi thành phẩm đã hoàn thành.</em>
+</div>
   </div>
 </section>
 
@@ -1284,7 +1339,14 @@
         </tbody>
       </table>
     </div>
-    <div class="note" style="margin-top:16px">Các đơn giá chưa bao gồm VAT. Phạm vi công việc, số lượng bàn giao và điều kiện thanh toán sẽ được thể hiện trong báo giá chi tiết sau khi thống nhất kế hoạch.</div>
+    <div class="budget-note-box warning">
+  <strong>Lưu ý CRM, Báo cáo và Chi phí khác</strong>
+  <em>Bizfly CRM không bao gồm đăng ký Tổng đài với Bộ Công An và không bao gồm cước phí hàng tháng với nhà mạng.</em>
+  <em>Social Listening được nghiệm thu khi hoàn thành báo cáo.</em>
+  <em>Lập kế hoạch và sáng tạo tính một lần khi ký hợp đồng và bắt đầu chiến dịch.</em>
+  <em>Phí công nghệ chỉ phát sinh khi triển khai hạng mục Premium Banner Ads.</em>
+</div>
+<div class="note" style="margin-top:12px">Các đơn giá chưa bao gồm VAT. Phạm vi công việc, số lượng bàn giao và điều kiện thanh toán sẽ được thể hiện trong báo giá chi tiết sau khi thống nhất kế hoạch.</div>
   </div>
 </section>
 
