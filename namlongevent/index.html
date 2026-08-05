@@ -290,9 +290,137 @@ background-image:url('assets/images/master-keyvisual-mobile.jpg') !important;
 background-size:cover!important;background-position:center!important;
 }
 }
+
+/* V13 — mobile asset routing, Safari video playback, responsive intro and clean flip backs */
+.entrance-picture,.hero-picture{display:block;width:100%;height:100%}
+.entrance-picture .entrance-kv,.hero-picture .hero-kv{width:100%;height:100%;display:block}
+.flip-back{background:#f8f5f2!important;border:1px solid rgba(255,255,255,.9)!important}
+.flip-back>img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+@media(max-width:768px){
+  .entrance,.entrance-picture{width:100%;height:100svh;min-height:100svh;aspect-ratio:auto}
+  .entrance-picture .entrance-kv{width:100%;height:100%;object-fit:cover;object-position:center center;aspect-ratio:auto}
+  .hero-picture{width:100%;height:100%}
+  .hero-picture .hero-kv{width:100%;height:100%;object-fit:cover;object-position:center center}
+  .intro-editorial,.intro-statement{width:100%;min-width:0}
+  .intro-title-mobile{width:100%;max-width:100%;overflow-wrap:anywhere}
+  .intro-title-mobile .title-line{white-space:normal!important;display:block}
+  .intro-title{font-size:clamp(34px,9.6vw,46px)!important;line-height:1.02!important;letter-spacing:-.045em!important;overflow:hidden}
+  .intro-narrative{width:100%;min-width:0}
+  .intro-narrative p{font-size:17px;line-height:1.65;overflow-wrap:break-word}
+  .flip-face{border-radius:28px}
+  .flip-back{padding:0!important;background:#f8f5f2!important;border:1px solid rgba(255,255,255,.95)!important;box-shadow:0 16px 42px rgba(30,13,16,.08)!important}
+}
+@media(max-width:390px){.intro-title{font-size:clamp(31px,9vw,36px)!important}}
+
+
+
+/* V14 — centered entry CTA, edge-to-edge desktop hero, external slider controls, clean flip imagery */
+.enter-trigger{
+  position:absolute!important;
+  inset:50% auto auto 50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:10!important;
+  margin:0!important;
+}
+.entrance.is-ready .enter-trigger{transform:translate(-50%,-50%)!important}
+.entrance.is-leaving .enter-trigger{transform:translate(-50%,-50%) scale(8)!important}
+
+.flip-back{
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.flip-back>img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  border-radius:inherit!important;
+  mix-blend-mode:normal!important;
+  opacity:1!important;
+}
+.flip-back:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.14) 52%,rgba(0,0,0,.82) 100%)!important;
+  pointer-events:none;
+}
+.flip-caption{z-index:2!important}
+
+@media(min-width:861px){
+  .header{
+    transform:translateY(-110%);
+    opacity:0;
+    pointer-events:none;
+  }
+  .header.scrolled{
+    transform:translateY(0)!important;
+    opacity:1;
+    pointer-events:auto;
+  }
+  .header.hidden{
+    transform:translateY(-110%)!important;
+    opacity:0;
+    pointer-events:none;
+  }
+  .hero{
+    padding-top:0!important;
+    padding-bottom:82px;
+    min-height:calc(100svh + 82px);
+    overflow:visible;
+    background:#f6f3f1;
+  }
+  .hero-slider{
+    overflow:visible;
+    min-height:100svh!important;
+  }
+  .hero-track,.hero-slide,.hero-kv,.hero-video{
+    min-height:100svh!important;
+  }
+  .hero-track{overflow:hidden}
+  .hero-controls{
+    top:calc(100% + 18px);
+    bottom:auto!important;
+    background:rgba(255,252,249,.96);
+    border-color:rgba(32,31,32,.10);
+    box-shadow:0 12px 34px rgba(37,16,19,.08);
+  }
+  .hero-counter{
+    top:calc(100% + 35px);
+    bottom:auto!important;
+  }
+  .hero-video-toggle{top:30px}
+}
+
+@media(max-width:860px){
+  .header{transform:none!important;opacity:1!important;pointer-events:auto!important}
+  .enter-trigger{
+    width:168px!important;
+    height:168px!important;
+    inset:50% auto auto 50%!important;
+    transform:translate(-50%,-50%)!important;
+  }
+  .entrance.is-ready .enter-trigger{transform:translate(-50%,-50%)!important}
+  .entrance.is-leaving .enter-trigger{transform:translate(-50%,-50%) scale(8)!important}
+  .enter-trigger strong{
+    top:calc(50% + 46px)!important;
+    font-size:11px!important;
+    letter-spacing:.11em!important;
+  }
+  .flip-back{border:0!important;background:transparent!important;box-shadow:none!important}
+}
+
 </style>
 </head>
-<body class="pre-entry"><div aria-label="Mở Nam Long Experience 2026" aria-modal="true" class="entrance" data-state="open" id="entrance" role="dialog"><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực" class="entrance-kv" src="assets/images/master-keyvisual.jpg"/><div class="entrance-shade"></div><button aria-label="Bắt đầu khám phá Nam Long Experience 2026" class="enter-trigger" id="enterTrigger" type="button"><span class="enter-ripple ripple-one"></span><span class="enter-ripple ripple-two"></span><span class="enter-core"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></span><strong>Chạm để khám phá</strong></button></div>
+<body class="pre-entry"><div aria-label="Mở Nam Long Experience 2026" aria-modal="true" class="entrance" data-state="open" id="entrance" role="dialog"><picture class="entrance-picture">
+<source media="(max-width: 768px)" srcset="assets/images/mobile-homescreen.jpg"/>
+<img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực" class="entrance-kv" src="assets/images/master-keyvisual.jpg"/>
+</picture><div class="entrance-shade"></div><button aria-label="Bắt đầu khám phá Nam Long Experience 2026" class="enter-trigger" id="enterTrigger" type="button"><span class="enter-ripple ripple-one"></span><span class="enter-ripple ripple-two"></span><span class="enter-core"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></span><strong>Chạm để khám phá</strong></button></div>
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
 <header class="header" id="header">
@@ -309,8 +437,8 @@ background-size:cover!important;background-position:center!important;
 <section aria-label="Nam Long Experience 2026" class="hero" id="top">
 <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Nội dung nổi bật Nam Long Experience 2026">
 <div class="hero-track" id="heroTrack">
-<article class="hero-slide is-active" aria-hidden="false" data-type="image"><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" src="assets/images/master-keyvisual-inpage.jpg"/><div class="hero-overlay"></div></article>
-<article class="hero-slide hero-video-slide" aria-hidden="true" data-type="video"><video class="hero-video" id="heroVideo" muted playsinline preload="metadata"><source src="assets/images/videoslider.mp4" type="video/mp4"/>Trình duyệt của bạn chưa hỗ trợ video HTML5.</video><div class="hero-video-shade"></div><button class="hero-video-toggle" id="heroVideoToggle" type="button" aria-label="Tạm dừng video"><span class="pause-icon">Ⅱ</span><span class="play-icon">▶</span></button></article>
+<article class="hero-slide is-active" aria-hidden="false" data-type="image"><picture class="hero-picture"><source media="(max-width: 768px)" srcset="assets/images/master-keyvisual-mobile.jpg"/><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" src="assets/images/master-keyvisual-inpage.jpg"/></picture><div class="hero-overlay"></div></article>
+<article class="hero-slide hero-video-slide" aria-hidden="true" data-type="video"><video class="hero-video" id="heroVideo" muted autoplay playsinline webkit-playsinline preload="auto"><source src="assets/images/videoslider.mp4" type="video/mp4"/>Trình duyệt của bạn chưa hỗ trợ video HTML5.</video><div class="hero-video-shade"></div><button class="hero-video-toggle" id="heroVideoToggle" type="button" aria-label="Tạm dừng video"><span class="pause-icon">Ⅱ</span><span class="play-icon">▶</span></button></article>
 </div>
 <div class="hero-controls" aria-label="Điều khiển banner">
 <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Banner trước">←</button>
@@ -405,13 +533,15 @@ background-size:cover!important;background-position:center!important;
   const heroVideoToggle=document.getElementById('heroVideoToggle');
   const heroCurrent=document.getElementById('heroCurrent');
   let heroIndex=0,heroTimer=null;
+  heroVideo.muted=true;heroVideo.defaultMuted=true;heroVideo.setAttribute('muted','');heroVideo.setAttribute('playsinline','');heroVideo.setAttribute('webkit-playsinline','');
+  const safePlayHeroVideo=()=>{const promise=heroVideo.play();if(promise&&typeof promise.catch==='function')promise.catch(()=>heroVideoToggle.classList.add('is-paused'));};
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function clearHeroTimer(){if(heroTimer){clearTimeout(heroTimer);heroTimer=null}}
   function scheduleHero(){clearHeroTimer();if(reducedMotion||document.hidden)return;if(heroSlides[heroIndex].dataset.type==='image')heroTimer=setTimeout(()=>goHero(heroIndex+1),6500)}
   function syncHeroVideo(){
     if(heroSlides[heroIndex].dataset.type==='video'){
       heroVideo.currentTime=0;
-      heroVideo.play().then(()=>heroVideoToggle.classList.remove('is-paused')).catch(()=>heroVideoToggle.classList.add('is-paused'));
+      safePlayHeroVideo();heroVideoToggle.classList.remove('is-paused');
     }else{heroVideo.pause();heroVideoToggle.classList.remove('is-paused')}
   }
   function goHero(index){
@@ -427,7 +557,7 @@ background-size:cover!important;background-position:center!important;
   heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i)));
   heroVideo.addEventListener('ended',()=>goHero(heroIndex+1));
   heroVideoToggle.addEventListener('click',()=>{
-    if(heroVideo.paused){heroVideo.play();heroVideoToggle.classList.remove('is-paused');heroVideoToggle.setAttribute('aria-label','Tạm dừng video')}
+    if(heroVideo.paused){safePlayHeroVideo();heroVideoToggle.classList.remove('is-paused');heroVideoToggle.setAttribute('aria-label','Tạm dừng video')}
     else{heroVideo.pause();heroVideoToggle.classList.add('is-paused');heroVideoToggle.setAttribute('aria-label','Phát video')}
   });
   heroSlider.addEventListener('mouseenter',clearHeroTimer);
@@ -441,7 +571,7 @@ background-size:cover!important;background-position:center!important;
   scheduleHero();
 
   const header=document.getElementById('header'),menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav'),backTop=document.getElementById('backTop');let lastY=0;
-  addEventListener('scroll',()=>{const y=scrollY;header.classList.toggle('scrolled',y>24);header.classList.toggle('hidden',y>lastY&&y>180&&!nav.classList.contains('open'));backTop.classList.toggle('show',y>650);lastY=y},{passive:true});
+  addEventListener('scroll',()=>{const y=scrollY;header.classList.toggle('scrolled',y>24);header.classList.toggle('hidden',innerWidth<=860&&y>lastY&&y>180&&!nav.classList.contains('open'));backTop.classList.toggle('show',y>650);lastY=y},{passive:true});
   menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.setAttribute('aria-label',open?'Đóng menu':'Mở menu');document.body.classList.toggle('menu-open',open)});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('menu-open');menuBtn.setAttribute('aria-expanded','false')}));
   backTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
@@ -490,6 +620,10 @@ background-size:cover!important;background-position:center!important;
   function enterExperience(){
     if(!entrance||entrance.classList.contains('is-leaving'))return;
     document.body.classList.add('is-entering');
+    heroVideo.load();
+    safePlayHeroVideo();
+    heroVideo.pause();
+    heroVideo.currentTime=0;
     document.body.classList.remove('pre-entry');
     entrance.classList.add('is-leaving');
     entrance.addEventListener('transitionend',e=>{if(e.target===entrance&&e.propertyName==='opacity')finishEntrance()},{once:true});
