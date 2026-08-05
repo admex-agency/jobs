@@ -469,7 +469,333 @@ background-size:cover!important;background-position:center!important;
   visibility:visible!important;
 }
 
+
+/* V22 — Client review: stable image slider and mobile layout polish */
+.hero-video-toggle[hidden],.hero-video-runtime[hidden]{display:none!important}
+.hero-review-slide{position:relative;overflow:hidden;background:#f3f1ef}
+
+@media(max-width:860px){
+  .hero{
+    padding-bottom:86px!important;
+    overflow:visible!important;
+  }
+  .hero-slider{
+    overflow:visible!important;
+  }
+  .hero-track{
+    overflow:hidden!important;
+  }
+  .hero-controls{
+    top:calc(100% + 14px)!important;
+    bottom:auto!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    position:absolute!important;
+    background:rgba(255,252,249,.97)!important;
+    border:1px solid rgba(32,31,32,.10)!important;
+    box-shadow:0 10px 28px rgba(37,16,19,.08)!important;
+  }
+  .hero-counter{
+    top:calc(100% + 28px)!important;
+    bottom:auto!important;
+    right:20px!important;
+  }
+  .intro{
+    overflow:hidden!important;
+  }
+  .intro .container{
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  .intro-editorial,.intro-statement,.intro-topline,.intro-narrative{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .intro-topline{
+    gap:16px!important;
+  }
+  .intro-topline .eyebrow{
+    white-space:normal!important;
+    max-width:calc(100% - 52px)!important;
+    line-height:1.35!important;
+  }
+  .intro-index{
+    flex:0 0 auto!important;
+  }
+  .intro-title{
+    width:100%!important;
+    max-width:100%!important;
+    overflow:visible!important;
+    font-size:clamp(36px,10.4vw,48px)!important;
+    line-height:1.01!important;
+    letter-spacing:-.045em!important;
+  }
+  .intro-title-mobile,.intro-title-mobile .title-line{
+    width:100%!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  .intro-narrative{
+    padding-left:0!important;
+    padding-right:0!important;
+    margin:0!important;
+  }
+  .intro-narrative p{
+    width:100%!important;
+    max-width:100%!important;
+    font-size:17px!important;
+    line-height:1.7!important;
+  }
+  .intro-orbit{
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+}
+@media(max-width:390px){
+  .intro .container{padding-left:20px!important;padding-right:20px!important}
+  .intro-title{font-size:clamp(34px,10vw,40px)!important}
+}
+
+
+/* V23: controlled line breaks by breakpoint */
+.responsive-title .title-mobile{display:none}
+@media(max-width:860px){
+  .responsive-title .title-desktop{display:none}
+  .responsive-title .title-mobile{display:inline}
+  .responsive-title{max-width:100%;text-wrap:balance;overflow-wrap:normal;word-break:normal}
+}
+
+
+/* V24 — duplicate image slide and mobile orbit spacing fix */
+.hero-review-slide{background:#f3f1ef url("assets/images/master-keyvisual-inpage.jpg") center center/cover no-repeat!important}
+.hero-review-slide .hero-kv-duplicate{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;opacity:1!important;visibility:visible!important}
+@media(max-width:768px){
+  .hero-review-slide{background-image:url("assets/images/master-keyvisual-mobile.jpg")!important}
+  .hero-review-slide .hero-kv-duplicate{content:url("assets/images/master-keyvisual-mobile.jpg");object-fit:cover!important}
+  .intro-orbit{
+    white-space:normal!important;
+    overflow:visible!important;
+    flex-wrap:wrap!important;
+    column-gap:10px!important;
+    row-gap:10px!important;
+    padding-right:4px!important;
+    line-height:1.45!important;
+  }
+  .intro-orbit span{flex:0 1 auto;min-width:0}
+}
+
+
+/* V25 — Mobile H2 title system */
+@media (max-width: 768px){
+  .section{
+    padding:72px 0;
+  }
+
+  .section .container{
+    width:calc(100% - 40px);
+  }
+
+  .section-title,
+  .activities-head .section-title,
+  .partners-head .section-title,
+  .experience .section-title,
+  .news-head .section-title{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    font-size:clamp(34px, 9.2vw, 42px)!important;
+    line-height:1.01!important;
+    letter-spacing:-.045em;
+    text-wrap:balance;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+
+  .section-title br{
+    display:none;
+  }
+
+  .eyebrow{
+    margin-bottom:14px;
+  }
+
+  .section-lead{
+    margin-top:20px;
+    font-size:17px;
+    line-height:1.55;
+  }
+
+  .news-head{
+    display:grid!important;
+    grid-template-columns:1fr;
+    gap:24px;
+    align-items:start!important;
+  }
+
+  .news-head>div:first-child{
+    width:100%;
+    min-width:0;
+  }
+
+  .news-head .section-title{
+    max-width:360px;
+  }
+
+  .news-head .section-title br{
+    display:block;
+  }
+
+  .news-controls{
+    justify-self:start;
+    margin:0!important;
+  }
+
+  .partners-head,
+  .activities-head{
+    display:block;
+  }
+}
+
+@media (max-width: 390px){
+  .section .container{
+    width:calc(100% - 32px);
+  }
+
+  .section-title,
+  .activities-head .section-title,
+  .partners-head .section-title,
+  .experience .section-title,
+  .news-head .section-title{
+    font-size:34px!important;
+  }
+
+  .news-head .section-title{
+    max-width:330px;
+  }
+}
+
+
+/* V26 — Unified section typography and agenda spacing */
+.section-title,
+.activities-head .section-title,
+.partners-head .section-title,
+.experience .section-title,
+.news-head .section-title{
+  font-size:40px!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
+  max-width:920px;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+
+.quote blockquote{
+  font-size:64px!important;
+  line-height:1.02!important;
+}
+
+.agenda .demo-note{
+  margin:22px 0 0;
+  max-width:760px;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.agenda-tabs{
+  margin:38px 0 34px!important;
+  padding:2px 0 8px!important;
+  gap:12px!important;
+  align-items:center;
+  overscroll-behavior-inline:contain;
+  scrollbar-width:none;
+}
+
+.agenda-tabs::-webkit-scrollbar{
+  display:none;
+}
+
+.agenda-tabs .tab{
+  flex:0 0 auto;
+  min-height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  line-height:1.15;
+}
+
+.agenda-panel{
+  clear:both;
+}
+
+@media(max-width:768px){
+  .section-title,
+  .activities-head .section-title,
+  .partners-head .section-title,
+  .experience .section-title,
+  .news-head .section-title{
+    font-size:40px!important;
+    line-height:1.04!important;
+    letter-spacing:-.04em!important;
+  }
+
+  .quote blockquote{
+    font-size:42px!important;
+  }
+
+  .agenda-tabs{
+    width:100%;
+    margin:30px 0 28px!important;
+    padding:2px 0 10px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+  }
+
+  .agenda-tabs .tab{
+    min-height:50px;
+    padding:13px 20px;
+  }
+
+  .agenda-panel{
+    padding-top:2px;
+  }
+}
+
+@media(max-width:390px){
+  .section-title,
+  .activities-head .section-title,
+  .partners-head .section-title,
+  .experience .section-title,
+  .news-head .section-title{
+    font-size:40px!important;
+  }
+}
+
 </style>
+
+<style id="v27-mobile-fix">
+@media (max-width:768px){
+  .section-title,
+  .activities-head .section-title,
+  .partners-head .section-title,
+  .experience .section-title,
+  .news-head .section-title{
+    font-size:34px!important;
+    line-height:1.05!important;
+  }
+  .activity-card h3{
+    font-size:20px!important;
+    line-height:1.15!important;
+  }
+}
+</style>
+
 </head>
 <body class="pre-entry"><div aria-label="Mở Nam Long Experience 2026" aria-modal="true" class="entrance" data-state="open" id="entrance" role="dialog"><picture class="entrance-picture">
 <source media="(max-width: 768px)" srcset="assets/images/mobile-homescreen.jpg"/>
@@ -492,11 +818,11 @@ background-size:cover!important;background-position:center!important;
 <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Nội dung nổi bật Nam Long Experience 2026">
 <div class="hero-track" id="heroTrack">
 <article class="hero-slide is-active" aria-hidden="false" data-type="image"><picture class="hero-picture"><source media="(max-width: 768px)" srcset="assets/images/master-keyvisual-mobile.jpg"/><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" src="assets/images/master-keyvisual-inpage.jpg"/></picture><div class="hero-overlay"></div></article>
-<article class="hero-slide hero-video-slide" aria-hidden="true" data-type="video"><video class="hero-video" id="heroVideo" src="assets/images/videoslider.mp4" muted autoplay playsinline webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback">Trình duyệt của bạn chưa hỗ trợ video HTML5.</video><div class="hero-video-shade"></div><button class="hero-video-toggle is-paused" id="heroVideoToggle" type="button" aria-label="Phát video"><span class="pause-icon">Ⅱ</span><span class="play-icon">▶</span></button></article>
+<article class="hero-slide hero-review-slide" aria-hidden="true" data-type="image"><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực" class="hero-kv hero-kv-duplicate" src="assets/images/master-keyvisual-inpage.jpg"/><div class="hero-overlay"></div></article>
 </div>
 <div class="hero-controls" aria-label="Điều khiển banner">
 <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Banner trước">←</button>
-<div class="hero-dots" id="heroDots"><button class="hero-dot is-active" type="button" aria-label="Xem banner 1" aria-current="true"></button><button class="hero-dot" type="button" aria-label="Xem banner video 2" aria-current="false"></button></div>
+<div class="hero-dots" id="heroDots"><button class="hero-dot is-active" type="button" aria-label="Xem banner 1" aria-current="true"></button><button class="hero-dot" type="button" aria-label="Xem banner 2" aria-current="false"></button></div>
 <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="Banner tiếp theo">→</button>
 </div>
 <div class="hero-counter"><span id="heroCurrent">01</span><i></i><span>02</span></div>
@@ -523,7 +849,7 @@ background-size:cover!important;background-position:center!important;
 </div>
 </section>
 <section class="section reasons" id="ly-do">
-<div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
+<div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title responsive-title"><span class="title-desktop">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</span><span class="title-mobile">Một triển lãm. Năm chiều trải nghiệm đô thị.</span></h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
 <div class="reason-grid">
 <button aria-pressed="false" class="reason-card flip-card" type="button"><span class="flip-inner"><span class="flip-face flip-front"><img alt="" src="assets/icons/Hoa tap.png"/><span><strong>Học tập</strong><small>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</small></span><em>Chạm để khám phá</em></span><span class="flip-face flip-back"><img alt="Không gian trải nghiệm học tập" src="assets/images/gallery/event-space-03.jpg"/><span class="flip-caption"><strong>Học tập trong đô thị tích hợp</strong><small>Không gian giáo dục, workshop và hoạt động phát triển kỹ năng cho cả gia đình.</small></span></span></span></button>
 <button aria-pressed="false" class="reason-card flip-card" type="button"><span class="flip-inner"><span class="flip-face flip-front"><img alt="" src="assets/icons/Lam viec.png"/><span><strong>Làm việc</strong><small>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</small></span><em>Chạm để khám phá</em></span><span class="flip-face flip-back"><img alt="Không gian trải nghiệm làm việc" src="assets/images/gallery/event-space-04.jpg"/><span class="flip-caption"><strong>Kết nối cơ hội mới</strong><small>Không gian tư vấn, giao lưu chuyên gia và kết nối hệ sinh thái đối tác.</small></span></span></span></button>
@@ -564,7 +890,7 @@ background-size:cover!important;background-position:center!important;
 </section>
 <section class="section register" id="dang-ky"><div class="container register-grid"><div class="register-copy reveal"><p class="eyebrow">Đăng ký tham dự</p><h2>Đặt lịch cho hành trình Giá Trị Thực.</h2><p>Hoàn tất thông tin để nhận xác nhận tham dự và cập nhật lịch hoạt động mới nhất từ Ban tổ chức.</p><div class="register-benefits"><div><strong>100 phần quà</strong><span>Dành cho những khách đăng ký sớm và check-in hợp lệ.</span></div><div><strong>Lucky Draw tại sự kiện</strong><span>Cơ hội nhận quà công nghệ, voucher và đặc quyền trải nghiệm.</span></div><div><strong>Ưu tiên cập nhật lịch</strong><span>Nhận thông báo sớm về workshop, talkshow và hoạt động giới hạn chỗ.</span></div></div></div><div class="form-shell reveal" data-delay="1"><div class="form-loading" id="formLoading" role="status"><span></span><strong>Đang tải biểu mẫu đăng ký…</strong></div><iframe id="registrationFrame" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://dev-namlong.sadec.co/public/event-registration/612v1a4w" title="Form đăng ký Nam Long Experience 2026"></iframe><div class="form-assist">Nếu biểu mẫu không hiển thị do giới hạn của trình duyệt hoặc máy chủ, <a href="https://dev-namlong.sadec.co/public/event-registration/612v1a4w" rel="noopener" target="_blank">mở biểu mẫu trong cửa sổ mới</a>.</div><div class="form-fallback" id="formFallback">Không thể kết nối tới biểu mẫu đăng ký tại thời điểm này. <a href="https://dev-namlong.sadec.co/public/event-registration/612v1a4w" rel="noopener" target="_blank">Thử mở biểu mẫu trực tiếp</a>.</div></div></div></section>
 <section aria-labelledby="partnersTitle" class="section partners"><div class="container"><div class="partners-head reveal"><p class="eyebrow">Đồng hành cùng sự kiện</p><h2 class="section-title" id="partnersTitle">Những đơn vị kiến tạo nên hành trình.</h2></div><div class="partner-groups"><div class="partner-group reveal"><p>Đơn vị tổ chức</p><div class="partner-logos"><div class="partner-logo featured"><img alt="Nam Long" src="assets/images/logo-namlong-red.png"/></div></div></div><div class="partner-group reveal" data-delay="1"><p>Nhà tài trợ</p><div class="partner-logos"><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div></div></div><div class="partner-group reveal" data-delay="2"><p>Bảo trợ truyền thông</p><div class="partner-logos"><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div></div></div></div></div></section>
-<section class="section news" id="tin-tuc"><div class="container"><div class="news-head"><div><p class="eyebrow">Tin tức &amp; hoạt động</p><h2 class="section-title">Cập nhật hành trình<br/>Nam Long Experience.</h2></div><div aria-label="Điều hướng tin tức" class="news-controls"><button aria-label="Xem tin mới hơn" class="news-arrow" id="newsPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Xem tin cũ hơn" class="news-arrow" id="newsNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div>
+<section class="section news" id="tin-tuc"><div class="container"><div class="news-head"><div><p class="eyebrow">Tin tức &amp; hoạt động</p><h2 class="section-title news-title"><span>Cập nhật hành trình</span><br/><span>Nam Long Experience.</span></h2></div><div aria-label="Điều hướng tin tức" class="news-controls"><button aria-label="Xem tin mới hơn" class="news-arrow" id="newsPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Xem tin cũ hơn" class="news-arrow" id="newsNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div>
 <div class="news-viewport"><div class="news-grid" id="newsTrack">
 <button class="news-card featured reveal" data-content="Nam Long Journey 2025 đã mở ra một không gian trải nghiệm tích hợp, giúp khách tham dự tiếp cận trực quan hơn với hệ sinh thái đô thị và các lựa chọn an cư, đầu tư. Chuỗi hoạt động kết nối thông tin dự án, trải nghiệm không gian sống và tư vấn chuyên sâu trong cùng một hành trình.||Sự kiện cho thấy bất động sản không chỉ được nhìn qua mặt bằng hay thông số, mà cần được cảm nhận qua chất lượng quy hoạch, tiện ích, cộng đồng và khả năng vận hành trong đời sống thực." data-image="assets/images/gallery/event-space-07.jpg" data-meta="Dấu ấn sự kiện · 2025" data-title="Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm" data-url="https://www.namlongvn.com/tin-tuc/nam-long-journey-2025-experience-integrated-diem-hen-dau-tu-an-cu-dip-cuoi-nam/" type="button"><div class="news-thumb"><img alt="Nam Long Journey 2025" src="assets/images/gallery/event-space-07.jpg"/></div><div class="news-body"><div class="news-meta">Dấu ấn sự kiện · 2025</div><h3>Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm</h3><p>Nhìn lại chuỗi trải nghiệm tích hợp quy mô lớn và hành trình khám phá hệ sinh thái đô thị Nam Long.</p></div></button>
 <button class="news-card reveal" data-content="Không gian triển lãm ứng dụng công nghệ trình diễn và ngôn ngữ thị giác để tái hiện sinh động đời sống trong các khu đô thị tích hợp. Khách tham dự có thể khám phá hành trình sống thông qua nhiều lớp trải nghiệm thay vì chỉ tiếp nhận thông tin một chiều.||Cách tiếp cận đa giác quan giúp những giá trị về quy hoạch, tiện ích và cộng đồng trở nên gần gũi, dễ hình dung và có tính thuyết phục cao hơn." data-delay="1" data-image="assets/images/gallery/event-space-04.jpg" data-meta="Báo chí" data-title="Không gian trải nghiệm đa giác quan" data-url="https://vnexpress.net/nam-long-cong-bo-chuoi-su-kien-trai-nghiem-da-giac-quan-4982711.html" type="button"><div class="news-thumb"><img alt="Trải nghiệm đa giác quan" src="assets/images/gallery/event-space-04.jpg"/></div><div class="news-body"><div class="news-meta">Báo chí</div><h3>Không gian trải nghiệm đa giác quan</h3><p>Công nghệ trình diễn giúp khách tham dự hình dung trực quan về đời sống trong đô thị tích hợp.</p></div></button>
@@ -578,127 +904,35 @@ background-size:cover!important;background-position:center!important;
 <div aria-labelledby="newsModalTitle" aria-modal="true" class="news-modal" id="newsModal" role="dialog"><div class="news-dialog"><button aria-label="Đóng bài viết" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="news-banner"><img alt="" id="newsModalImage" src=""/></div><article class="news-detail"><div class="news-meta" id="newsModalMeta"></div><h2 id="newsModalTitle"></h2><div id="newsModalContent"></div><a href="#" id="newsModalLink" rel="noopener" target="_blank">Đọc bài viết tại nguồn</a></article></div></div>
 <script>
 
-  // In-page hero slider: still image + embedded video
+  // In-page hero slider: image-only client review version
   const heroSlider=document.getElementById('heroSlider');
   const heroTrack=document.getElementById('heroTrack');
   const heroSlides=[...heroSlider.querySelectorAll('.hero-slide')];
   const heroDots=[...document.querySelectorAll('.hero-dot')];
-  const heroVideo=document.getElementById('heroVideo');
-  const heroVideoSlide=heroVideo.closest('.hero-video-slide');
-  const heroVideoToggle=document.getElementById('heroVideoToggle');
   const heroCurrent=document.getElementById('heroCurrent');
-  let heroIndex=0,heroTimer=null,videoStarted=false;
-
-  heroVideo.muted=true;
-  heroVideo.defaultMuted=true;
-  heroVideo.volume=0;
-  heroVideo.setAttribute('muted','');
-  heroVideo.setAttribute('playsinline','');
-  heroVideo.setAttribute('webkit-playsinline','');
-
-  const setVideoUi=(playing)=>{
-    heroVideoToggle.classList.toggle('is-paused',!playing);
-    heroVideoToggle.setAttribute('aria-label',playing?'Tạm dừng video':'Phát video');
-  };
-
-  const revealVideo=()=>{
-    if(videoStarted)return;
-    videoStarted=true;
-    heroVideoSlide.classList.add('has-started');
-  };
-
-  const safePlayHeroVideo=async({restart=false}={})=>{
-    if(!heroVideo)return false;
-    heroVideo.muted=true;
-    heroVideo.defaultMuted=true;
-    heroVideo.volume=0;
-    heroVideo.setAttribute('muted','');
-    heroVideo.setAttribute('playsinline','');
-    heroVideo.setAttribute('webkit-playsinline','');
-    try{
-      if(restart || heroVideo.ended){
-        heroVideo.currentTime=0;
-      }
-      if(heroVideo.readyState < 2){
-        heroVideo.load();
-        await new Promise((resolve,reject)=>{
-          const ready=()=>{cleanup();resolve()};
-          const fail=()=>{cleanup();reject(heroVideo.error || new Error('Video load failed'))};
-          const cleanup=()=>{
-            heroVideo.removeEventListener('loadeddata',ready);
-            heroVideo.removeEventListener('canplay',ready);
-            heroVideo.removeEventListener('error',fail);
-          };
-          heroVideo.addEventListener('loadeddata',ready,{once:true});
-          heroVideo.addEventListener('canplay',ready,{once:true});
-          heroVideo.addEventListener('error',fail,{once:true});
-          setTimeout(()=>{cleanup();resolve()},1800);
-        });
-      }
-      await heroVideo.play();
-      revealVideo();
-      setVideoUi(true);
-      return true;
-    }catch(error){
-      setVideoUi(false);
-      console.warn('Hero video play failed:',error,heroVideo.error);
-      return false;
-    }
-  };
-
+  let heroIndex=0,heroTimer=null;
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function clearHeroTimer(){if(heroTimer){clearTimeout(heroTimer);heroTimer=null}}
-  function scheduleHero(){clearHeroTimer();if(reducedMotion||document.hidden)return;if(heroSlides[heroIndex].dataset.type==='image')heroTimer=setTimeout(()=>goHero(heroIndex+1,false),6500)}
-  function syncHeroVideo(userInitiated=false){
-    if(heroSlides[heroIndex].dataset.type==='video'){
-      safePlayHeroVideo({restart:userInitiated});
-    }else{
-      heroVideo.pause();
-      setVideoUi(false);
-    }
-  }
-  function goHero(index,userInitiated=false){
+  function scheduleHero(){clearHeroTimer();if(reducedMotion||document.hidden)return;heroTimer=setTimeout(()=>goHero(heroIndex+1),6500)}
+  function goHero(index){
     heroIndex=(index+heroSlides.length)%heroSlides.length;
     heroTrack.style.transform=`translateX(-${heroIndex*100}%)`;
     heroSlides.forEach((slide,i)=>{slide.classList.toggle('is-active',i===heroIndex);slide.setAttribute('aria-hidden',String(i!==heroIndex))});
     heroDots.forEach((dot,i)=>{dot.classList.toggle('is-active',i===heroIndex);dot.setAttribute('aria-current',String(i===heroIndex))});
     heroCurrent.textContent=String(heroIndex+1).padStart(2,'0');
-    if(heroSlides[heroIndex].dataset.type==='video'){
-      requestAnimationFrame(()=>safePlayHeroVideo({restart:userInitiated}));
-    }else{
-      heroVideo.pause();
-      setVideoUi(false);
-    }
     scheduleHero();
   }
-  document.getElementById('heroPrev').addEventListener('click',()=>goHero(heroIndex-1,true));
-  document.getElementById('heroNext').addEventListener('click',()=>goHero(heroIndex+1,true));
-  heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i,true)));
-  heroVideo.addEventListener('playing',()=>{revealVideo();setVideoUi(true)});
-  heroVideo.addEventListener('timeupdate',()=>{if(heroVideo.currentTime>.05)revealVideo()});
-  heroVideo.addEventListener('ended',()=>goHero(heroIndex+1,false));
-  heroVideo.addEventListener('pause',()=>setVideoUi(false));
-  heroVideo.addEventListener('error',()=>{
-    setVideoUi(false);
-    heroVideoSlide.classList.remove('has-started');
-    console.warn('Hero video could not be loaded:', heroVideo.error);
-  });
-  heroVideoToggle.addEventListener('click',async()=>{
-    if(heroVideo.paused){await safePlayHeroVideo({restart:heroVideo.ended})}
-    else heroVideo.pause();
-  });
-  heroVideoSlide.addEventListener('click',e=>{
-    if(e.target.closest('button'))return;
-    if(heroVideo.paused)safePlayHeroVideo({restart:heroVideo.ended});
-  });
+  document.getElementById('heroPrev').addEventListener('click',()=>goHero(heroIndex-1));
+  document.getElementById('heroNext').addEventListener('click',()=>goHero(heroIndex+1));
+  heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i)));
   heroSlider.addEventListener('mouseenter',clearHeroTimer);
   heroSlider.addEventListener('mouseleave',scheduleHero);
   heroSlider.addEventListener('focusin',clearHeroTimer);
   heroSlider.addEventListener('focusout',scheduleHero);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){clearHeroTimer();heroVideo.pause()}else{syncHeroVideo(false);scheduleHero()}});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)clearHeroTimer();else scheduleHero()});
   let heroTouchStart=0;
   heroSlider.addEventListener('touchstart',e=>{heroTouchStart=e.changedTouches[0].clientX},{passive:true});
-  heroSlider.addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-heroTouchStart;if(Math.abs(delta)>48)goHero(heroIndex+(delta<0?1:-1),true)},{passive:true});
+  heroSlider.addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-heroTouchStart;if(Math.abs(delta)>48)goHero(heroIndex+(delta<0?1:-1))},{passive:true});
   scheduleHero();
 
   const header=document.getElementById('header'),menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav'),backTop=document.getElementById('backTop');let lastY=0;
@@ -751,8 +985,6 @@ background-size:cover!important;background-position:center!important;
   function enterExperience(){
     if(!entrance||entrance.classList.contains('is-leaving'))return;
     document.body.classList.add('is-entering');
-    heroVideo.muted=true;
-    heroVideo.defaultMuted=true;
     document.body.classList.remove('pre-entry');
     entrance.classList.add('is-leaving');
     entrance.addEventListener('transitionend',e=>{if(e.target===entrance&&e.propertyName==='opacity')finishEntrance()},{once:true});
