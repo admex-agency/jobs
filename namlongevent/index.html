@@ -174,8 +174,10 @@ main>section{margin-top:-1px}
 .hero-slider{position:relative;overflow:hidden;background:#f3f1ef}
 .hero-track{display:flex;width:100%;height:100%;transition:transform .9s cubic-bezier(.22,.8,.2,1);will-change:transform}
 .hero-slide{flex:0 0 100%;width:100%;overflow:hidden}
-.hero-video-slide{background:#111}
-.hero-video{width:100%;height:100%;min-height:calc(100svh - 92px);object-fit:cover;display:block}
+.hero-video-slide{background:#111;position:relative}
+.hero-video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.hero-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;min-height:calc(100svh - 92px);object-fit:cover;display:block;background:transparent;opacity:0;transition:opacity .35s ease}
+.hero-video.is-ready{opacity:1}
 .hero-video-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.22));pointer-events:none}
 .hero-controls{position:absolute;z-index:5;left:50%;bottom:28px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;padding:8px 10px;border:1px solid rgba(255,255,255,.52);border-radius:999px;background:rgba(255,255,255,.76);backdrop-filter:blur(18px);box-shadow:0 12px 40px rgba(37,16,19,.10)}
 .hero-arrow{width:42px;height:42px;border:0;border-radius:50%;display:grid;place-items:center;background:transparent;color:var(--ink);font-size:21px;cursor:pointer;transition:.25s var(--ease)}
@@ -198,7 +200,7 @@ main>section{margin-top:-1px}
   .hero-video-toggle{right:16px;top:16px;width:42px;height:42px}
 }
 @media(max-width:560px){.hero-slide,.hero-video{aspect-ratio:4/3}.hero-controls{bottom:12px}.hero-dot.is-active{width:24px}}
-@media(prefers-reduced-motion:reduce){.hero-track{transition:none}.hero-video{display:none}.hero-video-slide{background:url("assets/images/master-keyvisual-inpage.jpg") center/cover no-repeat}}
+@media(prefers-reduced-motion:reduce){.hero-track{transition:none}.hero-video{display:block!important}.hero-video-slide{background:#111}}
 
 
 /* V10 — cinematic welcome reveal */
@@ -371,17 +373,33 @@ background-size:cover!important;background-position:center!important;
   .hero{
     padding-top:0!important;
     padding-bottom:82px;
-    min-height:calc(100svh + 82px);
+    min-height:0!important;
     overflow:visible;
     background:#f6f3f1;
   }
   .hero-slider{
+    width:100%;
+    height:auto;
+    aspect-ratio:1920 / 900;
+    max-height:900px;
+    min-height:0!important;
     overflow:visible;
-    min-height:100svh!important;
   }
   .hero-track,.hero-slide,.hero-kv,.hero-video{
-    min-height:100svh!important;
+    width:100%;
+    height:100%!important;
+    min-height:0!important;
   }
+  .hero-video{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    object-fit:cover;
+    object-position:center center;
+    background:#111;
+  }
+  .hero-slide,.hero-picture{height:100%}
+  .hero-kv,.hero-video{object-fit:cover}
   .hero-track{overflow:hidden}
   .hero-controls{
     top:calc(100% + 18px);
@@ -415,6 +433,42 @@ background-size:cover!important;background-position:center!important;
   .flip-back{border:0!important;background:transparent!important;box-shadow:none!important}
 }
 
+
+
+/* V18 — reliable local video playback + softer entrance transition */
+.hero-video{opacity:1!important;visibility:visible!important;transition:none!important;background:#111!important;z-index:1!important}
+.hero-video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;visibility:visible;transition:opacity .35s ease,visibility .35s ease;z-index:2!important;pointer-events:none}
+.hero-video-slide.has-started .hero-video-poster{opacity:0;visibility:hidden}
+.hero-video-shade{z-index:3!important}
+.hero-video-toggle{z-index:6}
+.entrance.is-leaving{opacity:0!important;filter:blur(1px)!important;transition:opacity .7s cubic-bezier(.22,.61,.36,1),filter .7s cubic-bezier(.22,.61,.36,1)!important}
+.entrance.is-leaving .entrance-kv{transform:scale(1.018)!important;opacity:.94!important;filter:brightness(1.015)!important;transition:transform .85s cubic-bezier(.22,.61,.36,1),opacity .7s ease!important}
+.entrance.is-leaving .enter-trigger{opacity:0!important;transform:translate(-50%,-50%) scale(.96)!important;transition:opacity .32s ease,transform .45s cubic-bezier(.22,.61,.36,1)!important}
+@media(max-width:860px){.entrance.is-leaving .enter-trigger{transform:translate(-50%,-50%) scale(.96)!important}}
+
+
+/* V21 — Hero video playback fix
+   Keep video rendered in reduced-motion mode and size it with absolute positioning. */
+.hero-video-slide{
+  position:relative;
+  overflow:hidden;
+  background:#111;
+}
+.hero-video-slide .hero-video{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  display:block!important;
+}
+.hero-video-slide[aria-hidden="false"] .hero-video{
+  visibility:visible!important;
+}
+
 </style>
 </head>
 <body class="pre-entry"><div aria-label="Mở Nam Long Experience 2026" aria-modal="true" class="entrance" data-state="open" id="entrance" role="dialog"><picture class="entrance-picture">
@@ -438,7 +492,7 @@ background-size:cover!important;background-position:center!important;
 <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Nội dung nổi bật Nam Long Experience 2026">
 <div class="hero-track" id="heroTrack">
 <article class="hero-slide is-active" aria-hidden="false" data-type="image"><picture class="hero-picture"><source media="(max-width: 768px)" srcset="assets/images/master-keyvisual-mobile.jpg"/><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" src="assets/images/master-keyvisual-inpage.jpg"/></picture><div class="hero-overlay"></div></article>
-<article class="hero-slide hero-video-slide" aria-hidden="true" data-type="video"><video class="hero-video" id="heroVideo" muted autoplay playsinline webkit-playsinline preload="auto"><source src="assets/images/videoslider.mp4" type="video/mp4"/>Trình duyệt của bạn chưa hỗ trợ video HTML5.</video><div class="hero-video-shade"></div><button class="hero-video-toggle" id="heroVideoToggle" type="button" aria-label="Tạm dừng video"><span class="pause-icon">Ⅱ</span><span class="play-icon">▶</span></button></article>
+<article class="hero-slide hero-video-slide" aria-hidden="true" data-type="video"><video class="hero-video" id="heroVideo" src="assets/images/videoslider.mp4" muted autoplay playsinline webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback">Trình duyệt của bạn chưa hỗ trợ video HTML5.</video><div class="hero-video-shade"></div><button class="hero-video-toggle is-paused" id="heroVideoToggle" type="button" aria-label="Phát video"><span class="pause-icon">Ⅱ</span><span class="play-icon">▶</span></button></article>
 </div>
 <div class="hero-controls" aria-label="Điều khiển banner">
 <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Banner trước">←</button>
@@ -530,44 +584,121 @@ background-size:cover!important;background-position:center!important;
   const heroSlides=[...heroSlider.querySelectorAll('.hero-slide')];
   const heroDots=[...document.querySelectorAll('.hero-dot')];
   const heroVideo=document.getElementById('heroVideo');
+  const heroVideoSlide=heroVideo.closest('.hero-video-slide');
   const heroVideoToggle=document.getElementById('heroVideoToggle');
   const heroCurrent=document.getElementById('heroCurrent');
-  let heroIndex=0,heroTimer=null;
-  heroVideo.muted=true;heroVideo.defaultMuted=true;heroVideo.setAttribute('muted','');heroVideo.setAttribute('playsinline','');heroVideo.setAttribute('webkit-playsinline','');
-  const safePlayHeroVideo=()=>{const promise=heroVideo.play();if(promise&&typeof promise.catch==='function')promise.catch(()=>heroVideoToggle.classList.add('is-paused'));};
+  let heroIndex=0,heroTimer=null,videoStarted=false;
+
+  heroVideo.muted=true;
+  heroVideo.defaultMuted=true;
+  heroVideo.volume=0;
+  heroVideo.setAttribute('muted','');
+  heroVideo.setAttribute('playsinline','');
+  heroVideo.setAttribute('webkit-playsinline','');
+
+  const setVideoUi=(playing)=>{
+    heroVideoToggle.classList.toggle('is-paused',!playing);
+    heroVideoToggle.setAttribute('aria-label',playing?'Tạm dừng video':'Phát video');
+  };
+
+  const revealVideo=()=>{
+    if(videoStarted)return;
+    videoStarted=true;
+    heroVideoSlide.classList.add('has-started');
+  };
+
+  const safePlayHeroVideo=async({restart=false}={})=>{
+    if(!heroVideo)return false;
+    heroVideo.muted=true;
+    heroVideo.defaultMuted=true;
+    heroVideo.volume=0;
+    heroVideo.setAttribute('muted','');
+    heroVideo.setAttribute('playsinline','');
+    heroVideo.setAttribute('webkit-playsinline','');
+    try{
+      if(restart || heroVideo.ended){
+        heroVideo.currentTime=0;
+      }
+      if(heroVideo.readyState < 2){
+        heroVideo.load();
+        await new Promise((resolve,reject)=>{
+          const ready=()=>{cleanup();resolve()};
+          const fail=()=>{cleanup();reject(heroVideo.error || new Error('Video load failed'))};
+          const cleanup=()=>{
+            heroVideo.removeEventListener('loadeddata',ready);
+            heroVideo.removeEventListener('canplay',ready);
+            heroVideo.removeEventListener('error',fail);
+          };
+          heroVideo.addEventListener('loadeddata',ready,{once:true});
+          heroVideo.addEventListener('canplay',ready,{once:true});
+          heroVideo.addEventListener('error',fail,{once:true});
+          setTimeout(()=>{cleanup();resolve()},1800);
+        });
+      }
+      await heroVideo.play();
+      revealVideo();
+      setVideoUi(true);
+      return true;
+    }catch(error){
+      setVideoUi(false);
+      console.warn('Hero video play failed:',error,heroVideo.error);
+      return false;
+    }
+  };
+
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function clearHeroTimer(){if(heroTimer){clearTimeout(heroTimer);heroTimer=null}}
-  function scheduleHero(){clearHeroTimer();if(reducedMotion||document.hidden)return;if(heroSlides[heroIndex].dataset.type==='image')heroTimer=setTimeout(()=>goHero(heroIndex+1),6500)}
-  function syncHeroVideo(){
+  function scheduleHero(){clearHeroTimer();if(reducedMotion||document.hidden)return;if(heroSlides[heroIndex].dataset.type==='image')heroTimer=setTimeout(()=>goHero(heroIndex+1,false),6500)}
+  function syncHeroVideo(userInitiated=false){
     if(heroSlides[heroIndex].dataset.type==='video'){
-      heroVideo.currentTime=0;
-      safePlayHeroVideo();heroVideoToggle.classList.remove('is-paused');
-    }else{heroVideo.pause();heroVideoToggle.classList.remove('is-paused')}
+      safePlayHeroVideo({restart:userInitiated});
+    }else{
+      heroVideo.pause();
+      setVideoUi(false);
+    }
   }
-  function goHero(index){
+  function goHero(index,userInitiated=false){
     heroIndex=(index+heroSlides.length)%heroSlides.length;
     heroTrack.style.transform=`translateX(-${heroIndex*100}%)`;
     heroSlides.forEach((slide,i)=>{slide.classList.toggle('is-active',i===heroIndex);slide.setAttribute('aria-hidden',String(i!==heroIndex))});
     heroDots.forEach((dot,i)=>{dot.classList.toggle('is-active',i===heroIndex);dot.setAttribute('aria-current',String(i===heroIndex))});
     heroCurrent.textContent=String(heroIndex+1).padStart(2,'0');
-    syncHeroVideo();scheduleHero();
+    if(heroSlides[heroIndex].dataset.type==='video'){
+      requestAnimationFrame(()=>safePlayHeroVideo({restart:userInitiated}));
+    }else{
+      heroVideo.pause();
+      setVideoUi(false);
+    }
+    scheduleHero();
   }
-  document.getElementById('heroPrev').addEventListener('click',()=>goHero(heroIndex-1));
-  document.getElementById('heroNext').addEventListener('click',()=>goHero(heroIndex+1));
-  heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i)));
-  heroVideo.addEventListener('ended',()=>goHero(heroIndex+1));
-  heroVideoToggle.addEventListener('click',()=>{
-    if(heroVideo.paused){safePlayHeroVideo();heroVideoToggle.classList.remove('is-paused');heroVideoToggle.setAttribute('aria-label','Tạm dừng video')}
-    else{heroVideo.pause();heroVideoToggle.classList.add('is-paused');heroVideoToggle.setAttribute('aria-label','Phát video')}
+  document.getElementById('heroPrev').addEventListener('click',()=>goHero(heroIndex-1,true));
+  document.getElementById('heroNext').addEventListener('click',()=>goHero(heroIndex+1,true));
+  heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i,true)));
+  heroVideo.addEventListener('playing',()=>{revealVideo();setVideoUi(true)});
+  heroVideo.addEventListener('timeupdate',()=>{if(heroVideo.currentTime>.05)revealVideo()});
+  heroVideo.addEventListener('ended',()=>goHero(heroIndex+1,false));
+  heroVideo.addEventListener('pause',()=>setVideoUi(false));
+  heroVideo.addEventListener('error',()=>{
+    setVideoUi(false);
+    heroVideoSlide.classList.remove('has-started');
+    console.warn('Hero video could not be loaded:', heroVideo.error);
+  });
+  heroVideoToggle.addEventListener('click',async()=>{
+    if(heroVideo.paused){await safePlayHeroVideo({restart:heroVideo.ended})}
+    else heroVideo.pause();
+  });
+  heroVideoSlide.addEventListener('click',e=>{
+    if(e.target.closest('button'))return;
+    if(heroVideo.paused)safePlayHeroVideo({restart:heroVideo.ended});
   });
   heroSlider.addEventListener('mouseenter',clearHeroTimer);
   heroSlider.addEventListener('mouseleave',scheduleHero);
   heroSlider.addEventListener('focusin',clearHeroTimer);
   heroSlider.addEventListener('focusout',scheduleHero);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){clearHeroTimer();heroVideo.pause()}else{syncHeroVideo();scheduleHero()}});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){clearHeroTimer();heroVideo.pause()}else{syncHeroVideo(false);scheduleHero()}});
   let heroTouchStart=0;
   heroSlider.addEventListener('touchstart',e=>{heroTouchStart=e.changedTouches[0].clientX},{passive:true});
-  heroSlider.addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-heroTouchStart;if(Math.abs(delta)>48)goHero(heroIndex+(delta<0?1:-1))},{passive:true});
+  heroSlider.addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-heroTouchStart;if(Math.abs(delta)>48)goHero(heroIndex+(delta<0?1:-1),true)},{passive:true});
   scheduleHero();
 
   const header=document.getElementById('header'),menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav'),backTop=document.getElementById('backTop');let lastY=0;
@@ -620,14 +751,12 @@ background-size:cover!important;background-position:center!important;
   function enterExperience(){
     if(!entrance||entrance.classList.contains('is-leaving'))return;
     document.body.classList.add('is-entering');
-    heroVideo.load();
-    safePlayHeroVideo();
-    heroVideo.pause();
-    heroVideo.currentTime=0;
+    heroVideo.muted=true;
+    heroVideo.defaultMuted=true;
     document.body.classList.remove('pre-entry');
     entrance.classList.add('is-leaving');
     entrance.addEventListener('transitionend',e=>{if(e.target===entrance&&e.propertyName==='opacity')finishEntrance()},{once:true});
-    setTimeout(finishEntrance,1250);
+    setTimeout(finishEntrance,820);
   }
   if(enterTrigger){
     enterTrigger.addEventListener('click',enterExperience);
