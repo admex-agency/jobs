@@ -110,6 +110,7 @@ img{display:block;max-width:100%}
   .hero-spacer{min-height:300px}
   .facts{bottom:28px;width:min(100% - 44px,1100px);grid-template-columns:1fr 1fr}.fact:last-child{grid-column:1/-1}
 }
+.mobile-title-break{display:none}
 @media(max-width:760px){
   .container{width:calc(100% - 32px)}
   .nav{position:relative;background:#fffdfd;backdrop-filter:none}
@@ -127,30 +128,31 @@ img{display:block;max-width:100%}
   .mobile-hero-art{display:block;width:100%;aspect-ratio:9/10;background:url('assets/hero-event-mobile.png') center center/100% 100% no-repeat;border-radius:0;overflow:hidden}
 
   .facts{display:none}
-  .mobile-event-meta{display:block;width:calc(100% - 40px);margin:0 auto;padding:22px 0 26px;border-bottom:1px solid rgba(169,43,53,.10)}
-  .mobile-meta-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+  .mobile-event-meta{display:block;width:calc(100% - 40px);margin:0 auto;padding:34px 0 40px;border-bottom:1px solid rgba(169,43,53,.10)}
+  .mobile-meta-top{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:34px}
   .mobile-meta-item{min-width:0}
-  .mobile-meta-label{display:block;color:var(--red);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-  .mobile-meta-value{font-size:14px;line-height:1.45;font-weight:600;color:#4d4042}
-  .mobile-meta-venue{padding-top:16px;border-top:1px solid rgba(169,43,53,.08)}
+  .mobile-meta-label{display:block;color:var(--red);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .mobile-meta-value{font-size:14.5px;line-height:1.72;font-weight:600;color:#4d4042}
+  .mobile-meta-venue{padding-top:30px;border-top:1px solid rgba(169,43,53,.08)}
   .mobile-meta-venue .mobile-meta-value{font-weight:500}
-  .mobile-meta-venue .map-link{margin-top:7px}
+  .mobile-meta-venue .map-link{margin-top:16px}
 
-  .registration{padding:48px 0 72px}
-  .section-head{text-align:left;margin:0 0 28px}
-  .section-head .h2{font-size:36px;line-height:.98;max-width:340px;letter-spacing:-.04em}
-  .section-head .desc{margin:14px 0 0;font-size:14px;line-height:1.55}
+  .registration{padding:64px 0 84px}
+  .section-head{text-align:left;margin:0 0 44px}
+  .section-head .h2{font-size:32px;line-height:1.14;max-width:360px;letter-spacing:-.035em}
+  .mobile-title-break{display:inline}
+  .section-head .desc{margin:24px 0 0;font-size:14.5px;line-height:1.82}
 
   .form{padding:0;border:0;border-radius:0;box-shadow:none;background:transparent}
-  .form-grid{grid-template-columns:1fr;gap:22px}
+  .form-grid{grid-template-columns:1fr;gap:34px}
   .field.full,.date-block,.consents,.form-actions{grid-column:auto}
-  .field{gap:7px}
-  .field label,.group-label{font-size:12px}
-  .field input{height:52px;font-size:15px;border:0;border-bottom:1px solid #d8c8ca;border-radius:0;padding:0;background:transparent}
+  .field{gap:14px}
+  .field label,.group-label{font-size:12.5px;line-height:1.58}
+  .field input{height:58px;font-size:15.5px;line-height:1.5;border:0;border-bottom:1px solid #d8c8ca;border-radius:0;padding:0;background:transparent}
   .field input:hover{border-color:#c9b3b6}
   .field input:focus{border-color:var(--red);box-shadow:none}
 
-  .date-block,.consents{padding-top:24px;border-top:1px solid #f0e4e5}
+  .date-block,.consents{padding-top:34px;border-top:1px solid #f0e4e5}
   .date-grid{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
   .date-card{min-height:78px;padding:12px 8px;display:grid;place-items:center;text-align:center;gap:7px;border-radius:15px}
   .date-dot{display:none}
@@ -158,9 +160,9 @@ img{display:block;max-width:100%}
   .date-text strong{font-size:13px}
   .date-text small{font-size:10.5px}
 
-  .consents{gap:14px}
-  .consent{font-size:12px;line-height:1.55}
-  .form-actions{margin-top:8px;align-items:stretch}
+  .consents{gap:22px}
+  .consent{font-size:12px;line-height:1.8}
+  .form-actions{margin-top:14px;align-items:stretch}
   .btn-primary{width:100%;min-width:0;height:56px}
   .privacy{font-size:11px}
   .footer{padding:26px 0 30px}
@@ -168,7 +170,7 @@ img{display:block;max-width:100%}
 @media(max-width:420px){
   .hero-copy,.mobile-event-meta{width:calc(100% - 32px)}
   .hero h1{font-size:40px}
-  .section-head .h2{font-size:34px}
+  .section-head .h2{font-size:32px}
   .date-text strong{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -213,7 +215,7 @@ img{display:block;max-width:100%}
     <div class="container">
       <div class="section-head">
         <div class="kicker">Nam Long Experience 2026</div>
-        <h2 class="h2" id="registerTitle">ĐĂNG KÝ THAM GIA SỰ KIỆN</h2>
+        <h2 class="h2" id="registerTitle">ĐĂNG KÝ THAM GIA<span class="mobile-title-break"><br></span> SỰ KIỆN</h2>
         <p class="desc"><strong>(*) Thông tin bắt buộc nhập.</strong><br>Mã QR tham gia sự kiện sẽ được gửi về email mà Quý khách đã đăng ký.</p>
       </div>
 
