@@ -676,6 +676,10 @@ body{font-weight:400;letter-spacing:-.012em}
 <div class="modal" id="registerModal"><div class="modal-card"><button class="close" data-close>×</button><div class="modal-logo">Sức sống<br>Nam Long</div><h2>Đăng ký để bắt đầu chia sẻ khoảnh khắc</h2><div class="field"><label>Email</label><input type="email"></div><button class="btn btn-primary" style="width:100%">Tiếp tục</button><div class="divider">hoặc</div><div class="social"><button>Đăng ký với Google</button><button>Đăng ký với Apple</button></div><p style="font-size:13px;color:var(--muted)">Bạn đã có tài khoản? <a href="#" data-switch="login" style="color:var(--red);font-weight:800">Đăng nhập ngay</a></p></div></div>
 <div class="lightbox" id="lightbox"><button class="lb-close" id="lbClose">×</button><div class="lightbox-card"><img id="lbImg" src="" alt="Ảnh dự thi"><div class="lightbox-info"><div><div class="kicker" id="lbProject">Waterpoint</div><h3 id="lbTitle">Khoảnh khắc sống thật</h3><p id="lbMeta">Tác giả • ngày đăng</p><p id="lbText">Khoảnh khắc đời thường của cư dân Tập đoàn Nam Long.</p><div class="view-original-wrap"><button class="view-original-btn" id="lbViewOriginal" type="button" aria-label="Xem hình đầy đủ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>Xem hình đầy đủ</button></div></div><div class="share-row"><button class="btn btn-primary" id="lbFb">Chia sẻ Facebook</button><button class="btn btn-outline" id="lbCopy">Copy link</button></div></div></div></div><div class="full-image-viewer" id="fullImageViewer" role="dialog" aria-modal="true" aria-label="Xem hình đầy đủ"><button class="full-image-close" id="fullImageClose" aria-label="Đóng">×</button><img id="fullImage" src="" alt="Ảnh dự thi đầy đủ"></div><div class="toast" id="toast">Đã copy link</div>
 <script>
+// Stable asset base: giữ đường dẫn ảnh đúng kể cả khi history.pushState thay đổi URL.
+const ASSET_BASE_URL=new URL('./',window.location.href);
+function assetUrl(path){try{return new URL(path,ASSET_BASE_URL).href;}catch(e){return path;}}
+
 const photos=[
 {src:'Hinh/687747727_1486660573155799_7609785765076823130_n.jpg',title:'Một ngày bình yên bên gia đình',author:'Minh Anh',project:'Waterpoint',date:'15/07/2026 · 08:32',likes:768},
 {src:'Hinh/686952984_1486662259822297_3702894167814823564_n.jpg',title:'Ngày hội của cộng đồng',author:'Hoàng Nam',project:'Waterpoint',date:'15/07/2026 · 10:15',likes:325},
@@ -704,7 +708,7 @@ function renderGallery(){
   const totalPages=Math.max(1,Math.ceil(list.length/perPage));
   activePage=Math.min(activePage,totalPages);
   grid.innerHTML='';
-  list.slice((activePage-1)*perPage,activePage*perPage).forEach((p,idx)=>{const realIndex=photos.indexOf(p);const card=document.createElement('article');card.className='photo-card';card.id='photo-'+(realIndex+1);card.innerHTML=`<img src="${p.src}" alt="${p.title}"><div class="heart">♥ ${p.likes}</div><div class="photo-info"><div class="caption">${p.title}</div><div class="meta">${p.author} · Cư dân ${p.project}<br>${p.date}</div><div class="share-row"><button class="share-btn" data-fb="${realIndex}">Facebook</button><button class="share-btn" data-copy="${realIndex}">Copy link</button></div></div>`;card.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')return;openLightbox(realIndex)});grid.appendChild(card)});
+  list.slice((activePage-1)*perPage,activePage*perPage).forEach((p,idx)=>{const realIndex=photos.indexOf(p);const card=document.createElement('article');card.className='photo-card';card.id='photo-'+(realIndex+1);card.innerHTML=`<img src="${assetUrl(p.src)}" alt="${p.title}"><div class="heart">♥ ${p.likes}</div><div class="photo-info"><div class="caption">${p.title}</div><div class="meta">${p.author} · Cư dân ${p.project}<br>${p.date}</div><div class="share-row"><button class="share-btn" data-fb="${realIndex}">Facebook</button><button class="share-btn" data-copy="${realIndex}">Copy link</button></div></div>`;card.addEventListener('click',e=>{if(e.target.tagName==='BUTTON')return;openLightbox(realIndex)});grid.appendChild(card)});
   pagination.innerHTML='';
   for(let i=1;i<=totalPages;i++){const b=document.createElement('button');b.className='page-btn'+(i===activePage?' active':'');b.textContent=i;b.addEventListener('click',()=>{activePage=i;renderGallery();document.getElementById('gallery').scrollIntoView({behavior:'smooth',block:'start'})});pagination.appendChild(b)}
 }
@@ -712,7 +716,7 @@ function renderRanking(){
   rankingList.innerHTML='';
   let source=[...photos];
   if(rankingMode==='project'){source=source.filter(p=>p.project===rankingProject.value);}
-  source.sort((a,b)=>b.likes-a.likes).slice(0,10).forEach((p,i)=>{const realIndex=photos.indexOf(p);const row=document.createElement('div');row.className='rank-item';row.innerHTML=`<div class="rank-no">${String(i+1).padStart(2,'0')}</div><img src="${p.src}" alt="${p.title}"><div><div class="rank-title">${p.title}</div><div class="rank-meta">${p.author} · Cư dân ${p.project}</div></div><div class="rank-vote">♥ ${p.likes}</div>`;row.addEventListener('click',()=>openLightbox(realIndex));rankingList.appendChild(row)});
+  source.sort((a,b)=>b.likes-a.likes).slice(0,10).forEach((p,i)=>{const realIndex=photos.indexOf(p);const row=document.createElement('div');row.className='rank-item';row.innerHTML=`<div class="rank-no">${String(i+1).padStart(2,'0')}</div><img src="${assetUrl(p.src)}" alt="${p.title}"><div><div class="rank-title">${p.title}</div><div class="rank-meta">${p.author} · Cư dân ${p.project}</div></div><div class="rank-vote">♥ ${p.likes}</div>`;row.addEventListener('click',()=>openLightbox(realIndex));rankingList.appendChild(row)});
   if(!source.length){rankingList.innerHTML='<p class="ranking-empty">Chưa có ảnh trong khu đô thị này.</p>';}
 }
 gallerySelect?.addEventListener('change',()=>{activeFilter=gallerySelect.value;activePage=1;renderGallery();});
@@ -736,8 +740,13 @@ const APP_ROUTES={
 function getPhotoId(p,i){return String(p?.id ?? (i+1));}
 function getPhotoIndexById(id){return photos.findIndex((p,i)=>getPhotoId(p,i)===String(id));}
 function buildBackendUrl(base,value){
-  if(location.protocol==='file:'){
-    const u=new URL(location.href);u.hash='';u.search='';
+  /* GitHub Pages là static host nên /photo/{id} hoặc /news/{slug} sẽ 404 khi reload.
+     Vì vậy bản preview trên GitHub dùng query string. Khi Dev chạy trên backend thật,
+     source tự dùng dynamic route như cũ. */
+  const isStaticPreview=location.protocol==='file:' || location.hostname.endsWith('github.io');
+  if(isStaticPreview){
+    const u=new URL(location.href);u.hash='';
+    u.searchParams.delete('photo');u.searchParams.delete('news');
     if(base===APP_ROUTES.photoBase)u.searchParams.set('photo',String(value));
     else u.searchParams.set('news',String(value));
     return u.href;
@@ -746,10 +755,10 @@ function buildBackendUrl(base,value){
 }
 function getPhotoUrl(i){return buildBackendUrl(APP_ROUTES.photoBase,getPhotoId(photos[i],i));}
 function getPhotoShareUrl(i){return getPhotoUrl(i);}
-function openLightbox(i,{updateUrl=true}={}){current=i;const p=photos[i];if(!p)return;lbImg.src=p.src;lbImg.alt=p.title;lbTitle.textContent=p.title;lbProject.textContent=p.project;lbMeta.textContent=`${p.author} · Cư dân ${p.project} · ${p.date} · ${p.likes} lượt yêu thích`;lbText.textContent='Khoảnh khắc sống thật được cư dân chia sẻ trong cuộc thi Sức sống Nam Long.';lb.classList.add('open');if(updateUrl){history.pushState({photo:getPhotoId(p,i)},'',getPhotoUrl(i));}}
-function closeLightbox({updateUrl=true}={}){lb.classList.remove('open');if(updateUrl){history.pushState({},'',location.origin+location.pathname);}}
+function openLightbox(i,{updateUrl=true}={}){current=i;const p=photos[i];if(!p)return;lbImg.src=assetUrl(p.src);lbImg.alt=p.title;lbTitle.textContent=p.title;lbProject.textContent=p.project;lbMeta.textContent=`${p.author} · Cư dân ${p.project} · ${p.date} · ${p.likes} lượt yêu thích`;lbText.textContent='Khoảnh khắc sống thật được cư dân chia sẻ trong cuộc thi Sức sống Nam Long.';lb.classList.add('open');if(updateUrl){history.pushState({photo:getPhotoId(p,i)},'',getPhotoUrl(i));}}
+function closeLightbox({updateUrl=true}={}){lb.classList.remove('open');if(updateUrl){const u=new URL(location.href);u.searchParams.delete('photo');history.pushState({},'',u.pathname+u.search+u.hash);}}
 document.getElementById('lbClose').onclick=()=>closeLightbox();lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox()});
-document.getElementById('lbViewOriginal').onclick=()=>{const p=photos[current];fullImage.src=p.src;fullImage.alt=p.title;fullImageViewer.classList.add('open');};
+document.getElementById('lbViewOriginal').onclick=()=>{const p=photos[current];fullImage.src=assetUrl(p.src);fullImage.alt=p.title;fullImageViewer.classList.add('open');};
 document.getElementById('fullImageClose').onclick=()=>fullImageViewer.classList.remove('open');
 fullImageViewer.addEventListener('click',e=>{if(e.target===fullImageViewer)fullImageViewer.classList.remove('open')});
 function copyLink(i=current){const url=getPhotoUrl(i);navigator.clipboard?.writeText(url);const t=document.getElementById('toast');t.textContent='Đã copy link ảnh';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500)}
@@ -762,12 +771,12 @@ const newsItems=[
 {slug:'lan-toa-gia-tri-thuc',category:'Cộng đồng',date:'15/07/2026',title:'Lan tỏa tinh thần giá trị thực qua từng nhịp sống',desc:'Những khoảnh khắc thường ngày tại khu đô thị chính là chất liệu chân thực nhất để kể về một cộng đồng đáng sống.',img:'Hinh/735563330_1538135524674970_7482619204457619378_n.jpg',body:['Tinh thần giá trị thực không chỉ nằm ở tiện ích hay quy hoạch, mà còn hiện diện trong từng trải nghiệm cư dân: một buổi chiều cùng con, một hoạt động cộng đồng, một góc xanh quen thuộc.','Thông qua cuộc thi, Tập đoàn Nam Long mong muốn tôn vinh những giá trị giản dị nhưng bền vững, được tạo nên từ chính đời sống cư dân mỗi ngày.','Các tác phẩm tiêu biểu có thể được sử dụng trong hoạt động truyền thông của chương trình với sự ghi nhận tác giả phù hợp.']}
 ];
 const newsSlider=document.getElementById('newsSlider');
-function renderNews(){if(!newsSlider)return;newsSlider.innerHTML='';newsItems.forEach((n,i)=>{const c=document.createElement('article');c.className='news-card'+(i===0?' featured':'');c.innerHTML=`<div class="news-thumb"><img src="${n.img}" alt="${n.title}"></div><div class="news-body"><div class="news-date"><span>${n.category}</span><span>${n.date}</span></div><h3 class="news-title">${n.title}</h3><p class="news-desc">${n.desc}</p><button class="news-read" type="button">Đọc chi tiết</button></div>`;c.addEventListener('click',()=>openNews(i));newsSlider.appendChild(c)});}renderNews();
+function renderNews(){if(!newsSlider)return;newsSlider.innerHTML='';newsItems.forEach((n,i)=>{const c=document.createElement('article');c.className='news-card'+(i===0?' featured':'');c.innerHTML=`<div class="news-thumb"><img src="${assetUrl(n.img)}" alt="${n.title}"></div><div class="news-body"><div class="news-date"><span>${n.category}</span><span>${n.date}</span></div><h3 class="news-title">${n.title}</h3><p class="news-desc">${n.desc}</p><button class="news-read" type="button">Đọc chi tiết</button></div>`;c.addEventListener('click',()=>openNews(i));newsSlider.appendChild(c)});}renderNews();
 document.getElementById('newsPrev')?.addEventListener('click',()=>newsSlider.scrollBy({left:-620,behavior:'smooth'}));
 document.getElementById('newsNext')?.addEventListener('click',()=>newsSlider.scrollBy({left:620,behavior:'smooth'}));
 const newsModal=document.getElementById('newsModal');let currentNewsIndex=0;
 function getNewsUrl(i){const n=newsItems[i];return buildBackendUrl(APP_ROUTES.newsBase,n.slug);}
-function openNews(i,{updateUrl=true}={}){const n=newsItems[i];if(!n)return;currentNewsIndex=i;document.getElementById('articleImg').src=n.img;document.getElementById('articleKicker').textContent=n.category;document.getElementById('articleTitle').textContent=n.title;document.getElementById('articleDek').textContent=n.desc;document.getElementById('articleMeta').textContent=`${n.date} · Sức sống Nam Long`;document.getElementById('articleBody').innerHTML=n.body.map((x,idx)=>idx===1?`<h3>Chi tiết cập nhật</h3><p>${x}</p>`:`<p>${x}</p>`).join('');newsModal.classList.add('open');if(updateUrl){history.pushState({news:n.slug},'',getNewsUrl(i));}}
+function openNews(i,{updateUrl=true}={}){const n=newsItems[i];if(!n)return;currentNewsIndex=i;document.getElementById('articleImg').src=assetUrl(n.img);document.getElementById('articleKicker').textContent=n.category;document.getElementById('articleTitle').textContent=n.title;document.getElementById('articleDek').textContent=n.desc;document.getElementById('articleMeta').textContent=`${n.date} · Sức sống Nam Long`;document.getElementById('articleBody').innerHTML=n.body.map((x,idx)=>idx===1?`<h3>Chi tiết cập nhật</h3><p>${x}</p>`:`<p>${x}</p>`).join('');newsModal.classList.add('open');if(updateUrl){history.pushState({news:n.slug},'',getNewsUrl(i));}}
 function closeNews({updateUrl=true}={}){newsModal.classList.remove('open');if(updateUrl){const u=new URL(location.href);u.searchParams.delete('news');history.pushState({},'',u.pathname+u.search+u.hash);}}
 document.querySelectorAll('[data-news-close]').forEach(b=>b.addEventListener('click',()=>closeNews()));newsModal?.addEventListener('click',e=>{if(e.target===newsModal)closeNews()});
 document.getElementById('articleCopyLink')?.addEventListener('click',()=>{navigator.clipboard?.writeText(getNewsUrl(currentNewsIndex));const t=document.getElementById('toast');t.textContent='Đã copy link bài viết';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500);});
