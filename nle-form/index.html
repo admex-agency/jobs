@@ -45,6 +45,15 @@ img{display:block;max-width:100%}
 .kicker{font-weight:700;color:var(--red);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .hero h1{font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;margin:12px 0 18px;font-weight:700;color:var(--ink);max-width:720px}
 .hero h1 span{color:var(--red)}
+.hero-countdown{display:flex;align-items:center;gap:14px;margin-top:26px;color:var(--ink)}
+.hero-countdown-label{font-size:11px;line-height:1.35;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;max-width:92px}
+.countdown{display:flex;align-items:flex-start;gap:10px}
+.countdown-unit{min-width:48px}
+.countdown-value{display:block;font-size:24px;line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.countdown-name{display:block;margin-top:6px;font-size:9px;line-height:1;letter-spacing:.08em;text-transform:uppercase;color:#9a8487}
+.countdown-sep{font-size:20px;line-height:1;color:#d8c8ca;margin-top:1px}
+.hero-countdown.is-expired .hero-countdown-label{max-width:none}
+.hero-countdown.is-expired .countdown{display:none}
 .hero-spacer{min-height:320px}
 .mobile-hero-art{display:none}
 .mobile-event-meta{display:none}
@@ -124,6 +133,13 @@ img{display:block;max-width:100%}
   .hero-copy{width:calc(100% - 40px);margin:0 auto 26px}
   .kicker{font-size:11px;letter-spacing:.15em}
   .hero h1{font-size:clamp(40px,11.2vw,50px);line-height:.91;letter-spacing:-.052em;margin:10px 0 0;max-width:390px}
+  .hero-countdown{margin-top:22px;gap:12px;align-items:flex-start}
+  .hero-countdown-label{font-size:9.5px;max-width:72px;line-height:1.45;letter-spacing:.1em;padding-top:1px}
+  .countdown{gap:7px}
+  .countdown-unit{min-width:39px}
+  .countdown-value{font-size:20px}
+  .countdown-name{font-size:8px;margin-top:5px}
+  .countdown-sep{font-size:16px}
   .hero-spacer{display:none}
   .mobile-hero-art{display:block;width:100%;aspect-ratio:9/10;background:url('assets/hero-event-mobile.png') center center/100% 100% no-repeat;border-radius:0;overflow:hidden}
 
@@ -170,6 +186,11 @@ img{display:block;max-width:100%}
 @media(max-width:420px){
   .hero-copy,.mobile-event-meta{width:calc(100% - 32px)}
   .hero h1{font-size:40px}
+  .hero-countdown{gap:10px}
+  .hero-countdown-label{max-width:66px;font-size:9px}
+  .countdown{gap:5px}
+  .countdown-unit{min-width:36px}
+  .countdown-value{font-size:19px}
   .section-head .h2{font-size:32px}
   .date-text strong{font-size:12px}
 }
@@ -191,6 +212,17 @@ img{display:block;max-width:100%}
         <div class="hero-copy">
           <div class="kicker">Đừng bỏ lỡ sự kiện</div>
           <h1>Nam Long<br>Experience <span>2026</span></h1>
+          <div class="hero-countdown" id="registrationCountdown" aria-live="polite">
+            <div class="countdown" aria-label="Thời gian còn lại đến hạn đăng ký">
+              <div class="countdown-unit"><span class="countdown-value" id="cdDays">00</span><span class="countdown-name">Ngày</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdHours">00</span><span class="countdown-name">Giờ</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdMinutes">00</span><span class="countdown-name">Phút</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdSeconds">00</span><span class="countdown-name">Giây</span></div>
+            </div>
+          </div>
         </div>
         <div class="hero-spacer" aria-hidden="true"></div><div class="mobile-hero-art" aria-hidden="true"></div>
       </div>
@@ -198,14 +230,14 @@ img{display:block;max-width:100%}
       <div class="mobile-event-meta" aria-label="Thông tin sự kiện trên di động">
         <div class="mobile-meta-top">
           <div class="mobile-meta-item"><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">07/08/2026 • 00:00</div></div>
-          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">09/08/2026 • 23:59</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">10/09/2026 • 23:59</div></div>
         </div>
         <div class="mobile-meta-venue"><span class="mobile-meta-label">Địa điểm</span><div class="mobile-meta-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh</div><a class="map-link" href="#">Xem trên Google Maps ↗</a></div>
       </div>
 
       <div class="facts" aria-label="Thông tin sự kiện">
         <div class="fact"><span class="fact-label">Thời gian</span><div class="fact-value">07/08/2026 • 00:00</div></div>
-        <div class="fact"><span class="fact-label">Hạn đăng ký</span><div class="fact-value">09/08/2026 • 23:59</div></div>
+        <div class="fact"><span class="fact-label">Hạn đăng ký</span><div class="fact-value">10/09/2026 • 23:59</div></div>
         <div class="fact"><span class="fact-label">Địa điểm</span><div class="fact-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh<br><a class="map-link" href="#">Xem trên Google Maps ↗</a></div></div>
       </div>
     </div>
@@ -260,6 +292,46 @@ img{display:block;max-width:100%}
 
 <footer class="footer">Nam Long Experience 2026</footer>
 <script>
+(function(){
+  const deadline = new Date('2026-09-10T23:59:00+07:00').getTime();
+  const wrap = document.getElementById('registrationCountdown');
+  const days = document.getElementById('cdDays');
+  const hours = document.getElementById('cdHours');
+  const minutes = document.getElementById('cdMinutes');
+  const seconds = document.getElementById('cdSeconds');
+  const submitButton = document.querySelector('.btn-primary');
+  const pad = n => String(n).padStart(2,'0');
+
+  function updateCountdown(){
+    const diff = deadline - Date.now();
+    if(diff <= 0){
+      wrap.classList.add('is-expired');
+      countdown.insertAdjacentHTML('afterbegin','<div class="hero-countdown-label">Đã hết thời gian đăng ký</div>');
+      if(submitButton){
+        submitButton.disabled = true;
+        submitButton.textContent = 'ĐÃ HẾT HẠN ĐĂNG KÝ';
+        submitButton.style.opacity = '.55';
+        submitButton.style.cursor = 'not-allowed';
+      }
+      return false;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const sec = Math.floor((diff % 60000) / 1000);
+    days.textContent = pad(d);
+    hours.textContent = pad(h);
+    minutes.textContent = pad(m);
+    seconds.textContent = pad(sec);
+    return true;
+  }
+
+  updateCountdown();
+  const timer = setInterval(function(){
+    if(!updateCountdown()) clearInterval(timer);
+  },1000);
+})();
+
 document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();});
 </script>
 </body>
