@@ -9,59 +9,106 @@
   :root{
     --red:#a92b35; --ink:#2d2728; --muted:#817477;
     --paper:#fffdfd; --wash:#f7f2f2; --line:#eadede;
-    --shadow:0 16px 48px rgba(71,44,47,.09);
   }
   *{box-sizing:border-box}
-  html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:var(--wash);color:var(--ink)}
-  body{overflow:hidden}
-  .shell{height:100dvh;display:grid;grid-template-rows:auto 1fr}
+  html,body{
+    margin:0;width:100%;height:100%;min-height:100%;
+    font-family:Arial,Helvetica,sans-serif;background:var(--wash);color:var(--ink);
+    overflow:hidden;
+  }
+  .shell{
+    width:100%;height:100dvh;min-height:100vh;
+    display:grid;grid-template-rows:auto minmax(0,1fr);
+  }
   .topbar{
-    position:relative;z-index:10;background:rgba(255,253,253,.96);
-    border-bottom:1px solid var(--line);backdrop-filter:blur(16px);
+    position:relative;z-index:10;background:#fffdfd;
+    border-bottom:1px solid var(--line);
   }
   .topbar-inner{
-    max-width:1480px;margin:0 auto;padding:14px 24px;
+    max-width:1480px;margin:0 auto;
+    padding:14px 24px;
     display:flex;align-items:center;gap:24px;
   }
   .brand{min-width:250px}
-  .eyebrow{font-size:10px;line-height:1.2;font-weight:700;letter-spacing:1.4px;color:var(--red);text-transform:uppercase}
-  .brand-title{margin-top:4px;font-size:16px;line-height:1.2;font-weight:700;letter-spacing:-.2px}
+  .eyebrow{
+    font-size:10px;line-height:1.2;font-weight:700;letter-spacing:1.4px;
+    color:var(--red);text-transform:uppercase
+  }
+  .brand-title{margin-top:4px;font-size:16px;line-height:1.2;font-weight:700}
   .tabs{
     flex:1;display:flex;justify-content:center;gap:6px;
-    background:#f4eeee;border-radius:999px;padding:5px;max-width:660px;margin:auto;
+    background:#f4eeee;border-radius:999px;padding:5px;
+    max-width:660px;margin:auto;
   }
   .tab{
-    appearance:none;border:0;background:transparent;color:#796d6f;cursor:pointer;
+    appearance:none;-webkit-appearance:none;border:0;background:transparent;color:#796d6f;cursor:pointer;
     border-radius:999px;padding:11px 18px;font-size:12px;line-height:1;font-weight:700;
-    transition:.22s ease;white-space:nowrap;
+    transition:.18s ease;white-space:nowrap;
   }
-  .tab:hover{color:var(--ink);background:rgba(255,255,255,.6)}
-  .tab.active{background:var(--paper);color:var(--red);box-shadow:0 3px 12px rgba(66,42,44,.09)}
+  .tab.active{
+    background:#fffdfd;color:var(--red);
+    box-shadow:0 3px 12px rgba(66,42,44,.09)
+  }
   .meta{min-width:250px;text-align:right;font-size:11px;line-height:1.35;color:var(--muted)}
-  .viewport{position:relative;min-height:0;background:#eef1f4;overflow:hidden}
-  .panel{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .22s ease,transform .22s ease}
-  .panel.active{opacity:1;visibility:visible;transform:none}
-  iframe{width:100%;height:100%;border:0;background:white;display:block}
-  .hint{
-    position:absolute;right:18px;bottom:18px;z-index:4;
-    padding:9px 13px;border-radius:999px;background:rgba(45,39,40,.86);
-    color:white;font-size:10px;line-height:1;letter-spacing:.2px;pointer-events:none;
-    box-shadow:var(--shadow);transition:opacity .2s ease;
+
+  .stage{
+    min-height:0;
+    padding:0;
+    background:#eef1f4;
+    overflow:hidden;
   }
+  .frame-shell{
+    width:100%;height:100%;
+    background:#fffdfd;
+    overflow:hidden;
+  }
+  iframe{
+    width:100%;height:100%;border:0;display:block;background:#fffdfd;
+  }
+
   @media(max-width:800px){
-    .shell{grid-template-rows:auto 1fr}
-    .topbar-inner{padding:11px 12px 10px;display:block}
-    .brand{min-width:0;display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:9px}
-    .brand-title{font-size:13px;margin-top:2px}
-    .eyebrow{font-size:8px}
+    .topbar-inner{
+      display:block;
+      padding-top:12px;
+      padding-bottom:11px;
+      padding-left:max(18px,calc(env(safe-area-inset-left) + 14px));
+      padding-right:max(18px,calc(env(safe-area-inset-right) + 14px));
+    }
+    .brand{
+      min-width:0;margin-bottom:12px;
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px
+    }
+    .brand-title{font-size:14px;margin-top:3px}
+    .eyebrow{font-size:9px}
     .meta{display:none}
-    .tabs{width:100%;max-width:none;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}
+    .tabs{
+      width:100%;max-width:none;margin:0;
+      overflow-x:auto;overflow-y:hidden;justify-content:flex-start;
+      scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    }
     .tabs::-webkit-scrollbar{display:none}
-    .tab{flex:1;min-width:max-content;padding:10px 12px;font-size:10px}
-    .viewport{padding:12px 12px max(12px,env(safe-area-inset-bottom));background:#f3eeee}
-    .panel{inset:12px 12px max(12px,env(safe-area-inset-bottom));border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(71,44,47,.06);background:#fffdfd}
-    iframe{border-radius:18px}
-    .hint{right:22px;bottom:22px;font-size:9px}
+    .tab{
+      flex:1 0 auto;min-width:max-content;
+      padding:11px 14px;font-size:10px;
+    }
+
+    /* Real outer gutter for the preview, including iPhone safe areas */
+    .stage{
+      padding-top:12px;
+      padding-bottom:max(14px,env(safe-area-inset-bottom));
+      padding-left:max(14px,calc(env(safe-area-inset-left) + 10px));
+      padding-right:max(14px,calc(env(safe-area-inset-right) + 10px));
+      background:#f3eeee;
+    }
+    .frame-shell{
+      border-radius:18px;
+      box-shadow:0 8px 28px rgba(71,44,47,.06);
+      overflow:hidden;
+    }
+    iframe{
+      border-radius:18px;
+      -webkit-overflow-scrolling:touch;
+    }
   }
 </style>
 </head>
@@ -77,47 +124,56 @@
       </div>
 
       <nav class="tabs" aria-label="Các hạng mục">
-        <button class="tab active" data-panel="registration" type="button">01 · Form đăng ký</button>
-        <button class="tab" data-panel="confirmation" type="button">02 · Email xác nhận</button>
-        <button class="tab" data-panel="update" type="button">03 · Email cập nhật</button>
+        <button class="tab active" data-src="registration/index.html" data-hash="registration" type="button">01 · Form đăng ký</button>
+        <button class="tab" data-src="confirmation-email/index.html" data-hash="confirmation" type="button">02 · Email xác nhận</button>
+        <button class="tab" data-src="update-email/index.html" data-hash="update" type="button">03 · Email cập nhật</button>
       </nav>
 
       <div class="meta">Registration Journey<br>Final Preview</div>
     </div>
   </header>
 
-  <main class="viewport">
-    <section class="panel active" id="registration">
-      <iframe src="registration/index.html" title="Form đăng ký Nam Long Experience 2026"></iframe>
-    </section>
-    <section class="panel" id="confirmation">
-      <iframe src="confirmation-email/index.html" title="Email xác nhận đăng ký"></iframe>
-    </section>
-    <section class="panel" id="update">
-      <iframe src="update-email/index.html" title="Email cập nhật sự kiện"></iframe>
-    </section>
-    <div class="hint" id="hint">Chọn tab để xem từng touchpoint</div>
+  <main class="stage">
+    <div class="frame-shell">
+      <iframe id="previewFrame" src="registration/index.html" title="Nam Long Experience 2026 Preview" scrolling="yes"></iframe>
+    </div>
   </main>
 </div>
 
 <script>
 (() => {
-  const tabs = [...document.querySelectorAll('.tab')];
-  const panels = [...document.querySelectorAll('.panel')];
-  const hint = document.getElementById('hint');
+  const frame = document.getElementById('previewFrame');
+  const tabs = Array.from(document.querySelectorAll('.tab'));
 
-  function activate(id, updateHash=true){
-    tabs.forEach(t => t.classList.toggle('active', t.dataset.panel === id));
-    panels.forEach(p => p.classList.toggle('active', p.id === id));
-    if(updateHash) history.replaceState(null,'','#'+id);
-    hint.style.opacity='0';
-    setTimeout(()=>hint.style.display='none',220);
+  const routes = {
+    registration: 'registration/index.html',
+    confirmation: 'confirmation-email/index.html',
+    update: 'update-email/index.html'
+  };
+
+  function setActive(hash, pushHash = true) {
+    const src = routes[hash] || routes.registration;
+
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.hash === hash);
+    });
+
+    /* One iframe only: avoids iOS Safari nested-scroll lock after switching hidden iframes. */
+    if (frame.getAttribute('src') !== src) {
+      frame.setAttribute('src', src);
+    } else {
+      try { frame.contentWindow.scrollTo(0, 0); } catch(e) {}
+    }
+
+    if (pushHash) history.replaceState(null, '', '#' + hash);
   }
 
-  tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.panel)));
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => setActive(tab.dataset.hash));
+  });
 
-  const initial = location.hash.replace('#','');
-  if(['registration','confirmation','update'].includes(initial)) activate(initial,false);
+  const initial = location.hash.slice(1);
+  if (routes[initial]) setActive(initial, false);
 })();
 </script>
 </body>
