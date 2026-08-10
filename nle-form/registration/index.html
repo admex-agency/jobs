@@ -23,8 +23,8 @@
   --r:30px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
-body{margin:0;max-width:100%;overflow-x:hidden;background:linear-gradient(180deg,#fffafa,#fbf5f5 52%,#fff);font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fffafa,#fbf5f5 52%,#fff);font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font-family:'BT Beau Sans';font:inherit}
 img{display:block;max-width:100%}
@@ -195,6 +195,8 @@ img{display:block;max-width:100%}
   .date-text strong{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.consent-highlight{color:#a92b35;font-weight:700}
 </style>
 </head>
 <body>
@@ -267,7 +269,7 @@ img{display:block;max-width:100%}
           </div>
 
           <div class="date-block">
-            <div class="group-label">Ngày Tham Gia</div>
+            <div class="group-label">Ngày Tham Gia (chọn nhiều)</div>
             <div class="date-grid" role="group" aria-label="Ngày tham gia">
               <label class="date-option"><input type="checkbox" name="date" value="18/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>18/09/2026</strong><small>Thứ Sáu</small></span></span></label>
               <label class="date-option"><input type="checkbox" name="date" value="19/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>19/09/2026</strong><small>Thứ Bảy</small></span></span></label>
@@ -276,7 +278,7 @@ img{display:block;max-width:100%}
           </div>
 
           <div class="consents">
-            <label class="consent"><input type="checkbox"><span>Đồng ý cho Chủ đầu tư và đối tác liên kết xử lý dữ liệu cho mục đích liên quan hoạt động kinh doanh, quảng bá, tiếp thị, khuyến mại và chăm sóc khách hàng.</span></label>
+            <label class="consent"><input type="checkbox"><span>Đồng ý cho Chủ đầu tư và Đối tác liên kết xử lý dữ liệu cho mục đích <strong class="consent-highlight">liên quan hoạt động kinh doanh,</strong> quảng bá, <strong class="consent-highlight">tiếp thị,</strong> khuyến mại và chăm sóc khách hàng.</span></label>
             <label class="consent"><input type="checkbox" checked><span>Đồng ý cho Chủ đầu tư xử lý dữ liệu cá nhân theo <a class="policy" href="#">được công bố trên website chủ đầu tư</a> và pháp luật hiện hành.</span></label>
           </div>
 
