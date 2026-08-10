@@ -45,6 +45,10 @@ img{display:block;max-width:100%}
 .kicker{font-weight:700;color:var(--red);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .hero h1{font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;margin:12px 0 18px;font-weight:700;color:var(--ink);max-width:720px}
 .hero h1 span{color:var(--red)}
+.hero-typo{margin:14px 0 18px;max-width:min(416px,68.8%)}
+.hero-typo img{width:100%;height:auto;object-fit:contain;object-position:left center}
+.hero-typo-fallback{display:none;font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;font-weight:700;color:var(--ink)}
+.hero-typo-fallback span{color:var(--red)}
 .hero-countdown{display:flex;align-items:center;gap:14px;margin-top:26px;color:var(--ink)}
 .hero-countdown-label{font-size:11px;line-height:1.35;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;max-width:92px}
 .countdown{display:flex;align-items:flex-start;gap:10px}
@@ -86,13 +90,15 @@ img{display:block;max-width:100%}
 .date-option{position:relative;cursor:pointer}
 .date-option input{position:absolute;opacity:0;pointer-events:none}
 .date-card{min-height:84px;border:1px solid rgba(169,43,53,.14);background:#fffafa;border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:.2s ease}
-.date-dot{width:18px;height:18px;border-radius:50%;border:1.5px solid #c9b7ba;background:white;box-shadow:inset 0 0 0 4px #fff;flex:0 0 18px}
+.date-dot{width:20px;height:20px;border-radius:5px;border:1.5px solid #c9b7ba;background:#fff;display:grid;place-items:center;flex:0 0 20px;transition:.2s ease}
+.date-dot:after{content:"✓";font-size:12px;line-height:1;color:#fff;font-weight:700;opacity:0;transform:scale(.65);transition:.2s ease}
 .date-text{display:grid;gap:2px}
 .date-text strong{font-size:16px;color:#493a3c}
 .date-text small{font-size:12px;color:var(--muted)}
 .date-option:hover .date-card{border-color:rgba(169,43,53,.34);transform:translateY(-1px)}
 .date-option input:checked+.date-card{background:#fff2f3;border-color:var(--red);box-shadow:0 12px 30px rgba(169,43,53,.08)}
 .date-option input:checked+.date-card .date-dot{border-color:var(--red);background:var(--red)}
+.date-option input:checked+.date-card .date-dot:after{opacity:1;transform:scale(1)}
 .date-option input:focus-visible+.date-card{outline:3px solid rgba(169,43,53,.10);outline-offset:2px}
 
 .consents{grid-column:1/-1;margin-top:10px;padding-top:28px;border-top:1px solid #f0e4e5;display:grid;gap:15px}
@@ -133,6 +139,8 @@ img{display:block;max-width:100%}
   .hero-copy{width:calc(100% - 40px);margin:0 auto 26px}
   .kicker{font-size:11px;letter-spacing:.15em}
   .hero h1{font-size:clamp(40px,11.2vw,50px);line-height:.91;letter-spacing:-.052em;margin:10px 0 0;max-width:390px}
+  .hero-typo{margin:12px 0 0;max-width:min(288px,73.6%)}
+  .hero-typo-fallback{font-size:clamp(40px,11.2vw,50px);line-height:.91}
   .hero-countdown{margin-top:22px;gap:12px;align-items:flex-start}
   .hero-countdown-label{font-size:9.5px;max-width:72px;line-height:1.45;letter-spacing:.1em;padding-top:1px}
   .countdown{gap:7px}
@@ -171,7 +179,8 @@ img{display:block;max-width:100%}
   .date-block,.consents{padding-top:34px;border-top:1px solid #f0e4e5}
   .date-grid{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
   .date-card{min-height:78px;padding:12px 8px;display:grid;place-items:center;text-align:center;gap:7px;border-radius:15px}
-  .date-dot{display:none}
+  .date-dot{display:grid;width:18px;height:18px;flex-basis:18px;margin-bottom:1px}
+  .date-dot:after{font-size:11px}
   .date-text{gap:0}
   .date-text strong{font-size:13px}
   .date-text small{font-size:10.5px}
@@ -213,7 +222,7 @@ img{display:block;max-width:100%}
       <div class="hero-shell">
         <div class="hero-copy">
           <div class="kicker">Đừng bỏ lỡ sự kiện</div>
-          <h1>Nam Long<br>Experience <span>2026</span></h1>
+          <div class="hero-typo" aria-label="Nam Long Experience 2026"><img src="assets/nam-long-experience-2026-typo.png" alt="Nam Long Experience 2026" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="hero-typo-fallback">Nam Long<br>Experience <span>2026</span></div></div>
           <div class="hero-countdown" id="registrationCountdown" aria-live="polite">
             <div class="countdown" aria-label="Thời gian còn lại đến hạn đăng ký">
               <div class="countdown-unit"><span class="countdown-value" id="cdDays">00</span><span class="countdown-name">Ngày</span></div>
@@ -231,15 +240,15 @@ img{display:block;max-width:100%}
 
       <div class="mobile-event-meta" aria-label="Thông tin sự kiện trên di động">
         <div class="mobile-meta-top">
-          <div class="mobile-meta-item"><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">07/08/2026 • 00:00</div></div>
-          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">10/09/2026 • 23:59</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">20/09/2026 - 15:00</div></div>
         </div>
         <div class="mobile-meta-venue"><span class="mobile-meta-label">Địa điểm</span><div class="mobile-meta-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh</div><a class="map-link" href="#">Xem trên Google Maps ↗</a></div>
       </div>
 
       <div class="facts" aria-label="Thông tin sự kiện">
-        <div class="fact"><span class="fact-label">Thời gian</span><div class="fact-value">07/08/2026 • 00:00</div></div>
-        <div class="fact"><span class="fact-label">Hạn đăng ký</span><div class="fact-value">10/09/2026 • 23:59</div></div>
+        <div class="fact"><span class="fact-label">Thời gian</span><div class="fact-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
+        <div class="fact"><span class="fact-label">Hạn đăng ký</span><div class="fact-value">20/09/2026 - 15:00</div></div>
         <div class="fact"><span class="fact-label">Địa điểm</span><div class="fact-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh<br><a class="map-link" href="#">Xem trên Google Maps ↗</a></div></div>
       </div>
     </div>
@@ -250,7 +259,7 @@ img{display:block;max-width:100%}
       <div class="section-head">
         <div class="kicker">Nam Long Experience 2026</div>
         <h2 class="h2" id="registerTitle">ĐĂNG KÝ THAM GIA<span class="mobile-title-break"><br></span> SỰ KIỆN</h2>
-        <p class="desc"><strong>(*) Thông tin bắt buộc nhập.</strong><br>Mã QR tham gia sự kiện sẽ được gửi về email mà Quý khách đã đăng ký.</p>
+        <p class="desc"><strong>(*) Thông tin bắt buộc nhập.</strong><br>Mã QR tham gia sự kiện sẽ được gửi về email mà Quý khách đã đăng ký.<br>Quý khách có thể đăng ký tham dự <strong>nhiều ngày</strong> và sử dụng cùng một Mã QR để check-in trong suốt các ngày đã đăng ký.</p>
       </div>
 
       <form class="form" id="registrationForm">
@@ -269,7 +278,7 @@ img{display:block;max-width:100%}
           </div>
 
           <div class="date-block">
-            <div class="group-label">Ngày Tham Gia (chọn nhiều)</div>
+            <div class="group-label">Ngày Tham Gia</div>
             <div class="date-grid" role="group" aria-label="Ngày tham gia">
               <label class="date-option"><input type="checkbox" name="date" value="18/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>18/09/2026</strong><small>Thứ Sáu</small></span></span></label>
               <label class="date-option"><input type="checkbox" name="date" value="19/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>19/09/2026</strong><small>Thứ Bảy</small></span></span></label>
@@ -295,8 +304,9 @@ img{display:block;max-width:100%}
 <footer class="footer">Nam Long Experience 2026</footer>
 <script>
 (function(){
-  const deadline = new Date('2026-09-10T23:59:00+07:00').getTime();
+  const deadline = new Date('2026-09-20T15:00:00+07:00').getTime();
   const wrap = document.getElementById('registrationCountdown');
+  const countdown = wrap ? wrap.querySelector('.countdown') : null;
   const days = document.getElementById('cdDays');
   const hours = document.getElementById('cdHours');
   const minutes = document.getElementById('cdMinutes');
@@ -308,10 +318,15 @@ img{display:block;max-width:100%}
     const diff = deadline - Date.now();
     if(diff <= 0){
       wrap.classList.add('is-expired');
-      countdown.insertAdjacentHTML('afterbegin','<div class="hero-countdown-label">Đã hết thời gian đăng ký</div>');
+      if(wrap && !wrap.querySelector('.hero-countdown-label')){
+        const expiredLabel = document.createElement('div');
+        expiredLabel.className = 'hero-countdown-label';
+        expiredLabel.textContent = 'HẾT HẠN ĐĂNG KÝ';
+        wrap.insertBefore(expiredLabel, countdown);
+      }
       if(submitButton){
         submitButton.disabled = true;
-        submitButton.textContent = 'ĐÃ HẾT HẠN ĐĂNG KÝ';
+        submitButton.textContent = 'HẾT HẠN ĐĂNG KÝ';
         submitButton.style.opacity = '.55';
         submitButton.style.cursor = 'not-allowed';
       }
