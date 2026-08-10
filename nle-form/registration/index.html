@@ -1,205 +1,355 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="x-apple-disable-message-reformatting">
-  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
-  <title>Xác nhận đăng ký Nam Long Experience 2026</title>
-  <style>
-    html,body{margin:0!important;padding:0!important;width:100%!important;max-width:100%!important;overflow-x:hidden!important;background:#f8f3f3}
-    table,td{border-collapse:collapse!important}
-    img{border:0;outline:none;text-decoration:none;display:block}
-    a{text-decoration:none}
-    *{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-    .mobile-br{display:none}
-    @media only screen and (max-width:640px){
-      .email-shell{width:100%!important;max-width:100%!important}
-      .px{padding-left:22px!important;padding-right:22px!important}
-      .hero-title{font-size:28px!important;line-height:1.08!important;letter-spacing:-.6px!important}
-      .hero-copy{font-size:15px!important;line-height:1.7!important}
-      .ticket-pad{padding:22px!important}
-      .stack,.stack td{display:block!important;width:100%!important;box-sizing:border-box!important}
-      .stack-gap{height:18px!important}
-      .qr-cell{padding-top:24px!important;padding-left:0!important;border-left:none!important;text-align:left!important}
-      .qr{width:150px!important;height:150px!important}
-      .event-title{font-size:25px!important;line-height:1.05!important}
-      .cta{display:block!important;width:100%!important;box-sizing:border-box!important;text-align:center!important}
-      .action-col{display:block!important;width:100%!important;padding:0 0 10px!important}
-      .action-gap{display:none!important;width:0!important}
-      .meta-value{font-size:15px!important;line-height:1.55!important}
-      .mobile-br{display:inline!important}
-      .confirm-label{white-space:nowrap!important;font-size:11px!important;line-height:16px!important}
-      .brand-lockup{font-size:13px!important;line-height:18px!important}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nam Long Experience 2026 | Đăng ký tham gia sự kiện</title>
+<style>
+@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Light.ttf') format('truetype');font-weight:300;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Medium.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+:root{
+  --red:#A92B35;
+  --red2:#7D2028;
+  --rose:#C96070;
+  --blush:#FFF7F7;
+  --paper:#FFFDFD;
+  --ink:#2D2728;
+  --muted:#74686A;
+  --line:#EADBDC;
+  --green:#93F1C0;
+  --shadow:0 28px 90px rgba(87,32,38,.12);
+  --r:30px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fffafa,#fbf5f5 52%,#fff);font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:'BT Beau Sans';font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1440px,calc(100% - 80px));margin:auto}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,250,250,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(169,43,53,.08)}
+.nav-inner{height:86px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand-logo{width:104px;flex:0 0 104px}
+.brand-logo img{width:100%;height:auto;object-fit:contain}
+.lang{display:flex;align-items:center;gap:10px;font-size:13px;color:#927a7d;font-weight:600}
+.lang .active{color:var(--red)}
+.lang .sep{color:#d8c7c9}
+
+.hero{padding:86px 0 38px;position:relative;overflow:hidden;background:#fffdfd;min-height:720px}
+.hero:before{content:"";position:absolute;inset:0;background:url('assets/hero-event-desktop.png') center center/cover no-repeat;pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,253,253,.98) 0%,rgba(255,253,253,.94) 31%,rgba(255,253,253,.72) 47%,rgba(255,253,253,.18) 62%,transparent 78%);pointer-events:none}
+.hero-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);align-items:center;gap:56px;width:min(1180px,100%);margin:auto;min-height:390px}
+.kicker{font-weight:700;color:var(--red);font-size:14px;letter-spacing:.16em;text-transform:uppercase}
+.hero h1{font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;margin:12px 0 18px;font-weight:700;color:var(--ink);max-width:720px}
+.hero h1 span{color:var(--red)}
+.hero-typo{margin:14px 0 18px;max-width:min(416px,68.8%)}
+.hero-typo img{width:100%;height:auto;object-fit:contain;object-position:left center}
+.hero-typo-fallback{display:none;font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;font-weight:700;color:var(--ink)}
+.hero-typo-fallback span{color:var(--red)}
+.hero-countdown{display:flex;align-items:center;gap:14px;margin-top:26px;color:var(--ink)}
+.hero-countdown-label{font-size:11px;line-height:1.35;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;max-width:92px}
+.countdown{display:flex;align-items:flex-start;gap:10px}
+.countdown-unit{min-width:48px}
+.countdown-value{display:block;font-size:24px;line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.countdown-name{display:block;margin-top:6px;font-size:9px;line-height:1;letter-spacing:.08em;text-transform:uppercase;color:#9a8487}
+.countdown-sep{font-size:20px;line-height:1;color:#d8c8ca;margin-top:1px}
+.hero-countdown.is-expired .hero-countdown-label{max-width:none}
+.hero-countdown.is-expired .countdown{display:none}
+.hero-spacer{min-height:320px}
+.mobile-hero-art{display:none}
+.mobile-event-meta{display:none}
+
+.facts{position:absolute;z-index:2;left:50%;bottom:34px;transform:translateX(-50%);width:min(1180px,calc(100% - 48px));margin:0;display:grid;grid-template-columns:.85fr .95fr 1.7fr;gap:14px}
+.fact{background:rgba(255,255,255,.84);border:1px solid rgba(169,43,53,.09);border-radius:22px;padding:20px 22px;box-shadow:0 12px 36px rgba(63,31,35,.04)}
+.fact-label{display:block;color:var(--red);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:7px}
+.fact-value{font-size:14px;line-height:1.55;font-weight:600;color:#4d4042}
+.map-link{display:inline-flex;margin-top:8px;color:var(--red);font-size:12px;font-weight:700}
+
+.registration{padding:74px 0 104px}
+.section-head{text-align:center;width:min(760px,100%);margin:0 auto 34px}
+.section-head .h2{font-size:50px;line-height:1.5;letter-spacing:-.045em;margin:8px 0 0;color:var(--ink);font-weight:700}
+.section-head .desc{margin:16px auto 0;color:var(--muted);font-size:15.5px;max-width:620px}
+.section-head .desc strong{color:var(--red)}
+
+.form{width:min(1040px,100%);margin:auto;background:white;border:1px solid rgba(169,43,53,.10);border-radius:34px;padding:42px 44px 38px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+.field label,.group-label{font-size:13px;font-weight:700;color:#5c4446}
+.req{color:var(--red)}
+.field input{width:100%;height:54px;border:1px solid #eadcdd;border-radius:15px;padding:0 16px;background:#fff;color:var(--ink);outline:none;font-size:15px;transition:.2s ease}
+.field input::placeholder{color:#b09fa1}
+.field input:hover{border-color:#d9c1c4}
+.field input:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(169,43,53,.07)}
+
+.date-block{grid-column:1/-1;margin-top:8px;padding-top:28px;border-top:1px solid #f0e4e5}
+.date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.date-option{position:relative;cursor:pointer}
+.date-option input{position:absolute;opacity:0;pointer-events:none}
+.date-card{min-height:84px;border:1px solid rgba(169,43,53,.14);background:#fffafa;border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:.2s ease}
+.date-dot{width:20px;height:20px;border-radius:5px;border:1.5px solid #c9b7ba;background:#fff;display:grid;place-items:center;flex:0 0 20px;transition:.2s ease}
+.date-dot:after{content:"✓";font-size:12px;line-height:1;color:#fff;font-weight:700;opacity:0;transform:scale(.65);transition:.2s ease}
+.date-text{display:grid;gap:2px}
+.date-text strong{font-size:16px;color:#493a3c}
+.date-text small{font-size:12px;color:var(--muted)}
+.date-option:hover .date-card{border-color:rgba(169,43,53,.34);transform:translateY(-1px)}
+.date-option input:checked+.date-card{background:#fff2f3;border-color:var(--red);box-shadow:0 12px 30px rgba(169,43,53,.08)}
+.date-option input:checked+.date-card .date-dot{border-color:var(--red);background:var(--red)}
+.date-option input:checked+.date-card .date-dot:after{opacity:1;transform:scale(1)}
+.date-option input:focus-visible+.date-card{outline:3px solid rgba(169,43,53,.10);outline-offset:2px}
+
+.consents{grid-column:1/-1;margin-top:10px;padding-top:28px;border-top:1px solid #f0e4e5;display:grid;gap:15px}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:11px;align-items:flex-start;color:var(--muted);font-size:12.7px;line-height:1.62;cursor:pointer}
+.consent input{appearance:none;width:20px;height:20px;margin:1px 0 0;border:1.5px solid #cbbabd;border-radius:5px;background:#fff;display:grid;place-items:center;cursor:pointer}
+.consent input:checked{background:var(--red);border-color:var(--red)}
+.consent input:checked:after{content:"✓";font-size:13px;color:#fff;font-weight:700;line-height:1}
+.policy{color:var(--red);font-weight:700}
+
+.form-actions{grid-column:1/-1;margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.btn{border:0;border-radius:999px;padding:15px 28px;font:700 14px 'BT Beau Sans';display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s ease;white-space:nowrap}
+.btn-primary{min-width:300px;background:var(--red);color:white;box-shadow:0 12px 28px rgba(169,43,53,.20)}
+.btn-primary:hover{background:var(--red2);transform:translateY(-2px)}
+.privacy{font-size:11.5px;color:#9b898c;text-align:center}
+
+.footer{padding:34px 0 40px;color:#9a8487;font-size:12px;text-align:center;border-top:1px solid rgba(169,43,53,.07);background:#fff}
+
+@media(max-width:980px){
+  .container{width:min(100% - 44px,1100px)}
+  .hero{min-height:650px;padding:68px 0 34px}
+  .hero:before{background-position:58% center;background-size:cover}
+  .hero:after{background:linear-gradient(90deg,rgba(255,253,253,.98) 0%,rgba(255,253,253,.92) 39%,rgba(255,253,253,.55) 58%,rgba(255,253,253,.08) 78%,transparent 100%)}
+  .hero-shell{grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:26px;min-height:350px}
+  .hero-spacer{min-height:300px}
+  .facts{bottom:28px;width:min(100% - 44px,1100px);grid-template-columns:1fr 1fr}.fact:last-child{grid-column:1/-1}
+}
+.mobile-title-break{display:none}
+@media(max-width:760px){
+  .container{width:calc(100% - 32px)}
+  .nav{position:relative;background:#fffdfd;backdrop-filter:none}
+  .nav-inner{height:72px}.brand-logo{width:92px;flex-basis:92px}.lang{font-size:12px}
+
+  /* Mobile is a separate editorial composition, not a compressed desktop hero. */
+  .hero{min-height:0;padding:34px 0 0;background:#fffdfd;overflow:hidden}
+  .hero:before,.hero:after{display:none}
+  .hero .container{width:100%}
+  .hero-shell{display:block;min-height:0;text-align:left;width:100%}
+  .hero-copy{width:calc(100% - 40px);margin:0 auto 26px}
+  .kicker{font-size:11px;letter-spacing:.15em}
+  .hero h1{font-size:clamp(40px,11.2vw,50px);line-height:.91;letter-spacing:-.052em;margin:10px 0 0;max-width:390px}
+  .hero-typo{margin:12px 0 0;max-width:min(320px,82%)}
+  .hero-typo-fallback{font-size:clamp(40px,11.2vw,50px);line-height:.91}
+  .hero-countdown{margin-top:22px;gap:12px;align-items:flex-start}
+  .hero-countdown-label{font-size:9.5px;max-width:72px;line-height:1.45;letter-spacing:.1em;padding-top:1px}
+  .countdown{gap:7px}
+  .countdown-unit{min-width:39px}
+  .countdown-value{font-size:20px}
+  .countdown-name{font-size:8px;margin-top:5px}
+  .countdown-sep{font-size:16px}
+  .hero-spacer{display:none}
+  .mobile-hero-art{display:block;width:100%;aspect-ratio:9/10;background:url('assets/hero-event-mobile.png') center center/100% 100% no-repeat;border-radius:0;overflow:hidden}
+
+  .facts{display:none}
+  .mobile-event-meta{display:block;width:calc(100% - 40px);margin:0 auto;padding:34px 0 40px;border-bottom:1px solid rgba(169,43,53,.10)}
+  .mobile-meta-top{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:34px}
+  .mobile-meta-item{min-width:0}
+  .mobile-meta-label{display:block;color:var(--red);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .mobile-meta-value{font-size:14.5px;line-height:1.72;font-weight:600;color:#4d4042}
+  .mobile-meta-venue{padding-top:30px;border-top:1px solid rgba(169,43,53,.08)}
+  .mobile-meta-venue .mobile-meta-value{font-weight:500}
+  .mobile-meta-venue .map-link{margin-top:16px}
+
+  .registration{padding:64px 0 84px}
+  .section-head{text-align:left;margin:0 0 44px}
+  .section-head .h2{font-size:32px;line-height:1.14;max-width:360px;letter-spacing:-.035em}
+  .mobile-title-break{display:inline}
+  .section-head .desc{margin:24px 0 0;font-size:14.5px;line-height:1.82}
+
+  .form{padding:0;border:0;border-radius:0;box-shadow:none;background:transparent}
+  .form-grid{grid-template-columns:1fr;gap:34px}
+  .field.full,.date-block,.consents,.form-actions{grid-column:auto}
+  .field{gap:14px}
+  .field label,.group-label{font-size:12.5px;line-height:1.58}
+  .field input{height:58px;font-size:15.5px;line-height:1.5;border:0;border-bottom:1px solid #d8c8ca;border-radius:0;padding:0;background:transparent}
+  .field input:hover{border-color:#c9b3b6}
+  .field input:focus{border-color:var(--red);box-shadow:none}
+
+  .date-block,.consents{padding-top:34px;border-top:1px solid #f0e4e5}
+  .date-grid{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .date-card{min-height:78px;padding:12px 8px;display:grid;place-items:center;text-align:center;gap:7px;border-radius:15px}
+  .date-dot{display:grid;width:18px;height:18px;flex-basis:18px;margin-bottom:1px}
+  .date-dot:after{font-size:11px}
+  .date-text{gap:0}
+  .date-text strong{font-size:13px}
+  .date-text small{font-size:10.5px}
+
+  .consents{gap:22px}
+  .consent{font-size:12px;line-height:1.8}
+  .form-actions{margin-top:14px;align-items:stretch}
+  .btn-primary{width:100%;min-width:0;height:56px}
+  .privacy{font-size:11px}
+  .footer{padding:26px 0 30px}
+}
+@media(max-width:420px){
+  .hero-copy,.mobile-event-meta{width:calc(100% - 32px)}
+  .hero h1{font-size:40px}
+  .hero-countdown{gap:10px}
+  .hero-countdown-label{max-width:66px;font-size:9px}
+  .countdown{gap:5px}
+  .countdown-unit{min-width:36px}
+  .countdown-value{font-size:19px}
+  .section-head .h2{font-size:32px}
+  .date-text strong{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.consent-highlight{color:#a92b35;font-weight:700}
+</style>
 </head>
 <body>
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">Đăng ký Nam Long Experience 2026 của Quý khách đã được xác nhận thành công.</div>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand-logo" href="#" aria-label="Nam Long"><img src="assets/logo-nam-long.webp" alt="Nam Long"></a>
+    <div class="lang"><span>English</span><span class="sep">|</span><span class="active">Tiếng Việt</span></div>
+  </div>
+</nav>
 
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background:#f8f3f3;">
-    <tr>
-      <td align="center" style="padding:28px 12px;">
-        <table role="presentation" class="email-shell" width="640" cellpadding="0" cellspacing="0" border="0" style="width:640px;max-width:640px;background:#fffdfd;border-radius:28px;overflow:hidden;font-family:'BT Beau Sans',Arial,Helvetica,sans-serif;color:#2d2728;box-shadow:0 18px 56px rgba(93,53,55,.08);">
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <div class="kicker">Đừng bỏ lỡ sự kiện</div>
+          <div class="hero-typo" aria-label="Nam Long Experience 2026"><img src="assets/nam-long-experience-2026-typo.png" alt="Nam Long Experience 2026" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="hero-typo-fallback">Nam Long<br>Experience <span>2026</span></div></div>
+          <div class="hero-countdown" id="registrationCountdown" aria-live="polite">
+            <div class="countdown" aria-label="Thời gian còn lại đến hạn đăng ký">
+              <div class="countdown-unit"><span class="countdown-value" id="cdDays">00</span><span class="countdown-name">Ngày</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdHours">00</span><span class="countdown-name">Giờ</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdMinutes">00</span><span class="countdown-name">Phút</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdSeconds">00</span><span class="countdown-name">Giây</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-spacer" aria-hidden="true"></div><div class="mobile-hero-art" aria-hidden="true"></div>
+      </div>
 
-          <!-- Brand bar -->
-          <tr>
-            <td class="px" style="padding:22px 34px 18px;border-bottom:1px solid #eadbdc;background:#fffdfd;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td class="brand-lockup" style="font-size:13px;line-height:18px;font-weight:700;letter-spacing:1.1px;color:#a92b35;">NAM LONG<br class="mobile-br"> EXPERIENCE 2026</td>
-                  <td class="confirm-label" align="right" style="font-size:12px;line-height:18px;color:#8d797c;white-space:nowrap;">Xác nhận đăng ký</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+      <div class="mobile-event-meta" aria-label="Thông tin sự kiện trên di động">
+        <div class="mobile-meta-top">
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">20/09/2026 - 15:00</div></div>
+        </div>
+        <div class="mobile-meta-venue"><span class="mobile-meta-label">Địa điểm</span><div class="mobile-meta-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh</div><a class="map-link" href="#">Xem trên Google Maps ↗</a></div>
+      </div>
 
-          <!-- Event visual -->
-          <tr>
-            <td style="background:#fffdfd;">
-              <!-- Replace this relative src with an absolute hosted URL for production email -->
-              <img src="hero-event-email.png" width="640" alt="Nam Long Experience 2026" style="width:100%;max-width:640px;height:auto;">
-            </td>
-          </tr>
+      <div class="facts" aria-label="Thông tin sự kiện">
+        <div class="fact"><span class="fact-label">Thời gian</span><div class="fact-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
+        <div class="fact"><span class="fact-label">Hạn đăng ký</span><div class="fact-value">20/09/2026 - 15:00</div></div>
+        <div class="fact"><span class="fact-label">Địa điểm</span><div class="fact-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh<br><a class="map-link" href="#">Xem trên Google Maps ↗</a></div></div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Confirmation -->
-          <tr>
-            <td class="px" style="padding:36px 46px 12px;background:#fffdfd;">
-              <div style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:1.6px;color:#a92b35;text-transform:uppercase;"></div>
-              <div class="hero-title" style="margin-top:9px;font-size:32px;line-height:1.08;letter-spacing:-1.1px;font-weight:700;color:#2d2728;">XÁC NHẬN ĐĂNG KÝ<br>THÀNH CÔNG</div>
-              <div class="hero-copy" style="margin-top:18px;font-size:16px;line-height:1.68;color:#74686a;">Cảm ơn <strong style="color:#2d2728;">{{customer_name}}</strong> đã đăng ký tham gia <strong style="color:#a92b35;">Nam Long Experience 2026 - Triển lãm Bất động sản Giá trị thực</strong>. Thông tin của Quý khách đã được ghi nhận.</div>
-            </td>
-          </tr>
+  <section class="registration" aria-labelledby="registerTitle">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Nam Long Experience 2026</div>
+        <h2 class="h2" id="registerTitle">ĐĂNG KÝ THAM GIA<span class="mobile-title-break"><br></span> SỰ KIỆN</h2>
+        <p class="desc"><strong>(*) Thông tin bắt buộc nhập.</strong><br>Mã QR tham gia sự kiện sẽ được gửi về email mà Quý khách đã đăng ký.<br>Quý khách có thể đăng ký tham dự <strong>nhiều ngày</strong> và sử dụng cùng một Mã QR để check-in trong suốt các ngày đã đăng ký.</p>
+      </div>
 
-          <!-- Ticket / registration card -->
-          <tr>
-            <td class="px" style="padding:22px 34px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#fff8f8;border:1px solid #eadbdc;border-radius:24px;overflow:hidden;">
-                <tr>
-                  <td class="ticket-pad" style="padding:28px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                      <tr class="stack">
-                        <td valign="top" style="width:66%;padding-right:24px;">
-                          <div style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:#a92b35;">Thông tin tham dự</div>
-                          <div style="margin-top:17px;">
-                            <div style="font-size:11px;line-height:16px;color:#9b8a8c;text-transform:uppercase;letter-spacing:.7px;">Họ và tên</div>
-                            <div class="meta-value" style="margin-top:4px;font-size:17px;line-height:1.45;font-weight:600;color:#2d2728;">{{customer_name}}</div>
-                          </div>
-                          <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eadbdc;">
-                            <div style="font-size:11px;line-height:16px;color:#9b8a8c;text-transform:uppercase;letter-spacing:.7px;">Số điện thoại</div>
-                            <div class="meta-value" style="margin-top:4px;font-size:17px;line-height:1.45;font-weight:600;color:#2d2728;">{{phone}}</div>
-                          </div>
-                          <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eadbdc;">
-                            <div style="font-size:11px;line-height:16px;color:#9b8a8c;text-transform:uppercase;letter-spacing:.7px;">Email</div>
-                            <div class="meta-value" style="margin-top:4px;font-size:17px;line-height:1.45;font-weight:600;color:#2d2728;word-break:break-word;">{{email}}</div>
-                          </div>
-                          <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eadbdc;">
-                            <div style="font-size:11px;line-height:16px;color:#9b8a8c;text-transform:uppercase;letter-spacing:.7px;">Ngày tham gia</div>
-                            <div class="meta-value" style="margin-top:4px;font-size:17px;line-height:1.45;font-weight:700;color:#a92b35;">{{attendance_date}}</div>
-                          </div>
-                        </td>
-                        <td class="qr-cell" valign="top" align="center" style="width:34%;border-left:1px solid #eadbdc;padding-left:24px;">
-                          <div style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#a92b35;">Mã check-in</div>
-                          <!-- Demo only: replace qr-demo.png with {{qr_code_url}} in production -->
-                          <img class="qr" src="qr-demo.png" width="158" height="158" alt="QR check-in" style="width:158px;height:158px;margin:14px auto 0;background:#fff;border:8px solid #fff;border-radius:14px;">
-                          <div style="margin-top:12px;font-size:11px;line-height:16px;color:#9b8a8c;">Mã đăng ký</div>
-                          <div style="margin-top:3px;font-size:14px;line-height:20px;font-weight:700;color:#2d2728;letter-spacing:.8px;">{{registration_code}}</div>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+      <form class="form" id="registrationForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullname"><span class="req">*</span> Họ Và Tên</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Họ và tên" required>
+          </div>
+          <div class="field">
+            <label for="phone"><span class="req">*</span> Số Điện Thoại (1 SĐT là 1 vé duy nhất)</label>
+            <input id="phone" name="phone" type="tel" placeholder="09xx xxx xxx" required>
+          </div>
+          <div class="field full">
+            <label for="email"><span class="req">*</span> Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
 
-          <!-- Event details -->
-          <tr>
-            <td class="px" style="padding:30px 46px 8px;">
-              <div style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:1.4px;color:#a92b35;text-transform:uppercase;">Thông tin sự kiện</div>
-              <div class="event-title" style="margin-top:8px;font-size:29px;line-height:1.05;font-weight:700;letter-spacing:-.8px;color:#2d2728;">Nam Long Experience 2026 - Triển lãm Bất động sản Giá trị thực</div>
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;">
-                <tr class="stack">
-                  <td style="width:32%;padding:0 18px 0 0;vertical-align:top;">
-                    <div style="font-size:10px;line-height:15px;font-weight:700;letter-spacing:1px;color:#a92b35;text-transform:uppercase;">Thời gian</div>
-                    <div style="margin-top:6px;font-size:14px;line-height:1.5;color:#4d4042;font-weight:600;">18 - 19 - 20/09/2026 8:30 - 21:00</div>
-                  </td>
-                  <td class="stack-gap" style="width:2%;font-size:0;line-height:0;">&nbsp;</td>
-                  <td style="width:66%;padding:0;vertical-align:top;">
-                    <div style="font-size:10px;line-height:15px;font-weight:700;letter-spacing:1px;color:#a92b35;text-transform:uppercase;">Địa điểm</div>
-                    <div style="margin-top:6px;font-size:14px;line-height:1.62;color:#4d4042;font-weight:600;">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh</div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+          <div class="date-block">
+            <div class="group-label">Ngày Tham Gia</div>
+            <div class="date-grid" role="group" aria-label="Ngày tham gia">
+              <label class="date-option"><input type="checkbox" name="date" value="18/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>18/09/2026</strong><small>Thứ Sáu</small></span></span></label>
+              <label class="date-option"><input type="checkbox" name="date" value="19/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>19/09/2026</strong><small>Thứ Bảy</small></span></span></label>
+              <label class="date-option"><input type="checkbox" name="date" value="20/09/2026"><span class="date-card"><span class="date-dot"></span><span class="date-text"><strong>20/09/2026</strong><small>Chủ Nhật</small></span></span></label>
+            </div>
+          </div>
 
-          <!-- Calendar + Map actions -->
-          <tr>
-            <td class="px" style="padding:30px 46px 12px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                <tr>
-                  <td style="padding-bottom:14px;font-size:12px;line-height:1.65;color:#8d797c;">Lưu lịch tham dự hoặc mở chỉ đường đến sự kiện.</td>
-                </tr>
-                <tr>
-                  <td>
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                      <tr>
-                        <td class="action-col" width="49%" valign="top" style="width:49%;">
-                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                            <tr>
-                              <td align="center" bgcolor="#a92b35" style="background:#a92b35;border-radius:999px;overflow:hidden;">
-                                <a class="cta" href="{{calendar_url}}" target="_blank" style="display:block;padding:15px 18px;font-size:13px;line-height:20px;font-weight:700;color:#ffffff;letter-spacing:.35px;white-space:nowrap;border-radius:999px;">
-                                  <span style="display:inline-block;vertical-align:middle;margin-right:7px;">
-                                    <img src="Scheduleicon-square.png" width="20" height="20" alt="" style="display:inline-block;width:20px;height:20px;vertical-align:middle;">
-                                  </span>
-                                  <span style="display:inline-block;vertical-align:middle;">THÊM VÀO LỊCH</span>
-                                </a>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                        <td class="action-gap" width="2%" style="width:2%;font-size:0;line-height:0;">&nbsp;</td>
-                        <td class="action-col" width="49%" valign="top" style="width:49%;">
-                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                            <tr>
-                              <td align="center" bgcolor="#fff2f2" style="background:#fff2f2;border-radius:999px;overflow:hidden;">
-                                <a class="cta" href="{{event_map_url}}" target="_blank" style="display:block;padding:15px 18px;font-size:13px;line-height:20px;font-weight:700;color:#a92b35;letter-spacing:.35px;white-space:nowrap;border-radius:999px;">
-                                  <span style="display:inline-block;vertical-align:middle;margin-right:7px;">
-                                    <img src="Locationicon-square.png" width="20" height="20" alt="" style="display:inline-block;width:20px;height:20px;vertical-align:middle;">
-                                  </span>
-                                  <span style="display:inline-block;vertical-align:middle;">XEM ĐƯỜNG ĐI</span>
-                                </a>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+          <div class="consents">
+            <label class="consent"><input type="checkbox"><span>Đồng ý cho Chủ đầu tư và Đối tác liên kết xử lý dữ liệu cho mục đích <strong class="consent-highlight">liên quan hoạt động kinh doanh,</strong> quảng bá, <strong class="consent-highlight">tiếp thị,</strong> khuyến mại và chăm sóc khách hàng.</span></label>
+            <label class="consent"><input type="checkbox" checked><span>Đồng ý cho Chủ đầu tư xử lý dữ liệu cá nhân theo <a class="policy" href="#">được công bố trên website chủ đầu tư</a> và pháp luật hiện hành.</span></label>
+          </div>
 
-          <!-- Note -->
-          <tr>
-            <td class="px" style="padding:20px 46px 34px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #eadbdc;">
-                <tr>
-                  <td style="padding-top:20px;font-size:12px;line-height:1.7;color:#8d797c;">Vui lòng lưu email này và xuất trình mã QR khi check-in tại sự kiện. Mỗi số điện thoại tương ứng với 01 vé tham dự.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">ĐĂNG KÝ NGAY</button>
+            <div class="privacy"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
 
-          <!-- Footer -->
-          <tr>
-            <td align="center" style="padding:22px 28px;background:#a92b35;color:#fff;font-size:11px;line-height:1.65;letter-spacing:.2px;">NAM LONG EXPERIENCE 2026<br><span style="opacity:.78;">Email xác nhận tự động · Vui lòng không trả lời email này</span></td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+<footer class="footer">Nam Long Experience 2026</footer>
+<script>
+(function(){
+  const deadline = new Date('2026-09-20T15:00:00+07:00').getTime();
+  const wrap = document.getElementById('registrationCountdown');
+  const countdown = wrap ? wrap.querySelector('.countdown') : null;
+  const days = document.getElementById('cdDays');
+  const hours = document.getElementById('cdHours');
+  const minutes = document.getElementById('cdMinutes');
+  const seconds = document.getElementById('cdSeconds');
+  const submitButton = document.querySelector('.btn-primary');
+  const pad = n => String(n).padStart(2,'0');
+
+  function updateCountdown(){
+    const diff = deadline - Date.now();
+    if(diff <= 0){
+      wrap.classList.add('is-expired');
+      if(wrap && !wrap.querySelector('.hero-countdown-label')){
+        const expiredLabel = document.createElement('div');
+        expiredLabel.className = 'hero-countdown-label';
+        expiredLabel.textContent = 'HẾT HẠN ĐĂNG KÝ';
+        wrap.insertBefore(expiredLabel, countdown);
+      }
+      if(submitButton){
+        submitButton.disabled = true;
+        submitButton.textContent = 'HẾT HẠN ĐĂNG KÝ';
+        submitButton.style.opacity = '.55';
+        submitButton.style.cursor = 'not-allowed';
+      }
+      return false;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const sec = Math.floor((diff % 60000) / 1000);
+    days.textContent = pad(d);
+    hours.textContent = pad(h);
+    minutes.textContent = pad(m);
+    seconds.textContent = pad(sec);
+    return true;
+  }
+
+  updateCountdown();
+  const timer = setInterval(function(){
+    if(!updateCountdown()) clearInterval(timer);
+  },1000);
+})();
+
+document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();});
+</script>
 </body>
 </html>
