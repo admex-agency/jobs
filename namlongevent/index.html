@@ -2780,6 +2780,351 @@ background-size:cover!important;background-position:center!important;
 }
 </style>
 
+
+<style id="r27-highlight-depth">
+/* Remove the residual background strip beneath the highlight cards */
+.activity-rail{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.activities-balanced-wrap,
+.activities-balanced .container{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.activity-rail::before,
+.activity-rail::after,
+.activities-balanced-wrap::before,
+.activities-balanced-wrap::after{
+  display:none!important;
+}
+
+/* 3D hover: lift through depth, not vertical translation */
+.activity-rail{
+  perspective:1400px;
+  perspective-origin:50% 45%;
+}
+.activity-tile{
+  transform-style:preserve-3d;
+  transform-origin:center center;
+  transition:
+    transform .42s cubic-bezier(.2,.7,.2,1),
+    box-shadow .42s cubic-bezier(.2,.7,.2,1),
+    filter .42s cubic-bezier(.2,.7,.2,1)!important;
+}
+.activity-tile:hover,
+.activity-tile:focus-within{
+  transform:
+    perspective(1000px)
+    rotateX(1.6deg)
+    rotateY(-1.8deg)
+    translateZ(14px)!important;
+  filter:saturate(1.05) brightness(1.02);
+  box-shadow:
+    0 30px 60px color-mix(in srgb,var(--tile-accent) 28%, transparent),
+    0 10px 24px rgba(28,18,18,.10)!important;
+}
+.activity-tile:nth-child(even):hover,
+.activity-tile:nth-child(even):focus-within{
+  transform:
+    perspective(1000px)
+    rotateX(1.4deg)
+    rotateY(1.8deg)
+    translateZ(14px)!important;
+}
+.activity-tile > *{
+  transform:translateZ(0);
+  transition:transform .42s cubic-bezier(.2,.7,.2,1);
+}
+.activity-tile:hover .activity-tile-head,
+.activity-tile:focus-within .activity-tile-head{
+  transform:translateZ(10px);
+}
+.activity-tile:hover .activity-tile-body,
+.activity-tile:focus-within .activity-tile-body{
+  transform:translateZ(16px);
+}
+.activity-tile:hover .activity-tile-highlights,
+.activity-tile:focus-within .activity-tile-highlights{
+  transform:translateZ(12px);
+}
+
+/* Avoid 3D tilt on touch/mobile */
+@media(max-width:900px), (hover:none){
+  .activity-rail{perspective:none}
+  .activity-tile:hover,
+  .activity-tile:focus-within,
+  .activity-tile:nth-child(even):hover,
+  .activity-tile:nth-child(even):focus-within{
+    transform:none!important;
+    filter:none!important;
+  }
+  .activity-tile:hover .activity-tile-head,
+  .activity-tile:focus-within .activity-tile-head,
+  .activity-tile:hover .activity-tile-body,
+  .activity-tile:focus-within .activity-tile-body,
+  .activity-tile:hover .activity-tile-highlights,
+  .activity-tile:focus-within .activity-tile-highlights{
+    transform:none!important;
+  }
+}
+</style>
+
+
+<style id="r28-highlight-clean-depth">
+/* --- Remove ALL residual backing layers under highlight cards --- */
+.activities-balanced,
+.activities-balanced-wrap,
+.activities-balanced .container,
+.activity-rail,
+.activity-rail > *,
+.activity-rail-controls--bottom{
+  background:transparent!important;
+}
+.activities-balanced-wrap,
+.activities-balanced .container,
+.activity-rail{
+  box-shadow:none!important;
+  border:0!important;
+}
+.activity-rail{
+  padding-bottom:0!important;
+  margin-bottom:0!important;
+}
+.activities-balanced-wrap::before,
+.activities-balanced-wrap::after,
+.activities-balanced .container::before,
+.activities-balanced .container::after,
+.activity-rail::before,
+.activity-rail::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+.activity-rail-controls--bottom{
+  margin-top:18px!important;
+  padding-top:0!important;
+}
+
+/* --- Hover as a full block lifting forward: no tilt / no exposed edge --- */
+.activity-rail{
+  perspective:none!important;
+}
+.activity-tile{
+  transform-style:flat!important;
+  backface-visibility:hidden;
+  transition:
+    transform .38s cubic-bezier(.2,.75,.2,1),
+    box-shadow .38s cubic-bezier(.2,.75,.2,1),
+    filter .38s cubic-bezier(.2,.75,.2,1)!important;
+}
+.activity-tile:hover,
+.activity-tile:focus-within,
+.activity-tile:nth-child(even):hover,
+.activity-tile:nth-child(even):focus-within{
+  transform:translateY(-4px) scale(1.018)!important;
+  filter:saturate(1.04) brightness(1.025)!important;
+  box-shadow:
+    0 8px 18px rgba(20,14,16,.08),
+    0 24px 48px color-mix(in srgb,var(--tile-accent) 24%, transparent),
+    0 42px 76px rgba(20,14,16,.08)!important;
+  z-index:5!important;
+}
+.activity-tile > *,
+.activity-tile:hover .activity-tile-head,
+.activity-tile:focus-within .activity-tile-head,
+.activity-tile:hover .activity-tile-body,
+.activity-tile:focus-within .activity-tile-body,
+.activity-tile:hover .activity-tile-highlights,
+.activity-tile:focus-within .activity-tile-highlights{
+  transform:none!important;
+}
+
+/* Give cards just enough air so the lifted whole block is not clipped */
+.activity-rail{
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+  padding-top:12px!important;
+  margin-top:-12px!important;
+}
+
+@media(max-width:900px), (hover:none){
+  .activity-tile:hover,
+  .activity-tile:focus-within,
+  .activity-tile:nth-child(even):hover,
+  .activity-tile:nth-child(even):focus-within{
+    transform:none!important;
+    filter:none!important;
+  }
+}
+</style>
+
+
+<style id="r29-highlight-final-fix">
+/* R29 — remove the actual section backing layer, not the cards */
+.activities-balanced{
+  background:none!important;
+  background-color:transparent!important;
+  box-shadow:none!important;
+}
+.activities-balanced-wrap,
+.activities-balanced .container,
+.activity-rail,
+.activity-rail-controls--bottom{
+  background:none!important;
+  background-color:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Undo the R28 selector that accidentally made every rail child transparent */
+.activity-rail > .activity-tile{
+  --tile-accent:#22a87e;
+  background:linear-gradient(
+    138deg,
+    color-mix(in srgb,var(--tile-accent) 98%, white 2%) 0%,
+    color-mix(in srgb,var(--tile-accent) 88%, #301319 12%) 58%,
+    color-mix(in srgb,var(--tile-accent) 76%, #111 24%) 100%
+  )!important;
+}
+.activity-rail > .activity-tile:nth-child(1){--tile-accent:#22a87e!important}
+.activity-rail > .activity-tile:nth-child(2){--tile-accent:#d6aa20!important}
+.activity-rail > .activity-tile:nth-child(3){--tile-accent:#8a3ee5!important}
+.activity-rail > .activity-tile:nth-child(4){--tile-accent:#c921a2!important}
+.activity-rail > .activity-tile:nth-child(5){--tile-accent:#ee8735!important}
+
+.activity-rail > .activity-tile:hover,
+.activity-rail > .activity-tile:focus-within{
+  background:linear-gradient(
+    138deg,
+    color-mix(in srgb,var(--tile-accent) 92%, white 8%) 0%,
+    color-mix(in srgb,var(--tile-accent) 86%, #301319 14%) 58%,
+    color-mix(in srgb,var(--tile-accent) 73%, #111 27%) 100%
+  )!important;
+}
+
+/* Keep all card content fully visible */
+.activity-tile,
+.activity-tile .activity-tile-no,
+.activity-tile .activity-tile-tag,
+.activity-tile .activity-tile-body h3,
+.activity-tile .activity-tile-body p,
+.activity-tile .activity-tile-body p strong{
+  color:#fff!important;
+}
+.activity-tile-highlights span{
+  color:#fff!important;
+  background:rgba(255,255,255,.13)!important;
+  border-color:rgba(255,255,255,.28)!important;
+}
+
+/* No pseudo/background strip can survive below the rail */
+.activities-balanced::before,
+.activities-balanced::after,
+.activities-balanced-wrap::before,
+.activities-balanced-wrap::after,
+.activity-rail::before,
+.activity-rail::after{
+  content:none!important;
+  display:none!important;
+}
+</style>
+
+
+<style id="r30-highlight-clean-layout">
+/* R30 — clean rail geometry: no negative margin, no colored backing haze */
+.activities-balanced{
+  background:transparent!important;
+}
+.activities-balanced-wrap{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Give the cards real breathing room instead of compensating with negative margins */
+.activity-rail{
+  margin:0!important;
+  padding:12px 0 16px!important;
+  gap:24px!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+}
+
+/* Recalculate 3-up width after increasing the gap */
+@media(min-width:1101px){
+  .activity-rail{
+    grid-auto-columns:calc((100% - 48px)/3)!important;
+  }
+}
+
+/* The "background strip" was the permanent colored shadow of each card.
+   Keep default cards crisp; depth appears only on interaction. */
+.activity-rail > .activity-tile{
+  box-shadow:0 8px 22px rgba(30,22,22,.055)!important;
+  margin:0!important;
+}
+
+/* Whole-card lift, no tilt, no colored haze left behind */
+.activity-rail > .activity-tile:hover,
+.activity-rail > .activity-tile:focus-within{
+  transform:translateY(-4px) scale(1.012)!important;
+  box-shadow:
+    0 12px 24px rgba(25,18,18,.09),
+    0 28px 56px rgba(25,18,18,.12)!important;
+  z-index:6!important;
+}
+
+/* Ensure no decorative/backing layer exists underneath */
+.activities-balanced::before,
+.activities-balanced::after,
+.activities-balanced-wrap::before,
+.activities-balanced-wrap::after,
+.activity-rail::before,
+.activity-rail::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* Controls sit outside the rail, cleanly below it */
+.activity-rail-controls--bottom{
+  margin-top:14px!important;
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+@media(max-width:1100px){
+  .activity-rail{
+    gap:18px!important;
+    grid-auto-columns:calc((100% - 18px)/2)!important;
+  }
+}
+@media(max-width:720px){
+  .activity-rail{
+    margin-right:-20px!important;
+    padding:10px 20px 12px 0!important;
+    gap:14px!important;
+    grid-auto-columns:min(86vw,370px)!important;
+  }
+  .activity-rail > .activity-tile{
+    box-shadow:0 6px 18px rgba(30,22,22,.05)!important;
+  }
+}
+</style>
+
+
+<style id="r31-highlight-no-shadow">
+.activity-rail > .activity-tile,
+.activity-rail > .activity-tile:hover,
+.activity-rail > .activity-tile:focus,
+.activity-rail > .activity-tile:focus-visible,
+.activity-rail > .activity-tile:focus-within,
+.activity-rail > .activity-tile:active{box-shadow:none!important;filter:none!important;}
+.activity-rail > .activity-tile:hover,
+.activity-rail > .activity-tile:focus-within{transform:scale(1.012)!important;z-index:6!important;}
+</style>
 </head>
 <body class="">
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
