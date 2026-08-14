@@ -138,58 +138,9 @@ img{display:block;max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-/* OTP page uses a compact event banner; event facts belong to the registration page */
-.facts,
-.mobile-event-meta{display:none!important}
-
-.otp-page .hero{
-  min-height:430px;
-  padding:54px 0 44px;
-}
-.otp-page .hero-shell{
-  min-height:320px;
-}
-.otp-page .hero-spacer{
-  min-height:260px;
-}
-.otp-page .otp-section{
-  padding-top:44px;
-}
-
-@media(max-width:980px){
-  .otp-page .hero{
-    min-height:390px;
-    padding:44px 0 36px;
-  }
-  .otp-page .hero-shell{min-height:290px}
-  .otp-page .hero-spacer{min-height:240px}
-}
-
-@media(max-width:760px){
-  .otp-page .hero{
-    padding:26px 0 0;
-    min-height:0;
-  }
-  .otp-page .hero-copy{
-    margin-bottom:22px;
-  }
-  .otp-page .mobile-hero-art{
-    aspect-ratio:1080/820;
-    background-image:url('assets/hero-event-mobile.png');
-    background-size:cover;
-    background-position:center 38%;
-  }
-  .otp-page .otp-section{
-    padding:30px 0 58px;
-  }
-  .otp-page .otp-card{
-    margin-top:0;
-  }
-}
-
 </style>
 </head>
-<body class="otp-page">
+<body>
 <nav class="nav">
   <div class="container nav-inner">
     <a class="brand-logo" href="#" aria-label="Nam Long"><img src="assets/logo-nam-long.webp" alt="Nam Long"></a>
@@ -203,18 +154,26 @@ img{display:block;max-width:100%}
       <div class="hero-shell">
         <div class="hero-copy">
           <div class="kicker">Đừng bỏ lỡ sự kiện</div>
-          <div class="hero-typo" aria-label="Nam Long Experience 2026"><img src="assets/nam-long-experience-2026-typo.png" alt="Nam Long Experience 2026"></div>
+          <div class="hero-typo" aria-label="Nam Long Experience 2026"><img src="assets/nam-long-experience-2026-typo.png" alt="Nam Long Experience 2026" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="hero-typo-fallback">Nam Long<br>Experience <span>2026</span></div></div>
+          <div class="hero-countdown" id="registrationCountdown" aria-live="polite">
+            <div class="countdown" aria-label="Thời gian còn lại đến hạn đăng ký">
+              <div class="countdown-unit"><span class="countdown-value" id="cdDays">00</span><span class="countdown-name">Ngày</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdHours">00</span><span class="countdown-name">Giờ</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdMinutes">00</span><span class="countdown-name">Phút</span></div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit"><span class="countdown-value" id="cdSeconds">00</span><span class="countdown-name">Giây</span></div>
+            </div>
+          </div>
         </div>
-        <div class="hero-spacer" aria-hidden="true"></div>
-        </div>
-        <div class="hero-spacer" aria-hidden="true"></div>
-        <div class="mobile-hero-art" aria-hidden="true"></div>
+        <div class="hero-spacer" aria-hidden="true"></div><div class="mobile-hero-art" aria-hidden="true"></div>
       </div>
 
       <div class="mobile-event-meta" aria-label="Thông tin sự kiện trên di động">
         <div class="mobile-meta-top">
-          <div><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
-          <div><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">20/09/2026 - 15:00</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Thời gian</span><div class="mobile-meta-value">18 - 19 - 20/09/2026<br>8:30 - 21:00</div></div>
+          <div class="mobile-meta-item"><span class="mobile-meta-label">Hạn đăng ký</span><div class="mobile-meta-value">20/09/2026 - 15:00</div></div>
         </div>
         <div class="mobile-meta-venue"><span class="mobile-meta-label">Địa điểm</span><div class="mobile-meta-value">Hall B2 - Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Phường Tân Mỹ, TP. Hồ Chí Minh</div><a class="map-link" href="#">Xem trên Google Maps ↗</a></div>
       </div>
@@ -276,6 +235,7 @@ img{display:block;max-width:100%}
   const pad = n => String(n).padStart(2,'0');
 
   function updateCountdown(){
+    if(!days || !hours || !minutes || !seconds) return;
     const diff = Math.max(0, deadline - Date.now());
     days.textContent = pad(Math.floor(diff / 86400000));
     hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
