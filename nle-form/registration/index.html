@@ -62,8 +62,8 @@ img{display:block;max-width:100%}
 .mobile-hero-art{display:none}
 .mobile-event-meta{display:none}
 
-.facts{position:absolute;z-index:2;left:50%;bottom:34px;transform:translateX(-50%);width:min(1180px,calc(100% - 48px));margin:0;display:grid;grid-template-columns:.85fr .95fr 1.7fr;gap:14px}
-.fact{background:rgba(255,255,255,.84);border:1px solid rgba(169,43,53,.09);border-radius:22px;padding:20px 22px;box-shadow:0 12px 36px rgba(63,31,35,.04)}
+.facts{position:absolute;z-index:2;left:50%;bottom:34px;transform:translateX(-50%);width:min(1180px,calc(100% - 48px));margin:0;display:grid;grid-template-columns:1fr 1fr 1.55fr;gap:16px}
+.fact{background:rgba(255,255,255,.86);border:1px solid rgba(169,43,53,.09);border-radius:22px;padding:20px 22px;box-shadow:0 12px 36px rgba(63,31,35,.04);min-height:112px;display:flex;flex-direction:column;justify-content:center}
 .fact-label{display:block;color:var(--red);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:7px}
 .fact-value{font-size:14px;line-height:1.55;font-weight:600;color:#4d4042}
 .map-link{display:inline-flex;margin-top:8px;color:var(--red);font-size:12px;font-weight:700}
@@ -206,16 +206,143 @@ img{display:block;max-width:100%}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 .consent-highlight{color:var(--ink);font-weight:700}
+
+/* Desktop hero alignment — balanced composition */
+@media (min-width:981px){
+  .hero-shell{
+    width:100%;
+    margin:0;
+  }
+
+  .hero-copy{
+    margin:0;
+  }
+
+  .facts{
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    width:min(1320px,calc(100% - 96px));
+    grid-template-columns:.9fr .95fr 1.45fr;
+    gap:16px;
+  }
+}
+
+
+/* Final hero composition refinement */
+@media (min-width:981px){
+  /* Header removed: reclaim vertical space */
+  .hero{
+    padding-top:54px !important;
+  }
+
+  /* Keep the approved typo block untouched */
+  .hero-shell{
+    width:100% !important;
+    margin:0 !important;
+  }
+
+  /* Three information shapes:
+     1) first card ends on the same right edge as the typo block
+     2) remaining two cards use the rest of the row with balanced widths */
+  .facts{
+    left:0 !important;
+    right:0 !important;
+    transform:none !important;
+    width:100% !important;
+    grid-template-columns:minmax(330px,416px) minmax(300px,.92fr) minmax(440px,1.45fr) !important;
+    gap:18px !important;
+  }
+
+  .fact{
+    min-height:126px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+}
+
+@media (max-width:760px){
+  /* Header removed on mobile as well */
+  .hero{
+    padding-top:30px !important;
+  }
+}
+
+
+/* FIX: align the first information shape exactly with the typo left edge */
+@media (min-width:981px){
+  .hero > .container{
+    position:relative;
+  }
+
+  .facts{
+    left:0 !important;
+    right:0 !important;
+    transform:none !important;
+    width:100% !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.55fr) !important;
+    gap:18px !important;
+  }
+}
+
+
+/* FINAL DESKTOP FACTS POSITION:
+   keep left edge aligned with typo, move the 3 cards down like previous version */
+@media (min-width:981px){
+  .hero > .container{
+    position:relative !important;
+  }
+
+  .facts{
+    position:absolute !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:34px !important;
+    top:auto !important;
+    transform:none !important;
+    width:100% !important;
+    margin:0 !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.55fr) !important;
+    gap:18px !important;
+    z-index:5 !important;
+  }
+}
+
+
+/* CORRECTED DESKTOP FACTS POSITION
+   Anchor to the full hero, not the inner container.
+   Left edge remains aligned with the hero/typo container. */
+@media (min-width:981px){
+  .hero{
+    position:relative !important;
+  }
+
+  .hero > .container{
+    position:static !important;
+  }
+
+  .facts{
+    position:absolute !important;
+    left:50% !important;
+    right:auto !important;
+    bottom:24px !important;
+    top:auto !important;
+    transform:translateX(-50%) !important;
+
+    /* Same 1440px system as the hero copy/typo */
+    width:min(1440px,calc(100% - 80px)) !important;
+    margin:0 !important;
+
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.55fr) !important;
+    gap:18px !important;
+    z-index:5 !important;
+  }
+}
+
 </style>
 </head>
 <body>
-<nav class="nav">
-  <div class="container nav-inner">
-    <a class="brand-logo" href="#" aria-label="Nam Long"><img src="assets/logo-nam-long.webp" alt="Nam Long"></a>
-    <div class="lang"><span>English</span><span class="sep">|</span><span class="active">Tiếng Việt</span></div>
-  </div>
-</nav>
-
 <main>
   <section class="hero">
     <div class="container">
@@ -293,7 +420,8 @@ img{display:block;max-width:100%}
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">ĐĂNG KÝ NGAY</button>
-           </div>
+            <div class="privacy">Thông tin đăng ký được sử dụng cho mục đích phục vụ sự kiện.</div>
+          </div>
         </div>
       </form>
     </div>
