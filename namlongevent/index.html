@@ -2124,6 +2124,662 @@ background-size:cover!important;background-position:center!important;
 }
 </style>
 
+
+<style id="r22-refinement">
+/* Mobile language icon */
+@media(max-width:860px){
+  .lang span:first-child{color:var(--brand)!important}
+  .lang strong{color:var(--ink)!important}
+}
+
+/* Sales highlight tiles — use the 5-pillar palette as visual system */
+.activity-tile{
+  --tile-accent:var(--brand);
+  --tile-tint:rgba(164,12,21,.06);
+  background:linear-gradient(155deg,#fff 0%,var(--tile-tint) 100%)!important;
+  border-color:color-mix(in srgb,var(--tile-accent) 24%, transparent)!important;
+}
+.activity-tile:nth-child(1){--tile-accent:#27a97f;--tile-tint:rgba(39,169,127,.12)}
+.activity-tile:nth-child(2){--tile-accent:#d5a924;--tile-tint:rgba(213,169,36,.14)}
+.activity-tile:nth-child(3){--tile-accent:#8d42e8;--tile-tint:rgba(141,66,232,.11)}
+.activity-tile:nth-child(4){--tile-accent:#ca25a4;--tile-tint:rgba(202,37,164,.11)}
+.activity-tile:nth-child(5){--tile-accent:#ef8b3b;--tile-tint:rgba(239,139,59,.12)}
+.activity-tile::before{
+  background:var(--tile-accent)!important;
+  transform:scaleX(.42)!important;
+}
+.activity-tile:hover::before,
+.activity-tile:focus-within::before{transform:scaleX(1)!important}
+.activity-tile-no{color:var(--tile-accent)!important}
+.activity-tile:hover .activity-tile-body h3,
+.activity-tile:focus-within .activity-tile-body h3{color:var(--brand)!important}
+.activity-tile-highlights span{
+  border-color:color-mix(in srgb,var(--tile-accent) 34%, transparent)!important;
+  background:color-mix(in srgb,var(--tile-accent) 10%, white)!important;
+  color:color-mix(in srgb,var(--tile-accent) 82%, #201f20)!important;
+}
+
+/* Contextual register button: tighter arrow, +10% desktop */
+@media(min-width:721px){
+  .section-register-btn{
+    min-width:209px!important;
+    height:59px!important;
+    padding-left:31px!important;
+    padding-right:27px!important;
+    font-size:16px!important;
+    gap:10px!important;
+  }
+}
+@media(max-width:720px){
+  .section-register-btn{gap:10px!important}
+}
+
+/* Experience heading mobile */
+@media(max-width:720px){
+  .experience .section-title br{display:none}
+  .experience .section-title{max-width:100%;line-height:1.05}
+}
+
+/* Shorter gallery note */
+.gallery-disclaimer{font-style:italic}
+
+/* Quote */
+.quote blockquote{
+  font-size:48px!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
+}
+@media(max-width:560px){
+  .quote blockquote{font-size:48px!important}
+}
+
+/* Partner hierarchy */
+.partner-groups-tiered{margin-top:48px!important}
+.partner-groups-tiered .partner-group{
+  grid-template-columns:260px 1fr!important;
+  gap:44px!important;
+  padding:30px 0!important;
+}
+.partner-level-heading{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+.partner-level-index{
+  color:var(--brand);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+.partner-level-heading strong{
+  color:var(--ink);
+  font-size:20px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+.partner-level-heading small{
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.partner-level-kicker{
+  color:var(--brand);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.partner-group-strategic{
+  padding-top:38px!important;
+  padding-bottom:38px!important;
+}
+.partner-group-strategic .partner-level-heading strong{font-size:25px}
+.partner-group-strategic .partner-logo{
+  width:230px!important;height:108px!important;border-radius:18px!important
+}
+.sponsor-tier-diamond .partner-level-heading strong{font-size:22px}
+.sponsor-tier-diamond .partner-logo{
+  width:220px!important;height:104px!important
+}
+.sponsor-tier-gold .partner-level-heading strong{font-size:18px}
+.sponsor-tier-gold .partner-logo{
+  width:184px!important;height:88px!important
+}
+.sponsor-tier-silver .partner-level-heading strong{font-size:16px}
+.sponsor-tier-silver .partner-logo{
+  width:152px!important;height:74px!important;border-radius:13px!important;font-size:10px!important
+}
+.partner-group-media .partner-logo{
+  width:158px!important;height:76px!important
+}
+.partner-logo-organizer{width:210px!important;height:100px!important}
+@media(max-width:860px){
+  .partner-groups-tiered .partner-group{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+  }
+  .partner-level-heading{align-items:flex-start}
+  .partner-group-strategic .partner-logo,
+  .sponsor-tier-diamond .partner-logo,
+  .sponsor-tier-gold .partner-logo,
+  .sponsor-tier-silver .partner-logo,
+  .partner-group-media .partner-logo{
+    width:calc(50% - 7px)!important;
+    max-width:220px!important;
+    height:82px!important;
+  }
+}
+
+/* Mobile news title/card title must remain black */
+@media(max-width:720px){
+  .news-title,
+  .news-title span,
+  .news-card,
+  .news-card h3,
+  .news-card.featured .news-body h3{
+    color:var(--ink)!important;
+  }
+}
+
+/* Footer */
+.footer-logo-link{display:inline-block;text-decoration:none!important}
+.footer-contact a[href^="mailto:"]{
+  text-decoration:none!important;
+  border-bottom:0!important;
+}
+.footer-social{align-items:center}
+.social-dot{
+  text-decoration:none!important;
+  overflow:hidden;
+  transition:transform .25s var(--ease),background .25s var(--ease);
+}
+.social-dot svg{
+  width:15px;
+  height:15px;
+  fill:currentColor;
+  display:block;
+}
+.social-zalo svg{width:18px;height:18px}
+.social-dot:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.9);
+}
+
+/* Floating CTA: Nam Long icon + label on hover */
+.float-register-brand{
+  width:54px!important;
+  height:54px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:0!important;
+  overflow:hidden!important;
+  white-space:nowrap!important;
+  transition:width .34s var(--ease),padding .34s var(--ease),transform .25s var(--ease)!important;
+}
+.float-register-brand img{
+  width:27px;
+  height:27px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  flex:0 0 27px;
+}
+.float-register-brand span{
+  max-width:0;
+  opacity:0;
+  overflow:hidden;
+  font-size:14px;
+  font-weight:700;
+  transition:max-width .34s var(--ease),opacity .2s ease,margin .34s var(--ease);
+}
+.float-register-brand:hover,
+.float-register-brand:focus-visible{
+  width:166px!important;
+  padding:0 20px!important;
+  justify-content:flex-start!important;
+  gap:10px!important;
+}
+.float-register-brand:hover span,
+.float-register-brand:focus-visible span{
+  max-width:100px;
+  opacity:1;
+}
+@media(max-width:720px){
+  .float-register-brand:hover,
+  .float-register-brand:focus-visible{
+    width:54px!important;
+    padding:0!important;
+    justify-content:center!important;
+    gap:0!important;
+  }
+  .float-register-brand span{display:none}
+}
+</style>
+
+
+<style id="r23-highlight-zalo-floating">
+/* R23 — high-impact sales highlight cards using the same language as the five pillars */
+.activity-tile{
+  --tile-accent:#27a97f;
+  --tile-accent-2:#59c7a6;
+  --tile-text:#fff;
+  position:relative!important;
+  isolation:isolate;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 88% 6%, color-mix(in srgb,var(--tile-accent-2) 78%, white 22%) 0 16%, transparent 16.4%),
+    linear-gradient(145deg,var(--tile-accent) 0%,color-mix(in srgb,var(--tile-accent) 84%, #111 16%) 100%)!important;
+  border-color:transparent!important;
+  box-shadow:0 20px 46px rgba(35,25,25,.10)!important;
+}
+.activity-tile:nth-child(1){
+  --tile-accent:#22a87e;
+  --tile-accent-2:#59c7a6;
+}
+.activity-tile:nth-child(2){
+  --tile-accent:#d6aa20;
+  --tile-accent-2:#edd05e;
+}
+.activity-tile:nth-child(3){
+  --tile-accent:#8a3ee5;
+  --tile-accent-2:#b56cf2;
+}
+.activity-tile:nth-child(4){
+  --tile-accent:#c921a2;
+  --tile-accent-2:#e064c7;
+}
+.activity-tile:nth-child(5){
+  --tile-accent:#ee8735;
+  --tile-accent-2:#f5aa67;
+}
+.activity-tile::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  right:-58px;
+  top:-68px;
+  background:rgba(255,255,255,.12);
+  z-index:-1;
+  pointer-events:none;
+}
+.activity-tile::before{
+  left:28px!important;
+  right:auto!important;
+  width:54px!important;
+  height:3px!important;
+  background:rgba(255,255,255,.95)!important;
+  transform:none!important;
+  z-index:2;
+}
+.activity-tile:hover,
+.activity-tile:focus-within{
+  transform:translateY(-7px)!important;
+  background:
+    radial-gradient(circle at 88% 6%, color-mix(in srgb,var(--tile-accent-2) 84%, white 16%) 0 17%, transparent 17.4%),
+    linear-gradient(145deg,color-mix(in srgb,var(--tile-accent) 94%, white 6%) 0%,color-mix(in srgb,var(--tile-accent) 82%, #111 18%) 100%)!important;
+  box-shadow:0 28px 68px color-mix(in srgb,var(--tile-accent) 28%, transparent)!important;
+}
+.activity-tile-no,
+.activity-tile-tag,
+.activity-tile-body h3,
+.activity-tile-body p,
+.activity-tile-body p strong{
+  color:var(--tile-text)!important;
+}
+.activity-tile-tag{
+  opacity:.78;
+}
+.activity-tile-body h3{
+  text-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.activity-tile:hover .activity-tile-body h3,
+.activity-tile:focus-within .activity-tile-body h3{
+  color:#fff!important;
+}
+.activity-tile-body p{
+  opacity:.90;
+}
+.activity-tile-highlights span{
+  color:#fff!important;
+  background:rgba(255,255,255,.13)!important;
+  border-color:rgba(255,255,255,.28)!important;
+  backdrop-filter:blur(4px);
+}
+.activity-tile-highlights span:hover{
+  background:rgba(255,255,255,.19)!important;
+}
+
+/* Correct Zalo asset */
+.social-zalo img{
+  width:18px!important;
+  height:18px!important;
+  object-fit:contain;
+  display:block;
+}
+.social-zalo{
+  padding:0!important;
+  background:#fff!important;
+}
+
+/* Floating CTA: button stays round; label appears beside it */
+.float-register-wrap{
+  position:fixed;
+  right:22px;
+  bottom:88px;
+  z-index:980;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  pointer-events:none;
+}
+.float-register-wrap .float-register-brand{
+  position:static!important;
+  width:54px!important;
+  height:54px!important;
+  min-width:54px!important;
+  padding:0!important;
+  flex:0 0 54px;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  pointer-events:auto;
+  overflow:hidden!important;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease)!important;
+}
+.float-register-wrap .float-register-brand:hover,
+.float-register-wrap .float-register-brand:focus-visible{
+  width:54px!important;
+  padding:0!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 14px 30px rgba(164,12,21,.22)!important;
+}
+.float-register-wrap .float-register-brand img{
+  width:27px!important;
+  height:27px!important;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+.float-register-label{
+  order:-1;
+  display:inline-flex;
+  align-items:center;
+  height:40px;
+  padding:0 15px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--brand);
+  box-shadow:0 10px 28px rgba(30,18,18,.12);
+  border:1px solid rgba(164,12,21,.12);
+  font-size:14px;
+  font-weight:700;
+  white-space:nowrap;
+  opacity:0;
+  transform:translateX(10px);
+  pointer-events:none;
+  transition:opacity .22s ease,transform .28s var(--ease);
+}
+.float-register-wrap:has(.float-register-brand:hover) .float-register-label,
+.float-register-wrap:has(.float-register-brand:focus-visible) .float-register-label{
+  opacity:1;
+  transform:translateX(0);
+}
+@supports not selector(:has(*)){
+  .float-register-wrap:hover .float-register-label{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+@media(max-width:720px){
+  .float-register-wrap{
+    right:16px;
+    bottom:80px;
+  }
+  .float-register-label{display:none}
+}
+</style>
+
+
+<style id="r24-social-float-card-decoration">
+/* --- Sales highlight cards: replace circular decoration with a quieter architectural portal motif --- */
+.activity-tile{
+  overflow:hidden!important;
+}
+.activity-tile::before{
+  display:none!important; /* remove white line at top */
+}
+.activity-tile::after{
+  content:""!important;
+  position:absolute!important;
+  width:138px!important;
+  height:172px!important;
+  right:-26px!important;
+  top:-42px!important;
+  border-radius:30px 0 0 30px!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-right:0!important;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.035))!important;
+  box-shadow:
+    inset 22px 0 0 rgba(255,255,255,.055),
+    inset 46px 0 0 rgba(255,255,255,.028)!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+}
+.activity-tile:hover::after,
+.activity-tile:focus-within::after{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.20),rgba(255,255,255,.05))!important;
+}
+
+/* --- Footer social icons: all glyphs white, no incorrect colored variants --- */
+.footer-social .social-dot{
+  background:transparent!important;
+  border:1px solid rgba(255,255,255,.38)!important;
+  color:#fff!important;
+}
+.footer-social .social-dot:hover,
+.footer-social .social-dot:focus-visible{
+  background:rgba(255,255,255,.10)!important;
+  border-color:#fff!important;
+  color:#fff!important;
+}
+.footer-social .social-dot svg{
+  fill:#fff!important;
+  color:#fff!important;
+}
+.footer-social .social-dot img{
+  display:block!important;
+  object-fit:contain!important;
+  filter:brightness(0) invert(1)!important;
+}
+.footer-social .social-facebook img{
+  width:15px!important;
+  height:15px!important;
+}
+.footer-social .social-zalo img{
+  width:19px!important;
+  height:19px!important;
+  filter:brightness(0) invert(1)!important;
+}
+.footer-social .social-dot,
+.footer-social .social-zalo{
+  padding:0!important;
+}
+
+/* --- Floating register CTA: icon is absolutely fixed; label reveals beside it only --- */
+.float-register-wrap{
+  position:fixed!important;
+  right:22px!important;
+  bottom:88px!important;
+  width:54px!important;
+  height:54px!important;
+  z-index:980!important;
+  display:block!important;
+  pointer-events:none!important;
+}
+.float-register-wrap .float-register-brand{
+  position:absolute!important;
+  right:0!important;
+  top:0!important;
+  width:54px!important;
+  height:54px!important;
+  min-width:54px!important;
+  max-width:54px!important;
+  padding:0!important;
+  margin:0!important;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  pointer-events:auto!important;
+  transform:none!important;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease)!important;
+}
+.float-register-wrap .float-register-brand:hover,
+.float-register-wrap .float-register-brand:focus-visible{
+  width:54px!important;
+  min-width:54px!important;
+  max-width:54px!important;
+  padding:0!important;
+  transform:translateY(-2px)!important;
+}
+.float-register-label{
+  position:absolute!important;
+  right:64px!important;
+  top:50%!important;
+  transform:translate(12px,-50%)!important;
+  height:40px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  padding:0 15px!important;
+  margin:0!important;
+  border-radius:999px!important;
+  white-space:nowrap!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transition:opacity .2s ease,transform .28s var(--ease)!important;
+}
+.float-register-wrap:hover .float-register-label,
+.float-register-wrap:focus-within .float-register-label{
+  opacity:1!important;
+  transform:translate(0,-50%)!important;
+}
+
+@media(max-width:720px){
+  .float-register-wrap{
+    right:16px!important;
+    bottom:80px!important;
+  }
+  .float-register-label{
+    display:none!important;
+  }
+}
+</style>
+
+
+<style id="r25-ui-language">
+/* Highlight cards: no corner decoration; stronger clean gradients */
+.activity-tile::before,
+.activity-tile::after{display:none!important}
+.activity-tile{
+  background:linear-gradient(138deg,
+    color-mix(in srgb,var(--tile-accent) 98%, white 2%) 0%,
+    color-mix(in srgb,var(--tile-accent) 88%, #301319 12%) 58%,
+    color-mix(in srgb,var(--tile-accent) 76%, #111 24%) 100%)!important;
+  box-shadow:0 20px 48px color-mix(in srgb,var(--tile-accent) 20%, rgba(0,0,0,.08))!important;
+}
+.activity-tile:hover,
+.activity-tile:focus-within{
+  background:linear-gradient(138deg,
+    color-mix(in srgb,var(--tile-accent) 92%, white 8%) 0%,
+    color-mix(in srgb,var(--tile-accent) 86%, #301319 14%) 58%,
+    color-mix(in srgb,var(--tile-accent) 73%, #111 27%) 100%)!important;
+  box-shadow:0 28px 70px color-mix(in srgb,var(--tile-accent) 30%, transparent)!important;
+}
+
+/* Floating CTA: fixed circular icon never shifts; only label moves */
+.float-register-wrap{
+  width:54px!important;height:54px!important;
+  right:22px!important;bottom:88px!important;
+}
+.float-register-wrap .float-register-brand{
+  position:absolute!important;
+  inset:0!important;
+  width:54px!important;height:54px!important;
+  min-width:54px!important;max-width:54px!important;
+  margin:0!important;padding:0!important;
+  translate:0 0!important;
+  transform:none!important;
+}
+.float-register-wrap .float-register-brand:hover,
+.float-register-wrap .float-register-brand:focus-visible{
+  inset:0!important;
+  width:54px!important;height:54px!important;
+  min-width:54px!important;max-width:54px!important;
+  margin:0!important;padding:0!important;
+  translate:0 0!important;
+  transform:none!important;
+}
+.float-register-wrap .float-register-brand img{
+  position:absolute!important;
+  left:50%!important;top:50%!important;
+  translate:-50% -50%!important;
+  transform:none!important;
+  margin:0!important;
+}
+.float-register-label{
+  right:66px!important;
+}
+@media(max-width:720px){
+  .float-register-wrap{right:16px!important;bottom:80px!important}
+}
+
+/* Language toggle */
+.lang{cursor:pointer}
+.lang [data-lang-code]{transition:color .2s ease}
+.lang-menu-r25{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  min-width:142px;
+  padding:7px;
+  border-radius:14px;
+  border:1px solid rgba(27,22,22,.10);
+  background:rgba(255,255,255,.98);
+  box-shadow:0 14px 38px rgba(20,12,12,.12);
+  opacity:0;visibility:hidden;
+  transform:translateY(-5px);
+  transition:.22s var(--ease);
+  z-index:1500;
+}
+.lang-wrap-r25{position:relative}
+.lang-wrap-r25.open .lang-menu-r25{
+  opacity:1;visibility:visible;transform:translateY(0)
+}
+.lang-option-r25{
+  width:100%;height:40px;padding:0 12px;
+  border:0;border-radius:9px;background:transparent;
+  display:flex;align-items:center;justify-content:space-between;
+  font:inherit;font-size:13px;font-weight:700;color:var(--ink);
+  cursor:pointer;
+}
+.lang-option-r25:hover{background:rgba(164,12,21,.06);color:var(--brand)}
+.lang-option-r25.active{color:var(--brand);background:rgba(164,12,21,.06)}
+</style>
+
+
+<style id="r26-language-menu-fix">
+.header-actions .lang-wrap-r25{display:inline-flex;align-items:center;position:relative}
+@media(max-width:860px){
+  .lang-menu-r25{right:0;top:calc(100% + 8px)}
+}
+</style>
+
 </head>
 <body class="">
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
@@ -2134,7 +2790,13 @@ background-size:cover!important;background-position:center!important;
 <nav aria-label="Điều hướng nhanh" class="nav" id="nav">
 <a class="mobile-nav-cta" href="#agenda">Lịch trình</a><a class="mobile-nav-cta primary" href="#dang-ky">Đăng ký tham dự</a>
 </nav>
-<div class="header-actions"><a class="header-link" href="#agenda">Lịch trình</a><a class="header-register" href="#dang-ky">Đăng ký</a><button aria-label="Chuyển ngôn ngữ" class="lang" type="button"><span>◎</span><strong>VI</strong><span>/ EN</span></button></div>
+<div class="header-actions"><a class="header-link" href="#agenda">Lịch trình</a><a class="header-register" href="#dang-ky">Đăng ký</a><div class="lang-wrap-r25">
+<button aria-label="Chuyển ngôn ngữ" aria-expanded="false" aria-haspopup="true" class="lang" id="langTriggerR25" type="button"><span>◎</span><strong>VI</strong><span>/ EN</span></button>
+<div class="lang-menu-r25" id="langMenuR25" role="menu">
+<button class="lang-option-r25 active" type="button" data-set-lang="vi"><span>Tiếng Việt</span><span>VI</span></button>
+<button class="lang-option-r25" type="button" data-set-lang="en"><span>English</span><span>EN</span></button>
+</div>
+</div></div>
 <button aria-controls="nav" aria-expanded="false" aria-label="Mở menu" class="menu-btn" id="menuBtn"><span></span></button>
 </div>
 </header>
@@ -2267,12 +2929,12 @@ background-size:cover!important;background-position:center!important;
 </div>
 </section>
 <section class="section experience" id="trai-nghiem">
-<div class="container"><p class="eyebrow">Không gian trải nghiệm</p><h2 class="section-title">Từ bản quy hoạch<br/>đến một ngày sống thật.</h2><p class="section-lead">Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.</p>
+<div class="container"><p class="eyebrow">Không gian trải nghiệm</p><h2 class="section-title">Từ bản quy hoạch<br/> đến một ngày sống thật.</h2><p class="section-lead">Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.</p>
 <div class="gallery-shell reveal"><div class="gallery-viewport" id="galleryViewport"><div class="gallery-track" id="galleryTrack">
 <div aria-label="Nhóm hình 1" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian triển lãm Nam Long" src="assets/images/gallery/event-space-01.jpg"/><figcaption class="gallery-label">Toàn cảnh triển lãm</figcaption></button><button class="gallery-item" type="button"><img alt="Không gian tương tác tại sự kiện" src="assets/images/gallery/event-space-03.jpg"/><figcaption class="gallery-label">Trải nghiệm tương tác</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực giới thiệu dự án" src="assets/images/gallery/event-space-06.jpg"/><figcaption class="gallery-label">Khám phá hệ sinh thái dự án</figcaption></button></div>
 <div aria-label="Nhóm hình 2" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian đón khách tại sự kiện" src="assets/images/gallery/event-space-02.jpg"/><figcaption class="gallery-label">Không gian đón khách</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực trình diễn đa giác quan" src="assets/images/gallery/event-space-04.jpg"/><figcaption class="gallery-label">Trình diễn đa giác quan</figcaption></button><button class="gallery-item" type="button"><img alt="Hoạt động kết nối tại sự kiện" src="assets/images/gallery/event-space-05.jpg"/><figcaption class="gallery-label">Kết nối cộng đồng</figcaption></button></div>
 <div aria-label="Nhóm hình 3" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian trải nghiệm dự án" src="assets/images/gallery/event-space-07.jpg"/><figcaption class="gallery-label">Hành trình dự án</figcaption></button><button class="gallery-item" type="button"><img alt="Khách tham dự khám phá sự kiện" src="assets/images/gallery/event-space-08.webp"/><figcaption class="gallery-label">Khoảnh khắc trải nghiệm</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực tư vấn tại triển lãm" src="assets/images/gallery/event-space-01.png"/><figcaption class="gallery-label">Tư vấn chuyên sâu</figcaption></button></div>
-</div></div><div class="gallery-meta-row"><p class="gallery-disclaimer">Ghi chú: Hình ảnh chỉ mang tính chất minh họa và có thể thay đổi.</p><div class="gallery-controls"><button aria-label="Xem nhóm hình trước" class="gallery-arrow" id="galleryPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><span class="gallery-count"><b id="galleryCurrent">01</b> / 03</span><button aria-label="Xem nhóm hình tiếp theo" class="gallery-arrow" id="galleryNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div></div>
+</div></div><div class="gallery-meta-row"><p class="gallery-disclaimer">Hình ảnh mang tính minh họa</p><div class="gallery-controls"><button aria-label="Xem nhóm hình trước" class="gallery-arrow" id="galleryPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><span class="gallery-count"><b id="galleryCurrent">01</b> / 03</span><button aria-label="Xem nhóm hình tiếp theo" class="gallery-arrow" id="galleryNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div></div>
 
 <div class="section-register-cta reveal">
   <a class="section-register-btn" href="#dang-ky">
@@ -2308,7 +2970,89 @@ background-size:cover!important;background-position:center!important;
 </div>
 </section>
 <section class="section register" id="dang-ky"><div class="container register-simple"><div class="form-shell register-iframe-only reveal" data-delay="1"><iframe allow="clipboard-read; clipboard-write" id="registrationFrame" loading="eager" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="https://dev-namlong.sadec.co/public/event-registration/k6pug8nn?partner_id=landingPage&amp;flow=iframe&amp;utm_source=landingPage&amp;utm_medium=iframe&amp;utm_campaign=event_k6pug8nn" style="width:100%;height:2000px;border:0;display:block;overflow:hidden;background:transparent;" title="Form đăng ký Nam Long Experience 2026"></iframe></div></div></section>
-<section aria-labelledby="partnersTitle" class="section partners"><div class="container"><div class="partners-head reveal"><p class="eyebrow">Đồng hành cùng sự kiện</p><h2 class="section-title" id="partnersTitle">Những đơn vị kiến tạo nên hành trình.</h2></div><div class="partner-groups"><div class="partner-group reveal"><p>Đơn vị tổ chức</p><div class="partner-logos"><div class="partner-logo featured"><img alt="Nam Long" src="assets/images/logo-namlong-red.png"/></div></div></div><div class="partner-group reveal" data-delay="1"><p>Đối tác chiến lược</p><div class="partner-logos"><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div></div></div><div class="partner-group reveal" data-delay="1"><p>Nhà tài trợ</p><div class="partner-logos"><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div><div class="partner-logo placeholder">LOGO</div></div></div><div class="partner-group reveal" data-delay="2"><p>Bảo trợ truyền thông</p><div class="partner-logos"><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div><div class="partner-logo placeholder">MEDIA</div></div></div></div></div></section>
+<section aria-labelledby="partnersTitle" class="section partners">
+<div class="container">
+  <div class="partners-head reveal">
+    <p class="eyebrow">Đồng hành cùng sự kiện</p>
+    <h2 class="section-title" id="partnersTitle">Những đơn vị kiến tạo nên hành trình.</h2>
+  </div>
+
+  <div class="partner-groups partner-groups-tiered">
+    <div class="partner-group partner-group-organizer reveal">
+      <div class="partner-level-heading">
+        <span class="partner-level-kicker">Đơn vị tổ chức</span>
+      </div>
+      <div class="partner-logos partner-logos-organizer">
+        <div class="partner-logo partner-logo-organizer"><img alt="Nam Long" src="assets/images/logo-namlong-red.png"/></div>
+      </div>
+    </div>
+
+    <div class="partner-group partner-group-strategic reveal" data-delay="1">
+      <div class="partner-level-heading">
+        <span class="partner-level-index">01</span>
+        <strong>Đối tác chiến lược</strong>
+        <small>Strategic Partners</small>
+      </div>
+      <div class="partner-logos partner-logos-strategic">
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+      </div>
+    </div>
+
+    <div class="partner-group sponsor-tier sponsor-tier-diamond reveal" data-delay="1">
+      <div class="partner-level-heading">
+        <span class="partner-level-index">02</span>
+        <strong>Nhà tài trợ Kim cương</strong>
+        <small>Diamond Sponsor</small>
+      </div>
+      <div class="partner-logos">
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+      </div>
+    </div>
+
+    <div class="partner-group sponsor-tier sponsor-tier-gold reveal" data-delay="2">
+      <div class="partner-level-heading">
+        <span class="partner-level-index">03</span>
+        <strong>Nhà tài trợ Vàng</strong>
+        <small>Gold Sponsor</small>
+      </div>
+      <div class="partner-logos">
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+      </div>
+    </div>
+
+    <div class="partner-group sponsor-tier sponsor-tier-silver reveal" data-delay="3">
+      <div class="partner-level-heading">
+        <span class="partner-level-index">04</span>
+        <strong>Nhà tài trợ Bạc</strong>
+        <small>Silver Sponsor</small>
+      </div>
+      <div class="partner-logos">
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder">LOGO</div>
+      </div>
+    </div>
+
+    <div class="partner-group partner-group-media reveal" data-delay="4">
+      <div class="partner-level-heading">
+        <span class="partner-level-kicker">Bảo trợ truyền thông</span>
+      </div>
+      <div class="partner-logos">
+        <div class="partner-logo placeholder">MEDIA</div>
+        <div class="partner-logo placeholder">MEDIA</div>
+        <div class="partner-logo placeholder">MEDIA</div>
+        <div class="partner-logo placeholder">MEDIA</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 <section class="section news" id="tin-tuc"><div class="container"><div class="news-head"><div><p class="eyebrow">Tin tức &amp; hoạt động</p><h2 class="section-title news-title"><span>Cập nhật hành trình</span><br/><span>Nam Long Experience.</span></h2></div><div aria-label="Điều hướng tin tức" class="news-controls"><button aria-label="Xem tin mới hơn" class="news-arrow" id="newsPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Xem tin cũ hơn" class="news-arrow" id="newsNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div>
 <div class="news-viewport"><div class="news-grid" id="newsTrack">
 <button class="news-card featured reveal" data-content="Nam Long Journey 2025 đã mở ra một không gian trải nghiệm tích hợp, giúp khách tham dự tiếp cận trực quan hơn với hệ sinh thái đô thị và các lựa chọn an cư, đầu tư. Chuỗi hoạt động kết nối thông tin dự án, trải nghiệm không gian sống và tư vấn chuyên sâu trong cùng một hành trình.||Sự kiện cho thấy bất động sản không chỉ được nhìn qua mặt bằng hay thông số, mà cần được cảm nhận qua chất lượng quy hoạch, tiện ích, cộng đồng và khả năng vận hành trong đời sống thực." data-image="assets/images/gallery/event-space-07.jpg" data-meta="Dấu ấn sự kiện · 2025" data-slug="nam-long-journey-2025" data-title="Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm" data-url="https://www.namlongvn.com/tin-tuc/nam-long-journey-2025-experience-integrated-diem-hen-dau-tu-an-cu-dip-cuoi-nam/" type="button"><div class="news-thumb"><img alt="Nam Long Journey 2025" src="assets/images/gallery/event-space-07.jpg"/></div><div class="news-body"><div class="news-meta">Dấu ấn sự kiện · 2025</div><h3>Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm</h3><p>Nhìn lại chuỗi trải nghiệm tích hợp quy mô lớn và hành trình khám phá hệ sinh thái đô thị Nam Long.</p></div></button>
@@ -2317,8 +3061,26 @@ background-size:cover!important;background-position:center!important;
 </div></div>
 </div></section>
 </main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-contact"><img alt="Nam Long" class="footer-logo" src="assets/images/logo-namlong-white.png"/><div class="company">CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)</div><p><strong>MST:</strong> 0301438936</p><p><strong>Địa chỉ:</strong> Số 6 Nguyễn Khắc Viện, P. Tân Mỹ, TP. Hồ Chí Minh</p><p><strong>Điện thoại:</strong> (84-28) 54 16 17 18</p><p><strong>Email:</strong> <a href="mailto:info@namlongvn.com">info@namlongvn.com</a></p><p><a href="https://www.namlongvn.com/chinh-sach-bao-mat-du-lieu-ca-nhan/" rel="noopener" target="_blank">Chính sách bảo mật dữ liệu cá nhân</a></p></div><div><nav aria-label="Liên kết cuối trang" class="footer-nav"><a href="https://www.namlongvn.com/gioi-thieu/" rel="noopener" target="_blank">Giới thiệu</a><a href="https://www.namlongvn.com/linh-vuc-kinh-doanh/" rel="noopener" target="_blank">Lĩnh vực kinh doanh</a><a href="https://www.namlongvn.com/du-an/" rel="noopener" target="_blank">Dự án</a><a href="https://www.namlongvn.com/quan-he-nha-dau-tu/" rel="noopener" target="_blank">Quan hệ nhà đầu tư</a><a href="https://www.namlongvn.com/phat-trien-ben-vung/" rel="noopener" target="_blank">Phát triển bền vững</a><a href="https://www.namlongvn.com/tin-tuc/" rel="noopener" target="_blank">Tin tức</a><a href="https://www.namlongvn.com/tuyen-dung/" rel="noopener" target="_blank">Tuyển dụng</a><a href="https://www.namlongvn.com/lien-he/" rel="noopener" target="_blank">Liên hệ</a></nav><div aria-label="Mạng xã hội" class="footer-social"><span class="social-dot">f</span><span class="social-dot">▶</span><span class="social-dot">in</span><span class="social-dot">Z</span></div></div></div><div class="footer-bottom"><span>Bản quyền ©2026 Nam Long Group</span><div aria-label="DMCA protected" class="dmca"><span>DMCA</span><span>PROTECTED</span></div></div></div></footer>
-<div aria-label="Điều hướng nhanh" class="floating"><a aria-label="Đăng ký tham dự" class="float-btn float-register" href="#dang-ky"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></a><button aria-label="Về đầu trang" class="float-btn float-top" id="backTop" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg></button></div>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-contact"><a class="footer-logo-link" href="https://namlongvn.com" rel="noopener" target="_blank" aria-label="Nam Long"><img alt="Nam Long" class="footer-logo" src="assets/images/logo-namlong-white.png"/></a><div class="company">CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)</div><p><strong>MST:</strong> 0301438936</p><p><strong>Địa chỉ:</strong> Số 6 Nguyễn Khắc Viện, P. Tân Mỹ, TP. Hồ Chí Minh</p><p><strong>Điện thoại:</strong> (84-28) 54 16 17 18</p><p><strong>Email:</strong> <a href="mailto:info@namlongvn.com">info@namlongvn.com</a></p><p><a href="https://www.namlongvn.com/chinh-sach-bao-mat-du-lieu-ca-nhan/" rel="noopener" target="_blank">Chính sách bảo mật dữ liệu cá nhân</a></p></div><div><nav aria-label="Liên kết cuối trang" class="footer-nav"><a href="https://www.namlongvn.com/gioi-thieu/" rel="noopener" target="_blank">Giới thiệu</a><a href="https://www.namlongvn.com/linh-vuc-kinh-doanh/" rel="noopener" target="_blank">Lĩnh vực kinh doanh</a><a href="https://www.namlongvn.com/du-an/" rel="noopener" target="_blank">Dự án</a><a href="https://www.namlongvn.com/quan-he-nha-dau-tu/" rel="noopener" target="_blank">Quan hệ nhà đầu tư</a><a href="https://www.namlongvn.com/phat-trien-ben-vung/" rel="noopener" target="_blank">Phát triển bền vững</a><a href="https://www.namlongvn.com/tin-tuc/" rel="noopener" target="_blank">Tin tức</a><a href="https://www.namlongvn.com/tuyen-dung/" rel="noopener" target="_blank">Tuyển dụng</a><a href="https://www.namlongvn.com/lien-he/" rel="noopener" target="_blank">Liên hệ</a></nav><div aria-label="Mạng xã hội" class="footer-social">
+<a class="social-dot social-facebook" href="https://www.facebook.com/namlonggroup.nlg" rel="noopener" target="_blank" aria-label="Facebook">
+  <img src="assets/images/facebook-icon.png" alt="Facebook"/>
+</a>
+<a class="social-dot" href="https://www.youtube.com/namlongic" rel="noopener" target="_blank" aria-label="YouTube">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.9 12l-6.3 3.6Z"/></svg>
+</a>
+<a class="social-dot" href="https://www.linkedin.com/company/namlong" rel="noopener" target="_blank" aria-label="LinkedIn">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 7.8H1V22h4.4V7.8ZM3.2 1A2.6 2.6 0 1 0 3.2 6.2 2.6 2.6 0 0 0 3.2 1ZM22 13.9c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.3V7.8H8.2V22h4.4v-7c0-1.8.3-3.6 2.6-3.6 2.2 0 2.3 2.1 2.3 3.7V22H22v-8.1Z"/></svg>
+</a>
+<a class="social-dot social-zalo" href="https://zalo.me/1676058629598277837" rel="noopener" target="_blank" aria-label="Zalo">
+  <img src="assets/images/logo-zalo.webp" alt="Zalo"/>
+</a>
+</div></div></div><div class="footer-bottom"><span>Bản quyền ©2026 Nam Long Group</span><div aria-label="DMCA protected" class="dmca"><span>DMCA</span><span>PROTECTED</span></div></div></div></footer>
+<div aria-label="Điều hướng nhanh" class="floating"><div class="float-register-wrap">
+  <span class="float-register-label">Đăng ký ngay</span>
+  <a aria-label="Đăng ký ngay" class="float-btn float-register float-register-brand" href="#dang-ky">
+    <img src="assets/images/icon-namlong-group.webp" alt="" aria-hidden="true"/>
+  </a>
+</div><button aria-label="Về đầu trang" class="float-btn float-top" id="backTop" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg></button></div>
 <div aria-label="Xem ảnh không gian trải nghiệm" aria-modal="true" class="lightbox" id="lightbox" role="dialog"><div class="lightbox-dialog"><button aria-label="Đóng" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="lightbox-stage"><img alt="" id="lightboxImage" src=""/></div><button aria-label="Ảnh trước" class="lightbox-nav lightbox-prev" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Ảnh tiếp theo" class="lightbox-nav lightbox-next" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button><div class="lightbox-caption" id="lightboxCaption"></div></div></div>
 <div aria-labelledby="newsModalTitle" aria-modal="true" class="news-modal" id="newsModal" role="dialog"><div class="news-dialog"><button aria-label="Đóng bài viết" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="news-banner"><img alt="" id="newsModalImage" src=""/></div><article class="news-detail"><div class="news-meta" id="newsModalMeta"></div><h2 id="newsModalTitle"></h2><div id="newsModalContent"></div><div class="news-share">
 <button class="news-share-btn" id="newsShareBtn" type="button" aria-label="Chia sẻ bài viết">
@@ -2579,6 +3341,78 @@ background-size:cover!important;background-position:center!important;
   rail.addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
   addEventListener('resize',update);
   requestAnimationFrame(update);
+})();
+</script>
+
+
+<script id="language-r25">
+(()=>{
+  const VI_TO_EN={"Đăng ký ngay": "Register now", "Hành trình sống trọn giá trị": "A journey to living true value", "Nơi “Giá Trị Thực” được nhìn thấy, chạm đến và trải nghiệm.": "Where “True Value” can be seen, touched and experienced.", "Triển lãm của sự trải nghiệm thật và đặc quyền thực": "An exhibition of real experiences and tangible privileges", "TRẢI NGHIỆM ĐÔ THỊ": "URBAN EXPERIENCE", "Chạm thật không gian sống": "Experience real living spaces", "Trực tiếp trải nghiệm các hoạt động và không gian sống tại những đô thị Nam Long đang phát triển.": "Experience activities and living environments first-hand across Nam Long’s developing urban communities.", "Đô thị đáng sống": "Liveable communities", "Trải nghiệm thực tế": "Real-life experience", "ƯU ĐÃI ĐẶC QUYỀN": "EXCLUSIVE PRIVILEGES", "Ưu đãi lên đến 100 triệu đồng": "Privileges worth up to VND 100 million", "Check-in tại Nam Long Experience 2026 để nhận voucher ưu đãi đến ": "Check in at Nam Long Experience 2026 to receive privileges worth up to ", "100 triệu đồng": "VND 100 million", ", áp dụng khi giao dịch sản phẩm theo chính sách từng dự án.": ", applicable to transactions under each project’s policy.", "Voucher đến 100 triệu": "Voucher up to VND 100M", "Check-in tại sự kiện": "Event check-in", "CHỈ TRONG 3 NGÀY": "ONLY FOR 3 DAYS", "Quyết định nhanh – Ưu đãi thêm 1%": "Decide fast – Enjoy an extra 1%", "Cơ hội nhận thêm ưu đãi ": "Receive an additional ", "1%": "1%", " khi hoàn tất điều kiện giao dịch trong 3 ngày diễn ra Nam Long Experience 2026.": " when transaction conditions are completed during the three days of Nam Long Experience 2026.", "Flash Sale -1%": "Flash Sale -1%", "ƯU ĐÃI CỘNG DỒN": "STACKABLE PRIVILEGES", "Một giao dịch – Nhiều ưu đãi": "One transaction – Multiple privileges", "Đặc biệt, ưu đãi tại Nam Long Experience ": "Nam Long Experience privileges ", "có thể áp dụng đồng thời với các chương trình hiện hành của từng dự án": "may be combined with existing programs offered by each project", ", gia tăng quyền lợi khi giao dịch ngay tại sự kiện.": ", maximizing benefits for transactions made at the event.", "Ưu đãi cộng thêm": "Additional privileges", "Tối đa quyền lợi": "Maximum benefits", "Không gian trải nghiệm": "Experience space", "Từ bản quy hoạch": "From masterplan", "đến một ngày sống thật.": "to a real day of living.", "Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.": "The exhibition space combines models, presentation technology and multi-sensory interaction, bringing visitors into an intuitive urban journey.", "Hình ảnh mang tính minh họa": "Images are for illustration purposes", "5 lý do không nên bỏ lỡ": "5 reasons not to miss", "Một triển lãm. Năm chiều": "One exhibition. Five dimensions", "trải nghiệm đô thị.": "of urban experience.", "Một triển lãm. Năm chiều trải nghiệm đô thị.": "One exhibition. Five dimensions of urban experience.", "Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.": "Each space reveals a dimension of real life, helping visitors understand the enduring value behind a home or investment decision.", "Sống": "Living", "Học tập": "Learning", "Làm việc": "Working", "Mua sắm": "Shopping", "Giải trí": "Entertainment", "Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.": "Experience quality of life shaped by planning, amenities and community.", "Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.": "Explore an education ecosystem and environment that nurtures future generations.", "Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.": "Discover urban models connecting career, business and community opportunities.", "Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.": "Explore retail amenities serving everyday needs within the urban community.", "Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.": "Experience leisure, culture and multi-generational connection.", "Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.": "The value of real estate lies not only in what we own, but in the real life created every day.", "Agenda dự kiến": "Tentative agenda", "Ngày 1, 18/09": "Day 1, 18/09", "Ngày 2, 19/09": "Day 2, 19/09", "Ngày 3, 20/09": "Day 3, 20/09", "Cả ngày": "All day", "Sân khấu chính": "Main stage", "Talkshow": "Talkshow", "Đồng hành cùng sự kiện": "Event partners", "Những đơn vị kiến tạo nên hành trình.": "The partners shaping the journey.", "Đơn vị tổ chức": "Organizer", "Đối tác chiến lược": "Strategic Partners", "Nhà tài trợ Kim cương": "Diamond Sponsor", "Nhà tài trợ Vàng": "Gold Sponsor", "Nhà tài trợ Bạc": "Silver Sponsor", "Bảo trợ truyền thông": "Media Partners", "Tin tức & hoạt động": "News & activities", "Tin tức mới nhất": "Latest news", "Chia sẻ": "Share", "Sao chép liên kết": "Copy link", "Đọc bài viết tại nguồn": "Read original article", "Đã sao chép liên kết": "Link copied", "CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)": "NAM LONG INVESTMENT CORPORATION (HOSE: NLG)", "MST:": "Tax code:", "Địa chỉ:": "Address:", "Điện thoại:": "Phone:", "Chính sách bảo mật dữ liệu cá nhân": "Personal Data Privacy Policy", "Bản quyền": "Copyright", "Điều kiện & Điều khoản": "Terms & Conditions", "Chính sách Khiếu nại": "Complaint Policy", "Chính sách Bản quyền": "Copyright Policy", "Bản quyền ©2026 Nam Long": "Copyright ©2026 Nam Long"};
+  const EN_TO_VI=Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k]));
+  Object.assign(VI_TO_EN,{"Lịch trình": "Agenda", "Đăng ký tham dự": "Register", "Đăng ký": "Register", "Điều hướng nhanh": "Quick navigation", "Mở menu": "Open menu", "Chuyển ngôn ngữ": "Switch language", "Xem nhóm hình trước": "Previous gallery group", "Xem nhóm hình tiếp theo": "Next gallery group", "Hoạt động trước": "Previous highlight", "Hoạt động tiếp theo": "Next highlight", "Toàn cảnh triển lãm": "Exhibition overview", "Khám phá hệ sinh thái dự án": "Explore the project ecosystem", "Xem hình đầy đủ": "View full image"});
+  Object.assign(EN_TO_VI,Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k])));
+  let currentLang=localStorage.getItem('nl-lang')||'vi';
+
+  const trigger=document.getElementById('langTriggerR25');
+  const wrap=trigger?.closest('.lang-wrap-r25');
+  const menu=document.getElementById('langMenuR25');
+  const opts=[...document.querySelectorAll('[data-set-lang]')];
+
+  function translateTextNodes(map){
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode(node){
+        if(!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const p=node.parentElement;
+        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      const raw=node.nodeValue;
+      const trimmed=raw.trim();
+      if(map[trimmed]){
+        const lead=raw.match(/^\s*/)?.[0]||'';
+        const tail=raw.match(/\s*$/)?.[0]||'';
+        node.nodeValue=lead+map[trimmed]+tail;
+      }
+    });
+    document.querySelectorAll('[aria-label],[title],[alt],[placeholder]').forEach(el=>{
+      ['aria-label','title','alt','placeholder'].forEach(attr=>{
+        const val=el.getAttribute(attr);
+        if(val && map[val]) el.setAttribute(attr,map[val]);
+      });
+    });
+  }
+
+  function setLang(lang,initial=false){
+    if(lang===currentLang && !initial){ wrap?.classList.remove('open'); return; }
+    if(lang==='en' && currentLang==='vi') translateTextNodes(VI_TO_EN);
+    if(lang==='vi' && currentLang==='en') translateTextNodes(EN_TO_VI);
+    currentLang=lang;
+    localStorage.setItem('nl-lang',lang);
+    document.documentElement.lang=lang==='en'?'en':'vi';
+    opts.forEach(o=>o.classList.toggle('active',o.dataset.setLang===lang));
+    if(trigger){
+      const code=trigger.querySelector('strong');
+      if(code) code.textContent=lang==='en'?'EN':'VI';
+      trigger.setAttribute('aria-expanded','false');
+    }
+    wrap?.classList.remove('open');
+  }
+
+  trigger?.addEventListener('click',()=>{
+    const open=!wrap.classList.contains('open');
+    wrap.classList.toggle('open',open);
+    trigger.setAttribute('aria-expanded',String(open));
+  });
+  trigger?.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();trigger.click()}
+    if(e.key==='Escape'){wrap?.classList.remove('open');trigger.setAttribute('aria-expanded','false')}
+  });
+  opts.forEach(o=>o.addEventListener('click',()=>setLang(o.dataset.setLang)));
+  document.addEventListener('click',e=>{if(wrap&&!wrap.contains(e.target)){wrap.classList.remove('open');trigger?.setAttribute('aria-expanded','false')}});
+  if(currentLang==='en'){currentLang='vi';setLang('en',true)} else setLang('vi',true);
 })();
 </script>
 
