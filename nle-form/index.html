@@ -54,6 +54,9 @@ body{overflow:hidden}
   line-height:1.2;
   font-weight:700;
 }
+.mobile-tab-select-wrap{display:none}
+.mobile-tab-select{font:inherit}
+
 .review-meta{
   text-align:right;
   font-size:11px;
@@ -61,10 +64,10 @@ body{overflow:hidden}
   color:var(--muted);
 }
 .tabs{
-  width:min(660px,100%);
+  width:min(860px,100%);
   justify-self:center;
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:5px;
   padding:5px;
   border-radius:999px;
@@ -131,20 +134,55 @@ body{overflow:hidden}
   .review-title{font-size:14px}
   .eyebrow{font-size:9px}
   .review-meta{display:none}
-  .tabs{
-    margin-top:13px;
-    width:100%;
-    border-radius:20px;
-    gap:4px;
-    padding:5px;
+  .tabs{display:none}
+  .mobile-tab-select-wrap{
+    display:block;
+    margin-top:14px;
   }
-  .tab{
-    padding:10px 5px;
-    min-height:44px;
-    font-size:9.4px;
-    line-height:1.18;
-    white-space:normal;
-    text-align:center;
+  .mobile-tab-label{
+    display:block;
+    margin:0 0 7px 2px;
+    font-size:9px;
+    line-height:1.2;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#9a8588;
+  }
+  .mobile-tab-select-box{
+    position:relative;
+    width:100%;
+  }
+  .mobile-tab-select{
+    appearance:none;
+    -webkit-appearance:none;
+    width:100%;
+    height:48px;
+    padding:0 48px 0 16px;
+    border:1px solid #eadede;
+    border-radius:16px;
+    background:#f7f2f2;
+    color:var(--red);
+    font-size:11.5px;
+    line-height:1;
+    font-weight:700;
+    outline:none;
+    box-shadow:none;
+  }
+  .mobile-tab-select:focus{
+    border-color:#d8b9bc;
+    box-shadow:0 0 0 3px rgba(169,43,53,.07);
+  }
+  .mobile-tab-chevron{
+    position:absolute;
+    right:17px;
+    top:50%;
+    width:8px;
+    height:8px;
+    border-right:1.6px solid #a92b35;
+    border-bottom:1.6px solid #a92b35;
+    transform:translateY(-68%) rotate(45deg);
+    pointer-events:none;
   }
 
   /* Parent page scrolls; iframe is expanded to its content height.
@@ -184,10 +222,24 @@ body{overflow:hidden}
       <div class="review-title">Nam Long Experience 2026</div>
     </div>
 
+    <div class="mobile-tab-select-wrap">
+      <label class="mobile-tab-label" for="mobileTabSelect">Chọn nội dung xem</label>
+      <div class="mobile-tab-select-box">
+        <select id="mobileTabSelect" class="mobile-tab-select" aria-label="Chọn nội dung xem">
+          <option value="registration">01 · Form đăng ký</option>
+          <option value="confirmation">02 · Email xác nhận</option>
+          <option value="update">03 · Email cập nhật</option>
+          <option value="otp">04 · Xác thực OTP</option>
+        </select>
+        <span class="mobile-tab-chevron" aria-hidden="true"></span>
+      </div>
+    </div>
+
     <nav class="tabs" aria-label="Các hạng mục">
       <button class="tab active" data-hash="registration" data-src="registration/index.html" type="button">01 · Form đăng ký</button>
       <button class="tab" data-hash="confirmation" data-src="confirmation-email/index.html" type="button">02 · Email xác nhận</button>
       <button class="tab" data-hash="update" data-src="update-email/index.html" type="button">03 · Email cập nhật</button>
+      <button class="tab" data-hash="otp" data-src="otp/index.html" type="button">04 · Xác thực OTP</button>
     </nav>
 
     <div class="review-meta">Registration Journey<br>Final Preview</div>
@@ -205,10 +257,12 @@ body{overflow:hidden}
   const frame = document.getElementById('previewFrame');
   const stage = document.getElementById('previewStage');
   const tabs = [...document.querySelectorAll('.tab')];
+  const mobileSelect = document.getElementById('mobileTabSelect');
   const routes = {
     registration:'registration/index.html',
     confirmation:'confirmation-email/index.html',
-    update:'update-email/index.html'
+    update:'update-email/index.html',
+    otp:'otp/index.html'
   };
   let resizeObserver = null;
   let heightTimer = null;
@@ -303,6 +357,7 @@ body{overflow:hidden}
   function activate(hash, updateHash=true){
     const src = routes[hash] || routes.registration;
     tabs.forEach(t => t.classList.toggle('active', t.dataset.hash === hash));
+    if(mobileSelect && mobileSelect.value !== hash) mobileSelect.value = hash;
 
     if(frame.getAttribute('src') === src){
       measureFrame();
@@ -315,6 +370,7 @@ body{overflow:hidden}
   }
 
   tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.hash)));
+  if(mobileSelect) mobileSelect.addEventListener('change', () => activate(mobileSelect.value));
 
   window.addEventListener('resize', () => {
     syncScrollMode();
