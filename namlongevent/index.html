@@ -1319,6 +1319,676 @@ background-size:cover!important;background-position:center!important;
 }
 </style>
 
+
+<style id="activities-sales-r12">
+/* R12 — Sales-first activity section */
+.activities-sales{
+  position:relative;
+  overflow:hidden;
+  padding-top:clamp(84px,8vw,132px);
+  padding-bottom:clamp(88px,9vw,144px);
+  background:
+    radial-gradient(circle at 78% 14%, rgba(182,17,24,.055), transparent 29%),
+    linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(250,247,246,.94) 100%);
+}
+.activities-sales::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(182,17,24,.16),transparent);
+}
+.activities-head-sales{
+  max-width:980px;
+  margin:0 auto clamp(48px,5vw,76px);
+  text-align:center;
+}
+.activities-head-sales .section-title{
+  margin:0;
+  text-wrap:balance;
+}
+.activity-sales-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  border-top:1px solid rgba(27,22,22,.12);
+  border-bottom:1px solid rgba(27,22,22,.12);
+}
+.activity-sales-item{
+  position:relative;
+  min-height:500px;
+  padding:32px 32px 28px;
+  display:flex;
+  flex-direction:column;
+  border-right:1px solid rgba(27,22,22,.12);
+  background:rgba(255,255,255,.46);
+  transition:
+    background .45s var(--ease),
+    transform .45s var(--ease),
+    box-shadow .45s var(--ease);
+}
+.activity-sales-item:first-child{
+  border-left:1px solid rgba(27,22,22,.12);
+}
+.activity-sales-item::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:-1px;
+  height:3px;
+  background:transparent;
+  transform:scaleX(.18);
+  transform-origin:left;
+  transition:.45s var(--ease);
+}
+.activity-sales-item:hover,
+.activity-sales-item:focus-within{
+  background:#fff;
+  transform:translateY(-6px);
+  box-shadow:0 24px 64px rgba(34,20,20,.08);
+  z-index:2;
+}
+.activity-sales-item:hover::before,
+.activity-sales-item:focus-within::before{
+  background:var(--brand);
+  transform:scaleX(1);
+}
+.activity-sales-item--featured{
+  background:
+    linear-gradient(180deg,rgba(182,17,24,.055),rgba(255,255,255,.78));
+}
+.activity-sales-item--featured::before{
+  background:var(--brand);
+  transform:scaleX(1);
+}
+.activity-sales-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  min-height:32px;
+}
+.activity-sales-item .activity-index{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--brand);
+}
+.activity-kicker{
+  font-size:12px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.activity-sales-copy{
+  padding-top:clamp(50px,5vw,76px);
+}
+.activity-sales-copy h3{
+  margin:0 0 22px;
+  max-width:420px;
+  font-size:clamp(30px,2.7vw,46px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  color:var(--ink);
+}
+.activity-sales-copy p{
+  margin:0;
+  max-width:440px;
+  font-size:17px;
+  line-height:1.65;
+  color:var(--muted);
+}
+.activity-highlights{
+  margin-top:auto;
+  padding-top:36px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.activity-highlights span{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:7px 12px;
+  border:1px solid rgba(182,17,24,.18);
+  border-radius:999px;
+  background:rgba(182,17,24,.045);
+  color:var(--brand);
+  font-size:12px;
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.015em;
+}
+.activity-sales-item--featured .activity-highlights span{
+  background:var(--brand);
+  border-color:var(--brand);
+  color:#fff;
+}
+
+@media(max-width:980px){
+  .activity-sales-grid{
+    grid-template-columns:1fr;
+    border-bottom:0;
+  }
+  .activity-sales-item,
+  .activity-sales-item:first-child{
+    min-height:0;
+    border-left:1px solid rgba(27,22,22,.12);
+    border-bottom:1px solid rgba(27,22,22,.12);
+  }
+  .activity-sales-item{
+    padding:30px 28px;
+  }
+  .activity-sales-copy{
+    padding-top:38px;
+  }
+  .activity-highlights{
+    margin-top:34px;
+    padding-top:0;
+  }
+}
+@media(max-width:560px){
+  .activities-sales{
+    padding-top:72px;
+    padding-bottom:78px;
+  }
+  .activities-head-sales{
+    text-align:left;
+    margin-bottom:38px;
+  }
+  .activity-sales-item{
+    padding:26px 22px 24px;
+  }
+  .activity-sales-top{
+    align-items:flex-start;
+  }
+  .activity-kicker{
+    max-width:150px;
+    text-align:right;
+    line-height:1.35;
+  }
+  .activity-sales-copy{
+    padding-top:32px;
+  }
+  .activity-sales-copy h3{
+    font-size:34px;
+  }
+  .activity-sales-copy p{
+    font-size:16px;
+  }
+}
+</style>
+
+
+<style id="activities-balanced-r13">
+/* R13 — balanced modular rail: 3 equal tiles, scalable to 4/5/6+ without layout break */
+.activities-balanced{
+  position:relative;
+  overflow:hidden;
+  padding-top:clamp(86px,8vw,128px);
+  padding-bottom:clamp(88px,9vw,136px);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(182,17,24,.05), transparent 28%),
+    linear-gradient(180deg,rgba(255,255,255,.95),rgba(249,247,246,.96));
+}
+.activities-balanced-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  margin-bottom:clamp(42px,4.5vw,64px);
+}
+.activities-balanced-head .section-title{
+  margin:0;
+  max-width:920px;
+}
+.activity-rail-controls{
+  display:flex;
+  gap:10px;
+  flex:0 0 auto;
+}
+.activity-rail-btn{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(27,22,22,.14);
+  background:#fff;
+  color:var(--ink);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:.25s var(--ease);
+}
+.activity-rail-btn svg{width:20px;height:20px}
+.activity-rail-btn:hover,
+.activity-rail-btn:focus-visible{
+  border-color:var(--brand);
+  color:#fff;
+  background:var(--brand);
+  outline:none;
+}
+.activity-rail-btn:disabled{
+  opacity:.28;
+  cursor:default;
+  background:#fff;
+  color:var(--ink);
+  border-color:rgba(27,22,22,.12);
+}
+
+.activity-rail{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 40px)/3);
+  gap:20px;
+  overflow-x:auto;
+  overflow-y:visible;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:2px 1px 28px;
+}
+.activity-rail::-webkit-scrollbar{display:none}
+
+.activity-tile{
+  position:relative;
+  scroll-snap-align:start;
+  min-height:470px;
+  padding:28px 28px 26px;
+  display:flex;
+  flex-direction:column;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(27,22,22,.12);
+  border-radius:24px;
+  box-shadow:0 14px 40px rgba(36,25,25,.045);
+  transition:
+    transform .38s var(--ease),
+    box-shadow .38s var(--ease),
+    border-color .38s var(--ease),
+    background .38s var(--ease);
+}
+.activity-tile::before{
+  content:"";
+  position:absolute;
+  left:28px;
+  right:28px;
+  top:0;
+  height:3px;
+  border-radius:0 0 6px 6px;
+  background:linear-gradient(90deg,var(--brand),rgba(182,17,24,.28));
+  transform:scaleX(.24);
+  transform-origin:left;
+  transition:transform .38s var(--ease);
+}
+.activity-tile:hover,
+.activity-tile:focus-within{
+  transform:translateY(-6px);
+  border-color:rgba(182,17,24,.24);
+  background:#fff;
+  box-shadow:0 24px 60px rgba(36,25,25,.08);
+}
+.activity-tile:hover::before,
+.activity-tile:focus-within::before{
+  transform:scaleX(1);
+}
+.activity-tile-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.activity-tile-no{
+  color:var(--brand);
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.activity-tile-tag{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:right;
+}
+.activity-tile-body{
+  padding-top:54px;
+}
+.activity-tile-body h3{
+  margin:0 0 20px;
+  font-size:clamp(29px,2.25vw,40px);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:var(--ink);
+  min-height:82px;
+}
+.activity-tile-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.62;
+}
+.activity-tile-highlights{
+  margin-top:auto;
+  padding-top:32px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.activity-tile-highlights span{
+  min-height:32px;
+  display:inline-flex;
+  align-items:center;
+  padding:6px 11px;
+  border-radius:999px;
+  border:1px solid rgba(182,17,24,.17);
+  background:rgba(182,17,24,.045);
+  color:var(--brand);
+  font-size:12px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+@media(max-width:1100px){
+  .activity-rail{
+    grid-auto-columns:calc((100% - 20px)/2);
+  }
+}
+@media(max-width:720px){
+  .activities-balanced{
+    padding-top:72px;
+    padding-bottom:82px;
+  }
+  .activities-balanced-head{
+    align-items:flex-start;
+    margin-bottom:34px;
+  }
+  .activity-rail-controls{
+    display:none;
+  }
+  .activity-rail{
+    grid-auto-columns:min(86vw,370px);
+    gap:14px;
+    margin-right:-20px;
+    padding-right:20px;
+  }
+  .activity-tile{
+    min-height:430px;
+    padding:24px 22px;
+    border-radius:20px;
+  }
+  .activity-tile::before{
+    left:22px;
+    right:22px;
+  }
+  .activity-tile-body{
+    padding-top:42px;
+  }
+  .activity-tile-body h3{
+    min-height:0;
+    font-size:32px;
+  }
+}
+</style>
+
+
+<style id="spacing-activities-r14">
+/* R14 — tighter section rhythm */
+.section{
+  padding-top:clamp(64px,6vw,96px)!important;
+  padding-bottom:clamp(64px,6vw,96px)!important;
+}
+.activities-balanced{
+  padding-top:clamp(68px,6.5vw,104px)!important;
+  padding-bottom:clamp(70px,6.5vw,108px)!important;
+}
+.experience,
+.reasons,
+.agenda,
+.register,
+.partners,
+.news{
+  padding-top:clamp(66px,6vw,98px)!important;
+  padding-bottom:clamp(66px,6vw,98px)!important;
+}
+.quote{
+  padding-top:clamp(78px,7vw,112px)!important;
+  padding-bottom:clamp(78px,7vw,112px)!important;
+}
+
+/* Center the activity headline while preserving scalable rail controls. */
+.activities-balanced-head{
+  position:relative;
+  display:block!important;
+  text-align:center!important;
+  margin-bottom:clamp(36px,4vw,54px)!important;
+}
+.activities-balanced-head > div:first-child{
+  display:flex;
+  justify-content:center;
+}
+.activities-balanced-head .section-title{
+  max-width:980px!important;
+  margin:0 auto!important;
+  text-align:center!important;
+  text-wrap:balance;
+}
+.activity-rail-controls{
+  position:absolute;
+  right:0;
+  bottom:0;
+  transform:translateY(4px);
+}
+
+/* Hover/focus: title turns Nam Long red. */
+.activity-tile-body h3{
+  transition:color .28s var(--ease);
+}
+.activity-tile:hover .activity-tile-body h3,
+.activity-tile:focus-within .activity-tile-body h3{
+  color:var(--brand)!important;
+}
+
+@media(max-width:900px){
+  .section{
+    padding-top:58px!important;
+    padding-bottom:58px!important;
+  }
+  .activities-balanced{
+    padding-top:60px!important;
+    padding-bottom:64px!important;
+  }
+  .quote{
+    padding-top:68px!important;
+    padding-bottom:68px!important;
+  }
+}
+@media(max-width:720px){
+  .activities-balanced-head{
+    text-align:left!important;
+  }
+  .activities-balanced-head > div:first-child{
+    justify-content:flex-start;
+  }
+  .activities-balanced-head .section-title{
+    text-align:left!important;
+    margin-left:0!important;
+  }
+  .activity-rail-controls{
+    display:none!important;
+  }
+}
+</style>
+
+
+<style id="activities-r15-copy">
+.activity-tile-body p strong{
+  color:var(--ink);
+  font-weight:800;
+}
+.activity-tile-tag{
+  white-space:nowrap;
+}
+@media(min-width:1101px){
+  .activity-tile{
+    min-height:500px;
+  }
+  .activity-tile-body h3{
+    min-height:90px;
+  }
+}
+@media(max-width:1280px) and (min-width:1101px){
+  .activity-tile-tag{
+    font-size:11px;
+  }
+}
+</style>
+
+
+<style id="r16-controls-iframe">
+/* R16 — activity rail controls below cards */
+.activities-balanced-head{
+  margin-bottom:clamp(36px,4vw,54px)!important;
+}
+.activity-rail-controls{
+  position:static!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+}
+.activity-rail-controls--bottom{
+  display:flex!important;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+}
+.activity-rail-controls--bottom .activity-rail-btn{
+  width:50px;
+  height:50px;
+}
+@media(max-width:720px){
+  .activity-rail-controls--bottom{
+    display:flex!important;
+    margin-top:16px;
+  }
+}
+
+/* R16 — vendor already hides its own header: show iframe from y=0, no crop. */
+.register-iframe-only{
+  overflow:visible!important;
+  height:auto!important;
+  min-height:0!important;
+  width:100vw!important;
+  margin-left:calc(50% - 50vw)!important;
+}
+.register-iframe-only iframe#registrationFrame{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  transform:none!important;
+  translate:none!important;
+  position:relative!important;
+  top:0!important;
+  min-height:1900px!important;
+  height:1900px!important;
+  border:0!important;
+  overflow:hidden!important;
+}
+@media(max-width:860px){
+  .register-iframe-only iframe#registrationFrame{
+    min-height:2150px!important;
+    height:2150px!important;
+  }
+}
+@media(max-width:560px){
+  .register-iframe-only iframe#registrationFrame{
+    min-height:2350px!important;
+    height:2350px!important;
+  }
+}
+</style>
+
+
+<style id="registration-height-r17">
+/* R17 — PICO iframe is cross-origin and currently does not report reliable document height.
+   Use generous responsive heights so the full form + CTA are always visible. */
+.register{
+  overflow:visible!important;
+}
+.register .container,
+.register-iframe-only{
+  overflow:visible!important;
+  max-width:none!important;
+}
+.register-iframe-only{
+  width:100vw!important;
+  max-width:none!important;
+  margin-left:calc(50% - 50vw)!important;
+  height:2180px!important;
+  min-height:2180px!important;
+}
+.register-iframe-only iframe#registrationFrame{
+  display:block!important;
+  width:100%!important;
+  height:2180px!important;
+  min-height:2180px!important;
+  border:0!important;
+  overflow:hidden!important;
+  transform:none!important;
+}
+
+@media(max-width:1180px){
+  .register-iframe-only,
+  .register-iframe-only iframe#registrationFrame{
+    height:2280px!important;
+    min-height:2280px!important;
+  }
+}
+@media(max-width:860px){
+  .register-iframe-only,
+  .register-iframe-only iframe#registrationFrame{
+    height:2460px!important;
+    min-height:2460px!important;
+  }
+}
+@media(max-width:560px){
+  .register-iframe-only,
+  .register-iframe-only iframe#registrationFrame{
+    height:2720px!important;
+    min-height:2720px!important;
+  }
+}
+</style>
+
+
+<style id="activity-rail-top-fix-r18">
+/* R18 — restore breathing room above highlight cards.
+   The rail previously started too close to the headline and visually clipped the card tops. */
+.activity-rail{
+  padding-top:22px!important;
+  margin-top:-22px!important;
+  scroll-padding-top:22px;
+  overflow-y:visible!important;
+}
+.activities-balanced{
+  overflow:visible!important;
+}
+.activities-balanced .container{
+  overflow:visible!important;
+}
+.activity-tile{
+  overflow:visible;
+}
+@media(max-width:900px){
+  .activity-rail{
+    padding-top:16px!important;
+    margin-top:-16px!important;
+  }
+}
+</style>
+
 </head>
 <body class="">
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
@@ -1368,22 +2038,90 @@ background-size:cover!important;background-position:center!important;
 <div aria-hidden="true" class="intro-orbit"><span>GIÁ TRỊ THỰC</span><i></i><span>TRẢI NGHIỆM THẬT</span><i></i><span>CUỘC SỐNG THẬT</span></div>
 </div>
 </section>
-<section class="section reasons" id="ly-do">
-<div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title responsive-title"><span class="title-desktop">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</span><span class="title-mobile">Một triển lãm. Năm chiều trải nghiệm đô thị.</span></h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
-<div class="reason-grid"><article class="reason-card reason-static"><img alt="" src="assets/icons/Song.png"/><div class="reason-static-copy"><h3>Sống</h3><p>Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Hoa tap.png"/><div class="reason-static-copy"><h3>Học tập</h3><p>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Lam viec.png"/><div class="reason-static-copy"><h3>Làm việc</h3><p>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Mua sam.png"/><div class="reason-static-copy"><h3>Mua sắm</h3><p>Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Giai tri.png"/><div class="reason-static-copy"><h3>Giải trí</h3><p>Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.</p></div></article></div>
+<section class="section activities activities-balanced" id="hoat-dong">
+<div class="container activities-balanced-wrap">
+  <div class="activities-balanced-head reveal">
+    <div>
+      <h2 class="section-title">Triển lãm của sự trải nghiệm thật và đặc quyền thực</h2>
+    </div>
+    
+  </div>
+
+  <div class="activity-rail" id="activityRail">
+    <article class="activity-tile reveal">
+      <div class="activity-tile-head">
+        <span class="activity-tile-no">01</span>
+        <span class="activity-tile-tag">TRẢI NGHIỆM ĐÔ THỊ</span>
+      </div>
+      <div class="activity-tile-body">
+        <h3>Chạm thật không gian sống</h3>
+        <p>Trực tiếp trải nghiệm các hoạt động và không gian sống tại những đô thị Nam Long đang phát triển.</p>
+      </div>
+      <div class="activity-tile-highlights" aria-label="Điểm nổi bật Trải nghiệm đô thị">
+        <span>Đô thị đáng sống</span>
+        <span>Trải nghiệm thực tế</span>
+      </div>
+    </article>
+
+    <article class="activity-tile reveal" data-delay="1">
+      <div class="activity-tile-head">
+        <span class="activity-tile-no">02</span>
+        <span class="activity-tile-tag">ƯU ĐÃI ĐẶC QUYỀN</span>
+      </div>
+      <div class="activity-tile-body">
+        <h3>Ưu đãi lên đến 100 triệu đồng</h3>
+        <p>Check-in tại Nam Long Experience 2026 để nhận voucher ưu đãi đến <strong>100 triệu đồng</strong>, áp dụng khi giao dịch sản phẩm theo chính sách từng dự án.</p>
+      </div>
+      <div class="activity-tile-highlights" aria-label="Điểm nổi bật Ưu đãi đặc quyền">
+        <span>Voucher đến 100 triệu</span>
+        <span>Check-in tại sự kiện</span>
+      </div>
+    </article>
+
+    <article class="activity-tile reveal" data-delay="2">
+      <div class="activity-tile-head">
+        <span class="activity-tile-no">03</span>
+        <span class="activity-tile-tag">CHỈ TRONG 3 NGÀY</span>
+      </div>
+      <div class="activity-tile-body">
+        <h3>Quyết định nhanh – Ưu đãi thêm 1%</h3>
+        <p>Cơ hội nhận thêm ưu đãi <strong>1%</strong> khi hoàn tất điều kiện giao dịch trong 3 ngày diễn ra Nam Long Experience 2026.</p>
+      </div>
+      <div class="activity-tile-highlights" aria-label="Điểm nổi bật Chỉ trong 3 ngày">
+        <span>Flash Sale -1%</span>
+        <span>18–20.09.2026</span>
+      </div>
+    </article>
+
+    <article class="activity-tile reveal" data-delay="3">
+      <div class="activity-tile-head">
+        <span class="activity-tile-no">04</span>
+        <span class="activity-tile-tag">ƯU ĐÃI CỘNG DỒN</span>
+      </div>
+      <div class="activity-tile-body">
+        <h3>Một giao dịch – Nhiều ưu đãi</h3>
+        <p>Đặc biệt, ưu đãi tại Nam Long Experience <strong>có thể áp dụng đồng thời với các chương trình hiện hành của từng dự án</strong>, gia tăng quyền lợi khi giao dịch ngay tại sự kiện.</p>
+      </div>
+      <div class="activity-tile-highlights" aria-label="Điểm nổi bật Ưu đãi cộng dồn">
+        <span>Ưu đãi cộng thêm</span>
+        <span>Tối đa quyền lợi</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="activity-rail-controls activity-rail-controls--bottom" aria-label="Điều hướng hoạt động">
+    <button class="activity-rail-btn" id="activityRailPrev" type="button" aria-label="Hoạt động trước">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="activity-rail-btn" id="activityRailNext" type="button" aria-label="Hoạt động tiếp theo">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Khi có thêm hoạt động, chỉ cần nhân bản .activity-tile.
+       Desktop hiển thị 3 tile cân bằng; tile thứ 4 trở đi tự chuyển thành horizontal rail. -->
 </div>
 </section>
-<section class="section activities" id="hoat-dong">
-<div class="container activities-wrap">
-<div class="activities-head reveal"><p class="eyebrow">Hoạt động &amp; quà tặng</p><h2 class="section-title">Mỗi điểm chạm, thêm một trải nghiệm đáng nhớ.</h2><p class="section-lead">Nội dung đang được hoàn thiện. Dưới đây là mô phỏng nhóm hoạt động dự kiến để định hình trải nghiệm tổng thể của sự kiện.</p></div>
-<div class="activity-grid">
-<article class="activity-card reveal"><span class="activity-index">01</span><div><h3>Living Experience</h3><p>Trải nghiệm các hoạt động thú vị của các đô thị đáng sống Nam Long đang phát triển.</p></div><span class="activity-arrow">↗</span></article>
-<article class="activity-card reveal" data-delay="1"><span class="activity-index">02</span><div><h3>Trải nghiệm Thật - Quà Thực</h3><p>Nhận ưu đãi voucher 50-100 triệu (áp dụng cho tất cả người tham gia check in hợp lệ, số lượng giới hạn). Flash sales giảm 1% chỉ trong 3 ngày sự kiện. Được áp dụng đồng thời cùng những chương trình ưu đãi khác.</p></div><span class="activity-arrow">↗</span></article>
-<article class="activity-card reveal" data-delay="2"><span class="activity-index">03</span><div><h3>Đại tiệc thị giác</h3><p>Thưởng thức âm nhạc, giải trí và các show diễn đô thị thực tế chỉ có tại Nam Long Experience 2026.</p></div><span class="activity-arrow">↗</span></article>
-</div>
-</div>
-</section>
-<section class="quote"><div class="container"><blockquote>Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.</blockquote><p>Nam Long Experience 2026 · Triển lãm Bất động sản Giá Trị Thực</p></div></section>
 <section class="section experience" id="trai-nghiem">
 <div class="container"><p class="eyebrow">Không gian trải nghiệm</p><h2 class="section-title">Từ bản quy hoạch<br/>đến một ngày sống thật.</h2><p class="section-lead">Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.</p>
 <div class="gallery-shell reveal"><div class="gallery-viewport" id="galleryViewport"><div class="gallery-track" id="galleryTrack">
@@ -1393,6 +2131,12 @@ background-size:cover!important;background-position:center!important;
 </div></div><div class="gallery-meta-row"><p class="gallery-disclaimer">Ghi chú: Hình ảnh chỉ mang tính chất minh họa và có thể thay đổi.</p><div class="gallery-controls"><button aria-label="Xem nhóm hình trước" class="gallery-arrow" id="galleryPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><span class="gallery-count"><b id="galleryCurrent">01</b> / 03</span><button aria-label="Xem nhóm hình tiếp theo" class="gallery-arrow" id="galleryNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div></div>
 </div>
 </section>
+<section class="section reasons" id="ly-do">
+<div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title responsive-title"><span class="title-desktop">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</span><span class="title-mobile">Một triển lãm. Năm chiều trải nghiệm đô thị.</span></h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
+<div class="reason-grid"><article class="reason-card reason-static"><img alt="" src="assets/icons/Song.png"/><div class="reason-static-copy"><h3>Sống</h3><p>Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Hoa tap.png"/><div class="reason-static-copy"><h3>Học tập</h3><p>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Lam viec.png"/><div class="reason-static-copy"><h3>Làm việc</h3><p>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Mua sam.png"/><div class="reason-static-copy"><h3>Mua sắm</h3><p>Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Giai tri.png"/><div class="reason-static-copy"><h3>Giải trí</h3><p>Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.</p></div></article></div>
+</div>
+</section>
+<section class="quote"><div class="container"><blockquote>Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.</blockquote><p>Nam Long Experience 2026 · Triển lãm Bất động sản Giá Trị Thực</p></div></section>
 <section class="section agenda" id="agenda">
 <div class="container"><p class="eyebrow">Agenda dự kiến</p><h2 class="section-title">Ba ngày kết nối giá trị an cư, đầu tư và phát triển.</h2><p class="demo-note">Nội dung dưới đây là dữ liệu demo và có thể cập nhật trực tiếp trong HTML khi chương trình chính thức được phê duyệt.</p>
 <div aria-label="Chọn ngày sự kiện" class="agenda-tabs" role="tablist"><button aria-controls="day1" aria-selected="true" class="tab" id="tab1" role="tab">Ngày 1, 18/09</button><button aria-controls="day2" aria-selected="false" class="tab" id="tab2" role="tab">Ngày 2, 19/09</button><button aria-controls="day3" aria-selected="false" class="tab" id="tab3" role="tab">Ngày 3, 20/09</button></div>
@@ -1632,8 +2376,12 @@ background-size:cover!important;background-position:center!important;
     const h = Number(value);
     if (!Number.isFinite(h) || h < 900 || h > 5000) return;
     frame.style.height = `${Math.ceil(h)}px`;
+    frame.style.minHeight = `${Math.ceil(h)}px`;
     const shell = frame.closest('.register-iframe-only');
-    if (shell) { shell.style.height = `${Math.ceil(h)}px`; shell.style.minHeight = `${Math.ceil(h)}px`; }
+    if (shell) {
+      shell.style.height = `${Math.ceil(h)}px`;
+      shell.style.minHeight = `${Math.ceil(h)}px`;
+    }
   };
   window.addEventListener('message', event => {
     if (event.origin !== 'https://dev-namlong.sadec.co') return;
@@ -1642,4 +2390,34 @@ background-size:cover!important;background-position:center!important;
     applyHeight(data.height ?? data.iframeHeight ?? data.frameHeight ?? data.documentHeight);
   });
 })();
-</script></body></html>
+</script>
+<script id="activity-rail-r13">
+(()=>{
+  const rail=document.getElementById('activityRail');
+  const prev=document.getElementById('activityRailPrev');
+  const next=document.getElementById('activityRailNext');
+  if(!rail||!prev||!next)return;
+
+  const step=()=>{
+    const tile=rail.querySelector('.activity-tile');
+    if(!tile)return rail.clientWidth;
+    const gap=parseFloat(getComputedStyle(rail).columnGap||getComputedStyle(rail).gap||0);
+    return tile.getBoundingClientRect().width+gap;
+  };
+  const update=()=>{
+    const max=rail.scrollWidth-rail.clientWidth-2;
+    prev.disabled=rail.scrollLeft<=2;
+    next.disabled=rail.scrollLeft>=max;
+    const noOverflow=rail.scrollWidth<=rail.clientWidth+2;
+    prev.style.visibility=noOverflow?'hidden':'visible';
+    next.style.visibility=noOverflow?'hidden':'visible';
+  };
+  prev.addEventListener('click',()=>rail.scrollBy({left:-step(),behavior:'smooth'}));
+  next.addEventListener('click',()=>rail.scrollBy({left:step(),behavior:'smooth'}));
+  rail.addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
+  addEventListener('resize',update);
+  requestAnimationFrame(update);
+})();
+</script>
+
+</body></html>
