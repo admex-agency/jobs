@@ -24,7 +24,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#fffafa,#fbf5f5 52%,#fff);font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#FCFAFA;font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font-family:'BT Beau Sans';font:inherit}
 img{display:block;max-width:100%}
@@ -42,7 +42,7 @@ img{display:block;max-width:100%}
 .hero:before{content:"";position:absolute;inset:0;background:url('assets/hero-event-desktop.png') center center/cover no-repeat;pointer-events:none}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,253,253,.98) 0%,rgba(255,253,253,.94) 31%,rgba(255,253,253,.72) 47%,rgba(255,253,253,.18) 62%,transparent 78%);pointer-events:none}
 .hero-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);align-items:center;gap:56px;width:min(1180px,100%);margin:auto;min-height:390px}
-.kicker{font-weight:700;color:var(--red);font-size:14px;letter-spacing:.16em;text-transform:uppercase}
+.kicker{font-weight:700;color:var(--red);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
 .hero h1{font-size:clamp(48px,5.2vw,78px);line-height:.94;letter-spacing:-.052em;margin:12px 0 18px;font-weight:700;color:var(--ink);max-width:720px}
 .hero h1 span{color:var(--red)}
 .hero-typo{margin:14px 0 18px;max-width:min(416px,68.8%)}
@@ -68,9 +68,9 @@ img{display:block;max-width:100%}
 .fact-value{font-size:14px;line-height:1.55;font-weight:600;color:#4d4042}
 .map-link{display:inline-flex;margin-top:8px;color:var(--red);font-size:12px;font-weight:700}
 
-.registration{padding:74px 0 104px}
+.registration{padding:74px 0 104px;background:#FCFAFA}
 .section-head{text-align:center;width:min(760px,100%);margin:0 auto 34px}
-.section-head .h2{font-size:50px;line-height:1.5;letter-spacing:-.045em;margin:8px 0 0;color:var(--ink);font-weight:700}
+.section-head .h2{font-size:50px;line-height:1;letter-spacing:-.045em;margin:8px 0 0;color:var(--ink);font-weight:700}
 .section-head .desc{margin:16px auto 0;color:var(--muted);font-size:15.5px;max-width:620px}
 .section-head .desc strong{color:var(--red)}
 
@@ -96,7 +96,7 @@ img{display:block;max-width:100%}
 .date-text strong{font-size:16px;color:#493a3c}
 .date-text small{font-size:12px;color:var(--muted)}
 .date-option:hover .date-card{border-color:rgba(169,43,53,.34);transform:translateY(-1px)}
-.date-option input:checked+.date-card{background:#fff2f3;border-color:var(--red);box-shadow:0 12px 30px rgba(169,43,53,.08)}
+.date-option input:checked+.date-card{background:#FCFAFA;border-color:#CFC7C8;box-shadow:none}
 .date-option input:checked+.date-card .date-dot{border-color:var(--red);background:var(--red)}
 .date-option input:checked+.date-card .date-dot:after{opacity:1;transform:scale(1)}
 .date-option input:focus-visible+.date-card{outline:3px solid rgba(169,43,53,.10);outline-offset:2px}
@@ -106,7 +106,7 @@ img{display:block;max-width:100%}
 .consent input{appearance:none;width:20px;height:20px;margin:1px 0 0;border:1.5px solid #cbbabd;border-radius:5px;background:#fff;display:grid;place-items:center;cursor:pointer}
 .consent input:checked{background:var(--red);border-color:var(--red)}
 .consent input:checked:after{content:"✓";font-size:13px;color:#fff;font-weight:700;line-height:1}
-.policy{color:var(--red);font-weight:700}
+.policy{color:var(--ink);font-weight:700}
 
 .form-actions{grid-column:1/-1;margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .btn{border:0;border-radius:999px;padding:15px 28px;font:700 14px 'BT Beau Sans';display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s ease;white-space:nowrap}
@@ -139,7 +139,7 @@ img{display:block;max-width:100%}
   .hero-copy{width:calc(100% - 40px);margin:0 auto 26px}
   .kicker{font-size:11px;letter-spacing:.15em}
   .hero h1{font-size:clamp(40px,11.2vw,50px);line-height:.91;letter-spacing:-.052em;margin:10px 0 0;max-width:390px}
-  .hero-typo{margin:12px 0 0;max-width:min(320px,82%)}
+  .hero-typo{margin:12px 0 0;max-width:min(288px,73.6%)}
   .hero-typo-fallback{font-size:clamp(40px,11.2vw,50px);line-height:.91}
   .hero-countdown{margin-top:22px;gap:12px;align-items:flex-start}
   .hero-countdown-label{font-size:9.5px;max-width:72px;line-height:1.45;letter-spacing:.1em;padding-top:1px}
@@ -205,7 +205,7 @@ img{display:block;max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-.consent-highlight{color:#a92b35;font-weight:700}
+.consent-highlight{color:var(--ink);font-weight:700}
 </style>
 </head>
 <body>
@@ -293,7 +293,7 @@ img{display:block;max-width:100%}
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">ĐĂNG KÝ NGAY</button>
-            <div class="privacy"></div>
+            <div class="privacy">Thông tin đăng ký được sử dụng cho mục đích phục vụ sự kiện.</div>
           </div>
         </div>
       </form>
