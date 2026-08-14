@@ -1989,6 +1989,141 @@ background-size:cover!important;background-position:center!important;
 }
 </style>
 
+
+<style id="section-register-cta-r19">
+/* R19 — contextual conversion CTA after the three key sales sections */
+.section-register-cta{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:clamp(34px,3vw,48px);
+}
+.section-register-btn{
+  min-width:190px;
+  height:54px;
+  padding:0 24px 0 28px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  background:var(--brand);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+  border:1px solid var(--brand);
+  transition:
+    transform .3s var(--ease),
+    background-color .3s var(--ease),
+    box-shadow .3s var(--ease);
+}
+.section-register-btn svg{
+  width:19px;
+  height:19px;
+  flex:0 0 auto;
+  transition:transform .3s var(--ease);
+}
+.section-register-btn:hover{
+  transform:translateY(-2px);
+  background:#9f1018;
+  box-shadow:0 12px 28px rgba(174,17,27,.16);
+}
+.section-register-btn:hover svg{
+  transform:translateX(4px);
+}
+.section-register-btn:focus-visible{
+  outline:3px solid rgba(174,17,27,.22);
+  outline-offset:4px;
+}
+@media(max-width:720px){
+  .section-register-cta{
+    margin-top:30px;
+  }
+  .section-register-btn{
+    width:min(100%,280px);
+    height:52px;
+  }
+}
+</style>
+
+
+<style id="section-spacing-r20">
+/* R20 — tighter section rhythm, especially after contextual CTA blocks */
+.section{
+  padding-top:clamp(52px,4.8vw,78px)!important;
+  padding-bottom:clamp(52px,4.8vw,78px)!important;
+}
+.activities-balanced,
+.experience,
+.reasons,
+.agenda,
+.register,
+.partners,
+.news{
+  padding-top:clamp(52px,4.8vw,78px)!important;
+  padding-bottom:clamp(52px,4.8vw,78px)!important;
+}
+.quote{
+  padding-top:clamp(64px,5.5vw,88px)!important;
+  padding-bottom:clamp(64px,5.5vw,88px)!important;
+}
+
+/* CTA should finish the section without creating a second large whitespace block */
+.section-register-cta{
+  margin-top:30px!important;
+  margin-bottom:0!important;
+}
+
+/* Reduce extra breathing room at specific transitions */
+.activities-balanced + .experience,
+.experience + .reasons,
+.reasons + .quote{
+  margin-top:0!important;
+}
+
+/* Mobile: compact but still breathable */
+@media(max-width:900px){
+  .section,
+  .activities-balanced,
+  .experience,
+  .reasons,
+  .agenda,
+  .register,
+  .partners,
+  .news{
+    padding-top:46px!important;
+    padding-bottom:46px!important;
+  }
+  .quote{
+    padding-top:56px!important;
+    padding-bottom:56px!important;
+  }
+  .section-register-cta{
+    margin-top:26px!important;
+  }
+}
+</style>
+
+
+<style id="agenda-register-gap-fix-r21">
+/* R21 — remove the visual white seam between Agenda and Registration */
+.agenda{
+  padding-bottom:0!important;
+  margin-bottom:0!important;
+}
+.agenda + .register,
+.agenda + section.register,
+#agenda + #dang-ky{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+#dang-ky{
+  margin-top:0!important;
+}
+</style>
+
 </head>
 <body class="">
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
@@ -2120,6 +2255,15 @@ background-size:cover!important;background-position:center!important;
 
   <!-- Khi có thêm hoạt động, chỉ cần nhân bản .activity-tile.
        Desktop hiển thị 3 tile cân bằng; tile thứ 4 trở đi tự chuyển thành horizontal rail. -->
+
+<div class="section-register-cta reveal">
+  <a class="section-register-btn" href="#dang-ky">
+    <span>Đăng ký ngay</span>
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6"/>
+    </svg>
+  </a>
+</div>
 </div>
 </section>
 <section class="section experience" id="trai-nghiem">
@@ -2129,11 +2273,29 @@ background-size:cover!important;background-position:center!important;
 <div aria-label="Nhóm hình 2" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian đón khách tại sự kiện" src="assets/images/gallery/event-space-02.jpg"/><figcaption class="gallery-label">Không gian đón khách</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực trình diễn đa giác quan" src="assets/images/gallery/event-space-04.jpg"/><figcaption class="gallery-label">Trình diễn đa giác quan</figcaption></button><button class="gallery-item" type="button"><img alt="Hoạt động kết nối tại sự kiện" src="assets/images/gallery/event-space-05.jpg"/><figcaption class="gallery-label">Kết nối cộng đồng</figcaption></button></div>
 <div aria-label="Nhóm hình 3" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian trải nghiệm dự án" src="assets/images/gallery/event-space-07.jpg"/><figcaption class="gallery-label">Hành trình dự án</figcaption></button><button class="gallery-item" type="button"><img alt="Khách tham dự khám phá sự kiện" src="assets/images/gallery/event-space-08.webp"/><figcaption class="gallery-label">Khoảnh khắc trải nghiệm</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực tư vấn tại triển lãm" src="assets/images/gallery/event-space-01.png"/><figcaption class="gallery-label">Tư vấn chuyên sâu</figcaption></button></div>
 </div></div><div class="gallery-meta-row"><p class="gallery-disclaimer">Ghi chú: Hình ảnh chỉ mang tính chất minh họa và có thể thay đổi.</p><div class="gallery-controls"><button aria-label="Xem nhóm hình trước" class="gallery-arrow" id="galleryPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><span class="gallery-count"><b id="galleryCurrent">01</b> / 03</span><button aria-label="Xem nhóm hình tiếp theo" class="gallery-arrow" id="galleryNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div></div>
+
+<div class="section-register-cta reveal">
+  <a class="section-register-btn" href="#dang-ky">
+    <span>Đăng ký ngay</span>
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6"/>
+    </svg>
+  </a>
+</div>
 </div>
 </section>
 <section class="section reasons" id="ly-do">
 <div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title responsive-title"><span class="title-desktop">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</span><span class="title-mobile">Một triển lãm. Năm chiều trải nghiệm đô thị.</span></h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
 <div class="reason-grid"><article class="reason-card reason-static"><img alt="" src="assets/icons/Song.png"/><div class="reason-static-copy"><h3>Sống</h3><p>Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Hoa tap.png"/><div class="reason-static-copy"><h3>Học tập</h3><p>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Lam viec.png"/><div class="reason-static-copy"><h3>Làm việc</h3><p>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Mua sam.png"/><div class="reason-static-copy"><h3>Mua sắm</h3><p>Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Giai tri.png"/><div class="reason-static-copy"><h3>Giải trí</h3><p>Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.</p></div></article></div>
+
+<div class="section-register-cta reveal">
+  <a class="section-register-btn" href="#dang-ky">
+    <span>Đăng ký ngay</span>
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6"/>
+    </svg>
+  </a>
+</div>
 </div>
 </section>
 <section class="quote"><div class="container"><blockquote>Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.</blockquote><p>Nam Long Experience 2026 · Triển lãm Bất động sản Giá Trị Thực</p></div></section>
