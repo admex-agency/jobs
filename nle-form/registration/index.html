@@ -5,10 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nam Long Experience 2026 | Đăng ký tham gia sự kiện</title>
 <style>
-@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Light.ttf') format('truetype');font-weight:300;font-display:swap}
-@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
-@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Medium.ttf') format('truetype');font-weight:600;font-display:swap}
-@font-face{font-family:'BT Beau Sans';src:url('fonts/BT-BeauSans-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+
+/* BT Beau Sans — supplied final brand font */
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-LightItalic.ttf') format('truetype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Medium.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-MediumItalic.ttf') format('truetype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-MediumItalic.ttf') format('truetype');font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-BoldItalic.ttf') format('truetype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-ExtraBold.ttf') format('truetype');font-weight:800; font-style:normal;font-display:swap}
+@font-face{font-family:'BT Beau Sans';src:url('../fonts/BT-BeauSans-ExtraBoldItalic.ttf') format('truetype');font-weight:800; font-style:italic;font-display:swap}
+
 :root{
   --red:#A92B35;
   --red2:#7D2028;
@@ -24,9 +35,9 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#FCFAFA;font-family:'BT Beau Sans';color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#FCFAFA;font-family:'BT Beau Sans',sans-serif;color:var(--ink);line-height:1.58;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-button,input,select,textarea{font-family:'BT Beau Sans';font:inherit}
+button,input,select,textarea{font-family:'BT Beau Sans',sans-serif;font:inherit}
 img{display:block;max-width:100%}
 .container{width:min(1440px,calc(100% - 80px));margin:auto}
 
@@ -340,6 +351,9 @@ img{display:block;max-width:100%}
   }
 }
 
+
+/* Beau Sans form inheritance */
+button,input,select,textarea{font-family:'BT Beau Sans',sans-serif}
 </style>
 </head>
 <body>
