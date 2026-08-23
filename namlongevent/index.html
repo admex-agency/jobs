@@ -8,10 +8,6 @@
 <meta content="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, diễn ra từ 18–20.09.2026 tại SECC, TP. Hồ Chí Minh." name="description"/>
 <title>Nam Long Experience 2026 | Triển lãm Bất động sản Giá Trị Thực</title>
 <style>
-    @font-face{font-family:"BT Beau Sans";src:url("assets/fonts/BT-BeauSans-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-    @font-face{font-family:"BT Beau Sans";src:url("assets/fonts/BT-BeauSans-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-    @font-face{font-family:"BT Beau Sans";src:url("assets/fonts/BT-BeauSans-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
-    @font-face{font-family:"BT Beau Sans";src:url("assets/fonts/BT-BeauSans-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
     :root{
       --brand:#a40c15;--brand-dark:#76070d;--brand-soft:#f8ecee;--ink:#201f20;--muted:#6d6b6c;
       --line:rgba(32,31,32,.12);--surface:#fff;--surface-soft:#f7f7f5;--yellow:#f1c648;
@@ -4073,18 +4069,2119 @@ background-size:cover!important;background-position:center!important;
 }
 </style>
 
+
+<style id="r44-feedback-applied">
+/* R44 — Feedback consolidation 2026-08-22 */
+
+/* Faster perceived scroll/reveal without removing motion language */
+.reveal{transition-duration:.52s!important;transform:translateY(26px)!important}
+.reveal.is-visible{transform:none!important}
+
+/* CTA arrow: remove excessive spacing and downward motion */
+.text-link{gap:8px!important}
+.text-link:hover span,.text-link:focus-visible span{transform:translateX(4px)!important}
+.section-register-btn{gap:9px!important}
+.section-register-btn:hover svg{transform:translateX(3px)!important}
+
+/* Mirror word baseline: keep Vietnamese diacritics and optical bottom alignment */
+.intro-title .intro-brand{
+  padding:.01em .035em .10em!important;
+  margin:-.01em -.035em -.10em!important;
+  line-height:1.08!important;
+  vertical-align:-.015em!important;
+}
+
+/* Tablet/iPad: no stagger collision, cleaner two-column composition */
+@media(min-width:861px) and (max-width:1100px){
+  .reason-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;padding-bottom:12px!important}
+  .reason-card.reason-static:nth-child(n){top:0!important;margin-top:0!important;animation:none!important;height:auto!important;min-height:340px!important}
+}
+@media(min-width:1101px) and (max-width:1180px){
+  .reason-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;padding-bottom:12px!important}
+  .reason-card.reason-static:nth-child(n){top:0!important;margin-top:0!important;animation:none!important}
+}
+
+/* Mobile conversion buttons: +10% type and slightly larger touch target */
+@media(max-width:720px){
+  .section-register-btn{font-size:16.5px!important;height:56px!important;min-width:210px!important}
+  .header-register,.mobile-nav-cta.primary{font-size:15.5px!important}
+  .brand img{display:block!important;margin:0!important}
+}
+
+/* Sponsor system: equal heading type, auto-fit logo count, no secondary English line */
+.partner-level-heading small{display:none!important}
+.partner-groups-tiered .partner-level-heading strong,
+.partner-group-strategic .partner-level-heading strong,
+.sponsor-tier-diamond .partner-level-heading strong,
+.sponsor-tier-gold .partner-level-heading strong,
+.sponsor-tier-silver .partner-level-heading strong{
+  font-size:19px!important;line-height:1.2!important
+}
+.partner-groups-tiered .partner-logos{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(142px,1fr))!important;
+  gap:14px!important;
+  width:100%!important;
+}
+.partner-groups-tiered .partner-logo,
+.partner-group-strategic .partner-logo,
+.sponsor-tier-diamond .partner-logo,
+.sponsor-tier-gold .partner-logo,
+.sponsor-tier-silver .partner-logo,
+.partner-group-media .partner-logo{
+  width:100%!important;max-width:none!important;height:86px!important;margin:0!important
+}
+.partner-name-placeholder{font-size:12px!important;line-height:1.25!important;text-align:center!important;padding:12px!important;letter-spacing:0!important;color:#777!important}
+.partner-logos-strategic{grid-template-columns:repeat(3,minmax(160px,1fr))!important}
+@media(max-width:720px){
+  .partner-groups-tiered .partner-logos,.partner-logos-strategic{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .partner-groups-tiered .partner-logo{height:76px!important}
+}
+
+/* Agenda labels requested format */
+.agenda-tabs .tab{font-variant-numeric:tabular-nums}
+
+/* Entry registration popup */
+.entry-register-modal{position:fixed;inset:0;z-index:2200;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(24,16,17,.46);backdrop-filter:blur(8px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease}
+.entry-register-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.entry-register-card{position:relative;width:min(520px,100%);padding:42px 40px 38px;border-radius:28px;background:linear-gradient(145deg,#fff 0%,#fff8f6 100%);box-shadow:0 32px 100px rgba(31,13,16,.22);text-align:center;transform:translateY(12px) scale(.985);transition:transform .35s var(--ease)}
+.entry-register-modal.is-open .entry-register-card{transform:none}
+.entry-register-card .eyebrow{margin-bottom:14px!important}
+.entry-register-card h2{font-size:clamp(32px,3vw,44px);line-height:1.02;letter-spacing:-.045em;margin:0;color:var(--ink)}
+.entry-register-card>p:not(.eyebrow){margin:18px 0 26px;color:var(--muted);font-size:16px}
+.entry-register-close{position:absolute;right:14px;top:14px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font-size:27px;line-height:1;cursor:pointer}
+.entry-register-cta{min-height:54px;padding:0 25px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:#fff;font-weight:700}
+.entry-register-cta:hover span{transform:translateX(3px)}
+.entry-register-cta span{transition:transform .25s var(--ease)}
+@media(max-width:560px){
+  .entry-register-card{padding:38px 24px 30px;border-radius:24px}
+  .entry-register-card h2{font-size:32px}
+  .entry-register-cta{width:100%;font-size:16.5px}
+}
+@media(prefers-reduced-motion:reduce){.entry-register-card{transition:none!important}.reveal{transition-duration:.01ms!important}}
+</style>
+
+
+<style id="r45-register-arrow-spacing">
+/* R45 — Register CTA: arrow follows the final character with one-space optical gap */
+.section-register-btn{
+  gap:.35em!important;
+}
+.section-register-btn svg{
+  width:18px!important;
+  height:18px!important;
+}
+.section-register-btn:hover svg{
+  transform:none!important;
+}
+</style>
+
+<style id="r47-popup-r45-style">
+/* Keep the R45 visual hierarchy; only expand the requested copy into two lines. */
+.entry-register-kicker{
+  display:grid!important;
+  gap:4px!important;
+  justify-items:center;
+}
+.entry-register-kicker span{
+  display:block;
+}
+.entry-register-meta{
+  display:grid!important;
+  gap:3px!important;
+  justify-items:center;
+}
+.entry-register-meta span{
+  display:block;
+}
+.entry-register-cta{
+  gap:4px!important;
+}
+.entry-register-cta span{
+  transform:none!important;
+  transition:none!important;
+}
+.entry-register-cta:hover span{
+  transform:none!important;
+}
+@media(max-width:560px){
+  .entry-register-kicker,
+  .entry-register-meta{
+    justify-items:center;
+  }
+}
+</style>
+
+
+<style id="r48-popup-finetune">
+.entry-register-kicker{
+  gap:1px!important;
+  line-height:1.12!important;
+}
+.entry-register-kicker span + span{
+  margin-top:-1px!important;
+}
+</style>
+
+
+<style id="r49-popup-finetune">
+.entry-register-kicker{
+  gap:2px!important;
+}
+.entry-register-kicker span + span{
+  margin-top:0!important;
+}
+</style>
+
+
+<style id="r50-client-refinements">
+/* Current language: active = bold + red */
+.lang strong{color:var(--brand)!important;font-weight:800!important}
+.lang .lang-alt{color:var(--muted)!important;font-weight:400!important}
+.lang-option-r25{color:var(--ink)!important;font-weight:500!important}
+.lang-option-r25.active{color:var(--brand)!important;font-weight:800!important;background:rgba(164,12,21,.06)!important}
+
+/* Remove mirror effect and restore a common baseline */
+.intro-title .intro-brand{
+  color:var(--brand)!important;display:inline!important;position:static!important;overflow:visible!important;
+  padding:0!important;margin:0!important;line-height:inherit!important;vertical-align:baseline!important
+}
+.intro-title .intro-brand::after{content:none!important;display:none!important;animation:none!important}
+
+/* Requested headline sizes across all breakpoints */
+.activities-editorial-title,.quote blockquote{
+  font-size:32px!important;line-height:1.12!important;letter-spacing:-.025em!important
+}
+@media(min-width:1600px){.activities-editorial-title,.quote blockquote{font-size:32px!important}}
+@media(min-width:1367px) and (max-width:1599px){.activities-editorial-title,.quote blockquote{font-size:32px!important}}
+@media(min-width:1024px) and (max-width:1366px){.activities-editorial-title,.quote blockquote{font-size:32px!important}}
+@media(max-width:1023px){.activities-editorial-title,.quote blockquote{font-size:32px!important}}
+@media(max-width:640px){.activities-editorial-title,.quote blockquote{font-size:32px!important}}
+
+/* Floating register CTA: supplied typography, no hover label */
+.float-register-label{display:none!important}
+.float-register-typo-wrap{
+  position:fixed!important;right:22px!important;bottom:88px!important;width:128px!important;height:54px!important;
+  z-index:980!important;display:block!important;pointer-events:none!important
+}
+.float-register-typo{
+  position:absolute!important;inset:0!important;width:128px!important;min-width:128px!important;max-width:128px!important;height:54px!important;
+  padding:0 17px!important;margin:0!important;border-radius:999px!important;background:var(--brand)!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:auto!important;overflow:hidden!important;
+  transform:none!important;box-shadow:0 14px 30px rgba(164,12,21,.22)!important
+}
+.float-register-typo.is-en{width:158px!important;min-width:158px!important;max-width:158px!important;right:-30px!important}
+.float-register-typo img{
+  position:static!important;display:block!important;width:auto!important;height:28px!important;max-width:100%!important;
+  object-fit:contain!important;filter:none!important;transform:none!important;translate:none!important;margin:0!important
+}
+.float-register-typo:hover,.float-register-typo:focus-visible{
+  transform:none!important;background:var(--brand-dark)!important;box-shadow:0 16px 34px rgba(164,12,21,.26)!important
+}
+@media(max-width:720px){
+  .float-register-typo-wrap{right:16px!important;bottom:80px!important;width:118px!important;height:50px!important}
+  .float-register-typo{width:118px!important;min-width:118px!important;max-width:118px!important;height:50px!important;padding:0 15px!important}
+  .float-register-typo.is-en{width:146px!important;min-width:146px!important;max-width:146px!important;right:-28px!important}
+  .float-register-typo img{height:25px!important}
+}
+
+/* Partners: restore prior horizontal layout; equal label sizes for Strategic/Diamond/Gold/Silver */
+.partner-level-heading small{display:block!important}
+.partner-groups-tiered{margin-top:48px!important}
+.partner-groups-tiered .partner-group{
+  display:grid!important;grid-template-columns:260px 1fr!important;gap:44px!important;padding:30px 0!important;align-items:center!important
+}
+.partner-level-heading{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:4px!important}
+.partner-level-heading strong{color:var(--ink)!important;line-height:1.15!important;letter-spacing:-.02em!important}
+.partner-group-strategic .partner-level-heading strong,
+.sponsor-tier-diamond .partner-level-heading strong,
+.sponsor-tier-gold .partner-level-heading strong,
+.sponsor-tier-silver .partner-level-heading strong{font-size:20px!important}
+.partner-level-heading small{color:var(--muted)!important;font-size:12px!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+.partner-group-strategic{padding-top:38px!important;padding-bottom:38px!important}
+.partner-groups-tiered .partner-logos,.partner-logos-strategic{
+  display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:14px!important;width:auto!important
+}
+.partner-logo-organizer{width:210px!important;height:100px!important}
+.partner-group-strategic .partner-logo{width:230px!important;max-width:230px!important;height:108px!important;border-radius:18px!important}
+.sponsor-tier-diamond .partner-logo{width:220px!important;max-width:220px!important;height:104px!important}
+.sponsor-tier-gold .partner-logo{width:184px!important;max-width:184px!important;height:88px!important}
+.sponsor-tier-silver .partner-logo{width:152px!important;max-width:152px!important;height:74px!important;border-radius:13px!important;font-size:10px!important}
+.partner-group-media .partner-logo{width:158px!important;max-width:158px!important;height:76px!important}
+@media(max-width:860px){
+  .partner-groups-tiered .partner-group{grid-template-columns:1fr!important;gap:18px!important}
+  .partner-groups-tiered .partner-logos,.partner-logos-strategic{display:flex!important;gap:14px!important}
+  .partner-group-strategic .partner-logo,.sponsor-tier-diamond .partner-logo,.sponsor-tier-gold .partner-logo,.sponsor-tier-silver .partner-logo,.partner-group-media .partner-logo{
+    width:calc(50% - 7px)!important;max-width:220px!important;height:82px!important
+  }
+}
+</style>
+
+
+<style id="r51-client-polish">
+/* ---------- Requested typography ---------- */
+.activities-editorial-title,
+.quote blockquote,
+.intro-title{
+  font-size:38px!important;
+}
+.activities-editorial-title{
+  line-height:1.08!important;
+  letter-spacing:-.032em!important;
+}
+.intro-title{
+  line-height:1.04!important;
+  letter-spacing:-.035em!important;
+  max-width:1050px!important;
+}
+.quote blockquote{
+  line-height:1.08!important;
+  letter-spacing:-.03em!important;
+}
+.news-card.featured .news-body h3{
+  font-size:24px!important;
+}
+.entry-register-card h2{
+  font-size:34px!important;
+  line-height:1.04!important;
+  letter-spacing:-.035em!important;
+}
+@media(max-width:640px){
+  .activities-editorial-title,
+  .quote blockquote,
+  .intro-title{
+    font-size:38px!important;
+  }
+}
+
+/* ---------- All "Đăng ký ngay →": arrow immediately after y ---------- */
+.section-register-btn,
+.entry-register-cta{
+  gap:4px!important;
+}
+.section-register-btn svg{
+  width:17px!important;
+  margin:0!important;
+  transform:none!important;
+}
+.section-register-btn:hover svg,
+.section-register-btn:focus-visible svg{
+  transform:none!important;
+}
+.entry-register-cta span{
+  margin-left:0!important;
+  transform:none!important;
+}
+
+/* ---------- Explore journey arrow ---------- */
+.text-link{
+  gap:5px!important;
+}
+.text-link span{
+  transform:none!important;
+  transition:transform .22s ease!important;
+}
+.text-link:hover span{
+  transform:translate(2px,-2px)!important;
+}
+
+/* ---------- Popup close icon perfectly centered ---------- */
+.entry-register-close{
+  display:grid!important;
+  place-items:center!important;
+  padding:0!important;
+  line-height:0!important;
+}
+.entry-register-close svg{
+  width:18px!important;
+  height:18px!important;
+  display:block!important;
+  margin:0!important;
+}
+
+/* ---------- Floating buttons restored ---------- */
+.floating{
+  right:24px!important;
+  bottom:24px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-end!important;
+  gap:10px!important;
+  width:auto!important;
+}
+.float-register-wrap,
+.float-top-wrap{
+  position:relative!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:54px!important;
+  height:54px!important;
+  display:block!important;
+  pointer-events:auto!important;
+}
+.float-register-wrap .float-register-brand,
+.float-top-wrap .float-top{
+  position:absolute!important;
+  inset:0!important;
+  width:54px!important;
+  min-width:54px!important;
+  max-width:54px!important;
+  height:54px!important;
+  padding:0!important;
+  margin:0!important;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  transform:none!important;
+}
+.float-register-wrap .float-register-brand{
+  background:var(--brand)!important;
+  color:#fff!important;
+  box-shadow:0 14px 30px rgba(164,12,21,.22)!important;
+}
+.float-register-wrap .float-register-brand:hover,
+.float-register-wrap .float-register-brand:focus-visible{
+  transform:none!important;
+  background:var(--brand-dark)!important;
+}
+.registration-icon{
+  width:25px!important;
+  height:25px!important;
+  color:#fff!important;
+}
+.float-register-label,
+.float-top-label{
+  position:absolute!important;
+  right:64px!important;
+  top:50%!important;
+  transform:translate(10px,-50%)!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  height:40px!important;
+  padding:0 15px!important;
+  border-radius:999px!important;
+  background:#fff!important;
+  white-space:nowrap!important;
+  font-size:14px!important;
+  font-weight:700!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transition:opacity .2s ease,transform .25s ease,visibility .2s ease!important;
+}
+.float-register-label{
+  color:var(--brand)!important;
+  border:1px solid rgba(164,12,21,.12)!important;
+  box-shadow:0 10px 28px rgba(30,18,18,.12)!important;
+}
+.float-top-label{
+  color:var(--ink)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:0 10px 28px rgba(30,18,18,.10)!important;
+}
+.float-register-wrap:hover .float-register-label,
+.float-register-wrap:focus-within .float-register-label,
+.float-top-wrap:hover .float-top-label,
+.float-top-wrap:focus-within .float-top-label{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translate(0,-50%)!important;
+}
+.float-top-wrap .float-top{
+  background:#fff!important;
+  color:var(--ink)!important;
+  border:1px solid var(--line)!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+.float-top-wrap .float-top.show{
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+@media(max-width:720px){
+  .floating{right:14px!important;bottom:max(14px,env(safe-area-inset-bottom))!important}
+  .float-register-wrap,.float-top-wrap{width:50px!important;height:50px!important}
+  .float-register-wrap .float-register-brand,.float-top-wrap .float-top{
+    width:50px!important;min-width:50px!important;max-width:50px!important;height:50px!important
+  }
+  .float-register-label,.float-top-label{display:none!important}
+}
+
+/* ---------- Highlight lightbox: portrait artwork displays fully ---------- */
+.lightbox.is-highlight-viewer{
+  padding:14px!important;
+}
+.lightbox.is-highlight-viewer .lightbox-dialog{
+  width:auto!important;
+  height:auto!important;
+  max-width:96vw!important;
+  max-height:94vh!important;
+}
+.lightbox.is-highlight-viewer .lightbox-stage{
+  width:auto!important;
+  height:auto!important;
+  max-width:94vw!important;
+  max-height:90vh!important;
+  aspect-ratio:auto!important;
+  background:transparent!important;
+  border-radius:20px!important;
+  overflow:visible!important;
+}
+.lightbox.is-highlight-viewer .lightbox-stage img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:94vw!important;
+  max-height:88vh!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:20px!important;
+}
+.lightbox.is-highlight-viewer .lightbox-caption{
+  position:absolute!important;
+  bottom:-34px!important;
+}
+
+/* ---------- Hero dots only: no arrows / pill / counter / pink band ---------- */
+@media(min-width:861px){
+  .hero{
+    padding-bottom:0!important;
+    background:transparent!important;
+  }
+  .hero-slider{
+    overflow:hidden!important;
+  }
+}
+.hero-controls{
+  top:auto!important;
+  left:50%!important;
+  bottom:22px!important;
+  transform:translateX(-50%)!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  box-shadow:none!important;
+  gap:0!important;
+}
+.hero-arrow,
+.hero-counter{
+  display:none!important;
+}
+.hero-dots{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+}
+.hero-dot{
+  width:8px!important;
+  height:8px!important;
+  background:rgba(255,255,255,.72)!important;
+  border:1px solid rgba(0,0,0,.08)!important;
+}
+.hero-dot.is-active{
+  width:26px!important;
+  background:var(--brand)!important;
+  border-color:var(--brand)!important;
+}
+
+/* ---------- Premium pillar-inspired pattern: intro ---------- */
+.intro{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate;
+  background:
+    linear-gradient(145deg,#fff 0%,#fbf7f5 55%,#fff 100%)!important;
+}
+.intro::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  opacity:.42!important;
+  background:
+    linear-gradient(120deg,transparent 0 69%,rgba(34,168,126,.055) 69% 70%,transparent 70% 100%),
+    linear-gradient(60deg,transparent 0 77%,rgba(214,170,32,.045) 77% 78%,transparent 78% 100%),
+    linear-gradient(135deg,transparent 0 84%,rgba(138,62,229,.04) 84% 85%,transparent 85% 100%),
+    linear-gradient(25deg,transparent 0 90%,rgba(201,33,162,.035) 90% 91%,transparent 91% 100%);
+}
+.intro::after{
+  content:""!important;
+  position:absolute!important;
+  right:-6vw!important;
+  top:8%!important;
+  width:34vw!important;
+  max-width:520px!important;
+  aspect-ratio:1!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  opacity:.6!important;
+  border:1px solid rgba(164,12,21,.05)!important;
+  border-radius:42% 18% 42% 18%!important;
+  transform:rotate(18deg)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.25),rgba(164,12,21,.015))!important;
+}
+
+/* ---------- Premium pillar-inspired pattern: red quote ---------- */
+.quote{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate;
+  background:
+    linear-gradient(135deg,#a40c15 0%,#8f1118 100%)!important;
+}
+.quote::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  font-size:0!important;
+  background:
+    linear-gradient(118deg,transparent 0 67%,rgba(255,255,255,.055) 67% 68%,transparent 68% 100%),
+    linear-gradient(62deg,transparent 0 74%,rgba(255,255,255,.035) 74% 75%,transparent 75% 100%),
+    linear-gradient(145deg,transparent 0 83%,rgba(255,255,255,.028) 83% 84%,transparent 84% 100%)!important;
+}
+.quote::after{
+  content:""!important;
+  position:absolute!important;
+  right:-80px!important;
+  top:-110px!important;
+  width:430px!important;
+  height:520px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border:1px solid rgba(255,255,255,.085)!important;
+  border-radius:110px 20px 110px 20px!important;
+  transform:rotate(22deg)!important;
+  box-shadow:
+    inset 52px 0 0 rgba(255,255,255,.018),
+    inset 104px 0 0 rgba(255,255,255,.010)!important;
+}
+</style>
+
+
+<style id="r52-registration-icon">
+.registration-icon-img{
+  width:27px!important;
+  height:27px!important;
+  display:block!important;
+  object-fit:contain!important;
+  filter:brightness(0) invert(1)!important;
+}
+</style>
+
+
+<style id="r53-kv-pattern-and-polish">
+/* =========================================================
+   R53 — Client refinements
+   ========================================================= */
+
+/* 1) Typography */
+.activities-editorial-title,
+.quote blockquote,
+.intro-title,
+.entry-register-card h2{
+  font-size:40px!important;
+}
+.activities-editorial-title{
+  line-height:1.08!important;
+  letter-spacing:-.032em!important;
+}
+.intro-title{
+  line-height:1.04!important;
+  letter-spacing:-.035em!important;
+}
+.quote blockquote{
+  line-height:1.08!important;
+  letter-spacing:-.03em!important;
+}
+.entry-register-card h2{
+  line-height:1.04!important;
+  letter-spacing:-.035em!important;
+}
+@media(max-width:640px){
+  .activities-editorial-title,
+  .quote blockquote,
+  .intro-title,
+  .entry-register-card h2{
+    font-size:40px!important;
+  }
+}
+
+/* 2) Floating Registration icon: absolutely locked in place.
+      Hover only reveals label. The round icon never shifts. */
+.float-register-wrap{
+  position:relative!important;
+  width:54px!important;
+  height:54px!important;
+  right:auto!important;
+  bottom:auto!important;
+}
+.float-register-wrap .float-register-brand{
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:54px!important;
+  min-width:54px!important;
+  max-width:54px!important;
+  height:54px!important;
+  min-height:54px!important;
+  max-height:54px!important;
+  margin:0!important;
+  padding:0!important;
+  translate:0 0!important;
+  transform:none!important;
+  transition:background-color .22s ease,box-shadow .22s ease!important;
+}
+.float-register-wrap .float-register-brand:hover,
+.float-register-wrap .float-register-brand:focus,
+.float-register-wrap .float-register-brand:focus-visible,
+.float-register-wrap .float-register-brand:focus-within,
+.float-register-wrap:hover .float-register-brand,
+.float-register-wrap:focus-within .float-register-brand{
+  left:0!important;
+  top:0!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:54px!important;
+  min-width:54px!important;
+  max-width:54px!important;
+  height:54px!important;
+  min-height:54px!important;
+  max-height:54px!important;
+  margin:0!important;
+  padding:0!important;
+  translate:0 0!important;
+  transform:none!important;
+}
+.float-register-wrap .registration-icon-img{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:27px!important;
+  height:27px!important;
+  margin:0!important;
+  padding:0!important;
+  translate:-50% -50%!important;
+  transform:none!important;
+  transition:none!important;
+}
+.float-register-wrap:hover .registration-icon-img,
+.float-register-wrap:focus-within .registration-icon-img,
+.float-register-brand:hover .registration-icon-img,
+.float-register-brand:focus-visible .registration-icon-img{
+  left:50%!important;
+  top:50%!important;
+  translate:-50% -50%!important;
+  transform:none!important;
+}
+
+/* =========================================================
+   3) KV-inspired liquid-glass pattern language
+   Five slim vertical portals inspired by the campaign KV.
+   No copy. No centre Nam Long icon.
+   ========================================================= */
+
+/* INTRO — warm white background */
+.intro{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 18% 10%,rgba(214,170,32,.055),transparent 30%),
+    radial-gradient(circle at 88% 20%,rgba(138,62,229,.045),transparent 31%),
+    linear-gradient(145deg,#fff 0%,#fbf8f6 56%,#fff 100%)!important;
+}
+.intro::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-2!important;
+  pointer-events:none!important;
+  opacity:1!important;
+  background:
+    /* yellow / learning */
+    linear-gradient(152deg,
+      transparent 0 8%,
+      rgba(235,190,48,.055) 8% 12%,
+      rgba(255,255,255,.13) 12% 12.5%,
+      rgba(235,190,48,.020) 12.5% 17%,
+      transparent 17% 100%),
+    /* purple / work */
+    linear-gradient(166deg,
+      transparent 0 39%,
+      rgba(138,62,229,.050) 39% 43.5%,
+      rgba(255,255,255,.12) 43.5% 44%,
+      rgba(138,62,229,.018) 44% 48.5%,
+      transparent 48.5% 100%),
+    /* orange / entertainment */
+    linear-gradient(151deg,
+      transparent 0 72%,
+      rgba(238,135,53,.050) 72% 76.5%,
+      rgba(255,255,255,.12) 76.5% 77%,
+      rgba(238,135,53,.018) 77% 81%,
+      transparent 81% 100%)!important;
+}
+.intro::after{
+  content:""!important;
+  position:absolute!important;
+  width:min(38vw,520px)!important;
+  height:min(58vw,720px)!important;
+  right:-5vw!important;
+  top:4%!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  opacity:.55!important;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+  box-shadow:none!important;
+  background:
+    /* green portal */
+    linear-gradient(176deg,
+      transparent 0 52%,
+      rgba(34,168,126,.095) 52% 62%,
+      rgba(255,255,255,.20) 62% 62.8%,
+      rgba(34,168,126,.025) 62.8% 71%,
+      transparent 71% 100%),
+    /* magenta portal */
+    linear-gradient(164deg,
+      transparent 0 70%,
+      rgba(201,33,162,.080) 70% 80%,
+      rgba(255,255,255,.18) 80% 80.8%,
+      rgba(201,33,162,.020) 80.8% 90%,
+      transparent 90% 100%)!important;
+  filter:blur(.1px) saturate(1.05)!important;
+}
+
+/* Add glass sheen via internal content wrapper, without adding extra markup */
+.intro .intro-editorial{
+  position:relative!important;
+  z-index:2!important;
+}
+.intro .intro-editorial::before{
+  content:""!important;
+  position:absolute!important;
+  left:-7%!important;
+  top:2%!important;
+  width:20%!important;
+  height:72%!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:34px!important;
+  transform:rotate(-7deg)!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.32),rgba(34,168,126,.045))!important;
+  border:1px solid rgba(34,168,126,.07)!important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.55),
+    inset -16px -12px 30px rgba(34,168,126,.018)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  opacity:.72!important;
+}
+
+/* QUOTE — same portal system but monochrome/premium over Nam Long red */
+.quote{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(255,255,255,.045),transparent 28%),
+    linear-gradient(135deg,#a40c15 0%,#8e1017 100%)!important;
+}
+.quote::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-12% -8%!important;
+  z-index:-2!important;
+  pointer-events:none!important;
+  opacity:1!important;
+  background:
+    linear-gradient(167deg,
+      transparent 0 13%,
+      rgba(255,255,255,.050) 13% 19%,
+      rgba(255,255,255,.11) 19% 19.5%,
+      rgba(255,255,255,.018) 19.5% 25%,
+      transparent 25% 100%),
+    linear-gradient(153deg,
+      transparent 0 39%,
+      rgba(255,255,255,.044) 39% 45%,
+      rgba(255,255,255,.095) 45% 45.5%,
+      rgba(255,255,255,.015) 45.5% 51%,
+      transparent 51% 100%),
+    linear-gradient(171deg,
+      transparent 0 69%,
+      rgba(255,255,255,.040) 69% 75%,
+      rgba(255,255,255,.085) 75% 75.5%,
+      rgba(255,255,255,.013) 75.5% 81%,
+      transparent 81% 100%)!important;
+}
+.quote::after{
+  content:""!important;
+  position:absolute!important;
+  right:4%!important;
+  top:-34%!important;
+  width:19%!important;
+  height:170%!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:32px!important;
+  transform:rotate(8deg)!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.016))!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.10),
+    inset -18px -18px 40px rgba(255,255,255,.010)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  opacity:.70!important;
+}
+
+/* On smaller screens reduce pattern density so it remains premium */
+@media(max-width:860px){
+  .intro::before{opacity:.70!important}
+  .intro::after{opacity:.38!important}
+  .intro .intro-editorial::before{opacity:.46!important}
+  .quote::before{opacity:.68!important}
+  .quote::after{opacity:.46!important}
+}
+</style>
+
+
+<style id="r54-sparse-kv-pattern">
+/* =========================================================
+   R54 — Sparse KV-inspired liquid-glass pattern
+   Principle: fewer objects, more negative space, lower opacity.
+   ========================================================= */
+
+/* Registration icon: use cleaned transparent white artwork */
+.registration-icon-img{
+  width:26px!important;
+  height:26px!important;
+  display:block!important;
+  object-fit:contain!important;
+  filter:none!important;
+  opacity:1!important;
+}
+
+/* -------- Intro: only 3 large glass portals, very subtle -------- */
+.intro{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(138,62,229,.030),transparent 30%),
+    linear-gradient(145deg,#fff 0%,#fbf8f6 58%,#fff 100%)!important;
+}
+.intro::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-2!important;
+  pointer-events:none!important;
+  opacity:1!important;
+  background:none!important;
+}
+
+/* Main purple portal */
+.intro::after{
+  content:""!important;
+  position:absolute!important;
+  right:8%!important;
+  top:8%!important;
+  width:150px!important;
+  height:330px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:26px!important;
+  transform:rotate(7deg)!important;
+  background:
+    linear-gradient(145deg,rgba(138,62,229,.065),rgba(255,255,255,.022))!important;
+  border:1px solid rgba(138,62,229,.065)!important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.36),
+    inset -16px -20px 38px rgba(138,62,229,.010)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  opacity:.58!important;
+}
+
+/* Second portal via intro-editorial::before */
+.intro .intro-editorial{
+  position:relative!important;
+  z-index:2!important;
+}
+.intro .intro-editorial::before{
+  content:""!important;
+  position:absolute!important;
+  left:-5%!important;
+  bottom:-18%!important;
+  width:112px!important;
+  height:260px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:24px!important;
+  transform:rotate(-6deg)!important;
+  background:
+    linear-gradient(145deg,rgba(34,168,126,.055),rgba(255,255,255,.020))!important;
+  border:1px solid rgba(34,168,126,.055)!important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.32),
+    inset -14px -18px 30px rgba(34,168,126,.010)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  opacity:.50!important;
+}
+
+/* Third portal via intro-statement::after */
+.intro .intro-statement{
+  position:relative!important;
+}
+.intro .intro-statement::after{
+  content:""!important;
+  position:absolute!important;
+  right:-2%!important;
+  bottom:-24%!important;
+  width:88px!important;
+  height:210px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:22px!important;
+  transform:rotate(-4deg)!important;
+  background:
+    linear-gradient(145deg,rgba(238,135,53,.048),rgba(255,255,255,.018))!important;
+  border:1px solid rgba(238,135,53,.050)!important;
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.30)!important;
+  backdrop-filter:blur(6px)!important;
+  -webkit-backdrop-filter:blur(6px)!important;
+  opacity:.44!important;
+}
+
+/* -------- Quote: just 2 monochrome glass portals -------- */
+.quote{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:linear-gradient(135deg,#a40c15 0%,#8e1017 100%)!important;
+}
+.quote::before{
+  content:""!important;
+  position:absolute!important;
+  left:7%!important;
+  top:-42%!important;
+  width:120px!important;
+  height:270px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:26px!important;
+  transform:rotate(-7deg)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.010))!important;
+  border:1px solid rgba(255,255,255,.055)!important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.08),
+    inset -16px -18px 34px rgba(255,255,255,.008)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  opacity:.58!important;
+}
+.quote::after{
+  content:""!important;
+  position:absolute!important;
+  right:9%!important;
+  bottom:-52%!important;
+  width:145px!important;
+  height:315px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:28px!important;
+  transform:rotate(6deg)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.008))!important;
+  border:1px solid rgba(255,255,255,.050)!important;
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.07)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  opacity:.52!important;
+}
+
+/* Reduce further on mobile/tablet */
+@media(max-width:860px){
+  .intro::after{width:94px!important;height:210px!important;right:-3%!important;opacity:.36!important}
+  .intro .intro-editorial::before{width:76px!important;height:180px!important;left:-8%!important;opacity:.34!important}
+  .intro .intro-statement::after{display:none!important}
+  .quote::before{width:82px!important;height:190px!important;left:2%!important;opacity:.34!important}
+  .quote::after{width:96px!important;height:220px!important;right:2%!important;opacity:.30!important}
+}
+</style>
+
+
+<style id="r55-glass-depth-pattern">
+/* =========================================================
+   R55 — more dimensional / embossed liquid-glass pattern
+   Inspired by layered translucent panels in supplied reference.
+   Keep density low; increase depth, edge light and near/far layering.
+   ========================================================= */
+
+/* ---------- INTRO ---------- */
+.intro{
+  background:
+    radial-gradient(circle at 82% 12%,rgba(138,62,229,.042),transparent 30%),
+    radial-gradient(circle at 14% 78%,rgba(34,168,126,.028),transparent 28%),
+    linear-gradient(145deg,#fff 0%,#fbf8f6 58%,#fff 100%)!important;
+}
+
+/* Main purple glass panel — more cộm */
+.intro::after{
+  right:7%!important;
+  top:5%!important;
+  width:164px!important;
+  height:350px!important;
+  border-radius:28px!important;
+  transform:rotate(7deg) perspective(700px) rotateY(-7deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.28) 0%,
+      rgba(163,110,235,.095) 24%,
+      rgba(138,62,229,.075) 72%,
+      rgba(255,255,255,.030) 100%)!important;
+  border:1px solid rgba(153,93,228,.14)!important;
+  box-shadow:
+    0 20px 42px rgba(91,55,130,.075),
+    0 5px 12px rgba(91,55,130,.045),
+    inset 1px 1px 0 rgba(255,255,255,.72),
+    inset -18px -22px 42px rgba(138,62,229,.025)!important;
+  backdrop-filter:blur(12px) saturate(1.08)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(1.08)!important;
+  opacity:.78!important;
+}
+
+/* Green panel — slightly closer/lower */
+.intro .intro-editorial::before{
+  left:-4%!important;
+  bottom:-16%!important;
+  width:126px!important;
+  height:276px!important;
+  border-radius:26px!important;
+  transform:rotate(-6deg) perspective(700px) rotateY(7deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.24) 0%,
+      rgba(53,189,145,.085) 28%,
+      rgba(34,168,126,.065) 74%,
+      rgba(255,255,255,.026) 100%)!important;
+  border:1px solid rgba(34,168,126,.115)!important;
+  box-shadow:
+    0 18px 38px rgba(28,130,98,.065),
+    0 4px 10px rgba(28,130,98,.035),
+    inset 1px 1px 0 rgba(255,255,255,.62),
+    inset -16px -18px 34px rgba(34,168,126,.020)!important;
+  backdrop-filter:blur(11px) saturate(1.06)!important;
+  -webkit-backdrop-filter:blur(11px) saturate(1.06)!important;
+  opacity:.70!important;
+}
+
+/* Orange panel — far layer */
+.intro .intro-statement::after{
+  right:-1%!important;
+  bottom:-20%!important;
+  width:98px!important;
+  height:222px!important;
+  border-radius:24px!important;
+  transform:rotate(-4deg) perspective(700px) rotateY(-5deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.22) 0%,
+      rgba(244,153,75,.080) 32%,
+      rgba(238,135,53,.055) 76%,
+      rgba(255,255,255,.022) 100%)!important;
+  border:1px solid rgba(238,135,53,.105)!important;
+  box-shadow:
+    0 16px 34px rgba(166,89,28,.055),
+    inset 1px 1px 0 rgba(255,255,255,.58),
+    inset -14px -17px 30px rgba(238,135,53,.018)!important;
+  backdrop-filter:blur(10px)!important;
+  -webkit-backdrop-filter:blur(10px)!important;
+  opacity:.62!important;
+}
+
+/* subtle ghost panel for depth, not density */
+.intro .intro-statement::before{
+  content:""!important;
+  position:absolute!important;
+  right:17%!important;
+  top:2%!important;
+  width:72px!important;
+  height:165px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:22px!important;
+  transform:rotate(5deg)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(201,33,162,.035))!important;
+  border:1px solid rgba(201,33,162,.055)!important;
+  box-shadow:0 12px 28px rgba(137,31,112,.030),inset 1px 1px 0 rgba(255,255,255,.44)!important;
+  backdrop-filter:blur(9px)!important;
+  -webkit-backdrop-filter:blur(9px)!important;
+  opacity:.42!important;
+}
+
+/* ---------- QUOTE ---------- */
+.quote{
+  background:
+    radial-gradient(circle at 78% 15%,rgba(255,255,255,.035),transparent 25%),
+    linear-gradient(135deg,#a40c15 0%,#8e1017 100%)!important;
+}
+
+/* left glass portal */
+.quote::before{
+  left:6%!important;
+  top:-40%!important;
+  width:132px!important;
+  height:290px!important;
+  border-radius:28px!important;
+  transform:rotate(-7deg) perspective(700px) rotateY(6deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.105) 0%,
+      rgba(255,255,255,.052) 45%,
+      rgba(255,255,255,.018) 100%)!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:
+    0 22px 42px rgba(80,0,6,.15),
+    inset 1px 1px 0 rgba(255,255,255,.19),
+    inset -18px -20px 38px rgba(255,255,255,.010)!important;
+  backdrop-filter:blur(11px)!important;
+  -webkit-backdrop-filter:blur(11px)!important;
+  opacity:.74!important;
+}
+
+/* right glass portal */
+.quote::after{
+  right:8%!important;
+  bottom:-50%!important;
+  width:156px!important;
+  height:330px!important;
+  border-radius:30px!important;
+  transform:rotate(6deg) perspective(700px) rotateY(-6deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.095) 0%,
+      rgba(255,255,255,.044) 52%,
+      rgba(255,255,255,.014) 100%)!important;
+  border:1px solid rgba(255,255,255,.105)!important;
+  box-shadow:
+    0 24px 46px rgba(80,0,6,.14),
+    inset 1px 1px 0 rgba(255,255,255,.17),
+    inset -18px -22px 40px rgba(255,255,255,.009)!important;
+  backdrop-filter:blur(11px)!important;
+  -webkit-backdrop-filter:blur(11px)!important;
+  opacity:.68!important;
+}
+
+/* Mobile/tablet: still dimensional but restrained */
+@media(max-width:860px){
+  .intro::after{
+    width:102px!important;height:220px!important;right:-2%!important;opacity:.54!important;
+    box-shadow:0 14px 30px rgba(91,55,130,.05),inset 1px 1px 0 rgba(255,255,255,.54)!important;
+  }
+  .intro .intro-editorial::before{
+    width:82px!important;height:188px!important;left:-7%!important;opacity:.48!important;
+    box-shadow:0 12px 26px rgba(28,130,98,.045),inset 1px 1px 0 rgba(255,255,255,.50)!important;
+  }
+  .intro .intro-statement::after{display:none!important}
+  .intro .intro-statement::before{display:none!important}
+  .quote::before{
+    width:88px!important;height:198px!important;left:1%!important;opacity:.50!important;
+  }
+  .quote::after{
+    width:102px!important;height:230px!important;right:1%!important;opacity:.46!important;
+  }
+}
+</style>
+
+
+<style id="r56-popup-and-red-pattern">
+/* =========================================================
+   R56 — Red quote pattern: layered translucent glass plates
+   inspired by supplied reference.
+   ========================================================= */
+
+.quote{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 18% 35%,rgba(255,255,255,.032),transparent 24%),
+    radial-gradient(circle at 82% 62%,rgba(255,255,255,.022),transparent 28%),
+    linear-gradient(135deg,#a40c15 0%,#8e1017 100%)!important;
+}
+
+/* Left fan of layered glass plates */
+.quote::before{
+  content:""!important;
+  position:absolute!important;
+  left:-3%!important;
+  top:50%!important;
+  width:430px!important;
+  height:210px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  transform:translateY(-50%) perspective(900px) rotateY(48deg) rotateZ(-6deg)!important;
+  transform-origin:left center!important;
+  border-radius:26px!important;
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,.11) 0 9%,
+      transparent 9% 15%,
+      rgba(255,255,255,.085) 15% 25%,
+      transparent 25% 32%,
+      rgba(255,255,255,.065) 32% 43%,
+      transparent 43% 50%,
+      rgba(255,255,255,.050) 50% 62%,
+      transparent 62% 70%,
+      rgba(255,255,255,.038) 70% 83%,
+      transparent 83% 100%)!important;
+  border:0!important;
+  box-shadow:
+    0 24px 60px rgba(70,0,5,.12),
+    inset 0 1px 0 rgba(255,255,255,.08)!important;
+  filter:blur(.15px)!important;
+  opacity:.72!important;
+}
+
+/* Right fan: slightly larger/farther, creating near-far depth */
+.quote::after{
+  content:""!important;
+  position:absolute!important;
+  right:-5%!important;
+  top:42%!important;
+  width:500px!important;
+  height:230px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  transform:translateY(-50%) perspective(900px) rotateY(-48deg) rotateZ(7deg)!important;
+  transform-origin:right center!important;
+  border-radius:26px!important;
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,.038) 0 13%,
+      transparent 13% 20%,
+      rgba(255,255,255,.052) 20% 33%,
+      transparent 33% 40%,
+      rgba(255,255,255,.070) 40% 53%,
+      transparent 53% 61%,
+      rgba(255,255,255,.090) 61% 75%,
+      transparent 75% 82%,
+      rgba(255,255,255,.115) 82% 94%,
+      transparent 94% 100%)!important;
+  border:0!important;
+  box-shadow:
+    0 28px 66px rgba(70,0,5,.13),
+    inset 0 1px 0 rgba(255,255,255,.09)!important;
+  opacity:.68!important;
+}
+
+/* subtle glass edge streaks */
+.quote .container{
+  position:relative!important;
+  z-index:2!important;
+}
+.quote .container::before,
+.quote .container::after{
+  content:""!important;
+  position:absolute!important;
+  pointer-events:none!important;
+  z-index:-1!important;
+  height:1px!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent)!important;
+}
+.quote .container::before{
+  width:38%!important;
+  left:4%!important;
+  top:20%!important;
+  transform:rotate(-5deg)!important;
+}
+.quote .container::after{
+  width:42%!important;
+  right:2%!important;
+  bottom:18%!important;
+  transform:rotate(6deg)!important;
+}
+
+/* =========================================================
+   Popup desktop: KV left / current content right
+   ========================================================= */
+.entry-register-card-split{
+  width:min(1080px,92vw)!important;
+  max-width:1080px!important;
+  min-height:520px!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr)!important;
+  overflow:hidden!important;
+  border-radius:28px!important;
+  background:#fff!important;
+  box-shadow:0 30px 80px rgba(38,17,19,.20)!important;
+  text-align:left!important;
+  position:relative!important;
+}
+
+.entry-register-visual{
+  position:relative!important;
+  min-height:520px!important;
+  overflow:hidden!important;
+  background:#f7f4f2!important;
+}
+.entry-register-visual img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+.entry-register-content{
+  padding:56px 52px 48px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+  text-align:left!important;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(164,12,21,.025),transparent 35%),
+    #fff!important;
+}
+
+.entry-register-content .entry-register-kicker{
+  justify-items:start!important;
+  text-align:left!important;
+}
+.entry-register-content .entry-register-meta{
+  justify-items:start!important;
+  text-align:left!important;
+}
+.entry-register-content .entry-register-cta{
+  align-self:flex-start!important;
+}
+
+.entry-register-card-split .entry-register-close{
+  position:absolute!important;
+  right:18px!important;
+  top:18px!important;
+  z-index:5!important;
+  background:rgba(255,255,255,.94)!important;
+  box-shadow:0 6px 18px rgba(24,12,12,.10)!important;
+}
+
+/* Mobile: one shared frame, KV above / content below */
+@media(max-width:760px){
+  .entry-register-modal{
+    padding:14px!important;
+  }
+  .entry-register-card-split{
+    width:min(94vw,520px)!important;
+    max-width:520px!important;
+    min-height:0!important;
+    max-height:92vh!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto!important;
+    overflow:auto!important;
+    border-radius:22px!important;
+  }
+  .entry-register-visual{
+    min-height:0!important;
+    height:auto!important;
+    aspect-ratio:16 / 9!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  .entry-register-content{
+    padding:30px 24px 28px!important;
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .entry-register-content .entry-register-kicker,
+  .entry-register-content .entry-register-meta{
+    justify-items:center!important;
+    text-align:center!important;
+  }
+  .entry-register-content .entry-register-cta{
+    align-self:center!important;
+  }
+  .entry-register-card-split .entry-register-close{
+    right:12px!important;
+    top:12px!important;
+  }
+}
+
+/* Quote pattern reduced on mobile to preserve readability */
+@media(max-width:860px){
+  .quote::before{
+    width:280px!important;
+    height:150px!important;
+    left:-18%!important;
+    opacity:.44!important;
+  }
+  .quote::after{
+    width:310px!important;
+    height:160px!important;
+    right:-22%!important;
+    opacity:.40!important;
+  }
+  .quote .container::before,
+  .quote .container::after{
+    opacity:.45!important;
+  }
+}
+</style>
+
+
+<style id="r57-popup-full-kv-and-balanced-pattern">
+/* =========================================================
+   R57 — Popup KV full-view + balanced premium red pattern
+   ========================================================= */
+
+/* 1) Popup desktop: show the full campaign KV, no crop */
+.entry-register-visual{
+  background:#f7f4f2!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.entry-register-visual img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4f2!important;
+}
+
+/* Slightly rebalance desktop split so full KV has enough room */
+@media(min-width:761px){
+  .entry-register-card-split{
+    width:min(1140px,92vw)!important;
+    max-width:1140px!important;
+    grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr)!important;
+  }
+  .entry-register-visual{
+    min-height:540px!important;
+  }
+}
+
+/* Mobile: full KV above, content below in same card */
+@media(max-width:760px){
+  .entry-register-visual{
+    aspect-ratio:auto!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:0!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:auto!important;
+    max-height:42vh!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
+
+/* =========================================================
+   2) Quote pattern:
+   same design language as the light section above.
+   Sparse, balanced, subtle translucent glass portals.
+   ========================================================= */
+
+.quote{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 20% 18%,rgba(255,255,255,.028),transparent 28%),
+    radial-gradient(circle at 84% 72%,rgba(255,255,255,.020),transparent 30%),
+    linear-gradient(135deg,#a40c15 0%,#8f1118 100%)!important;
+}
+
+/* Left portal */
+.quote::before{
+  content:""!important;
+  position:absolute!important;
+  left:5%!important;
+  top:-38%!important;
+  width:118px!important;
+  height:292px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:28px!important;
+  transform:rotate(-7deg) perspective(700px) rotateY(6deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.10) 0%,
+      rgba(255,255,255,.046) 42%,
+      rgba(255,255,255,.014) 100%)!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:
+    0 18px 42px rgba(70,0,5,.11),
+    inset 1px 1px 0 rgba(255,255,255,.16),
+    inset -14px -18px 34px rgba(255,255,255,.008)!important;
+  backdrop-filter:blur(10px)!important;
+  -webkit-backdrop-filter:blur(10px)!important;
+  opacity:.62!important;
+}
+
+/* Right portal */
+.quote::after{
+  content:""!important;
+  position:absolute!important;
+  right:7%!important;
+  bottom:-46%!important;
+  width:142px!important;
+  height:330px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:30px!important;
+  transform:rotate(7deg) perspective(700px) rotateY(-6deg)!important;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.092) 0%,
+      rgba(255,255,255,.040) 48%,
+      rgba(255,255,255,.012) 100%)!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  box-shadow:
+    0 20px 46px rgba(70,0,5,.10),
+    inset 1px 1px 0 rgba(255,255,255,.15),
+    inset -16px -20px 38px rgba(255,255,255,.008)!important;
+  backdrop-filter:blur(10px)!important;
+  -webkit-backdrop-filter:blur(10px)!important;
+  opacity:.58!important;
+}
+
+/* Remove the fan-streak artifacts from R56 */
+.quote .container::before,
+.quote .container::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* add one very faint central/far glass shape using blockquote pseudo */
+.quote blockquote{
+  position:relative!important;
+  z-index:2!important;
+}
+.quote blockquote::after{
+  content:""!important;
+  position:absolute!important;
+  right:11%!important;
+  top:-40%!important;
+  width:86px!important;
+  height:220px!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  border-radius:24px!important;
+  transform:rotate(-4deg)!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.050),rgba(255,255,255,.006))!important;
+  border:1px solid rgba(255,255,255,.055)!important;
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.09)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  opacity:.34!important;
+}
+
+@media(max-width:860px){
+  .quote::before{
+    left:-4%!important;
+    top:-28%!important;
+    width:86px!important;
+    height:210px!important;
+    opacity:.40!important;
+  }
+  .quote::after{
+    right:-3%!important;
+    bottom:-36%!important;
+    width:98px!important;
+    height:235px!important;
+    opacity:.36!important;
+  }
+  .quote blockquote::after{
+    display:none!important;
+  }
+}
+</style>
+
+
+<style id="r58-popup-kv-balance">
+/* R58 — balance popup KV without cropping */
+
+.entry-register-card-split{
+  background:#fff!important;
+}
+
+/* Desktop: widen KV pane and reduce unnecessary vertical height */
+@media(min-width:761px){
+  .entry-register-card-split{
+    width:min(1160px,94vw)!important;
+    max-width:1160px!important;
+    min-height:0!important;
+    grid-template-columns:minmax(0,1.20fr) minmax(400px,.80fr)!important;
+    align-items:stretch!important;
+  }
+
+  .entry-register-visual{
+    min-height:0!important;
+    height:auto!important;
+    padding:0!important;
+    background:#fff!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  .entry-register-visual img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    background:#fff!important;
+  }
+
+  .entry-register-content{
+    padding:42px 48px 40px!important;
+    min-height:0!important;
+    justify-content:center!important;
+  }
+}
+
+/* 1336 / smaller desktop: keep the same balance */
+@media(min-width:761px) and (max-width:1366px){
+  .entry-register-card-split{
+    width:min(1080px,94vw)!important;
+    grid-template-columns:minmax(0,1.16fr) minmax(370px,.84fr)!important;
+  }
+  .entry-register-content{
+    padding:36px 40px 34px!important;
+  }
+}
+
+/* Mobile remains stacked and full-image */
+@media(max-width:760px){
+  .entry-register-visual{
+    background:#fff!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    background:#fff!important;
+  }
+}
+</style>
+
+
+<style id="r59-popup-kv-responsive">
+/* R59 — popup KV v2, dimensioned from actual artwork ratio 2048x1334 (1.5352:1) */
+
+/* Desktop: card height follows KV ratio; no vertical letterboxing */
+@media(min-width:1367px){
+  .entry-register-card-split{
+    width:min(1120px,90vw)!important;
+    max-width:1120px!important;
+    grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr)!important;
+    align-items:stretch!important;
+  }
+  .entry-register-visual{
+    min-height:0!important;
+    height:auto!important;
+    padding:0!important;
+    background:#fff!important;
+    overflow:hidden!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    display:block!important;
+    background:#fff!important;
+  }
+  .entry-register-content{
+    min-height:0!important;
+    padding:42px 46px 40px!important;
+    justify-content:center!important;
+  }
+}
+
+/* 1440 / 1336 laptop-desktop tuning */
+@media(min-width:1024px) and (max-width:1366px){
+  .entry-register-card-split{
+    width:min(1040px,92vw)!important;
+    max-width:1040px!important;
+    grid-template-columns:minmax(0,1.04fr) minmax(380px,.96fr)!important;
+    align-items:stretch!important;
+  }
+  .entry-register-visual{
+    min-height:0!important;
+    height:auto!important;
+    padding:0!important;
+    background:#fff!important;
+    overflow:hidden!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    display:block!important;
+  }
+  .entry-register-content{
+    padding:34px 38px 32px!important;
+    justify-content:center!important;
+  }
+}
+
+/* Keep desktop card vertically compact and centered */
+@media(min-width:1024px){
+  .entry-register-card-split{
+    min-height:0!important;
+    max-height:min(78vh,620px)!important;
+  }
+  .entry-register-visual,
+  .entry-register-content{
+    height:100%!important;
+  }
+}
+
+/* Mobile stays stacked / portrait-friendly */
+@media(max-width:760px){
+  .entry-register-card-split{
+    width:min(94vw,520px)!important;
+    max-width:520px!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto!important;
+  }
+  .entry-register-visual{
+    height:auto!important;
+    min-height:0!important;
+    background:#fff!important;
+    overflow:hidden!important;
+  }
+  .entry-register-visual img{
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    display:block!important;
+  }
+}
+</style>
+
+
+<style id="r60-partner-agenda-tune">
+/* Organizer: same visual width as one Strategic Partner card */
+.partner-group-organizer .partner-logos-organizer{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  justify-content:flex-start!important;
+  align-items:center!important;
+  width:auto!important;
+  max-width:none!important;
+}
+.partner-group-organizer .partner-logo-organizer{
+  width:230px!important;
+  min-width:230px!important;
+  max-width:230px!important;
+  height:108px!important;
+  padding:18px 24px!important;
+  flex:0 0 230px!important;
+}
+.partner-group-organizer .partner-logo-organizer img{
+  width:auto!important;
+  max-width:150px!important;
+  height:70px!important;
+  max-height:70px!important;
+  object-fit:contain!important;
+  margin:auto!important;
+}
+
+/* Agenda: longer date labels need a little more breathing room */
+.agenda-tabs{
+  gap:12px!important;
+}
+.agenda-tabs .tab{
+  padding:13px 22px!important;
+  font-variant-numeric:tabular-nums!important;
+}
+.agenda-time{
+  white-space:nowrap!important;
+}
+
+/* 1440 / 1336 */
+@media(min-width:1024px) and (max-width:1599px){
+  .partner-group-organizer .partner-logo-organizer{
+    width:210px!important;
+    min-width:210px!important;
+    max-width:210px!important;
+    flex-basis:210px!important;
+  }
+  .agenda-row{
+    grid-template-columns:170px 1fr auto!important;
+    gap:28px!important;
+  }
+}
+
+/* mobile */
+@media(max-width:860px){
+  .partner-group-organizer .partner-logo-organizer{
+    width:calc(50% - 7px)!important;
+    min-width:160px!important;
+    max-width:220px!important;
+    flex-basis:auto!important;
+    height:82px!important;
+  }
+  .partner-group-organizer .partner-logo-organizer img{
+    max-height:54px!important;
+  }
+  .agenda-tabs .tab{
+    padding:12px 17px!important;
+    font-size:14px!important;
+  }
+}
+</style>
+
+
+
+<style id="r62-font-and-agenda-tabs">
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-Light.ttf") format("truetype");
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-LightItalic.ttf") format("truetype");
+  font-weight:300;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-Regular.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-BoldItalic.ttf") format("truetype");
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-Medium.ttf") format("truetype");
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-MediumItalic.ttf") format("truetype");
+  font-weight:500;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-Bold.ttf") format("truetype");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-BoldItalic.ttf") format("truetype");
+  font-weight:700;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-ExtraBold.ttf") format("truetype");
+  font-weight:800;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"BT Beau Sans";
+  src:url("assets/fonts/BT-BeauSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight:800;
+  font-style:italic;
+  font-display:swap;
+}
+
+/* Absolute font lock: no browser synthesis, no mixed fallback on numerals */
+:root{--font-primary:"BT Beau Sans",Arial,sans-serif!important}
+html,body,
+button,input,select,textarea,
+header,main,section,footer,
+h1,h2,h3,h4,h5,h6,p,a,span,strong,small,div{
+  font-family:"BT Beau Sans",Arial,sans-serif!important;
+  font-synthesis:none!important;
+}
+
+/* Force all agenda numerals and labels to same family + lining numbers */
+.agenda,
+.agenda *,
+.agenda-tabs,
+.agenda-tabs *,
+.agenda-time,
+.agenda-tag{
+  font-family:"BT Beau Sans",Arial,sans-serif!important;
+  font-synthesis:none!important;
+  font-variant-numeric:lining-nums tabular-nums!important;
+  font-feature-settings:"lnum" 1,"tnum" 1!important;
+}
+
+/* Desktop / laptop: pills fit content instead of stretching 3 equal columns */
+.agenda-tabs{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:14px!important;
+  width:100%!important;
+  overflow:visible!important;
+  padding:0!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.agenda-tabs .tab{
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:250px!important;
+  max-width:none!important;
+  padding:14px 26px!important;
+  justify-content:center!important;
+  text-align:center!important;
+  font-family:"BT Beau Sans",Arial,sans-serif!important;
+  font-size:18px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+  white-space:nowrap!important;
+  font-synthesis:none!important;
+  font-variant-numeric:lining-nums tabular-nums!important;
+  font-feature-settings:"lnum" 1,"tnum" 1!important;
+}
+
+@media(min-width:1024px) and (max-width:1366px){
+  .agenda-tabs{gap:12px!important}
+  .agenda-tabs .tab{
+    min-width:230px!important;
+    padding:13px 22px!important;
+    font-size:17px!important;
+  }
+}
+
+/* Mobile:
+   horizontal rail with deliberate next-tab "peek".
+   The visible partial next pill tells users there are more days. */
+@media(max-width:860px){
+  .agenda-tabs{
+    display:flex!important;
+    justify-content:flex-start!important;
+    gap:10px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    width:calc(100% + 24px)!important;
+    margin-left:0!important;
+    margin-right:-24px!important;
+    padding:2px 44px 8px 0!important;
+    scroll-snap-type:x proximity!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    mask-image:linear-gradient(to right,#000 0%,#000 88%,transparent 100%)!important;
+    -webkit-mask-image:linear-gradient(to right,#000 0%,#000 88%,transparent 100%)!important;
+  }
+  .agenda-tabs::-webkit-scrollbar{display:none!important}
+  .agenda-tabs .tab{
+    flex:0 0 min(78vw,300px)!important;
+    width:min(78vw,300px)!important;
+    min-width:min(78vw,300px)!important;
+    padding:13px 18px!important;
+    font-size:15px!important;
+    line-height:1.1!important;
+    scroll-snap-align:start!important;
+  }
+}
+
+/* Very small mobile: keep ~20% of next tab visible */
+@media(max-width:480px){
+  .agenda-tabs{
+    width:calc(100% + 18px)!important;
+    margin-right:-18px!important;
+    padding-right:38px!important;
+  }
+  .agenda-tabs .tab{
+    flex-basis:76vw!important;
+    width:76vw!important;
+    min-width:76vw!important;
+  }
+}
+</style>
+
+
+<style id="r63-agenda-tabs-left-desktop">
+/* Desktop / laptop: align the day pills to the left content axis */
+@media(min-width:861px){
+  .agenda-tabs{
+    justify-content:flex-start!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+}
+
+/* Mobile keeps the R62 horizontal-scroll + next-tab peek behavior */
+@media(max-width:860px){
+  .agenda-tabs{
+    justify-content:flex-start!important;
+  }
+}
+</style>
+
 </head>
 <body class="">
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
 <a class="skip" href="#main">Bỏ qua điều hướng</a>
 <header class="header" id="header">
 <div class="container header-inner">
-<a aria-label="Nam Long" class="brand" href="#top"><img alt="Nam Long" src="assets/images/logo-namlong-red.png"/></a>
+<a aria-label="Nam Long" class="brand" href="#top"><img alt="Nam Long" src="assets/images/logo-namlong-red.png" loading="lazy" decoding="async"/></a>
 <nav aria-label="Điều hướng nhanh" class="nav" id="nav">
 <a class="mobile-nav-cta" href="#agenda">Lịch trình</a><a class="mobile-nav-cta primary" href="#dang-ky">Đăng ký tham dự</a>
 </nav>
 <div class="header-actions"><a class="header-link" href="#agenda">Lịch trình</a><a class="header-register" href="#dang-ky">Đăng ký</a><div class="lang-wrap-r25">
-<button aria-label="Chuyển ngôn ngữ" aria-expanded="false" aria-haspopup="true" class="lang" id="langTriggerR25" type="button"><span>◎</span><strong>VI</strong><span>/ EN</span></button>
+<button aria-label="Chuyển ngôn ngữ" aria-expanded="false" aria-haspopup="true" class="lang" id="langTriggerR25" type="button"><span>◎</span><strong>VI</strong><span class="lang-alt">/ EN</span></button>
 <div class="lang-menu-r25" id="langMenuR25" role="menu">
 <button class="lang-option-r25 active" type="button" data-set-lang="vi"><span>Tiếng Việt</span><span>VI</span></button>
 <button class="lang-option-r25" type="button" data-set-lang="en"><span>English</span><span>EN</span></button>
@@ -4097,15 +6194,12 @@ background-size:cover!important;background-position:center!important;
 <section aria-label="Nam Long Experience 2026" class="hero" id="top">
 <div aria-label="Nội dung nổi bật Nam Long Experience 2026" aria-roledescription="carousel" class="hero-slider" id="heroSlider">
 <div class="hero-track" id="heroTrack">
-<article aria-hidden="false" class="hero-slide is-active" data-type="image"><picture class="hero-picture"><source media="(max-width: 768px)" srcset="assets/images/master-keyvisual-mobile.jpg"/><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" src="assets/images/master-keyvisual-inpage.jpg"/></picture><div class="hero-overlay"></div></article>
-<article aria-hidden="true" class="hero-slide hero-review-slide" data-type="image"><picture class="hero-picture"><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực" class="hero-kv hero-kv-duplicate" src="assets/images/master-keyvisual-inpage-2.jpg"/></picture><div class="hero-overlay"></div></article>
+<article aria-hidden="false" class="hero-slide is-active" data-type="image"><picture class="hero-picture"><source media="(max-width: 768px)" srcset="assets/images/master-keyvisual-mobile.jpg"/><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực, 18 đến 20 tháng 9 năm 2026 tại SECC" class="hero-kv" fetchpriority="high" decoding="async" src="assets/images/master-keyvisual-inpage.jpg"/></picture><div class="hero-overlay"></div></article>
+<article aria-hidden="true" class="hero-slide hero-review-slide" data-type="image"><picture class="hero-picture"><img alt="Nam Long Experience 2026 – Triển lãm Bất động sản Giá Trị Thực" class="hero-kv hero-kv-duplicate" decoding="async" src="assets/images/master-keyvisual-inpage-2.jpg"/></picture><div class="hero-overlay"></div></article>
 </div>
 <div aria-label="Điều khiển banner" class="hero-controls">
-<button aria-label="Banner trước" class="hero-arrow hero-prev" id="heroPrev" type="button">←</button>
 <div class="hero-dots" id="heroDots"><button aria-current="true" aria-label="Xem banner 1" class="hero-dot is-active" type="button"></button><button aria-current="false" aria-label="Xem banner 2" class="hero-dot" type="button"></button></div>
-<button aria-label="Banner tiếp theo" class="hero-arrow hero-next" id="heroNext" type="button">→</button>
 </div>
-<div class="hero-counter"><span id="heroCurrent">01</span><i></i><span>02</span></div>
 </div>
 </section>
 
@@ -4136,20 +6230,20 @@ background-size:cover!important;background-position:center!important;
 
 <div class="highlight-repeat-system" id="highlightRepeatSystem">
   <div class="highlight-group highlight-group--mosaic" data-highlight-group="mosaic">
-<a class="highlight-image-card highlight-image-card--01 reveal" href="assets/images/highlights/highlight-01-urban-experience.webp" aria-label="Trải nghiệm đô thị – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-01-urban-experience.webp" alt="Trải nghiệm đô thị – Chạm thật không gian sống"/>
+<a class="highlight-image-card highlight-image-card--01 reveal" href="assets/images/highlights/highlight-01-urban-experience.webp" aria-label="Trải nghiệm đô thị – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-01-urban-experience.webp" alt="Trải nghiệm đô thị – Chạm thật không gian sống" loading="lazy" decoding="async"/>
     </a>
-<a class="highlight-image-card highlight-image-card--02 reveal" data-delay="1" href="assets/images/highlights/highlight-02-exclusive-offer.webp" aria-label="Ưu đãi đặc quyền – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-02-exclusive-offer.webp" alt="Ưu đãi đặc quyền lên đến 100 triệu đồng"/>
+<a class="highlight-image-card highlight-image-card--02 reveal" data-delay="1" href="assets/images/highlights/highlight-02-exclusive-offer.webp" aria-label="Ưu đãi đặc quyền – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-02-exclusive-offer.webp" alt="Ưu đãi đặc quyền lên đến 100 triệu đồng" loading="lazy" decoding="async"/>
     </a>
-<a class="highlight-image-card highlight-image-card--03 reveal" data-delay="2" href="assets/images/highlights/highlight-03-flash-sale-1pct.webp" aria-label="Chỉ trong 3 ngày – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-03-flash-sale-1pct.webp" alt="Quyết định nhanh – Ưu đãi thêm 1%"/>
+<a class="highlight-image-card highlight-image-card--03 reveal" data-delay="2" href="assets/images/highlights/highlight-03-flash-sale-1pct.webp" aria-label="Chỉ trong 3 ngày – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-03-flash-sale-1pct.webp" alt="Quyết định nhanh – Ưu đãi thêm 1%" loading="lazy" decoding="async"/>
     </a>
-<a class="highlight-image-card highlight-image-card--04 reveal" data-delay="3" href="assets/images/highlights/highlight-04-stacked-benefits.webp" aria-label="Ưu đãi cộng dồn – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-04-stacked-benefits.webp" alt="Một giao dịch – Nhiều ưu đãi"/>
+<a class="highlight-image-card highlight-image-card--04 reveal" data-delay="3" href="assets/images/highlights/highlight-04-stacked-benefits.webp" aria-label="Ưu đãi cộng dồn – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-04-stacked-benefits.webp" alt="Một giao dịch – Nhiều ưu đãi" loading="lazy" decoding="async"/>
     </a>
   </div>
 
   <div class="highlight-group highlight-group--pair" data-highlight-group="pair">
-    <a class="highlight-image-card reveal" data-delay="4" href="assets/images/highlights/highlight-05-car-prize.png" aria-label="Đến triển lãm, lái xe về – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-05-car-prize.png" alt="Đến triển lãm, lái xe về – Cơ hội trúng xe"/>
+    <a class="highlight-image-card reveal" data-delay="4" href="assets/images/highlights/highlight-05-car-prize.png" aria-label="Đến triển lãm, lái xe về – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-05-car-prize.png" alt="Đến triển lãm, lái xe về – Cơ hội trúng xe" loading="lazy" decoding="async"/>
     </a>
-    <a class="highlight-image-card reveal" data-delay="5" href="assets/images/highlights/highlight-06-home-appliances.png" aria-label="Đến triển lãm, rinh quà về – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-06-home-appliances.png" alt="Đến triển lãm, rinh quà về – Cơ hội trúng đồ gia dụng"/>
+    <a class="highlight-image-card reveal" data-delay="5" href="assets/images/highlights/highlight-06-home-appliances.png" aria-label="Đến triển lãm, rinh quà về – Đăng ký ngay" data-highlight-lightbox="true"><img src="assets/images/highlights/highlight-06-home-appliances.png" alt="Đến triển lãm, rinh quà về – Cơ hội trúng đồ gia dụng" loading="lazy" decoding="async"/>
     </a>
   </div>
 
@@ -4202,18 +6296,18 @@ background-size:cover!important;background-position:center!important;
 <div class="intro-narrative reveal" data-delay="1">
 <p>Nam Long Experience 2026 không chỉ giới thiệu bất động sản. Sự kiện mở ra một hành trình để khách tham dự cảm nhận chất lượng sống bằng những điều có thể nhìn thấy, chạm đến và trực tiếp trải nghiệm.</p>
 <p>Từ nhu cầu thật, giá trị thật đến cam kết phát triển bền vững, mỗi không gian và hoạt động đều giúp hình dung rõ hơn về một đô thị đáng sống — nơi học tập, làm việc, giải trí, an cư và mua sắm cùng vận hành trong một hệ sinh thái hoàn chỉnh.</p>
-<a class="text-link" href="#ly-do">Khám phá hành trình <span aria-hidden="true">↘</span></a>
+<a class="text-link" href="#ly-do">Khám phá hành trình <span aria-hidden="true">↗</span></a>
 </div>
 </div>
-<div aria-hidden="true" class="intro-orbit"><span>GIÁ TRỊ THỰC</span><i></i><span>TRẢI NGHIỆM THẬT</span><i></i><span>CUỘC SỐNG THẬT</span></div>
+<div aria-hidden="true" class="intro-orbit"><span>GIÁ TRỊ THỰC</span><i></i><span>TRẢI NGHIỆM THẬT</span></div>
 </div>
 </section>
 <section class="section experience" id="trai-nghiem">
 <div class="container"><p class="eyebrow">Không gian trải nghiệm</p><h2 class="section-title">Từ bản quy hoạch<br/> đến một ngày sống thật.</h2><p class="section-lead">Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.</p>
 <div class="gallery-shell reveal"><div class="gallery-viewport" id="galleryViewport"><div class="gallery-track" id="galleryTrack">
-<div aria-label="Nhóm hình 1" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian triển lãm Nam Long" src="assets/images/gallery/event-space-01.jpg"/><figcaption class="gallery-label">Toàn cảnh triển lãm</figcaption></button><button class="gallery-item" type="button"><img alt="Không gian tương tác tại sự kiện" src="assets/images/gallery/event-space-03.jpg"/><figcaption class="gallery-label">Trải nghiệm tương tác</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực giới thiệu dự án" src="assets/images/gallery/event-space-06.jpg"/><figcaption class="gallery-label">Khám phá hệ sinh thái dự án</figcaption></button></div>
-<div aria-label="Nhóm hình 2" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian đón khách tại sự kiện" src="assets/images/gallery/event-space-02.jpg"/><figcaption class="gallery-label">Không gian đón khách</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực trình diễn đa giác quan" src="assets/images/gallery/event-space-04.jpg"/><figcaption class="gallery-label">Trình diễn đa giác quan</figcaption></button><button class="gallery-item" type="button"><img alt="Hoạt động kết nối tại sự kiện" src="assets/images/gallery/event-space-05.jpg"/><figcaption class="gallery-label">Kết nối cộng đồng</figcaption></button></div>
-<div aria-label="Nhóm hình 3" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian trải nghiệm dự án" src="assets/images/gallery/event-space-07.jpg"/><figcaption class="gallery-label">Hành trình dự án</figcaption></button><button class="gallery-item" type="button"><img alt="Khách tham dự khám phá sự kiện" src="assets/images/gallery/event-space-08.webp"/><figcaption class="gallery-label">Khoảnh khắc trải nghiệm</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực tư vấn tại triển lãm" src="assets/images/gallery/event-space-01.png"/><figcaption class="gallery-label">Tư vấn chuyên sâu</figcaption></button></div>
+<div aria-label="Nhóm hình 1" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian triển lãm Nam Long" src="assets/images/gallery/event-space-01.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Toàn cảnh triển lãm</figcaption></button><button class="gallery-item" type="button"><img alt="Không gian tương tác tại sự kiện" src="assets/images/gallery/event-space-03.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Trải nghiệm tương tác</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực giới thiệu dự án" src="assets/images/gallery/event-space-06.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Khám phá hệ sinh thái dự án</figcaption></button></div>
+<div aria-label="Nhóm hình 2" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian đón khách tại sự kiện" src="assets/images/gallery/event-space-02.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Không gian đón khách</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực trình diễn đa giác quan" src="assets/images/gallery/event-space-04.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Trình diễn đa giác quan</figcaption></button><button class="gallery-item" type="button"><img alt="Hoạt động kết nối tại sự kiện" src="assets/images/gallery/event-space-05.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Kết nối cộng đồng</figcaption></button></div>
+<div aria-label="Nhóm hình 3" class="gallery-group"><button class="gallery-item gallery-main" type="button"><img alt="Không gian trải nghiệm dự án" src="assets/images/gallery/event-space-07.jpg" loading="lazy" decoding="async"/><figcaption class="gallery-label">Hành trình dự án</figcaption></button><button class="gallery-item" type="button"><img alt="Khách tham dự khám phá sự kiện" src="assets/images/gallery/event-space-08.webp" loading="lazy" decoding="async"/><figcaption class="gallery-label">Khoảnh khắc trải nghiệm</figcaption></button><button class="gallery-item" type="button"><img alt="Khu vực tư vấn tại triển lãm" src="assets/images/gallery/event-space-01.png" loading="lazy" decoding="async"/><figcaption class="gallery-label">Tư vấn chuyên sâu</figcaption></button></div>
 </div></div><div class="gallery-meta-row"><p class="gallery-disclaimer">Hình ảnh mang tính minh họa</p><div class="gallery-controls"><button aria-label="Xem nhóm hình trước" class="gallery-arrow" id="galleryPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><span class="gallery-count"><b id="galleryCurrent">01</b> / 03</span><button aria-label="Xem nhóm hình tiếp theo" class="gallery-arrow" id="galleryNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div></div>
 
 <div class="section-register-cta reveal">
@@ -4229,7 +6323,7 @@ background-size:cover!important;background-position:center!important;
 
 <section class="section reasons" id="ly-do">
 <div class="container"><p class="eyebrow">5 lý do không nên bỏ lỡ</p><h2 class="section-title responsive-title"><span class="title-desktop">Một triển lãm. Năm chiều<br/>trải nghiệm đô thị.</span><span class="title-mobile">Một triển lãm. Năm chiều trải nghiệm đô thị.</span></h2><p class="section-lead">Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.</p>
-<div class="reason-grid"><article class="reason-card reason-static"><img alt="" src="assets/icons/Song.png"/><div class="reason-static-copy"><h3>Sống</h3><p>Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Hoa tap.png"/><div class="reason-static-copy"><h3>Học tập</h3><p>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Lam viec.png"/><div class="reason-static-copy"><h3>Làm việc</h3><p>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Mua sam.png"/><div class="reason-static-copy"><h3>Mua sắm</h3><p>Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Giai tri.png"/><div class="reason-static-copy"><h3>Giải trí</h3><p>Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.</p></div></article></div>
+<div class="reason-grid"><article class="reason-card reason-static"><img alt="" src="assets/icons/Song.png" loading="lazy" decoding="async"/><div class="reason-static-copy"><h3>Sống</h3><p>Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Hoa tap.png" loading="lazy" decoding="async"/><div class="reason-static-copy"><h3>Học tập</h3><p>Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Lam viec.png" loading="lazy" decoding="async"/><div class="reason-static-copy"><h3>Làm việc</h3><p>Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Mua sam.png" loading="lazy" decoding="async"/><div class="reason-static-copy"><h3>Mua sắm</h3><p>Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.</p></div></article><article class="reason-card reason-static"><img alt="" src="assets/icons/Giai tri.png" loading="lazy" decoding="async"/><div class="reason-static-copy"><h3>Giải trí</h3><p>Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.</p></div></article></div>
 
 <div class="section-register-cta reveal">
   <a class="section-register-btn" href="#dang-ky">
@@ -4242,14 +6336,155 @@ background-size:cover!important;background-position:center!important;
 </div>
 </section>
 <section class="quote"><div class="container"><blockquote>Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.</blockquote><p>Nam Long Experience 2026 · Triển lãm Bất động sản Giá Trị Thực</p></div></section>
+
 <section class="section agenda" id="agenda">
-<div class="container"><p class="eyebrow">Agenda dự kiến</p><h2 class="section-title">Ba ngày kết nối giá trị an cư, đầu tư và phát triển.</h2><p class="demo-note">Nội dung dưới đây là dữ liệu demo và có thể cập nhật trực tiếp trong HTML khi chương trình chính thức được phê duyệt.</p>
-<div aria-label="Chọn ngày sự kiện" class="agenda-tabs" role="tablist"><button aria-controls="day1" aria-selected="true" class="tab" id="tab1" role="tab">Ngày 1, 18/09</button><button aria-controls="day2" aria-selected="false" class="tab" id="tab2" role="tab">Ngày 2, 19/09</button><button aria-controls="day3" aria-selected="false" class="tab" id="tab3" role="tab">Ngày 3, 20/09</button></div>
-<div aria-labelledby="tab1" class="agenda-panel active" id="day1" role="tabpanel"><div class="agenda-row"><div class="agenda-time">08:30</div><div class="agenda-content"><h3>Đón khách &amp; Khám phá triển lãm</h3><p>Check-in, nhận bản đồ hành trình và trải nghiệm các không gian chủ đề.</p></div><span class="agenda-tag">Cả ngày</span></div><div class="agenda-row"><div class="agenda-time">10:00</div><div class="agenda-content"><h3>Lễ khai mạc Nam Long Experience 2026</h3><p>Khởi động hành trình “Bất động sản Giá Trị Thực” cùng đại diện Nam Long và đối tác.</p></div><span class="agenda-tag">Sân khấu chính</span></div><div class="agenda-row"><div class="agenda-time">14:00</div><div class="agenda-content"><h3>Đối thoại: Giá trị thực trong lựa chọn bất động sản</h3><p>Góc nhìn thị trường, quy hoạch, vận hành và khả năng tích sản dài hạn.</p></div><span class="agenda-tag">Talkshow</span></div></div>
-<div aria-labelledby="tab2" class="agenda-panel" id="day2" role="tabpanel"><div class="agenda-row"><div class="agenda-time">09:00</div><div class="agenda-content"><h3>Hành trình khám phá đô thị tích hợp</h3><p>Trải nghiệm năm trụ cột sống, làm việc, học tập, giải trí và mua sắm.</p></div><span class="agenda-tag">Experience tour</span></div><div class="agenda-row"><div class="agenda-time">13:30</div><div class="agenda-content"><h3>Phiên tư vấn dự án chuyên sâu</h3><p>Thông tin quy hoạch, sản phẩm, chính sách và giải pháp tài chính.</p></div><span class="agenda-tag">Tư vấn</span></div><div class="agenda-row"><div class="agenda-time">18:00</div><div class="agenda-content"><h3>Đêm kết nối khách hàng</h3><p>Chương trình dành cho khách mời và cộng đồng khách hàng Nam Long.</p></div><span class="agenda-tag">Invitation only</span></div></div>
-<div aria-labelledby="tab3" class="agenda-panel" id="day3" role="tabpanel"><div class="agenda-row"><div class="agenda-time">09:30</div><div class="agenda-content"><h3>Chuyên đề đầu tư và an cư bền vững</h3><p>Nhận diện nhu cầu thực, khẩu vị đầu tư và tiềm năng dài hạn.</p></div><span class="agenda-tag">Forum</span></div><div class="agenda-row"><div class="agenda-time">14:00</div><div class="agenda-content"><h3>Kết nối đối tác hệ sinh thái đô thị</h3><p>Không gian dành cho đối tác phát triển, thương mại và dịch vụ.</p></div><span class="agenda-tag">Networking</span></div><div class="agenda-row"><div class="agenda-time">17:00</div><div class="agenda-content"><h3>Lễ bế mạc</h3><p>Khép lại ba ngày triển lãm và mở ra những hành trình đồng hành mới.</p></div><span class="agenda-tag">Sân khấu chính</span></div></div>
-</div>
+  <div class="container">
+    <p class="eyebrow">Agenda dự kiến</p>
+    <h2 class="section-title">Ba ngày kết nối giá trị an cư, đầu tư và phát triển.</h2>
+
+    <div aria-label="Chọn ngày sự kiện" class="agenda-tabs" role="tablist">
+      <button aria-controls="day1" aria-selected="true" class="tab" id="tab1" role="tab" type="button">Thứ 6 - 18.09.2026</button>
+      <button aria-controls="day2" aria-selected="false" class="tab" id="tab2" role="tab" type="button">Thứ 7 - 19.08.2026</button>
+      <button aria-controls="day3" aria-selected="false" class="tab" id="tab3" role="tab" type="button">Chủ nhật - 20.09.2026</button>
+    </div>
+
+    <!-- DAY 1: public-facing agenda starts at 15:00 as requested -->
+    <div aria-labelledby="tab1" class="agenda-panel active" id="day1" role="tabpanel">
+      <div class="agenda-row">
+        <div class="agenda-time">15:00–21:00</div>
+        <div class="agenda-content">
+          <h3>Khu triển lãm mở cửa đón khách</h3>
+          <p>Khách tham dự bắt đầu check-in và trải nghiệm không gian Nam Long Experience 2026 từ 15:00.</p>
+        </div>
+        <span class="agenda-tag">Exhibition Area</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">15:00–17:00</div>
+        <div class="agenda-content">
+          <h3>Real Estate Forum - CBRE</h3>
+          <p>Chương trình diễn đàn bất động sản. Quy mô dự kiến khoảng 500 khách.</p>
+        </div>
+        <span class="agenda-tag">Forum</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">18:00–19:00</div>
+        <div class="agenda-content">
+          <h3>Lucky Draw + Entertainment</h3>
+          <p>Hoạt động giải trí và chương trình rút thăm dành cho khách tham dự.</p>
+        </div>
+        <span class="agenda-tag">Entertainment</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">19:00–21:00</div>
+        <div class="agenda-content">
+          <h3>Agent Motivation Event</h3>
+          <p>Chương trình dành cho lực lượng kinh doanh và đối tác.</p>
+        </div>
+        <span class="agenda-tag">Main Event</span>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div aria-labelledby="tab2" class="agenda-panel" id="day2" role="tabpanel">
+      <div class="agenda-row">
+        <div class="agenda-time">08:00–21:00</div>
+        <div class="agenda-content">
+          <h3>Khu triển lãm mở cửa xuyên suốt</h3>
+          <p>Khách tham dự tự do khám phá không gian triển lãm và các hoạt động trải nghiệm trong ngày.</p>
+        </div>
+        <span class="agenda-tag">Exhibition Area</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">09:00–12:00</div>
+        <div class="agenda-content">
+          <h3>Mizuki Park: CC5T3, Sales Launch, CCTM1 Booking</h3>
+          <p>Quy mô dự kiến khoảng 300 khách.</p>
+        </div>
+        <span class="agenda-tag">Mizuki Park</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">12:00–13:00</div>
+        <div class="agenda-content">
+          <h3>Lucky Draw + Entertainment</h3>
+          <p>Hoạt động giải trí và chương trình rút thăm dành cho khách tham dự.</p>
+        </div>
+        <span class="agenda-tag">Entertainment</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">15:00–17:00</div>
+        <div class="agenda-content">
+          <h3>Waterpoint: Rivera 1C - Villa, Block A-ST5, Rumor ST6, The Pearl</h3>
+          <p>Quy mô dự kiến khoảng 1.500 khách.</p>
+        </div>
+        <span class="agenda-tag">Waterpoint</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">18:00–19:00</div>
+        <div class="agenda-content">
+          <h3>Lucky Draw + Entertainment</h3>
+          <p>Hoạt động giải trí và chương trình rút thăm dành cho khách tham dự.</p>
+        </div>
+        <span class="agenda-tag">Entertainment</span>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div aria-labelledby="tab3" class="agenda-panel" id="day3" role="tabpanel">
+      <div class="agenda-row">
+        <div class="agenda-time">08:00–21:00</div>
+        <div class="agenda-content">
+          <h3>Khu triển lãm mở cửa xuyên suốt</h3>
+          <p>Ngày cuối của hành trình trải nghiệm Nam Long Experience 2026.</p>
+        </div>
+        <span class="agenda-tag">Exhibition Area</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">09:00–12:00</div>
+        <div class="agenda-content">
+          <h3>Izumi City - Push Sales P3</h3>
+          <p>Quy mô dự kiến khoảng 200–300 khách.</p>
+        </div>
+        <span class="agenda-tag">Izumi City</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">12:00–13:00</div>
+        <div class="agenda-content">
+          <h3>Lucky Draw + Entertainment</h3>
+          <p>Hoạt động giải trí và chương trình rút thăm dành cho khách tham dự.</p>
+        </div>
+        <span class="agenda-tag">Entertainment</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">15:00–21:00</div>
+        <div class="agenda-content">
+          <h3>Show Quốc Thiên</h3>
+          <p>Chương trình âm nhạc và giải trí trong ngày cuối sự kiện.</p>
+        </div>
+        <span class="agenda-tag">Main Stage</span>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time">19:00–20:00</div>
+        <div class="agenda-content">
+          <h3>Lucky Draw + Entertainment</h3>
+          <p>Hoạt động rút thăm và giải trí trong khung giờ tối.</p>
+        </div>
+        <span class="agenda-tag">Entertainment</span>
+      </div>
+    </div>
+  </div>
 </section>
+
 <section class="section register" id="dang-ky"><div class="container register-simple"><div class="form-shell register-iframe-only reveal" data-delay="1"><iframe allow="clipboard-read; clipboard-write" id="registrationFrame" loading="eager" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="https://dev-namlong.sadec.co/public/event-registration/k6pug8nn?partner_id=landingPage&amp;flow=iframe&amp;utm_source=landingPage&amp;utm_medium=iframe&amp;utm_campaign=event_k6pug8nn" style="width:100%;height:2000px;border:0;display:block;overflow:hidden;background:transparent;" title="Form đăng ký Nam Long Experience 2026"></iframe></div></div></section>
 <section aria-labelledby="partnersTitle" class="section partners">
 <div class="container">
@@ -4264,7 +6499,7 @@ background-size:cover!important;background-position:center!important;
         <span class="partner-level-kicker">Đơn vị tổ chức</span>
       </div>
       <div class="partner-logos partner-logos-organizer">
-        <div class="partner-logo partner-logo-organizer"><img alt="Nam Long" src="assets/images/logo-namlong-red.png"/></div>
+        <div class="partner-logo partner-logo-organizer"><img alt="Nam Long" src="assets/images/logo-namlong-red.png" loading="lazy" decoding="async"/></div>
       </div>
     </div>
 
@@ -4275,9 +6510,9 @@ background-size:cover!important;background-position:center!important;
         <small>Strategic Partners</small>
       </div>
       <div class="partner-logos partner-logos-strategic">
-        <div class="partner-logo placeholder">LOGO</div>
-        <div class="partner-logo placeholder">LOGO</div>
-        <div class="partner-logo placeholder">LOGO</div>
+        <div class="partner-logo placeholder partner-name-placeholder">Hankyu Hanshin Properties</div>
+        <div class="partner-logo placeholder partner-name-placeholder">Nishi Nippon Railroad</div>
+        <div class="partner-logo placeholder partner-name-placeholder">Tokyu Corporation</div>
       </div>
     </div>
 
@@ -4336,15 +6571,15 @@ background-size:cover!important;background-position:center!important;
 </section>
 <section class="section news" id="tin-tuc"><div class="container"><div class="news-head"><div><p class="eyebrow">Tin tức &amp; hoạt động</p><h2 class="section-title news-title"><span>Cập nhật hành trình</span><br/><span>Nam Long Experience.</span></h2></div><div aria-label="Điều hướng tin tức" class="news-controls"><button aria-label="Xem tin mới hơn" class="news-arrow" id="newsPrev" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Xem tin cũ hơn" class="news-arrow" id="newsNext" type="button"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div></div>
 <div class="news-viewport"><div class="news-grid" id="newsTrack">
-<button class="news-card featured reveal" data-content="Nam Long Journey 2025 đã mở ra một không gian trải nghiệm tích hợp, giúp khách tham dự tiếp cận trực quan hơn với hệ sinh thái đô thị và các lựa chọn an cư, đầu tư. Chuỗi hoạt động kết nối thông tin dự án, trải nghiệm không gian sống và tư vấn chuyên sâu trong cùng một hành trình.||Sự kiện cho thấy bất động sản không chỉ được nhìn qua mặt bằng hay thông số, mà cần được cảm nhận qua chất lượng quy hoạch, tiện ích, cộng đồng và khả năng vận hành trong đời sống thực." data-image="assets/images/gallery/event-space-07.jpg" data-meta="Dấu ấn sự kiện · 2025" data-slug="nam-long-journey-2025" data-title="Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm" data-url="https://www.namlongvn.com/tin-tuc/nam-long-journey-2025-experience-integrated-diem-hen-dau-tu-an-cu-dip-cuoi-nam/" type="button"><div class="news-thumb"><img alt="Nam Long Journey 2025" src="assets/images/gallery/event-space-07.jpg"/></div><div class="news-body"><div class="news-meta">Dấu ấn sự kiện · 2025</div><h3>Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm</h3><p>Nhìn lại chuỗi trải nghiệm tích hợp quy mô lớn và hành trình khám phá hệ sinh thái đô thị Nam Long.</p></div></button>
-<button class="news-card reveal" data-content="Không gian triển lãm ứng dụng công nghệ trình diễn và ngôn ngữ thị giác để tái hiện sinh động đời sống trong các khu đô thị tích hợp. Khách tham dự có thể khám phá hành trình sống thông qua nhiều lớp trải nghiệm thay vì chỉ tiếp nhận thông tin một chiều.||Cách tiếp cận đa giác quan giúp những giá trị về quy hoạch, tiện ích và cộng đồng trở nên gần gũi, dễ hình dung và có tính thuyết phục cao hơn." data-delay="1" data-image="assets/images/gallery/event-space-04.jpg" data-meta="Báo chí" data-slug="khong-gian-trai-nghiem-da-giac-quan" data-title="Không gian trải nghiệm đa giác quan" data-url="https://vnexpress.net/nam-long-cong-bo-chuoi-su-kien-trai-nghiem-da-giac-quan-4982711.html" type="button"><div class="news-thumb"><img alt="Trải nghiệm đa giác quan" src="assets/images/gallery/event-space-04.jpg"/></div><div class="news-body"><div class="news-meta">Báo chí</div><h3>Không gian trải nghiệm đa giác quan</h3><p>Công nghệ trình diễn giúp khách tham dự hình dung trực quan về đời sống trong đô thị tích hợp.</p></div></button>
-<button class="news-card reveal" data-content="Ngay trong ngày đầu tiên, sự kiện đã thu hút đông đảo khách hàng, nhà đầu tư và các gia đình quan tâm đến môi trường sống tích hợp. Không khí sôi động được tạo nên từ hoạt động trải nghiệm, tư vấn dự án và các chương trình kết nối diễn ra xuyên suốt.||Sự quan tâm của cộng đồng là cơ sở để Nam Long Experience tiếp tục phát triển thành điểm hẹn thường niên, nơi khách hàng có thể tiếp cận các giá trị bất động sản bằng trải nghiệm thực tế." data-delay="2" data-image="assets/images/gallery/event-space-05.jpg" data-meta="Hoạt động" data-slug="hang-ngan-luot-khach-ngay-khai-man" data-title="Hàng ngàn lượt khách trong ngày khai màn" data-url="https://tuoitre.vn/nam-long-journey-2025-bung-no-ngay-ngay-dau-tien-voi-hang-ngan-luot-khach-tham-du-20251205182835743.htm" type="button"><div class="news-thumb"><img alt="Khách tham dự sự kiện Nam Long" src="assets/images/gallery/event-space-05.jpg"/></div><div class="news-body"><div class="news-meta">Hoạt động</div><h3>Hàng ngàn lượt khách trong ngày khai màn</h3><p>Sự quan tâm của cộng đồng khẳng định sức hút của mô hình triển lãm bất động sản trải nghiệm.</p></div></button>
+<button class="news-card featured reveal" data-content="Nam Long Journey 2025 đã mở ra một không gian trải nghiệm tích hợp, giúp khách tham dự tiếp cận trực quan hơn với hệ sinh thái đô thị và các lựa chọn an cư, đầu tư. Chuỗi hoạt động kết nối thông tin dự án, trải nghiệm không gian sống và tư vấn chuyên sâu trong cùng một hành trình.||Sự kiện cho thấy bất động sản không chỉ được nhìn qua mặt bằng hay thông số, mà cần được cảm nhận qua chất lượng quy hoạch, tiện ích, cộng đồng và khả năng vận hành trong đời sống thực." data-image="assets/images/gallery/event-space-07.jpg" data-meta="Dấu ấn sự kiện · 2025" data-slug="nam-long-journey-2025" data-title="Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm" data-url="https://www.namlongvn.com/tin-tuc/nam-long-journey-2025-experience-integrated-diem-hen-dau-tu-an-cu-dip-cuoi-nam/" type="button"><div class="news-thumb"><img alt="Nam Long Journey 2025" src="assets/images/gallery/event-space-07.jpg" loading="lazy" decoding="async"/></div><div class="news-body"><div class="news-meta">Dấu ấn sự kiện · 2025</div><h3>Nam Long Journey 2025 – Điểm hẹn đầu tư, an cư dịp cuối năm</h3><p>Nhìn lại chuỗi trải nghiệm tích hợp quy mô lớn và hành trình khám phá hệ sinh thái đô thị Nam Long.</p></div></button>
+<button class="news-card reveal" data-content="Không gian triển lãm ứng dụng công nghệ trình diễn và ngôn ngữ thị giác để tái hiện sinh động đời sống trong các khu đô thị tích hợp. Khách tham dự có thể khám phá hành trình sống thông qua nhiều lớp trải nghiệm thay vì chỉ tiếp nhận thông tin một chiều.||Cách tiếp cận đa giác quan giúp những giá trị về quy hoạch, tiện ích và cộng đồng trở nên gần gũi, dễ hình dung và có tính thuyết phục cao hơn." data-delay="1" data-image="assets/images/gallery/event-space-04.jpg" data-meta="Báo chí" data-slug="khong-gian-trai-nghiem-da-giac-quan" data-title="Không gian trải nghiệm đa giác quan" data-url="https://vnexpress.net/nam-long-cong-bo-chuoi-su-kien-trai-nghiem-da-giac-quan-4982711.html" type="button"><div class="news-thumb"><img alt="Trải nghiệm đa giác quan" src="assets/images/gallery/event-space-04.jpg" loading="lazy" decoding="async"/></div><div class="news-body"><div class="news-meta">Báo chí</div><h3>Không gian trải nghiệm đa giác quan</h3><p>Công nghệ trình diễn giúp khách tham dự hình dung trực quan về đời sống trong đô thị tích hợp.</p></div></button>
+<button class="news-card reveal" data-content="Ngay trong ngày đầu tiên, sự kiện đã thu hút đông đảo khách hàng, nhà đầu tư và các gia đình quan tâm đến môi trường sống tích hợp. Không khí sôi động được tạo nên từ hoạt động trải nghiệm, tư vấn dự án và các chương trình kết nối diễn ra xuyên suốt.||Sự quan tâm của cộng đồng là cơ sở để Nam Long Experience tiếp tục phát triển thành điểm hẹn thường niên, nơi khách hàng có thể tiếp cận các giá trị bất động sản bằng trải nghiệm thực tế." data-delay="2" data-image="assets/images/gallery/event-space-05.jpg" data-meta="Hoạt động" data-slug="hang-ngan-luot-khach-ngay-khai-man" data-title="Hàng ngàn lượt khách trong ngày khai màn" data-url="https://tuoitre.vn/nam-long-journey-2025-bung-no-ngay-ngay-dau-tien-voi-hang-ngan-luot-khach-tham-du-20251205182835743.htm" type="button"><div class="news-thumb"><img alt="Khách tham dự sự kiện Nam Long" src="assets/images/gallery/event-space-05.jpg" loading="lazy" decoding="async"/></div><div class="news-body"><div class="news-meta">Hoạt động</div><h3>Hàng ngàn lượt khách trong ngày khai màn</h3><p>Sự quan tâm của cộng đồng khẳng định sức hút của mô hình triển lãm bất động sản trải nghiệm.</p></div></button>
 </div></div>
 </div></section>
 </main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-contact"><a class="footer-logo-link" href="https://namlongvn.com" rel="noopener" target="_blank" aria-label="Nam Long"><img alt="Nam Long" class="footer-logo" src="assets/images/logo-namlong-white.png"/></a><div class="company">CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)</div><p><strong>MST:</strong> 0301438936</p><p><strong>Địa chỉ:</strong> Số 6 Nguyễn Khắc Viện, P. Tân Mỹ, TP. Hồ Chí Minh</p><p><strong>Điện thoại:</strong> (84-28) 54 16 17 18</p><p><strong>Email:</strong> <a href="mailto:info@namlongvn.com">info@namlongvn.com</a></p><p><a href="https://www.namlongvn.com/chinh-sach-bao-mat-du-lieu-ca-nhan/" rel="noopener" target="_blank">Chính sách bảo mật dữ liệu cá nhân</a></p></div><div><nav aria-label="Liên kết cuối trang" class="footer-nav"><a href="https://www.namlongvn.com/gioi-thieu/" rel="noopener" target="_blank">Giới thiệu</a><a href="https://www.namlongvn.com/linh-vuc-kinh-doanh/" rel="noopener" target="_blank">Lĩnh vực kinh doanh</a><a href="https://www.namlongvn.com/du-an/" rel="noopener" target="_blank">Dự án</a><a href="https://www.namlongvn.com/quan-he-nha-dau-tu/" rel="noopener" target="_blank">Quan hệ nhà đầu tư</a><a href="https://www.namlongvn.com/phat-trien-ben-vung/" rel="noopener" target="_blank">Phát triển bền vững</a><a href="https://www.namlongvn.com/tin-tuc/" rel="noopener" target="_blank">Tin tức</a><a href="https://www.namlongvn.com/tuyen-dung/" rel="noopener" target="_blank">Tuyển dụng</a><a href="https://www.namlongvn.com/lien-he/" rel="noopener" target="_blank">Liên hệ</a></nav><div aria-label="Mạng xã hội" class="footer-social">
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-contact"><a class="footer-logo-link" href="https://namlongvn.com" rel="noopener" target="_blank" aria-label="Nam Long"><img alt="Nam Long" class="footer-logo" src="assets/images/logo-namlong-white.png" loading="lazy" decoding="async"/></a><div class="company">CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)</div><p><strong>MST:</strong> 0301438936</p><p><strong>Địa chỉ:</strong> Số 6 Nguyễn Khắc Viện, P. Tân Mỹ, TP. Hồ Chí Minh</p><p><strong>Điện thoại:</strong> (84-28) 54 16 17 18</p><p><strong>Email:</strong> <a href="mailto:info@namlongvn.com">info@namlongvn.com</a></p><p><a href="https://www.namlongvn.com/chinh-sach-bao-mat-du-lieu-ca-nhan/" rel="noopener" target="_blank">Chính sách bảo mật dữ liệu cá nhân</a></p></div><div><nav aria-label="Liên kết cuối trang" class="footer-nav"><a href="https://www.namlongvn.com/gioi-thieu/" rel="noopener" target="_blank">Giới thiệu</a><a href="https://www.namlongvn.com/linh-vuc-kinh-doanh/" rel="noopener" target="_blank">Lĩnh vực kinh doanh</a><a href="https://www.namlongvn.com/du-an/" rel="noopener" target="_blank">Dự án</a><a href="https://www.namlongvn.com/quan-he-nha-dau-tu/" rel="noopener" target="_blank">Quan hệ nhà đầu tư</a><a href="https://www.namlongvn.com/phat-trien-ben-vung/" rel="noopener" target="_blank">Phát triển bền vững</a><a href="https://www.namlongvn.com/tin-tuc/" rel="noopener" target="_blank">Tin tức</a><a href="https://www.namlongvn.com/tuyen-dung/" rel="noopener" target="_blank">Tuyển dụng</a><a href="https://www.namlongvn.com/lien-he/" rel="noopener" target="_blank">Liên hệ</a></nav><div aria-label="Mạng xã hội" class="footer-social">
 <a class="social-dot social-facebook" href="https://www.facebook.com/namlonggroup.nlg" rel="noopener" target="_blank" aria-label="Facebook">
-  <img src="assets/images/facebook-icon.png" alt="Facebook"/>
+  <img src="assets/images/facebook-icon.png" alt="Facebook" loading="lazy" decoding="async"/>
 </a>
 <a class="social-dot" href="https://www.youtube.com/namlongic" rel="noopener" target="_blank" aria-label="YouTube">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.9 12l-6.3 3.6Z"/></svg>
@@ -4353,20 +6588,52 @@ background-size:cover!important;background-position:center!important;
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 7.8H1V22h4.4V7.8ZM3.2 1A2.6 2.6 0 1 0 3.2 6.2 2.6 2.6 0 0 0 3.2 1ZM22 13.9c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.3V7.8H8.2V22h4.4v-7c0-1.8.3-3.6 2.6-3.6 2.2 0 2.3 2.1 2.3 3.7V22H22v-8.1Z"/></svg>
 </a>
 <a class="social-dot social-zalo" href="https://zalo.me/1676058629598277837" rel="noopener" target="_blank" aria-label="Zalo">
-  <img src="assets/images/logo-zalo.webp" alt="Zalo"/>
+  <img src="assets/images/logo-zalo.webp" alt="Zalo" loading="lazy" decoding="async"/>
 </a>
 </div></div></div><div class="footer-bottom"><span>Bản quyền ©2026 Nam Long Group</span><div aria-label="DMCA protected" class="dmca"><span>DMCA</span><span>PROTECTED</span></div></div></div></footer>
-<div aria-label="Điều hướng nhanh" class="floating"><div class="float-register-wrap">
-  <span class="float-register-label">Đăng ký ngay</span>
-  <a aria-label="Đăng ký ngay" class="float-btn float-register float-register-brand" href="#dang-ky">
-    <img src="assets/images/icon-namlong-group.webp" alt="" aria-hidden="true"/>
-  </a>
-</div><div class="float-top-wrap">
-<span class="float-top-label">Về đầu trang</span>
-<button aria-label="Về đầu trang" class="float-btn float-top" id="backTop" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg></button>
-</div></div>
-<div aria-label="Xem ảnh không gian trải nghiệm" aria-modal="true" class="lightbox" id="lightbox" role="dialog"><div class="lightbox-dialog"><button aria-label="Đóng" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="lightbox-stage"><img alt="" id="lightboxImage" src=""/></div><button aria-label="Ảnh trước" class="lightbox-nav lightbox-prev" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Ảnh tiếp theo" class="lightbox-nav lightbox-next" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button><div class="lightbox-caption" id="lightboxCaption"></div></div></div>
-<div aria-labelledby="newsModalTitle" aria-modal="true" class="news-modal" id="newsModal" role="dialog"><div class="news-dialog"><button aria-label="Đóng bài viết" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="news-banner"><img alt="" id="newsModalImage" src=""/></div><article class="news-detail"><div class="news-meta" id="newsModalMeta"></div><h2 id="newsModalTitle"></h2><div id="newsModalContent"></div><div class="news-share">
+
+<div class="entry-register-modal" id="entryRegisterModal" role="dialog" aria-modal="true" aria-labelledby="entryRegisterTitle" aria-hidden="true">
+  <div class="entry-register-card entry-register-card-split">
+<div class="entry-register-visual">
+      <img src="assets/images/popup-master-keyvisual-v2.jpg" alt="Nam Long Experience 2026"/>
+    </div>
+
+    <div class="entry-register-content">
+
+    <button class="entry-register-close" id="entryRegisterClose" type="button" aria-label="Đóng popup đăng ký">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <p class="eyebrow entry-register-kicker">
+      <span>NAM LONG EXPERIENCE 2026</span>
+      <span>TRIỂN LÃM BẤT ĐỘNG SẢN GIÁ TRỊ THỰC</span>
+    </p>
+    <h2 id="entryRegisterTitle">Đừng bỏ lỡ 3 ngày trải nghiệm và đặc quyền</h2>
+    <p class="entry-register-meta">
+      <span>18-20.09.2026 · SECC</span>
+      <span>P. Tân Mỹ, TP. HCM</span>
+    </p>
+    <a class="entry-register-cta" id="entryRegisterCta" href="#dang-ky">Đăng ký ngay<span aria-hidden="true">→</span></a>
+  
+    </div>
+  </div>
+</div>
+
+<div aria-label="Điều hướng nhanh" class="floating">
+  <div class="float-register-wrap">
+    <span class="float-register-label">Đăng ký ngay</span>
+    <a aria-label="Đăng ký ngay" class="float-btn float-register float-register-brand" href="#dang-ky">
+      <img class="registration-icon registration-icon-img" src="assets/images/registrationicon-clean.png" alt="" aria-hidden="true"/>
+    </a>
+  </div>
+  <div class="float-top-wrap">
+    <span class="float-top-label">Về đầu trang</span>
+    <button aria-label="Về đầu trang" class="float-btn float-top" id="backTop" type="button">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
+    </button>
+  </div>
+</div>
+<div aria-label="Xem ảnh không gian trải nghiệm" aria-modal="true" class="lightbox" id="lightbox" role="dialog"><div class="lightbox-dialog"><button aria-label="Đóng" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="lightbox-stage"><img alt="" id="lightboxImage" src="" loading="lazy" decoding="async"/></div><button aria-label="Ảnh trước" class="lightbox-nav lightbox-prev" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><button aria-label="Ảnh tiếp theo" class="lightbox-nav lightbox-next" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button><div class="lightbox-caption" id="lightboxCaption"></div></div></div>
+<div aria-labelledby="newsModalTitle" aria-modal="true" class="news-modal" id="newsModal" role="dialog"><div class="news-dialog"><button aria-label="Đóng bài viết" class="modal-close" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button><div class="news-banner"><img alt="" id="newsModalImage" src="" loading="lazy" decoding="async"/></div><article class="news-detail"><div class="news-meta" id="newsModalMeta"></div><h2 id="newsModalTitle"></h2><div id="newsModalContent"></div><div class="news-share">
 <button class="news-share-btn" id="newsShareBtn" type="button" aria-label="Chia sẻ bài viết">
 <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 10.7 6.8-4.2M8.6 13.3l6.8 4.2"></path></svg>
 <span>Chia sẻ</span>
@@ -4397,8 +6664,8 @@ background-size:cover!important;background-position:center!important;
     heroCurrent.textContent=String(heroIndex+1).padStart(2,'0');
     scheduleHero();
   }
-  document.getElementById('heroPrev').addEventListener('click',()=>goHero(heroIndex-1));
-  document.getElementById('heroNext').addEventListener('click',()=>goHero(heroIndex+1));
+  document.getElementById('heroPrev')?.addEventListener('click',()=>goHero(heroIndex-1));
+  document.getElementById('heroNext')?.addEventListener('click',()=>goHero(heroIndex+1));
   heroDots.forEach((dot,i)=>dot.addEventListener('click',()=>goHero(i)));
   heroSlider.addEventListener('mouseenter',clearHeroTimer);
   heroSlider.addEventListener('mouseleave',scheduleHero);
@@ -4424,7 +6691,7 @@ background-size:cover!important;background-position:center!important;
   frame?.addEventListener('load',()=>{formResolved=true;formLoading?.classList.add('is-hidden')});
   frame?.addEventListener('error',showFormFallback);
   setTimeout(()=>{if(!formResolved)formLoading?.classList.add('is-hidden')},8000);
-  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}}),{threshold:.14,rootMargin:'0px 0px -50px'});
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}}),{threshold:.06,rootMargin:'0px 0px 80px'});
   document.querySelectorAll('.section-title,.section-lead,.gallery-item,.agenda-row,.quote blockquote,.news-head,.reveal').forEach((el,i)=>{el.classList.add('reveal');if(!el.dataset.delay&&i%4)el.dataset.delay=String(i%4);revealObserver.observe(el)});
   const galleryItems=[...document.querySelectorAll('.gallery-item')],
         highlightItems=[...document.querySelectorAll('[data-highlight-lightbox="true"]')],
@@ -4434,8 +6701,8 @@ background-size:cover!important;background-position:center!important;
   let lightboxItems=[],lightboxIndex=0,lastFocus=null;
   function mediaFor(item){const img=item.querySelector('img'),caption=item.querySelector('figcaption');return{src:img?.currentSrc||img?.src||item.getAttribute('href')||'',alt:img?.alt||'',caption:caption?.textContent||img?.alt||''}}
   function showLightboxMedia(index){if(!lightboxItems.length)return;lightboxIndex=(index+lightboxItems.length)%lightboxItems.length;const media=mediaFor(lightboxItems[lightboxIndex]);lightboxImage.src=media.src;lightboxImage.alt=media.alt;lightboxCaption.textContent=media.caption}
-  function openMediaLightbox(items,index){lastFocus=document.activeElement;lightboxItems=items;showLightboxMedia(index);lightbox.classList.add('open');document.body.style.overflow='hidden';lightbox.querySelector('.modal-close').focus()}
-  function closeOverlay(overlay){overlay.classList.remove('open');document.body.style.overflow='';lastFocus?.focus()}
+  function openMediaLightbox(items,index){lastFocus=document.activeElement;lightboxItems=items;lightbox.classList.toggle('is-highlight-viewer',items===highlightItems);showLightboxMedia(index);lightbox.classList.add('open');document.body.style.overflow='hidden';lightbox.querySelector('.modal-close').focus()}
+  function closeOverlay(overlay){overlay.classList.remove('open');overlay.classList.remove('is-highlight-viewer');document.body.style.overflow='';lastFocus?.focus()}
   galleryItems.forEach((item,i)=>item.addEventListener('click',()=>openMediaLightbox(galleryItems,i)));
   highlightItems.forEach((item,i)=>item.addEventListener('click',e=>{e.preventDefault();openMediaLightbox(highlightItems,i)}));
   lightbox.querySelector('.lightbox-prev').addEventListener('click',()=>showLightboxMedia(lightboxIndex-1));
@@ -4615,7 +6882,7 @@ background-size:cover!important;background-position:center!important;
 
 <script id="language-r25">
 (()=>{
-  const VI_TO_EN={"Đăng ký ngay": "Register now", "Hành trình sống trọn giá trị": "A journey to living true value", "Nơi “Giá Trị Thực” được nhìn thấy, chạm đến và trải nghiệm.": "Where “True Value” can be seen, touched and experienced.", "Triển lãm của sự trải nghiệm thật và đặc quyền thực": "An exhibition of real experiences and tangible privileges", "TRẢI NGHIỆM ĐÔ THỊ": "URBAN EXPERIENCE", "Chạm thật không gian sống": "Experience real living spaces", "Trực tiếp trải nghiệm các hoạt động và không gian sống tại những đô thị Nam Long đang phát triển.": "Experience activities and living environments first-hand across Nam Long’s developing urban communities.", "Đô thị đáng sống": "Liveable communities", "Trải nghiệm thực tế": "Real-life experience", "ƯU ĐÃI ĐẶC QUYỀN": "EXCLUSIVE PRIVILEGES", "Ưu đãi lên đến 100 triệu đồng": "Privileges worth up to VND 100 million", "Check-in tại Nam Long Experience 2026 để nhận voucher ưu đãi đến ": "Check in at Nam Long Experience 2026 to receive privileges worth up to ", "100 triệu đồng": "VND 100 million", ", áp dụng khi giao dịch sản phẩm theo chính sách từng dự án.": ", applicable to transactions under each project’s policy.", "Voucher đến 100 triệu": "Voucher up to VND 100M", "Check-in tại sự kiện": "Event check-in", "CHỈ TRONG 3 NGÀY": "ONLY FOR 3 DAYS", "Quyết định nhanh – Ưu đãi thêm 1%": "Decide fast – Enjoy an extra 1%", "Cơ hội nhận thêm ưu đãi ": "Receive an additional ", "1%": "1%", " khi hoàn tất điều kiện giao dịch trong 3 ngày diễn ra Nam Long Experience 2026.": " when transaction conditions are completed during the three days of Nam Long Experience 2026.", "Flash Sale -1%": "Flash Sale -1%", "ƯU ĐÃI CỘNG DỒN": "STACKABLE PRIVILEGES", "Một giao dịch – Nhiều ưu đãi": "One transaction – Multiple privileges", "Đặc biệt, ưu đãi tại Nam Long Experience ": "Nam Long Experience privileges ", "có thể áp dụng đồng thời với các chương trình hiện hành của từng dự án": "may be combined with existing programs offered by each project", ", gia tăng quyền lợi khi giao dịch ngay tại sự kiện.": ", maximizing benefits for transactions made at the event.", "Ưu đãi cộng thêm": "Additional privileges", "Tối đa quyền lợi": "Maximum benefits", "Không gian trải nghiệm": "Experience space", "Từ bản quy hoạch": "From masterplan", "đến một ngày sống thật.": "to a real day of living.", "Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.": "The exhibition space combines models, presentation technology and multi-sensory interaction, bringing visitors into an intuitive urban journey.", "Hình ảnh mang tính minh họa": "Images are for illustration purposes", "5 lý do không nên bỏ lỡ": "5 reasons not to miss", "Một triển lãm. Năm chiều": "One exhibition. Five dimensions", "trải nghiệm đô thị.": "of urban experience.", "Một triển lãm. Năm chiều trải nghiệm đô thị.": "One exhibition. Five dimensions of urban experience.", "Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.": "Each space reveals a dimension of real life, helping visitors understand the enduring value behind a home or investment decision.", "Sống": "Living", "Học tập": "Learning", "Làm việc": "Working", "Mua sắm": "Shopping", "Giải trí": "Entertainment", "Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.": "Experience quality of life shaped by planning, amenities and community.", "Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.": "Explore an education ecosystem and environment that nurtures future generations.", "Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.": "Discover urban models connecting career, business and community opportunities.", "Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.": "Explore retail amenities serving everyday needs within the urban community.", "Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.": "Experience leisure, culture and multi-generational connection.", "Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.": "The value of real estate lies not only in what we own, but in the real life created every day.", "Agenda dự kiến": "Tentative agenda", "Ngày 1, 18/09": "Day 1, 18/09", "Ngày 2, 19/09": "Day 2, 19/09", "Ngày 3, 20/09": "Day 3, 20/09", "Cả ngày": "All day", "Sân khấu chính": "Main stage", "Talkshow": "Talkshow", "Đồng hành cùng sự kiện": "Event partners", "Những đơn vị kiến tạo nên hành trình.": "The partners shaping the journey.", "Đơn vị tổ chức": "Organizer", "Đối tác chiến lược": "Strategic Partners", "Nhà tài trợ Kim cương": "Diamond Sponsor", "Nhà tài trợ Vàng": "Gold Sponsor", "Nhà tài trợ Bạc": "Silver Sponsor", "Bảo trợ truyền thông": "Media Partners", "Tin tức & hoạt động": "News & activities", "Tin tức mới nhất": "Latest news", "Chia sẻ": "Share", "Sao chép liên kết": "Copy link", "Đọc bài viết tại nguồn": "Read original article", "Đã sao chép liên kết": "Link copied", "CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)": "NAM LONG INVESTMENT CORPORATION (HOSE: NLG)", "MST:": "Tax code:", "Địa chỉ:": "Address:", "Điện thoại:": "Phone:", "Chính sách bảo mật dữ liệu cá nhân": "Personal Data Privacy Policy", "Bản quyền": "Copyright", "Điều kiện & Điều khoản": "Terms & Conditions", "Chính sách Khiếu nại": "Complaint Policy", "Chính sách Bản quyền": "Copyright Policy", "Bản quyền ©2026 Nam Long": "Copyright ©2026 Nam Long"};
+  const VI_TO_EN={"Đăng ký ngay": "Register now", "Hành trình sống trọn giá trị": "A journey to living true value", "Nơi “Giá Trị Thực” được nhìn thấy, chạm đến và trải nghiệm.": "Where “True Value” can be seen, touched and experienced.", "Triển lãm của sự trải nghiệm thật và đặc quyền thực": "An exhibition of real experiences and tangible privileges", "TRẢI NGHIỆM ĐÔ THỊ": "URBAN EXPERIENCE", "Chạm thật không gian sống": "Experience real living spaces", "Trực tiếp trải nghiệm các hoạt động và không gian sống tại những đô thị Nam Long đang phát triển.": "Experience activities and living environments first-hand across Nam Long’s developing urban communities.", "Đô thị đáng sống": "Liveable communities", "Trải nghiệm thực tế": "Real-life experience", "ƯU ĐÃI ĐẶC QUYỀN": "EXCLUSIVE PRIVILEGES", "Ưu đãi lên đến 100 triệu đồng": "Privileges worth up to VND 100 million", "Check-in tại Nam Long Experience 2026 để nhận voucher ưu đãi đến ": "Check in at Nam Long Experience 2026 to receive privileges worth up to ", "100 triệu đồng": "VND 100 million", ", áp dụng khi giao dịch sản phẩm theo chính sách từng dự án.": ", applicable to transactions under each project’s policy.", "Voucher đến 100 triệu": "Voucher up to VND 100M", "Check-in tại sự kiện": "Event check-in", "CHỈ TRONG 3 NGÀY": "ONLY FOR 3 DAYS", "Quyết định nhanh – Ưu đãi thêm 1%": "Decide fast – Enjoy an extra 1%", "Cơ hội nhận thêm ưu đãi ": "Receive an additional ", "1%": "1%", " khi hoàn tất điều kiện giao dịch trong 3 ngày diễn ra Nam Long Experience 2026.": " when transaction conditions are completed during the three days of Nam Long Experience 2026.", "Flash Sale -1%": "Flash Sale -1%", "ƯU ĐÃI CỘNG DỒN": "STACKABLE PRIVILEGES", "Một giao dịch – Nhiều ưu đãi": "One transaction – Multiple privileges", "Đặc biệt, ưu đãi tại Nam Long Experience ": "Nam Long Experience privileges ", "có thể áp dụng đồng thời với các chương trình hiện hành của từng dự án": "may be combined with existing programs offered by each project", ", gia tăng quyền lợi khi giao dịch ngay tại sự kiện.": ", maximizing benefits for transactions made at the event.", "Ưu đãi cộng thêm": "Additional privileges", "Tối đa quyền lợi": "Maximum benefits", "Không gian trải nghiệm": "Experience space", "Từ bản quy hoạch": "From masterplan", "đến một ngày sống thật.": "to a real day of living.", "Không gian triển lãm dự kiến kết hợp mô hình, công nghệ trình diễn và tương tác đa giác quan để đưa khách tham dự bước vào hành trình đô thị một cách trực quan.": "The exhibition space combines models, presentation technology and multi-sensory interaction, bringing visitors into an intuitive urban journey.", "Hình ảnh mang tính minh họa": "Images are for illustration purposes", "5 lý do không nên bỏ lỡ": "5 reasons not to miss", "Một triển lãm. Năm chiều": "One exhibition. Five dimensions", "trải nghiệm đô thị.": "of urban experience.", "Một triển lãm. Năm chiều trải nghiệm đô thị.": "One exhibition. Five dimensions of urban experience.", "Mỗi không gian mở ra một chiều trải nghiệm của đời sống thực, giúp người tham dự hiểu rõ hơn giá trị bền vững phía sau một lựa chọn an cư hay đầu tư.": "Each space reveals a dimension of real life, helping visitors understand the enduring value behind a home or investment decision.", "Sống": "Living", "Học tập": "Learning", "Làm việc": "Working", "Mua sắm": "Shopping", "Giải trí": "Entertainment", "Cảm nhận chất lượng sống được tạo nên từ quy hoạch, tiện ích và cộng đồng.": "Experience quality of life shaped by planning, amenities and community.", "Khám phá hệ sinh thái giáo dục và môi trường nuôi dưỡng thế hệ tương lai.": "Explore an education ecosystem and environment that nurtures future generations.", "Tiếp cận mô hình đô thị kết nối cơ hội nghề nghiệp, kinh doanh và cộng đồng.": "Discover urban models connecting career, business and community opportunities.", "Khám phá hệ tiện ích thương mại đáp ứng nhu cầu thường nhật ngay trong đô thị.": "Explore retail amenities serving everyday needs within the urban community.", "Trải nghiệm những không gian nghỉ ngơi, văn hóa và kết nối đa thế hệ.": "Experience leisure, culture and multi-generational connection.", "Giá trị của một bất động sản không chỉ nằm ở nơi ta sở hữu, mà ở cuộc sống thật được hình thành mỗi ngày.": "The value of real estate lies not only in what we own, but in the real life created every day.", "Agenda dự kiến": "Tentative agenda", "Ngày 1 - 18/09": "Day 1, 18/09", "Ngày 2 - 19/09": "Day 2, 19/09", "Ngày 3 - 20/09": "Day 3, 20/09", "Cả ngày": "All day", "Sân khấu chính": "Main stage", "Talkshow": "Talkshow", "Đồng hành cùng sự kiện": "Event partners", "Những đơn vị kiến tạo nên hành trình.": "The partners shaping the journey.", "Đơn vị tổ chức": "Organizer", "Đối tác chiến lược": "Strategic Partners", "Nhà tài trợ Kim cương": "Diamond Sponsor", "Nhà tài trợ Vàng": "Gold Sponsor", "Nhà tài trợ Bạc": "Silver Sponsor", "Bảo trợ truyền thông": "Media Partners", "Tin tức & hoạt động": "News & activities", "Tin tức mới nhất": "Latest news", "Chia sẻ": "Share", "Sao chép liên kết": "Copy link", "Đọc bài viết tại nguồn": "Read original article", "Đã sao chép liên kết": "Link copied", "CÔNG TY CỔ PHẦN ĐẦU TƯ NAM LONG (HOSE: NLG)": "NAM LONG INVESTMENT CORPORATION (HOSE: NLG)", "MST:": "Tax code:", "Địa chỉ:": "Address:", "Điện thoại:": "Phone:", "Chính sách bảo mật dữ liệu cá nhân": "Personal Data Privacy Policy", "Bản quyền": "Copyright", "Điều kiện & Điều khoản": "Terms & Conditions", "Chính sách Khiếu nại": "Complaint Policy", "Chính sách Bản quyền": "Copyright Policy", "Bản quyền ©2026 Nam Long": "Copyright ©2026 Nam Long"};
   const EN_TO_VI=Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k]));
   Object.assign(VI_TO_EN,{"Lịch trình": "Agenda", "Đăng ký tham dự": "Register", "Đăng ký": "Register", "Điều hướng nhanh": "Quick navigation", "Mở menu": "Open menu", "Chuyển ngôn ngữ": "Switch language", "Xem nhóm hình trước": "Previous gallery group", "Xem nhóm hình tiếp theo": "Next gallery group", "Hoạt động trước": "Previous highlight", "Hoạt động tiếp theo": "Next highlight", "Toàn cảnh triển lãm": "Exhibition overview", "Khám phá hệ sinh thái dự án": "Explore the project ecosystem", "Xem hình đầy đủ": "View full image"});
   Object.assign(VI_TO_EN,{
@@ -4630,6 +6897,9 @@ background-size:cover!important;background-position:center!important;
   });
   Object.assign(EN_TO_VI,Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k])));
 
+  Object.assign(EN_TO_VI,Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k])));
+
+  Object.assign(VI_TO_EN,{"Đừng bỏ lỡ 3 ngày trải nghiệm và đặc quyền.":"Don't miss three days of experiences and privileges.","18–20.09.2026 · SECC, TP. Hồ Chí Minh":"18–20 Sep 2026 · SECC, Ho Chi Minh City","Đóng popup đăng ký":"Close registration popup","Ngày 1 - 18/09":"Day 1 - 18/09","Ngày 2 - 19/09":"Day 2 - 19/09","Ngày 3 - 20/09":"Day 3 - 20/09","Trước khai mạc":"Before opening","Đón khách & Check-in":"Guest reception & Check-in","Tiếp đón khách mời, hoàn tất check-in và chuẩn bị cho chương trình khai mạc.":"Guest reception and check-in before the opening program.","Mở cửa triển lãm & Hành trình trải nghiệm":"Exhibition opens & Experience journey","Khách tham dự bắt đầu khám phá các không gian chủ đề, mô hình dự án và hoạt động trải nghiệm.":"Visitors begin exploring themed spaces, project showcases and experience activities."});
   Object.assign(EN_TO_VI,Object.fromEntries(Object.entries(VI_TO_EN).map(([k,v])=>[v,k])));
   let currentLang=localStorage.getItem('nl-lang')||'vi';
 
@@ -4673,9 +6943,11 @@ background-size:cover!important;background-position:center!important;
     localStorage.setItem('nl-lang',lang);
     document.documentElement.lang=lang==='en'?'en':'vi';
     opts.forEach(o=>o.classList.toggle('active',o.dataset.setLang===lang));
-    if(trigger){
+if(trigger){
       const code=trigger.querySelector('strong');
       if(code) code.textContent=lang==='en'?'EN':'VI';
+      const alt=trigger.querySelector('.lang-alt');
+      if(alt) alt.textContent=lang==='en'?'/ VI':'/ EN';
       trigger.setAttribute('aria-expanded','false');
     }
     wrap?.classList.remove('open');
@@ -4721,6 +6993,34 @@ the script groups them as 4 mosaic → 2 pair → repeat.
     cycle++;
   }
   source.remove();
+})();
+</script>
+
+
+<script id="r44-entry-register-popup">
+(()=>{
+  const modal=document.getElementById('entryRegisterModal');
+  const close=document.getElementById('entryRegisterClose');
+  const cta=document.getElementById('entryRegisterCta');
+  if(!modal)return;
+  let opened=false;
+  const open=()=>{
+    if(opened||location.hash==='#dang-ky')return;
+    opened=true;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    requestAnimationFrame(()=>close?.focus());
+  };
+  const hide=()=>{
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+  };
+  // Review behavior: show once after entry; production can switch to sessionStorage/cookie frequency cap.
+  window.setTimeout(open,10000);
+  close?.addEventListener('click',hide);
+  cta?.addEventListener('click',hide);
+  modal.addEventListener('click',e=>{if(e.target===modal)hide()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))hide()});
 })();
 </script>
 
