@@ -1559,7 +1559,7 @@ h1,h2,h3,h4{
 .sl-platform-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}.sl-platform-summary>div{padding:11px;border-radius:13px;background:#fff;border:1px solid rgba(17,47,44,.06)}.sl-platform-summary b{font-size:12px;color:#748480}.sl-platform-summary strong{display:block;font-size:17px;margin-top:5px}.sl-platform-summary span{font-size:12px;color:#899592}
 .sentiment-breakdown-row{display:grid;grid-template-columns:150px 1fr 260px;gap:12px;align-items:center}.sentiment-media-label b{font-size:12px}.sentiment-media-label span{display:block;font-size:12px;color:#879490;margin-top:3px}.sentiment-stacked{display:flex;height:22px;border-radius:999px;overflow:hidden;background:#edf1f0}.sentiment-stacked i{display:block;height:100%}.sentiment-stacked .positive{background:#38b57b}.sentiment-stacked .negative{background:#df4e4e}.sentiment-stacked .neutral{background:#707977}.sentiment-stacked .irrelevant{background:#e8b541}.sentiment-values{display:flex;gap:8px;flex-wrap:wrap;font-size:12px}.sentiment-values span{padding:4px 6px;border-radius:8px;background:#f5f7f6}.sentiment-values b{font-weight:650}.sentiment-zero-row{display:flex;gap:9px;margin-top:10px;font-size:12px;color:#87938f}.sentiment-zero-row b{color:#647571}
 .top-authors-table-wrap{overflow:auto;border-radius:16px;border:1px solid rgba(17,47,44,.07);background:#fff}.top-authors-table{width:100%;border-collapse:collapse;min-width:800px}.top-authors-table th,.top-authors-table td{padding:9px 10px;border-bottom:1px solid rgba(17,47,44,.06);text-align:left;font-size:12px}.top-authors-table th{font-size:12px;color:#778682;background:#f7faf9}.top-authors-table td:last-child{text-align:right}.top-authors-table tbody tr:hover{background:#fafcfc}
-@media(max-width:1150px){.sl-overview-grid{grid-template-columns:repeat(3,1fr)}.sl-platform-summary{grid-template-columns:repeat(2,1fr)}.sentiment-breakdown-row{grid-template-columns:120px 1fr}.sentiment-values{grid-column:1/-1}}
+@media(max-width:1150px){.sl-overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.sl-platform-summary{grid-template-columns:repeat(2,1fr)}.sentiment-breakdown-row{grid-template-columns:120px 1fr}.sentiment-values{grid-column:1/-1}}
 @media(max-width:700px){.sl-overview-grid{grid-template-columns:repeat(2,1fr)}.sl-chart-head{display:block}.sl-grain,.sl-mode{margin-top:8px;width:max-content}.sl-svg-chart{height:260px}.sl-svg-chart svg{height:225px}.sl-platform-summary{grid-template-columns:1fr 1fr}.sentiment-breakdown-row{grid-template-columns:1fr}.sl-hero-metric strong{font-size:25px}}
 
 
@@ -1739,6 +1739,79 @@ body.auth-ok #authScreen{display:none!important}
 .evidence-thumb:hover img{transform:scale(1.025)}
 .evidence-thumb.image-missing{display:none}
 
+
+/* V2.0.4 — BOD Executive Summary in Nghiệm thu */
+.nt-bod-summary{margin-bottom:20px}
+.nt-bod-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px;border-radius:20px;background:linear-gradient(135deg,#f4fbf8 0%,#fff 68%);border:1px solid rgba(17,47,44,.07)}
+.nt-bod-kicker,.nt-bod-label{font-size:12px;font-weight:800;letter-spacing:.05em;color:#7a8885;text-transform:uppercase}
+.nt-bod-head h2{font-size:25px!important;line-height:1.18;margin:6px 0 7px;color:#173a34}.nt-bod-head p{font-size:13px!important;line-height:1.55;color:#677773;margin:0}
+.nt-bod-period{min-width:250px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid rgba(17,47,44,.07)}
+.nt-bod-period span{font-size:12px;color:#7d8987}.nt-bod-period strong{display:block;font-size:15px;margin-top:5px;color:#173a34}
+.nt-bod-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
+.nt-bod-kpis article{padding:14px;border-radius:15px;background:#fff;border:1px solid rgba(17,47,44,.07);transition:.2s ease}
+.nt-bod-kpis article:hover,.nt-bod-card:hover{background:linear-gradient(135deg,rgba(182,7,9,.08),#fff 72%);border-color:rgba(182,7,9,.18);box-shadow:0 10px 24px rgba(182,7,9,.05)}
+.nt-bod-kpis span{font-size:12px;color:#758581}.nt-bod-kpis strong{display:block;font-size:20px;margin:6px 0 4px;color:#173a34}.nt-bod-kpis small{font-size:12px;color:#82908d}
+.nt-bod-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.nt-bod-grid>.nt-bod-card:first-child{grid-column:1/-1}
+.nt-bod-card{padding:17px;border-radius:18px;background:#fff;border:1px solid rgba(17,47,44,.07);transition:.2s ease}
+.nt-bod-card h3{font-size:17px!important;line-height:1.35;margin:7px 0 8px!important;color:#183833}.nt-bod-card p{font-size:13px!important;line-height:1.65;color:#61716e;margin:0}
+.nt-bod-card.performance{background:linear-gradient(135deg,#f2fbf6,#fff)}.nt-bod-card.progress{background:linear-gradient(135deg,#f8fafc,#fff)}.nt-bod-card.watch{background:linear-gradient(135deg,#fff8f4,#fff)}
+.nt-progress-list{display:grid;gap:7px;margin-top:10px}.nt-progress-list>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 10px;border-radius:11px;background:rgba(255,255,255,.75);border:1px solid rgba(17,47,44,.05)}
+.nt-progress-list b,.nt-progress-list strong{font-size:12px}.nt-progress-list strong{color:#173a34}
+.nt-ranking-list{display:grid;gap:8px;margin:10px 0}.nt-ranking-list>div{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:10px;padding:10px;border-radius:11px;background:#f7f9f8}
+.nt-ranking-list b,.nt-ranking-list span,.nt-ranking-list strong{font-size:12px}.nt-ranking-list strong{color:#a40c15}.nt-method-note{margin-top:9px!important;padding:10px 11px;border-radius:11px;background:#f3f5f4}
+.nt-action-list{display:grid;gap:8px;margin-top:8px}.nt-action-list>div{display:grid;grid-template-columns:32px 1fr;gap:9px;align-items:start}.nt-action-list span{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:#173a34;color:#fff;font-size:12px;font-weight:800}.nt-action-list p{font-size:13px!important}
+.nt-bod-card.action-card{background:linear-gradient(135deg,#f3fbf8,#fff)}.nt-bod-card.conclusion{background:linear-gradient(135deg,rgba(164,12,21,.06),#fff)}
+.nt-bod-card.conclusion h3{font-size:19px!important}
+@media(max-width:1100px){.nt-bod-kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.nt-bod-head{display:block}.nt-bod-period{margin-top:12px;min-width:0}.nt-bod-kpis{grid-template-columns:repeat(2,1fr)}.nt-bod-grid{grid-template-columns:1fr}.nt-bod-grid>.nt-bod-card:first-child{grid-column:auto}.nt-ranking-list>div{grid-template-columns:1fr}.nt-ranking-list strong{text-align:left}}
+@media(max-width:520px){.nt-bod-kpis{grid-template-columns:1fr}}
+
+
+/* V2.0.5 — Report polish */
+button[data-page="nghiemthu"] .nav-text, button[data-page="nghiemthu"].active .nav-text{color:#b60709!important;font-weight:800}
+button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
+.sl-overview-grid>.sl-hero-metric{grid-column:span 2}
+@media(max-width:1250px){.sl-overview-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:900px){.sl-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.sl-overview-grid>.sl-hero-metric{grid-column:span 2}}
+@media(max-width:520px){.sl-overview-grid{grid-template-columns:1fr!important}.sl-overview-grid>.sl-hero-metric{grid-column:auto}}
+.sent-kpi{align-items:start!important}
+.sent-kpi strong{line-height:1.05}
+.sent-kpi small{font-size:12px!important}
+.sentiment-tabs{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.sentiment-tabs button{min-width:88px}
+.nt-bod-card:hover,.sl-chart-card:hover,.sl-summary-card:hover,.sl-metric-card:hover,.sl-hero-metric:hover,.authors-summary>div:hover,.trend-card:hover,.property-source-row:hover,.property-kpi:hover,.property-outcome:hover{background:linear-gradient(135deg,rgba(182,7,9,.12) 0%,rgba(255,255,255,.98) 74%)!important;border-color:rgba(182,7,9,.24)!important;box-shadow:0 14px 30px rgba(182,7,9,.09)!important}
+.chart-reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.chart-reveal.in-view{opacity:1;transform:none}
+.generic-info{font-size:12px!important;width:16px!important;height:16px!important;min-width:16px!important}
+
+
+/* V2.0.6 — Campaign Conversation Health exact 2 + 4 layout */
+.sl-overview-grid.sl-overview-6{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+.sl-overview-grid.sl-overview-6>.sl-hero-metric{grid-column:span 2!important;min-height:132px}
+.sl-overview-grid.sl-overview-6>.sl-metric-card{grid-column:span 1!important;min-height:112px}
+.sl-overview-grid.sl-overview-6>.sl-hero-metric strong{font-size:32px!important}
+@media(max-width:900px){
+ .sl-overview-grid.sl-overview-6{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .sl-overview-grid.sl-overview-6>.sl-hero-metric{grid-column:span 1!important}
+ .sl-overview-grid.sl-overview-6>.sl-metric-card{grid-column:span 1!important}
+}
+@media(max-width:520px){.sl-overview-grid.sl-overview-6{grid-template-columns:1fr!important}}
+
+
+/* V2.0.9b — native line entrance; chart layout unchanged */
+.line-draw{stroke-dasharray:1;stroke-dashoffset:1}
+.chart-lines-visible .line-draw{animation:drawLine .95s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+.command-overview-chart:hover .command-chart,
+.command-overview-chart:hover svg,
+.trend-card:hover .line-chart,
+.sl-chart-card:hover .sl-svg-chart{background:transparent!important}
+.command-overview-chart:hover{background:linear-gradient(135deg,rgba(182,7,9,.12),rgba(255,255,255,.96) 76%)!important}
+.evidence-grid{margin-top:12px}
+.evidence-thumb{position:relative}
+.evidence-thumb span{position:absolute;right:8px;bottom:8px;left:auto!important;background:rgba(14,31,29,.64);width:26px;height:26px;padding:0!important;display:grid;place-items:center;border-radius:50%;font-size:12px;color:#fff}
+
 </style>
 </head>
 <body class="auth-locked">
@@ -1764,10 +1837,10 @@ body.auth-ok #authScreen{display:none!important}
   <button data-page="thinkpage" title="Campaign Thinkpage"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/><path d="M4.6 5.8 7 8M19.4 5.8 17 8"/></svg></span><span class="nav-text">Campaign Thinkpage</span><span class="dot"></span></button>
   <button class="active" data-page="dashboard" title="Dashboard"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><span class="nav-text">Dashboard</span><span class="dot"></span></button>
   <button data-page="workplace" title="Workplace"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 7.5h6l1.6 2H20v8.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M4 9.5V6a2 2 0 0 1 2-2h4l1.6 2H18a2 2 0 0 1 2 2v1.5"/></svg></span><span class="nav-text">Workplace</span><span class="dot"></span></button>
-  <button data-page="nghiemthu" title="Nghiệm thu"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m15 16 1.5 1.5L20 14"/></svg></span><span class="nav-text">Nghiệm thu</span><span class="dot"></span></button>
+  <button data-page="nghiemthu" title="Báo cáo"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m15 16 1.5 1.5L20 14"/></svg></span><span class="nav-text">Báo cáo</span><span class="dot"></span></button>
   <button data-page="social-listening" title="Social Listening"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M7 13a5 5 0 0 1 10 0"/><circle cx="12" cy="13" r="2"/><path d="M12 15v5"/></svg></span><span class="nav-text">Social Listening</span><span class="dot"></span></button>
   <button class="admin-only-nav" data-page="team" title="Team"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c.6-3.2 2.5-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.2"/><path d="M15.5 14.7c2.7-.2 4.3 1.2 5 3.8"/></svg></span><span class="nav-text">Team</span><span class="dot"></span></button>
-  <button data-page="outreach" title="Campaign Evidence"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m7 15 3.2-3.4 2.7 2.6 2.3-2.3L19 16"/><circle cx="8.5" cy="9" r="1.3"/></svg></span><span class="nav-text">Campaign Evidence</span><span class="dot"></span></button>
+  <button data-page="outreach" title="Gallery"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m7 15 3.2-3.4 2.7 2.6 2.3-2.3L19 16"/><circle cx="8.5" cy="9" r="1.3"/></svg></span><span class="nav-text">Gallery</span><span class="dot"></span></button>
   <button data-page="rest" title="Take a rest"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 7h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5z"/><path d="M16 9h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M7 20h10"/></svg></span><span class="nav-text">Take a rest</span><span class="dot"></span></button>
   <button data-page="help" title="Help"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9.3a2.4 2.4 0 0 1 4.6.8c0 1.8-2.4 2.1-2.4 3.7"/><path d="M12 17h.01"/></svg></span><span class="nav-text">Help</span><span class="dot"></span></button>
   <button data-page="calendar" title="Lịch âm dương"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 10h18"/><circle cx="8" cy="14" r=".7" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r=".7" fill="currentColor" stroke="none"/><circle cx="16" cy="14" r=".7" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Lịch âm dương</span><span class="dot"></span></button>
@@ -1791,7 +1864,7 @@ body.auth-ok #authScreen{display:none!important}
    <div class="identity-card"><b>Client</b><strong>Nam Long Investment Corporation</strong></div>
    <div class="identity-card"><b>Brand</b><strong>Nam Long</strong></div>
    <div class="identity-card"><b>Agency tổng</b><strong>admeX Creative Media Agency · VCCorp</strong></div>
-   <div class="identity-card"><b>Agency hạng mục</b><strong>PICO Agency · INSTRIKE Agency · scope chi tiết cập nhật</strong></div>
+   <div class="identity-card"><b>Agency hạng mục</b><strong>PICO Agency · INSPIKE Agency · scope chi tiết cập nhật</strong></div>
    <div class="identity-card"><b>Tên chiến dịch</b><strong>Nam Long Corporate Branding & Evidence · Nam Long Experience 2026</strong></div>
    <div class="identity-card"><b>Bắt đầu</b><strong>01/07/2026</strong></div>
    <div class="identity-card"><b>Kết thúc</b><strong>31/10/2026</strong></div>
@@ -1887,7 +1960,7 @@ body.auth-ok #authScreen{display:none!important}
     <div class="intel-hero-main">
      <div class="ey">Daily Report Intelligence · 23/09/2026</div>
      <h2>Chiến dịch đã đi qua 68.85% thời lượng và giải ngân 86.97% tổng ngân sách.</h2>
-     <p>Sau Event, media delivery đã tiến gần trạng thái hoàn tất ở Facebook và TikTok; YouTube tiếp tục tăng nhưng vẫn còn khoảng cách so với plan. Social Listening cho thấy conversation đạt đỉnh trong Event window, trong khi Website Tracking tiếp tục củng cố tín hiệu physical-to-digital từ OOH/Phướn.</p>
+     <p>Sau Event, media delivery đã tiến gần trạng thái hoàn tất ở Facebook và TikTok; YouTube tiếp tục tăng nhưng vẫn còn khoảng cách so với plan. Social Listening cho thấy conversation đạt đỉnh trong giai đoạn cao điểm sự kiện, trong khi Website Tracking tiếp tục củng cố tín hiệu physical-to-digital từ OOH/Phướn.</p>
      <div class="daily-detail"><div class="signal-strip">
       <span class="signal-pill">S · Scale: Độ phủ đang tăng</span>
       <span class="signal-pill blue">I · Insights: Có tín hiệu audience fit</span>
@@ -1898,14 +1971,14 @@ body.auth-ok #authScreen{display:none!important}
     <div class="intel-summary">
      <div class="intel-item"><b>Điểm đang đạt</b><p>DOOH/LCD/Phướn đạt 100% thời lượng booking; Facebook Reach 99.29%, Engagement 101.46%, Click-to-Web 104.50%; TikTok View 2s đạt 106.66%.</p></div>
      <div class="intel-item"><b>Điểm cần theo dõi</b><p>YouTube TrueView đạt 78.80% plan và vẫn là khoảng trống media lớn nhất; Facebook ThruPlay đạt 89.79%. PR phân tích thường 28.57% và PR biên tập 20% vẫn cần được đóng gap trong giai đoạn hậu Event.</p></div>
-     <div class="intel-item"><b>Ưu tiên hôm nay</b><p>Ưu tiên hậu Event: khóa dữ liệu Registration/OTP/Check-in, hoàn tất recap assets, tiếp tục earned amplification và chuyển trọng tâm từ delivery sang quality of impact, conversation và nghiệm thu outcome.</p></div>
+     <div class="intel-item"><b>Ưu tiên hôm nay</b><p>Ưu tiên hậu Event: hoàn thiện dữ liệu Registration/OTP/Check-in, hoàn tất recap assets, tiếp tục earned amplification và chuyển trọng tâm từ delivery sang quality of impact, conversation và nghiệm thu outcome.</p></div>
     </div>
    </div>
    <div class="grid three risk-grid" style="margin-top:16px">
     <div class="risk-card"><span class="rank">SIGNAL · Scale</span><b>Độ phủ đang hình thành tốt</b><p>Facebook, DOOH, LCD và Phướn đang tạo scale. Cần tránh cộng reach xuyên nền tảng khi chưa dedupe.</p></div>
     <div class="risk-card"><span class="rank">M.I.C.E · Media / Impact</span><b>Response chưa đồng đều</b><p>Upper-funnel đi nhanh hơn Click-to-Web. Article MB CPD tạo CTR tốt hơn Center PC, cho thấy context có vai trò đáng kể.</p></div>
     <div class="risk-card"><span class="rank">M.I.C.E · Commerce / Experience</span><b>Gateway đang cho tín hiệu tích cực</b><p>Traffic từ các điểm chạm physical đang tạo session chất lượng và OTP-submit trên landing page; tuy nhiên Check-in/CRM vẫn cần được nối để xác nhận Experience/Commerce outcome cuối cùng.</p></div>
-    <div class="moment-win-card current-moment"><div><span class="rank">Moment Signal</span><b>Post-Event Momentum · 23/09</b></div><p>Dữ liệu đến hết 22/09 cho thấy Facebook đã gần hoàn tất Reach (99.29%) và vượt kế hoạch ở Engagement (101.46%) cùng Click-to-Web (104.50%); TikTok View 2s đạt 106.66%, trong khi YouTube TrueView đạt 78.80%. Mẫu hình này cho thấy chiến dịch đang chuyển từ giai đoạn mở rộng scale sang tối ưu chất lượng hoàn tất và downstream intent. Trọng tâm hậu Event nên ưu tiên closing gap của video delivery, củng cố recap/earned amplification và nối Website–OTP–Check-in/CRM để xác nhận giá trị Experience cuối cùng.</p></div>
+    <div class="moment-win-card current-moment"><div><span class="rank">Moment Signal</span><b>Post-Event Momentum · 23/09</b></div><p>Dữ liệu đến hết 22/09 cho thấy Facebook đã gần hoàn tất Reach (99.29%) và vượt kế hoạch ở Engagement (101.46%) cùng Click-to-Web (104.50%); TikTok View 2s đạt 106.66%, trong khi YouTube TrueView đạt 78.80%. Mẫu hình này cho thấy chiến dịch đang chuyển từ giai đoạn mở rộng scale sang tối ưu chất lượng hoàn tất và downstream intent. Trọng tâm hậu Event nên ưu tiên thu hẹp khoảng cách của video delivery, củng cố recap/earned amplification và nối Website–OTP–Check-in/CRM để xác nhận giá trị Experience cuối cùng.</p></div>
    </div>
   </div>
  </section>
@@ -1926,7 +1999,7 @@ body.auth-ok #authScreen{display:none!important}
  <div class="section-head module-head"><div class="head-copy"><div class="section-no">01 · Campaign Command Center</div><h2>Campaign Command Center</h2><p>Toàn cảnh các hạng mục được commit trong hợp đồng: tổng triển khai so với tổng kế hoạch, giúp Client và team điều phối nhìn ngay tiến độ thời gian, chi tiêu, media, production và delivery.</p></div><button class="info generic-info" data-auto-label="Campaign Command Center">i</button></div>
  <div class="grid kpis" id="overviewKpis"></div>
 
- <div class="command-overview-chart">
+ <div class="command-overview-chart chart-reveal">
   <div class="command-chart-head">
    <div><span class="band-kicker">CAMPAIGN DELIVERY OVERVIEW</span><h3>Reach · Impressions · Clicks · Expense</h3><p>Cumulative delivery milestones được hệ thống từ 79 media line-items có timeline + CPD. Reach là tổng reported reach ở cấp line-item, chưa dedupe cross-platform.</p></div>
    <div class="time-granularity" id="commandTimeGranularity">
@@ -1956,7 +2029,7 @@ body.auth-ok #authScreen{display:none!important}
   <div class="delivery-card"><b>LCD HCMC</b><div class="delivery-count"><span class="actual">4</span> / <span class="plan">4</span></div><p>Tuần triển khai</p></div>
   <div class="delivery-card"><b>Phướn HCMC</b><div class="delivery-count"><span class="actual">2</span> / <span class="plan">2</span></div><p>Tuần triển khai</p></div>
  </div>
- <div class="module-note analyst"><b>Nhận định Command Center:</b> Tại report date 23/09, mức giải ngân 86.97% tiếp tục đi trước tiến độ thời gian 68.85%, phản ánh phần lớn ngân sách đã được kích hoạt trong Event window. Facebook và TikTok đã tiến tới trạng thái hoàn tất hoặc vượt KPI trọng yếu, trong khi YouTube vẫn còn dư địa delivery. Giai đoạn hậu Event vì vậy nên chuyển trọng tâm từ mở rộng scale sang hoàn tất video inventory, earned amplification và đối chiếu outcome Website–Event để phục vụ nghiệm thu.</div>
+ <div class="module-note analyst"><b>Nhận định Command Center:</b> Tại report date 23/09, mức giải ngân 86.97% tiếp tục đi trước tiến độ thời gian 68.85%, phản ánh phần lớn ngân sách đã được kích hoạt trong giai đoạn cao điểm sự kiện. Facebook và TikTok đã tiến tới trạng thái hoàn tất hoặc vượt KPI trọng yếu, trong khi YouTube vẫn còn dư địa delivery. Giai đoạn hậu Event vì vậy nên chuyển trọng tâm từ mở rộng scale sang hoàn tất video inventory, earned amplification và đối chiếu outcome Website–Event để phục vụ nghiệm thu.</div>
 </section>
 
 <section class="section" id="media">
@@ -1980,21 +2053,21 @@ body.auth-ok #authScreen{display:none!important}
   <div class="section-head" style="margin-bottom:12px"><div><div class="section-no">Daily Trend</div><h2 style="font-size:20px">Biến động theo ngày</h2><p>Paid Media được đọc theo nhịp delivery hàng ngày để nhận diện thời điểm tăng tốc, chững lại và dịch chuyển trọng tâm giữa exposure, response và video consumption.</p></div></div>
   <div class="trend-grid">
    <div class="trend-card trend-card-wide"><h3>Expense theo ngày</h3><p>Paid Media spend · daily run-rate theo active line-item</p><div class="line-chart" id="expenseTrend"></div><div class="trend-axis" id="expenseAxis"></div></div>
-   <div class="trend-card"><h3>Impressions theo ngày</h3><p>Paid Media · daily delivery</p><div class="line-chart" id="impressionTrend"></div><div class="trend-axis" id="impressionAxis"></div></div>
-   <div class="trend-card"><h3>Clicks theo ngày</h3><p>Paid Media · daily response</p><div class="line-chart" id="clickTrend"></div><div class="trend-axis" id="clickAxis"></div></div>
-   <div class="trend-card"><h3>CTR theo ngày</h3><p>Clicks / Impressions</p><div class="line-chart" id="ctrTrend"></div><div class="trend-axis" id="ctrAxis"></div></div>
-   <div class="trend-card"><h3>Reach theo ngày</h3><p>Reported reach · daily run-rate</p><div class="line-chart" id="reachTrend"></div><div class="trend-axis" id="reachAxis"></div></div>
-   <div class="trend-card"><h3>Facebook ThruPlay theo ngày</h3><p>Facebook video delivery</p><div class="line-chart" id="fbViewTrend"></div><div class="trend-axis" id="fbViewAxis"></div></div>
-   <div class="trend-card"><h3>YouTube TrueView theo ngày</h3><p>YouTube video delivery</p><div class="line-chart" id="ytViewTrend"></div><div class="trend-axis" id="ytViewAxis"></div></div>
-   <div class="trend-card"><h3>TikTok View 2s theo ngày</h3><p>TikTok video delivery</p><div class="line-chart" id="ttViewTrend"></div><div class="trend-axis" id="ttViewAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Impressions theo ngày</h3><p>Paid Media · daily delivery</p><div class="line-chart" id="impressionTrend"></div><div class="trend-axis" id="impressionAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Clicks theo ngày</h3><p>Paid Media · daily response</p><div class="line-chart" id="clickTrend"></div><div class="trend-axis" id="clickAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>CTR theo ngày</h3><p>Clicks / Impressions</p><div class="line-chart" id="ctrTrend"></div><div class="trend-axis" id="ctrAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Reach theo ngày</h3><p>Reported reach · daily run-rate</p><div class="line-chart" id="reachTrend"></div><div class="trend-axis" id="reachAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Facebook ThruPlay theo ngày</h3><p>Facebook video delivery</p><div class="line-chart" id="fbViewTrend"></div><div class="trend-axis" id="fbViewAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>YouTube TrueView theo ngày</h3><p>YouTube video delivery</p><div class="line-chart" id="ytViewTrend"></div><div class="trend-axis" id="ytViewAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>TikTok View 2s theo ngày</h3><p>TikTok video delivery</p><div class="line-chart" id="ttViewTrend"></div><div class="trend-axis" id="ttViewAxis"></div></div>
   </div></div>
  </div>
 
  <div class="section-divider"></div>
  <div class="section-head"><div><div class="section-no">Premium Content Adnetwork Banner</div><h2 style="font-size:20px">CPD / Premium Banner Performance</h2><p>Center PC và Article MB, cùng các chỉ số mở rộng cho context / site / SOV khi data feed được kết nối.</p></div></div>
  <div class="cpd-grid">
-  <div class="cpd-card"><div class="cpd-head"><div><h3>Center PC · Home</h3><p class="sub">26/08–08/09/2026</p></div><span class="cpd-pill">14 / 14 ngày</span></div><div class="cpd-metrics"><div class="cpd-metric"><b>Impressions</b><strong>1.61M</strong></div><div class="cpd-metric"><b>Reach</b><strong>97,357</strong></div><div class="cpd-metric"><b>Clicks</b><strong>1,611</strong></div><div class="cpd-metric"><b>CTR</b><strong>0.10%</strong></div><div class="cpd-metric"><b>Frequency</b><strong>16.5</strong></div><div class="cpd-metric"><b>Budget</b><strong>192M</strong></div></div></div>
-  <div class="cpd-card"><div class="cpd-head"><div><h3>Article MB · Home</h3><p class="sub">26/08–08/09/2026</p></div><span class="cpd-pill">14 / 14 ngày</span></div><div class="cpd-metrics"><div class="cpd-metric"><b>Impressions</b><strong>5.29M</strong></div><div class="cpd-metric"><b>Reach</b><strong>297,457</strong></div><div class="cpd-metric"><b>Clicks</b><strong>14,388</strong></div><div class="cpd-metric"><b>CTR</b><strong>0.27%</strong></div><div class="cpd-metric"><b>Frequency</b><strong>17.8</strong></div><div class="cpd-metric"><b>Budget</b><strong>160M</strong></div></div></div>
+  <div class="cpd-card chart-reveal"><div class="cpd-head"><div><h3>Center PC · Home</h3><p class="sub">26/08–08/09/2026</p></div><span class="cpd-pill">14 / 14 ngày</span></div><div class="cpd-metrics"><div class="cpd-metric"><b>Impressions</b><strong>1.61M</strong></div><div class="cpd-metric"><b>Reach</b><strong>97,357</strong></div><div class="cpd-metric"><b>Clicks</b><strong>1,611</strong></div><div class="cpd-metric"><b>CTR</b><strong>0.10%</strong></div><div class="cpd-metric"><b>Frequency</b><strong>16.5</strong></div><div class="cpd-metric"><b>Budget</b><strong>192M</strong></div></div></div>
+  <div class="cpd-card chart-reveal"><div class="cpd-head"><div><h3>Article MB · Home</h3><p class="sub">26/08–08/09/2026</p></div><span class="cpd-pill">14 / 14 ngày</span></div><div class="cpd-metrics"><div class="cpd-metric"><b>Impressions</b><strong>5.29M</strong></div><div class="cpd-metric"><b>Reach</b><strong>297,457</strong></div><div class="cpd-metric"><b>Clicks</b><strong>14,388</strong></div><div class="cpd-metric"><b>CTR</b><strong>0.27%</strong></div><div class="cpd-metric"><b>Frequency</b><strong>17.8</strong></div><div class="cpd-metric"><b>Budget</b><strong>160M</strong></div></div></div>
  </div>
  <div class="signal-board cpd-signal-board" style="margin-top:10px">
   <div class="signal-box sov-feature"><b>Share of Voice <button class="info generic-info" data-auto-label="CPD Share of Voice">i</button></b><strong>20%</strong><span>1/5 share</span></div>
@@ -2406,8 +2479,116 @@ body.auth-ok #authScreen{display:none!important}
 
 
 <section class="page" id="page-nghiemthu">
- <div class="topbar"><div><div class="ey">Nghiệm thu</div><h1>Bảng thống kê Hạng mục & Nghiệm thu</h1>
+ <div class="topbar"><div><div class="ey" style="color:#b60709">Báo cáo</div><h1>Báo cáo tổng quan & Nghiệm thu</h1>
  <div class="sub">Nguồn hiện hành · Execution_NLE_admeX/NLG - P3380626 · Sheet Nghiemthu</div></div></div>
+ 
+ <section class="nt-bod-summary">
+  <div class="nt-bod-head">
+   <div>
+    <span class="nt-bod-kicker">BOD EXECUTIVE SUMMARY</span>
+    <h2>Nam Long Corporate Branding & Evidence · Nam Long Experience 2026</h2>
+    <p>Tổng hợp nhanh để phục vụ họp báo cáo chiến dịch, trước khi đi vào bảng nghiệm thu chi tiết.</p>
+   </div>
+   <div class="nt-bod-period"><span>Thời gian chiến dịch</span><strong>01/07/2026 — 31/10/2026</strong></div>
+  </div>
+
+  <div class="nt-bod-kpis">
+   <article><span>Tổng ngân sách</span><strong>5,4 tỷ</strong><small>Đã chi tiêu 4,7 tỷ</small></article>
+   <article><span>Budget Pacing</span><strong>86.97%</strong><small>Tiến độ thời gian 68.85%</small></article>
+   <article><span>Paid Media</span><strong>86.34%</strong><small>1,4 / 1,6 tỷ</small></article>
+   <article><span>Production</span><strong>98.86%</strong><small>Gần hoàn tất kế hoạch</small></article>
+   <article><span>Event Communication</span><strong>73.12%</strong><small>Còn khoảng trống hậu Event</small></article>
+  </div>
+
+  <div class="nt-bod-grid">
+   <article class="nt-bod-card">
+    <span class="nt-bod-label">PHẠM VI TRIỂN KHAI</span>
+    <h3>Hệ sinh thái chiến dịch đa điểm chạm</h3>
+    <p>Chiến dịch được triển khai trên Paid Media, Social Content, PR, Premium Adnetwork/CPD, Digital OOH, Digital Frame, Activation/Event, Landing Page, Production và các lớp Measurement/Social Listening. Cấu trúc này cho phép kết nối từ Brand Exposure → Engagement → Digital Intent → Experience Outcome.</p>
+   </article>
+
+   <article class="nt-bod-card performance">
+    <span class="nt-bod-label">HẠNG MỤC ≥ 100%</span>
+    <h3>Những hạng mục đã đạt hoặc vượt kế hoạch</h3>
+    <div class="nt-progress-list">
+     <div><b>Facebook Engagement</b><strong>101.46%</strong></div>
+     <div><b>Facebook Click-to-Web</b><strong>104.50%</strong></div>
+     <div><b>TikTok View 2s</b><strong>106.66%</strong></div>
+     <div><b>DOOH / LCD / Phướn booking</b><strong>100%</strong></div>
+    </div>
+   </article>
+
+   <article class="nt-bod-card progress">
+    <span class="nt-bod-label">HẠNG MỤC 80–99%</span>
+    <h3>Những hạng mục đang tiến gần ngưỡng hoàn tất</h3>
+    <div class="nt-progress-list">
+     <div><b>Facebook Reach</b><strong>99.29%</strong></div>
+     <div><b>Production</b><strong>98.86%</strong></div>
+     <div><b>Facebook ThruPlay</b><strong>89.79%</strong></div>
+     <div><b>Paid Media Spend</b><strong>86.34%</strong></div>
+    </div>
+   </article>
+
+   <article class="nt-bod-card watch">
+    <span class="nt-bod-label">HẠNG MỤC &lt; 80%</span>
+    <h3>Những hạng mục còn khoảng cách cần hoàn tất</h3>
+    <div class="nt-progress-list">
+     <div><b>YouTube TrueView</b><strong>78.80%</strong></div>
+     <div><b>Event Communication</b><strong>73.12%</strong></div>
+     <div><b>PR phân tích thường</b><strong>28.57%</strong></div>
+     <div><b>PR biên tập</b><strong>20%</strong></div>
+    </div>
+   </article>
+  </div>
+
+  <div class="nt-bod-grid insight-grid">
+   <article class="nt-bod-card">
+    <span class="nt-bod-label">ĐIỂM ĐANG LÀM TỐT</span>
+    <h3>Media delivery đã chuyển từ scale sang action</h3>
+    <p>Facebook gần hoàn tất Reach và đã vượt kế hoạch ở Engagement lẫn Click-to-Web, trong khi TikTok View 2s vượt KPI. Điều này cho thấy media không chỉ tạo độ phủ mà đã hình thành response rõ hơn ở lớp engagement và traffic. Production gần hoàn tất cũng giúp chiến dịch có đủ asset để kéo dài hiệu ứng hậu Event.</p>
+   </article>
+
+   <article class="nt-bod-card">
+    <span class="nt-bod-label">SOCIAL LISTENING</span>
+    <h3>Giai đoạn cao điểm sự kiện tạo được đỉnh thảo luận rõ rệt</h3>
+    <p>Total Original Mentions ghi nhận khoảng <b>20.9K</b>; public time-series đạt 9,819 mentions và đạt đỉnh 2,166 mentions ngày 19/09. Sentiment chủ đạo là Neutral 85.69%, Positive 12.22% và Negative 2.09%. Cần lưu ý phần Negative chủ yếu chịu ảnh hưởng bởi cơ chế gắn nhãn brand-safety theo từ khóa trong bình luận tương tác, không phải tín hiệu bất lợi trực tiếp đối với Nam Long Experience 2026. Tổng thể, chiến dịch vẫn đang tạo được độ hiện diện thảo luận lớn và còn dư địa để chuyển coverage thành positive advocacy rõ nét hơn.</p>
+   </article>
+
+   <article class="nt-bod-card ranking">
+    <span class="nt-bod-label">EXTERNAL RECOGNITION</span>
+    <h3>Chiến dịch xuất hiện trong nhóm thương hiệu nổi bật tuần</h3>
+    <div class="nt-ranking-list">
+      <div><b>Socialite</b><span>Top 8 Sự kiện & Chiến dịch Thương hiệu nổi bật tuần</span><strong>Vị trí #7</strong></div>
+      <div><b>Kompa</b><span>Top 10 Sự kiện Thương hiệu nổi bật · 14/09–20/09/2026</span><strong>Vị trí #3</strong></div>
+    </div>
+    <p class="nt-method-note">Mỗi đơn vị Social Listening áp dụng hệ thống nguồn, trọng số và phương pháp tính khác nhau; vì vậy thứ hạng giữa các báo cáo không nên được so sánh trực tiếp như cùng một thang đo.</p>
+   </article>
+
+   <article class="nt-bod-card">
+    <span class="nt-bod-label">ĐIỂM CẦN CẢI THIỆN</span>
+    <h3>Outcome cuối hành trình vẫn cần được khép kín</h3>
+    <p>YouTube và một số PR output vẫn chưa đạt ngưỡng hoàn tất. Đồng thời, Website/OTP đã cho thấy tín hiệu digital intent nhưng Check-in/CRM chưa được nối đầy đủ để xác nhận contribution tới Experience và Business Outcome. Đây là khoảng trống quan trọng nhất nếu muốn chuyển một báo cáo “delivery tốt” thành một case chứng minh hiệu quả toàn hành trình.</p>
+   </article>
+
+   <article class="nt-bod-card action-card">
+    <span class="nt-bod-label">GIẢI PHÁP HẬU CHIẾN DỊCH</span>
+    <h3>Chuyển từ delivery completion sang evidence consolidation</h3>
+    <div class="nt-action-list">
+      <div><span>01</span><p>Hoàn tất các deliverable YouTube và PR còn lại theo đúng phạm vi nghiệm thu để bảo đảm tính nhất quán giữa kế hoạch, triển khai và đối soát.</p></div>
+      <div><span>02</span><p>Chuẩn hóa và hợp nhất dữ liệu Registration, OTP, Check-in và CRM nhằm dịch chuyển trọng tâm đánh giá từ traffic sang outcome trải nghiệm có thể kiểm chứng.</p></div>
+      <div><span>03</span><p>Ưu tiên recap, testimonial và earned amplification từ các nguồn có credibility cao để tăng Positive advocacy hậu Event.</p></div>
+      <div><span>04</span><p>Hoàn thiện hệ thống bằng chứng triển khai theo từng hạng mục để BOD và khách hàng có thể đối chiếu rõ ràng giữa Scope → Delivery → Evidence → Outcome.</p></div>
+    </div>
+   </article>
+
+   <article class="nt-bod-card conclusion">
+    <span class="nt-bod-label">BOD TAKEAWAY</span>
+    <h3>Chiến dịch đã tạo được quy mô, response và độ hiện diện; giai đoạn cuối cần tập trung chứng minh giá trị.</h3>
+    <p>Tổng thể, campaign đang ở trạng thái delivery tốt với nhiều KPI đã đạt hoặc vượt kế hoạch và có tín hiệu earned conversation tích cực trong giai đoạn cao điểm sự kiện. Giá trị tiếp theo không nằm ở việc tiếp tục mở rộng số lượng hoạt động, mà ở việc hoàn tất các gap còn lại, củng cố bằng chứng hiệu quả và kết nối dữ liệu downstream để chứng minh tác động của toàn bộ hệ sinh thái truyền thông.</p>
+   </article>
+  </div>
+ </section>
+
  <div class="nt-shell">
   <div class="nt-table-wrap">
    <table class="nt-table">
@@ -2424,29 +2605,28 @@ body.auth-ok #authScreen{display:none!important}
 
  <section class="section" id="listen-overview">
   <div class="section-head"><div><div class="section-no">01 · Listening Overview</div><h2>Campaign Conversation Health</h2></div></div>
-  <div class="sl-overview-grid">
+  <div class="sl-overview-grid sl-overview-6">
    <div class="sl-hero-metric original"><span>Total Original Mentions <button class="info generic-info" data-auto-label="Total Original Mentions">i</button></span><strong>20.9K</strong><small>Tool headline · 25/08–21/09</small></div>
-   <div class="sl-metric-card public"><b>Total Public Mentions <button class="info generic-info" data-auto-label="Total Public Mentions">i</button></b><strong>9.8K</strong><span>9,819 mentions in exported public time-series</span></div>
+   <div class="sl-hero-metric public"><span>Total Public Mentions <button class="info generic-info" data-auto-label="Total Public Mentions">i</button></span><strong>9.8K</strong><small>9,819 mentions in exported public time-series</small></div>
    <div class="sl-metric-card"><b>Posts</b><strong>3.0K</strong><span>Tool overview</span></div>
    <div class="sl-metric-card positive"><b>Positive</b><strong>1,200</strong><span>12.22%</span></div>
    <div class="sl-metric-card negative"><b>Negative</b><strong>205</strong><span>2.09%</span></div>
    <div class="sl-metric-card neutral"><b>Neutral</b><strong>8,414</strong><span>85.69%</span></div>
-   <div class="sl-metric-card"><b>Peak Day</b><strong>2,166</strong><span>19/09/2026</span></div>
   </div>
-  <div class="module-note analyst"><b>Nhận định:</b> Conversation tăng tốc rõ rệt khi chiến dịch bước vào Event window và đạt đỉnh 2,166 public mentions ngày 19/09. Cấu trúc sentiment nghiêng mạnh về Neutral (85.69%), cho thấy độ phủ thảo luận đã được mở rộng đáng kể nhưng phần lớn vẫn mang tính thông tin và tường thuật. Positive đạt 12.22%, trong khi Negative ở mức 2.09%; vì vậy trọng tâm tiếp theo không chỉ là duy trì volume mà là gia tăng tỷ trọng thảo luận có tính endorsement và kiểm soát sớm các cụm negative theo nguồn, chủ đề và tác giả.</div>
+  <div class="module-note analyst"><b>Nhận định:</b> Conversation tăng tốc rõ rệt khi chiến dịch bước vào giai đoạn cao điểm sự kiện và đạt đỉnh 2,166 public mentions ngày 19/09. Cấu trúc sentiment nghiêng mạnh về Neutral (85.69%), cho thấy độ phủ thảo luận đã được mở rộng đáng kể nhưng phần lớn vẫn mang tính thông tin và tường thuật. Positive đạt 12.22%, trong khi Negative ở mức 2.09%; cần lưu ý các tín hiệu negative chủ yếu đến từ cách hệ thống diễn giải một số từ khóa trong bình luận tương tác theo rule brand-safety, thay vì phản ánh thái độ tiêu cực trực tiếp với triển lãm. Vì vậy, trọng tâm tiếp theo không chỉ là duy trì volume mà là gia tăng tỷ trọng thảo luận có tính endorsement và tiếp tục đọc sâu từng cụm sentiment theo nguồn, chủ đề và tác giả.</div>
  </section>
 
  <section class="section" id="listen-trends">
   <div class="section-head"><div><div class="section-no">02 · Conversation & Sentiment Trends</div><h2>Mentions in Time · Sentiments in Time</h2></div></div>
   <div class="sl-chart-stack">
-   <div class="sl-chart-card"><div class="sl-chart-head"><div><span>Mentions in Time</span><h3>Conversation Volume</h3></div><div class="sl-grain" data-chart="mentions"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slMentionsChart"></div></div>
-   <div class="sl-chart-card"><div class="sl-chart-head"><div><span>Sentiments in Time</span><h3>Positive · Negative · Neutral</h3></div><div class="sl-grain" data-chart="sentiments"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slSentimentsChart"></div></div>
+   <div class="sl-chart-card chart-reveal"><div class="sl-chart-head"><div><span>Mentions in Time</span><h3>Conversation Volume</h3></div><div class="sl-grain" data-chart="mentions"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slMentionsChart"></div></div>
+   <div class="sl-chart-card chart-reveal"><div class="sl-chart-head"><div><span>Sentiments in Time</span><h3>Positive · Negative · Neutral</h3></div><div class="sl-grain" data-chart="sentiments"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slSentimentsChart"></div></div>
   </div>
  </section>
 
  <section class="section" id="listen-audience">
   <div class="section-head"><div><div class="section-no">03 · Audience Split Trend</div><h2>Platform Conversation Footprint</h2></div></div>
-  <div class="sl-chart-card"><div class="sl-chart-head"><div><span>Audience Split Trend</span><h3>Facebook · TikTok · YouTube · News · Others</h3></div><div class="sl-grain" data-chart="audience"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slAudienceChart"></div></div>
+  <div class="sl-chart-card chart-reveal"><div class="sl-chart-head"><div><span>Audience Split Trend</span><h3>Facebook · TikTok · YouTube · News · Others</h3></div><div class="sl-grain" data-chart="audience"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slAudienceChart"></div></div>
   <div class="sl-platform-summary">
    <div><b>Facebook</b><strong>4,721</strong><span>76.50% of audience-split observations</span></div>
    <div><b>TikTok</b><strong>1,226</strong><span>19.87%</span></div>
@@ -2457,7 +2637,7 @@ body.auth-ok #authScreen{display:none!important}
 
  <section class="section" id="listen-media">
   <div class="section-head"><div><div class="section-no">04 · Media Types</div><h2>Earned / Paid / Owned Conversation</h2></div></div>
-  <div class="sl-chart-card"><div class="sl-chart-head"><div><span>Media Types Trendline</span><h3>Conversation by Media Type</h3></div><div class="sl-grain" data-chart="media"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slMediaChart"></div></div>
+  <div class="sl-chart-card chart-reveal"><div class="sl-chart-head"><div><span>Media Types Trendline</span><h3>Conversation by Media Type</h3></div><div class="sl-grain" data-chart="media"><button data-grain="month">Month</button><button data-grain="week">Week</button><button class="active" data-grain="day">Day</button><button data-grain="hour">Hour</button></div></div><div class="sl-svg-chart" id="slMediaChart"></div></div>
 
   <div class="sentiment-media-card">
    <div class="sl-chart-head"><div><span>Sentiments Breakdown by Media Types</span><h3>Sentiment Composition</h3></div><div class="sl-mode" id="sentimentBreakdownMode"><button class="active" data-mode="absolute">Absolute</button><button data-mode="percentage">Percentage</button></div></div>
@@ -2482,11 +2662,11 @@ body.auth-ok #authScreen{display:none!important}
  <section class="section" id="listen-summary">
   <div class="section-head"><div><div class="section-no">06 · Summary Social Listening Report</div><h2>Conversation Intelligence Summary</h2></div></div>
   <div class="sl-summary-grid">
-   <article class="sl-summary-card"><span>Conversation Scale</span><h3>Event window tạo bước nhảy rõ về độ phủ thảo luận</h3><p>Public mentions tăng mạnh từ 14/09 và đạt đỉnh 2,166 mentions ngày 19/09. Diễn biến này trùng với giai đoạn cao điểm của Nam Long Experience 2026, cho thấy Event đã trở thành catalyst chính của conversation volume.</p></article>
-   <article class="sl-summary-card"><span>Sentiment Structure</span><h3>Độ phủ cao nhưng narrative vẫn thiên về thông tin</h3><p>Neutral chiếm 85.69%, Positive 12.22% và Negative 2.09%. Cấu trúc này phản ánh chiến dịch đang tạo được độ hiện diện đáng kể, nhưng dư địa chuyển coverage thành advocacy tích cực vẫn còn lớn.</p></article>
+   <article class="sl-summary-card"><span>Conversation Scale</span><h3>giai đoạn cao điểm sự kiện tạo bước nhảy rõ về độ phủ thảo luận</h3><p>Public mentions tăng mạnh từ 14/09 và đạt đỉnh 2,166 mentions ngày 19/09. Diễn biến này trùng với giai đoạn cao điểm của Nam Long Experience 2026, cho thấy hoạt động sự kiện đã trở thành chất xúc tác chính cho quy mô thảo luận.</p></article>
+   <article class="sl-summary-card"><span>Sentiment Structure</span><h3>Độ phủ cao nhưng narrative vẫn thiên về thông tin</h3><p>Neutral chiếm 85.69%, Positive 12.22% và Negative 2.09%. Cấu trúc này phản ánh chiến dịch đang tạo được độ hiện diện đáng kể. Phần Negative hiện ở mức thấp và chủ yếu cần được hiểu trong bối cảnh rule brand-safety của hệ thống; do đó dư địa lớn nhất hiện nay là chuyển coverage sang advocacy tích cực rõ rệt hơn.</p></article>
    <article class="sl-summary-card"><span>Platform Dynamics</span><h3>Facebook giữ vai trò scale, TikTok mở rộng creator-led amplification</h3><p>Facebook chiếm phần lớn conversation footprint, trong khi TikTok đóng góp đáng kể ở nhóm creator và publisher có interaction cao. Hai nền tảng đang tạo hai cơ chế lan truyền khác nhau: scale từ Facebook và tốc độ khuếch đại từ TikTok.</p></article>
    <article class="sl-summary-card"><span>Influence Quality</span><h3>Earned influence đã mở rộng ra ngoài brand-owned presence</h3><p>Các nguồn như Lifestyle Việt Nam, THEANH28 TRENDING, 60giay.com và nhóm creator/báo chí xuất hiện trong Top Authors, cho thấy narrative đã được tái phân phối qua nhiều node ảnh hưởng thay vì chỉ phụ thuộc kênh của Nam Long.</p></article>
-   <article class="sl-summary-card risk"><span>Risk Signal</span><h3>Negative vẫn thấp nhưng cần đọc theo spike, không chỉ theo tỷ trọng toàn kỳ</h3><p>Negative toàn kỳ ở mức 2.09%, nhưng riêng 20/09 ghi nhận 77 negative mentions. Mức tăng cục bộ này cần được phân tích theo topic, source và author để phân biệt phản ứng sự kiện, complaint thực tế hay noise từ coverage.</p></article>
+   <article class="sl-summary-card risk"><span>Risk Signal</span><h3>Negative vẫn thấp nhưng cần đọc theo spike, không chỉ theo tỷ trọng toàn kỳ</h3><p>Negative toàn kỳ ở mức 2.09%, nhưng riêng 20/09 ghi nhận 77 negative mentions. Mức tăng cục bộ này cần được diễn giải theo topic, source và author để tách biệt phản hồi thực chất khỏi các trường hợp bình luận đời thường bị hệ thống xếp vào vùng brand-safety do chứa từ khóa nhạy cảm về mặt ngôn ngữ.</p></article>
    <article class="sl-summary-card action"><span>Decision Cue</span><h3>Ưu tiên chuyển earned reach thành positive advocacy hậu Event</h3><p>Giai đoạn tiếp theo nên tập trung vào recap có bằng chứng trải nghiệm, testimonial và nội dung từ nguồn có credibility cao; đồng thời duy trì monitoring theo chủ đề để phát hiện sớm narrative bất lợi trước khi chúng mở rộng thành reputation issue.</p></article>
   </div>
  </section>
@@ -2504,7 +2684,7 @@ body.auth-ok #authScreen{display:none!important}
 
 
 <section class="page" id="page-outreach">
- <div class="topbar"><div><div class="ey">Campaign Evidence</div><h1>Campaign Evidence Gallery</h1><div class="sub">Mỗi hạng mục có thể lưu nhiều hình ảnh minh chứng. Tại bản demo này, hệ thống hiển thị gallery grid và hỗ trợ phóng to, chuyển ảnh trái/phải, đóng gallery.</div></div></div>
+ <div class="topbar"><div><div class="ey">Campaign Evidence</div><h1>Campaign Gallery</h1><div class="sub"></div></div></div>
  <div class="outreach-grid">
   <div class="outreach-card"><h3>Facebook</h3><p>Paid / Organic / Social proof.</p><div class="evidence-grid" data-group="Facebook"></div></div>
   <div class="outreach-card"><h3>YouTube</h3><p>Video delivery / TrueView / creative proof.</p><div class="evidence-grid" data-group="YouTube"></div></div>
@@ -2589,7 +2769,7 @@ body.auth-ok #authScreen{display:none!important}
 
 
 <div class="modal-bg evidence-modal" id="evidenceModal"><div class="modal">
- <div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><h3 id="evidenceTitle" style="margin:0">Campaign Evidence</h3><button class="btn" id="closeEvidenceModal">Đóng</button></div>
+ <div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><h3 id="evidenceTitle" style="margin:0">Gallery</h3><button class="btn" id="closeEvidenceModal">Đóng</button></div>
  <div class="evidence-stage" id="evidenceStage"><div><h3>Campaign Evidence</h3><p>Gallery preview</p></div></div>
  <div class="evidence-nav"><button class="btn" id="prevEvidence">← Hình trước</button><div class="evidence-index" id="evidenceIndex">1 / 4</div><button class="btn" id="nextEvidence">Hình sau →</button></div>
 </div></div>
@@ -2690,7 +2870,7 @@ function renderLineTrend(chartId,axisId,values,color,format){
  const pts=values.map((v,i)=>{const x=pL+(w-pL-pR)*(i/(values.length-1));const y=pT+(h-pT-pB)*(1-v/range);return [x,y]});
  let grid='';for(let i=1;i<4;i++){const y=pT+(h-pT-pB)*(i/4);grid+=`<line class="gridline" x1="${pL}" y1="${y}" x2="${w-pR}" y2="${y}"/>`;}
  el.style.position='relative';
- el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}<polyline class="series" stroke="${color}" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle class="dot trend-dot" data-i="${i}" cx="${p[0]}" cy="${p[1]}" r="3.4" fill="${color}"></circle>`).join('')}</svg><div class="trend-tooltip"></div>`;
+ el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}<polyline class="series line-draw" pathLength="1" stroke="${color}" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle class="dot trend-dot" data-i="${i}" cx="${p[0]}" cy="${p[1]}" r="3.4" fill="${color}"></circle>`).join('')}</svg><div class="trend-tooltip"></div>`;
  const step=Math.ceil(MEDIA_DAILY.labels.length/8);
  axis.innerHTML=MEDIA_DAILY.labels.map((x,i)=>i%step===0||i===MEDIA_DAILY.labels.length-1?`<span>${x}</span>`:'').join('');
  const tip=el.querySelector('.trend-tooltip');
@@ -2771,11 +2951,11 @@ function renderMediaDetail(){
  const items=DB.mediaItems||[];$('mediaDetailTable').innerHTML=`<table class="table"><thead><tr><th>Platform</th><th>Objective</th><th>Line-item</th><th>Status</th><th>Plan KPI</th><th>Actual</th><th>% KPI</th><th>Spend</th><th>Impressions</th><th>Reach</th><th>Clicks</th></tr></thead><tbody>${items.map(x=>`<tr><td>${esc(x.platform)}</td><td>${esc(x.objective)}</td><td>${esc(x.item)}</td><td>${esc(x.status)}</td><td>${fmt(x.planKpi)}</td><td>${fmt(x.actualKpi)}</td><td>${pct(x.completion)}</td><td>${fmt(x.actualSpend)}</td><td>${fmt(x.impressions)}</td><td>${fmt(x.reach)}</td><td>${fmt(x.clicks)}</td></tr>`).join('')}</tbody></table>`;
 }
 function renderTeams(){
- const groups=['Nam Long Corp Team','admeX Creative Media Agency','Nam Long Land & Other','PICO Agency','INSTRIKE Agency'];
+ const groups=['Nam Long Corp Team','admeX Creative Media Agency','Nam Long Land & Other','PICO Agency','INSPIKE Agency'];
  $('teamTables').innerHTML=groups.map(g=>`<div class="team-block"><div class="permission-note">Tài khoản của bạn không có quyền xem thông tin này</div><h3>${g}</h3><div class="table-wrap"><table class="team-table"><thead><tr><th>STT</th><th>Họ và tên</th><th>Chức vụ</th><th>Phụ trách</th><th>Phone</th><th>Email</th></tr></thead><tbody>${[1,2,3].map(i=>`<tr><td>${i}</td><td class="blurred-cell">Updating</td><td class="blurred-cell">Updating</td><td class="blurred-cell">Updating</td><td class="blurred-cell">Updating</td><td class="blurred-cell">Updating</td></tr>`).join('')}</tbody></table></div></div>`).join('');
 }
 const AI_REPORTS={
- '2026-09-23':{through:'22/09/2026',title:'Báo cáo 23/09/2026',lead:'Sau Event, campaign chuyển từ delivery sang consolidation. Facebook và TikTok đã đạt/vượt các KPI trọng yếu; Social Listening xác nhận conversation spike trong Event window, trong khi Website data cho thấy OOH/Phướn tạo traffic có engagement depth cao.',blocks:[['Conversation spike trùng Event window','Mentions đạt đỉnh 2,166 ngày 19/09; toàn kỳ 9,819 mentions với Negative 2.09%.','Hàm ý: Event đã tạo được earned conversation scale nhưng cần tiếp tục đọc topic/source để phân biệt coverage với advocacy.'],['Media mix đang tiến gần trạng thái hoàn tất','Facebook Reach 99.29%, Engagement 101.46%, CTW 104.50%; TikTok View 106.66%; YouTube TrueView 78.80%.','Hàm ý: ưu tiên đóng gap YouTube/PR và chuyển KPI governance sang quality of impact, website behavior và nghiệm thu.']]},
+ '2026-09-23':{through:'22/09/2026',title:'Báo cáo 23/09/2026',lead:'Sau sự kiện, campaign chuyển từ delivery sang consolidation. Facebook và TikTok đã đạt/vượt các KPI trọng yếu; Social Listening xác nhận conversation spike trong giai đoạn cao điểm sự kiện, trong khi dữ liệu Website cho thấy OOH/Phướn tạo traffic có engagement depth cao.',blocks:[['Conversation spike trùng giai đoạn cao điểm sự kiện','Mentions đạt đỉnh 2,166 ngày 19/09; toàn kỳ 9,819 mentions với Negative 2.09%.','Hàm ý: Chiến dịch đã tạo được earned conversation scale rõ rệt; giai đoạn tiếp theo cần đi sâu vào topic và source để tách biệt coverage thông tin với advocacy tích cực.'],['Media mix đang tiến gần trạng thái hoàn tất','Facebook Reach 99.29%, Engagement 101.46%, CTW 104.50%; TikTok View 106.66%; YouTube TrueView 78.80%.','Hàm ý: ưu tiên hoàn tất YouTube/PR và chuyển trọng tâm quản trị KPI sang quality of impact, website behavior và mức độ hoàn thiện hồ sơ nghiệm thu.']]},
  
  '2026-09-16':{
   through:'15/09/2026',
@@ -2798,7 +2978,7 @@ const AI_REPORTS={
  '2026-09-18':{
   through:'17/09/2026',
   title:'Bản ghi 18/09/2026',
-  lead:'Campaign bước vào Event window với media footprint và production asset đã sẵn sàng. Dữ liệu tại thời điểm tổng hợp vẫn thiên về delivery; Registration, Check-in và on-ground participation chưa có đủ source để đánh giá Experience outcome.',
+  lead:'Campaign bước vào giai đoạn cao điểm sự kiện với media footprint và production asset đã sẵn sàng. Dữ liệu tại thời điểm tổng hợp vẫn thiên về delivery; Registration, Check-in và on-ground participation chưa có đủ source để đánh giá Experience outcome.',
   blocks:[
    ['Event readiness đã hình thành','Offline inventory, social asset và event communication đã ở trạng thái kích hoạt.','Hàm ý: chuyển trọng tâm từ kiểm soát delivery sang kiểm soát response tại các moment trước và trong Event.'],
    ['Outcome layer cần source live','Các metric attendance/check-in chưa được đồng bộ vào thời điểm tổng hợp.','Hàm ý: ưu tiên nối Website/Event data để phân biệt exposure với participation thực tế.']
@@ -2930,8 +3110,8 @@ const SMART_INFO={
 
 
 
- 'Total Original Mentions':['Total Original Mentions','Tổng lượng mention gốc mà công cụ Social Listening ghi nhận trước lớp lọc public/qualified mention theo cấu hình report.','Phản ánh quy mô conversation universe mà hệ thống phát hiện; không dùng trực tiếp thay cho public time-series nếu hai lớp dữ liệu có scope khác nhau.','Keyword query, crawler coverage, source coverage, duplicate/repost logic, verification rule và time range.'],
- 'Total Public Mentions':['Total Public Mentions','Tổng mention nằm trong lớp public dataset dùng cho các time-series export hiện tại.','Phản ánh phần conversation có thể phân tích theo ngày, sentiment, platform và media type trong bộ export này.','Source visibility, platform access, filter, query, verification rule và export scope.'],
+ 'Total Original Mentions':['Total Original Mentions','A sum of Posts, Comments & Shares displayed on the original posts.','Phản ánh tổng quy mô thảo luận gốc mà hệ thống ghi nhận trước lớp lọc public mentions.','Phụ thuộc vào query, phạm vi nguồn, phạm vi thời gian và logic thu thập của công cụ.'],
+ 'Total Public Mentions':['Total Public Mentions','A sum of Posts, Comments & Shares has been downloaded based on social media policies, except deleted/ hidden/ private mentions.','Phản ánh lớp dữ liệu public có thể dùng để phân tích theo thời gian, sentiment, platform và media type.','Phụ thuộc vào chính sách dữ liệu của từng nền tảng, bộ lọc báo cáo và phạm vi export.'],
 
  'GSM Impressions':['Green SM In-App Impressions','Số lượt hiển thị quảng cáo trong hệ sinh thái Green SM App/Ride Journey như Pop-up, Home Carousel hoặc In-transit inventory.','Phản ánh quy mô exposure trong mobility app environment; campaign Nam Long hiện không triển khai nên để N/A.','Inventory, active users, trip volume, format, booking period và delivery rule.'],
  'GSM Clicks':['Green SM In-App Clicks','Số click được ghi nhận từ các Green SM in-app formats.','Phản ánh response trực tiếp từ mobility app inventory; cần đọc cùng Impression/CTR và downstream destination.','Creative, placement, user context, CTA, traffic quality và tracking.'],
@@ -3052,32 +3232,42 @@ function renderDualCalendar(){
 }
 
 
-let EVIDENCE_GROUPS={
- "Facebook":[],"YouTube":[],"TikTok":[],"Digital OOH":[],"Digital Frame":[],"Event":[],"Production":[],"CPD":[],"PR":[]
-};
-const EVIDENCE_FOLDER_MAP={
- "Facebook":"Facebook","YouTube":"Youtube","TikTok":"TikTok","Digital OOH":"Digital OOH","Digital Frame":"Digital Frame",
- "Event":"Event","Production":"Production","CPD":"CPD","PR":"PR"
-};
+const EVIDENCE_FALLBACK_MANIFEST={"Facebook":["Post1.png","Post2.png","Post3.png","Post4.png","Post5.png"],"YouTube":[],"TikTok":[],"Digital OOH":["D1.jpg","D2.jpg","D3.jpg","D4.jpg","D5.jpg","D6.jpg","Phuon_P1.jpg","Phuon_P2.jpg","F8.jpg","F9.jpg"],"Digital Frame":["F1.jpg","F2.jpg","F3.jpg","F4.jpg","F5.jpg","F6.jpg","F7.jpg"],"Event":["E1.jpg","E2.jpg"],"Production":["BF1.jpg","BF2.jpg","BF3.jpg","BF4.jpg","BF5.jpg"],"CPD":["PC1.jpg","PC2.jpg","MB1.png","MB2.png"],"PR":["PR1.jpg","PR2.jpg","PR3.jpg"]};
+const EVIDENCE_FOLDER_MAP={"Facebook":"gallery/facebook","YouTube":"gallery/youtube","TikTok":"gallery/tiktok","Digital OOH":"gallery/digital-ooh","Digital Frame":"gallery/digital-frame","Event":"gallery/event","Production":"gallery/production","CPD":"gallery/cpd","PR":"gallery/pr"};
+let EVIDENCE_GROUPS={};
+function applyEvidenceData(data){
+ Object.keys(EVIDENCE_FOLDER_MAP).forEach(group=>{
+  const files=Array.isArray(data?.[group])?data[group]:[];
+  EVIDENCE_GROUPS[group]=files
+   .filter(x=>typeof x==='string'&&/\.(png|jpe?g|webp|gif)$/i.test(x))
+   .map(x=>`assets/${EVIDENCE_FOLDER_MAP[group]}/${encodeURIComponent(x)}`);
+ });
+}
+applyEvidenceData(EVIDENCE_FALLBACK_MANIFEST);
 const evidenceState={group:'Facebook',index:0};
 async function loadEvidenceManifest(){
- try{
-   const res=await fetch('assets/evidence-manifest.json',{cache:'no-store'});
-   if(!res.ok)throw new Error('manifest '+res.status);
-   const data=await res.json();
-   Object.keys(EVIDENCE_GROUPS).forEach(group=>{
-     const files=Array.isArray(data[group])?data[group]:[];
-     const folder=EVIDENCE_FOLDER_MAP[group]||group;
-     EVIDENCE_GROUPS[group]=files
-       .filter(x=>typeof x==='string' && /\.(png|jpe?g|webp|gif)$/i.test(x))
-       .map(x=>`assets/${folder}/${x}`);
-   });
- }catch(err){
-   console.warn('[mediaOS] Campaign Evidence manifest unavailable',err);
- }
+ applyEvidenceData(EVIDENCE_FALLBACK_MANIFEST);
  renderEvidenceGrid();
+ if(location.protocol==='file:') return;
+ try{
+  const res=await fetch('assets/evidence-manifest.json?ts='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw new Error('manifest '+res.status);
+  applyEvidenceData(await res.json());
+  renderEvidenceGrid();
+ }catch(err){
+  console.warn('[mediaOS] Gallery manifest unavailable; embedded asset list is being used.',err);
+ }
 }
-function renderEvidenceGrid(){document.querySelectorAll('.evidence-grid').forEach(el=>{const group=el.dataset.group,arr=EVIDENCE_GROUPS[group]||[];el.innerHTML=arr.length?arr.map((src,i)=>`<div class="evidence-thumb" data-group="${group}" data-index="${i}"><img src="${src}" alt="${esc(group)} evidence ${i+1}" loading="lazy" onerror="this.closest('.evidence-thumb').classList.add('image-missing')"></div>`).join(''):`<div class="evidence-empty">Chưa có hình ảnh trong manifest.</div>`;});document.querySelectorAll('.evidence-thumb').forEach(t=>t.onclick=()=>openEvidence(t.dataset.group,Number(t.dataset.index)));}
+
+function renderEvidenceGrid(){
+ document.querySelectorAll('.evidence-grid').forEach(el=>{
+  const group=el.dataset.group,arr=EVIDENCE_GROUPS[group]||[];
+  el.innerHTML=arr.length
+   ?arr.map((src,i)=>`<div class="evidence-thumb" data-group="${group}" data-index="${i}"><img src="${src}" alt="${esc(group)} ${i+1}" loading="lazy"><span>${i+1}</span></div>`).join('')
+   :`<div class="evidence-empty">Chưa có hình ảnh.</div>`;
+ });
+ document.querySelectorAll('.evidence-thumb').forEach(t=>t.onclick=()=>openEvidence(t.dataset.group,Number(t.dataset.index)));
+}
 function renderEvidenceStage(){const arr=EVIDENCE_GROUPS[evidenceState.group]||[];const src=arr[evidenceState.index];if(!src)return;$('evidenceTitle').textContent=evidenceState.group;$('evidenceIndex').textContent=`${evidenceState.index+1} / ${arr.length}`;$('evidenceStage').className='evidence-stage';$('evidenceStage').innerHTML=`<img src="${src}" alt="${esc(evidenceState.group)} evidence">`;}
 function openEvidence(group,index){evidenceState.group=group;evidenceState.index=index;$('evidenceModal').classList.add('open');renderEvidenceStage();}
 function bindEvidence(){loadEvidenceManifest();if($('closeEvidenceModal'))$('closeEvidenceModal').onclick=()=>$('evidenceModal').classList.remove('open');if($('prevEvidence'))$('prevEvidence').onclick=()=>{const arr=EVIDENCE_GROUPS[evidenceState.group]||[];evidenceState.index=(evidenceState.index-1+arr.length)%arr.length;renderEvidenceStage();};if($('nextEvidence'))$('nextEvidence').onclick=()=>{const arr=EVIDENCE_GROUPS[evidenceState.group]||[];evidenceState.index=(evidenceState.index+1)%arr.length;renderEvidenceStage();};}
@@ -3158,6 +3348,14 @@ function bindNavigation(){
  else openHelp('Truy cập bị giới hạn','Tài khoản Internal / Client không có quyền tải tài liệu. Vui lòng liên hệ Admin để được hỗ trợ.');
 });
  bindEvidence();
+
+(function(){
+ const charts=[...document.querySelectorAll('.chart-reveal')];
+ if(!charts.length || !('IntersectionObserver' in window)) { charts.forEach(el=>el.classList.add('in-view')); return; }
+ const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{ if(entry.isIntersecting){entry.target.classList.add('in-view'); io.unobserve(entry.target);} });},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+ charts.forEach(el=>io.observe(el));
+})();
+
 }
 
 const SOCIAL_CHANNEL_DATA={
@@ -3260,7 +3458,7 @@ function renderCommandOverview(grain='full'){
  const series=metrics.map(m=>{
    const vals=data.map(d=>d[m.k]);const max=Math.max(...vals,1);
    const pts=vals.map((v,i)=>{const x=xFor(data[i],i);const y=pT+(h-pT-pB)*(1-v/max);return [x,y,v]});
-   return `<polyline fill="none" stroke="${m.c}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p[0]+','+p[1]).join(' ')}"/>${pts.map((q,i)=>`<circle class="cmd-dot" data-metric="${m.name}" data-value="${q[2]}" data-date="${data[i].date}" cx="${q[0]}" cy="${q[1]}" r="4.5" fill="${m.c}"/>`).join('')}`;
+   return `<polyline class="line-draw" pathLength="1" fill="none" stroke="${m.c}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p[0]+','+p[1]).join(' ')}"/>${pts.map((q,i)=>`<circle class="cmd-dot" data-metric="${m.name}" data-value="${q[2]}" data-date="${data[i].date}" cx="${q[0]}" cy="${q[1]}" r="4.5" fill="${m.c}"/>`).join('')}`;
  }).join('');
  let labels='';
  if(useFull){const ticks=[['01/07',0],['01/08',31/83],['01/09',62/83],['22/09',1]];labels=ticks.map(([t,f])=>`<text x="${pL+(w-pL-pR)*f}" y="${h-10}" text-anchor="middle">${t}</text>`).join('');}
@@ -3333,7 +3531,7 @@ function renderSLChart(id,labels,series,opts={}){
  const colors=['#3579df','#26a66c','#e45757','#7b67d8','#e7a43a','#1aa5a5'];
  const lines=series.map((s,si)=>{
   const pts=s.values.map((v,i)=>{const x=pL+(w-pL-pR)*(labels.length===1?0.5:i/(labels.length-1));const y=pT+(h-pT-pB)*(1-v/max);return [x,y,v]});
-  return `<polyline fill="none" stroke="${colors[si%colors.length]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p[0]+','+p[1]).join(' ')}"/>${pts.map((p,i)=>`<circle class="sl-dot" data-label="${labels[i]}" data-series="${s.name}" data-value="${p[2]}" cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${colors[si%colors.length]}"/>`).join('')}`;
+  return `<polyline class="line-draw" pathLength="1" fill="none" stroke="${colors[si%colors.length]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p[0]+','+p[1]).join(' ')}"/>${pts.map((p,i)=>`<circle class="sl-dot" data-label="${labels[i]}" data-series="${s.name}" data-value="${p[2]}" cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${colors[si%colors.length]}"/>`).join('')}`;
  }).join('');
  const step=Math.max(1,Math.ceil(labels.length/6));const ticks=labels.map((x,i)=>i%step===0||i===labels.length-1?`<text x="${pL+(w-pL-pR)*(labels.length===1?0.5:i/(labels.length-1))}" y="${h-9}" text-anchor="middle">${x}</text>`:'').join('');
  el.innerHTML=`<div class="sl-svg-stage"><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}${lines}<g class="sl-axis-labels">${ticks}</g></svg></div><div class="sl-tooltip"></div><div class="sl-chart-legend">${series.map((s,i)=>`<span><i style="background:${colors[i%colors.length]}"></i>${s.name}</span>`).join('')}</div>`;
@@ -3432,6 +3630,17 @@ function bindLockedHeaderFilters(){
  if(modal)modal.addEventListener('click',e=>{if(e.target===modal)hide()});
 }
 
+
+function armLineChartAnimations(){
+ const roots=[...document.querySelectorAll('.trend-card,.command-overview-chart,.sl-chart-card')];
+ const show=root=>{root.classList.remove('chart-lines-visible');void root.offsetWidth;root.classList.add('chart-lines-visible');};
+ if(!('IntersectionObserver' in window)){roots.forEach(show);return;}
+ const io=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){show(entry.target);io.unobserve(entry.target);}});
+ },{threshold:.18,rootMargin:'0px 0px -28px 0px'});
+ roots.forEach(root=>io.observe(root));
+}
+
 function safeRun(name,fn){
  try{fn();}
  catch(err){
@@ -3466,6 +3675,7 @@ setDynamicGreeting();
 bindLockedHeaderFilters();
 safeRun('navigation',bindNavigation);
 renderAll();
+armLineChartAnimations();
 bindAuth();
 
 
