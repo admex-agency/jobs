@@ -1954,26 +1954,34 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
 }
 
 
-/* V2.0.18 — Daily Trend chart and date axis share the same full-width coordinate system */
+/* V2.0.20 — Diagonal date-axis for Daily Trend across Desktop / Tablet / Mobile */
 .trend-axis{
   position:relative!important;
   display:block!important;
   justify-content:initial!important;
   gap:0!important;
-  height:22px;
-  margin-top:7px;
+  height:52px;
+  margin-top:9px;
   overflow:visible!important;
 }
 .trend-axis span{
   position:absolute!important;
-  top:0;
+  top:2px;
+  display:block;
   font-size:12px!important;
   white-space:nowrap;
-  line-height:18px;
+  line-height:1;
+  transform-origin:0 0;
 }
 .line-chart svg{
   width:100%!important;
   height:100%!important;
+}
+@media(max-width:1199px){
+  .trend-axis{height:58px}
+}
+@media(max-width:767px){
+  .trend-axis{height:66px}
 }
 
 </style>
@@ -2977,7 +2985,7 @@ function renderLineTrend(chartId,axisId,values,color,format){
    const px=pL+(w-pL-pR)*(nLabels<=1?0:i/(nLabels-1));
    const left=(px/w*100).toFixed(4);
    const tx=i===0?'0':(i===nLabels-1?'-100%':'-50%');
-   return `<span style="left:${left}%;transform:translateX(${tx})">${x}</span>`;
+   return `<span style="left:${left}%;transform:translateX(${tx}) rotate(var(--trend-axis-angle))">${x}</span>`;
  }).join('');
  const tip=el.querySelector('.trend-tooltip');
  el.querySelectorAll('.trend-dot').forEach(dot=>{dot.addEventListener('mouseenter',()=>{const i=Number(dot.dataset.i);tip.innerHTML=`<b>${MEDIA_DAILY.labels[i]}</b><span>${format(values[i])}</span>`;tip.classList.add('show');const r=dot.getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(er.width-145,r.left-er.left-35))+'px';tip.style.top=Math.max(6,r.top-er.top-54)+'px';});dot.addEventListener('mouseleave',()=>tip.classList.remove('show'));});
