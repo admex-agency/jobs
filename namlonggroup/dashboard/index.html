@@ -1936,6 +1936,46 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
 .nt-table .nt-link::after{content:"↗";font-size:12px;line-height:1}
 .nt-table .nt-link:hover{color:#b60709;border-bottom-color:#b60709}
 
+
+/* V2.0.17 — exact Daily Trend date-axis alignment */
+.trend-axis{
+  position:relative!important;
+  display:block!important;
+  height:20px;
+  margin-top:7px;
+  overflow:visible!important;
+}
+.trend-axis span{
+  position:absolute;
+  top:0;
+  font-size:12px!important;
+  white-space:nowrap;
+  line-height:18px;
+}
+
+
+/* V2.0.18 — Daily Trend chart and date axis share the same full-width coordinate system */
+.trend-axis{
+  position:relative!important;
+  display:block!important;
+  justify-content:initial!important;
+  gap:0!important;
+  height:22px;
+  margin-top:7px;
+  overflow:visible!important;
+}
+.trend-axis span{
+  position:absolute!important;
+  top:0;
+  font-size:12px!important;
+  white-space:nowrap;
+  line-height:18px;
+}
+.line-chart svg{
+  width:100%!important;
+  height:100%!important;
+}
+
 </style>
 </head>
 <body class="auth-locked">
@@ -1953,7 +1993,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
   </label>
   <button class="auth-submit" type="submit">Đăng nhập</button>
   <div class="auth-error" id="authError">Thông tin đăng nhập không chính xác.</div>
-  <div class="auth-footer"><b>mediaOS</b> · Campaign Intelligence Workspace<br>Hello!</div>
+  <div class="auth-footer"><b>mediaOS</b> · Campaign Intelligence Reporting</div>
  </form>
 </div>
 
@@ -2179,13 +2219,13 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
  </div>
 
  <div class="media-addon" id="dailyTrends">
-  <div class="section-head" style="margin-bottom:12px"><div><div class="section-no">Daily Trend</div><h2 style="font-size:20px">Biến động theo ngày</h2><p>Paid Media được đọc theo nhịp delivery hàng ngày để nhận diện thời điểm tăng tốc, chững lại và dịch chuyển trọng tâm giữa exposure, response và video consumption.</p></div></div>
+  <div class="section-head" style="margin-bottom:12px"><div><div class="section-no">Daily Trend</div><h2 style="font-size:20px">Biến động theo ngày</h2><p>Dữ liệu theo ngày hiện được cập nhật đến 22/09/2026. Các biểu đồ phản ánh nhịp delivery của Paid Media theo ngày; snapshot tổng chiến dịch mới nhất được cập nhật sáng 24/09/2026.</p></div></div>
   <div class="trend-grid">
-   <div class="trend-card trend-card-wide"><h3>Expense theo ngày</h3><p>Paid Media spend · daily run-rate theo active line-item</p><div class="line-chart" id="expenseTrend"></div><div class="trend-axis" id="expenseAxis"></div></div>
-   <div class="trend-card chart-reveal"><h3>Impressions theo ngày</h3><p>Paid Media · daily delivery</p><div class="line-chart" id="impressionTrend"></div><div class="trend-axis" id="impressionAxis"></div></div>
-   <div class="trend-card chart-reveal"><h3>Clicks theo ngày</h3><p>Paid Media · daily response</p><div class="line-chart" id="clickTrend"></div><div class="trend-axis" id="clickAxis"></div></div>
+   <div class="trend-card trend-card-wide"><h3>Expense theo ngày</h3><p>Paid Media spend · dữ liệu ngày đến 22/09</p><div class="line-chart" id="expenseTrend"></div><div class="trend-axis" id="expenseAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Impressions theo ngày</h3><p>Paid Media · delivery theo ngày</p><div class="line-chart" id="impressionTrend"></div><div class="trend-axis" id="impressionAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Clicks theo ngày</h3><p>Paid Media · response theo ngày</p><div class="line-chart" id="clickTrend"></div><div class="trend-axis" id="clickAxis"></div></div>
    <div class="trend-card chart-reveal"><h3>CTR theo ngày</h3><p>Clicks / Impressions</p><div class="line-chart" id="ctrTrend"></div><div class="trend-axis" id="ctrAxis"></div></div>
-   <div class="trend-card chart-reveal"><h3>Reach theo ngày</h3><p>Reported reach · daily run-rate</p><div class="line-chart" id="reachTrend"></div><div class="trend-axis" id="reachAxis"></div></div>
+   <div class="trend-card chart-reveal"><h3>Reach theo ngày</h3><p>Reported reach · xu hướng theo ngày</p><div class="line-chart" id="reachTrend"></div><div class="trend-axis" id="reachAxis"></div></div>
    <div class="trend-card chart-reveal"><h3>Facebook ThruPlay theo ngày</h3><p>Facebook video delivery</p><div class="line-chart" id="fbViewTrend"></div><div class="trend-axis" id="fbViewAxis"></div></div>
    <div class="trend-card chart-reveal"><h3>YouTube TrueView theo ngày</h3><p>YouTube video delivery</p><div class="line-chart" id="ytViewTrend"></div><div class="trend-axis" id="ytViewAxis"></div></div>
    <div class="trend-card chart-reveal"><h3>TikTok View 2s theo ngày</h3><p>TikTok video delivery</p><div class="line-chart" id="ttViewTrend"></div><div class="trend-axis" id="ttViewAxis"></div></div>
@@ -2918,18 +2958,27 @@ function renderMedia(){
  barChart('platformDelivery',Object.entries(b.platform_summary).map(([name,x])=>({name,v:x.reach})),x=>x.name,x=>x.v,['#4f78f6','#8567f0','#e56fa7','#18c7a9']);
 }
 
-const COMMAND_SNAPSHOTS=[{"iso":"2026-07-01","date":"01/07","imp":0,"reach":0,"clicks":0,"expense":0},{"iso":"2026-08-18","date":"18/08","imp":761170,"reach":509934,"clicks":58,"expense":11417550},{"iso":"2026-08-20","date":"20/08","imp":3194805,"reach":2835908,"clicks":12371,"expense":58636920},{"iso":"2026-08-25","date":"25/08","imp":7507335,"reach":5351377,"clicks":12532,"expense":163674720},{"iso":"2026-08-31","date":"31/08","imp":12114388,"reach":9658984,"clicks":23865,"expense":329030090},{"iso":"2026-09-05","date":"05/09","imp":12355231,"reach":9836169,"clicks":23898,"expense":332642735},{"iso":"2026-09-08","date":"08/09","imp":19250711,"reach":13557273,"clicks":39897,"expense":684642735},{"iso":"2026-09-10","date":"10/09","imp":19812506,"reach":13889175,"clicks":49990,"expense":708715035},{"iso":"2026-09-14","date":"14/09","imp":20329243,"reach":14309545,"clicks":50116,"expense":718510625},{"iso":"2026-09-15","date":"15/09","imp":20673952,"reach":14553393,"clicks":50158,"expense":723681260},{"iso":"2026-09-18","date":"18/09","imp":22574090,"reach":15711546,"clicks":78187,"expense":813506490},{"iso":"2026-09-20","date":"20/09","imp":30620893,"reach":21208717,"clicks":147179,"expense":1074386680},{"iso":"2026-09-22","date":"22/09","imp":32330780,"reach":22959449,"clicks":152674,"expense":1149533820},{"iso":"2026-09-23","date":"23/09","imp":36150380,"reach":27096387,"clicks":159979,"expense":1273046830}];
+const COMMAND_SNAPSHOTS=[{"iso":"2026-07-01","date":"01/07","imp":0,"reach":0,"clicks":0,"expense":0},{"iso":"2026-08-18","date":"18/08","imp":761170,"reach":509934,"clicks":58,"expense":11417550},{"iso":"2026-08-20","date":"20/08","imp":3194805,"reach":2835908,"clicks":12371,"expense":58636920},{"iso":"2026-08-25","date":"25/08","imp":7507335,"reach":5351377,"clicks":12532,"expense":163674720},{"iso":"2026-08-31","date":"31/08","imp":12114388,"reach":9658984,"clicks":23865,"expense":329030090},{"iso":"2026-09-05","date":"05/09","imp":12355231,"reach":9836169,"clicks":23898,"expense":332642735},{"iso":"2026-09-08","date":"08/09","imp":19250711,"reach":13557273,"clicks":39897,"expense":684642735},{"iso":"2026-09-10","date":"10/09","imp":19812506,"reach":13889175,"clicks":49990,"expense":708715035},{"iso":"2026-09-14","date":"14/09","imp":20329243,"reach":14309545,"clicks":50116,"expense":718510625},{"iso":"2026-09-15","date":"15/09","imp":20673952,"reach":14553393,"clicks":50158,"expense":723681260},{"iso":"2026-09-18","date":"18/09","imp":22574090,"reach":15711546,"clicks":78187,"expense":813506490},{"iso":"2026-09-20","date":"20/09","imp":30620893,"reach":21208717,"clicks":147179,"expense":1074386680},{"iso":"2026-09-22","date":"22/09","imp":32330780,"reach":22959449,"clicks":152674,"expense":1149533820},{"iso":"2026-09-24","date":"24/09 · 10:30","imp":36150380,"reach":27096387,"clicks":159979,"expense":1273046830}];
 
-const MEDIA_DAILY={"labels":["04/08","05/08","06/08","07/08","08/08","09/08","10/08","11/08","12/08","13/08","14/08","15/08","16/08","17/08","18/08","19/08","20/08","21/08","22/08","23/08","24/08","25/08","26/08","27/08","28/08","29/08","30/08","31/08","01/09","02/09","03/09","04/09","05/09","06/09","07/09","08/09","09/09","10/09","11/09","12/09","13/09","14/09","15/09","16/09","17/09","18/09","19/09","20/09","21/09","22/09","23/09"],"expense":[8914312,9037422,9037422,9037422,9226491,9226491,9226491,9226491,9226491,9226491,9226491,9226491,9226491,11607702,12598541,11837371,12468204,12279134,13723802,13723802,13723802,13723802,9910038,10271302,12525022,12525022,12525022,12525022,3784246,3784246,3784246,3784246,6250831,5889567,10676537,10676537,10676537,15782891,14625650,14625650,14625650,31646249,38371060,44759060,74457155,80918848,83631746,87768466,26986113,26986113,353522601],"impressions":[314589,322797,322797,322797,335401,335401,335401,335401,335401,335401,335401,335401,335401,380652,433969,383224,460191,447586,485788,485788,485788,485788,318583,342667,412162,412162,412162,412162,132879,132879,132879,132879,147887,123803,184793,184793,184793,351803,366288,366288,366288,939580,1036515,1341043,2471773,2604226,2744931,2862626,884555,884555,6912063],"reach":[230047,235853,235853,235853,245720,245720,245720,245720,245720,245720,245720,245720,245720,266691,306277,272282,346609,336742,364680,364680,364680,364680,265575,283293,326652,326652,326652,326652,84159,84159,84159,84159,93328,75610,126147,126147,126147,232526,233481,233481,233481,611583,744186,1035119,2173452,2275131,2435669,2550249,863590,863590,3734951],"clicks":[111,112,112,112,112,112,112,112,112,112,112,112,112,156,228,224,792,792,816,816,816,816,1227,1230,1800,1800,1800,1800,1010,1010,1010,1010,2083,2079,4066,4066,4066,5460,4975,4975,4975,8176,8833,10550,11791,13623,12689,13407,3448,3448,16661],"fbViews":[45471,45471,45471,45471,45471,45471,45471,45471,45471,45471,45471,45471,45471,68149,68149,68149,68149,68149,68149,68149,68149,68149,22678,22678,22678,22678,22678,22678,0,0,0,0,0,0,0,0,0,0,742,742,742,48576,59592,67849,150219,162069,188779,188988,41985,41985,0],"ytViews":[37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,0,0,0,0,0,0,0,0,0,0,0,0,0,0,72194,72194,306075,306075,354496,354496,120615,120615,2],"ttViews":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,0,0,0,0,0,0,19074,19074,19074,19074,19074,19074,19074,19074,19074,191801,191801,191801,229684,301365,301365,301365,0],"ctr":[0.0353,0.0347,0.0347,0.0347,0.0334,0.0334,0.0334,0.0334,0.0334,0.0334,0.0334,0.0334,0.0334,0.041,0.0525,0.0585,0.1721,0.1769,0.168,0.168,0.168,0.168,0.3851,0.3589,0.4367,0.4367,0.4367,0.4367,0.7601,0.7601,0.7601,0.7601,1.4085,1.6793,2.2003,2.2003,2.2003,1.552,1.3582,1.3582,1.3582,0.8702,0.8522,0.7867,0.477,0.5231,0.4623,0.4683,0.3898,0.3898,0.002410423631844791]};
+const MEDIA_DAILY={"labels":["04/08","05/08","06/08","07/08","08/08","09/08","10/08","11/08","12/08","13/08","14/08","15/08","16/08","17/08","18/08","19/08","20/08","21/08","22/08","23/08","24/08","25/08","26/08","27/08","28/08","29/08","30/08","31/08","01/09","02/09","03/09","04/09","05/09","06/09","07/09","08/09","09/09","10/09","11/09","12/09","13/09","14/09","15/09","16/09","17/09","18/09","19/09","20/09","21/09","22/09"],"expense":[11144136,11298041,11298041,11298041,11534403,11534403,11534403,11534403,11534403,11534403,11534403,11534403,11534403,14511250,15749937,14798368,15586998,15350634,17156671,17156671,17156671,17156671,12388933,12840563,15658028,15658028,15658028,15658028,4730837,4730837,4730837,4730837,7814413,7362782,13347164,13347164,13347164,19730820,18284107,18284107,18284107,39562235,47969189,55955082,93081852,101159871,104551373,109722851,33736413,33736413],"impressions":[347862,356938,356938,356938,370875,370876,370876,370876,370876,370876,370876,370876,370876,420913,479869,423757,508864,494926,537169,537169,537169,537169,352279,378910,455755,455755,455755,455755,146933,146933,146933,146933,163529,136897,204338,204338,204338,389012,405029,405029,405029,1038957,1146145,1482882,2733206,2879668,3035255,3165399,978112,978112],"reach":[226088,231795,231795,231795,241492,241492,241492,241492,241492,241492,241492,241492,241492,262102,301007,267597,340645,330948,358405,358405,358405,358405,261005,278418,321031,321031,321031,321031,82711,82711,82711,82711,91722,74309,123976,123976,123976,228525,229463,229463,229463,601059,731380,1017307,2136053,2235982,2393758,2506366,848730,848730],"clicks":[118,119,119,119,119,119,119,119,119,119,119,119,119,166,243,239,844,844,869,869,869,869,1307,1310,1918,1918,1918,1918,1076,1076,1076,1076,2219,2215,4332,4332,4331,5817,5300,5300,5300,8710,9410,11239,12561,14512,13517,14282,3673,3673],"fbViews":[44519,44519,44519,44519,44519,44519,44519,44519,44519,44519,44519,44519,44519,66723,66723,66723,66723,66723,66723,66722,66722,66722,22203,22203,22203,22203,22203,22203,0,0,0,0,0,0,0,0,0,0,727,727,727,47559,58345,66429,147075,158676,184827,185032,41106,41106],"ytViews":[37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,37541,0,0,0,0,0,0,0,0,0,0,0,0,0,0,72194,72194,306075,306075,354497,354497,120615,120615],"ttViews":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,21028,0,0,0,0,0,0,19074,19074,19074,19074,19074,19074,19074,19074,19074,191800,191801,191801,229683,301364,301364,301364],"ctr":[0.03392149760537225,0.033339123321137004,0.033339123321137004,0.033339123321137004,0.032086282440175265,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03208619592532275,0.03943807865283325,0.050638820178006916,0.05640024825548604,0.16585964029681802,0.17053054396010717,0.16177404131660614,0.16177404131660614,0.16177404131660614,0.16177404131660614,0.37101274841815723,0.34572853711963264,0.4208401443758159,0.4208401443758159,0.4208401443758159,0.4208401443758159,0.7323065614940143,0.7323065614940143,0.7323065614940143,0.7323065614940143,1.3569458628133235,1.6180047773143313,2.1200168348520587,2.1200168348520587,2.1195274496177903,1.4953266223149928,1.308548276790057,1.308548276790057,1.308548276790057,0.8383407590497007,0.8210130480872839,0.7579160041055188,0.45957018973322905,0.5039469827771812,0.4453332586553683,0.4511911452553059,0.37551936792514556,0.37551936792514556]};
 function renderLineTrend(chartId,axisId,values,color,format){
  const el=$(chartId),axis=$(axisId);if(!el||!axis)return;
  const w=900,h=235,pL=30,pR=18,pT=18,pB=28,max=Math.max(...values,1),range=max||1;
  const pts=values.map((v,i)=>{const x=pL+(w-pL-pR)*(i/(values.length-1));const y=pT+(h-pT-pB)*(1-v/range);return [x,y]});
  let grid='';for(let i=1;i<4;i++){const y=pT+(h-pT-pB)*(i/4);grid+=`<line class="gridline" x1="${pL}" y1="${y}" x2="${w-pR}" y2="${y}"/>`;}
  el.style.position='relative';
- el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}<polyline class="series line-draw" pathLength="1" stroke="${color}" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle class="dot trend-dot" data-i="${i}" cx="${p[0]}" cy="${p[1]}" r="3.4" fill="${color}"></circle>`).join('')}</svg><div class="trend-tooltip"></div>`;
- const step=Math.ceil(MEDIA_DAILY.labels.length/8);
- axis.innerHTML=MEDIA_DAILY.labels.map((x,i)=>i%step===0||i===MEDIA_DAILY.labels.length-1?`<span>${x}</span>`:'').join('');
+ el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${grid}<polyline class="series line-draw" pathLength="1" stroke="${color}" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle class="dot trend-dot" data-i="${i}" cx="${p[0]}" cy="${p[1]}" r="3.4" fill="${color}"></circle>`).join('')}</svg><div class="trend-tooltip"></div>`;
+ const step=5;
+ const nLabels=MEDIA_DAILY.labels.length;
+ axis.innerHTML=MEDIA_DAILY.labels.map((x,i)=>{
+   const lastRegular=Math.floor((nLabels-1)/step)*step;
+   const showLast=i===nLabels-1 && (nLabels-1-lastRegular)>=3;
+   if(!(i%step===0||showLast))return '';
+   const px=pL+(w-pL-pR)*(nLabels<=1?0:i/(nLabels-1));
+   const left=(px/w*100).toFixed(4);
+   const tx=i===0?'0':(i===nLabels-1?'-100%':'-50%');
+   return `<span style="left:${left}%;transform:translateX(${tx})">${x}</span>`;
+ }).join('');
  const tip=el.querySelector('.trend-tooltip');
  el.querySelectorAll('.trend-dot').forEach(dot=>{dot.addEventListener('mouseenter',()=>{const i=Number(dot.dataset.i);tip.innerHTML=`<b>${MEDIA_DAILY.labels[i]}</b><span>${format(values[i])}</span>`;tip.classList.add('show');const r=dot.getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(er.width-145,r.left-er.left-35))+'px';tip.style.top=Math.max(6,r.top-er.top-54)+'px';});dot.addEventListener('mouseleave',()=>tip.classList.remove('show'));});
 }
@@ -3592,7 +3641,7 @@ function renderCommandOverview(grain='full'){
  let labels='';
  if(useFull){const ticks=[['01/07',0],['01/08',31/83],['01/09',62/83],['22/09',1]];labels=ticks.map(([t,f])=>`<text x="${pL+(w-pL-pR)*f}" y="${h-10}" text-anchor="middle">${t}</text>`).join('');}
  else labels=data.map((d,i)=>`<text x="${xFor(d,i)}" y="${h-10}" text-anchor="middle">${d.date}</text>`).join('');
- el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}${series}<g class="cmd-labels">${labels}</g></svg><div class="cmd-tooltip"></div><div class="cmd-index-note"></div>`;
+ el.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${grid}${series}<g class="cmd-labels">${labels}</g></svg><div class="cmd-tooltip"></div><div class="cmd-index-note"></div>`;
  const tip=el.querySelector('.cmd-tooltip');el.querySelectorAll('.cmd-dot').forEach(dot=>{dot.onmouseenter=()=>{tip.innerHTML=`<b>${dot.dataset.metric}</b><span>${dot.dataset.date}</span><strong>${dot.dataset.metric==='Expense'?fmt(Number(dot.dataset.value))+' VND':fmt(Number(dot.dataset.value))}</strong>`;tip.classList.add('show');const r=dot.getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(er.width-160,r.left-er.left-45))+'px';tip.style.top=Math.max(6,r.top-er.top-64)+'px'};dot.onmouseleave=()=>tip.classList.remove('show')});
 }
 function bindCommandOverview(){document.querySelectorAll('#commandTimeGranularity button').forEach(b=>b.onclick=()=>renderCommandOverview(b.dataset.grain));renderCommandOverview('full');}
@@ -3663,7 +3712,7 @@ function renderSLChart(id,labels,series,opts={}){
   return `<polyline class="line-draw" pathLength="1" fill="none" stroke="${colors[si%colors.length]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p[0]+','+p[1]).join(' ')}"/>${pts.map((p,i)=>`<circle class="sl-dot" data-label="${labels[i]}" data-series="${s.name}" data-value="${p[2]}" cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${colors[si%colors.length]}"/>`).join('')}`;
  }).join('');
  const step=Math.max(1,Math.ceil(labels.length/6));const ticks=labels.map((x,i)=>i%step===0||i===labels.length-1?`<text x="${pL+(w-pL-pR)*(labels.length===1?0.5:i/(labels.length-1))}" y="${h-9}" text-anchor="middle">${x}</text>`:'').join('');
- el.innerHTML=`<div class="sl-svg-stage"><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${grid}${lines}<g class="sl-axis-labels">${ticks}</g></svg></div><div class="sl-tooltip"></div><div class="sl-chart-legend">${series.map((s,i)=>`<span><i style="background:${colors[i%colors.length]}"></i>${s.name}</span>`).join('')}</div>`;
+ el.innerHTML=`<div class="sl-svg-stage"><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${grid}${lines}<g class="sl-axis-labels">${ticks}</g></svg></div><div class="sl-tooltip"></div><div class="sl-chart-legend">${series.map((s,i)=>`<span><i style="background:${colors[i%colors.length]}"></i>${s.name}</span>`).join('')}</div>`;
  const tip=el.querySelector('.sl-tooltip');el.querySelectorAll('.sl-dot').forEach(d=>{d.onmouseenter=()=>{tip.innerHTML=`<b>${d.dataset.series}</b><span>${d.dataset.label}</span><strong>${fmt(Number(d.dataset.value))}</strong>`;tip.classList.add('show');const r=d.getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(er.width-130,r.left-er.left-36))+'px';tip.style.top=Math.max(6,r.top-er.top-58)+'px'};d.onmouseleave=()=>tip.classList.remove('show')});
 }
 function renderSLByKey(key,grain='day'){
