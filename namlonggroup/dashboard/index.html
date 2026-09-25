@@ -2092,6 +2092,84 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
   .cpd-grid{grid-template-columns:1fr!important}
 }
 
+
+/* V2.0.26 — AI header alignment + advisory note */
+#ai > .section-head{
+  align-items:center!important;
+}
+.history-toolbar{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:10px!important;
+  margin:0!important;
+  flex:0 0 auto;
+}
+.history-toolbar label{
+  display:flex!important;
+  align-items:center!important;
+  margin:0!important;
+  height:40px;
+  line-height:1!important;
+  white-space:nowrap;
+}
+.history-toolbar .control{
+  margin:0!important;
+  height:40px!important;
+  min-height:40px!important;
+  box-sizing:border-box!important;
+}
+.ai-disclaimer{
+  margin:0 2px 14px;
+  padding:9px 12px;
+  border-radius:11px;
+  background:rgba(244,247,247,.78);
+  border:1px solid rgba(17,47,44,.06);
+  color:#73827f;
+  font-size:12px;
+  line-height:1.5;
+}
+@media(max-width:767px){
+  #ai > .section-head{
+    display:block!important;
+  }
+  .history-toolbar{
+    justify-content:flex-start!important;
+    margin-top:10px!important;
+    width:100%;
+  }
+  .history-toolbar .control{
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .ai-disclaimer{
+    margin:0 1px 12px;
+  }
+}
+
+
+/* V2.0.27 — advisory note as section footer */
+.ai-disclaimer{
+  margin:16px 2px 0!important;
+  padding:9px 12px!important;
+  border-radius:11px;
+  background:rgba(244,247,247,.72);
+  border:1px solid rgba(17,47,44,.06);
+  color:#7a8986;
+  font-size:12px!important;
+  line-height:1.5;
+}
+
+
+/* V2.0.28 — remove obsolete green status dot under campaign title */
+.hero-title::after,
+.dashboard-title::after,
+.data-freshness::before,
+.campaign-title::after{
+  display:none!important;
+  content:none!important;
+}
+
 </style>
 </head>
 <body class="auth-locked">
@@ -2214,7 +2292,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
     <div class="greeting-avatar"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' rx='18' fill='%23eef2f1'/%3E%3C/svg%3E" alt="Profile avatar"></div>
     <div class="greeting-copy"><div class="welcome-kicker" id="dynamicGreeting">Chào buổi sáng</div><div class="welcome-name">User</div></div>
    </div>
-   <div class="campaign-heading"><div class="ey">Dashboard</div><h1 class="campaign-title-red">Nam Long Experience 2026</h1><div class="source-freshness"><i></i><span>Campaign data indexed · 25/09/2026 · Media daily through 22/09 · Website latest source through 20/09</span></div></div>
+   <div class="campaign-heading"><div class="ey">Dashboard</div><h1 class="campaign-title-red">Nam Long Experience 2026</h1><div class="source-freshness"><span></span></div></div>
   </div>
   <div class="filters">
    <select class="control" id="rangeMode"><option>Toàn chiến dịch</option><option>Theo ngày</option><option>Theo tuần</option><option>Theo tháng</option><option>Tùy chọn ngày</option></select>
@@ -2240,6 +2318,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
  
  <section class="section" id="daily-intelligence">
   <div class="section-head"><div><h2>Tóm tắt điều hành chiến dịch</h2><p>Đọc nhanh tiến độ, hiệu quả và những hạng mục cần ưu tiên trong ngày.</p></div><button class="btn detail-toggle" id="toggleDailyIntel">Thu gọn</button></div>
+  
   <div class="daily-intel-body" id="dailyIntelBody">
    <div class="intel-hero">
     <div class="intel-hero-main">
@@ -2266,6 +2345,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
     <div class="moment-win-card current-moment"><div><span class="rank">Moment Signal</span><b>Final Delivery Phase · 25/09</b></div><p>Chiến dịch đã bước vào 5 ngày cuối với 94.51% thời lượng đã đi qua và 89.42% ngân sách đã triển khai. Paid Media đạt 94.01%; Facebook Reach, Click-to-Web và TikTok View 2s đã ở trạng thái gần hoàn tất hoặc vượt mục tiêu, trong khi YouTube và recap còn lại là các khoảng delivery cần ưu tiên. Trọng tâm hiện tại là hoàn tất cam kết, củng cố evidence và kết nối dữ liệu downstream để phục vụ đánh giá cuối kỳ.</p></div>
    </div>
   </div>
+  
  </section>
 
  
@@ -2278,6 +2358,8 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
    <div class="alert-item"><b>Negative Spike / Crisis</b><span>N/A</span></div>
   </div>
  </div>
+<div class="ai-disclaimer">Nội dung nhận định được thực hiện bởi mediaOS Artificial Intelligence và chỉ mang tính chất tham khảo. Các thông tin và nhận định chính thức sẽ được Đội ngũ nhân sự Dự án xác nhận qua Report Newsletter</div>
+
 
 
 <section class="section" id="overview">
@@ -2764,7 +2846,10 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
    <div><h2>Phân tích chuyên sâu từ dữ liệu chiến dịch</h2></div>
    <div class="history-toolbar"><label class="sub">History record</label><input class="control" id="aiHistoryDate" type="date" min="2026-09-16" max="2026-09-25" value="2026-09-25"/></div>
   </div>
+  
   <div id="aiHistory"></div>
+ 
+  <div class="ai-disclaimer">Nội dung nhận định được thực hiện bởi mediaOS Artificial Intelligence và chỉ mang tính chất tham khảo. Các thông tin và nhận định chính thức sẽ được Đội ngũ nhân sự Dự án xác nhận qua Report Newsletter</div>
  </section>
 </section>
 
@@ -2923,7 +3008,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
  <section class="section" id="listen-summary">
   <div class="section-head"><div><h2>Conversation Intelligence Summary</h2></div></div>
   <div class="sl-summary-grid">
-   <article class="sl-summary-card"><span>Conversation Scale</span><h3>giai đoạn cao điểm sự kiện tạo bước nhảy rõ về độ phủ thảo luận</h3><p>Public mentions tăng mạnh từ 14/09 và đạt đỉnh 2,166 mentions ngày 19/09. Diễn biến này trùng với giai đoạn cao điểm của Nam Long Experience 2026, cho thấy hoạt động sự kiện đã trở thành chất xúc tác chính cho quy mô thảo luận.</p></article>
+   <article class="sl-summary-card"><span>Conversation Scale</span><h3>Giai đoạn cao điểm sự kiện tạo bước nhảy rõ về độ phủ thảo luận</h3><p>Public mentions tăng mạnh từ 14/09 và đạt đỉnh 2,166 mentions ngày 19/09. Diễn biến này trùng với giai đoạn cao điểm của Nam Long Experience 2026, cho thấy hoạt động sự kiện đã trở thành chất xúc tác chính cho quy mô thảo luận.</p></article>
    <article class="sl-summary-card"><span>Sentiment Structure</span><h3>Độ phủ cao nhưng narrative vẫn thiên về thông tin</h3><p>Neutral chiếm 85.69%, Positive 12.22% và Negative 2.09%. Cấu trúc này phản ánh chiến dịch đang tạo được độ hiện diện đáng kể. Phần Negative hiện ở mức thấp và chủ yếu cần được hiểu trong bối cảnh rule brand-safety của hệ thống; do đó dư địa lớn nhất hiện nay là chuyển coverage sang advocacy tích cực rõ rệt hơn.</p></article>
    <article class="sl-summary-card"><span>Platform Dynamics</span><h3>Facebook giữ vai trò scale, TikTok mở rộng creator-led amplification</h3><p>Facebook chiếm phần lớn conversation footprint, trong khi TikTok đóng góp đáng kể ở nhóm creator và publisher có interaction cao. Hai nền tảng đang tạo hai cơ chế lan truyền khác nhau: scale từ Facebook và tốc độ khuếch đại từ TikTok.</p></article>
    <article class="sl-summary-card"><span>Influence Quality</span><h3>Earned influence đã mở rộng ra ngoài brand-owned presence</h3><p>Các nguồn như Lifestyle Việt Nam, THEANH28 TRENDING, 60giay.com và nhóm creator/báo chí xuất hiện trong Top Authors, cho thấy narrative đã được tái phân phối qua nhiều node ảnh hưởng thay vì chỉ phụ thuộc kênh của Nam Long.</p></article>
@@ -3697,7 +3782,7 @@ function bindNavigation(){
  if($('dualDate'))$('dualDate').onchange=renderDualCalendar;
  if($('saveComment'))$('saveComment').onclick=()=>saveReview();
  document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>saveReview(b.dataset.review));
- if($('toggleDailyIntel'))$('toggleDailyIntel').onclick=()=>{const box=$('dailyIntelBody');box.classList.toggle('is-collapsed');$('toggleDailyIntel').textContent=box.classList.contains('is-collapsed')?'Mở rộng':'Thu gọn';};
+ if($('toggleDailyIntel'))$('toggleDailyIntel').onclick=()=>{const box=$('dailyIntelBody');box.classList.toggle('is-collapsed');$('toggleDailyIntel').textContent=box.classList.contains('is-collapsed')?'Xổ ra':'Thu gọn';};
  document.querySelectorAll('.doc-protected').forEach(b=>b.onclick=()=>{
  if(CURRENT_USER?.role==='admin') openHelp('Admin access','Tài khoản Admin đã được mở quyền truy cập tài liệu trong bản demo. Link tải file sẽ hoạt động khi nguồn tài liệu được gắn vào nút này.');
  else openHelp('Truy cập bị giới hạn','Tài khoản Internal / Client không có quyền tải tài liệu. Vui lòng liên hệ Admin để được hỗ trợ.');
