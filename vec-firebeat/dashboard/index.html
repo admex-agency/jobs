@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -2243,7 +2242,43 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
 .tl-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tl-form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
 #tlError{color:#b83333;font-size:12px}.tl-delete{margin-right:auto;color:#a33!important}
 @media(max-width:680px){.fb-timeline{padding:14px}.tl-head,.tl-row{grid-template-columns:150px 1fr}.tl-name{padding:10px 8px}}
-</style><style id="firebeat-v9-doc-style">#page-workplace .fb-doc-title{margin:22px 0 16px;padding:0;background:none;border:0;box-shadow:none}#page-workplace .fb-doc-title h2{font-size:24px;line-height:1.25;margin:0;color:#112b26;font-weight:750}#page-workplace .doc-grid{margin-bottom:28px}#page-workplace .doc-grid .doc{min-height:154px;display:flex;flex-direction:column;align-items:flex-start}#page-workplace .doc-grid .doc .btn{margin-top:auto}#campaignTimeline .fb-tl-top h2{margin-top:0}</style></head>
+</style><style id="firebeat-v9-doc-style">#page-workplace .fb-doc-title{margin:22px 0 16px;padding:0;background:none;border:0;box-shadow:none}#page-workplace .fb-doc-title h2{font-size:24px;line-height:1.25;margin:0;color:#112b26;font-weight:750}#page-workplace .doc-grid{margin-bottom:28px}#page-workplace .doc-grid .doc{min-height:154px;display:flex;flex-direction:column;align-items:flex-start}#page-workplace .doc-grid .doc .btn{margin-top:auto}#campaignTimeline .fb-tl-top h2{margin-top:0}</style><style id="mediaos-v11-guide-style">
+/* V11: Sidebar scroll with a pinned profile area on desktop. */
+@media (min-width:761px){
+ .sidebar{overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior-y:contain;scrollbar-width:thin;scrollbar-color:#b8c8c2 transparent;box-sizing:border-box!important}
+ .sidebar::-webkit-scrollbar{width:6px}
+ .sidebar::-webkit-scrollbar-thumb{background:#bdcbc5;border-radius:20px}
+ .sidebar .nav{padding-bottom:8px}
+ .sidebar .profile{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;margin:12px 0 4px!important;box-sizing:border-box;width:100%}
+ .app.sidebar-collapsed .sidebar .profile{margin:12px 0 4px!important}
+ .app.sidebar-collapsed .sidebar .guide-launch{font-size:0;padding:9px 0}
+ .app.sidebar-collapsed .sidebar .guide-launch::before{content:'ⓘ';font-size:17px}
+}
+.guide-launch{all:unset;box-sizing:border-box;cursor:pointer;grid-column:1/-1;display:block;text-align:center;padding:9px 10px;border-radius:9px;background:#edf3f0;color:#24483f;font-size:12px;font-weight:750;margin-top:8px}
+.guide-launch:hover,.guide-help-entry:hover{background:#dcebe5}
+.guide-help-entry{border:1px solid #dce7e2;background:#f0f6f3;color:#23473f;padding:11px 15px;border-radius:12px;font-weight:750;cursor:pointer;margin:0 0 20px}
+
+/* V12 interactive spotlight walkthrough */
+.tour-mask{position:fixed;inset:0;background:rgba(10,26,23,.73);z-index:99990;pointer-events:auto}
+.tour-mask[hidden],.tour-card[hidden]{display:none!important}
+.tour-spotlight{position:relative!important;z-index:99992!important;box-shadow:0 0 0 5px #f5e2ac,0 0 0 9px rgba(255,255,255,.55),0 18px 65px #0005!important;border-radius:13px!important;isolation:isolate}
+.tour-card{position:fixed;z-index:99994;width:min(395px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:auto;box-sizing:border-box;background:white;border-radius:19px;padding:22px;box-shadow:0 25px 85px #0006;color:#17372f}
+.tour-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tour-card-head strong{font-size:13px;color:#a17a39;letter-spacing:.6px}
+.tour-card-head button{border:0;background:#f0f4f2;width:28px;height:28px;border-radius:8px;cursor:pointer;font-size:19px}
+.tour-card h2{font-size:22px!important;line-height:1.25!important;margin:15px 0 10px!important}
+.tour-card p{font-size:13px;color:#526d62;line-height:1.6;margin:0 0 12px}
+.tour-actions{display:flex;justify-content:space-between;gap:7px;align-items:center;margin-top:17px}
+.tour-actions>div{display:flex;gap:7px}
+.tour-actions button{border:1px solid #dce6e0;background:white;border-radius:9px;padding:10px 12px;font-size:12px;font-weight:750;cursor:pointer}
+.tour-actions #tourNext{background:#584322;border-color:#584322;color:white}
+.tour-actions button:disabled{opacity:.3;cursor:default}
+.tour-count{font-size:11px;color:#83948c}
+.guide-launch{all:unset;box-sizing:border-box;cursor:pointer;grid-column:1/-1;display:block;text-align:center;padding:9px 10px;border-radius:9px;background:#edf3f0;color:#24483f;font-size:12px;font-weight:750;margin-top:8px}
+.guide-launch:hover,.guide-help-entry:hover{background:#dcebe5}
+.guide-help-entry{border:1px solid #dce7e2;background:#f0f6f3;color:#23473f;padding:11px 15px;border-radius:12px;font-weight:750;cursor:pointer;margin:0 0 20px}
+@media(max-width:760px){.tour-card{padding:17px}.tour-card h2{font-size:19px!important}}
+</style></head>
 <body class="auth-locked">
 <div aria-label="mediaOS Login" class="auth-screen" id="authScreen">
 <form autocomplete="off" class="auth-card" id="authForm">
@@ -2279,7 +2314,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
 <button data-page="calendar" title="Lịch âm dương"><span class="nav-icon"><svg viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="5"></rect><path d="M7 3v4M17 3v4M3 10h18"></path><circle cx="8" cy="14" fill="currentColor" r=".7" stroke="none"></circle><circle cx="12" cy="14" fill="currentColor" r=".7" stroke="none"></circle><circle cx="16" cy="14" fill="currentColor" r=".7" stroke="none"></circle></svg></span><span class="nav-text">Lịch âm dương</span><span class="dot"></span></button>
 <button data-page="archive" title="Archive"><span class="nav-icon"><svg viewbox="0 0 24 24"><path d="M4 7h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path><path d="M3 4h18v4H3z"></path><path d="M9 12h6"></path></svg></span><span class="nav-text">Archive</span><span class="dot"></span></button>
 </div>
-<div class="profile"><img alt="Profile avatar" class="profile-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' rx='18' fill='%23eef2f1'/%3E%3C/svg%3E"/><b>admeX Team</b><p>admeX · VCCorp Team</p><button class="signout" id="signOutBtn">Sign out</button></div>
+<div class="profile"><img alt="Profile avatar" class="profile-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' rx='18' fill='%23eef2f1'/%3E%3C/svg%3E"/><b>admeX Team</b><p>admeX · VCCorp Team</p><button class="signout" id="signOutBtn">Sign out</button><button aria-label="Xem hướng dẫn sử dụng Dashboard" class="guide-launch" id="openDashboardGuide" type="button">ⓘ  Xem hướng dẫn</button></div>
 </aside>
 <main>
 <section class="page" id="page-thinkpage"><div class="think-hero"><div class="ey">Campaign Thinkpage · Strategic Context</div><h1>Hanoi Firebeat World Festival 2026</h1><p>Bừng vị năm châu – Chung nhịp toàn cầu · Taste The Fire – Feel The Beat</p></div>
@@ -2380,7 +2415,7 @@ button[data-page="nghiemthu"] .nav-icon svg{stroke:#b60709!important}
 </section>
 <section class="page" data-campaign-data="pending" id="page-archive"><div class="page-head"><h1>Campaign Archive &amp; Learning</h1><p>Chưa có dữ liệu hoặc tài sản chiến dịch Firebeat cho module này.</p></div></section>
 <section class="page" data-campaign-data="pending" id="page-outreach"><div class="page-head"><h1>Campaign Gallery</h1><p>Chưa có dữ liệu hoặc tài sản chiến dịch Firebeat cho module này.</p></div></section>
-<section class="page" id="page-help">
+<section class="page" id="page-help"><button class="guide-help-entry" id="openDashboardGuideHelp" type="button">▶  Xem hướng dẫn tổng quan các Tab</button>
 <div class="topbar"><div><div class="ey">Help</div><h1>Trung tâm hỗ trợ</h1><div class="sub">Hướng dẫn sử dụng, liên hệ hỗ trợ và câu hỏi thường gặp.</div></div></div>
 <div class="grid two">
 <div>
@@ -2734,5 +2769,113 @@ function init(){
  render();
 }
 document.addEventListener('DOMContentLoaded',init);
+})();
+</script><div aria-hidden="true" class="tour-mask" hidden="" id="tourMask"></div><div aria-labelledby="tourTitle" aria-modal="true" class="tour-card" hidden="" id="tourCard" role="dialog"><div class="tour-card-head"><strong>mediaOS · HƯỚNG DẪN</strong><button aria-label="Đóng" id="tourClose" type="button">×</button></div><div class="tour-count" id="tourCount"></div><h2 id="tourTitle"></h2><p id="tourText"></p><div class="tour-actions"><button id="tourSkip" type="button">Bỏ qua</button><div><button id="tourPrev" type="button">Quay lại</button><button id="tourNext" type="button">Tiếp theo →</button></div></div></div><script id="mediaos-v12-spotlight-tour">
+(function(){
+'use strict';
+const KEY='mediaos.firebeat.spotlight.v1';
+const steps=[
+ {page:'dashboard',target:'.brand',title:'Chào mừng đến mediaOS',text:'Đây là không gian theo dõi chiến dịch Hanoi Firebeat World Festival 2026. Chúng ta sẽ lần lượt đi qua các khu vực chính.',tip:'Phần đang được hướng dẫn sẽ sáng rõ; các vùng còn lại được làm tối.'},
+ {page:'thinkpage',target:'.nav button[data-page="thinkpage"]',title:'Campaign Thinkpage',text:'Xem bối cảnh, mục tiêu, đối tượng, giải pháp và Campaign Identity.',tip:'Nhấn Tiếp theo để xem trực tiếp nội dung của tab này.'},
+ {page:'thinkpage',target:'#mediaos-campaign-identity',title:'Campaign Identity',text:'Các trường thông tin chuẩn hóa giúp mọi chiến dịch dùng chung cấu trúc, không phải thiết kế lại mỗi lần.',tip:'Trường chưa có dữ liệu được ghi NA.'},
+ {page:'dashboard',target:'.nav button[data-page="dashboard"]',title:'Dashboard',text:'Đi đến các nhóm KPI về kế hoạch, triển khai, media, nội dung, audience và hiệu quả chiến dịch.',tip:'Các chỉ số chưa được xác thực sẽ để trống hoặc N/A.'},
+ {page:'dashboard',target:'#page-dashboard .section-head',title:'Chỉ số & hiệu quả triển khai',text:'Các section báo cáo được giữ theo template mediaOS để dữ liệu thực tế có thể được bổ sung về sau.',tip:'Kéo trang để khám phá các nhóm chỉ số.'},
+ {page:'workplace',target:'.nav button[data-page="workplace"]',title:'Workplace',text:'Không gian tài liệu, lịch triển khai và các tài sản phối hợp giữa VEC và admeX.',tip:'Các tài liệu liên kết trực tiếp tới Google Drive.'},
+ {page:'workplace',target:'#campaignTimeline',title:'Campaign Timeline',text:'Lịch Gantt theo tháng/tuần, cho phép tạo cột mốc và cập nhật trạng thái hoạt động.',tip:'Cột mốc nhập thủ công hiện được lưu trong trình duyệt, chưa đồng bộ giữa thiết bị.'},
+ {page:'nghiemthu',target:'.nav button[data-page="nghiemthu"]',title:'Báo cáo & nghiệm thu',text:'Tổng hợp tiến độ, kết quả thực hiện và nghiệm thu khi chiến dịch phát sinh dữ liệu.',tip:'Không tạo nhận định khi chưa có số liệu.'},
+ {page:'social-listening',target:'.nav button[data-page="social-listening"]',title:'Social Listening',text:'Theo dõi thảo luận, sentiment, tác giả ảnh hưởng và insight từ social.',tip:'Dữ liệu chỉ được hiển thị khi có nguồn xác thực.'},
+ {page:'team',target:'.nav button[data-page="team"]',title:'Team',text:'Thông tin vai trò và đầu mối phối hợp giữa đội ngũ VCCorp và VEC.',tip:'Tab này có thể phụ thuộc vào quyền tài khoản.',optional:true},
+ {page:'outreach',target:'.nav button[data-page="outreach"]',title:'Gallery',text:'Nơi quản lý hình ảnh và tài sản truyền thông của chiến dịch.',tip:'Tài sản sẽ được bổ sung khi triển khai.'},
+ {page:'rest',target:'.nav button[data-page="rest"]',title:'Take a rest',text:'Các trò chơi thư giãn như Tarot và Vòng quay bụng đói.',tip:'Các tiện ích này không phụ thuộc dữ liệu chiến dịch.'},
+ {page:'calendar',target:'.nav button[data-page="calendar"]',title:'Lịch âm dương',text:'Xem lịch ngày/tháng như một tiện ích độc lập.',tip:'Không phụ thuộc thời gian triển khai của chiến dịch.'},
+ {page:'help',target:'.nav button[data-page="help"]',title:'Help & xem lại hướng dẫn',text:'Tìm hướng dẫn và mở lại tour tương tác khi cần.',tip:'Bạn cũng có thể dùng nút Xem hướng dẫn ở cuối sidebar.'},
+ {page:'dashboard',target:'#openDashboardGuide',title:'Hoàn tất!',text:'Bạn đã xem các khu vực chính. Bấm Hoàn tất để bắt đầu sử dụng mediaOS.',tip:'Hướng dẫn chỉ tự chạy lần đầu trên trình duyệt; luôn có thể mở lại.'}
+];
+let active=false,index=0,spot=null,oldFocus=null,raf=0;
+const $=id=>document.getElementById(id);
+function clearSpot(){if(spot){spot.classList.remove('tour-spotlight');spot=null}}
+function goPage(page){
+ const nav=document.querySelector('.nav button[data-page="'+page+'"]');
+ if(nav && getComputedStyle(nav).display!=='none' && !nav.hidden && nav.getClientRects().length)nav.click();
+}
+function validStep(i){
+ const s=steps[i],el=document.querySelector(s.target);
+ return !!el && (!s.optional || (getComputedStyle(el).display!=='none' && el.getClientRects().length>0));
+}
+function nearest(i,delta){
+ while(i>=0&&i<steps.length&&!validStep(i))i+=delta;
+ return Math.max(0,Math.min(steps.length-1,i));
+}
+function position(){
+ if(!active||!spot)return;
+ const r=spot.getBoundingClientRect(),c=$('tourCard'),w=c.offsetWidth,h=c.offsetHeight;
+ const gap=17,margin=14;
+ let left=r.right+gap,top=r.top;
+ if(left+w>innerWidth-margin)left=r.left-w-gap;
+ if(left<margin){left=Math.max(margin,Math.min(innerWidth-w-margin,r.left));top=r.bottom+gap}
+ if(top+h>innerHeight-margin)top=r.top-h-gap;
+ if(top<margin)top=margin;
+ if(top+h>innerHeight-margin)top=Math.max(margin,innerHeight-h-margin);
+ c.style.left=Math.round(left)+'px';c.style.top=Math.round(top)+'px';
+}
+function render(){
+ clearSpot();const s=steps[index];goPage(s.page);
+ const target=document.querySelector(s.target);
+ if(!target){next();return}
+ const scrollHost=target.closest('.sidebar');
+ if(scrollHost&&scrollHost.scrollHeight>scrollHost.clientHeight)target.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});
+ else target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
+ spot=target;spot.classList.add('tour-spotlight');
+ $('tourCount').textContent='BƯỚC '+(index+1)+' / '+steps.length;
+ $('tourTitle').textContent=s.title;$('tourText').textContent=s.text;
+ $('tourPrev').disabled=index===0;$('tourNext').textContent=index===steps.length-1?'Hoàn tất ✓':'Tiếp theo →';
+ requestAnimationFrame(()=>{position();setTimeout(position,120)});
+}
+function next(){if(index>=steps.length-1){close();return}index=nearest(index+1,1);render()}
+function prev(){if(index<=0)return;index=nearest(index-1,-1);render()}
+function show(){
+ if(!document.body.classList.contains('auth-ok'))return;
+ oldFocus=document.activeElement;active=true;index=nearest(0,1);
+ $('tourMask').hidden=false;$('tourCard').hidden=false;
+ render();$('tourNext').focus();
+}
+function close(){
+ if(!active)return;active=false;clearSpot();$('tourMask').hidden=true;$('tourCard').hidden=true;
+ try{localStorage.setItem(KEY,'1')}catch(_){}
+ if(oldFocus?.isConnected)oldFocus.focus();
+}
+function init(){
+ $('openDashboardGuide')?.addEventListener('click',show);
+ $('openDashboardGuideHelp')?.addEventListener('click',show);
+ $('tourClose').addEventListener('click',close);
+ $('tourSkip').addEventListener('click',close);
+ $('tourPrev').addEventListener('click',prev);
+ $('tourNext').addEventListener('click',next);
+ document.addEventListener('keydown',e=>{
+  if(!active)return;
+  if(e.key==='Escape'){e.preventDefault();close()}
+  if(e.key==='ArrowRight'){e.preventDefault();next()}
+  if(e.key==='ArrowLeft'){e.preventDefault();prev()}
+  if(e.key==='Tab'){
+   const buttons=[...$('tourCard').querySelectorAll('button:not(:disabled)')];
+   const first=buttons[0],last=buttons[buttons.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  }
+ });
+ addEventListener('resize',position);addEventListener('scroll',position,true);
+ let was=document.body.classList.contains('auth-ok');
+ const check=()=>{
+  const now=document.body.classList.contains('auth-ok');
+  if(!now&&active)close();
+  if(now&&!was){let seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(_){}
+   if(!seen)setTimeout(()=>{if(document.body.classList.contains('auth-ok'))show()},400);
+  }
+  was=now;
+ };
+ new MutationObserver(check).observe(document.body,{attributes:true,attributeFilter:['class']});
+ if(was){let seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(_){}if(!seen)setTimeout(show,400)}
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script></body></html>
