@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "schema_name": "mediaOS Campaign Thinkpage",
+  "campaign_id": "FIREBEAT2026",
+  "identity": {
+    "Tên Chiến dịch/ Dự án": "Hanoi Firebeat World Festival 2026",
+    "Năm thực hiện": "2026",
+    "Ngày bắt đầu - Ngày kết thúc": "27/11/2026 – 29/11/2026",
+    "Đơn vị Chỉ đạo (nếu có)": "NA",
+    "Đơn vị Sáng kiến (nếu có)": "NA",
+    "Đơn vị Tổ chức và Đồng Tổ chức (nếu có)": "Vietnam Exposition Center (VEC)",
+    "Đơn vị Tài trợ": "NA",
+    "Bối cảnh / Bài toán": "Xây dựng một điểm hẹn lễ hội ẩm thực, âm nhạc và giao lưu văn hóa quốc tế tại Hà Nội; gia tăng nhận biết và thu hút khách tham dự.",
+    "Mục tiêu Chiến dịch/ Dự án": "Gia tăng nhận biết; thu hút khách tham dự; hỗ trợ ticketing và phát triển cơ hội tài trợ.",
+    "Đối tượng mục tiêu": "Giới trẻ, gia đình trẻ, cặp đôi, người yêu ẩm thực và âm nhạc; du khách, cộng đồng quốc tế tại Việt Nam và đối tác.",
+    "Kết quả đạt được": "NA",
+    "Ý tưởng / Giải pháp chính": "Fire × Beat: kết nối ẩm thực BBQ quốc tế, âm nhạc và trải nghiệm văn hóa. “Bừng vị năm châu – Chung nhịp toàn cầu”.",
+    "Hạng mục triển khai chính": "Global BBQ Championship; World Culinary Festival; Firebeat Global Concert; Global Culture Village; truyền thông IMC đa kênh.",
+    "Điểm nổi bật / Khác biệt": "Bốn không gian ẩm thực Global Fire, Asian Flame, Vietnam & Beyond, Hanoi Heritage; trải nghiệm giao thoa ẩm thực, âm nhạc và văn hóa."
+  },
+  "extensions": {
+    "client": "VEC",
+    "event_location": "Sân Nam, Trung tâm Triển lãm Việt Nam, Đông Anh, Hà Nội",
+    "festival_attendance_target": "~150.000 lượt khách",
+    "tagline": "Bừng vị năm châu – Chung nhịp toàn cầu"
+  },
+  "field_policy": {
+    "missing": "NA",
+    "results": "NA until verified",
+    "source": "VEC Brief & Master Concept"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "campaign_id": "FIREBEAT2026",
+  "source_folder_url": "https://drive.google.com/drive/folders/1ucZFysJzVWKNU9saH3g6Gud9qNv8KrIW?usp=drive_link",
+  "source_mode": "drive_folder_snapshot",
+  "sync_status": "snapshot_only",
+  "last_verified_date": "2026-10-12",
+  "documents": [
+    {
+      "id": "brief",
+      "name": "Firebeat Festival 2026 · Campaign Brief",
+      "description": "VEC · Brief Kế hoạch Truyền thông V2.0",
+      "url": "https://docs.google.com/document/d/1Gda22aorZpaV18ph2pbhS-U8zXioQLbM/edit?usp=drivesdk",
+      "kind": "document"
+    },
+    {
+      "id": "concept",
+      "name": "Hanoi Firebeat World Festival 2026 · Master Concept",
+      "description": "VEC · Master Presentation",
+      "url": "https://drive.google.com/file/d/1mAUyhnFSyM0EiQEDUzdxIUBeYDjklezV/view?usp=drivesdk",
+      "kind": "document"
+    },
+    {
+      "id": "sponsorship",
+      "name": "Hồ sơ mời tài trợ · Hanoi Firebeat World Festival",
+      "description": "VEC · Hồ sơ mời đồng hành",
+      "url": "https://drive.google.com/file/d/101kM92BaDyatm6Cp-69OuW20hbcjCyET/view?usp=drive_link",
+      "kind": "document"
+    },
+    {
+      "id": "material",
+      "name": "Folder Material",
+      "description": "Thư mục tài liệu chiến dịch trên Google Drive",
+      "url": "https://drive.google.com/drive/folders/1ucZFysJzVWKNU9saH3g6Gud9qNv8KrIW?usp=drive_link",
+      "kind": "folder"
+    }
+  ]
+}
