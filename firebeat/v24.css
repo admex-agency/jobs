@@ -1,0 +1,14 @@
+/* FIREBEAT V24: platform-independent glyphs and native touch browsing. */
+:root{--rail-gap:18px;--rail-ink:var(--festival-ink,#17394c);--rail-accent:var(--festival-red,#c93924)}
+.fb-glyph{display:inline-block!important;width:1em!important;height:1em!important;min-width:1em;vertical-align:-.12em;overflow:visible;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;transform:none!important}
+.fb-glyph-spark{stroke-width:2}.ticker .fb-glyph{margin-inline:.25em;vertical-align:-.08em}
+.combo-browse{display:none}.combo-browse button{display:grid;place-items:center;width:44px;height:44px;min-width:44px;padding:0;border:1px solid var(--rail-ink);border-radius:50%;background:transparent;color:var(--rail-ink);font-size:18px;cursor:pointer}.combo-browse button:hover:not(:disabled){background:var(--rail-ink);color:var(--festival-cream,#fff7eb)}.combo-browse button:active:not(:disabled){transform:scale(.96)}.combo-browse button:disabled{opacity:.35;cursor:default}.combo-browse button:focus-visible,#combo-grid:focus-visible{outline:3px solid var(--rail-accent);outline-offset:3px}.combo-browse>span{margin-right:auto;font-size:12px;line-height:1.6;color:var(--rail-ink)}
+@media(max-width:760px){
+ .banquet .journey-combos{min-width:0;max-width:100%}
+ .banquet .journey-combos .combo-grid{display:flex!important;flex-flow:row nowrap!important;align-items:stretch;gap:var(--rail-gap);width:100%;max-width:100%;min-width:0;box-sizing:border-box;margin:0!important;padding:12px 2px 26px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x proximity;scroll-padding-inline:2px;overscroll-behavior-x:contain;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch;perspective:none;scrollbar-width:thin;scrollbar-color:var(--rail-accent) transparent}
+ .banquet .journey-combos .combo-grid>.combo{display:flex;flex:0 0 88%!important;width:88%!important;min-width:0!important;max-width:420px!important;scroll-snap-align:start;scroll-snap-stop:normal;transform:none!important;touch-action:pan-x pan-y pinch-zoom;user-select:none}
+ .banquet .journey-combos .combo-grid>.combo[hidden]{display:none!important}
+ .banquet .combo-grid .combo-food{-webkit-user-drag:none;user-select:none;pointer-events:none}
+ .combo-browse:not([hidden]){display:flex;align-items:center;gap:8px;margin:0 0 4px;min-height:44px}.combo-grid::-webkit-scrollbar{height:3px}.combo-grid::-webkit-scrollbar-thumb{background:var(--rail-accent);border-radius:4px}
+}
+@media(prefers-reduced-motion:reduce){.combo-browse button{transition:none}}
