@@ -1,0 +1,15 @@
+/* V25: one scroll owner on touch devices, stable cards during native inertia. */
+.banquet #moments .moments-viewport.native-marquee,.banquet #restaurants .restaurant-marquee.native-marquee{overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x pan-y pinch-zoom!important;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-behavior:auto!important;scroll-snap-type:none!important;scrollbar-width:none;cursor:auto}
+.banquet #moments .moments-viewport.native-marquee::-webkit-scrollbar,.banquet #restaurants .restaurant-marquee.native-marquee::-webkit-scrollbar{display:none}
+.banquet #moments .native-marquee .moments-track,.banquet #restaurants .native-marquee .restaurant-track,.banquet #restaurants .native-marquee:focus-within .restaurant-track{transform:none!important;animation:none!important;will-change:auto!important}
+.banquet #moments .native-marquee .moment-card{transform:translateY(var(--moment-rise)) rotate(var(--moment-lean))!important;will-change:auto}
+.native-marquee img{-webkit-user-drag:none;user-select:none;pointer-events:none}
+@media(max-width:680px){.banquet #moments .native-marquee .moment-card{transform:translateY(calc(var(--moment-rise)*.55)) rotate(calc(var(--moment-lean)*.65))!important}}
+@media(hover:none){.banquet #moments .native-marquee .moment-card:hover>img{filter:none;scale:1}.banquet #restaurants .native-marquee .restaurant-card:hover{transform:none}}
+/* Rounded controls keep keyboard focus, without rectangular touch/autofocus outlines. */
+dialog .dialog-close,dialog #reader-home{-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;outline:none!important;box-shadow:none!important;border:0!important;text-decoration:none;border-radius:999px!important;color:var(--festival-ink,#17394c)}
+dialog .dialog-close:not(.button){display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;background:var(--page-canvas,#fff7eb);font-size:27px;line-height:1}
+dialog #reader-home{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 13px;font-size:13px;line-height:1.5;background:var(--page-canvas,#fff7eb)}
+@media(hover:hover){dialog .dialog-close:hover,dialog #reader-home:hover{background:var(--festival-ink,#17394c);color:var(--festival-cream,#fff7eb)}}
+dialog .dialog-close:active,dialog #reader-home:active{opacity:.75}
+html.keyboard-navigation dialog .dialog-close:focus-visible,html.keyboard-navigation dialog #reader-home:focus-visible{outline:3px solid var(--banquet-focus,#005f78)!important;outline-offset:2px!important}
