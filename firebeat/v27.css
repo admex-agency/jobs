@@ -1,7 +1,7 @@
 /* V27 — photo framing only; preserve the approved composition and motion. */
 :root{--scent-photo-radius:24px}
 .banquet-intro .scent-two>img{width:210px;height:145px;object-fit:cover;border-radius:var(--scent-photo-radius);filter:none;margin:10px 0 35px}
-.banquet .combo-grid .combo.combo-landscape:nth-child(n) .combo-visual{height:auto!important;min-height:0!important;aspect-ratio:3/2}
+.banquet .combo-grid .combo.combo-landscape:nth-child(n) .combo-visual{height:auto!important;min-height:0!important;aspect-ratio:3/2!important}
 .banquet .combo-grid .combo.combo-landscape:nth-child(n) .combo-visual .combo-food{object-fit:cover;object-position:center;width:100%!important;height:100%!important}
 @media(max-width:1000px){.banquet-intro .scent-two>img{width:160px;height:130px}}
 @media(max-width:680px){.banquet-intro .scent-two>img{width:130px;height:95px;margin:10px 0 20px}}
