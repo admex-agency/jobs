@@ -1,0 +1,10 @@
+/* V29 — full-width popup image and equivalent image/CTA activation. */
+:root{--modal-action-surface:var(--festival-red);--modal-action-text:var(--festival-cream);--modal-action-hover:#a92f1d}
+#combo-dialog #combo-detail>img{display:block;width:100%;max-width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center;padding:0;margin:0 0 24px;background:transparent;border-radius:18px}
+dialog .button.dialog-close{background:var(--modal-action-surface);color:var(--modal-action-text);min-height:48px;line-height:1.5}
+dialog .button.dialog-close:hover{background:var(--modal-action-hover);color:var(--modal-action-text)}
+dialog .button.dialog-close:active{background:var(--modal-action-hover);color:var(--modal-action-text);opacity:1}
+.banquet .combo-grid .combo-visual[role="button"]{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.banquet .combo-grid .combo-visual[role="button"]:focus-visible{outline:3px solid var(--banquet-focus);outline-offset:-5px}
+#combo-dialog:focus{outline:none}
+@media(max-width:680px){#combo-dialog #combo-detail>img{border-radius:14px;margin-bottom:20px}}
