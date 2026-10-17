@@ -1,0 +1,6 @@
+/* V28: one product framing / label system, warm headline emphasis. */
+:root{--heading-fire-start:#ca4b16;--heading-fire-end:#bd2a20;--combo-label-surface:var(--festival-cream);--combo-label-ink:var(--festival-red);--combo-label-radius:8px}
+.banquet .combo-grid .combo:nth-child(n) .combo-visual>.combo-badge{position:absolute;inset:16px auto auto 16px!important;display:inline-flex;align-items:center;width:auto!important;height:auto!important;min-height:0;max-width:calc(100% - 32px);padding:6px 10px!important;border:0;border-radius:var(--combo-label-radius)!important;background:var(--combo-label-surface)!important;color:var(--combo-label-ink);font-size:10px!important;font-weight:700;line-height:1.6;letter-spacing:.7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;backdrop-filter:none;animation:none;transform:none}
+#story.banquet h2 em{color:var(--heading-fire-end);font-style:normal}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){#story.banquet h2 em{background-image:linear-gradient(110deg,var(--heading-fire-start),var(--heading-fire-end));background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;box-decoration-break:clone;-webkit-box-decoration-break:clone}}
+@media(forced-colors:active){#story.banquet h2 em{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}}
