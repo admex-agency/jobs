@@ -49,12 +49,12 @@ body.portal-hold>header,body.portal-hold>.hero,body.portal-hold>main,body.portal
  .mom-table th{background:#eaf5ed}
  .mom-table .team-list{line-height:1.75}
  .mom-table .team-list strong{display:inline}
- .mom-table tr:nth-child(3) td:nth-child(1):before{content:"VCCorp Team";display:block;font-weight:800;color:#126b45;margin-bottom:8px}
- .mom-table tr:nth-child(3) td:nth-child(2):before{content:"iQIYI & bkk! Team";display:block;font-weight:800;color:#126b45;margin-bottom:8px}
- .mom-table tr:nth-child(2){display:none}
- .mom-table tr:nth-child(3) td+td{border-top:1px solid #d9e4db}
- .mom-table tr:nth-child(3) td{padding:16px 14px}
- .mom-table tr:nth-child(3) td br{display:block;content:"";margin:5px 0}
+ .mom-table:first-child tr:nth-child(3) td:nth-child(1):before{content:"VCCorp Team";display:block;font-weight:800;color:#126b45;margin-bottom:8px}
+ .mom-table:first-child tr:nth-child(3) td:nth-child(2):before{content:"iQIYI & bkk! Team";display:block;font-weight:800;color:#126b45;margin-bottom:8px}
+ .mom-table tr:nth-child(2):not(:has(td:nth-child(4))){display:none}
+ .mom-table:first-child tr:nth-child(3) td+td{border-top:1px solid #d9e4db}
+ .mom-table:first-child tr:nth-child(3) td{padding:16px 14px}
+ .mom-table:first-child tr:nth-child(3) td br{display:block;content:"";margin:5px 0}
  .mom-table tr td[colspan="2"]{width:100%}
  .mom-table a{overflow-wrap:anywhere;word-break:break-word}
  .mom-table tr:has(th:nth-child(4)) th{display:none}
