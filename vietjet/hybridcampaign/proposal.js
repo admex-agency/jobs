@@ -7,6 +7,31 @@ function proposalTable(columns, rows, label) {
  return `<div class="proposalTable" role="region" aria-label="${esc(label)}" tabindex="0"><table><thead><tr>${columns.map(column=>`<th scope="col">${esc(column)}</th>`).join('')}</tr></thead><tbody>${rows.map(([first,...cells])=>`<tr><th scope="row">${esc(first)}</th>${cells.map(cell=>`<td>${esc(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
 
+const keyMessageAlternatives = [
+ {
+  line:'Bay trọn ý mình, hành trình để Vietjet',
+  meaning:'Hành khách tự do chọn trải nghiệm theo nhu cầu riêng. Vietjet chủ động chăm chút hành trình để đáp ứng lựa chọn đó.',
+  wording:'Vần “mình – trình” tạo nhịp dễ nhớ. Hai vế làm rõ vai trò của hành khách và Vietjet.',
+  mapping:'Các lựa chọn của Hybrid giúp hành khách bay theo ý mình. “Bay lại, thích ngay!” mời họ trải nghiệm sự linh hoạt ấy.'
+ },
+ {
+  line:'Chiều từng khác biệt, trọn mọi hành trình',
+  meaning:'Vietjet trân trọng nhu cầu và sở thích của từng hành khách, từ đó chăm chút trải nghiệm trên mỗi hành trình.',
+  wording:'Cặp từ “từng – mọi” nối sự quan tâm đến từng cá nhân với cam kết phục vụ nhiều nhóm hành khách.',
+  mapping:'Hybrid giúp Vietjet đáp ứng nhiều nhu cầu. “Bay lại, thích ngay!” gọi tên niềm vui khi hành khách tìm thấy trải nghiệm phù hợp.'
+ },
+ {
+  line:'Bạn chọn ý mình, Vietjet trọn hành trình',
+  meaning:'Hành khách chủ động chọn điều mình muốn. Vietjet đồng hành để trải nghiệm được trọn vẹn.',
+  wording:'Cấu trúc “Bạn – Vietjet” và vần “mình – trình” làm rõ vai trò của mỗi bên trong việc tạo nên trải nghiệm.',
+  mapping:'Hybrid mở ra lựa chọn phù hợp với nhu cầu và ngân sách. “Bay lại, thích ngay!” mời hành khách tự mình trải nghiệm sự linh hoạt đó.'
+ }
+];
+
+function creativeImage(file, alt, width = 1920, height = 1080) {
+ return `<img class="creativeImage" src="media/creative-direction/${file}.webp" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async">`;
+}
+
 function creativeDirection() {
  return `<section class="section proposalPage" id="creative">
  ${proposalHeader('Creative Direction','Vietjet Hybrid mở rộng ý nghĩa của “Cơ hội bay cho mọi người”. Mỗi hành khách có thêm cách tận hưởng chuyến bay theo nhu cầu riêng và được chăm sóc bằng cả trái tim.','creative-title')}
@@ -16,7 +41,7 @@ function creativeDirection() {
  <article class="panel strategy"><img class="strategyArt" src="media/overall/key-message.webp" alt="Máy bay giấy bên ô cửa" width="1200" height="675"><span class="kicker">Key Message</span><h3>Trọn vẹn mọi hành trình khác biệt</h3><p>Những điều quan trọng với mỗi người được chăm chút xuyên suốt hành trình.</p></article>
  </div>
  <section class="proposalBlock"><span class="kicker">Strategic Foundation</span><h3>Từ cơ hội được bay đến cơ hội tìm thấy chuyến bay đúng ý</h3><p>Vietjet đã đưa việc bay đến gần hơn với nhiều người, giúp họ đi xa hơn, gặp nhau thường xuyên hơn và khám phá thêm điểm đến. Khi việc bay trở nên quen thuộc, hành khách cân nhắc thêm sự thuận tiện, thoải mái và mức độ phù hợp với nhu cầu của chuyến đi.</p>
- <div class="proposalPair"><article class="panel"><h4>“Tôi có thể bay”</h4><p>Cơ hội tiếp cận chuyến bay giúp nhiều người lên đường và mở ra những điểm đến mới.</p></article><article class="panel proposalAccent"><h4>“Tôi tìm thấy chuyến bay đúng ý mình”</h4><p>Cơ hội tiếp cận nhiều trải nghiệm hơn giúp mỗi người chọn cách lên đường phù hợp và tìm thấy điều đáng tận hưởng ngay trên hành trình.</p></article></div>
+ <div class="proposalPair foundationPair"><article class="panel">${creativeImage('foundation-01','Máy bay Vietjet trên biển mây dưới ánh trăng',960,540)}<h4>“Tôi có thể bay”</h4><p>Cơ hội tiếp cận chuyến bay giúp nhiều người lên đường và mở ra những điểm đến mới.</p></article><article class="panel proposalAccent">${creativeImage('foundation-02','Máy bay Vietjet bay giữa những tầng mây trong ánh nắng',960,540)}<h4>“Tôi tìm thấy chuyến bay đúng ý mình”</h4><p>Cơ hội tiếp cận nhiều trải nghiệm hơn giúp mỗi người chọn cách lên đường phù hợp và tìm thấy điều đáng tận hưởng ngay trên hành trình.</p></article></div>
  <p>Vietjet Hybrid mở rộng lý do để hành khách cân nhắc thương hiệu. Bên cạnh khả năng tiếp cận, hành khách có thể lựa chọn dựa trên nhiều ưu tiên khác nhau trong tổng thể trải nghiệm Hybrid.</p></section>
  <section class="proposalBlock"><span class="kicker">Consumer Understanding</span><h3>Một người có nhiều cách bay</h3><p>Chuyến công tác có thể cần khoảng riêng. Chuyến nghỉ cuối tuần cần gọn nhẹ. Khi đi cùng cha mẹ, sự thoải mái và chăm sóc trở nên quan trọng hơn. Trên hành trình dài, kết nối giúp hành khách chủ động hơn.</p>
  ${proposalTable(['Cấp độ khác biệt','Biểu hiện','Hàm ý cho Hybrid'],[
@@ -24,7 +49,7 @@ function creativeDirection() {
  ['Giữa các lần bay','Nhu cầu thay đổi theo mục đích và người đi cùng.','Linh hoạt theo từng chuyến đi.'],
  ['Trong cùng hành trình','Có lúc cần tập trung, lúc muốn nghỉ, lúc muốn kết nối.','Tăng khả năng chủ động tận hưởng.']
  ],'Ba cấp độ khác biệt')}</section>
- <section class="proposalBlock insightPanel"><span class="kicker">The Insight</span><blockquote>“Mỗi lần lên đường, tôi lại mong một điều khác nhau. Tôi muốn tìm được cách bay phù hợp với mình, và cảm thấy những điều quan trọng với mình cũng được hãng quan tâm. Khi hành trình có những điều đúng ý, tôi có thêm lý do để mong chờ và yêu thích việc bay.”</blockquote><p>Insight này bổ sung lớp cảm xúc cho “Bay nhiều hơn, nhưng tận hưởng ít hơn”. Khi chuyến bay hợp với mình hơn, hành khách có thể chủ động tận hưởng và tìm lại niềm thích bay.</p></section>
+ <section class="proposalBlock insightPanel"><span class="kicker">The Insight</span><blockquote>“Mỗi lần lên đường, tôi lại mong một điều khác nhau. Tôi muốn tìm được cách bay phù hợp với mình, và cảm thấy những điều quan trọng với mình cũng được hãng quan tâm. Khi hành trình có những điều đúng ý, tôi có thêm lý do để mong chờ và yêu thích việc bay.”</blockquote><p>Insight này bổ sung lớp cảm xúc cho “Bay nhiều hơn, nhưng tận hưởng ít hơn”. Khi chuyến bay hợp với mình hơn, hành khách có thể chủ động tận hưởng và tìm lại niềm thích bay.</p>${creativeImage('insight','Bầu trời chạng vạng nhìn qua ô cửa máy bay')}</section>
  <section class="proposalBlock"><span class="kicker">Positioning</span><h3>Vietjet Hybrid · Trải nghiệm bay khác biệt cho mọi người</h3>
  <div class="proposalTriple"><article class="panel"><h4>Trải nghiệm bay</h4><p>Cảm nhận bắt đầu từ khi chọn chuyến, tiếp nối qua đón tiếp, cabin, ẩm thực, kết nối, chăm sóc và giá trị sau chuyến bay. Mỗi điểm chạm góp phần tạo nên cảm giác “chuyến đi này hợp với mình”.</p></article><article class="panel"><h4>Khác biệt</h4><p>Mỗi hành khách có một tổ hợp nhu cầu riêng. Cùng nền tảng Hybrid, người cần khoảng nghỉ, người cần chủ động làm việc, gia đình muốn gần nhau và khách quốc tế muốn khám phá đều có thể tìm được trải nghiệm phù hợp.</p></article><article class="panel"><h4>Cho mọi người</h4><p>Các hạng vé có quyền lợi riêng. Sự trân trọng hành khách xuyên suốt các lựa chọn. Wi-Fi vệ tinh miễn phí là điểm nhấn kết nối theo định hướng của chiến dịch và phạm vi triển khai Vietjet xác nhận.</p></article></div>
  </section>
@@ -38,6 +63,7 @@ function creativeDirection() {
  ['Khám phá nơi mới','Mạng bay, lựa chọn, ẩm thực, kết nối, SkyJoy.','Niềm vui khám phá bắt đầu trên chuyến bay và tiếp tục sau đó.']
  ],'Các cách kết hợp trải nghiệm Hybrid')}</section>
  <section class="proposalBlock"><span class="kicker">Master Concept</span><h3>Bay lại, thích ngay!</h3><p class="conceptEnglish" lang="en">Enjoying flying, again</p>
+ ${creativeImage('master-concept','Hành khách áo đỏ mỉm cười trong cabin')}
  <div class="proposalPair"><article class="panel"><h4>Bay lại</h4><p>Lời mời trở lại với Vietjet dành cho những người đã rời xa hoặc chưa thấy hết giá trị Hybrid. Với người đã quen xem bay là di chuyển, đó là lời mời tìm lại điều đáng mong chờ trong chính chuyến bay.</p></article><article class="panel"><h4>Thích ngay</h4><p>Cảm xúc có thể xuất hiện ngay khi tìm thấy điều đúng ý. Đó có thể là một lựa chọn hợp dự định, một lời hướng dẫn tận tình hay khả năng giữ kết nối với người quan trọng.</p></article></div>
  <ol class="journeySteps">${[
  ['Tìm chuyến và tìm vé','Thấy lựa chọn phù hợp với dự định.'],
@@ -48,8 +74,16 @@ function creativeDirection() {
  ].map(([t,d])=>`<li><strong>${t}</strong><p>${d}</p></li>`).join('')}</ol>
  <div class="proposalPair"><article class="panel"><h4>“Bay lại, thích ngay!”</h4><p>Mời khám phá và tái khám phá trải nghiệm Hybrid.</p></article><article class="panel"><h4>“Bay, lại thích ngay!”</h4><p>Mỗi lần bay lại có thể mang đến một lý do yêu thích mới. Từ điều từng thích, hành khách tiếp tục lựa chọn và tìm thấy thêm điều đáng mong chờ.</p></article></div>
  </section>
- <section class="proposalBlock"><span class="kicker">Key Message</span><h3>Trọn vẹn mọi hành trình khác biệt</h3><div class="proposalPair"><article class="panel"><h4>Trọn vẹn</h4><p>Những điều quan trọng được chăm chút xuyên suốt. Với người công tác, đó có thể là sự chủ động. Với gia đình, đó là an tâm và thời gian bên nhau. Với người đi khám phá, đó là cảm hứng được nuôi dưỡng từ lúc lên đường.</p></article><article class="panel"><h4>Mọi hành trình khác biệt</h4><p>Hai người đi cùng chặng, ngồi cùng khoang vẫn có thể muốn nghỉ ngơi, giữ liên lạc, thưởng thức món ăn hoặc cần hỗ trợ cho người thân. Tám trụ cột phối hợp để đáp ứng từng tổ hợp nhu cầu.</p></article></div></section>
+ <section class="proposalBlock"><span class="kicker">Key Message chính</span><h3>Trọn vẹn mọi hành trình khác biệt</h3>
+ ${creativeImage('key-message','Hai hành khách nghỉ ngơi cạnh nhau bên ô cửa máy bay')}
+ <div class="proposalPair"><article class="panel"><h4>Trọn vẹn</h4><p>Những điều quan trọng được chăm chút xuyên suốt. Với người công tác, đó có thể là sự chủ động. Với gia đình, đó là an tâm và thời gian bên nhau. Với người đi khám phá, đó là cảm hứng được nuôi dưỡng từ lúc lên đường.</p></article><article class="panel"><h4>Mọi hành trình khác biệt</h4><p>Hai người đi cùng chặng, ngồi cùng khoang vẫn có thể muốn nghỉ ngơi, giữ liên lạc, thưởng thức món ăn hoặc cần hỗ trợ cho người thân. Tám trụ cột phối hợp để đáp ứng từng tổ hợp nhu cầu.</p></article></div>
+ <section class="messageAlternatives" aria-labelledby="message-alternatives-title">
+ <h4 id="message-alternatives-title">Ba phương án cân nhắc</h4>
+ <div class="proposalTriple">${keyMessageAlternatives.map(({line,meaning,wording,mapping},i)=>`<article class="panel messageOption"><span class="kicker">Option ${no(i+1)}</span><h5>${esc(line)}</h5>
+ <dl><dt>Ý nghĩa</dt><dd>${esc(meaning)}</dd><dt>Cách diễn đạt</dt><dd>${esc(wording)}</dd><dt>Liên hệ với Hybrid và Master Concept</dt><dd>${esc(mapping)}</dd></dl>
+ </article>`).join('')}</div></section></section>
  <section class="proposalBlock"><span class="kicker">Creative Strategy</span><h3>Từ điều đúng ý đến niềm thích bay trở lại</h3>
+ ${creativeImage('creative-strategy','Tiếp viên phục vụ đồ uống cho hành khách trong cabin')}
  <ol class="journeySteps strategySteps"><li>Nhu cầu riêng của hành khách</li><li>Tám trụ cột phối hợp</li><li>Trải nghiệm đúng ý, được chăm sóc tận tâm</li><li>Niềm thích bay được khơi lại và bồi đắp</li></ol>
  ${proposalTable(['Luận cứ','Giá trị phối hợp','Ý nghĩa với hành khách'],[
  ['Kế thừa thương hiệu','Tiếp tục tinh thần “Cho mọi người”.','Nhận ra một Vietjet quen thuộc đang phát triển.'],
@@ -102,7 +136,7 @@ function pillarsAndCharacters() {
  return `<section class="section proposalPage" id="pillars">
  ${proposalHeader('8 trụ cột của Vietjet Hybrid','Mỗi trụ cột góp một giá trị vào trải nghiệm, từ nền tảng vận hành đến những điều hành khách mong chờ sau chuyến bay.','pillars-title')}
  <div class="pillarCards">${pillarDetails.map(([value,cast,action,visual],i)=>`<article class="panel pillarCard">
- <img src="media/proposal/pillar-${i+1}.webp" alt="Hình minh họa ${esc(pillars[i])}" width="800" height="450" loading="lazy" decoding="async">
+ <img src="media/proposal/pillar-${i+1}.webp" alt="Hình minh họa ${esc(pillars[i])}" width="1280" height="720" loading="lazy" decoding="async">
  <div><span class="kicker">Trụ cột ${no(i+1)}</span><h3>${esc(pillars[i])}</h3><p>${esc(value)}</p>
  <dl><div><dt>Tuyến nhân vật</dt><dd>${esc(cast)}</dd></div><div><dt>Hành động và cảm xúc</dt><dd>${esc(action)}</dd></div><div><dt>Thể hiện hình ảnh</dt><dd>${esc(visual)}</dd></div></dl></div></article>`).join('')}</div>
  <section class="proposalBlock"><h3>Hệ thống nhân vật xuyên suốt</h3><p>Dùng chung các tuyến nhân vật cho KV trụ cột, Main KV và Manifesto Film. Tạo hình chỉn chu ở mọi hạng vé và thể hiện đúng quyền lợi, ghế, dịch vụ của từng sản phẩm.</p>
@@ -114,20 +148,13 @@ function pillarsAndCharacters() {
  ['Khách quốc tế','Một nam, một nữ','Cởi mở, giàu cảm hứng khám phá, có thể tương tác với các tuyến khác.'],
  ['Đội ngũ Vietjet','Phi công, tiếp viên, mặt đất, kỹ thuật, hàng hóa và các bộ phận liên quan','Chuyên nghiệp, tự tin, tận tâm. Ưu tiên nhân sự thật của hãng.']
  ],'Hệ thống nhân vật')}</section>
- <section class="proposalBlock"><span class="kicker">Main Key Visual</span><h3>Trọn vẹn mọi hành trình khác biệt</h3><p>Ưu tiên biểu cảm đọc được từ xa. Các cụm nhân vật độc lập giúp linh hoạt lựa chọn một cụm chính, một cụm bổ trợ hoặc phối nhiều cụm theo phân cấp thị giác.</p>
- ${proposalTable(['Cụm hình ảnh','Nhân vật và hành động','Giá trị đại diện'],[
- ['Tận hưởng cùng nhau','Gia đình nhìn ra cửa sổ và cùng bật cười.','Cabin, trải nghiệm gia đình, niềm thích bay.'],
- ['Được chăm sóc','Tiếp viên ân cần trao món nóng.','Ẩm thực, dịch vụ từ trái tim.'],
- ['Chủ động kết nối','Nữ doanh nhân dùng laptop hoặc cặp đôi lớn tuổi kết nối với người thân.','Wi-Fi và nhu cầu riêng.'],
- ['Hào hứng khám phá','Nhóm bạn và khách quốc tế hướng về phía trước.','Lựa chọn và mạng bay.'],
- ['Nền tảng tận tâm','Phi công và đội ngũ Vietjet cùng tiến bước.','Vận hành và năng lực tập thể.']
- ],'Nhân vật Main Key Visual')}</section>
  </section>`;
 }
 
 const keyVisualOptions = [
  {
   title:'Bốn không gian trải nghiệm liên thông',
+  demo:{file:'option-01-main.webp',width:2048,height:1152,alt:'Hành khách bước qua cửa tàu bay, giữa bốn khoảnh khắc trải nghiệm trong cabin Vietjet.'},
   intent:'Bốn trải nghiệm cùng tạo thành một hành trình đúng ý. Trong cùng một hãng bay, mỗi hành khách có thể tìm thấy không gian, món ăn, sự chăm sóc và kết nối phù hợp.',
   layout:['Bốn không gian gồm cabin hiện đại, ẩm thực nóng tươi, phục vụ tận tâm và kết nối điểm đến. Mỗi không gian có một tương tác chính của hành khách.',
    'Tàu bay Vietjet hội tụ ở trung tâm. Đường nét cabin, ô cửa hoặc dải chuyển động nối các không gian. Hành khách sử dụng thiết bị, với tín hiệu Wi-Fi tiết chế.',
@@ -137,6 +164,7 @@ const keyVisualOptions = [
  },
  {
   title:'Thế giới trải nghiệm mở rộng trên mây',
+  demo:{file:'option-02-main.webp',width:2048,height:1152,alt:'Tàu bay Vietjet giữa biển mây, xung quanh là các cảnh phục vụ trong cabin và xe kéo hành lý.'},
   intent:'Hình tượng hóa một thế giới mở rộng cùng Vietjet Hybrid. Hành khách có thêm cách lựa chọn, tận hưởng và giữ liên lạc khi kết nối những chân trời.',
   layout:['Tàu bay ở trung tâm hướng về bầu trời rộng mở. Tiếp viên đẩy xe phục vụ món nóng, hành khách thư giãn và sử dụng điện thoại hoặc tablet.',
    'Xe kéo hành lý di chuyển trên dải mây gợi đường băng, thể hiện lớp vận hành mặt đất.',
@@ -154,14 +182,22 @@ const keyVisualOptions = [
   priority:[3,4,5,6]
  },
  {
-  title:'Cánh cổng chuyển mình Hybrid',
-  intent:'Hai vòng đồng tâm gợi cánh cổng mở sang trải nghiệm Hybrid. Tám trụ cột cùng tạo nền tảng cho bước chuyển mình của Vietjet.',
-  layout:['Tàu bay xuyên vòng trung tâm về phía người xem và chếch lên. Vòng ngoài nối tám phân cảnh thành một dòng trải nghiệm có phân cấp.',
-   'Cabin, ẩm thực và dịch vụ chiếm diện tích lớn hơn. Wi-Fi đặt ở điểm dễ nhận biết, có chỗ cho copy “Wi-Fi vệ tinh miễn phí”. Các trụ cột còn lại hiện qua chi tiết cô đọng.',
-   'Headline nằm ngoài quỹ đạo chuyển động chính, giữ khoảng thở quanh tàu bay.'],
-  treatment:'Bố cục tập trung, ánh sáng mở dần về phía trước. Dựng vòng ngoài thành không gian liền mạch có chiều sâu để tạo cảm giác trọn vẹn.',
-  priority:[3,4,5,6],
-  allPillars:true
+  title:'Dấu phẩy giữa trời mây',
+  intent:'Dấu phẩy trong “Bay lại, thích ngay!” đánh dấu nhịp chuyển sang trải nghiệm Vietjet Hybrid. “Bay lại, thích ngay!” mời những người từng bay quay trở lại. “Bay, lại thích ngay!” là lời hẹn để mỗi hành khách có thêm lý do chọn Vietjet cho chuyến sau.',
+  demo:{file:'option-04-main.webp',width:3840,height:2160,alt:'Hành khách và phi hành đoàn bước trên sàn hình dấu phẩy nổi giữa biển mây, với tàu bay Vietjet phía trên.'},
+  details:'Option 04 - Diễn giải ý tưởng.pdf',
+  subVisuals:[
+   ['service','Dịch vụ từ trái tim'],
+   ['cuisine','Ẩm thực nóng tươi'],
+   ['network','Mạng bay rộng khắp'],
+   ['wifi-work','Kết nối và giải trí · Văn phòng trên mây'],
+   ['wifi-home','Kết nối và giải trí · Gọi về nhà'],
+   ['wifi-cloud','Kết nối và giải trí · Sóng mây']
+  ],
+  layout:['Trong Main KV, dấu phẩy trở thành sàn diễn giữa biển mây. Gia đình, cặp đôi lớn tuổi và nhóm khách trẻ bước cùng phi hành đoàn, với tàu bay Vietjet lướt song hành.',
+   'Sáu Sub KV dùng chung sàn dấu phẩy để kể từng trải nghiệm, từ dịch vụ, món nóng và mạng bay đến ba cách thể hiện kết nối trên không.'],
+  treatment:'Sàn màu kem viền đỏ Vietjet nổi trên biển mây hoàng hôn. Đầu tròn, nét lõm và đuôi vuốt nhọn giữ hình dáng dấu phẩy dễ nhận ra xuyên suốt bộ KV.',
+  priority:[5,4,6,7]
  },
  {
   title:'Đôi cánh nâng tám trải nghiệm',
@@ -175,13 +211,30 @@ const keyVisualOptions = [
  }
 ];
 
+function keyVisualDemo(option, number) {
+ if (!option.demo) {
+  return `<figure class="kvDemo"><figcaption><strong>Key Visual Demo</strong><span>1920 × 1080 · 16:9</span></figcaption></figure>`;
+ }
+ const {file,width,height,alt}=option.demo;
+ return `<figure class="kvDemo kvDemoImage"><img src="media/key-visual/${file}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><figcaption>Key Visual Demo · Option ${no(number)}</figcaption></figure>`;
+}
+
+function keyVisualGallery(visuals) {
+ return `<section class="kvSubVisuals" aria-labelledby="kv-sub-title"><h4 id="kv-sub-title">Sub KV</h4><div class="kvSubGrid">${visuals.map(([file,label])=>{
+  const src=`media/key-visual/option-04-${file}.webp`;
+  return `<figure><a href="${src}" target="_blank" rel="noopener" aria-label="${esc('Mở ảnh Sub KV · '+label)}"><img src="${src}" alt="" width="3840" height="2160" loading="lazy" decoding="async"></a><figcaption>${esc(label)}</figcaption></figure>`;
+ }).join('')}</div></section>`;
+}
+
 function keyVisual() {
  return `<section class="section proposalPage" id="key-visual">
  ${proposalHeader('Key Visual','Năm hướng bố cục chuyển hóa Master Concept “Bay lại, thích ngay!” và Key Message “Trọn vẹn mọi hành trình khác biệt” thành những trải nghiệm nhìn thấy được.','kv-title')}
  <nav class="kvJump" aria-label="Phương án Key Visual">${keyVisualOptions.map((o,i)=>`<a href="#kv-${i+1}">Option ${no(i+1)}</a>`).join('')}</nav>
  ${keyVisualOptions.map((o,i)=>`<article class="proposalBlock kvOption" id="kv-${i+1}">
  <span class="kicker">KV Option ${no(i+1)}</span><h3>${esc(o.title)}</h3><span class="kicker">Creative Intent</span><p class="kvIntent">${esc(o.intent)}</p>
- <figure class="kvDemo"><figcaption><strong>Key Visual Demo</strong><span>1920 × 1080 · 16:9</span></figcaption></figure>
+ ${o.details?`<a class="kvDetails" href="media/key-visual/${encodeURIComponent(o.details)}" target="_blank" rel="noopener">Diễn giải chi tiết <span aria-hidden="true">↗</span></a>`:''}
+ ${keyVisualDemo(o,i+1)}
+ ${o.subVisuals?keyVisualGallery(o.subVisuals):''}
  <div class="proposalPair"><section class="panel"><h4>Bố cục và hình ảnh</h4><ul>${o.layout.map(line=>`<li>${esc(line)}</li>`).join('')}</ul></section><section class="panel"><h4>Visual Treatment</h4><p>${esc(o.treatment)}</p><h4>Trụ cột ưu tiên</h4><div class="tags">${o.priority.map(n=>`<span class="tag">${n} · ${esc(pillars[n-1])}</span>`).join('')}</div><p class="kvNote">Wi-Fi vệ tinh là điểm nhấn kết nối xuyên suốt.${o.allPillars?' Các trụ cột còn lại cùng hiện diện trong bố cục.':''}</p></section></div>
  </article>`).join('')}</section>`;
 }
@@ -225,6 +278,57 @@ function productionPlan(o) {
  </section>`;
 }
 
+const directorOptions = [
+ {
+  name:'Hoàng Đăng',
+  portrait:'hoang-dang',
+  portfolio:'https://vimeo.com/hdwng?fl=pp&fe=sh',
+  platform:'YouTube',
+  videos:['Bn72aqpuSqc','pLk2OoPdqRE','dlDldMypmyU','fyDAwGL77Xo']
+ },
+ {
+  name:'Kha Bảo',
+  portrait:'kha-bao',
+  portfolio:'https://vimeo.com/tienkhabao?fl=pp&fe=sh',
+  platform:'Vimeo',
+  videos:['1243257796','1194333984','1109647452','1222003644']
+ },
+ {
+  name:'William Bao Nguyen',
+  portrait:'william-bao-nguyen',
+  portfolio:'https://vimeo.com/user90468759?fl=pp&fe=sh',
+  platform:'Vimeo',
+  videos:['1059456058','1099390281','1219493922','1219575809']
+ },
+ {
+  name:'Nhat Nguyen',
+  portrait:'nhat-nguyen',
+  portfolio:'https://vimeo.com/nhatnguyen182',
+  platform:'Vimeo',
+  videos:['1079805155','1068133008','1197377066','1185038957']
+ }
+];
+
+const directorVideoPlatforms = {
+ YouTube:{embed:'https://www.youtube-nocookie.com/embed/',watch:'https://www.youtube.com/watch?v='},
+ Vimeo:{embed:'https://player.vimeo.com/video/',watch:'https://vimeo.com/'}
+};
+
+function directorPortfolio({name,portrait,portfolio,platform,videos}, i) {
+ const {embed,watch}=directorVideoPlatforms[platform];
+ return `<article class="panel directorCard" aria-labelledby="director-${i+1}">
+ <div class="directorProfile">
+ <img src="media/directors/${portrait}.webp" alt="Chân dung ${esc(name)}" width="560" height="560" loading="lazy" decoding="async">
+ <span class="kicker">Đạo diễn ${no(i+1)}</span><h4 id="director-${i+1}">${esc(name)}</h4>
+ <a class="kvDetails" href="${esc(portfolio)}" target="_blank" rel="noopener" aria-label="Portfolio · ${esc(name)}">Portfolio</a>
+ </div>
+ <div class="directorWorks">${videos.map((video,j)=>{
+  const title=`${name} · Video ${no(j+1)}`;
+  return `<figure><div class="videoStage"><iframe src="${embed}${video}" title="${esc(title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption><a class="videoLink" href="${watch}${video}" target="_blank" rel="noopener" aria-label="${esc(title+' · Mở trên '+platform)}">Mở trên ${platform}</a></figcaption></figure>`;
+ }).join('')}</div>
+ </article>`;
+}
+
 function theTreatment() {
  return `<section class="section proposalPage" id="the-treatment">
  ${proposalHeader('The Treatment','Hai phương án thực hiện cùng theo mạch phim từ mặt đất lên bầu trời. Cử chỉ của nhân vật, chi tiết sản phẩm và nhịp kể dẫn dắt cảm giác trải nghiệm.','treatment-title')}
@@ -235,5 +339,8 @@ function theTreatment() {
  <h4>Triển khai</h4><ul><li>Dựng thử theo storyboard để chốt bố cục, ánh sáng và phần mở rộng bối cảnh. Thử trước chất liệu da, đồng phục, khay bóng và kính.</li><li>Ghi dữ liệu ống kính, vị trí máy và ánh sáng. Quay thêm hình nền sạch và tham chiếu màu, chừa vùng hình cho tỷ lệ dọc.</li><li>Duyệt phong cách trời mây và một cảnh mẫu. Hoàn thiện ghép bối cảnh, màn hình và tàu bay theo nhận diện đã duyệt.</li></ul>${videoRef(treatmentRefs[1],'Tham chiếu · Phông xanh và trời mây')}</article>
  </div>
  <article class="panel casePanel"><h3>Điều kiện triển khai</h3><p>Có thể ghi hình tại sân bay thật tùy lịch khai thác, khả năng tiếp cận tàu bay và giấy phép. Khi chốt phương án, chúng ta sẽ đối chiếu hạng ghế, cấu hình cabin, suất ăn, đường bay, giao diện SkyJoy và phạm vi thể hiện Wi-Fi với tài liệu Vietjet.</p></article>
+ <section class="proposalBlock" aria-labelledby="directors-title"><h3 id="directors-title">Đề xuất đạo diễn</h3>
+ <div class="directorList">${directorOptions.map(directorPortfolio).join('')}</div>
+ </section>
  </section>`;
 }
