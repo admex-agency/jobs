@@ -4,29 +4,54 @@
 @media(max-width:900px){.three,.four,.options,.message-flow,.timeline{grid-template-columns:1fr 1fr}.kv-grid{grid-template-columns:1fr}.budget{grid-template-columns:1fr}.hero h1{font-size:60px}}@media(max-width:600px){header{padding:64px 22px 46px}.hero h1{font-size:47px}.hero p{font-size:15px}.three,.four,.two,.options,.message-flow,.timeline,.keychain{grid-template-columns:1fr}.kv{grid-template-columns:34% 66%}.kv-art .emoji{font-size:48px}.kv-art .symbol{font-size:120px}.kv-body{padding:17px}.kv-body h3{font-size:16px}.barrow{grid-template-columns:120px 1fr 40px;gap:8px;font-size:11px}section{padding:49px 0}.card{padding:21px}.concept{padding:33px 21px}.table-wrap{font-size:11px}th,td{padding:10px;min-width:110px}}@media print{.topbar,.utility{display:none}section{break-inside:avoid;padding:20px 0}.wrap{max-width:100%}header{padding:40px}.kv{break-inside:avoid}body{background:white}}
 .touch-filter{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 17px}.filter-btn{border:1px solid #cfe1d3;background:#fff;border-radius:99px;color:#27513c;padding:8px 15px;cursor:pointer;font-size:12px;font-weight:700}.filter-btn.active,.filter-btn:hover{background:#177b40;color:white;border-color:#177b40}.ta-table tr[hidden]{display:none}.journey{display:flex;align-items:stretch;gap:8px;margin:20px 0}.journey-step{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;flex:1;min-width:0}.journey-step b{color:#187c40;display:block;font-size:13px}.journey-step span{display:block;font-size:12px;margin:9px 0}.journey-step small{display:block;color:#708075;font-size:10px}.journey-arrow{align-self:center;color:#168144;font-size:25px;font-weight:800}@media(max-width:850px){.journey{flex-direction:column}.journey-arrow{transform:rotate(90deg)}}@media print{.touch-filter{display:none}.ta-table tr[hidden]{display:table-row}}
 </style><link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/refinement.css"><style>
+  #brand-challenge-video {
+    padding-block: clamp(26px, 4vw, 56px);
+    background: #f1f5ed;
+  }
+
+  #brand-challenge-video > .wrap {
+    max-width: 1488px;
+    padding-inline: clamp(14px, 3vw, 36px);
+  }
+
   .brand-challenge-player {
-    width: min(100%, 960px);
-    margin-top: 24px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 20px;
+    border: 1px solid rgba(12, 50, 33, 0.15);
+    border-radius: clamp(14px, 2vw, 26px);
     background: var(--dark);
+    box-shadow: 0 14px 38px rgba(12, 50, 33, 0.13);
   }
 
   .brand-challenge-player iframe {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     border: 0;
   }
 
   .brand-challenge-video-link {
-    display: inline-block;
-    margin-top: 12px;
-    padding-block: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 44px;
+    margin: 12px 0 0 auto;
+    padding-inline: 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
     color: var(--green);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .brand-challenge-video-link:hover {
+    border-color: var(--green);
+  }
+
+  .brand-challenge-video-link:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
   }
 </style>
 </head><body>
@@ -40,9 +65,8 @@
 <article class="card"><span class="objective-label">PRODUCT INTEREST</span><h3>Khuyến khích chủ động tìm hiểu sản phẩm</h3><p>Chuyển sự chú ý thành hành động tìm hiểu qua banner, QR và NFC dẫn về trang thông tin Yumangel. Theo dõi lượt truy cập và tương tác với nội dung sản phẩm để đánh giá khả năng tạo quan tâm của từng điểm chạm.</p></article></div></div></section>
 <section id="research"><div class="wrap"><div class="snum">CULTURAL CONTEXT</div><h2 class="section-title">Tết đáng giá ở những điều ta muốn giữ.</h2><div class="evidence-layout"><div><p class="editorial">Sự sum vầy vẫn ở trung tâm mùa Tết. Khi lựa chọn chi tiêu kỹ hơn, người tiêu dùng vẫn bảo vệ những điều có ý nghĩa với gia đình.</p><div class="reading"><span class="pill">Diễn giải chiến lược</span><h3>Từ chuẩn bị một cái Tết đủ đầy<br>đến sống trọn một cái Tết đáng giá.</h3></div></div><figure class="chart-panel"><figcaption>Người Việt đã chọn gì trong Tết 2026?</figcaption><div class="data-row"><div><b>62%</b><span>Ở nhà cùng gia đình trong kỳ nghỉ</span></div><div class="track"><i style="width:62%"></i></div></div><div class="data-row"><div><b>84%</b><span>Chi tiêu bằng hoặc nhiều hơn năm trước</span></div><div class="track"><i style="width:84%"></i></div></div><div class="data-row"><div><b>53%</b><span>Mua sắm chủ yếu trước Tết 1–2 tuần</span></div><div class="track"><i style="width:53%"></i></div></div><p class="source-line">[1] Ipsos, 2026 · n=500, 18–55 tuổi, tại TP.HCM, Hà Nội, Đà Nẵng, Cần Thơ. Khảo sát 12–17/03/2026. Các chỉ số là những câu hỏi riêng, không cộng thành 100%.</p></figure></div><div class="tension-strip"><span>ĐIỀU MUỐN GIỮ</span><strong>Thời gian bên người thương</strong><span>ĐIỀU CÓ THỂ CHỦ ĐỘNG</span><strong>Quan tâm sức khỏe bản thân</strong></div></div></section>
 <section id="challenge"><div class="wrap"><div class="snum">BRAND CHALLENGE</div><h2 class="section-title">Biến sự quan tâm thành liên tưởng đúng thương hiệu.</h2><p class="editorial">Yumangel cần hiện diện trong câu chuyện Tết bằng một vai trò rõ ràng: khuyến khích chủ động quan tâm sức khỏe dạ dày để sẵn sàng cho những khoảnh khắc Tết, đồng thời củng cố nhận biết “thuốc dạ dày chữ Y – Yumangel”.</p><div class="keychain"><div><strong>DẠ DÀY</strong><small>Liên quan ngành hàng</small></div><div><strong>CHỮ Y</strong><small>Tài sản nhận diện</small></div><div><strong>YUMANGEL</strong><small>Ghi nhớ đúng thương hiệu</small></div></div><div class="note">Mục tiêu truyền thông: nhận ra chữ Y, nhớ tên Yumangel và liên tưởng đúng đến thuốc dạ dày. Hiệu quả bán hàng cần dữ liệu phân phối và sell-out riêng để đánh giá.</div></div></section>
-<section id="brand-challenge-video" aria-labelledby="brand-challenge-video-title">
+<section id="brand-challenge-video" aria-label="Video Yumangel">
   <div class="wrap">
-    <h2 class="section-title" id="brand-challenge-video-title">Video Yumangel</h2>
     <div class="brand-challenge-player">
       <iframe
         src="https://drive.google.com/file/d/1WnNX3DqUTzrty2ibHXrOWY4uyUPCo3Kx/preview"
