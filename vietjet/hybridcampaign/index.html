@@ -56,6 +56,9 @@ h3{line-height:1.32}
 .stillTile{overflow:hidden;min-width:0;border:1px solid var(--line);border-radius:9px;background:var(--cream)}
 .stillTile img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#26191d}
 .stillTile figcaption{padding:5px 9px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.07em}
+.pendingFrame{position:relative;display:grid;place-items:center;aspect-ratio:16/9;background:#f7e7e3;color:#7a303b;font-size:13px;text-align:center}
+.pendingFrame img{position:absolute;inset:0;height:100%}
+.pendingFrame img[hidden],.videoPlay img[hidden]{display:none}
 .visualDirection .sectionHeader p{max-width:720px}
 @media(max-width:850px){.stillGrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:640px){.stillGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
@@ -177,8 +180,8 @@ h3{line-height:1.32}
 .manifestoComparison .proposalTable table{min-width:700px;table-layout:fixed}
 .manifestoComparison .proposalTable tbody th{width:auto}
 .manifestoComparison .proposalTable thead th:first-child{width:18%}
-.manifestoComparison .proposalTable thead th:nth-child(2){background:#f8dcd8;color:var(--darkred)}
-.manifestoComparison .proposalTable td:nth-child(2){background:#fff4f0}
+.manifestoComparison .proposalTable thead th:last-child{background:var(--darkred);color:white}
+.manifestoComparison .proposalTable td:last-child{background:#fff0ee}
 .manifestoComparison .recommendation{margin-top:14px;border-left:3px solid var(--red)}
 .manifestoComparison .recommendation h3{color:var(--darkred)}
 .insightPanel{padding:clamp(20px,4vw,42px);border-radius:16px;background:#74202b;color:#fff}
@@ -241,6 +244,45 @@ h3{line-height:1.32}
  .proposalTable{overflow:visible}
  .kvDemo{break-inside:avoid}
 }
+@media screen {
+ :root{--red:#c91025;--darkred:#9f1021;--vietjet-red:#e3192d;--line:#e9d9d8}
+ body{background:radial-gradient(ellipse at 100% 0,#fce2dc 0,transparent 52%),linear-gradient(150deg,#fffbf9,#f8f2ef);background-attachment:fixed}
+ .top{background:linear-gradient(105deg,#860b20,#bd1228 60%,#a50d23)}
+ .hero{background:radial-gradient(ellipse at 78% 20%,#ff8670 0,transparent 57%),linear-gradient(115deg,#8f071f,#d11932 64%,#c8172c)}
+ .heroArt{border:1px solid #ffffff70;box-shadow:0 16px 55px #6d0c2d7a,0 0 0 5px #ffffff18}
+ .sticky{background:linear-gradient(160deg,#ffffffe3,#fff4f0bd);box-shadow:0 5px 24px #69232d13;backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid #edc8c5}
+ .navrow .options,.navrow .jump{position:relative;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#df9b9e transparent;min-width:0;padding-bottom:4px}
+ .navrow .jump{justify-content:flex-start}
+ .navrow .opt,.jump a{flex:none;min-height:42px}
+ .jump a{display:inline-flex;align-items:center}
+ .opt[aria-pressed=true]{background:linear-gradient(155deg,#d7162a,#a90e23);box-shadow:0 2px 8px #aa162637,inset 0 1px #ffffff57}
+ .opt[data-priority]:not([aria-pressed=true]){color:var(--darkred);background:#ffe3df}
+ .opt[data-priority]::after{content:"";display:inline-block;width:6px;height:6px;margin-left:7px;border-radius:50%;background:currentColor;vertical-align:2px}
+ .panel,.script,.proposalTable{border-color:#ebd9d7;border-radius:16px}
+ .panel{background:linear-gradient(145deg,#ffffffed,#fff9f7d9);box-shadow:0 1px 0 #fff inset,0 8px 20px #681b2d09}
+ .strategy,.overviewOption,.messageMeaning .panel{border-top:3px solid var(--vietjet-red)}
+ .proposalHeading h2,.briefDirection,.messageMeaning h4{color:var(--darkred)}
+ .brandCallout,.manifestoComparison .recommendation,.overviewOption.isPriority,.priorityIntro .timing{background:linear-gradient(115deg,#ffe5e2,#fff8f5 80%);border:1px solid #edb3ae;border-left:4px solid var(--vietjet-red);border-radius:12px}
+ .brandCallout{margin-top:18px;padding:15px 19px;color:#6e1c2d;font-weight:650;line-height:1.62}
+ .overviewOption.isPriority:hover{border-color:#cc5360}
+ .kvDetails{background:#fff1ee;color:#941224;border-color:#edb3ae}
+ .kvDetails:hover{background:#ffe2de}
+ .kvDemoImage a{display:block}
+ .videoStage{border-radius:13px}
+ .videoPlay{position:relative;isolation:isolate;display:grid;place-items:center}
+ .videoPlay img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+ .videoPlay::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#1f0b1d62,#2b13141a);z-index:-1}
+ .videoPlay:hover::before{background:#2a102452}
+ .videoPlay .playIcon{width:50px;height:50px;display:grid;place-items:center;padding-left:3px;color:white;border:1px solid #ffffffc0;border-radius:50%;background:#a20d22d9;box-shadow:0 3px 19px #1d090d80;backdrop-filter:blur(10px)}
+ .videoPlay:focus-visible{outline-offset:-4px;outline-color:white}
+}
+@media screen and (max-width:650px){
+ .navrow .opt,.jump a{min-height:40px}
+ html{scroll-padding-top:112px}
+ .brandCallout{padding:13px 15px}
+}
+@media print{.brandCallout{border-left:3px solid var(--darkred);padding-left:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <!--
 Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
@@ -354,7 +396,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <nav class="sticky" aria-label="Điều hướng proposal"><div class="container navrow"><div class="options" id="options"></div><div class="jump"><a href="#overview">Tổng thể</a><a href="#storyboard">Storyboard</a><a href="#frames">Từng frame</a><a href="#treatment">Treatment</a><a href="#production-plan">Sản xuất</a></div></div></nav>
 <main class="container" id="board"></main>
 <footer class="notes"><div class="container proposalFooter"><div><h2>Vietjet Hybrid Creative Campaign</h2><p>Creative Proposal dành cho Vietjet</p></div><div class="footerCredit"><span>Proposed by</span><img src="media/proposal/admex-vertical.png" width="2048" height="1314" alt="admeX"><span>Trực thuộc VCCorp</span></div></div></footer>
-<script src="proposal.js?v=manifesto-review"></script>
+<script src="proposal.js?v=hybrid-manifesto-20261113-r3"></script>
 <script>
 const options = [
   {
@@ -363,11 +405,315 @@ const options = [
         "n": 1,
         "visual": "case",
         "pillars": [],
-        "scene": "Một bạn trẻ đứng bên cửa kính nhà ga, nhìn ra ngoài. Chiếc vali vỏ trong của bạn có nhãn hành lý đỏ gấp mép.",
-        "en": "A young traveller looks out through the terminal glass. Their clear-shell suitcase has a creased red luggage tag.",
+        "scene": "Bé gái bảy tuổi đi giữa ba mẹ qua nhà ga. Em dừng bên vách kính, siết tay ba khi nhìn thấy tàu bay.",
+        "en": "A seven-year-old girl walks through the terminal with her parents. At the glass, she grips Dad’s hand as she spots the plane.",
+        "phase": "Mặt đất",
         "who": "M",
-        "vo": "Bạn nghĩ, bay cùng Vietjet chẳng lạ gì?",
-        "voEn": "Think there’s nothing new about flying Vietjet?"
+        "vo": "Lần đầu đi bay, em nắm tay ba thật chặt.",
+        "voEn": "The first time you flew, you held Dad’s hand tight."
+      },
+      {
+        "n": 2,
+        "visual": "gate",
+        "pillars": [],
+        "scene": "Ở ghế chờ, ba gấp một chiếc máy bay giấy đỏ và đặt vào lòng bàn tay con.",
+        "en": "At the gate, Dad folds a little red paper plane and places it in her palm.",
+        "phase": "Mặt đất"
+      },
+      {
+        "n": 3,
+        "visual": "door",
+        "pillars": [
+          5
+        ],
+        "scene": "Ở cửa tàu, tiếp viên cúi ngang tầm mắt và chào bé. Bé giơ chiếc máy bay giấy lên, rồi chủ động bước vào cabin cùng mẹ.",
+        "en": "At the aircraft door, a flight attendant greets her at eye level. The girl holds up her paper plane and steps into the cabin with Mum.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Lên đây nào. Mình cùng đi tìm mây nhé?",
+        "voEn": "Come on board. Shall we go find some clouds?"
+      },
+      {
+        "n": 4,
+        "visual": "seats",
+        "pillars": [
+          2,
+          3
+        ],
+        "scene": "Mẹ giúp con cài dây an toàn. Bé ngồi cạnh ô cửa, quay sang kiểm tra ba mẹ vẫn ngồi ngay bên mình.",
+        "en": "Mum helps her fasten the seatbelt. The girl sits by the window and looks back to see both parents beside her.",
+        "phase": "Cabin và trên không"
+      },
+      {
+        "n": 5,
+        "visual": "meal",
+        "pillars": [
+          4,
+          5
+        ],
+        "scene": "Sau khi cất cánh, tiếp viên đặt khay món nóng lên bàn. Bé đưa thìa cho mẹ nếm trước và cười khi cả nhà cùng ăn.",
+        "en": "After takeoff, the attendant sets down a hot meal. The girl offers Mum the first taste and grins as the family eats together.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Rồi em mải ngắm mây đến quên cả hồi hộp.",
+        "voEn": "Soon you were too busy watching the clouds to feel nervous."
+      },
+      {
+        "n": 6,
+        "visual": "window",
+        "pillars": [],
+        "scene": "Bé đặt chiếc máy bay giấy đỏ lên bàn gập và nghiêng đầu theo dõi mây ngoài cửa sổ.",
+        "en": "She rests the red paper plane on her tray table and follows the clouds outside.",
+        "phase": "Cabin và trên không"
+      },
+      {
+        "n": 7,
+        "visual": "book",
+        "pillars": [],
+        "scene": "Nhiều năm sau, cô sinh viên mở sổ hành trình ở nhà ga. Chiếc máy bay giấy đỏ đã sờn nằm giữa những trang ghi lịch trình đi chơi cùng bạn.",
+        "en": "Years later, the same girl, now a student, opens her travel notebook at the terminal. The worn red paper plane rests between the pages of her group itinerary.",
+        "phase": "Mặt đất",
+        "who": "M",
+        "vo": "Lớn thêm một chút, em là người rủ cả nhóm lên đường.",
+        "voEn": "A little older, you are the one getting the group together."
+      },
+      {
+        "n": 8,
+        "visual": "gate",
+        "pillars": [
+          2
+        ],
+        "scene": "Cô chỉ cửa khởi hành cho nhóm bạn rồi kéo vali đi trước. Một người bạn chạy theo, khoác tay cô.",
+        "en": "She points the group toward the gate and takes the lead with her suitcase. A friend catches up and links arms with her.",
+        "phase": "Mặt đất"
+      },
+      {
+        "n": 9,
+        "visual": "attendant",
+        "pillars": [
+          5
+        ],
+        "scene": "Trong cabin, tiếp viên hỗ trợ nhóm bạn cất hành lý. Cô gái cầm sẵn điện thoại và sổ để khi vào ghế có thể mở ngay.",
+        "en": "In the cabin, a flight attendant helps the friends stow their bags. She keeps her phone and notebook ready at her seat.",
+        "phase": "Cabin và trên không"
+      },
+      {
+        "n": 10,
+        "visual": "meal",
+        "pillars": [
+          4
+        ],
+        "scene": "Sau khi máy bay ổn định độ cao, nhóm bạn mở khay món nóng. Cô chuyền một phần ăn sang bạn bên cạnh để cùng nếm.",
+        "en": "Once the aircraft levels off, the friends open their hot meals. She passes a bite to the friend next to her.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Lần này, niềm vui bắt đầu ngay khi cả nhóm ngồi cạnh nhau.",
+        "voEn": "This time, the fun starts as soon as your friends sit down together."
+      },
+      {
+        "n": 11,
+        "visual": "phone",
+        "pillars": [
+          7
+        ],
+        "scene": "Cô kết nối Wi-Fi trên không và gửi ảnh nhóm bạn cạnh ô cửa cho ba mẹ. Cả nhóm ghé vào khung hình.",
+        "en": "Using onboard Wi-Fi, she sends her parents a photo of the group by the window. Her friends lean into the frame.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Và vẫn có chỗ cho một lời nhắn gửi về nhà.",
+        "voEn": "And there is still time to send a little message home."
+      },
+      {
+        "n": 12,
+        "visual": "reunion",
+        "pillars": [
+          6
+        ],
+        "scene": "Ở sảnh đến, cả nhóm đập tay, rồi mở bản đồ và thống nhất nơi ghé đầu tiên.",
+        "en": "At arrivals, the friends high-five, open their map and agree on their first stop.",
+        "phase": "Điểm đến và kết"
+      },
+      {
+        "n": 13,
+        "visual": "book",
+        "pillars": [],
+        "scene": "Trong chuyến công tác, cô đã trưởng thành. Cô mở hồ sơ ở ghế chờ, kiểm lại bản trình bày. Chiếc máy bay giấy đỏ được kẹp bên trong.",
+        "en": "On a business trip years later, she checks her presentation at the gate. The red paper plane is tucked inside the project folder.",
+        "phase": "Mặt đất",
+        "who": "M",
+        "vo": "Rồi có chuyến bay em mang theo cả một dự án quan trọng.",
+        "voEn": "Then comes a flight with an important project on your mind."
+      },
+      {
+        "n": 14,
+        "visual": "door",
+        "pillars": [
+          5
+        ],
+        "scene": "Cô khép hồ sơ, bước qua cửa tàu và chào lại tiếp viên đang đón khách.",
+        "en": "She closes the folder, steps through the aircraft door and returns the attendant’s greeting.",
+        "phase": "Cabin và trên không"
+      },
+      {
+        "n": 15,
+        "visual": "seats",
+        "pillars": [
+          2,
+          3,
+          7
+        ],
+        "scene": "Sau khi cất cánh, cô mở laptop ở ghế Business, kết nối Wi-Fi và tải bản góp ý mới nhất của nhóm.",
+        "en": "After takeoff, she opens her laptop in Business, connects to Wi-Fi and downloads her team’s latest feedback.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Lần này, em chọn một khoảng riêng để chuẩn bị thật tốt.",
+        "voEn": "This time, you choose a little space to get ready."
+      },
+      {
+        "n": 16,
+        "visual": "attendant",
+        "pillars": [
+          5
+        ],
+        "scene": "Thấy cô đang tập trung, tiếp viên nhẹ nhàng đặt ly nước ở bàn bên, ra hiệu sẽ quay lại khi cô sẵn sàng.",
+        "en": "Seeing her focused, the attendant quietly sets a glass of water on the side table and gestures that she will return when the passenger is ready.",
+        "phase": "Cabin và trên không",
+        "who": "C",
+        "vo": "Em cứ làm nốt nhé. Chị để ly nước ở đây.",
+        "voEn": "Take your time. I’ll leave some water here for you."
+      },
+      {
+        "n": 17,
+        "visual": "seat",
+        "pillars": [
+          3
+        ],
+        "scene": "Cô gửi bản đã chỉnh, khép laptop, đặt chiếc máy bay giấy đỏ lên bàn rồi ngả lưng, thả lỏng bên ô cửa.",
+        "en": "She sends the revised deck, closes her laptop, sets the paper plane down and relaxes by the window.",
+        "phase": "Cabin và trên không"
+      },
+      {
+        "n": 18,
+        "visual": "exit",
+        "pillars": [],
+        "scene": "Ở sảnh đến, cô kéo vali ra khỏi cửa. Cô nhắn nhóm dự án rằng mình đã tới và sẵn sàng cho buổi gặp.",
+        "en": "At arrivals, she rolls her case toward the exit and messages the project team that she is here and ready for the meeting.",
+        "phase": "Điểm đến và kết",
+        "who": "M",
+        "vo": "Mỗi lần lên đường, điều em mong ở chuyến bay lại khác.",
+        "voEn": "Every time you set out, you want something a little different from the flight."
+      },
+      {
+        "n": 19,
+        "visual": "phone",
+        "pillars": [],
+        "scene": "Trước khi rời sân bay, cô gọi video cho ba mẹ, giơ chiếc máy bay giấy đỏ lên và hẹn chuyến sau cả nhà đi cùng.",
+        "en": "Before leaving the airport, she video calls her parents, shows them the little red plane and suggests they fly together next time.",
+        "phase": "Điểm đến và kết",
+        "who": "C",
+        "vo": "Và đã có một chuyến bay nữa em mong chờ. Chuyến này, cả nhà sẽ đi cùng nhau.",
+        "voEn": "And there’s already another flight to look forward to. Next time, the whole family is coming along."
+      },
+      {
+        "n": 20,
+        "visual": "end",
+        "pillars": [],
+        "scene": "Tàu bay Vietjet vượt qua biển mây. Master Concept, logo và Key Message hiện trên nền trời.",
+        "en": "A Vietjet aircraft rises above the clouds. The Master Concept, logo and Key Message appear in the open sky.",
+        "phase": "Điểm đến và kết",
+        "who": "C",
+        "vo": "Bay lại, thích ngay! Vietjet Hybrid. Trọn vẹn mọi hành trình khác biệt.",
+        "voEn": "Enjoy Flying, Again! Vietjet Hybrid. A fuller journey, however you fly.",
+        "text": "Bay lại, thích ngay!\nVietjet Hybrid · Trọn vẹn mọi hành trình khác biệt",
+        "textEn": "Enjoy Flying, Again!\nVietjet Hybrid · A fuller journey, however you fly."
+      }
+    ],
+    "id": 1,
+    "art": "bay-lai",
+    "title": "Bay lại, cùng Vietjet",
+    "sub": "Một cô gái bay cùng Vietjet qua ba chặng đời. Từ chuyến bay đầu tiên bên ba mẹ, đến chuyến đi với bạn bè và lần công tác quan trọng, cô luôn tìm được cách bay phù hợp với điều mình cần lúc ấy.",
+    "beats": [
+      "Lần đầu cùng ba mẹ",
+      "Tự lên đường cùng bạn bè",
+      "Chủ động trong chuyến công tác"
+    ],
+    "roles": [
+      [
+        "Cùng một nhân vật ở ba độ tuổi",
+        "Bé gái, cô sinh viên và nữ chuyên viên. Chiếc máy bay giấy đỏ, ánh mắt và thói quen giữ kỷ vật giúp nhận ra cùng một người."
+      ],
+      [
+        "Gia đình và bạn bè",
+        "Ba mẹ đồng hành trong chuyến đầu. Nhóm bạn đại học đưa câu chuyện sang nhịp trẻ và chủ động."
+      ],
+      [
+        "Người Vietjet",
+        "Nhân viên mặt đất và tiếp viên luân phiên VO. Cử chỉ đón chào và phục vụ thay đổi theo nhu cầu từng chặng."
+      ]
+    ],
+    "sets": [
+      "Quầy hoặc sảnh chờ, cửa khởi hành và sảnh đến. Đổi đạo cụ, phục trang và ánh sáng để nhận ra ba thời điểm.",
+      "Ba không gian cabin tương ứng chuyến đi cùng gia đình, chuyến đi cùng bạn bè và chuyến công tác.",
+      "Máy bay giấy đỏ ở ba mức độ sờn, sổ hành trình, vali, khay món, điện thoại, hồ sơ dự án và laptop."
+    ],
+    "direct": [
+      "Quay theo từng độ tuổi và cấu hình cabin. Lặp lại hành động mở, đặt hoặc cầm máy bay giấy để nối các chặng. Dành khoảng lắng cho cuộc gọi về nhà.",
+      "Dựng thật ghế, cửa tàu, bàn gập và vật dụng. Ghép lớp trời và cảnh tàu bay theo tư liệu duyệt. Giữ màu đỏ của máy bay giấy nhất quán qua ba thời điểm."
+    ],
+    "direction": "Một người, ba chặng đời, ba cách bay đúng ý",
+    "intro": "Lần đầu lên máy bay, cô bé chỉ mong có ba mẹ ngồi cạnh. Lớn hơn, cô muốn tự lên kế hoạch và tận hưởng chuyến đi cùng bạn bè. Khi đi công tác, điều cô cần là một khoảng riêng để chuẩn bị cho việc quan trọng. Một chiếc máy bay giấy đỏ theo cô qua cả ba lần bay, đến khi cô gọi về nhà và hẹn chuyến sau cả nhà đi cùng.",
+    "angle": "Máy bay giấy ba gấp ở chặng đầu trở lại trong sổ du lịch và hồ sơ công việc. Mỗi lần xuất hiện, đạo cụ nối hai giai đoạn và cho thấy cô gái ngày càng chủ động. Cuộc gọi cuối phim đưa câu chuyện trở về gia đình.",
+    "fit": "Cùng một hành khách, nhu cầu thay đổi qua từng lần bay. Chuyến đầu cần sự an tâm và chăm sóc gần gũi. Chuyến đi cùng bạn bè cần thời gian sẻ chia và kết nối. Chuyến công tác cần không gian riêng, Wi-Fi và nhịp phục vụ phù hợp. Những lựa chọn ấy cụ thể hóa định vị Vietjet Hybrid.",
+    "chapterRanges": [
+      [
+        1,
+        6
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        13,
+        20
+      ]
+    ],
+    "clusters": [
+      {
+        "title": "Chuyến bay đầu tiên cùng ba mẹ",
+        "start": 1,
+        "end": 6
+      },
+      {
+        "title": "Tự lên đường cùng bạn bè",
+        "start": 7,
+        "end": 12
+      },
+      {
+        "title": "Chuyến công tác quan trọng",
+        "start": 13,
+        "end": 18
+      },
+      {
+        "title": "Lời hẹn bay cùng nhau",
+        "start": 19,
+        "end": 20
+      }
+    ]
+  },
+  {
+    "frames": [
+      {
+        "n": 1,
+        "visual": "ticket",
+        "pillars": [
+          2
+        ],
+        "scene": "Ba nhóm khách lần lượt làm thủ tục. Bên cạnh thẻ lên tàu của họ lần lượt là laptop, đồ chơi trẻ em và bản đồ gấp.",
+        "en": "Three groups check in in turn. Beside their boarding passes are a laptop, a child’s toy and a folded map.",
+        "who": "M",
+        "vo": "Theo bạn, “công thức cho một chuyến bay đúng ý” là gì?",
+        "voEn": "What’s your recipe for a flight that feels just right?"
       },
       {
         "n": 2,
@@ -375,98 +721,90 @@ const options = [
         "pillars": [
           5
         ],
-        "scene": "Tại quầy check-in, một bạn đặt vali lên cân. Nhân viên mặt đất xoay màn hình và chỉ thông tin cần xác nhận cho cả nhóm.",
-        "en": "At check-in, a friend places a suitcase on the scale. The ground agent turns the screen and points out the details the group needs to confirm.",
+        "scene": "Nhân viên mặt đất xoay màn hình về phía hành khách để cùng xác nhận lựa chọn đã đặt.",
+        "en": "The ground agent turns the screen toward the traveller so they can confirm the booking details together.",
         "who": "M",
-        "vo": "Bạn nhận ra sắc đỏ.",
-        "voEn": "You recognise the red."
+        "vo": "Hãy bắt đầu bằng điều bạn cần nhất hôm nay.",
+        "voEn": "Start with what you need most today."
       },
       {
         "n": 3,
-        "visual": "gate",
-        "pillars": [
-          6
-        ],
-        "scene": "Bốn người bạn đứng cạnh cửa kính ở cổng ra tàu. Đuôi máy bay Vietjet đi ngang phía ngoài, còn biển cổng hiển thị tên điểm đến.",
-        "en": "The four friends wait by the glass at the gate. A Vietjet tail passes outside, and the gate sign shows their destination.",
+        "visual": "seat",
+        "pillars": [],
+        "scene": "Nữ doanh nhân đóng túi laptop, đặt riêng một cuốn sách mỏng vào túi xách rồi rời quầy.",
+        "en": "The business traveller zips up her laptop bag, slips a paperback into her handbag and leaves the counter.",
         "who": "M",
-        "vo": "Nhận ra cảm giác bầu trời đã gần hơn.",
-        "voEn": "You know that feeling of the sky coming closer."
+        "vo": "Một khoảng riêng.",
+        "voEn": "A little space of your own."
       },
       {
         "n": 4,
+        "visual": "family",
+        "pillars": [],
+        "scene": "Ở cổng ra tàu, cậu bé đặt đồ chơi giữa hai ghế chờ rồi nhích sát để ba mẹ cùng nhìn.",
+        "en": "At the gate, the child puts his toy between two seats and moves closer so both parents can see it.",
+        "who": "M",
+        "vo": "Một khoảng gần nhau.",
+        "voEn": "A little time together."
+      },
+      {
+        "n": 5,
+        "visual": "map",
+        "pillars": [],
+        "scene": "Một người mở bản đồ ở ghế chờ. Ba người bạn ghé lại xem địa điểm vừa được đánh dấu.",
+        "en": "One friend unfolds a map by the waiting seats. The other three lean in to see the spot they have marked.",
+        "who": "M",
+        "vo": "Hay một điều chưa từng thử?",
+        "voEn": "Or something you’ve never tried?"
+      },
+      {
+        "n": 6,
         "visual": "crew",
         "pillars": [
           1
         ],
-        "scene": "Một bạn tháo tai nghe, nhắm mắt và hít sâu. Ngoài sân đỗ, nhân viên dùng bộ đàm xác nhận khu vực đã sẵn sàng.",
-        "en": "One friend removes their headphones, closes their eyes and takes a breath. On the apron, a crew member radios that the area is ready.",
+        "scene": "Nhân viên sân đỗ chỉ vào mục vừa kiểm tra và bàn giao thông tin cho tổ bay.",
+        "en": "An apron crew member points out a completed check and passes the information to the flight crew.",
         "who": "M",
-        "vo": "Giờ, thử nhắm mắt, hít một hơi, rồi nhìn lại.",
-        "voEn": "Now close your eyes, take a breath, and look again."
+        "vo": "Khi mọi thứ đã vào đúng chỗ, bạn có thể thôi nghĩ ngợi.",
+        "voEn": "When everything falls into place, you can stop worrying."
       },
       {
-        "n": 5,
+        "n": 7,
         "visual": "door",
         "pillars": [
           5
         ],
-        "scene": "Nhóm bạn bước vào cabin và dò số ghế trên thẻ. Tiếp viên chỉ cho cả nhóm hàng ghế của họ.",
-        "en": "The friends enter the cabin and check their seat numbers. A flight attendant points them toward their row.",
-        "who": "T",
-        "vo": "Sau điều bạn đã quen, còn gì để khám phá?",
-        "voEn": "Beyond what you know, what else is there to discover?"
-      },
-      {
-        "n": 6,
-        "visual": "seat",
-        "pillars": [
-          2,
-          3
-        ],
-        "scene": "Một bạn tựa lưng vào ghế SkyBoss, rồi đặt úp điện thoại xuống bàn.",
-        "en": "One friend settles into a SkyBoss seat and places their phone face down on the table.",
-        "who": "T",
-        "vo": "Một chỗ ngồi khiến bạn đổi nhịp, ngay khi vừa tựa lưng.",
-        "voEn": "A seat that changes your pace the moment you lean back."
-      },
-      {
-        "n": 7,
-        "visual": "meal",
-        "pillars": [
-          4
-        ],
-        "scene": "Một bạn mở nắp khay, nhận ra món Việt quen thuộc rồi đẩy nhẹ khay về phía người ngồi cạnh để cùng xem.",
-        "en": "A friend lifts the tray lid, recognises a familiar Vietnamese dish and nudges it toward the person beside them.",
-        "who": "T",
-        "vo": "Một hương vị thân quen đến sớm hơn cả dự định.",
-        "voEn": "A familiar taste, arriving sooner than you thought."
-      },
-      {
-        "n": 8,
-        "visual": "meal",
-        "pillars": [
-          4
-        ],
-        "scene": "Ở hàng ghế kế, một khách quốc tế dùng nĩa tách một miếng từ món vừa được phục vụ và cho người đi cùng xem.",
-        "en": "In the next row, an international traveller uses a fork to separate a bite of the meal and shows it to their companion.",
+        "scene": "Tiếp viên xem thẻ lên tàu rồi chỉ hàng ghế để cả gia đình đi tiếp cùng nhau.",
+        "en": "A flight attendant checks the boarding passes and directs the family to their row so they can continue together.",
         "who": "",
         "vo": "",
         "voEn": ""
       },
       {
-        "n": 9,
-        "visual": "phone",
+        "n": 8,
+        "visual": "seats",
         "pillars": [
-          7
+          2,
+          3
         ],
-        "scene": "Điện thoại trên bàn sáng lên. Người bạn lật máy và thấy tin nhắn hồi đáp khi vẫn đang ngồi trong cabin.",
-        "en": "The phone lights up on the table. The friend turns it over to find a reply while still on board.",
+        "scene": "Trong cabin, ba nhóm ổn định chỗ ngồi và đặt đồ chơi, bản đồ hoặc laptop lên bàn gập của mình.",
+        "en": "In the cabin, the three groups settle into their seats and set the toy, map or laptop on their tray tables.",
+        "who": "M",
+        "vo": "Và dành chỗ cho một trải nghiệm vẹn tròn.",
+        "voEn": "And make room to enjoy the whole experience."
+      },
+      {
+        "n": 9,
+        "visual": "meal",
+        "pillars": [
+          4
+        ],
+        "scene": "Nhóm bạn dọn bản đồ sang bên để nhận khay. Một bạn nếm món, gật đầu rồi đẩy nhẹ khay cho bạn bên cạnh cùng xem.",
+        "en": "The friends move their map aside for the trays. One tastes the meal, nods and nudges the tray toward the person beside them.",
         "who": "T",
-        "vo": "Một lời đáp đến từ nơi bạn từng nghĩ phải chờ.",
-        "voEn": "A reply you thought would have to wait.",
-        "text": "Wi-Fi vệ tinh miễn phí",
-        "textEn": "Free satellite Wi-Fi"
+        "vo": "Có lần, vị giác đến nơi trước cả bạn.",
+        "voEn": "Sometimes, your taste buds get there before you do."
       },
       {
         "n": 10,
@@ -474,63 +812,65 @@ const options = [
         "pillars": [
           7
         ],
-        "scene": "Người bạn xoay điện thoại sang bên. Hai người nhích lại gần để cùng đọc tin nhắn.",
-        "en": "The friend turns the phone toward the next seat. The two lean in to read the reply together.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
+        "scene": "Nữ doanh nhân gửi nốt tin nhắn công việc, gập laptop và mở cuốn sách đã mang theo.",
+        "en": "The business traveller sends one last work message, closes her laptop and opens the book she brought.",
+        "who": "T",
+        "vo": "Có lần, khép được một việc là mở được cả một kỳ nghỉ.",
+        "voEn": "Sometimes, wrapping up one last task is all it takes for a holiday to begin.",
+        "text": "Wi-Fi vệ tinh miễn phí",
+        "textEn": "Free satellite Wi-Fi"
       },
       {
         "n": 11,
-        "visual": "family",
-        "pillars": [],
-        "scene": "Một cậu bé đang vẽ trên thẻ giấy thì đánh rơi bút xuống lối đi. Cậu cúi nhìn, mẹ khẽ giữ cổ tay con.",
-        "en": "A child drawing on a paper card drops his pencil in the aisle. He looks down and his mother gently holds his wrist.",
+        "visual": "seat",
+        "pillars": [
+          3
+        ],
+        "scene": "Nữ doanh nhân đọc vài dòng, để sách mở trên bàn rồi tựa lưng vào ghế Business.",
+        "en": "The business traveller reads a few lines, leaves the book open on the table and leans back in her Business seat.",
         "who": "T",
-        "vo": "Điều thú vị tiếp theo…",
-        "voEn": "The next little surprise…"
+        "vo": "Có lần, điều quý nhất là một quãng yên tĩnh của riêng mình.",
+        "voEn": "Sometimes, what matters most is a quiet stretch of time to yourself."
       },
       {
         "n": 12,
-        "visual": "attendant",
-        "pillars": [
-          5
-        ],
-        "scene": "Tiếp viên nhặt bút, đặt lại cạnh tấm thẻ. Cậu bé đưa hình chiếc máy bay còn vẽ dở cho tiếp viên xem.",
-        "en": "A flight attendant picks up the pencil and places it beside the card. The child shows the attendant his unfinished drawing of an aircraft.",
+        "visual": "window",
+        "pillars": [],
+        "scene": "Cậu bé đưa đồ chơi sát ô cửa và nhìn ra ngoài. Ba mẹ lần lượt nhìn theo con.",
+        "en": "The child holds his toy near the window and looks out. His parents follow his gaze.",
         "who": "T",
-        "vo": "… đôi khi nằm ở đúng nơi bạn ít mong chờ nhất.",
-        "voEn": "… is sometimes right where you least expect it."
+        "vo": "Và có lần, bạn chỉ cần có người để cùng nhìn một hướng.",
+        "voEn": "And sometimes, all you need is someone to share the view."
       },
       {
         "n": 13,
-        "visual": "family",
+        "visual": "window",
         "pillars": [],
-        "scene": "Tiếp viên chỉ vào nét vẽ. Cậu bé nhìn mẹ rồi cười.",
-        "en": "The flight attendant points at the drawing. The child looks at his mother and smiles.",
+        "scene": "Trên cùng chuyến bay, nhóm bạn thưởng thức món ăn, nữ doanh nhân nghỉ ngơi và gia đình cùng nhìn mây.",
+        "en": "On the same flight, the friends enjoy their meal, the business traveller rests and the family watches the clouds.",
         "who": "",
         "vo": "",
         "voEn": ""
       },
       {
         "n": 14,
-        "visual": "case",
+        "visual": "landing",
         "pillars": [],
-        "scene": "Bốn người bạn đi qua hành lang đến. Chiếc vali lăn bên cạnh họ, nhãn đỏ vẫn còn nếp gấp cũ.",
-        "en": "The four friends walk through arrivals. The suitcase rolls beside them, its red tag still bearing the same crease.",
-        "who": "M",
-        "vo": "Vẫn chiếc vali ấy.",
-        "voEn": "Same suitcase."
+        "scene": "Mặt đất hiện rõ dần qua ô cửa. Khi máy bay đã dừng, các hành khách thu dọn đồ cá nhân.",
+        "en": "The ground draws closer outside the window. Once the aircraft has stopped, the travellers collect their belongings.",
+        "who": "",
+        "vo": "",
+        "voEn": ""
       },
       {
         "n": 15,
-        "visual": "reunion",
+        "visual": "exit",
         "pillars": [],
-        "scene": "Một bạn vừa đi vừa kể chuyện, tay minh họa theo lời. Người kéo vali đi chậm lại để nghe hết câu rồi cười cùng cả nhóm.",
-        "en": "One friend gestures while telling a story. The person rolling the suitcase slows down to hear the end, then laughs with the group.",
+        "scene": "Tại sảnh đến, nữ doanh nhân cất laptop xuống đáy túi và giữ cuốn sách trên tay. Nhóm bạn gấp bản đồ rồi rẽ sang lối khác.",
+        "en": "In arrivals, the business traveller puts her laptop at the bottom of her bag and keeps her book in hand. The friends fold their map and take another exit.",
         "who": "M",
-        "vo": "Nay mang theo thêm bao điều muốn kể.",
-        "voEn": "So many more stories to tell."
+        "vo": "Điều đúng ý hôm nay có thể thay đổi vào ngày mai.",
+        "voEn": "What feels right today might change tomorrow."
       },
       {
         "n": 16,
@@ -538,28 +878,28 @@ const options = [
         "pillars": [
           8
         ],
-        "scene": "Tại ghế chờ sảnh đến, một bạn mở SkyJoy rồi nghiêng điện thoại để cả nhóm cùng xem.",
-        "en": "At an arrivals seat, one friend opens SkyJoy and tilts the phone so the others can see.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
+        "scene": "Một bạn mở SkyJoy trên điện thoại. Người đi cùng nghiêng sang để xem.",
+        "en": "One friend opens SkyJoy on their phone. A companion leans over to look.",
+        "who": "M",
+        "vo": "Dù bao nhiêu lần, bạn luôn có thể bắt đầu với điều mình thích.",
+        "voEn": "However often you fly, you can always start with what you enjoy."
       },
       {
         "n": 17,
-        "visual": "exit",
+        "visual": "family",
         "pillars": [],
-        "scene": "Một bạn giữ cửa kính sảnh đến cho cả nhóm bước qua, rồi đi theo ra ngoài.",
-        "en": "One friend holds the glass arrivals door for the others, then follows them outside.",
-        "who": "T",
-        "vo": "Dịp tới, để Vietjet làm bạn bất ngờ thêm lần nữa nhé.",
-        "voEn": "Next time, let Vietjet surprise you all over again."
+        "scene": "Gia đình dừng bên cửa kính sảnh. Cậu bé đưa món đồ chơi cho mẹ rồi cả ba tiếp tục đi cùng nhau.",
+        "en": "The family pauses by the arrivals glass. The child hands his toy to his mother, and the three walk on together.",
+        "who": "M",
+        "vo": "Công thức đúng ý là công thức hợp với điều bạn cần ở lần này.",
+        "voEn": "The right recipe is the one that fits what you need, this time."
       },
       {
         "n": 18,
         "visual": "plane",
         "pillars": [],
-        "scene": "Tàu bay Vietjet xuất hiện giữa khoảng trời sáng.",
-        "en": "A Vietjet aircraft appears in a bright sky.",
+        "scene": "Tàu bay Vietjet bay qua tầng mây sáng.",
+        "en": "A Vietjet aircraft passes through bright clouds.",
         "who": "",
         "vo": "",
         "voEn": ""
@@ -589,68 +929,64 @@ const options = [
         "textEn": "Vietjet Hybrid. A fuller journey, however you fly."
       }
     ],
-    "id": 1,
-    "title": "Bạn nghĩ bay cùng Vietjet chẳng lạ gì?",
-    "sub": "Một nhóm bạn trẻ lên máy bay với cảm giác mình đã biết rõ chuyến đi sẽ thế nào. Khi hạ cánh, chiếc vali vẫn vậy, còn mỗi người đã có thêm một chuyện muốn kể.",
+    "id": 2,
+    "title": "Công thức cho một chuyến bay đúng ý?",
+    "sub": "Ba nhóm bước lên cùng một chuyến bay với ba điều khác nhau muốn dành thời gian cho. Mỗi người tự tìm ra công thức đúng ý mình.",
     "beats": [
-      "Nhận ra điều quen thuộc",
-      "Nhìn lại từ bên trong cabin",
-      "Mang xuống những chuyện muốn kể"
+      "Bắt đầu từ điều mình cần",
+      "Ba cách tận hưởng cùng một chuyến bay",
+      "Lần sau, có thể chọn khác"
     ],
     "roles": [
       [
-        "Nhóm bạn trẻ · tuyến chính",
-        "Bốn bạn từ tuyến SkyBoss của KV. Một bạn giữ chiếc vali nhãn đỏ xuyên suốt."
-      ],
-      [
-        "Tuyến bổ trợ từ KV",
-        "Gia đình trẻ ba người và cặp khách quốc tế, xuất hiện ở các hàng ghế riêng theo cấu hình duyệt."
+        "Ba tuyến KV",
+        "Nữ doanh nhân Business, gia đình trẻ ba người Eco và nhóm bốn bạn trẻ SkyBoss. Giữ đạo cụ nhận diện nhất quán cho từng tuyến."
       ],
       [
         "Người Vietjet",
-        "Nhân viên mặt đất và tiếp viên luân phiên VO. Nhân viên sân đỗ có một insert bàn giao."
+        "Nhân viên mặt đất và tiếp viên luân phiên VO. Nhân viên sân đỗ và tổ bay xuất hiện khi bàn giao."
       ]
     ],
     "sets": [
-      "Một quầy check-in, một vùng kính tại gate và một hành lang đến. Quay nhãn vali cùng cỡ cảnh ở đầu và cuối.",
-      "Cửa tàu, hàng ghế SkyBoss và các hàng ghế bổ trợ đúng cấu hình duyệt. Cần đủ lối đi cho cảnh nhặt bút.",
-      "Vali vỏ trong có nhãn đỏ gấp mép, bút chì, thẻ giấy, khay món và điện thoại."
+      "Một quầy có màn hình xoay, ghế chờ tại gate và sảnh đến có kính.",
+      "Ba cụm ghế theo các hạng đã duyệt. Chốt trước cỡ cảnh và cao độ máy để nối các mặt bàn.",
+      "Laptop, sách, đồ chơi, bản đồ gấp, khay món và UI hãng."
     ],
     "direct": [
-      "Dùng góc cận nhãn vali ở đầu và cuối phim. Trong cabin, giữ nhịp riêng của mỗi tương tác. Chừa khoảng lặng ở tiếng bút chạm sàn và tiếng cười của cậu bé.",
-      "Giữ cửa, ghế, khay và mặt bàn thật. Mở rộng lớp trời ngoài kính gate, nền sân đỗ và hero shot tàu bay. Tách hậu kỳ thay UI điện thoại."
+      "Quay cùng cỡ cảnh ở quầy và bàn gập để ba tuyến chuyển qua nhau bằng động tác đặt đồ. Dùng âm thanh riêng cho từng tuyến: khóa túi, gập laptop, mở nắp khay.",
+      "Giữ bàn gập, ghế và vật thể tương tác thật. Chốt cao độ ô cửa và hướng sáng trước để ghép lớp trời liền mạch giữa các cụm ghế."
     ],
-    "direction": "Bay lại cùng Vietjet, hơn cả điều ta mong đợi",
-    "reference": "2DQ4arfP-ls",
-    "lastGroundFrame": 4,
-    "intro": "Có những thương hiệu ta nhận ra chỉ qua một màu sắc. Nhưng nhận ra một điều quen thuộc chưa có nghĩa là đã biết hết về nó. Trên chuyến bay này, bốn người bạn mang theo chiếc vali có nhãn đỏ đã sờn. Họ đem về một hương vị quen, một lời đáp đến sớm và cả câu chuyện về một cây bút được nhặt lên đúng lúc.",
-    "angle": "Chiếc nhãn đỏ xuất hiện ở đầu và cuối phim. Giữa hai lần nhìn thấy nó, trải nghiệm đổi qua các phản ứng thật của nhóm bạn. Cú đảo nằm ở khoảnh khắc tiếp viên nhặt bút cho cậu bé, sau khi người xem đã nghĩ điều bất ngờ chỉ đến từ ghế, món ăn hay kết nối.",
-    "fit": "Dùng sắc đỏ để giữ sự nhận diện, rồi cho thấy Vietjet Hybrid qua những gì hành khách thực sự làm với thời gian trên máy bay. Lời mời bay lại đến sau khi chính nhân vật đã có lý do để nhìn Vietjet khác đi.",
-    "lastAirFrame": 13,
+    "direction": "Bạn chọn, Vietjet chiều",
+    "reference": "7H0efpS7a-c",
+    "lastGroundFrame": 6,
+    "intro": "Một chuyến bay có thể là nơi bạn khép lại công việc, cho con một buổi được ngồi gần cả ba lẫn mẹ, hay nếm thử một món trước khi đặt chân tới nơi. Ba hành trình bắt đầu ở cùng một mặt quầy và gặp nhau ở chiếc bàn gập. Những gì mỗi người đặt lên mặt bàn cho thấy điều họ muốn dành chỗ trong chuyến đi này.",
+    "angle": "Cùng một góc máy lặp lại ở mặt quầy và bàn gập. Laptop, đồ chơi và bản đồ là dấu hiệu để nhận ra ba tuyến. Khi những vật ấy đổi vị trí, khán giả hiểu mỗi người đã tự chọn nhịp cho chuyến đi ra sao.",
+    "fit": "Đây là cách thể hiện trực tiếp nhất hướng “Bạn chọn, Vietjet chiều”. Trên cùng một chuyến bay, người cần khoảng riêng, người muốn gần nhau và người thích khám phá đều có lý do riêng để chọn Vietjet. VO đặt câu hỏi về ưu tiên, còn hình ảnh cho thấy lựa chọn có ích thế nào.",
+    "lastAirFrame": 14,
     "clusters": [
       {
-        "title": "Câu hỏi mở",
+        "title": "Câu hỏi về một chuyến bay đúng ý",
         "start": 1,
         "end": 1
       },
       {
-        "title": "Dấu hiệu quen thuộc",
+        "title": "Bắt đầu từ điều mình cần",
         "start": 2,
-        "end": 4
+        "end": 5
       },
       {
-        "title": "Nhìn lại trong cabin",
-        "start": 5,
-        "end": 10
+        "title": "Khi mọi thứ vào đúng chỗ",
+        "start": 6,
+        "end": 8
       },
       {
-        "title": "Điều bất ngờ nhỏ",
-        "start": 11,
-        "end": 13
+        "title": "Mỗi người tận hưởng theo cách của mình",
+        "start": 9,
+        "end": 14
       },
       {
-        "title": "Mang chuyện xuống cùng mình",
-        "start": 14,
+        "title": "Lần sau, có thể chọn khác",
+        "start": 15,
         "end": 18
       },
       {
@@ -658,7 +994,8 @@ const options = [
         "start": 19,
         "end": 20
       }
-    ]
+    ],
+    "art": "3"
   },
   {
     "frames": [
@@ -886,7 +1223,7 @@ const options = [
         "textEn": "Vietjet Hybrid. A fuller journey, however you fly."
       }
     ],
-    "id": 2,
+    "id": 3,
     "title": "Dù là lần đầu hay lần thứ mười lăm?",
     "sub": "Người con nhận ra cái siết tay từng thuộc về mình trong bàn tay ba. Chuyến bay lần này cho cô dịp trao lại sự an tâm mà ba từng dành cho cô.",
     "beats": [
@@ -955,302 +1292,8 @@ const options = [
         "start": 19,
         "end": 20
       }
-    ]
-  },
-  {
-    "frames": [
-      {
-        "n": 1,
-        "visual": "ticket",
-        "pillars": [
-          2
-        ],
-        "scene": "Ba nhóm khách lần lượt làm thủ tục. Bên cạnh thẻ lên tàu của họ lần lượt là laptop, đồ chơi trẻ em và bản đồ gấp.",
-        "en": "Three groups check in in turn. Beside their boarding passes are a laptop, a child’s toy and a folded map.",
-        "who": "M",
-        "vo": "Theo bạn, “công thức cho một chuyến bay đúng ý” là gì?",
-        "voEn": "What’s your recipe for a flight that feels just right?"
-      },
-      {
-        "n": 2,
-        "visual": "counter",
-        "pillars": [
-          5
-        ],
-        "scene": "Nhân viên mặt đất xoay màn hình về phía hành khách để cùng xác nhận lựa chọn đã đặt.",
-        "en": "The ground agent turns the screen toward the traveller so they can confirm the booking details together.",
-        "who": "M",
-        "vo": "Hãy bắt đầu bằng điều bạn cần nhất hôm nay.",
-        "voEn": "Start with what you need most today."
-      },
-      {
-        "n": 3,
-        "visual": "seat",
-        "pillars": [],
-        "scene": "Nữ doanh nhân đóng túi laptop, đặt riêng một cuốn sách mỏng vào túi xách rồi rời quầy.",
-        "en": "The business traveller zips up her laptop bag, slips a paperback into her handbag and leaves the counter.",
-        "who": "M",
-        "vo": "Một khoảng riêng.",
-        "voEn": "A little space of your own."
-      },
-      {
-        "n": 4,
-        "visual": "family",
-        "pillars": [],
-        "scene": "Ở cổng ra tàu, cậu bé đặt đồ chơi giữa hai ghế chờ rồi nhích sát để ba mẹ cùng nhìn.",
-        "en": "At the gate, the child puts his toy between two seats and moves closer so both parents can see it.",
-        "who": "M",
-        "vo": "Một khoảng gần nhau.",
-        "voEn": "A little time together."
-      },
-      {
-        "n": 5,
-        "visual": "map",
-        "pillars": [],
-        "scene": "Một người mở bản đồ ở ghế chờ. Ba người bạn ghé lại xem địa điểm vừa được đánh dấu.",
-        "en": "One friend unfolds a map by the waiting seats. The other three lean in to see the spot they have marked.",
-        "who": "M",
-        "vo": "Hay một điều chưa từng thử?",
-        "voEn": "Or something you’ve never tried?"
-      },
-      {
-        "n": 6,
-        "visual": "crew",
-        "pillars": [
-          1
-        ],
-        "scene": "Nhân viên sân đỗ chỉ vào mục vừa kiểm tra và bàn giao thông tin cho tổ bay.",
-        "en": "An apron crew member points out a completed check and passes the information to the flight crew.",
-        "who": "M",
-        "vo": "Khi mọi thứ đã vào đúng chỗ, bạn có thể thôi nghĩ ngợi.",
-        "voEn": "When everything falls into place, you can stop worrying."
-      },
-      {
-        "n": 7,
-        "visual": "door",
-        "pillars": [
-          5
-        ],
-        "scene": "Tiếp viên xem thẻ lên tàu rồi chỉ hàng ghế để cả gia đình đi tiếp cùng nhau.",
-        "en": "A flight attendant checks the boarding passes and directs the family to their row so they can continue together.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
-      },
-      {
-        "n": 8,
-        "visual": "seats",
-        "pillars": [
-          2,
-          3
-        ],
-        "scene": "Trong cabin, ba nhóm ổn định chỗ ngồi và đặt đồ chơi, bản đồ hoặc laptop lên bàn gập của mình.",
-        "en": "In the cabin, the three groups settle into their seats and set the toy, map or laptop on their tray tables.",
-        "who": "M",
-        "vo": "Và dành chỗ cho một trải nghiệm vẹn tròn.",
-        "voEn": "And make room to enjoy the whole experience."
-      },
-      {
-        "n": 9,
-        "visual": "meal",
-        "pillars": [
-          4
-        ],
-        "scene": "Nhóm bạn dọn bản đồ sang bên để nhận khay. Một bạn nếm món, gật đầu rồi đẩy nhẹ khay cho bạn bên cạnh cùng xem.",
-        "en": "The friends move their map aside for the trays. One tastes the meal, nods and nudges the tray toward the person beside them.",
-        "who": "T",
-        "vo": "Có lần, vị giác đến nơi trước cả bạn.",
-        "voEn": "Sometimes, your taste buds get there before you do."
-      },
-      {
-        "n": 10,
-        "visual": "phone",
-        "pillars": [
-          7
-        ],
-        "scene": "Nữ doanh nhân gửi nốt tin nhắn công việc, gập laptop và mở cuốn sách đã mang theo.",
-        "en": "The business traveller sends one last work message, closes her laptop and opens the book she brought.",
-        "who": "T",
-        "vo": "Có lần, khép được một việc là mở được cả một kỳ nghỉ.",
-        "voEn": "Sometimes, wrapping up one last task is all it takes for a holiday to begin.",
-        "text": "Wi-Fi vệ tinh miễn phí",
-        "textEn": "Free satellite Wi-Fi"
-      },
-      {
-        "n": 11,
-        "visual": "seat",
-        "pillars": [
-          3
-        ],
-        "scene": "Nữ doanh nhân đọc vài dòng, để sách mở trên bàn rồi tựa lưng vào ghế Business.",
-        "en": "The business traveller reads a few lines, leaves the book open on the table and leans back in her Business seat.",
-        "who": "T",
-        "vo": "Có lần, điều quý nhất là một quãng yên tĩnh của riêng mình.",
-        "voEn": "Sometimes, what matters most is a quiet stretch of time to yourself."
-      },
-      {
-        "n": 12,
-        "visual": "window",
-        "pillars": [],
-        "scene": "Cậu bé đưa đồ chơi sát ô cửa và nhìn ra ngoài. Ba mẹ lần lượt nhìn theo con.",
-        "en": "The child holds his toy near the window and looks out. His parents follow his gaze.",
-        "who": "T",
-        "vo": "Và có lần, bạn chỉ cần có người để cùng nhìn một hướng.",
-        "voEn": "And sometimes, all you need is someone to share the view."
-      },
-      {
-        "n": 13,
-        "visual": "window",
-        "pillars": [],
-        "scene": "Trên cùng chuyến bay, nhóm bạn thưởng thức món ăn, nữ doanh nhân nghỉ ngơi và gia đình cùng nhìn mây.",
-        "en": "On the same flight, the friends enjoy their meal, the business traveller rests and the family watches the clouds.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
-      },
-      {
-        "n": 14,
-        "visual": "landing",
-        "pillars": [],
-        "scene": "Mặt đất hiện rõ dần qua ô cửa. Khi máy bay đã dừng, các hành khách thu dọn đồ cá nhân.",
-        "en": "The ground draws closer outside the window. Once the aircraft has stopped, the travellers collect their belongings.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
-      },
-      {
-        "n": 15,
-        "visual": "exit",
-        "pillars": [],
-        "scene": "Tại sảnh đến, nữ doanh nhân cất laptop xuống đáy túi và giữ cuốn sách trên tay. Nhóm bạn gấp bản đồ rồi rẽ sang lối khác.",
-        "en": "In arrivals, the business traveller puts her laptop at the bottom of her bag and keeps her book in hand. The friends fold their map and take another exit.",
-        "who": "M",
-        "vo": "Điều đúng ý hôm nay có thể thay đổi vào ngày mai.",
-        "voEn": "What feels right today might change tomorrow."
-      },
-      {
-        "n": 16,
-        "visual": "rewards",
-        "pillars": [
-          8
-        ],
-        "scene": "Một bạn mở SkyJoy trên điện thoại. Người đi cùng nghiêng sang để xem.",
-        "en": "One friend opens SkyJoy on their phone. A companion leans over to look.",
-        "who": "M",
-        "vo": "Dù bao nhiêu lần, bạn luôn có thể bắt đầu với điều mình thích.",
-        "voEn": "However often you fly, you can always start with what you enjoy."
-      },
-      {
-        "n": 17,
-        "visual": "family",
-        "pillars": [],
-        "scene": "Gia đình dừng bên cửa kính sảnh. Cậu bé đưa món đồ chơi cho mẹ rồi cả ba tiếp tục đi cùng nhau.",
-        "en": "The family pauses by the arrivals glass. The child hands his toy to his mother, and the three walk on together.",
-        "who": "M",
-        "vo": "Công thức đúng ý là công thức hợp với điều bạn cần, lần này.",
-        "voEn": "The right recipe is the one that fits what you need, this time."
-      },
-      {
-        "n": 18,
-        "visual": "plane",
-        "pillars": [],
-        "scene": "Tàu bay Vietjet bay qua tầng mây sáng.",
-        "en": "A Vietjet aircraft passes through bright clouds.",
-        "who": "",
-        "vo": "",
-        "voEn": ""
-      },
-      {
-        "n": 19,
-        "visual": "plane",
-        "pillars": [],
-        "scene": "Dòng “Bay lại, thích ngay!” xuất hiện cùng tàu bay Vietjet trên nền trời.",
-        "en": "“Enjoy flying, again!” appears beside the Vietjet aircraft against the sky.",
-        "who": "T",
-        "vo": "Bay lại, thích ngay!",
-        "voEn": "Enjoy flying, again!",
-        "text": "Bay lại, thích ngay!",
-        "textEn": "Enjoy flying, again!"
-      },
-      {
-        "n": 20,
-        "visual": "end",
-        "pillars": [],
-        "scene": "Logo Vietjet và thông điệp kết phim xuất hiện trên nền trời.",
-        "en": "The Vietjet logo and closing message appear against the sky.",
-        "who": "T",
-        "vo": "Vietjet Hybrid, Trọn vẹn mọi hành trình khác biệt.",
-        "voEn": "Vietjet Hybrid. A fuller journey, however you fly.",
-        "text": "Vietjet Hybrid, Trọn vẹn mọi hành trình khác biệt.",
-        "textEn": "Vietjet Hybrid. A fuller journey, however you fly."
-      }
     ],
-    "id": 3,
-    "title": "Công thức cho một chuyến bay đúng ý?",
-    "sub": "Ba nhóm bước lên cùng một chuyến bay với ba điều khác nhau muốn dành thời gian cho. Mỗi người tự tìm ra công thức đúng ý mình.",
-    "beats": [
-      "Bắt đầu từ điều mình cần",
-      "Ba cách tận hưởng cùng một chuyến bay",
-      "Lần sau, có thể chọn khác"
-    ],
-    "roles": [
-      [
-        "Ba tuyến KV",
-        "Nữ doanh nhân Business, gia đình trẻ ba người Eco và nhóm bốn bạn trẻ SkyBoss. Giữ đạo cụ nhận diện nhất quán cho từng tuyến."
-      ],
-      [
-        "Người Vietjet",
-        "Nhân viên mặt đất và tiếp viên luân phiên VO. Nhân viên sân đỗ và tổ bay xuất hiện khi bàn giao."
-      ]
-    ],
-    "sets": [
-      "Một quầy có màn hình xoay, ghế chờ tại gate và sảnh đến có kính.",
-      "Ba cụm ghế theo các hạng đã duyệt. Chốt trước cỡ cảnh và cao độ máy để nối các mặt bàn.",
-      "Laptop, sách, đồ chơi, bản đồ gấp, khay món và UI hãng."
-    ],
-    "direct": [
-      "Quay cùng cỡ cảnh ở quầy và bàn gập để ba tuyến chuyển qua nhau bằng động tác đặt đồ. Dùng âm thanh riêng cho từng tuyến: khóa túi, gập laptop, mở nắp khay.",
-      "Giữ bàn gập, ghế và vật thể tương tác thật. Chốt cao độ ô cửa và hướng sáng trước để ghép lớp trời liền mạch giữa các cụm ghế."
-    ],
-    "direction": "Bạn chọn, Vietjet chiều",
-    "reference": "7H0efpS7a-c",
-    "lastGroundFrame": 6,
-    "intro": "Một chuyến bay có thể là nơi bạn khép lại công việc, cho con một buổi được ngồi gần cả ba lẫn mẹ, hay nếm thử một món trước khi đặt chân tới nơi. Ba hành trình bắt đầu ở cùng một mặt quầy và gặp nhau ở chiếc bàn gập. Những gì mỗi người đặt lên mặt bàn cho thấy điều họ muốn dành chỗ trong chuyến đi này.",
-    "angle": "Cùng một góc máy lặp lại ở mặt quầy và bàn gập. Laptop, đồ chơi và bản đồ là dấu hiệu để nhận ra ba tuyến. Khi những vật ấy đổi vị trí, khán giả hiểu mỗi người đã tự chọn nhịp cho chuyến đi ra sao.",
-    "fit": "Đây là cách thể hiện trực tiếp nhất hướng “Bạn chọn, Vietjet chiều”. Trên cùng một chuyến bay, người cần khoảng riêng, người muốn gần nhau và người thích khám phá đều có lý do riêng để chọn Vietjet. VO đặt câu hỏi về ưu tiên, còn hình ảnh cho thấy lựa chọn có ích thế nào.",
-    "lastAirFrame": 14,
-    "clusters": [
-      {
-        "title": "Câu hỏi về một chuyến bay đúng ý",
-        "start": 1,
-        "end": 1
-      },
-      {
-        "title": "Bắt đầu từ điều mình cần",
-        "start": 2,
-        "end": 5
-      },
-      {
-        "title": "Khi mọi thứ vào đúng chỗ",
-        "start": 6,
-        "end": 8
-      },
-      {
-        "title": "Mỗi người tận hưởng theo cách của mình",
-        "start": 9,
-        "end": 14
-      },
-      {
-        "title": "Lần sau, có thể chọn khác",
-        "start": 15,
-        "end": 18
-      },
-      {
-        "title": "Lời mời bay lại",
-        "start": 19,
-        "end": 20
-      }
-    ]
+    "art": "2"
   }
 ];
 </script>
@@ -1261,11 +1304,12 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const who=v=>v==='M'?'Nhân viên mặt đất':'Tiếp viên';
 const no=v=>String(v).padStart(2,'0');
 const bounds=o=>[[1,o.lastGroundFrame],[o.lastGroundFrame+1,o.lastAirFrame],[o.lastAirFrame+1,20]];
-const phase=(f,o)=>bounds(o).findIndex(([start,end])=>f.n>=start&&f.n<=end)+1;
+const phase=(f,o)=>f.phase?phaseLabels.indexOf(f.phase)+1:bounds(o).findIndex(([start,end])=>f.n>=start&&f.n<=end)+1;
 const phaseLabels=['Mặt đất','Cabin và trên không','Điểm đến và kết'];
 let subtitleLanguage='vi';
 const nav=document.getElementById('options'), board=document.getElementById('board');
 const treatmentRefs = ['pnoe9DTgV5w', 'u7okYb2G-GM'];
+const priorityOptionId = 3;
 const campaignRef = 'kij3n1iikKc';
 const hero = document.querySelector('.hero');
 const jumps = document.querySelector('.jump');
@@ -1293,39 +1337,52 @@ function currentHash(){
  if(option) return [Number(option[1]),option[2]==='quote'?'production-plan':option[2]];
  return [pages.find(page=>page[2]===hash)?.[0]??0];
 }
-function videoRef(id,title){
- return `<div class="videoRef"><div class="videoStage"><button class="videoPlay" type="button" data-video="${id}" data-title="${esc(title)}"><span aria-hidden="true">▶</span> Phát video tham khảo</button></div><a class="videoLink" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" aria-label="${esc('Mở trên YouTube · '+title)}">Mở trên YouTube ↗</a></div>`;
+const videoPlatforms = {
+ YouTube:{embed:'https://www.youtube-nocookie.com/embed/',watch:'https://www.youtube.com/watch?v='},
+ Vimeo:{embed:'https://player.vimeo.com/video/',watch:'https://vimeo.com/'}
+};
+
+function videoRef(id,title,platform='YouTube'){
+ const {watch}=videoPlatforms[platform];
+ return `<div class="videoRef"><div class="videoStage">
+ <button class="videoPlay" type="button" data-video="${id}" data-platform="${platform}" data-title="${esc(title)}" aria-label="${esc('Phát video · '+title)}">
+ <img src="media/video-thumbs/${id}.webp" alt="" width="640" height="360" loading="lazy" decoding="async" data-optional-image><span class="playIcon" aria-hidden="true">▶</span></button></div>
+ <a class="videoLink" href="${watch}${id}" target="_blank" rel="noopener noreferrer" aria-label="${esc(title+' · Mở trên '+platform)}">Mở trên ${platform} ↗</a></div>`;
 }
 function manifestoOverall(){
  return `<section id="manifesto" class="section proposalPage">
  ${proposalHeader('Manifesto Film Overall','Ba cách kể cùng đưa người xem từ mặt đất lên bầu trời. Nhân viên mặt đất và tiếp viên dẫn chuyện để trải nghiệm Vietjet Hybrid hiện lên qua lựa chọn và khoảnh khắc được chăm sóc của hành khách.','manifesto-title')}
- <div class="proposalTriple"><article class="panel"><h3>Thông điệp</h3><p>“Bay lại, thích ngay!” khơi lại niềm thích bay. “Trọn vẹn mọi hành trình khác biệt” đi vào những điều mỗi hành khách muốn tận hưởng.</p></article><article class="panel"><h3>Mạch kể</h3><p>Hành trình bắt đầu ở nhà ga, đi qua không gian cabin và nối tiếp sau khi hạ cánh. Hai giọng kể đồng hành cùng các tuyến nhân vật xuyên suốt.</p></article><article class="panel"><h3>Định dạng phim</h3><p>Master 60 giây, phiên bản 30 và 15 giây. Kịch bản hình ảnh, lời dẫn và phụ đề được phát triển bằng tiếng Việt và tiếng Anh.</p></article></div>
- <div class="campaignMood panel"><div><span class="kicker">Reference chung / Tone &amp; mood</span><h3>Tinh thần và nhịp phim</h3><p>Hình ảnh cinematic, ấm và cao cấp (premium) kết hợp với nhịp phim trẻ trung, năng động, hiện đại và giàu cảm hứng, mang đậm tinh thần Vietjet. Option 01 tăng nhịp từ quen thuộc đến bất ngờ, Option 02 dành khoảng lắng cho câu chuyện gia đình, còn Option 03 đan xen ba cách tận hưởng cùng một chuyến bay.</p><p>Hai giọng VO của nhân viên mặt đất và tiếp viên nối liền hành trình. Các trải nghiệm Hybrid hiện lên qua hành động, không gian và chi tiết phục vụ.</p></div>${videoRef(campaignRef,'Tone & mood chung của chiến dịch')}</div>
+ <div class="proposalTriple"><article class="panel"><h3>Thông điệp</h3><p>“Bay lại, thích ngay!” khơi lại niềm yêu thích bay. “Trọn vẹn mọi hành trình khác biệt” đi vào những điều mỗi hành khách muốn tận hưởng.</p></article><article class="panel"><h3>Mạch kể</h3><p>Hành trình bắt đầu ở nhà ga, đi qua không gian cabin và nối tiếp sau khi hạ cánh. Hai giọng kể đồng hành cùng các tuyến nhân vật xuyên suốt.</p></article><article class="panel"><h3>Định dạng phim</h3><p>Master 60 giây, phiên bản 30 và 15 giây. Kịch bản hình ảnh, lời dẫn và phụ đề được phát triển bằng tiếng Việt và tiếng Anh.</p></article></div>
+ <div class="campaignMood panel"><div><span class="kicker">Reference chung / Tone &amp; mood</span><h3>Tinh thần và nhịp phim</h3><p>Hình ảnh cinematic, ấm và cao cấp (premium) kết hợp với nhịp phim trẻ trung, năng động, hiện đại và giàu cảm hứng, mang đậm tinh thần Vietjet. Option 01 chuyển nhịp theo ba chặng đời của một cô gái. Option 02 đan xen ba cách tận hưởng trên cùng chuyến bay. Option 03 giữ khoảng lắng cho câu chuyện cha con.</p><p>Hai giọng VO của nhân viên mặt đất và tiếp viên nối liền hành trình. Các trải nghiệm Hybrid hiện lên qua hành động, không gian và chi tiết phục vụ.</p></div>${videoRef(campaignRef,'Tone & mood chung của chiến dịch')}</div>
  <section class="section visualDirection" aria-labelledby="visual-direction"><div class="sectionHeader"><div><span class="kicker">Định hướng hình ảnh</span><h2 id="visual-direction">Visual Direction</h2><p>Giữ tinh thần Vietjet trẻ trung, hiện đại và vui tươi. Ánh sáng, chất liệu và bố cục được tinh chỉnh để hình ảnh thêm sang trọng, cao cấp và mới mẻ, vẫn gần gũi với hành khách.</p></div></div>
  <div class="stillGrid">${Array.from({length:10},(_,i)=>`<figure class="stillTile"><img src="media/visual-direction/${no(i+1)}.webp" alt="Tham chiếu hình ảnh ${no(i+1)}" loading="lazy" decoding="async"><figcaption>${no(i+1)}</figcaption></figure>`).join('')}</div></section>
  ${manifestoComparison()}
  <div class="sectionHeader optionHeading"><div><span class="kicker">Ba cách kể</span><h2>Khám phá từng option</h2></div></div>
- <div class="overviewOptions">${options.map(o=>`<a class="panel overviewOption" href="#op${o.id}-overview"><span class="kicker">Option ${no(o.id)}</span><h3>${esc(o.title)}</h3><p><strong>${esc(o.direction)}</strong></p><p>${esc(o.sub)}</p><span class="optionLink">Xem storyboard và VO →</span></a>`).join('')}</div>
+ <div class="overviewOptions">${options.map(o=>`<a class="panel overviewOption${o.id===priorityOptionId?' isPriority':''}" href="#op${o.id}-overview"><span class="kicker">Option ${no(o.id)}${o.id===priorityOptionId?' · Đề xuất ưu tiên':''}</span><h3>${esc(o.title)}</h3><p><strong>${esc(o.direction)}</strong></p><p>${esc(o.sub)}</p><span class="optionLink">Xem storyboard và VO →</span></a>`).join('')}</div>
  </section>`;
 }
 function chapter(o,i){
- const [start,end]=bounds(o)[i];
+ const [start,end]=(o.chapterRanges??bounds(o))[i];
  return `<article class="chapter"><div><span class="kicker">Chặng ${no(i+1)}</span><h3>${esc(o.beats[i])}</h3><small>Frame ${no(start)}–${no(end)}</small></div></article>`;
 }
-function frameImagePath(optionId,n){
- return `media/frames/${optionId}/F${no(n)}.webp`;
+function frameImagePath(art,n){
+ return `media/frames/${art}/F${no(n)}.webp`;
+}
+function storyboardImage(art,f){
+ const image=`<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(names[f.visual])}" loading="lazy" decoding="async"${art==='bay-lai'?' data-optional-image':''}>`;
+ return art==='bay-lai'?`<div class="pendingFrame"><span>Ảnh minh họa sẽ được bổ sung</span>${image}</div>`:image;
 }
 function storyboardOverall(o){
- return `<section class="section" id="storyboard" aria-labelledby="storyboard-title"><div class="sectionHeader"><div><span class="kicker">Storyboard</span><h2 id="storyboard-title">Storyboard Overall</h2><p>Xem mạch hình ảnh của option từ F01 đến F20.</p></div></div>
- <div class="stillGrid">${o.frames.map(f=>`<figure class="stillTile"><img src="${frameImagePath(o.id,f.n)}" alt="F${no(f.n)} · ${esc(names[f.visual])}" loading="lazy" decoding="async"><figcaption>F${no(f.n)}</figcaption></figure>`).join('')}</div></section>`;
+ return `<section class="section" id="storyboard" aria-labelledby="storyboard-title"><div class="sectionHeader"><div><span class="kicker">Storyboard</span><h2 id="storyboard-title">Storyboard Overall</h2><p>Xem mạch hình ảnh của option từ F01 đến F20.${o.id===1?' Ảnh minh họa sẽ được bổ sung sau.':''}</p></div></div>
+ <div class="stillGrid">${o.frames.map(f=>`<figure class="stillTile">${storyboardImage(o.art,f)}<figcaption>F${no(f.n)}</figcaption></figure>`).join('')}</div></section>`;
 }
-function frame(f,optionId){
+function frame(f,art){
  const heading=names[f.visual];
  const english=subtitleLanguage==='en';
  const screen=english?f.textEn:f.text;
  const subtitle=english?f.voEn:f.vo;
  const caption=subtitleLanguage!=='off' && subtitle && subtitle!==screen;
- return `<article class="frame" id="frame-${f.n}"><figure class="framePreview"><img class="frameImage" src="${frameImagePath(optionId,f.n)}" alt="Hình minh họa F${no(f.n)} · ${esc(heading)}" loading="lazy" decoding="async">${screen||caption?`<figcaption class="frameCopy" lang="${english?'en':'vi'}">${screen?`<span class="screenText">${esc(screen)}</span>`:''}${caption?`<span class="caption">${esc(subtitle)}</span>`:''}</figcaption>`:''}</figure><div class="frameBody"><header class="frameTitle"><div class="frameMeta"><span>F${no(f.n)}</span></div><h3>${esc(heading)}</h3></header><p class="picture">${esc(f.scene)}</p><p class="translation" lang="en">${esc(f.en)}</p>${f.text?`<div class="supers"><span class="label">TEXT hiển thị / On-screen text</span><p>${esc(f.text)}</p><p class="translation" lang="en">${esc(f.textEn)}</p></div>`:''}${f.vo?`<div class="vo"><span class="label">VO / Phụ đề · ${who(f.who)}</span><p>${esc(f.vo)}</p><p class="translation" lang="en">${esc(f.voEn)}</p></div>`:`<p class="noVo">Nhạc và âm thanh / Music &amp; sound</p>`}${f.pillars.length?`<div class="tags">${f.pillars.map(p=>`<span class="tag">${p} · ${esc(pillars[p-1])}</span>`).join('')}</div>`:''}</div></article>`;
+ return `<article class="frame" id="frame-${f.n}"><figure class="framePreview">${storyboardImage(art,f)}${screen||caption?`<figcaption class="frameCopy" lang="${english?'en':'vi'}">${screen?`<span class="screenText">${esc(screen)}</span>`:''}${caption?`<span class="caption">${esc(subtitle)}</span>`:''}</figcaption>`:''}</figure><div class="frameBody"><header class="frameTitle"><div class="frameMeta"><span>F${no(f.n)}</span></div><h3>${esc(heading)}</h3></header><p class="picture">${esc(f.scene)}</p><p class="translation" lang="en">${esc(f.en)}</p>${f.text?`<div class="supers"><span class="label">TEXT hiển thị / On-screen text</span><p>${esc(f.text)}</p><p class="translation" lang="en">${esc(f.textEn)}</p></div>`:''}${f.vo?`<div class="vo"><span class="label">VO / Phụ đề · ${who(f.who)}</span><p>${esc(f.vo)}</p><p class="translation" lang="en">${esc(f.voEn)}</p></div>`:`<p class="noVo">Nhạc và âm thanh / Music &amp; sound</p>`}${f.pillars.length?`<div class="tags">${f.pillars.map(p=>`<span class="tag">${p} · ${esc(pillars[p-1])}</span>`).join('')}</div>`:''}</div></article>`;
 }
 function frameRange({start,end}){
  return start===end?`F${no(start)}`:`F${no(start)}–F${no(end)}`;
@@ -1353,13 +1410,15 @@ function redraw(o){
  document.getElementById('count').textContent=`${filtered.length}/${o.frames.length} frame · Khung hiển thị 16:9`;
  document.getElementById('grid').innerHTML=filtered.length?o.clusters.map((cluster,i)=>{
    const cards=clusterFrames(filtered,cluster);
-   return cards.length?`<section class="frameCluster"><div class="clusterHeader"><span class="kicker">Cụm ${no(i+1)} · ${frameRange(cluster)}</span><h3>${esc(cluster.title)}</h3></div><div class="grid">${cards.map(f=>frame(f,o.id)).join('')}</div></section>`:'';
+   return cards.length?`<section class="frameCluster"><div class="clusterHeader"><span class="kicker">Cụm ${no(i+1)} · ${frameRange(cluster)}</span><h3>${esc(cluster.title)}</h3></div><div class="grid">${cards.map(f=>frame(f,o.art)).join('')}</div></section>`:'';
  }).join(''):'<p class="empty">Chưa có frame cho bộ lọc này. Chọn chặng khác hoặc xem toàn bộ.</p>';
 }
 function render(id,where){
  active=id;
  const o=options.find(option=>option.id===id);
- nav.innerHTML=pages.map(([key,label])=>`<button type="button" class="opt" data-option="${key}" aria-pressed="${key===id}">${esc(label)}</button>`).join('');
+ nav.innerHTML=pages.map(([key,label])=>`<button type="button" class="opt" data-option="${key}" ${key===priorityOptionId?'data-priority aria-label="Option 03 · Đề xuất ưu tiên"':''} aria-pressed="${key===id}">${esc(label)}</button>`).join('');
+ const selectedTab=nav.querySelector('[aria-pressed=true]');
+ if(selectedTab.offsetLeft<nav.scrollLeft||selectedTab.offsetLeft+selectedTab.offsetWidth>nav.scrollLeft+nav.clientWidth) nav.scrollLeft=selectedTab.offsetLeft;
  hero.hidden=id!==0;
  jumps.hidden=!o;
  if(!o){
@@ -1367,14 +1426,14 @@ function render(id,where){
    if(where) scrollToSection(where);
    return;
  }
- board.innerHTML=`<section class="intro" id="overview"><div><div class="kicker">Option ${no(id)} / Storyboard tổng thể</div><div class="briefDirection">${esc(o.direction)}</div><h2>${esc(o.title)}</h2><p class="lead">${esc(o.sub)}</p></div><div class="timing"><strong>Master 60s · Storyboard</strong><p>20 frame · VO và phụ đề Việt/Anh. Nhịp dựng sẽ được xác định sau khi đọc thử VO và dựng animatic.</p></div></section>
+ board.innerHTML=`<section class="intro${id===priorityOptionId?' priorityIntro':''}" id="overview"><div><div class="kicker">Option ${no(id)}${id===priorityOptionId?' · Đề xuất ưu tiên':' / Storyboard tổng thể'}</div><div class="briefDirection">${esc(o.direction)}</div><h2>${esc(o.title)}</h2><p class="lead">${esc(o.sub)}</p></div><div class="timing"><strong>Master 60s · Storyboard</strong><p>20 frame · VO và phụ đề Việt/Anh. Nhịp dựng sẽ được xác định sau khi đọc thử VO và dựng animatic.</p></div></section>
  <section class="panel optionStory"><span class="kicker">Dẫn nhập</span><p>${esc(o.intro)}</p></section>
  <aside class="panel optionRationale"><h3>Vì sao option này đặc biệt?</h3><div class="rationaleGrid"><div><h4>Điểm tiếp cận</h4><p>${esc(o.angle)}</p></div><div><h4>Vì sao phù hợp với phim tái định vị Vietjet Hybrid</h4><p>${esc(o.fit)}</p></div></div></aside>
  <div class="chapterGrid">${o.beats.map((_,i)=>chapter(o,i)).join('')}</div>
- <section class="panel campaignMood optionRef"><div><span class="kicker">Reference / Option ${no(id)}</span><h3>Nhịp điệu, tone &amp; mood</h3><p>Video tham khảo cho cách kể và nhịp dựng của option này.</p></div>${videoRef(o.reference, 'Option '+no(id)+' · Nhịp điệu, tone & mood')}</section>
+ ${o.reference?`<section class="panel campaignMood optionRef"><div><span class="kicker">Reference / Option ${no(id)}</span><h3>Nhịp điệu, tone &amp; mood</h3><p>Video tham khảo cho cách kể và nhịp dựng của option này.</p></div>${videoRef(o.reference, 'Option '+no(id)+' · Nhịp điệu, tone & mood')}</section>`:''}
  ${script(o)}
  ${storyboardOverall(o)}
- <section class="section" id="frames"><div class="sectionHeader"><div><span class="kicker">Shot breakdown</span><h2>Frame by Frame</h2><p id="count" aria-live="polite"></p></div><div class="controls"><label class="sr-only" for="phase">Lọc theo chặng</label><select id="phase"><option value="0">Mọi chặng</option>${bounds(o).map(([start,end],i)=>`<option value="${i+1}">${phaseLabels[i]} · F${no(start)}–${no(end)}</option>`).join('')}</select><label class="sr-only" for="pillar">Lọc theo trụ cột</label><select id="pillar"><option value="0">Tất cả trụ cột</option>${pillars.map((p,i)=>`<option value="${i+1}">${i+1}. ${esc(p)}</option>`).join('')}</select><label class="sr-only" for="subtitles">Phụ đề xem trước</label><select id="subtitles"><option value="vi">Phụ đề Việt</option><option value="en">English subtitles</option><option value="off">Ẩn phụ đề</option></select></div></div><div id="grid"></div></section>
+ <section class="section" id="frames"><div class="sectionHeader"><div><span class="kicker">Shot breakdown</span><h2>Frame by Frame</h2><p id="count" aria-live="polite"></p></div><div class="controls"><label class="sr-only" for="phase">Lọc theo chặng</label><select id="phase"><option value="0">Mọi chặng</option>${phaseLabels.map((label,i)=>`<option value="${i+1}">${label}</option>`).join('')}</select><label class="sr-only" for="pillar">Lọc theo trụ cột</label><select id="pillar"><option value="0">Tất cả trụ cột</option>${pillars.map((p,i)=>`<option value="${i+1}">${i+1}. ${esc(p)}</option>`).join('')}</select><label class="sr-only" for="subtitles">Phụ đề xem trước</label><select id="subtitles"><option value="vi">Phụ đề Việt</option><option value="en">English subtitles</option><option value="off">Ẩn phụ đề</option></select></div></div><div id="grid"></div></section>
  ${optionTreatment(o)}
  ${productionPlan(o)}`;
  document.getElementById('subtitles').value=subtitleLanguage;
@@ -1431,12 +1490,13 @@ board.addEventListener('click',e=>{
  if(optionLink&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){
    e.preventDefault();
    navigate(Number(optionLink.hash[3]),'overview');
+   nav.querySelector('[aria-pressed=true]').focus({preventScroll:true});
    return;
  }
  const play=e.target.closest('[data-video]');
  if(!play) return;
  const player=document.createElement('iframe');
- player.src='https://www.youtube-nocookie.com/embed/'+play.dataset.video+'?autoplay=1';
+ player.src=videoPlatforms[play.dataset.platform].embed+play.dataset.video+'?autoplay=1';
  player.title=play.dataset.title;
  player.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
  player.allowFullscreen=true;
@@ -1450,6 +1510,9 @@ window.addEventListener('popstate',()=>{
  if(!section&&(id===0||id>=5)) window.scrollTo({top:0});
 });
 const initial=currentHash();
+board.addEventListener('error',event=>{
+ if(event.target.matches('img[data-optional-image]')) event.target.hidden=true;
+},true);
 render(...initial);
 </script>
 </body>
