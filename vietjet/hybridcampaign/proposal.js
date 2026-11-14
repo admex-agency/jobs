@@ -155,13 +155,21 @@ function pillarsAndCharacters() {
 
 const keyVisualOptions = [
  {
-  title:'Bốn không gian trải nghiệm liên thông',
-  demo:{file:'option-01-main.webp',width:2048,height:1152,alt:'Hành khách bước qua cửa tàu bay, giữa bốn khoảnh khắc trải nghiệm trong cabin Vietjet.'},
-  intent:'Bốn trải nghiệm cùng tạo thành một hành trình đúng ý. Trong cùng một hãng bay, mỗi hành khách có thể tìm thấy không gian, món ăn, sự chăm sóc và kết nối phù hợp.',
-  layout:['Bốn không gian gồm cabin hiện đại, ẩm thực nóng tươi, phục vụ tận tâm và kết nối điểm đến. Mỗi không gian có một tương tác chính của hành khách.',
-   'Tàu bay Vietjet hội tụ ở trung tâm. Đường nét cabin, ô cửa hoặc dải chuyển động nối các không gian. Hành khách sử dụng thiết bị, với tín hiệu Wi-Fi tiết chế.',
-   'Headline nằm ở khoảng trống trung tâm, kết nối bố cục và giữ khả năng đọc.'],
-  treatment:'Phối cảnh đa chiều, kết hợp góc cao và góc thấp. Dùng góc rộng có kiểm soát để giữ dáng người và sản phẩm tự nhiên. Ánh sáng rõ, màu sắc có chọn lọc và giàu tính thời trang.',
+  title:'Khoảnh khắc đáng tận hưởng',
+  demo:{file:'option-03-main.webp',width:2000,height:1125,alt:'Phi hành đoàn Vietjet bước giữa khoang máy bay, hai bên là hành khách dùng bữa và làm việc.'},
+  detailsUrl:'https://drive.google.com/file/d/1GmLeeRGFOHj2iE3_6JZjQ49CuhbWq47A/view?usp=sharing',
+  subVisualPrefix:'option-03',
+  subVisualSize:{width:1920,height:1080},
+  subVisuals:[
+   ['sub-01','Sân bay'],
+   ['sub-02','Website'],
+   ['sub-03','Mạng xã hội']
+  ],
+  intent:'Đưa người xem đến gần cảm giác được quan tâm qua một khoảnh khắc thư giãn, thưởng thức món nóng và tương tác tự nhiên với tiếp viên.',
+  layout:['Một hành khách và một tiếp viên làm trọng tâm. Mở một phần cabin giữa biển mây, giữ đúng ghế, bàn và vật dụng Vietjet.',
+   'Thiết bị cá nhân gợi khả năng kết nối trên không. Tàu bay và điểm đến nằm ở hậu cảnh để đặt khoảnh khắc vào hành trình.',
+   'Bộ KV trụ cột có thể đổi nhân vật, hành động và sản phẩm trong cùng cấu trúc lấy con người làm trung tâm.'],
+  treatment:'Góc ngang hoặc hơi thấp, khung có chiều sâu và khoảng thở. Golden hour trong trẻo, da người tự nhiên, mây mềm và sắc ấm. Tập trung ánh mắt, cử chỉ và chất liệu.',
   priority:[3,4,5,6]
  },
  {
@@ -184,49 +192,14 @@ const keyVisualOptions = [
   priority:[1,2,4,6,7]
  },
  {
-  title:'Khoảnh khắc đáng tận hưởng',
-  demo:{file:'option-03-main.webp',width:2000,height:1125,alt:'Phi hành đoàn Vietjet bước giữa khoang máy bay, hai bên là hành khách dùng bữa và làm việc.'},
-  detailsUrl:'https://drive.google.com/file/d/1GmLeeRGFOHj2iE3_6JZjQ49CuhbWq47A/view?usp=sharing',
-  subVisualSize:{width:1920,height:1080},
-  subVisuals:[
-   ['sub-01','Sân bay'],
-   ['sub-02','Website'],
-   ['sub-03','Mạng xã hội']
-  ],
-  intent:'Đưa người xem đến gần cảm giác được quan tâm qua một khoảnh khắc thư giãn, thưởng thức món nóng và tương tác tự nhiên với tiếp viên.',
-  layout:['Một hành khách và một tiếp viên làm trọng tâm. Mở một phần cabin giữa biển mây, giữ đúng ghế, bàn và vật dụng Vietjet.',
-   'Thiết bị cá nhân gợi khả năng kết nối trên không. Tàu bay và điểm đến nằm ở hậu cảnh để đặt khoảnh khắc vào hành trình.',
-   'Bộ KV trụ cột có thể đổi nhân vật, hành động và sản phẩm trong cùng cấu trúc lấy con người làm trung tâm.'],
-  treatment:'Góc ngang hoặc hơi thấp, khung có chiều sâu và khoảng thở. Golden hour trong trẻo, da người tự nhiên, mây mềm và sắc ấm. Tập trung ánh mắt, cử chỉ và chất liệu.',
+  title:'Bốn không gian trải nghiệm liên thông',
+  demo:{file:'option-01-main.webp',width:2048,height:1152,alt:'Hành khách bước qua cửa tàu bay, giữa bốn khoảnh khắc trải nghiệm trong cabin Vietjet.'},
+  intent:'Bốn trải nghiệm cùng tạo thành một hành trình đúng ý. Trong cùng một hãng bay, mỗi hành khách có thể tìm thấy không gian, món ăn, sự chăm sóc và kết nối phù hợp.',
+  layout:['Bốn không gian gồm cabin hiện đại, ẩm thực nóng tươi, phục vụ tận tâm và kết nối điểm đến. Mỗi không gian có một tương tác chính của hành khách.',
+   'Tàu bay Vietjet hội tụ ở trung tâm. Đường nét cabin, ô cửa hoặc dải chuyển động nối các không gian. Hành khách sử dụng thiết bị, với tín hiệu Wi-Fi tiết chế.',
+   'Headline nằm ở khoảng trống trung tâm, kết nối bố cục và giữ khả năng đọc.'],
+  treatment:'Phối cảnh đa chiều, kết hợp góc cao và góc thấp. Dùng góc rộng có kiểm soát để giữ dáng người và sản phẩm tự nhiên. Ánh sáng rõ, màu sắc có chọn lọc và giàu tính thời trang.',
   priority:[3,4,5,6]
- },
- {
-  title:'Dấu phẩy giữa trời mây',
-  intent:'Dấu phẩy trong “Bay lại, thích ngay!” đánh dấu nhịp chuyển sang trải nghiệm Vietjet Hybrid. “Bay lại, thích ngay!” mời những người từng bay quay trở lại. “Bay, lại thích ngay!” là lời hẹn để mỗi hành khách có thêm lý do chọn Vietjet cho chuyến sau.',
-  demo:{file:'option-04-main.webp',width:3840,height:2160,alt:'Hành khách và phi hành đoàn bước trên sàn hình dấu phẩy nổi giữa biển mây, với tàu bay Vietjet phía trên.'},
-  details:'Option 04 - Diễn giải ý tưởng.pdf',
-  subVisuals:[
-   ['service','Dịch vụ từ trái tim'],
-   ['cuisine','Ẩm thực nóng tươi'],
-   ['network','Mạng bay rộng khắp'],
-   ['wifi-work','Kết nối và giải trí · Văn phòng trên mây'],
-   ['wifi-home','Kết nối và giải trí · Gọi về nhà'],
-   ['wifi-cloud','Kết nối và giải trí · Sóng mây']
-  ],
-  layout:['Trong Main KV, dấu phẩy trở thành sàn diễn giữa biển mây. Gia đình, cặp đôi lớn tuổi và nhóm khách trẻ bước cùng phi hành đoàn, với tàu bay Vietjet lướt song hành.',
-   'Sáu Sub KV dùng chung sàn dấu phẩy để kể từng trải nghiệm, từ dịch vụ, món nóng và mạng bay đến ba cách thể hiện kết nối trên không.'],
-  treatment:'Sàn màu kem viền đỏ Vietjet nổi trên biển mây hoàng hôn. Đầu tròn, nét lõm và đuôi vuốt nhọn giữ hình dáng dấu phẩy dễ nhận ra xuyên suốt bộ KV.',
-  priority:[5,4,6,7]
- },
- {
-  title:'Đôi cánh nâng tầm trải nghiệm',
-  intent:'Vietjet Hybrid nâng đỡ những mong đợi khác nhau bằng cùng một nền tảng vận hành và sự tận tâm, thể hiện “Trọn vẹn mọi hành trình khác biệt”.',
-  layout:['Tàu bay trực diện, hơi chếch từ dưới lên. Tám cụm trải nghiệm đặt dọc theo hai cánh, với cabin, món nóng, tiếp viên và Wi-Fi nổi bật.',
-   'Vận hành, lựa chọn, mạng bay và SkyJoy bổ sung lớp nền. Các đường ánh sáng nối các cụm với thân tàu bay.',
-   'Headline nằm phía trên thân tàu bay, giữ vùng nhận diện trung tâm rõ ràng.'],
-  treatment:'Bố cục ngang cân bằng hai bên, kích thước cụm linh hoạt. Các lớp không gian trên đôi cánh kết hợp cảm giác hiện đại của tàu bay và sự ấm áp của con người. Đỏ và vàng nổi trên nền trời trong.',
-  priority:[3,4,5,6],
-  allPillars:true
  }
 ];
 
@@ -241,15 +214,16 @@ function keyVisualDemo(option, number) {
 function keyVisualGallery(option, number) {
  const titleId=`kv-${number}-sub-title`;
  const {width,height}=option.subVisualSize??{width:3840,height:2160};
+ const prefix=option.subVisualPrefix??`option-${no(number)}`;
  return `<section class="kvSubVisuals" aria-labelledby="${titleId}"><h4 id="${titleId}">Sub KV</h4><div class="kvSubGrid">${option.subVisuals.map(([file,label])=>{
-  const src=`media/key-visual/option-${no(number)}-${file}.webp`;
+  const src=`media/key-visual/${prefix}-${file}.webp`;
   return `<figure><a href="${src}" target="_blank" rel="noopener" aria-label="${esc('Mở ảnh Sub KV · '+label)}"><img src="${src}" alt="" width="${width}" height="${height}" loading="lazy" decoding="async"></a><figcaption>${esc(label)}</figcaption></figure>`;
  }).join('')}</div></section>`;
 }
 
 function keyVisual() {
  return `<section class="section proposalPage" id="key-visual">
- ${proposalHeader('Key Visual','Năm hướng bố cục chuyển hóa Master Concept “Bay lại, thích ngay!” và Key Message “Trọn vẹn mọi hành trình khác biệt” thành những trải nghiệm nhìn thấy được.','kv-title')}
+ ${proposalHeader('Key Visual','Ba hướng bố cục chuyển hóa Master Concept “Bay lại, thích ngay!” và Key Message “Trọn vẹn mọi hành trình khác biệt” thành những trải nghiệm nhìn thấy được.','kv-title')}
  <nav class="kvJump" aria-label="Phương án Key Visual">${keyVisualOptions.map((o,i)=>`<a href="#kv-${i+1}">Option ${no(i+1)}</a>`).join('')}</nav>
  ${keyVisualOptions.map((o,i)=>`<article class="proposalBlock kvOption" id="kv-${i+1}">
  <span class="kicker">KV Option ${no(i+1)}</span><h3>${esc(o.title)}</h3><span class="kicker">Creative Intent</span><p class="kvIntent">${esc(o.intent)}</p>
