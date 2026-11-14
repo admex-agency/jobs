@@ -1400,7 +1400,8 @@ function chapter(o,i){
  return `<article class="chapter"><div><span class="kicker">Chặng ${no(i+1)}</span><h3>${esc(o.beats[i])}</h3><small>Frame ${no(start)}–${no(end)}</small></div></article>`;
 }
 function frameImagePath(art,n){
- return `media/frames/${art}/F${no(n)}.webp`;
+ const version=(art==="2"||art==="3")?"?v=20261115-film-stills":"";
+ return `media/frames/${art}/F${no(n)}.webp${version}`;
 }
 function storyboardImage(art,f){
  return `<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(f.title??names[f.visual])}" loading="lazy" decoding="async">`;
