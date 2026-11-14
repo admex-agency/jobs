@@ -63,9 +63,7 @@ h3{line-height:1.32}
 .stillTile{overflow:hidden;min-width:0;border:1px solid var(--line);border-radius:9px;background:var(--cream)}
 .stillTile img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#26191d}
 .stillTile figcaption{padding:5px 9px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.07em}
-.pendingFrame{position:relative;display:grid;place-items:center;aspect-ratio:16/9;background:#f7e7e3;color:#7a303b;font-size:13px;text-align:center}
-.pendingFrame img{position:absolute;inset:0;height:100%}
-.pendingFrame img[hidden],.videoPlay img[hidden]{display:none}
+.videoPlay img[hidden]{display:none}
 .visualDirection .sectionHeader p{max-width:720px}
 @media(max-width:850px){.stillGrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:640px){.stillGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
@@ -1405,11 +1403,10 @@ function frameImagePath(art,n){
  return `media/frames/${art}/F${no(n)}.webp`;
 }
 function storyboardImage(art,f){
- const image=`<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(f.title??names[f.visual])}" loading="lazy" decoding="async"${art==='bay-lai'?' data-optional-image':''}>`;
- return art==='bay-lai'?`<div class="pendingFrame"><span>Ảnh minh họa sẽ được bổ sung</span>${image}</div>`:image;
+ return `<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(f.title??names[f.visual])}" loading="lazy" decoding="async">`;
 }
 function storyboardOverall(o){
- return `<section class="section" id="storyboard" aria-labelledby="storyboard-title"><div class="sectionHeader"><div><span class="kicker">Storyboard</span><h2 id="storyboard-title">Storyboard Overall</h2><p>Xem mạch hình ảnh của option từ F01 đến F20.${o.id===1?' Ảnh minh họa sẽ được bổ sung sau.':''}</p></div></div>
+ return `<section class="section" id="storyboard" aria-labelledby="storyboard-title"><div class="sectionHeader"><div><span class="kicker">Storyboard</span><h2 id="storyboard-title">Storyboard Overall</h2><p>Xem mạch hình ảnh của option từ F01 đến F20.</p></div></div>
  <div class="stillGrid">${o.frames.map(f=>`<figure class="stillTile">${storyboardImage(o.art,f)}<figcaption>F${no(f.n)}</figcaption></figure>`).join('')}</div></section>`;
 }
 function frame(f,art){
