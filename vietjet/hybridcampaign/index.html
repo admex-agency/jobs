@@ -42,7 +42,12 @@ h3{line-height:1.32}
 .optionLink{display:block;color:var(--red);font-size:13px;font-weight:750;margin-top:10px}
 .videoRef{margin-top:12px;min-width:0}
 .campaignMood .videoRef{margin-top:0}
-.optionRef{grid-template-columns:1fr minmax(0,390px)}
+.optionReferences{margin-top:24px}
+.referencePair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.referenceCard{min-width:0}
+.referenceCard h3{margin:0 0 12px}
+.referenceCard .videoRef{margin-top:0}
+@media(max-width:640px){.referencePair{grid-template-columns:1fr}}
 .videoStage{aspect-ratio:16/9;position:relative;background:#261a1e;border-radius:9px;overflow:hidden;color:#fff}
 .videoStage iframe{width:100%;height:100%;border:0;display:block}
 .videoPlay{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;height:100%;padding:12px;background:radial-gradient(ellipse at 60% 100%,#722435,#25181d 74%);border:0;color:#fff;font-size:14px;font-weight:750}
@@ -84,7 +89,13 @@ h3{line-height:1.32}
 .argumentGrid h4,.treatments h4{margin:0 0 4px}
 .strategyTags{margin-top:18px}
 .briefDirection{margin:7px 0 12px;font-size:14px;font-weight:750;color:var(--darkred)}
-.scriptGrid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px}
+.scriptGrid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);margin-top:16px}
+.scriptGrid>div{min-width:0;padding:clamp(13px,2vw,23px);border:1px solid var(--line);border-radius:14px;background:#f8f5f3}
+.scriptGrid>div[lang="vi"]{border-left:4px solid var(--red);background:#fff0ed}
+.scriptGrid [lang="vi"] h3{color:var(--darkred)}
+.scriptGrid [lang="vi"] .scriptLine p{font-size:clamp(15px,1.55vw,18px)}
+.scriptGrid [lang="en"] .scriptLine p{font-weight:500;color:var(--muted)}
+@media print{.scriptGrid>div{print-color-adjust:exact}}
 .scriptGrid h3{font-size:18px}
 .scriptLine{display:block}
 .scriptLine p{white-space:pre-line;font-size:15px;font-weight:700;line-height:1.65;margin:4px 0}
@@ -404,7 +415,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <nav class="sticky" aria-label="Điều hướng proposal"><div class="container navrow"><div class="options" id="options"></div><div class="jump"><a href="#overview">Tổng thể</a><a href="#storyboard">Storyboard</a><a href="#frames">Từng frame</a><a href="#treatment">Treatment</a><a href="#production-plan">Sản xuất</a></div></div></nav>
 <main class="container" id="board"></main>
 <footer class="notes"><div class="container proposalFooter"><div><h2>Vietjet Hybrid Creative Campaign</h2><p>Creative Proposal dành cho Vietjet</p></div><div class="footerCredit"><span>Proposed by</span><img src="media/proposal/admex-vertical.png" width="2048" height="1314" alt="admeX"><span>Trực thuộc VCCorp</span></div></div></footer>
-<script src="proposal.js?v=hybrid-manifesto-20261115-creative-review"></script>
+<script src="proposal.js?v=hybrid-manifesto-20261115-film-references"></script>
 <script>
 const options = [
   {
@@ -1338,6 +1349,8 @@ const videoPlatforms = {
 };
 
 const vimeoThumbnails = {
+ "891094395":"https://i.vimeocdn.com/video/1763608217-a2285a2e47ebdfe345149ea5d694c496e70cfef67bdd142c1f0110fa960bd071-d_960?region=us",
+ "851630678":"https://i.vimeocdn.com/video/1706387753-615a2572177a5f5c35a8761ea072eee13791fa3bf75b4c93834cd4561da3c0b5-d_960?region=us",
  "1243257796": "https://i.vimeocdn.com/video/2221730005-58dbeb4eb1aa20ace748014c178e2e8438da27fc802dc406588a3c14b27d1b63-d_640?region=us",
  "1194333984": "https://i.vimeocdn.com/video/2159955607-d132e69f12e3bcec4c091196dfbbf2f046cac2bcfbfbffd753ba6420d1260344-d_640?region=us",
  "1109647452": "https://i.vimeocdn.com/video/2047216646-f15ca0aeefdc041a1ee63910343adfcf9d252b040c13990a6141054f1181ca22-d_640?region=us",
@@ -1359,6 +1372,18 @@ function videoRef(id,title,platform='YouTube'){
  <button class="videoPlay" type="button" data-video="${id}" data-platform="${platform}" data-title="${esc(title)}" aria-label="${esc('Phát video · '+title)}">
  ${thumbnail?`<img src="${esc(thumbnail)}" alt="" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-optional-image>`:''}<span class="playIcon" aria-hidden="true">▶</span></button></div>
  <a class="videoLink" href="${watch}${id}" target="_blank" rel="noopener noreferrer" aria-label="${esc(title+' · Mở trên '+platform)}">Mở trên ${platform} ↗</a></div>`;
+}
+function optionReferences(o){
+ const storytellingId=o.id===1?'TstlfPD70ZA':o.reference;
+ const toneIdByOption={1:'Idjvkpp5OlM',2:'891094395',3:'851630678'};
+ const cards=[
+  ['Storytelling',storytellingId,'YouTube'],
+  ['Tone & Mood',toneIdByOption[o.id],o.id===1?'YouTube':'Vimeo']
+ ];
+ return `<section class="section optionReferences" id="references" aria-labelledby="option-references-title">
+ <div class="sectionHeader"><div><h2 id="option-references-title">Reference</h2></div></div>
+ <div class="referencePair">${cards.map(([title,video,platform])=>`<article class="panel referenceCard"><h3>${esc(title)}</h3>${videoRef(video,title,platform)}</article>`).join('')}</div>
+ </section>`;
 }
 function manifestoOverall(){
  return `<section id="manifesto" class="section proposalPage">
@@ -1441,7 +1466,7 @@ function render(id,where){
  <section class="panel optionStory"><span class="kicker">Dẫn nhập</span><p>${esc(o.intro)}</p></section>
  <aside class="panel optionRationale"><h3>Vì sao option này đặc biệt?</h3><div class="rationaleGrid"><div><h4>Điểm tiếp cận</h4><p>${esc(o.angle)}</p></div><div><h4>Vì sao phù hợp với phim tái định vị Vietjet Hybrid</h4><p>${esc(o.fit)}</p></div></div></aside>
  <div class="chapterGrid">${o.beats.map((_,i)=>chapter(o,i)).join('')}</div>
- ${o.reference?`<section class="panel campaignMood optionRef"><div><span class="kicker">Reference / Option ${no(id)}</span><h3>Nhịp điệu, tone &amp; mood</h3><p>Video tham khảo cho cách kể và nhịp dựng của option này.</p></div>${videoRef(o.reference, 'Option '+no(id)+' · Nhịp điệu, tone & mood')}</section>`:''}
+ ${optionReferences(o)}
  ${script(o)}
  ${storyboardOverall(o)}
  <section class="section" id="frames"><div class="sectionHeader"><div><span class="kicker">Shot breakdown</span><h2>Frame by Frame</h2><p id="count" aria-live="polite"></p></div><div class="controls"><label class="sr-only" for="phase">Lọc theo chặng</label><select id="phase"><option value="0">Mọi chặng</option>${phaseLabels.map((label,i)=>`<option value="${i+1}">${label}</option>`).join('')}</select><label class="sr-only" for="pillar">Lọc theo trụ cột</label><select id="pillar"><option value="0">Tất cả trụ cột</option>${pillars.map((p,i)=>`<option value="${i+1}">${i+1}. ${esc(p)}</option>`).join('')}</select><label class="sr-only" for="subtitles">Phụ đề xem trước</label><select id="subtitles"><option value="vi">Phụ đề Việt</option><option value="en">English subtitles</option><option value="off">Ẩn phụ đề</option></select></div></div><div id="grid"></div></section>
