@@ -28,7 +28,9 @@ h3{line-height:1.32}
 .strategyGrid,.overviewOptions{display:grid;gap:14px}
 .strategyGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .overviewOptions{grid-template-columns:repeat(3,minmax(0,1fr))}
-.strategy{border-top:3px solid #ca3445}
+.strategy{display:flex;flex-direction:column;min-width:0;border-top:3px solid #ca3445}
+.strategy p{margin-bottom:12px}
+.strategy a{align-self:flex-start;margin-top:auto}
 .strategy h3{font-size:clamp(19px,2.2vw,25px);margin:10px 0}
 .campaignMood{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
 .campaignMood h3{font-size:23px;margin-top:7px}
@@ -116,7 +118,6 @@ h3{line-height:1.32}
 .overviewOption{display:flex;flex-direction:column;min-width:0}
 .overviewOption .optionLink{margin-top:auto;padding-top:10px}
 @supports (grid-template-rows:subgrid){
- .strategy{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-items:start}
  .overviewOption{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;align-items:start}
  .frameCluster .grid{row-gap:14px}
  .frame{display:grid;grid-row:span 8;grid-template-rows:subgrid;row-gap:0;min-width:0}
@@ -149,6 +150,9 @@ h3{line-height:1.32}
 .proposalBlock>h3{font-size:clamp(23px,3vw,36px);margin:5px 0 10px}
 .proposalBlock>p{max-width:850px;color:var(--muted);line-height:1.65}
 .proposalBlock>p:last-child{margin-top:14px}
+.proposalBlock>p.brandCallout{width:100%;max-width:none;overflow-wrap:anywhere}
+.kvOption + .proposalBlock .recommendation{margin-top:14px;border-left:4px solid var(--red)}
+.kvOption + .proposalBlock .recommendation h4{color:var(--darkred)}
 .creativeImage{display:block;width:100%;height:auto;border-radius:13px;margin-top:16px}
 .foundationPair .creativeImage{margin:0 0 14px;border-radius:9px}
 .messageAlternatives{margin-top:24px}
@@ -180,8 +184,8 @@ h3{line-height:1.32}
 .manifestoComparison .proposalTable table{min-width:700px;table-layout:fixed}
 .manifestoComparison .proposalTable tbody th{width:auto}
 .manifestoComparison .proposalTable thead th:first-child{width:18%}
-.manifestoComparison .proposalTable thead th:last-child{background:var(--darkred);color:white}
-.manifestoComparison .proposalTable td:last-child{background:#fff0ee}
+.manifestoComparison .proposalTable thead th:nth-child(2){background:var(--darkred);color:white}
+.manifestoComparison .proposalTable td:nth-child(2){background:#fff0ee}
 .manifestoComparison .recommendation{margin-top:14px;border-left:3px solid var(--red)}
 .manifestoComparison .recommendation h3{color:var(--darkred)}
 .insightPanel{padding:clamp(20px,4vw,42px);border-radius:16px;background:#74202b;color:#fff}
@@ -400,230 +404,221 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <nav class="sticky" aria-label="Điều hướng proposal"><div class="container navrow"><div class="options" id="options"></div><div class="jump"><a href="#overview">Tổng thể</a><a href="#storyboard">Storyboard</a><a href="#frames">Từng frame</a><a href="#treatment">Treatment</a><a href="#production-plan">Sản xuất</a></div></div></nav>
 <main class="container" id="board"></main>
 <footer class="notes"><div class="container proposalFooter"><div><h2>Vietjet Hybrid Creative Campaign</h2><p>Creative Proposal dành cho Vietjet</p></div><div class="footerCredit"><span>Proposed by</span><img src="media/proposal/admex-vertical.png" width="2048" height="1314" alt="admeX"><span>Trực thuộc VCCorp</span></div></div></footer>
-<script src="proposal.js?v=hybrid-manifesto-20261115-kv-reorder"></script>
+<script src="proposal.js?v=hybrid-manifesto-20261115-creative-review"></script>
 <script>
 const options = [
   {
     "frames": [
       {
         "n": 1,
-        "visual": "case",
+        "visual": "board",
         "pillars": [],
-        "scene": "Bé gái bảy tuổi đi giữa ba mẹ qua nhà ga. Em dừng bên vách kính, siết tay ba khi nhìn thấy tàu bay.",
-        "en": "A seven-year-old girl walks through the terminal with her parents. At the glass, she grips Dad’s hand as she spots the plane.",
+        "scene": "Bảng khởi hành hiện một chuyến Vietjet. Bên dưới, hành khách đi về cùng một cửa ra tàu.",
+        "en": "A Vietjet flight appears on the departure board. Below, travellers move towards the same gate.",
         "phase": "Mặt đất",
         "who": "M",
-        "vo": "Lần đầu đi bay, em nắm tay ba thật chặt.",
-        "voEn": "The first time you flew, you held Dad’s hand tight."
+        "vo": "Có bao nhiêu lý do để lên đường?",
+        "voEn": "How many reasons are there to set off?"
       },
       {
         "n": 2,
-        "visual": "gate",
+        "visual": "case",
         "pillars": [],
-        "scene": "Ở ghế chờ, ba gấp một chiếc máy bay giấy đỏ và đặt vào lòng bàn tay con.",
-        "en": "At the gate, Dad folds a little red paper plane and places it in her palm.",
+        "scene": "Cậu bé đi giữa ba mẹ, thoáng thấy tàu bay qua vách kính nhà ga.",
+        "en": "A boy walking between his parents catches sight of the aircraft through the terminal glass.",
         "phase": "Mặt đất"
       },
       {
         "n": 3,
+        "visual": "counter",
+        "pillars": [
+          2,
+          5
+        ],
+        "scene": "Nhân viên mặt đất đón khách tại quầy. Trong hàng có một cô gái giữ tập hồ sơ phỏng vấn và một người ôm bó hoa.",
+        "en": "A ground agent welcomes travellers at check-in. In the queue, a young woman holds an interview folder and another traveller carries flowers.",
+        "phase": "Mặt đất",
+        "who": "M",
+        "vo": "Một chuyến bay có thể mang theo cả những điều chưa kịp gọi tên.",
+        "voEn": "A flight can carry things we haven’t quite found the words for."
+      },
+      {
+        "n": 4,
+        "visual": "gate",
+        "pillars": [
+          5
+        ],
+        "scene": "Các thế hệ hành khách lần lượt bước qua cửa khởi hành. Cậu bé lọt giữa những người lớn vừa lên đường.",
+        "en": "Travellers of different generations pass through the gate. The boy disappears into the flow of people setting off.",
+        "phase": "Mặt đất"
+      },
+      {
+        "n": 5,
         "visual": "door",
         "pillars": [
           5
         ],
-        "scene": "Ở cửa tàu, tiếp viên cúi ngang tầm mắt và chào bé. Bé giơ chiếc máy bay giấy lên, rồi chủ động bước vào cabin cùng mẹ.",
-        "en": "At the aircraft door, a flight attendant greets her at eye level. The girl holds up her paper plane and steps into the cabin with Mum.",
+        "scene": "Nụ cười của tiếp viên ở cửa tàu nối với nụ cười của nhân viên mặt đất. Ba mẹ cùng cậu bé bước vào cabin.",
+        "en": "A cabin crew member’s smile picks up the ground agent’s welcome. The boy and his parents step into the cabin.",
         "phase": "Cabin và trên không",
         "who": "C",
-        "vo": "Lên đây nào. Mình cùng đi tìm mây nhé?",
-        "voEn": "Come on board. Shall we go find some clouds?"
+        "vo": "Một lời hứa sẽ về. Một lần dám đi xa.",
+        "voEn": "A promise to come home. A moment of daring to go further."
       },
       {
-        "n": 4,
-        "visual": "seats",
+        "n": 6,
+        "visual": "window",
         "pillars": [
-          2,
           3
         ],
-        "scene": "Mẹ giúp con cài dây an toàn. Bé ngồi cạnh ô cửa, quay sang kiểm tra ba mẹ vẫn ngồi ngay bên mình.",
-        "en": "Mum helps her fasten the seatbelt. The girl sits by the window and looks back to see both parents beside her.",
+        "scene": "Cậu bé tựa gần ô cửa. Ánh sáng lướt qua gương mặt khi tàu bay lên cao.",
+        "en": "The boy leans towards the window. Light moves across his face as the aircraft climbs.",
         "phase": "Cabin và trên không"
       },
       {
-        "n": 5,
+        "n": 7,
+        "visual": "reunion",
+        "pillars": [],
+        "scene": "Ở sảnh đến, cậu bé chạy về phía ông bà. Những cuộc gặp khác tiếp diễn ở phía sau.",
+        "en": "In arrivals, the boy runs to his grandparents. Other reunions unfold behind him.",
+        "phase": "Điểm đến và kết"
+      },
+      {
+        "n": 8,
+        "visual": "gate",
+        "pillars": [],
+        "scene": "Cùng bước chân qua cửa khởi hành, cậu bé đã thành một chàng trai, đi giữa nhóm bạn.",
+        "en": "A matching step through the gate reveals the boy as a young man, surrounded by friends.",
+        "phase": "Mặt đất",
+        "who": "M",
+        "vo": "Buổi phỏng vấn đầu tiên. Cuộc hẹn đã lỡ hai lần. Cái bắt tay mở ra một chân trời mới.",
+        "voEn": "A first interview. A meeting twice postponed. A handshake that opens up a new horizon."
+      },
+      {
+        "n": 9,
         "visual": "meal",
         "pillars": [
           4,
           5
         ],
-        "scene": "Sau khi cất cánh, tiếp viên đặt khay món nóng lên bàn. Bé đưa thìa cho mẹ nếm trước và cười khi cả nhà cùng ăn.",
-        "en": "After takeoff, the attendant sets down a hot meal. The girl offers Mum the first taste and grins as the family eats together.",
-        "phase": "Cabin và trên không",
-        "who": "C",
-        "vo": "Rồi em mải ngắm mây đến quên cả hồi hộp.",
-        "voEn": "Soon you were too busy watching the clouds to feel nervous."
-      },
-      {
-        "n": 6,
-        "visual": "window",
-        "pillars": [],
-        "scene": "Bé đặt chiếc máy bay giấy đỏ lên bàn gập và nghiêng đầu theo dõi mây ngoài cửa sổ.",
-        "en": "She rests the red paper plane on her tray table and follows the clouds outside.",
-        "phase": "Cabin và trên không"
-      },
-      {
-        "n": 7,
-        "visual": "book",
-        "pillars": [],
-        "scene": "Nhiều năm sau, cô sinh viên mở sổ hành trình ở nhà ga. Chiếc máy bay giấy đỏ đã sờn nằm giữa những trang ghi lịch trình đi chơi cùng bạn.",
-        "en": "Years later, the same girl, now a student, opens her travel notebook at the terminal. The worn red paper plane rests between the pages of her group itinerary.",
-        "phase": "Mặt đất",
-        "who": "M",
-        "vo": "Lớn thêm một chút, em là người rủ cả nhóm lên đường.",
-        "voEn": "A little older, you are the one getting the group together."
-      },
-      {
-        "n": 8,
-        "visual": "gate",
-        "pillars": [
-          2
-        ],
-        "scene": "Cô chỉ cửa khởi hành cho nhóm bạn rồi kéo vali đi trước. Một người bạn chạy theo, khoác tay cô.",
-        "en": "She points the group toward the gate and takes the lead with her suitcase. A friend catches up and links arms with her.",
-        "phase": "Mặt đất"
-      },
-      {
-        "n": 9,
-        "visual": "attendant",
-        "pillars": [
-          5
-        ],
-        "scene": "Trong cabin, tiếp viên hỗ trợ nhóm bạn cất hành lý. Cô gái cầm sẵn điện thoại và sổ để khi vào ghế có thể mở ngay.",
-        "en": "In the cabin, a flight attendant helps the friends stow their bags. She keeps her phone and notebook ready at her seat.",
+        "scene": "Trên cabin, nhóm bạn chuyền tay khay món nóng. Ở hàng ghế bên kia, một hành khách khép mắt nghỉ.",
+        "en": "In the cabin, the friends pass around a hot meal. Across the aisle, another traveller closes their eyes to rest.",
         "phase": "Cabin và trên không"
       },
       {
         "n": 10,
-        "visual": "meal",
+        "visual": "phone",
         "pillars": [
-          4
+          7
         ],
-        "scene": "Sau khi máy bay ổn định độ cao, nhóm bạn mở khay món nóng. Cô chuyền một phần ăn sang bạn bên cạnh để cùng nếm.",
-        "en": "Once the aircraft levels off, the friends open their hot meals. She passes a bite to the friend next to her.",
-        "phase": "Cabin và trên không",
-        "who": "C",
-        "vo": "Lần này, niềm vui bắt đầu ngay khi cả nhóm ngồi cạnh nhau.",
-        "voEn": "This time, the fun starts as soon as your friends sit down together."
+        "scene": "Một người gửi tin nhắn về nhà. Nhóm bạn chụm lại xem bản đồ điểm đến trên điện thoại.",
+        "en": "A traveller sends a message home. The friends gather around a map on a phone.",
+        "phase": "Cabin và trên không"
       },
       {
         "n": 11,
-        "visual": "phone",
-        "pillars": [
-          7
-        ],
-        "scene": "Cô kết nối Wi-Fi trên không và gửi ảnh nhóm bạn cạnh ô cửa cho ba mẹ. Cả nhóm ghé vào khung hình.",
-        "en": "Using onboard Wi-Fi, she sends her parents a photo of the group by the window. Her friends lean into the frame.",
-        "phase": "Cabin và trên không",
+        "visual": "exit",
+        "pillars": [],
+        "scene": "Nhóm bạn bước ra khỏi sảnh đến. Chàng trai dừng lại một nhịp, nhìn con đường phía trước.",
+        "en": "The friends leave arrivals. The young man pauses for a moment to look at the road ahead.",
+        "phase": "Điểm đến và kết",
         "who": "C",
-        "vo": "Và vẫn có chỗ cho một lời nhắn gửi về nhà.",
-        "voEn": "And there is still time to send a little message home."
+        "vo": "Mỗi người có một điều mong tới. Và mỗi lần bay, điều ấy có thể lại khác.",
+        "voEn": "Everyone has something to look forward to. And it can change with every flight."
       },
       {
         "n": 12,
-        "visual": "reunion",
-        "pillars": [
-          6
-        ],
-        "scene": "Ở sảnh đến, cả nhóm đập tay, rồi mở bản đồ và thống nhất nơi ghé đầu tiên.",
-        "en": "At arrivals, the friends high-five, open their map and agree on their first stop.",
-        "phase": "Điểm đến và kết"
+        "visual": "case",
+        "pillars": [],
+        "scene": "Cú nối bước chân đưa chàng trai đến một chuyến bay nhiều năm sau. Anh kéo vali và mang theo hồ sơ công việc.",
+        "en": "A matching stride takes the young man to a flight years later. He pulls a suitcase and carries a project folder.",
+        "phase": "Mặt đất"
       },
       {
         "n": 13,
-        "visual": "book",
-        "pillars": [],
-        "scene": "Trong chuyến công tác, cô đã trưởng thành. Cô mở hồ sơ ở ghế chờ, kiểm lại bản trình bày. Chiếc máy bay giấy đỏ được kẹp bên trong.",
-        "en": "On a business trip years later, she checks her presentation at the gate. The red paper plane is tucked inside the project folder.",
-        "phase": "Mặt đất",
-        "who": "M",
-        "vo": "Rồi có chuyến bay em mang theo cả một dự án quan trọng.",
-        "voEn": "Then comes a flight with an important project on your mind."
+        "visual": "counter",
+        "pillars": [
+          2,
+          5
+        ],
+        "scene": "Tại quầy, nhân viên mặt đất hướng dẫn anh và tiếp tục đón những hành khách phía sau.",
+        "en": "At check-in, the ground agent helps him and welcomes the travellers behind him.",
+        "phase": "Mặt đất"
       },
       {
         "n": 14,
-        "visual": "door",
+        "visual": "seat",
         "pillars": [
-          5
-        ],
-        "scene": "Cô khép hồ sơ, bước qua cửa tàu và chào lại tiếp viên đang đón khách.",
-        "en": "She closes the folder, steps through the aircraft door and returns the attendant’s greeting.",
-        "phase": "Cabin và trên không"
-      },
-      {
-        "n": 15,
-        "visual": "seats",
-        "pillars": [
-          2,
           3,
           7
         ],
-        "scene": "Sau khi cất cánh, cô mở laptop ở ghế Business, kết nối Wi-Fi và tải bản góp ý mới nhất của nhóm.",
-        "en": "After takeoff, she opens her laptop in Business, connects to Wi-Fi and downloads her team’s latest feedback.",
+        "scene": "Anh xem lại tài liệu trên laptop. Qua lối đi, một gia đình trò chuyện và một người tranh thủ nghỉ.",
+        "en": "He reviews a document on his laptop. Across the aisle, a family talks and another traveller takes a moment to rest.",
         "phase": "Cabin và trên không",
         "who": "C",
-        "vo": "Lần này, em chọn một khoảng riêng để chuẩn bị thật tốt.",
-        "voEn": "This time, you choose a little space to get ready."
+        "vo": "Có lúc cần một khoảng riêng. Có lúc, chỉ mong được gần nhau thêm một chút.",
+        "voEn": "Sometimes it’s a little room to yourself. Sometimes it’s a little more time together."
       },
       {
-        "n": 16,
+        "n": 15,
         "visual": "attendant",
         "pillars": [
+          4,
           5
         ],
-        "scene": "Thấy cô đang tập trung, tiếp viên nhẹ nhàng đặt ly nước ở bàn bên, ra hiệu sẽ quay lại khi cô sẵn sàng.",
-        "en": "Seeing her focused, the attendant quietly sets a glass of water on the side table and gestures that she will return when the passenger is ready.",
-        "phase": "Cabin và trên không",
-        "who": "C",
-        "vo": "Em cứ làm nốt nhé. Chị để ly nước ở đây.",
-        "voEn": "Take your time. I’ll leave some water here for you."
-      },
-      {
-        "n": 17,
-        "visual": "seat",
-        "pillars": [
-          3
-        ],
-        "scene": "Cô gửi bản đã chỉnh, khép laptop, đặt chiếc máy bay giấy đỏ lên bàn rồi ngả lưng, thả lỏng bên ô cửa.",
-        "en": "She sends the revised deck, closes her laptop, sets the paper plane down and relaxes by the window.",
+        "scene": "Tiếp viên phục vụ bữa ăn rồi ghé xuống hỗ trợ một hành khách khác. Những cử chỉ nhỏ được giữ lại giữa nhịp cabin.",
+        "en": "A crew member serves a meal, then leans in to help another traveller. Small gestures stay visible in the rhythm of the cabin.",
         "phase": "Cabin và trên không"
       },
       {
-        "n": 18,
+        "n": 16,
+        "visual": "plane",
+        "pillars": [
+          6
+        ],
+        "scene": "Tàu bay vượt qua tầng mây. Những ô cửa sáng lên trong cùng một dải nắng.",
+        "en": "The aircraft clears the clouds. Its windows catch the same band of sunlight.",
+        "phase": "Cabin và trên không",
+        "who": "M",
+        "vo": "Vietjet bay cùng những mong ước ấy, bằng tất cả những gì mình có.",
+        "voEn": "Vietjet flies with those hopes, bringing everything we have."
+      },
+      {
+        "n": 17,
         "visual": "exit",
         "pillars": [],
-        "scene": "Ở sảnh đến, cô kéo vali ra khỏi cửa. Cô nhắn nhóm dự án rằng mình đã tới và sẵn sàng cho buổi gặp.",
-        "en": "At arrivals, she rolls her case toward the exit and messages the project team that she is here and ready for the meeting.",
+        "scene": "Cửa sảnh đến mở. Hành khách tỏa đi theo nhiều hướng, người ôm bó hoa, người mang hồ sơ, người tìm gia đình.",
+        "en": "The arrivals doors open. Travellers go their separate ways, carrying flowers, holding folders or looking for family.",
+        "phase": "Điểm đến và kết"
+      },
+      {
+        "n": 18,
+        "visual": "case",
+        "pillars": [],
+        "scene": "Chàng trai bắt tay đối tác quốc tế sau khi ký kết. Cô gái mang hồ sơ bước vào buổi phỏng vấn.",
+        "en": "The young man shakes hands with his international partners after signing. The young woman with the folder walks into her interview.",
         "phase": "Điểm đến và kết",
-        "who": "M",
-        "vo": "Mỗi lần lên đường, điều em mong ở chuyến bay lại khác.",
-        "voEn": "Every time you set out, you want something a little different from the flight."
+        "who": "C",
+        "vo": "Để mỗi người có thể lên đường theo cách của mình, và được chăm sóc bằng cả trái tim.",
+        "voEn": "So everyone can set off in their own way and be cared for with all our heart.",
+        "title": "Điều đang đợi ở điểm đến"
       },
       {
         "n": 19,
-        "visual": "phone",
-        "pillars": [],
-        "scene": "Trước khi rời sân bay, cô gọi video cho ba mẹ, giơ chiếc máy bay giấy đỏ lên và hẹn chuyến sau cả nhà đi cùng.",
-        "en": "Before leaving the airport, she video calls her parents, shows them the little red plane and suggests they fly together next time.",
-        "phase": "Điểm đến và kết",
-        "who": "C",
-        "vo": "Và đã có một chuyến bay nữa em mong chờ. Chuyến này, cả nhà sẽ đi cùng nhau.",
-        "voEn": "And there’s already another flight to look forward to. Next time, the whole family is coming along."
+        "visual": "reunion",
+        "pillars": [
+          5
+        ],
+        "scene": "Người mang hoa gặp người thân. Cắt về ánh mắt của nhân viên mặt đất và tiếp viên khi tiếp tục đón một lượt khách mới.",
+        "en": "The traveller with flowers meets a loved one. Cut back to the ground agent and cabin crew welcoming a new group of travellers.",
+        "phase": "Điểm đến và kết"
       },
       {
         "n": 20,
         "visual": "end",
         "pillars": [],
-        "scene": "Tàu bay Vietjet vượt qua biển mây. Master Concept, logo và Key Message hiện trên nền trời.",
-        "en": "A Vietjet aircraft rises above the clouds. The Master Concept, logo and Key Message appear in the open sky.",
+        "scene": "Tàu bay Vietjet trên nền trời rộng. Master Concept, logo và Key Message hiện lên.",
+        "en": "A Vietjet aircraft crosses an open sky. The Master Concept, logo and Key Message appear.",
         "phase": "Điểm đến và kết",
         "who": "C",
         "vo": "Bay lại, thích ngay! Vietjet Hybrid. Trọn vẹn mọi hành trình khác biệt.",
@@ -635,72 +630,67 @@ const options = [
     "id": 1,
     "art": "bay-lai",
     "title": "Bay lại, cùng Vietjet",
-    "sub": "Một cô gái bay cùng Vietjet qua ba chặng đời. Từ chuyến bay đầu tiên bên ba mẹ, đến chuyến đi với bạn bè và lần công tác quan trọng, cô luôn tìm được cách bay phù hợp với điều mình cần lúc ấy.",
+    "sub": "Cùng một chuyến bay, mỗi người đang đi về phía một điều khác nhau. Vietjet Hybrid đồng hành với những mong ước ấy qua cách bay phù hợp với từng người và sự chăm sóc bằng cả trái tim.",
     "beats": [
-      "Lần đầu cùng ba mẹ",
-      "Tự lên đường cùng bạn bè",
-      "Chủ động trong chuyến công tác"
+      "Những lý do để lên đường",
+      "Những cách bay theo ý mình",
+      "Những điều đang đợi phía trước"
     ],
     "roles": [
       [
-        "Cùng một nhân vật ở ba độ tuổi",
-        "Bé gái, cô sinh viên và nữ chuyên viên. Chiếc máy bay giấy đỏ, ánh mắt và thói quen giữ kỷ vật giúp nhận ra cùng một người."
+        "Một nhân vật nam ở ba độ tuổi",
+        "Cậu bé đi cùng ba mẹ, chàng trai đi với bạn bè và người trưởng thành lên đường gặp đối tác quốc tế. Ba lần xuất hiện nối mạch hình qua cử chỉ và hướng chuyển động."
       ],
       [
-        "Gia đình và bạn bè",
-        "Ba mẹ đồng hành trong chuyến đầu. Nhóm bạn đại học đưa câu chuyện sang nhịp trẻ và chủ động."
+        "Những hành khách cùng lên đường",
+        "Người đi phỏng vấn, người mang hoa về gặp người thân, gia đình và những người đi vì công việc mở rộng câu chuyện qua các lát cắt ngắn."
       ],
       [
-        "Người Vietjet",
-        "Nhân viên mặt đất và tiếp viên luân phiên VO. Cử chỉ đón chào và phục vụ thay đổi theo nhu cầu từng chặng."
+        "Đội ngũ Vietjet",
+        "Nhân viên mặt đất và tiếp viên thay nhau đọc lời dẫn. Trong hình, sự tận tâm hiện lên qua cách đón khách, hướng dẫn và chăm sóc."
       ]
     ],
     "sets": [
-      "Quầy hoặc sảnh chờ, cửa khởi hành và sảnh đến. Đổi đạo cụ, phục trang và ánh sáng để nhận ra ba thời điểm.",
-      "Ba không gian cabin tương ứng chuyến đi cùng gia đình, chuyến đi cùng bạn bè và chuyến công tác.",
-      "Máy bay giấy đỏ ở ba mức độ sờn, sổ hành trình, vali, khay món, điện thoại, hồ sơ dự án và laptop."
+      "Nhà ga, cửa khởi hành và sảnh đến. Giữ một số hướng di chuyển để nối ba độ tuổi qua không gian.",
+      "Ba hành trình cabin dành cho gia đình, bạn bè và chuyến công tác. Đan xen khách ở các hàng ghế khác nhau.",
+      "Hồ sơ phỏng vấn, bó hoa, bản đồ trên điện thoại, khay món nóng, laptop và hồ sơ ký kết."
     ],
     "direct": [
-      "Quay theo từng độ tuổi và cấu hình cabin. Lặp lại hành động mở, đặt hoặc cầm máy bay giấy để nối các chặng. Dành khoảng lắng cho cuộc gọi về nhà.",
-      "Dựng thật ghế, cửa tàu, bàn gập và vật dụng. Ghép lớp trời và cảnh tàu bay theo tư liệu duyệt. Giữ màu đỏ của máy bay giấy nhất quán qua ba thời điểm."
+      "Dựng nhà ga và cabin để kiểm soát hướng chuyển động qua cửa, ô kính và lối đi. Chuyển thời gian qua bước chân, bố cục và ánh sáng. Thu tiếng động gần để khoảng lặng giữa các câu VO vẫn có sức sống.",
+      "Dựng thật những điểm diễn viên tương tác như ghế, ô cửa và bàn gập. Dùng phông xanh cho mây, đường băng và lớp cảnh qua cửa. Giữ chuyển động và hướng nắng nhất quán khi nối các khoảnh khắc."
     ],
-    "direction": "Một người, ba chặng đời, ba cách bay đúng ý",
-    "intro": "Lần đầu lên máy bay, cô bé chỉ mong có ba mẹ ngồi cạnh. Lớn hơn, cô muốn tự lên kế hoạch và tận hưởng chuyến đi cùng bạn bè. Khi đi công tác, điều cô cần là một khoảng riêng để chuẩn bị cho việc quan trọng. Một chiếc máy bay giấy đỏ theo cô qua cả ba lần bay, đến khi cô gọi về nhà và hẹn chuyến sau cả nhà đi cùng.",
-    "angle": "Máy bay giấy ba gấp ở chặng đầu trở lại trong sổ du lịch và hồ sơ công việc. Mỗi lần xuất hiện, đạo cụ nối hai giai đoạn và cho thấy cô gái ngày càng chủ động. Cuộc gọi cuối phim đưa câu chuyện trở về gia đình.",
-    "fit": "Cùng một hành khách, nhu cầu thay đổi qua từng lần bay. Chuyến đầu cần sự an tâm và chăm sóc gần gũi. Chuyến đi cùng bạn bè cần thời gian sẻ chia và kết nối. Chuyến công tác cần không gian riêng, Wi-Fi và nhịp phục vụ phù hợp. Những lựa chọn ấy cụ thể hóa định vị Vietjet Hybrid.",
+    "direction": "Một bầu trời, nhiều điều để hướng tới",
+    "intro": "Trên bảng khởi hành, mỗi chuyến bay có một điểm đến. Trong cabin, mỗi hành khách mang theo một điều đang chờ ở phía trước. Qua ba lần lên đường của một cậu bé lớn dần theo năm tháng, bộ phim mở ra những mong ước khác nhau và cách Vietjet đồng hành để mỗi người tiến gần hơn đến điều mình mong đợi.",
+    "angle": "Ba chặng đời làm sợi dây nối hình ảnh. Phim liên tục mở rộng từ nhân vật chính sang những hành khách khác, qua ô cửa, bước chân và ánh nhìn. Hai giọng kể gợi ra ý nghĩa của việc lên đường và để khán giả tự nhận ra mình trong những khoảnh khắc trên màn hình.",
+    "fit": "Tinh thần “Hành trình bay khác biệt cho mọi người” được nhìn qua những mong đợi riêng. Hành khách có thể chọn cách bay phù hợp với điều quan trọng ở mỗi chuyến đi. Vietjet mang năng lực vận hành, các lựa chọn Hybrid và sự tận tâm vào từng chặng, từ lúc đón khách đến khi mỗi người bước tiếp về phía đích đến của mình.",
     "chapterRanges": [
       [
         1,
-        6
+        7
       ],
       [
-        7,
-        12
+        8,
+        15
       ],
       [
-        13,
+        16,
         20
       ]
     ],
     "clusters": [
       {
-        "title": "Chuyến bay đầu tiên cùng ba mẹ",
+        "title": "Những lý do để lên đường",
         "start": 1,
-        "end": 6
+        "end": 7
       },
       {
-        "title": "Tự lên đường cùng bạn bè",
-        "start": 7,
-        "end": 12
+        "title": "Những cách bay theo ý mình",
+        "start": 8,
+        "end": 15
       },
       {
-        "title": "Chuyến công tác quan trọng",
-        "start": 13,
-        "end": 18
-      },
-      {
-        "title": "Lời hẹn bay cùng nhau",
-        "start": 19,
+        "title": "Những điều đang đợi phía trước",
+        "start": 16,
         "end": 20
       }
     ]
@@ -1313,7 +1303,7 @@ const phaseLabels=['Mặt đất','Cabin và trên không','Điểm đến và k
 let subtitleLanguage='vi';
 const nav=document.getElementById('options'), board=document.getElementById('board');
 const treatmentRefs = ['pnoe9DTgV5w', 'u7okYb2G-GM'];
-const priorityOptionId = 3;
+const priorityOptionId = 1;
 const campaignRef = 'kij3n1iikKc';
 const hero = document.querySelector('.hero');
 const jumps = document.querySelector('.jump');
@@ -1374,7 +1364,7 @@ function manifestoOverall(){
  return `<section id="manifesto" class="section proposalPage">
  ${proposalHeader('Manifesto Film Overall','Ba cách kể cùng đưa người xem từ mặt đất lên bầu trời. Nhân viên mặt đất và tiếp viên dẫn chuyện để trải nghiệm Vietjet Hybrid hiện lên qua lựa chọn và khoảnh khắc được chăm sóc của hành khách.','manifesto-title')}
  <div class="proposalTriple"><article class="panel"><h3>Thông điệp</h3><p>“Bay lại, thích ngay!” khơi lại niềm yêu thích bay. “Trọn vẹn mọi hành trình khác biệt” đi vào những điều mỗi hành khách muốn tận hưởng.</p></article><article class="panel"><h3>Mạch kể</h3><p>Hành trình bắt đầu ở nhà ga, đi qua không gian cabin và nối tiếp sau khi hạ cánh. Hai giọng kể đồng hành cùng các tuyến nhân vật xuyên suốt.</p></article><article class="panel"><h3>Định dạng phim</h3><p>Master 60 giây, phiên bản 30 và 15 giây. Kịch bản hình ảnh, lời dẫn và phụ đề được phát triển bằng tiếng Việt và tiếng Anh.</p></article></div>
- <div class="campaignMood panel"><div><span class="kicker">Reference chung / Tone &amp; mood</span><h3>Tinh thần và nhịp phim</h3><p>Hình ảnh cinematic, ấm và cao cấp (premium) kết hợp với nhịp phim trẻ trung, năng động, hiện đại và giàu cảm hứng, mang đậm tinh thần Vietjet. Option 01 chuyển nhịp theo ba chặng đời của một cô gái. Option 02 đan xen ba cách tận hưởng trên cùng chuyến bay. Option 03 giữ khoảng lắng cho câu chuyện cha con.</p><p>Hai giọng VO của nhân viên mặt đất và tiếp viên nối liền hành trình. Các trải nghiệm Hybrid hiện lên qua hành động, không gian và chi tiết phục vụ.</p></div>${videoRef(campaignRef,'Tone & mood chung của chiến dịch')}</div>
+ <div class="campaignMood panel"><div><span class="kicker">Reference chung / Tone &amp; mood</span><h3>Tinh thần và nhịp phim</h3><p>Hình ảnh cinematic, ấm và cao cấp (premium) kết hợp với nhịp phim trẻ trung, năng động, hiện đại và giàu cảm hứng, mang đậm tinh thần Vietjet. Option 01 nối ba lần lên đường của một cậu bé qua nhiều năm và mở ra những mong ước khác nhau của các hành khách. Option 02 đan xen ba cách tận hưởng trên cùng chuyến bay. Option 03 giữ khoảng lắng cho câu chuyện cha con.</p><p>Hai giọng VO của nhân viên mặt đất và tiếp viên nối liền hành trình. Các trải nghiệm Hybrid hiện lên qua hành động, không gian và chi tiết phục vụ.</p></div>${videoRef(campaignRef,'Tone & mood chung của chiến dịch')}</div>
  <section class="section visualDirection" aria-labelledby="visual-direction"><div class="sectionHeader"><div><span class="kicker">Định hướng hình ảnh</span><h2 id="visual-direction">Visual Direction</h2><p>Giữ tinh thần Vietjet trẻ trung, hiện đại và vui tươi. Ánh sáng, chất liệu và bố cục được tinh chỉnh để hình ảnh thêm sang trọng, cao cấp và mới mẻ, vẫn gần gũi với hành khách.</p></div></div>
  <div class="stillGrid">${Array.from({length:10},(_,i)=>`<figure class="stillTile"><img src="media/visual-direction/${no(i+1)}.webp" alt="Tham chiếu hình ảnh ${no(i+1)}" loading="lazy" decoding="async"><figcaption>${no(i+1)}</figcaption></figure>`).join('')}</div></section>
  ${manifestoComparison()}
@@ -1390,7 +1380,7 @@ function frameImagePath(art,n){
  return `media/frames/${art}/F${no(n)}.webp`;
 }
 function storyboardImage(art,f){
- const image=`<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(names[f.visual])}" loading="lazy" decoding="async"${art==='bay-lai'?' data-optional-image':''}>`;
+ const image=`<img class="frameImage" src="${frameImagePath(art,f.n)}" alt="F${no(f.n)} · ${esc(f.title??names[f.visual])}" loading="lazy" decoding="async"${art==='bay-lai'?' data-optional-image':''}>`;
  return art==='bay-lai'?`<div class="pendingFrame"><span>Ảnh minh họa sẽ được bổ sung</span>${image}</div>`:image;
 }
 function storyboardOverall(o){
@@ -1398,7 +1388,7 @@ function storyboardOverall(o){
  <div class="stillGrid">${o.frames.map(f=>`<figure class="stillTile">${storyboardImage(o.art,f)}<figcaption>F${no(f.n)}</figcaption></figure>`).join('')}</div></section>`;
 }
 function frame(f,art){
- const heading=names[f.visual];
+ const heading=f.title??names[f.visual];
  const english=subtitleLanguage==='en';
  const screen=english?f.textEn:f.text;
  const subtitle=english?f.voEn:f.vo;
@@ -1437,7 +1427,7 @@ function redraw(o){
 function render(id,where){
  active=id;
  const o=options.find(option=>option.id===id);
- nav.innerHTML=pages.map(([key,label])=>`<button type="button" class="opt" data-option="${key}" ${key===priorityOptionId?'data-priority aria-label="Option 03 · Đề xuất ưu tiên"':''} aria-pressed="${key===id}">${esc(label)}${key===priorityOptionId?'<span class="priorityLabel" aria-hidden="true">· Ưu tiên</span>':''}</button>`).join('');
+ nav.innerHTML=pages.map(([key,label])=>`<button type="button" class="opt" data-option="${key}" ${key===priorityOptionId?`data-priority aria-label="Option ${no(key)} · Đề xuất ưu tiên"`:''} aria-pressed="${key===id}">${esc(label)}${key===priorityOptionId?'<span class="priorityLabel" aria-hidden="true">· Ưu tiên</span>':''}</button>`).join('');
  const selectedTab=nav.querySelector('[aria-pressed=true]');
  if(selectedTab.offsetLeft<nav.scrollLeft||selectedTab.offsetLeft+selectedTab.offsetWidth>nav.scrollLeft+nav.clientWidth) nav.scrollLeft=selectedTab.offsetLeft;
  hero.hidden=id!==0;

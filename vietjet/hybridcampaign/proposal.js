@@ -165,16 +165,16 @@ const keyVisualOptions = [
    ['sub-02','Website'],
    ['sub-03','Mạng xã hội']
   ],
-  intent:'Đưa người xem đến gần cảm giác được quan tâm qua một khoảnh khắc thư giãn, thưởng thức món nóng và tương tác tự nhiên với tiếp viên.',
-  layout:['Một hành khách và một tiếp viên làm trọng tâm. Mở một phần cabin giữa biển mây, giữ đúng ghế, bàn và vật dụng Vietjet.',
-   'Thiết bị cá nhân gợi khả năng kết nối trên không. Tàu bay và điểm đến nằm ở hậu cảnh để đặt khoảnh khắc vào hành trình.',
-   'Bộ KV trụ cột có thể đổi nhân vật, hành động và sản phẩm trong cùng cấu trúc lấy con người làm trung tâm.'],
-  treatment:'Góc ngang hoặc hơi thấp, khung có chiều sâu và khoảng thở. Golden hour trong trẻo, da người tự nhiên, mây mềm và sắc ấm. Tập trung ánh mắt, cử chỉ và chất liệu.',
-  priority:[3,4,5,6]
+  intent:'Trên cùng một chuyến bay, niềm vui có nhiều hình dáng. Một gia đình có thêm thời gian bên nhau, một hành khách có khoảng riêng để làm việc, và phi hành đoàn Vietjet hiện diện ngay giữa những khoảnh khắc ấy. Hình ảnh cho thấy mỗi người có thể tận hưởng chuyến bay theo cách của mình và đều được chăm sóc.',
+  layout:[ 'Lối đi đỏ dẫn mắt về phi công và hai tiếp viên ở trung tâm. Hai dãy ghế mở sang hai bên, với gia đình bên trái và hành khách dùng laptop bên phải.',
+   'Khoảng trời xanh phía trên dành chỗ cho ‘Bay lại, thích ngay!’, tàu bay và biểu tượng Wi‑Fi. Thông điệp Vietjet Hybrid nằm ở chân trục giữa.',
+   'Ba bản ứng dụng đưa cùng một hình ảnh vào bảng quảng cáo sân bay, trang chủ website và bài đăng mạng xã hội. Bản social tách thêm các khoảnh khắc trong cabin thành những ô ảnh nhỏ.' ],
+  treatment:'Dùng phối cảnh đối xứng để giữ điểm nhìn ở phi hành đoàn, rồi để ánh mắt và cử chỉ của hành khách mở ra hai bên. Ánh sáng ấm trong cabin, nền trời xanh và thảm đỏ tạo chiều sâu. Biểu cảm tự nhiên giữ chất gần gũi ngay trong một bố cục giàu tính trình diễn.',
+  priority:[3, 4, 5, 7]
  },
  {
   title:'Thế giới trải nghiệm mở rộng trên mây',
-  demo:{file:'option-02-main-20261114.webp',width:2000,height:1125,alt:'Tàu bay Vietjet giữa biển mây, xung quanh là các cảnh phục vụ trong cabin và xe kéo hành lý.'},
+  demo:{file:'option-02-main-20261114.webp',width:2000,height:1125,alt:'Tàu bay Vietjet giữa biển mây, xung quanh là các cụm nhân vật minh họa, xe phục vụ món ăn và đoàn xe mặt đất.'},
   subVisualSize:{width:1200,height:675},
   subVisuals:[
    ['sub-01','Kết nối và giải trí'],
@@ -184,22 +184,22 @@ const keyVisualOptions = [
    ['sub-05','Đa dạng lựa chọn'],
    ['sub-06','SkyJoy']
   ],
-  intent:'Hình tượng hóa một thế giới mở rộng cùng Vietjet Hybrid. Hành khách có thêm cách lựa chọn, tận hưởng và giữ liên lạc khi kết nối những chân trời.',
-  layout:['Tàu bay ở trung tâm hướng về bầu trời rộng mở. Tiếp viên đẩy xe phục vụ món nóng, hành khách thư giãn và sử dụng điện thoại hoặc tablet.',
-   'Xe kéo hành lý di chuyển trên dải mây gợi đường băng, thể hiện lớp vận hành mặt đất.',
-   'Công trình Việt Nam và biểu tượng châu Âu xuất hiện nhỏ ở hậu cảnh, gợi kết nối hai lục địa.'],
-  treatment:'Không gian mở và phối cảnh phóng đại có chủ đích. Nhân vật, tàu bay, ghế và món ăn chân thực trong bố cục giàu tưởng tượng. Bầu trời sáng, mây có khối, điểm đỏ và vàng dẫn chuyển động.',
-  priority:[1,2,4,6,7]
+  intent:'Qua một tầng mây, cả thế giới Vietjet Hybrid mở ra. Tàu bay đưa mắt người xem đi từ những khoảnh khắc trong cabin đến đội xe vận hành phía dưới, gợi cảm giác có nhiều điều để khám phá ngay từ lúc lên đường.',
+  layout:[ 'Tàu bay Vietjet băng chéo qua trung tâm. Các cụm ghế và nhân vật minh họa nổi quanh cánh và thân tàu. Xe phục vụ món nóng ở bên phải, đoàn xe mặt đất ở dưới.',
+   'Mây trắng phân lớp giữa các cụm minh họa và vùng cảnh quan thấp phía xa. Cụm nhận diện và headline nằm ở góc trên bên trái.',
+   'Sáu Sub KV giữ tàu bay, nền mây và headline làm hệ nhận diện chung. Mỗi bản phóng lớn một cụm minh họa tương ứng với kết nối, dịch vụ, vận hành, ẩm thực, lựa chọn hoặc SkyJoy.' ],
+  treatment:'Kết hợp tàu bay và cảnh quan có chiều sâu với nhân vật minh họa nét gọn. Dải cam, vàng và hồng phủ bầu trời, mây làm mềm ranh giới giữa các cụm. Đỏ Vietjet trên thân tàu và xe phục vụ tạo điểm nhấn xuyên suốt Main KV và sáu Sub KV.',
+  priority:[1, 2, 4, 5, 7, 8]
  },
  {
   title:'Bốn không gian trải nghiệm liên thông',
-  demo:{file:'option-01-main.webp',width:2048,height:1152,alt:'Hành khách bước qua cửa tàu bay, giữa bốn khoảnh khắc trải nghiệm trong cabin Vietjet.'},
-  intent:'Bốn trải nghiệm cùng tạo thành một hành trình đúng ý. Trong cùng một hãng bay, mỗi hành khách có thể tìm thấy không gian, món ăn, sự chăm sóc và kết nối phù hợp.',
-  layout:['Bốn không gian gồm cabin hiện đại, ẩm thực nóng tươi, phục vụ tận tâm và kết nối điểm đến. Mỗi không gian có một tương tác chính của hành khách.',
-   'Tàu bay Vietjet hội tụ ở trung tâm. Đường nét cabin, ô cửa hoặc dải chuyển động nối các không gian. Hành khách sử dụng thiết bị, với tín hiệu Wi-Fi tiết chế.',
-   'Headline nằm ở khoảng trống trung tâm, kết nối bố cục và giữ khả năng đọc.'],
-  treatment:'Phối cảnh đa chiều, kết hợp góc cao và góc thấp. Dùng góc rộng có kiểm soát để giữ dáng người và sản phẩm tự nhiên. Ánh sáng rõ, màu sắc có chọn lọc và giàu tính thời trang.',
-  priority:[3,4,5,6]
+  demo:{file:'option-01-main.webp',width:2048,height:1152,alt:'Nữ hành khách áo đỏ kéo vali qua cửa tàu, xung quanh là bốn cảnh thư giãn, sử dụng thiết bị, dùng bữa và trò chuyện với tiếp viên.'},
+  intent:'Bước qua cửa tàu là bước vào những điều đáng mong chờ. Một nữ hành khách xuất hiện trong bốn khoảnh khắc khác nhau, từ thư giãn và làm việc đến thưởng thức món ăn và trò chuyện cùng tiếp viên. Sự lặp lại của nhân vật giúp người xem hình dung mình cũng có thể chọn cách tận hưởng chuyến bay theo ý mình.',
+  layout:[ 'Ở trung tâm, nữ hành khách áo đỏ kéo vali bước qua cửa tàu, phía sau là nền trời sáng. Headline đặt ngay trên khoảng mở này.',
+   'Bốn ô cabin đặt quanh nhân vật chính. Bên trái là khoảnh khắc ngả lưng và sử dụng thiết bị. Bên phải là khay món ăn và cuộc trò chuyện với tiếp viên.',
+   'Dải sáng vàng quấn qua các ô, nối các cảnh thành một chuyển động liên tục quanh cửa tàu.' ],
+  treatment:'Tạo chiều sâu bằng góc nhìn thấp ở bước chân trung tâm và góc nhìn từ trên xuống trong bốn ô cabin. Áo đỏ, khoảng trời trắng sáng và dải vàng dẫn mắt theo vòng chuyển động. Giữ cùng tạo hình nhân vật xuyên suốt để bốn trải nghiệm đọc liền mạch.',
+  priority:[3, 4, 5, 7]
  }
 ];
 
@@ -230,43 +230,52 @@ function keyVisual() {
  ${o.detailsUrl||o.details?`<a class="kvDetails" href="${esc(o.detailsUrl||'media/key-visual/'+encodeURIComponent(o.details))}" target="_blank" rel="noopener">Diễn giải chi tiết <span aria-hidden="true">↗</span></a>`:''}
  ${keyVisualDemo(o,i+1)}
  ${o.subVisuals?keyVisualGallery(o,i+1):''}
- <div class="proposalPair"><section class="panel"><h4>Bố cục và hình ảnh</h4><ul>${o.layout.map(line=>`<li>${esc(line)}</li>`).join('')}</ul></section><section class="panel"><h4>Visual Treatment</h4><p>${esc(o.treatment)}</p><h4>Trụ cột ưu tiên</h4><div class="tags">${o.priority.map(n=>`<span class="tag">${n} · ${esc(pillars[n-1])}</span>`).join('')}</div><p class="kvNote">Wi-Fi vệ tinh là điểm nhấn kết nối xuyên suốt.${o.allPillars?' Các trụ cột còn lại cùng hiện diện trong bố cục.':''}</p></section></div>
- </article>`).join('')}</section>`;
+ <div class="proposalPair"><section class="panel"><h4>Bố cục và hình ảnh</h4><ul>${o.layout.map(line=>`<li>${esc(line)}</li>`).join('')}</ul></section><section class="panel"><h4>Visual Treatment</h4><p>${esc(o.treatment)}</p><h4>Trụ cột ưu tiên</h4><div class="tags">${o.priority.map(n=>`<span class="tag">${n} · ${esc(pillars[n-1])}</span>`).join('')}</div></section></div>
+ </article>`).join('')}
+ <section class="proposalBlock" aria-labelledby="kv-comparison-title">
+ <h3 id="kv-comparison-title">So sánh 3 phương án Key Visual</h3>
+ ${proposalTable(['Tiêu chí','Option 01','Option 02','Option 03'],[
+  ['Điểm nhìn','Phi hành đoàn giữa cabin, nhiều nhóm khách hai bên.','Tàu bay giữa biển mây, các cụm dịch vụ bao quanh.','Một hành khách bước qua cửa tàu, bốn ô trải nghiệm bao quanh.'],
+  ['Cách kể Vietjet Hybrid','Nhiều nhu cầu cùng hiện diện trên một chuyến bay, với đội ngũ Vietjet ở trung tâm.','Giới thiệu độ rộng của hệ sinh thái Hybrid, từ vận hành đến lựa chọn và dịch vụ.','Cho thấy một hành khách có thể tận hưởng nhiều khoảnh khắc khác nhau.'],
+  ['Khả năng ứng dụng','Có demo sân bay, website và social. Trục cabin và cụm nhân vật giữ nhận diện khi đổi định dạng.','Sáu Sub KV có cấu trúc chung và dành riêng một cụm minh họa cho từng trụ cột.','Bốn ô cho phép tách từng trải nghiệm. Khi thu nhỏ, cần giữ đủ điểm nhìn ở nhân vật trung tâm.']
+ ],'So sánh ba phương án Key Visual')}
+ <article class="panel recommendation"><h4>Đề xuất ưu tiên · Option 01</h4><p>Một khung hình cho thấy cả sự đa dạng của hành khách lẫn sự hiện diện của đội ngũ Vietjet. Gia đình, người đi công tác và phi hành đoàn cùng chia sẻ một cabin, mỗi người có một cách tận hưởng chuyến bay. Bố cục này chuyển tải rõ “Trọn vẹn mọi hành trình khác biệt” và đã có bản ứng dụng trên ba điểm chạm.</p></article>
+ </section></section>`;
 }
 
 function manifestoComparison() {
  const columns = ['Tiêu chí', ...options.map(option => `Option ${no(option.id)} · ${option.title}`)];
  const rows = [
   ['Điểm mạnh của cách kể',
-   'Một cô gái qua ba chặng đời tạo mạch kể liền lạc. Chiếc máy bay giấy ba gấp nối chuyến đi đầu tiên với cuộc gọi hẹn cả nhà bay cùng ở cuối phim.',
+   'Một cậu bé qua ba chặng đời là sợi dây nối hình ảnh. Những hành khách được đan vào từng chặng để lời dẫn mở ra câu chuyện chung về những điều khiến mỗi người lên đường.',
    'Ba nhóm khách trên cùng chuyến bay được nối bằng chuyển cảnh từ mặt quầy sang bàn gập. Laptop, đồ chơi và bản đồ giúp người xem nhận ra từng tuyến.',
    'Cái siết tay nối hai lần bay và hai thế hệ. Từ cô bé từng cần ba trấn an đến người con gái giúp ba yên tâm, câu chuyện có một điểm rơi cảm xúc rõ.'],
   ['Phù hợp với đề bài tái định vị',
-   'Cho thấy ngay cả một người cũng cần cách bay khác nhau theo từng chuyến: được chăm sóc cùng ba mẹ, tận hưởng cùng bạn bè, rồi chủ động làm việc trong chuyến công tác.',
+   'Cùng một hãng bay, mỗi hành khách mang một mong đợi và tìm thấy một cách bay phù hợp. Đội ngũ Vietjet hiện diện từ mặt đất đến cabin, đưa tinh thần phục vụ bằng cả trái tim vào câu chuyện.',
    'Thể hiện trực diện tính linh hoạt của Hybrid. Ba tuyến Eco, SkyBoss và Business cho thấy sự phù hợp của từng lựa chọn với nhu cầu cụ thể.',
    'Đặt “Dịch vụ từ trái tim” ở trung tâm. Ghế liền nhau, khay món sẻ chia, kết nối trên không và sự hỗ trợ của tiếp viên cùng giúp người ba an tâm hơn.'],
   ['Hình ảnh và nhịp phim',
-   'Chuyến đầu ấm áp, chặng bạn bè trẻ và nhanh hơn, chặng công tác chỉn chu và bình tĩnh. Cùng một đạo cụ giữ ba nhịp phim liền nhau.',
+   'Dựng nối qua ô cửa, bước chân và ánh nhìn. Lời dẫn có nhịp riêng, để hình ảnh và câu chữ cùng gợi mở những ý nghĩa khác nhau của việc lên đường.',
    'Dựng đan xen cho nhịp nhanh, hiện đại. Sự khác biệt giữa ba không gian ghế có thể đọc được ngay qua hoạt động của hành khách.',
    'Khung hình cabin cao cấp và cận cảnh bàn tay tạo độ tinh tế. Nhịp chuyển giữa hồi tưởng và hiện tại giữ phim trẻ, với khoảng lắng vừa đủ để cảm xúc tới.'],
   ['Khả năng rút gọn 30s và 15s',
-   'Bản 30s giữ ba độ tuổi với một hành động chính ở mỗi chặng. Bản 15s có thể nối chuyến đầu với lúc trưởng thành bằng máy bay giấy.',
+   'Bản 30s giữ ba chặng và một nhịp mở ra các hành khách. Bản 15s giữ câu mở, một nhịp dựng nhiều gương mặt và lời kết thương hiệu.',
    'Bản 30s giữ một khoảnh khắc mỗi tuyến. Bản 15s có thể rút số điểm chạm để giữ mạch rõ.',
    'Bản 30s giữ hai thời điểm và hành động của tiếp viên. Bản 15s có thể nối hai cái siết tay, rồi kết ở khoảnh khắc ba tự tin bước tiếp.']
  ];
  return `<section class="section manifestoComparison" aria-labelledby="manifesto-comparison-title">
  <div class="sectionHeader"><div><h2 id="manifesto-comparison-title">So sánh các option Manifesto Film</h2></div></div>
  ${proposalTable(columns, rows, 'So sánh ba option Manifesto Film')}
- <article class="panel recommendation"><h3>Đề xuất ưu tiên · Option 03</h3><p>“Dù là lần đầu hay lần thứ mười lăm?” cho thấy chất lượng dịch vụ qua một thay đổi dễ cảm nhận: người ba từ ngại bay đến chủ động hỏi về chuyến tiếp theo. Những lựa chọn Hybrid góp phần tạo nên sự an tâm ấy, giúp lời mời “Bay lại, thích ngay!” đến tự nhiên từ câu chuyện gia đình.</p></article>
+ <article class="panel recommendation"><h3>Đề xuất ưu tiên · Option 01</h3><p>“Bay lại, cùng Vietjet” mở rộng một mạch hình ảnh qua ba độ tuổi thành lời tuyên ngôn dành cho mọi hành khách. Mỗi người lên đường vì một điều khác nhau. Vietjet Hybrid mở ra nhiều cách bay và chăm chút từng hành trình để những điều ấy có cơ hội thành hiện thực.</p></article>
  </section>`;
 }
 
 const optionProduction = [
  {
-  cast:'Một nhân vật nữ ở ba độ tuổi, ba mẹ, nhóm bạn đại học, nhân viên mặt đất và tiếp viên.',
-  prepare:'Chọn diễn viên có nét tương đồng qua ba độ tuổi. Chuẩn bị máy bay giấy ở các mức độ sờn, ba bộ phục trang, hồ sơ dự án và màn hình điện thoại.',
-  shoot:'Gom theo bối cảnh nhà ga và cấu hình cabin. Quay các động tác với máy bay giấy ở cả ba độ tuổi để dựng chuyển chặng.',
-  finish:'Dựng mạch lớn lên qua động tác và ánh nhìn. Hoàn thiện màn hình kết nối, giữ nhịp trẻ ở chặng bạn bè và giữ đủ khoảng lặng cho lời hẹn cuối phim.'
+  cast:'Một nhân vật nam ở ba độ tuổi, ba mẹ, nhóm bạn, đối tác quốc tế, các nhóm hành khách và đội ngũ Vietjet.',
+  prepare:'Chọn diễn viên có nét tương đồng qua ba độ tuổi. Tổ chức các nhóm hành khách theo động cơ lên đường. Chuẩn bị phục trang, đạo cụ và cấu hình cabin cho mỗi chặng.',
+  shoot:'Gom theo nhà ga, cabin và điểm đến. Quay cùng hướng chuyển động cho các cú nối qua cửa và giữ khoảng thở trong những cảnh chăm sóc.',
+  finish:'Đọc thử hai giọng trên toàn mạch trước khi khóa hình. Giữ khoảng lặng giữa các cụm lời, nối âm thanh nhà ga và cabin, rồi mở nhạc khi phim chuyển sang những điểm đến.'
  },
  {
   cast:'Một nữ doanh nhân, gia đình ba người, bốn bạn trẻ và đội ngũ Vietjet gồm nhân viên mặt đất, tiếp viên, nhân viên sân đỗ và tổ bay.',
