@@ -185,6 +185,14 @@ const keyVisualOptions = [
  },
  {
   title:'Khoảnh khắc đáng tận hưởng',
+  demo:{file:'option-03-main.webp',width:2000,height:1125,alt:'Phi hành đoàn Vietjet bước giữa khoang máy bay, hai bên là hành khách dùng bữa và làm việc.'},
+  detailsUrl:'https://drive.google.com/file/d/1GmLeeRGFOHj2iE3_6JZjQ49CuhbWq47A/view?usp=sharing',
+  subVisualSize:{width:1920,height:1080},
+  subVisuals:[
+   ['sub-01','Sân bay'],
+   ['sub-02','Website'],
+   ['sub-03','Mạng xã hội']
+  ],
   intent:'Đưa người xem đến gần cảm giác được quan tâm qua một khoảnh khắc thư giãn, thưởng thức món nóng và tương tác tự nhiên với tiếp viên.',
   layout:['Một hành khách và một tiếp viên làm trọng tâm. Mở một phần cabin giữa biển mây, giữ đúng ghế, bàn và vật dụng Vietjet.',
    'Thiết bị cá nhân gợi khả năng kết nối trên không. Tàu bay và điểm đến nằm ở hậu cảnh để đặt khoảnh khắc vào hành trình.',
@@ -245,7 +253,7 @@ function keyVisual() {
  <nav class="kvJump" aria-label="Phương án Key Visual">${keyVisualOptions.map((o,i)=>`<a href="#kv-${i+1}">Option ${no(i+1)}</a>`).join('')}</nav>
  ${keyVisualOptions.map((o,i)=>`<article class="proposalBlock kvOption" id="kv-${i+1}">
  <span class="kicker">KV Option ${no(i+1)}</span><h3>${esc(o.title)}</h3><span class="kicker">Creative Intent</span><p class="kvIntent">${esc(o.intent)}</p>
- ${o.details?`<a class="kvDetails" href="media/key-visual/${encodeURIComponent(o.details)}" target="_blank" rel="noopener">Diễn giải chi tiết <span aria-hidden="true">↗</span></a>`:''}
+ ${o.detailsUrl||o.details?`<a class="kvDetails" href="${esc(o.detailsUrl||'media/key-visual/'+encodeURIComponent(o.details))}" target="_blank" rel="noopener">Diễn giải chi tiết <span aria-hidden="true">↗</span></a>`:''}
  ${keyVisualDemo(o,i+1)}
  ${o.subVisuals?keyVisualGallery(o,i+1):''}
  <div class="proposalPair"><section class="panel"><h4>Bố cục và hình ảnh</h4><ul>${o.layout.map(line=>`<li>${esc(line)}</li>`).join('')}</ul></section><section class="panel"><h4>Visual Treatment</h4><p>${esc(o.treatment)}</p><h4>Trụ cột ưu tiên</h4><div class="tags">${o.priority.map(n=>`<span class="tag">${n} · ${esc(pillars[n-1])}</span>`).join('')}</div><p class="kvNote">Wi-Fi vệ tinh là điểm nhấn kết nối xuyên suốt.${o.allPillars?' Các trụ cột còn lại cùng hiện diện trong bố cục.':''}</p></section></div>
