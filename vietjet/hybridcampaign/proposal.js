@@ -166,7 +166,16 @@ const keyVisualOptions = [
  },
  {
   title:'Thế giới trải nghiệm mở rộng trên mây',
-  demo:{file:'option-02-main.webp',width:2048,height:1152,alt:'Tàu bay Vietjet giữa biển mây, xung quanh là các cảnh phục vụ trong cabin và xe kéo hành lý.'},
+  demo:{file:'option-02-main-20261114.webp',width:2000,height:1125,alt:'Tàu bay Vietjet giữa biển mây, xung quanh là các cảnh phục vụ trong cabin và xe kéo hành lý.'},
+  subVisualSize:{width:1200,height:675},
+  subVisuals:[
+   ['sub-01','Kết nối và giải trí'],
+   ['sub-02','Dịch vụ từ trái tim'],
+   ['sub-03','Tự chủ với Vietjet Group'],
+   ['sub-04','Ẩm thực nóng tươi'],
+   ['sub-05','Đa dạng lựa chọn'],
+   ['sub-06','SkyJoy']
+  ],
   intent:'Hình tượng hóa một thế giới mở rộng cùng Vietjet Hybrid. Hành khách có thêm cách lựa chọn, tận hưởng và giữ liên lạc khi kết nối những chân trời.',
   layout:['Tàu bay ở trung tâm hướng về bầu trời rộng mở. Tiếp viên đẩy xe phục vụ món nóng, hành khách thư giãn và sử dụng điện thoại hoặc tablet.',
    'Xe kéo hành lý di chuyển trên dải mây gợi đường băng, thể hiện lớp vận hành mặt đất.',
@@ -221,10 +230,12 @@ function keyVisualDemo(option, number) {
  return `<figure class="kvDemo kvDemoImage"><img src="media/key-visual/${file}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><figcaption>Key Visual Demo · Option ${no(number)}</figcaption></figure>`;
 }
 
-function keyVisualGallery(visuals) {
- return `<section class="kvSubVisuals" aria-labelledby="kv-sub-title"><h4 id="kv-sub-title">Sub KV</h4><div class="kvSubGrid">${visuals.map(([file,label])=>{
-  const src=`media/key-visual/option-04-${file}.webp`;
-  return `<figure><a href="${src}" target="_blank" rel="noopener" aria-label="${esc('Mở ảnh Sub KV · '+label)}"><img src="${src}" alt="" width="3840" height="2160" loading="lazy" decoding="async"></a><figcaption>${esc(label)}</figcaption></figure>`;
+function keyVisualGallery(option, number) {
+ const titleId=`kv-${number}-sub-title`;
+ const {width,height}=option.subVisualSize??{width:3840,height:2160};
+ return `<section class="kvSubVisuals" aria-labelledby="${titleId}"><h4 id="${titleId}">Sub KV</h4><div class="kvSubGrid">${option.subVisuals.map(([file,label])=>{
+  const src=`media/key-visual/option-${no(number)}-${file}.webp`;
+  return `<figure><a href="${src}" target="_blank" rel="noopener" aria-label="${esc('Mở ảnh Sub KV · '+label)}"><img src="${src}" alt="" width="${width}" height="${height}" loading="lazy" decoding="async"></a><figcaption>${esc(label)}</figcaption></figure>`;
  }).join('')}</div></section>`;
 }
 
@@ -236,7 +247,7 @@ function keyVisual() {
  <span class="kicker">KV Option ${no(i+1)}</span><h3>${esc(o.title)}</h3><span class="kicker">Creative Intent</span><p class="kvIntent">${esc(o.intent)}</p>
  ${o.details?`<a class="kvDetails" href="media/key-visual/${encodeURIComponent(o.details)}" target="_blank" rel="noopener">Diễn giải chi tiết <span aria-hidden="true">↗</span></a>`:''}
  ${keyVisualDemo(o,i+1)}
- ${o.subVisuals?keyVisualGallery(o.subVisuals):''}
+ ${o.subVisuals?keyVisualGallery(o,i+1):''}
  <div class="proposalPair"><section class="panel"><h4>Bố cục và hình ảnh</h4><ul>${o.layout.map(line=>`<li>${esc(line)}</li>`).join('')}</ul></section><section class="panel"><h4>Visual Treatment</h4><p>${esc(o.treatment)}</p><h4>Trụ cột ưu tiên</h4><div class="tags">${o.priority.map(n=>`<span class="tag">${n} · ${esc(pillars[n-1])}</span>`).join('')}</div><p class="kvNote">Wi-Fi vệ tinh là điểm nhấn kết nối xuyên suốt.${o.allPillars?' Các trụ cột còn lại cùng hiện diện trong bố cục.':''}</p></section></div>
  </article>`).join('')}</section>`;
 }
