@@ -246,27 +246,27 @@ function keyVisual() {
 function manifestoComparison() {
  const columns = ['Tiêu chí', ...options.map(option => `Option ${no(option.id)} · ${option.title}`)];
  const rows = [
-  ['Điểm mạnh của cách kể',
-   'Một cậu bé qua ba chặng đời là sợi dây nối hình ảnh. Những hành khách được đan vào từng chặng để lời dẫn mở ra câu chuyện chung về những điều khiến mỗi người lên đường.',
-   'Ba nhóm khách trên cùng chuyến bay được nối bằng chuyển cảnh từ mặt quầy sang bàn gập. Laptop, đồ chơi và bản đồ giúp người xem nhận ra từng tuyến.',
-   'Cái siết tay nối hai thế hệ. Từ cậu bé được bố dắt đi đến người con 28 tuổi đưa bố mẹ đi bay lần đầu, câu chuyện cho thấy cách hai bố con chăm sóc nhau qua thời gian.'],
-  ['Phù hợp với đề bài tái định vị',
-   'Cùng một hãng bay, mỗi hành khách mang một mong đợi và tìm thấy một cách bay phù hợp. Đội ngũ Vietjet hiện diện từ mặt đất đến cabin, đưa tinh thần phục vụ bằng cả trái tim vào câu chuyện.',
-   'Thể hiện trực diện tính linh hoạt của Hybrid. Ba tuyến Eco, SkyBoss và Business cho thấy sự phù hợp của từng lựa chọn với nhu cầu cụ thể.',
-   'Đặt “Dịch vụ từ trái tim” ở trung tâm. Ghế liền nhau, khay món sẻ chia, kết nối trên không và sự hỗ trợ của tiếp viên cùng giúp người ba an tâm hơn.'],
+  ['Nhân vật và mạch kể',
+   'Một người qua nhiều chặng đời: bay lần đầu cùng bố mẹ năm 10 tuổi, đi cùng bạn bè thời đại học, bay công tác rồi chăm sóc con gái trên chuyến bay.',
+   'Nữ hành khách 20 tuổi lần lượt bay một mình và cùng hai người bạn. Từ hàng ghế của họ, câu chuyện mở ra các hành khách khác trong cabin.',
+   'Người con 28 tuổi đưa bố mẹ đi bay lần đầu. Cái siết quai vali của bố gợi lại năm anh 10 tuổi, khi anh còn được bố dắt tay.'],
+  ['Cách thể hiện Vietjet Hybrid',
+   'Nhu cầu thay đổi qua từng chuyến: kết nối để họp, thưởng thức món nóng ở ghế SkyBoss, tận hưởng khoảng riêng ở ghế Business và dành thời gian bên con.',
+   'Nhiều cách tận hưởng hiện lên qua bữa ăn của gia đình, vị khách thưởng thức bánh mì, nữ nhân viên vừa khép laptop ở ghế SkyBoss và nữ doanh nhân được đắp chăn ở ghế Business.',
+   'Từ ly nước của tiếp viên đến món nóng hai vợ chồng sẻ chia và Wi-Fi để bố livestream mây trời, từng trải nghiệm giúp ông thêm thoải mái trong chuyến bay đầu tiên.'],
   ['Hình ảnh và nhịp phim',
-   'Dựng nối qua ô cửa, bước chân và ánh nhìn. Lời dẫn có nhịp riêng, để hình ảnh và câu chữ cùng gợi mở những ý nghĩa khác nhau của việc lên đường.',
-   'Dựng đan xen cho nhịp nhanh, hiện đại. Sự khác biệt giữa ba không gian ghế có thể đọc được ngay qua hoạt động của hành khách.',
-   'Khung hình cabin cao cấp và cận cảnh bàn tay tạo độ tinh tế. Nhịp chuyển giữa hồi tưởng và hiện tại giữ phim trẻ, với khoảng lắng vừa đủ để cảm xúc tới.'],
-  ['Khả năng rút gọn 30s và 15s',
-   'Bản 30s giữ ba chặng và một nhịp mở ra các hành khách. Bản 15s giữ câu mở, một nhịp dựng nhiều gương mặt và lời kết thương hiệu.',
-   'Bản 30s giữ một khoảnh khắc mỗi tuyến. Bản 15s có thể rút số điểm chạm để giữ mạch rõ.',
-   'Bản 30s giữ cú nối hai độ tuổi, một hành động chăm sóc trong cabin và câu hỏi về chuyến bay kế tiếp. Bản 15s có thể nối cái siết quai vali với cái nắm tay rồi kết bằng nụ cười của bố.']
+   'Bước chân và trang phục nối cậu bé 10 tuổi với chàng sinh viên 18 tuổi. Cảnh anh đắp chăn cho con gái tạo khoảng lắng trước khi phim mở ra các hành khách khác.',
+   'Cú máy one-shot nối cổng ra tàu, các ô cửa và hàng ghế để chuyển giữa các chuyến bay, giữa bên trong và bên ngoài cabin.',
+   'Cùng một bộ trang phục, khác kích cỡ, giúp nhận ra người con ở tuổi 10 và 28. Cái siết tay và cú nối trên lối đi cabin dẫn đến nụ cười của bố.'],
+  ['Trọng tâm đề xuất cho bản cắt 30 và 15 giây',
+   '30 giây đi từ chuyến bay đầu đời đến lúc anh có con. 15 giây giữ cú nối bước chân và khoảnh khắc đắp chăn.',
+   '30 giây giữ cú nối qua ô cửa và một vài trải nghiệm tiêu biểu. 15 giây theo cô gái từ lúc bay một mình đến chuyến đi cùng bạn bè.',
+   '30 giây giữ cú chuyển hai độ tuổi, một chi tiết chăm sóc trong cabin và câu hỏi cuối. 15 giây nối cái siết quai vali, cái nắm tay và nụ cười của bố.']
  ];
  return `<section class="section manifestoComparison" aria-labelledby="manifesto-comparison-title">
  <div class="sectionHeader"><div><h2 id="manifesto-comparison-title">So sánh các option Manifesto Film</h2></div></div>
  ${proposalTable(columns, rows, 'So sánh ba option Manifesto Film')}
- <article class="panel recommendation"><h3>Đề xuất ưu tiên · Option 01</h3><p>“Bay lại, cùng Vietjet” mở rộng một mạch hình ảnh qua ba độ tuổi thành lời tuyên ngôn dành cho mọi hành khách. Mỗi người lên đường vì một điều khác nhau. Vietjet Hybrid mở ra nhiều cách bay và chăm chút từng hành trình để những điều ấy có cơ hội thành hiện thực.</p></article>
+ <article class="panel recommendation"><h3>Đề xuất ưu tiên · Option 01</h3><p>“Bay lại, cùng Vietjet” cho thấy cùng một hành khách có thể cần những điều khác nhau qua từng chặng đời. Từ lần đầu nắm tay bố mẹ đến lúc đắp chăn cho con gái, câu chuyện gắn các lựa chọn và dịch vụ của Vietjet Hybrid với những lý do rất riêng để cất cánh.</p></article>
  </section>`;
 }
 
