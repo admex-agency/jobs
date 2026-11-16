@@ -42,12 +42,8 @@ h3{line-height:1.32}
 .optionLink{display:block;color:var(--red);font-size:13px;font-weight:750;margin-top:10px}
 .videoRef{margin-top:12px;min-width:0}
 .campaignMood .videoRef{margin-top:0}
-.optionReferences{margin-top:24px}
-.referencePair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.referenceCard{min-width:0}
-.referenceCard h3{margin:0 0 12px}
-.referenceCard .videoRef{margin-top:0}
-@media(max-width:640px){.referencePair{grid-template-columns:1fr}}
+.optionDemo{margin-top:24px}
+.optionDemo .videoRef{margin-top:0}
 .videoStage{aspect-ratio:16/9;position:relative;background:#261a1e;border-radius:9px;overflow:hidden;color:#fff}
 .videoStage iframe{width:100%;height:100%;border:0;display:block}
 .videoPlay{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;height:100%;padding:12px;background:radial-gradient(ellipse at 60% 100%,#722435,#25181d 74%);border:0;color:#fff;font-size:14px;font-weight:750}
@@ -960,7 +956,6 @@ const options = [
       "Giữ bàn gập, ghế và vật thể tương tác thật. Chốt cao độ ô cửa và hướng sáng trước để ghép lớp trời liền mạch giữa các cụm ghế."
     ],
     "direction": "Bạn chọn, Vietjet chiều",
-    "reference": "7H0efpS7a-c",
     "lastGroundFrame": 6,
     "intro": "Một chuyến bay có thể là nơi bạn khép lại công việc, cho con một buổi được ngồi gần cả ba lẫn mẹ, hay nếm thử một món trước khi đặt chân tới nơi. Ba hành trình bắt đầu ở cùng một mặt quầy và gặp nhau ở chiếc bàn gập. Những gì mỗi người đặt lên mặt bàn cho thấy điều họ muốn dành chỗ trong chuyến đi này.",
     "angle": "Cùng một góc máy lặp lại ở mặt quầy và bàn gập. Laptop, đồ chơi và bản đồ là dấu hiệu để nhận ra ba tuyến. Khi những vật ấy đổi vị trí, khán giả hiểu mỗi người đã tự chọn nhịp cho chuyến đi ra sao.",
@@ -1258,7 +1253,6 @@ const options = [
       "Giữ quai vali, quầy, tay vịn và cửa tàu thật. Phông xanh ngoài kính cầu ống lồng và ô cửa cabin, ưu tiên diễn xuất ở cảnh cận tay."
     ],
     "direction": "Điều không đổi",
-    "reference": "K0xh46XhuUo",
     "lastGroundFrame": 5,
     "intro": "Có một lúc, ta đổi vai với người từng nắm tay dắt mình đi mà chẳng ai gọi tên khoảnh khắc đó. Với cô gái này, nó đến khi thấy tay ba siết chặt đúng chiếc quai vali mình từng nắm trong lần đầu đi bay. Cô đi chậm lại một chút. Từ đó, mỗi người trên chuyến đi giúp ba có thêm một lý do để tự tin bước tiếp.",
     "angle": "Dựng nối từ cái siết quai vali trong hồi tưởng sang cái siết tay của ba ở hiện tại, rồi trở lại bàn tay ấy khi ông tự thả lỏng và khi tiếp viên đưa tay đỡ ở cửa xuống tàu.",
@@ -1347,8 +1341,6 @@ const videoPlatforms = {
 };
 
 const vimeoThumbnails = {
- "891094395":"https://i.vimeocdn.com/video/1763608217-a2285a2e47ebdfe345149ea5d694c496e70cfef67bdd142c1f0110fa960bd071-d_960?region=us",
- "851630678":"https://i.vimeocdn.com/video/1706387753-615a2572177a5f5c35a8761ea072eee13791fa3bf75b4c93834cd4561da3c0b5-d_960?region=us",
  "1243257796": "https://i.vimeocdn.com/video/2221730005-58dbeb4eb1aa20ace748014c178e2e8438da27fc802dc406588a3c14b27d1b63-d_640?region=us",
  "1194333984": "https://i.vimeocdn.com/video/2159955607-d132e69f12e3bcec4c091196dfbbf2f046cac2bcfbfbffd753ba6420d1260344-d_640?region=us",
  "1109647452": "https://i.vimeocdn.com/video/2047216646-f15ca0aeefdc041a1ee63910343adfcf9d252b040c13990a6141054f1181ca22-d_640?region=us",
@@ -1371,16 +1363,19 @@ function videoRef(id,title,platform='YouTube'){
  ${thumbnail?`<img src="${esc(thumbnail)}" alt="" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-optional-image>`:''}<span class="playIcon" aria-hidden="true">▶</span></button></div>
  <a class="videoLink" href="${watch}${id}" target="_blank" rel="noopener noreferrer" aria-label="${esc(title+' · Mở trên '+platform)}">Mở trên ${platform} ↗</a></div>`;
 }
-function optionReferences(o){
- const storytellingId=o.id===1?'TstlfPD70ZA':o.reference;
- const toneIdByOption={1:'Idjvkpp5OlM',2:'891094395',3:'851630678'};
- const cards=[
-  ['Storytelling',storytellingId,'YouTube'],
-  ['Tone & Mood',toneIdByOption[o.id],o.id===1?'YouTube':'Vimeo']
- ];
- return `<section class="section optionReferences" id="references" aria-labelledby="option-references-title">
- <div class="sectionHeader"><div><h2 id="option-references-title">Reference</h2></div></div>
- <div class="referencePair">${cards.map(([title,video,platform])=>`<article class="panel referenceCard"><h3>${esc(title)}</h3>${videoRef(video,title,platform)}</article>`).join('')}</div>
+const optionDemoIds={
+ 1:'13IMoKyRp4ErHezEvOdMhyjxU_eBDamPO',
+ 2:'1bMlPeW5-Q3ck4gykn8nRINX6mRlyTHGa',
+ 3:'1hrNwVUVApq0fXiHAihN_vpq0rIO83SSZ'
+};
+function optionDemo(o){
+ const driveFile=`https://drive.google.com/file/d/${optionDemoIds[o.id]}`;
+ return `<section class="section optionDemo" id="references" aria-labelledby="option-demo-title">
+ <div class="sectionHeader"><div><h2 id="option-demo-title">Video Demo</h2></div></div>
+ <div class="videoRef">
+ <div class="videoStage"><iframe src="${driveFile}/preview" title="Video Demo · Option ${no(o.id)}" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
+ <a class="videoLink" href="${driveFile}/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Mở trên Google Drive ↗</a>
+ </div>
  </section>`;
 }
 function manifestoOverall(){
@@ -1464,7 +1459,7 @@ function render(id,where){
  <section class="panel optionStory"><span class="kicker">Dẫn nhập</span><p>${esc(o.intro)}</p></section>
  <aside class="panel optionRationale"><h3>Vì sao option này đặc biệt?</h3><div class="rationaleGrid"><div><h4>Điểm tiếp cận</h4><p>${esc(o.angle)}</p></div><div><h4>Vì sao phù hợp với phim tái định vị Vietjet Hybrid</h4><p>${esc(o.fit)}</p></div></div></aside>
  <div class="chapterGrid">${o.beats.map((_,i)=>chapter(o,i)).join('')}</div>
- ${optionReferences(o)}
+ ${optionDemo(o)}
  ${script(o)}
  ${storyboardOverall(o)}
  <section class="section" id="frames"><div class="sectionHeader"><div><span class="kicker">Shot breakdown</span><h2>Frame by Frame</h2><p id="count" aria-live="polite"></p></div><div class="controls"><label class="sr-only" for="phase">Lọc theo chặng</label><select id="phase"><option value="0">Mọi chặng</option>${phaseLabels.map((label,i)=>`<option value="${i+1}">${label}</option>`).join('')}</select><label class="sr-only" for="pillar">Lọc theo trụ cột</label><select id="pillar"><option value="0">Tất cả trụ cột</option>${pillars.map((p,i)=>`<option value="${i+1}">${i+1}. ${esc(p)}</option>`).join('')}</select><label class="sr-only" for="subtitles">Phụ đề xem trước</label><select id="subtitles"><option value="vi">Phụ đề Việt</option><option value="en">English subtitles</option><option value="off">Ẩn phụ đề</option></select></div></div><div id="grid"></div></section>
