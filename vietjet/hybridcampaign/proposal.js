@@ -249,7 +249,7 @@ function manifestoComparison() {
   ['Điểm mạnh của cách kể',
    'Một cậu bé qua ba chặng đời là sợi dây nối hình ảnh. Những hành khách được đan vào từng chặng để lời dẫn mở ra câu chuyện chung về những điều khiến mỗi người lên đường.',
    'Ba nhóm khách trên cùng chuyến bay được nối bằng chuyển cảnh từ mặt quầy sang bàn gập. Laptop, đồ chơi và bản đồ giúp người xem nhận ra từng tuyến.',
-   'Cái siết tay nối hai lần bay và hai thế hệ. Từ cô bé từng cần ba trấn an đến người con gái giúp ba yên tâm, câu chuyện có một điểm rơi cảm xúc rõ.'],
+   'Cái siết tay nối hai thế hệ. Từ cậu bé được bố dắt đi đến người con 28 tuổi đưa bố mẹ đi bay lần đầu, câu chuyện cho thấy cách hai bố con chăm sóc nhau qua thời gian.'],
   ['Phù hợp với đề bài tái định vị',
    'Cùng một hãng bay, mỗi hành khách mang một mong đợi và tìm thấy một cách bay phù hợp. Đội ngũ Vietjet hiện diện từ mặt đất đến cabin, đưa tinh thần phục vụ bằng cả trái tim vào câu chuyện.',
    'Thể hiện trực diện tính linh hoạt của Hybrid. Ba tuyến Eco, SkyBoss và Business cho thấy sự phù hợp của từng lựa chọn với nhu cầu cụ thể.',
@@ -261,7 +261,7 @@ function manifestoComparison() {
   ['Khả năng rút gọn 30s và 15s',
    'Bản 30s giữ ba chặng và một nhịp mở ra các hành khách. Bản 15s giữ câu mở, một nhịp dựng nhiều gương mặt và lời kết thương hiệu.',
    'Bản 30s giữ một khoảnh khắc mỗi tuyến. Bản 15s có thể rút số điểm chạm để giữ mạch rõ.',
-   'Bản 30s giữ hai thời điểm và hành động của tiếp viên. Bản 15s có thể nối hai cái siết tay, rồi kết ở khoảnh khắc ba tự tin bước tiếp.']
+   'Bản 30s giữ cú nối hai độ tuổi, một hành động chăm sóc trong cabin và câu hỏi về chuyến bay kế tiếp. Bản 15s có thể nối cái siết quai vali với cái nắm tay rồi kết bằng nụ cười của bố.']
  ];
  return `<section class="section manifestoComparison" aria-labelledby="manifesto-comparison-title">
  <div class="sectionHeader"><div><h2 id="manifesto-comparison-title">So sánh các option Manifesto Film</h2></div></div>
@@ -284,10 +284,10 @@ const optionProduction = [
   finish:'Dựng đan xen ba nhịp trải nghiệm, khớp hướng sáng và ô cửa. Hoàn thiện giao diện kết nối và SkyJoy theo tư liệu Vietjet.'
  },
  {
-  cast:'Ba nhân vật gia đình và ba vai Vietjet gồm nhân viên mặt đất, tiếp viên, nhân viên sân đỗ. Cô con gái có tạo hình hồi tưởng và hiện tại.',
-  prepare:'Khớp tạo hình và đạo cụ giữa hai thời điểm. Chốt hàng ghế, hành động của ba và cử chỉ hỗ trợ ở cửa tàu.',
-  shoot:'Quay hai thời điểm tại cùng quầy. Gom cảnh gia đình trong cabin, cảnh đỡ tay ở cửa tàu và khoảnh khắc ba hỏi về chuyến bay kế tiếp ở sảnh đến.',
-  finish:'Nối hai bàn tay trên quai vali và tinh chỉnh ánh sáng giữa hai thời điểm. Giữ tiếng động nhỏ và khoảng nghỉ trước câu hỏi cuối.'
+  cast:'Gia đình gồm bố, mẹ và con trai. Con trai xuất hiện ở tuổi 10 và 28, bố có tạo hình trẻ hơn trong cảnh hồi tưởng. Đội ngũ Vietjet gồm nhân viên mặt đất, tiếp viên và phi công.',
+  prepare:'Chuẩn bị hai kích cỡ của cùng một bộ trang phục cho con trai và giữ nguyên trang phục của bố ở hai thời điểm. Chốt hàng ghế, vali, món nóng và giao diện livestream.',
+  shoot:'Quay cảnh lấy vali ở lề đường, cảnh dắt tay ở quầy check-in và cú nối hai độ tuổi trên lối đi cabin. Gom các cảnh cài đai, phục vụ, livestream và ánh mắt hai bố con theo bố trí hàng ghế.',
+  finish:'Nối cái siết quai vali với cái nắm tay, rồi khớp bước chân trong cabin. Hoàn thiện giao diện livestream và giữ khoảng nghỉ trước câu hỏi cuối.'
  }
 ];
 
